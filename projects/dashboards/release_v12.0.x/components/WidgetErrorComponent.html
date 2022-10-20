@@ -196,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -252,7 +252,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:27</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -272,7 +272,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:32</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -299,7 +299,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:25</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -320,7 +320,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:26</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -348,7 +348,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -385,7 +385,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -419,7 +419,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -452,7 +452,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/common/components/widget-error/widget-error.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -465,20 +465,29 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, HostBinding, Input, OnInit } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Component,
+    HostBinding,
+    Input,
+    OnInit,
+} from &quot;@angular/core&quot;;
 
-import { IHasChangeDetector } from &quot;../../../types&quot;;
 import { IWidgetErrorDisplayProperties } from &quot;../../../components/widget/types&quot;;
+import { IHasChangeDetector } from &quot;../../../types&quot;;
 
 @Component({
     selector: &quot;nui-widget-error&quot;,
     templateUrl: &quot;./widget-error.component.html&quot;,
     styleUrls: [&quot;./widget-error.component.less&quot;],
 })
-export class WidgetErrorComponent implements OnInit, IHasChangeDetector, IWidgetErrorDisplayProperties {
+export class WidgetErrorComponent
+    implements OnInit, IHasChangeDetector, IWidgetErrorDisplayProperties
+{
     public static lateLoadKey &#x3D; &quot;WidgetErrorComponent&quot;;
 
-    public readonly defaultClasses &#x3D; &quot;d-flex flex-column justify-content-center w-100 p-3&quot;;
+    public readonly defaultClasses &#x3D;
+        &quot;d-flex flex-column justify-content-center w-100 p-3&quot;;
 
     @Input() public image: string;
     @Input() public title: string;
@@ -491,8 +500,7 @@ export class WidgetErrorComponent implements OnInit, IHasChangeDetector, IWidget
 
     @HostBinding(&quot;class&quot;) public classNames: string;
 
-    constructor(public changeDetector: ChangeDetectorRef) {
-    }
+    constructor(public changeDetector: ChangeDetectorRef) {}
 
     ngOnInit() {
         this.classNames &#x3D; &#x60;${this.defaultClasses} ${this.elementClass}&#x60;;

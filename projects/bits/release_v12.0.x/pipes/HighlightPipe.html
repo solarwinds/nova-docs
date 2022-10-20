@@ -128,8 +128,8 @@ Can only be used with <code>innerHTML</code> directive. Escapes all the characte
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/pipes/highlight.pipe.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/pipes/highlight.pipe.ts:63</a></div>
                 </td>
             </tr>
 
@@ -309,13 +309,18 @@ export class HighlightPipe implements PipeTransform {
         if (!isString(search) || isEmpty(search)) {
             return this.escapeItem(text);
         }
-        const regex &#x3D; new RegExp(  &quot;(&quot; + this.getHighlightRegex(search) + &quot;)&quot;, &quot;i&quot;);
+        const regex &#x3D; new RegExp(
+            &quot;(&quot; + this.getHighlightRegex(search) + &quot;)&quot;,
+            &quot;i&quot;
+        );
         const matchRes &#x3D; Array.from(text.split(regex));
         let result &#x3D; &quot;&quot;;
         for (let i &#x3D; 0; i &lt; matchRes.length; i++) {
             const isMatch &#x3D; i % 2 !&#x3D;&#x3D; 0;
             if (isMatch) {
-                result +&#x3D; &quot;&lt;span class&#x3D;\&quot;nui-highlighted\&quot;&gt;&quot; + this.escapeItem(matchRes[i]) + &quot;&lt;/span&gt;&quot;;
+                result +&#x3D; &#x60;&lt;span class&#x3D;&quot;nui-highlighted&quot;&gt;${this.escapeItem(
+                    matchRes[i]
+                )}&lt;/span&gt;&#x60;;
             } else {
                 result +&#x3D; this.escapeItem(matchRes[i]);
             }
@@ -330,7 +335,7 @@ export class HighlightPipe implements PipeTransform {
     private getHighlightRegex &#x3D; (text: string) &#x3D;&gt; {
         const escaped &#x3D; escapeRegExp(text);
         return escaped.replace(this.deduplicateStarsRegex, () &#x3D;&gt; &quot;.*&quot;);
-    }
+    };
 }
 </code></pre>
     </div>

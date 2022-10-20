@@ -91,12 +91,12 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 import size from &quot;lodash/size&quot;;
 
-import {ITransientCache} from &quot;./public-api&quot;;
-import {TransientCacheService} from &quot;./transient-cache.service&quot;;
-import {UtilService} from &quot;./util.service&quot;;
+import { ITransientCache } from &quot;./public-api&quot;;
+import { TransientCacheService } from &quot;./transient-cache.service&quot;;
+import { UtilService } from &quot;./util.service&quot;;
 
 export interface IMap&lt;T&gt; {
     [key: string]: T;
@@ -107,8 +107,7 @@ export interface IMap&lt;T&gt; {
 export class TransientCacheFactory {
     private cacheMap: IMap&lt;ITransientCache&gt; &#x3D; {};
 
-    constructor(private utilService: UtilService) {
-    }
+    constructor(private utilService: UtilService) {}
 
     /** @ngdoc method
      *  @name create
@@ -127,14 +126,15 @@ export class TransientCacheFactory {
      *      destroy() - Removes references to this cache from nuiTransientCacheFactory.
      */
     public create &#x3D; (cacheId: string): ITransientCache &#x3D;&gt; {
-
         if (this.cacheMap[cacheId] &#x3D;&#x3D; null) {
-            this.cacheMap[cacheId] &#x3D; new TransientCacheService(this.utilService);
+            this.cacheMap[cacheId] &#x3D; new TransientCacheService(
+                this.utilService
+            );
             return this.get(cacheId);
         } else {
             throw new Error(&quot;That cacheId already exists&quot;);
         }
-    }
+    };
 
     /** @ngdoc method
      *  @name get
@@ -153,8 +153,7 @@ export class TransientCacheFactory {
      *  @param {string} cacheId Unique identifier of the cache.
      *  @returns {number} Count of ITransientCache objects.
      */
-    public count &#x3D; (): number &#x3D;&gt;
-        size(this.cacheMap)
+    public count &#x3D; (): number &#x3D;&gt; size(this.cacheMap);
 }
 </code></pre>
     </div>

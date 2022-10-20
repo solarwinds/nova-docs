@@ -121,7 +121,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -213,7 +213,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:22</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -235,61 +235,89 @@ import { Subject } from &quot;rxjs&quot;;
 import { switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
-import { IConfiguratorSource, IWidgetEditor } from &quot;../../configurator/services/types&quot;;
+import { IDashboardPersistenceHandler } from &quot;../../components/dashboard/types&quot;;
+import {
+    IConfiguratorSource,
+    IWidgetEditor,
+} from &quot;../../configurator/services/types&quot;;
 import { WidgetEditorService } from &quot;../../configurator/services/widget-editor.service&quot;;
 import { WIDGET_EDIT, WIDGET_REMOVE } from &quot;../../services/types&quot;;
 import { WidgetRemovalService } from &quot;../../services/widget-removal.service&quot;;
 import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
-import { IDashboardPersistenceHandler } from &quot;../../components/dashboard/types&quot;;
 
 @Directive({
     selector: &quot;[nuiWidgetEditor]&quot;,
 })
 export class WidgetEditorDirective implements OnInit, OnDestroy {
-    @Input(&quot;nuiWidgetEditor&quot;) dashboardPersistenceHandler: IDashboardPersistenceHandler;
+    @Input(&quot;nuiWidgetEditor&quot;)
+    dashboardPersistenceHandler: IDashboardPersistenceHandler;
 
     private destroy$ &#x3D; new Subject();
 
-    constructor(@Host() @Self() private dashboardComponent: DashboardComponent,
+    constructor(
+        @Host() @Self() private dashboardComponent: DashboardComponent,
         private widgetEditorService: WidgetEditorService,
         private widgetRemovalService: WidgetRemovalService,
-        private widgetTypesService: WidgetTypesService) {
-    }
+        private widgetTypesService: WidgetTypesService
+    ) {}
 
     public ngOnInit(): void {
-        this.dashboardComponent.eventBus.getStream(WIDGET_EDIT).pipe(
-            switchMap((event) &#x3D;&gt; {
-                const widget &#x3D; this.dashboardComponent.dashboard.widgets[event.widgetId];
-                const widgetType &#x3D; this.widgetTypesService.getWidgetType(widget.type, widget.version);
-                // TODO: Ensure that widgetType is defined;
-                const widgetEditor: IWidgetEditor &#x3D; {
-                    dashboardComponent: this.dashboardComponent,
-                    // @ts-ignore: Configurator is possibly undefined and is not assignable to IPizzagna type
-                    formPizzagna: widgetType.configurator,
-                    // @ts-ignore: Type &#x27;undefined&#x27; is not assignable to type &#x27;Record&lt;string, string&gt;&#x27;.
-                    paths: widgetType.paths.configurator,
-                    widget,
-                    trySubmit: this.dashboardPersistenceHandler &amp;&amp; this.dashboardPersistenceHandler.trySubmit,
-                };
+        this.dashboardComponent.eventBus
+            .getStream(WIDGET_EDIT)
+            .pipe(
+                switchMap((event) &#x3D;&gt; {
+                    const widget &#x3D;
+                        this.dashboardComponent.dashboard.widgets[
+                            event.widgetId
+                        ];
+                    const widgetType &#x3D; this.widgetTypesService.getWidgetType(
+                        widget.type,
+                        widget.version
+                    );
+                    // TODO: Ensure that widgetType is defined;
+                    const widgetEditor: IWidgetEditor &#x3D; {
+                        dashboardComponent: this.dashboardComponent,
+                        // @ts-ignore: Configurator is possibly undefined and is not assignable to IPizzagna type
+                        formPizzagna: widgetType.configurator,
+                        // @ts-ignore: Type &#x27;undefined&#x27; is not assignable to type &#x27;Record&lt;string, string&gt;&#x27;.
+                        paths: widgetType.paths.configurator,
+                        widget,
+                        trySubmit:
+                            this.dashboardPersistenceHandler &amp;&amp;
+                            this.dashboardPersistenceHandler.trySubmit,
+                    };
 
-                return this.widgetEditorService.open(widgetEditor);
-            }),
-            takeUntil(this.destroy$)
-        ).subscribe();
+                    return this.widgetEditorService.open(widgetEditor);
+                }),
+                takeUntil(this.destroy$)
+            )
+            .subscribe();
 
-        this.dashboardComponent.eventBus.getStream(WIDGET_REMOVE).pipe(
-            switchMap((event) &#x3D;&gt; {
-                const widgetId &#x3D; event.widgetId;
-                const tryRemove &#x3D; this.dashboardPersistenceHandler &amp;&amp; this.dashboardPersistenceHandler.tryRemove;
+        this.dashboardComponent.eventBus
+            .getStream(WIDGET_REMOVE)
+            .pipe(
+                switchMap((event) &#x3D;&gt; {
+                    const widgetId &#x3D; event.widgetId;
+                    const tryRemove &#x3D;
+                        this.dashboardPersistenceHandler &amp;&amp;
+                        this.dashboardPersistenceHandler.tryRemove;
 
-                const configuratorSource: IConfiguratorSource &#x3D; {
-                    dashboardComponent: this.dashboardComponent,
-                    widget: cloneDeep(this.dashboardComponent.dashboard.widgets[widgetId]),
-                };
-                return this.widgetRemovalService.handleRemove(this.dashboardComponent, widgetId, configuratorSource, tryRemove);
-            }),
-            takeUntil(this.destroy$)
-        ).subscribe();
+                    const configuratorSource: IConfiguratorSource &#x3D; {
+                        dashboardComponent: this.dashboardComponent,
+                        widget: cloneDeep(
+                            this.dashboardComponent.dashboard.widgets[widgetId]
+                        ),
+                    };
+                    return this.widgetRemovalService.handleRemove(
+                        this.dashboardComponent,
+                        widgetId,
+                        configuratorSource,
+                        tryRemove
+                    );
+                }),
+                takeUntil(this.destroy$)
+            )
+            .subscribe();
     }
 
     public ngOnDestroy(): void {

@@ -133,7 +133,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -208,7 +208,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:7</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:6</a></div>
                             </td>
                         </tr>
 
@@ -235,7 +235,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:8</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/renderers/bar/accessors/horizontal-bar-accessors.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -268,7 +268,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:22</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:36</a></code>
 </div>
                             </td>
                         </tr>
@@ -302,7 +302,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:23</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:37</a></code>
 </div>
                             </td>
                         </tr>
@@ -336,7 +336,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:34</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:40</a></code>
 </div>
                             </td>
                         </tr>
@@ -370,7 +370,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:35</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/BarAccessors.html#source" target="_self" >BarAccessors:41</a></code>
 </div>
                             </td>
                         </tr>
@@ -404,7 +404,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/RectangleAccessors.html#source" target="_self" >RectangleAccessors:34</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/RectangleAccessors.html#source" target="_self" >RectangleAccessors:40</a></code>
 </div>
                             </td>
                         </tr>
@@ -438,7 +438,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/RectangleAccessors.html#source" target="_self" >RectangleAccessors:35</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/RectangleAccessors.html#source" target="_self" >RectangleAccessors:41</a></code>
 </div>
                             </td>
                         </tr>
@@ -460,14 +460,16 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IChartMarker, IValueProvider } from &quot;../../../core/common/types&quot;;
 import { IRectangleSeriesAccessors } from &quot;../../accessors/rectangle-accessors&quot;;
-
 import { BarAccessors, IBarDataAccessors } from &quot;./bar-accessors&quot;;
 
 export class HorizontalBarAccessors extends BarAccessors {
     data: IBarDataAccessors;
     series: IRectangleSeriesAccessors;
 
-    constructor(colorProvider?: IValueProvider&lt;string&gt;, markerProvider?: IValueProvider&lt;IChartMarker&gt;) {
+    constructor(
+        colorProvider?: IValueProvider&lt;string&gt;,
+        markerProvider?: IValueProvider&lt;IChartMarker&gt;
+    ) {
         super(colorProvider, markerProvider);
 
         this.data &#x3D; {
@@ -476,10 +478,12 @@ export class HorizontalBarAccessors extends BarAccessors {
             endX: (d, i, s, ds) &#x3D;&gt; this.data.end(d, i, s, ds),
             startY: (d, i, s, ds) &#x3D;&gt; this.data.category(d, i, s, ds),
             endY: (d, i, s, ds) &#x3D;&gt; this.data.category(d, i, s, ds),
-            thicknessY: (d, i, s, ds) &#x3D;&gt; this.data.thickness ? this.data.thickness(d, i, s, ds) : undefined,
+            thicknessY: (d, i, s, ds) &#x3D;&gt;
+                this.data.thickness
+                    ? this.data.thickness(d, i, s, ds)
+                    : undefined,
         };
     }
-
 }
 </code></pre>
     </div>

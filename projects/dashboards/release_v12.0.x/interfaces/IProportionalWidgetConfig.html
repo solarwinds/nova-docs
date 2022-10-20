@@ -328,13 +328,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IDataField, IDataFieldsConfig } from &quot;@nova-ui/bits&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BehaviorSubject } from &quot;rxjs&quot;;
+
+import { IDataField, IDataFieldsConfig } from &quot;@nova-ui/bits&quot;;
 import { IAllAround, IAccessors, IChartAssistSeries } from &quot;@nova-ui/charts&quot;;
-import { BehaviorSubject } from &quot;rxjs&quot;;
 
 import { IProportionalDonutContentAggregator } from &quot;../../functions/proportional-aggregators/types&quot;;
+import {
+    ILegendPlacementOption,
+    LegendPlacement,
+} from &quot;../../widget-types/common/widget/legend&quot;;
 import { IFormatter, IFormatterDefinition } from &quot;../types&quot;;
-import { ILegendPlacementOption, LegendPlacement } from &quot;../../widget-types/common/widget/legend&quot;
 
 export enum ProportionalWidgetChartTypes {
     DonutChart &#x3D; &quot;DonutChart&quot;,
@@ -395,7 +399,8 @@ export interface IProportionalDataFieldsConfig extends IDataFieldsConfig {
     chartSeriesDataFields$: BehaviorSubject&lt;IDataField[]&gt;;
 }
 
-export interface IProportionalWidgetData extends IChartAssistSeries&lt;IAccessors&gt; {
+export interface IProportionalWidgetData
+    extends IChartAssistSeries&lt;IAccessors&gt; {
     link?: string;
 }
 </code></pre>

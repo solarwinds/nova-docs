@@ -224,7 +224,12 @@ import { ITimeframe } from &quot;./public-api&quot;;
 })
 export class TimeFrameFormatPipe implements PipeTransform {
     transform(timeFrame: ITimeframe, momentFormat: string &#x3D; &quot;LLL&quot;): string {
-        return timeFrame ? timeFrame.title || &#x60;${timeFrame.startDatetime.format(momentFormat)} - ${timeFrame.endDatetime.format(momentFormat)}&#x60; : &quot;&quot;;
+        return timeFrame
+            ? timeFrame.title ||
+                  &#x60;${timeFrame.startDatetime.format(
+                      momentFormat
+                  )} - ${timeFrame.endDatetime.format(momentFormat)}&#x60;
+            : &quot;&quot;;
     }
 }
 </code></pre>

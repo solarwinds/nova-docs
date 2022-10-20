@@ -216,28 +216,15 @@
 import { NgModule } from &quot;@angular/core&quot;;
 
 import { NuiDashboardsCommonModule } from &quot;../common/common.module&quot;;
-
 import { PizzagnaComponent } from &quot;./components/pizzagna/pizzagna.component&quot;;
 import { ComponentPortalDirective } from &quot;./directives/component-portal/component-portal.directive&quot;;
 
 @NgModule({
-    imports: [
-        PortalModule,
-        NuiDashboardsCommonModule,
-    ],
-    declarations: [
-        PizzagnaComponent,
-        ComponentPortalDirective,
-    ],
-    exports: [
-        PortalModule,
-        PizzagnaComponent,
-        ComponentPortalDirective,
-    ],
+    imports: [PortalModule, NuiDashboardsCommonModule],
+    declarations: [PizzagnaComponent, ComponentPortalDirective],
+    exports: [PortalModule, PizzagnaComponent, ComponentPortalDirective],
 })
-export class NuiPizzagnaModule {
-
-}
+export class NuiPizzagnaModule {}
 </code></pre>
     </div>
 </div>

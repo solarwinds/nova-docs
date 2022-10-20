@@ -171,7 +171,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/chart-donut-content/chart-donut-content.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/chart-donut-content/chart-donut-content.component.ts:20</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -213,7 +213,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/chart-donut-content/chart-donut-content.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/chart-donut-content/chart-donut-content.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -232,7 +232,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    Input,
+    OnChanges,
+    OnDestroy,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 import { Subscription } from &quot;rxjs&quot;;
 
 import { ChartDonutContentPlugin } from &quot;../core/plugins/chart-donut-content-plugin&quot;;
@@ -244,7 +250,6 @@ import { IElementPosition } from &quot;../core/plugins/types&quot;;
     styleUrls: [&quot;./chart-donut-content.component.less&quot;],
 })
 export class ChartDonutContentComponent implements OnDestroy, OnChanges {
-
     /** The plugin instance */
     @Input() public plugin: ChartDonutContentPlugin;
 
@@ -257,9 +262,12 @@ export class ChartDonutContentComponent implements OnDestroy, OnChanges {
         if (changes.plugin) {
             this.contentPositionUpdateSubscription?.unsubscribe();
 
-            this.contentPositionUpdateSubscription &#x3D; this.plugin.contentPositionUpdateSubject.subscribe((contentPosition: IElementPosition) &#x3D;&gt; {
-                this.contentPosition &#x3D; contentPosition;
-            });
+            this.contentPositionUpdateSubscription &#x3D;
+                this.plugin.contentPositionUpdateSubject.subscribe(
+                    (contentPosition: IElementPosition) &#x3D;&gt; {
+                        this.contentPosition &#x3D; contentPosition;
+                    }
+                );
 
             this.plugin.chart.updateDimensions();
         }
@@ -284,7 +292,7 @@ export class ChartDonutContentComponent implements OnDestroy, OnChanges {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="plugin && contentPosition"     class="nui-chart-donut-content d-flex justify-content-center align-items-center text-center"     [style.top.px]="contentPosition.top"     [style.left.px]="contentPosition.left"     [style.height.px]="contentPosition.height"     [style.width.px]="contentPosition.width">    <ng-content></ng-content></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div    *ngIf="plugin && contentPosition"    class="nui-chart-donut-content d-flex justify-content-center align-items-center text-center"    [style.top.px]="contentPosition.top"    [style.left.px]="contentPosition.left"    [style.height.px]="contentPosition.height"    [style.width.px]="contentPosition.width">    <ng-content></ng-content></div></div>'
     var COMPONENTS = [{'name': 'BasicLegendTileComponent', 'selector': 'nui-basic-legend-tile'},{'name': 'ChartComponent', 'selector': 'nui-chart'},{'name': 'ChartDonutContentComponent', 'selector': 'nui-chart-donut-content'},{'name': 'ChartMarkerComponent', 'selector': 'nui-chart-marker'},{'name': 'ChartPopoverComponent', 'selector': 'nui-chart-popover'},{'name': 'ChartTooltipComponent', 'selector': 'nui-chart-tooltip'},{'name': 'ChartTooltipsComponent', 'selector': 'nui-chart-tooltips'},{'name': 'LegendComponent', 'selector': 'nui-legend'},{'name': 'LegendSeriesComponent', 'selector': 'nui-legend-series'},{'name': 'RichLegendTileComponent', 'selector': 'nui-rich-legend-tile'}];
     var DIRECTIVES = [{'name': 'ChartCollectionIdDirective', 'selector': '[nuiChartCollectionId]'}];
     var ACTUAL_COMPONENT = {'name': 'ChartDonutContentComponent'};

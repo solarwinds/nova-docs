@@ -144,8 +144,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:132</a></div>
                 </td>
             </tr>
 
@@ -216,8 +216,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:41</a></div>
                 </td>
             </tr>
 
@@ -288,8 +288,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -375,7 +375,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/overlay/overlay-position.service.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/overlay/overlay-position.service.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -388,13 +388,22 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ConnectedOverlayPositionChange, ConnectedPosition, FlexibleConnectedPositionStrategy, OverlayRef } from &quot;@angular/cdk/overlay&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ConnectedOverlayPositionChange,
+    ConnectedPosition,
+    FlexibleConnectedPositionStrategy,
+    OverlayRef,
+} from &quot;@angular/cdk/overlay&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
 import isNil from &quot;lodash/isNil&quot;;
 import { Subscription } from &quot;rxjs&quot;;
 
 import { OVERLAY_ARROW_SIZE } from &quot;./constants&quot;;
-import { IOverlayPositionServiceConfig, OverlayPlacement, OverlayPosition } from &quot;./types&quot;;
+import {
+    IOverlayPositionServiceConfig,
+    OverlayPlacement,
+    OverlayPosition,
+} from &quot;./types&quot;;
 
 enum OverlayPanelClass {
     overlayCenterTop &#x3D; &quot;overlay-center-top&quot;,
@@ -420,24 +429,35 @@ export class OverlayPositionService {
     public config: IOverlayPositionServiceConfig;
 
     public setOverlayPositionConfig(config?: IOverlayPositionServiceConfig) {
-        this.arrowSize &#x3D;  !isNil(config?.arrowSize) ? &lt;number&gt;config?.arrowSize : OVERLAY_ARROW_SIZE;
-        this.arrowPadding &#x3D; !isNil(config?.arrowPadding) ? &lt;number&gt;config?.arrowPadding : 0;
+        this.arrowSize &#x3D; !isNil(config?.arrowSize)
+            ? &lt;number&gt;config?.arrowSize
+            : OVERLAY_ARROW_SIZE;
+        this.arrowPadding &#x3D; !isNil(config?.arrowPadding)
+            ? &lt;number&gt;config?.arrowPadding
+            : 0;
         this.overlayPositions &#x3D; getOverlayPositions();
     }
 
-    public updateOffsetOnPositionChanges(positionStrategy: FlexibleConnectedPositionStrategy, getOverlayRef: () &#x3D;&gt; OverlayRef): Subscription {
-        return positionStrategy.positionChanges
-            .subscribe((connectedPosition: ConnectedOverlayPositionChange) &#x3D;&gt; {
+    public updateOffsetOnPositionChanges(
+        positionStrategy: FlexibleConnectedPositionStrategy,
+        getOverlayRef: () &#x3D;&gt; OverlayRef
+    ): Subscription {
+        return positionStrategy.positionChanges.subscribe(
+            (connectedPosition: ConnectedOverlayPositionChange) &#x3D;&gt; {
                 const overlayRefElement &#x3D; getOverlayRef().overlayElement;
                 const panelClass &#x3D; connectedPosition.connectionPair.panelClass;
                 if (!panelClass) {
                     return;
                 }
                 this.setOverlayOffset(panelClass, overlayRefElement);
-            });
+            }
+        );
     }
 
-    private setOverlayOffset(panelClass: string | string[], overlayRefElement: HTMLElement) {
+    private setOverlayOffset(
+        panelClass: string | string[],
+        overlayRefElement: HTMLElement
+    ) {
         if (Array.isArray(panelClass)) {
             panelClass &#x3D; this.getOverlayPositionPanelClass(panelClass);
         }
@@ -456,22 +476,26 @@ export class OverlayPositionService {
                 overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayTopLeft:
-                overlayRefElement.style.marginRight &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginRight &#x3D;
+                    2 * this.arrowPadding + &quot;px&quot;;
                 overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayTopRight:
-                overlayRefElement.style.marginLeft &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginLeft &#x3D;
+                    2 * this.arrowPadding + &quot;px&quot;;
                 overlayRefElement.style.marginBottom &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayCenterBottom:
                 overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayBottomRight:
-                overlayRefElement.style.marginLeft &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginLeft &#x3D;
+                    2 * this.arrowPadding + &quot;px&quot;;
                 overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayBottomLeft:
-                overlayRefElement.style.marginRight &#x3D; 2 * this.arrowPadding + &quot;px&quot;;
+                overlayRefElement.style.marginRight &#x3D;
+                    2 * this.arrowPadding + &quot;px&quot;;
                 overlayRefElement.style.marginTop &#x3D; this.arrowSize + &quot;px&quot;;
                 break;
             case OverlayPanelClass.overlayCenterLeft:
@@ -495,7 +519,9 @@ export class OverlayPositionService {
         }
     }
 
-    public getPossiblePositionsForPlacement(placement: OverlayPlacement): ConnectedPosition[] {
+    public getPossiblePositionsForPlacement(
+        placement: OverlayPlacement
+    ): ConnectedPosition[] {
         const possiblePositions: ConnectedPosition[] &#x3D; [];
 
         // add positions for the requested placement
@@ -541,7 +567,7 @@ export class OverlayPositionService {
         let result;
         for (const panelClassKey in OverlayPanelClass) {
             if (OverlayPanelClass.hasOwnProperty(panelClassKey)) {
-                result &#x3D; panelClass.find(i &#x3D;&gt; i &#x3D;&#x3D;&#x3D; panelClassKey);
+                result &#x3D; panelClass.find((i) &#x3D;&gt; i &#x3D;&#x3D;&#x3D; panelClassKey);
             }
         }
         return result || &quot;&quot;;
@@ -554,7 +580,9 @@ export class OverlayPositionService {
      * @param placement
      * @returns ConnectedPosition[]
      */
-    private getPositionsForPlacement(placement: OverlayPlacement): ConnectedPosition[] {
+    private getPositionsForPlacement(
+        placement: OverlayPlacement
+    ): ConnectedPosition[] {
         let possiblePositionNames: OverlayPosition[] &#x3D; [];
         switch (placement) {
             case OverlayPlacement.Left:
@@ -593,11 +621,17 @@ export class OverlayPositionService {
                 throw new Error(&#x60;Custom position should be handled by user&#x60;);
         }
 
-        return possiblePositionNames.map((positionName: OverlayPosition) &#x3D;&gt; this.overlayPositions[positionName]);
+        return possiblePositionNames.map(
+            (positionName: OverlayPosition) &#x3D;&gt;
+                this.overlayPositions[positionName]
+        );
     }
 }
 
-export function getOverlayPositions(): Record&lt;OverlayPosition, ConnectedPosition&gt; {
+export function getOverlayPositions(): Record&lt;
+    OverlayPosition,
+    ConnectedPosition
+&gt; {
     return {
         // TOP
         [OverlayPosition.centerTop]: {

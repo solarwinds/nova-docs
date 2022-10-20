@@ -152,7 +152,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/thresholds/thresholds-service.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/thresholds/thresholds-service.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -219,8 +219,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:105</a></div>
                 </td>
             </tr>
 
@@ -350,7 +350,9 @@ If a status is not specified in the map, the default thickness is the full heigh
                                     </td>
 
                                     <td>
-                                        <code>cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG)</code>
+                                        <code>cloneDeep(
+            THRESHOLDS_MAIN_CHART_RENDERER_CONFIG
+        )</code>
                                     </td>
 
                                     <td>
@@ -398,8 +400,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="295"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:295</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="415"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:415</a></div>
                 </td>
             </tr>
 
@@ -526,8 +528,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="363"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:363</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="520"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:520</a></div>
                 </td>
             </tr>
 
@@ -622,8 +624,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="374"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:374</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="540"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:540</a></div>
                 </td>
             </tr>
 
@@ -733,8 +735,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="261"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:261</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="377"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:377</a></div>
                 </td>
             </tr>
 
@@ -851,8 +853,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="229"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:229</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="323"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:323</a></div>
                 </td>
             </tr>
 
@@ -930,8 +932,8 @@ If a status is not specified in the map, the default thickness is the full heigh
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="205"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:205</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="298"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:298</a></div>
                 </td>
             </tr>
 
@@ -1043,8 +1045,8 @@ start or end value indicates an infinite zone.)</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="40"
-                            class="link-to-prism">src/thresholds/thresholds-service.ts:40</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/thresholds/thresholds-service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -1148,7 +1150,7 @@ calculation, but also in other places, like legend or tooltips.</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/thresholds/thresholds-service.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/thresholds/thresholds-service.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -1162,24 +1164,42 @@ calculation, but also in other places, like legend or tooltips.</p>
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
 import { Numeric } from &quot;d3-array&quot;;
 import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import sortBy from &quot;lodash/sortBy&quot;;
 import unionWith from &quot;lodash/unionWith&quot;;
 import values from &quot;lodash/values&quot;;
 
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
+
 import { isBandScale, Scales } from &quot;../core/common/scales/types&quot;;
-import { DataAccessor, IChartAssistSeries, IDataSeries, IPosition, IRendererConfig, IValueProvider, IZoneCrossPoint } from &quot;../core/common/types&quot;;
-import { AreaAccessors, IAreaAccessors } from &quot;../renderers/area/area-accessors&quot;;
+import {
+    DataAccessor,
+    IChartAssistSeries,
+    IDataSeries,
+    IPosition,
+    IRendererConfig,
+    IValueProvider,
+    IZoneCrossPoint,
+} from &quot;../core/common/types&quot;;
+import {
+    AreaAccessors,
+    IAreaAccessors,
+} from &quot;../renderers/area/area-accessors&quot;;
 import { IStatusAccessors } from &quot;../renderers/bar/accessors/status-accessors&quot;;
 import { statusAccessors } from &quot;../renderers/bar/accessors/status-accessors-fn&quot;;
 import { BarRenderer } from &quot;../renderers/bar/bar-renderer&quot;;
 import { THRESHOLDS_MAIN_CHART_RENDERER_CONFIG } from &quot;../renderers/constants&quot;;
-import { ILineAccessors, LineAccessors } from &quot;../renderers/line/line-accessors&quot;;
+import {
+    ILineAccessors,
+    LineAccessors,
+} from &quot;../renderers/line/line-accessors&quot;;
 import { LineRenderer } from &quot;../renderers/line/line-renderer&quot;;
-import { ISideIndicatorAccessors, SideIndicatorAccessors, SideIndicatorRenderer } from &quot;../renderers/side-indicator-renderer&quot;;
-
+import {
+    ISideIndicatorAccessors,
+    SideIndicatorAccessors,
+    SideIndicatorRenderer,
+} from &quot;../renderers/side-indicator-renderer&quot;;
 import { ISimpleThresholdZone, ZoneBoundary, ZoneCross } from &quot;./types&quot;;
 
 /**
@@ -1189,8 +1209,7 @@ import { ISimpleThresholdZone, ZoneBoundary, ZoneCross } from &quot;./types&quot
 export class ThresholdsService {
     public static SERIES_ID_SUFFIX &#x3D; &quot;__thresholds-background&quot;;
 
-    constructor(private loggerService: LoggerService) {
-    }
+    constructor(private loggerService: LoggerService) {}
 
     /**
      * Calculates the threshold &quot;statuses&quot; - from/to and what zone we&#x27;re in. It is the first step that is required before the usage of other methods. Having
@@ -1200,15 +1219,27 @@ export class ThresholdsService {
      * @param dataSeries source data series that will be enhanced with threshold metadata
      * @param zones zones defined as data series with IAreaAccessors
      */
-    public injectThresholdsData(dataSeries: IDataSeries&lt;ILineAccessors&gt;,
-                                zones: IDataSeries&lt;IAreaAccessors&gt;[]) {
+    public injectThresholdsData(
+        dataSeries: IDataSeries&lt;ILineAccessors&gt;,
+        zones: IDataSeries&lt;IAreaAccessors&gt;[]
+    ) {
         const zoneIndexes: Record&lt;string, number&gt; &#x3D; {};
-        zones.forEach(z &#x3D;&gt; z.entered &#x3D; false);
+        zones.forEach((z) &#x3D;&gt; (z.entered &#x3D; false));
 
         for (let i &#x3D; 0; i &lt; dataSeries.data.length; i++) {
             const d &#x3D; dataSeries.data[i];
-            const x: Numeric &#x3D; dataSeries.accessors.data.x(d, i, dataSeries.data, dataSeries);
-            const y: Numeric &#x3D; dataSeries.accessors.data.y(d, i, dataSeries.data, dataSeries);
+            const x: Numeric &#x3D; dataSeries.accessors.data.x(
+                d,
+                i,
+                dataSeries.data,
+                dataSeries
+            );
+            const y: Numeric &#x3D; dataSeries.accessors.data.y(
+                d,
+                i,
+                dataSeries.data,
+                dataSeries
+            );
 
             d.__thresholds &#x3D; {};
 
@@ -1236,14 +1267,24 @@ export class ThresholdsService {
      *                     If a status is not specified in the map, the default thickness is the full height of the rendering area.
      * @param rendererConfig The renderer&#x27;s configuration
      */
-    public getBackgrounds(sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
-                          zones: IDataSeries&lt;IAreaAccessors&gt;[],
-                          scales: Scales,
-                          colorProvider: IValueProvider&lt;string&gt;,
-                          thicknessMap: Record&lt;string, number&gt; &#x3D; {},
-                          rendererConfig: IRendererConfig &#x3D; cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG)): IChartAssistSeries&lt;IStatusAccessors&gt; {
-        if (sourceSeries.data.length &gt; 0 &amp;&amp; typeof sourceSeries.data[0].__thresholds &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
-            this.loggerService.warn(&quot;Thresholds metadata is not defined on provided data series&quot;, sourceSeries);
+    public getBackgrounds(
+        sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+        zones: IDataSeries&lt;IAreaAccessors&gt;[],
+        scales: Scales,
+        colorProvider: IValueProvider&lt;string&gt;,
+        thicknessMap: Record&lt;string, number&gt; &#x3D; {},
+        rendererConfig: IRendererConfig &#x3D; cloneDeep(
+            THRESHOLDS_MAIN_CHART_RENDERER_CONFIG
+        )
+    ): IChartAssistSeries&lt;IStatusAccessors&gt; {
+        if (
+            sourceSeries.data.length &gt; 0 &amp;&amp;
+            typeof sourceSeries.data[0].__thresholds &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+        ) {
+            this.loggerService.warn(
+                &quot;Thresholds metadata is not defined on provided data series&quot;,
+                sourceSeries
+            );
         }
 
         let data: any[];
@@ -1253,11 +1294,17 @@ export class ThresholdsService {
             data &#x3D; cloneDeep(sourceSeries.data);
             accessors.data.start &#x3D; sourceSeries.accessors.data.x;
             accessors.data.end &#x3D; sourceSeries.accessors.data.x;
-            accessors.data.color &#x3D; (d) &#x3D;&gt; (d.__thresholds &amp;&amp; d.__thresholds.status) ?
-                colorProvider.get(d.__thresholds.status) : &quot;transparent&quot;;
-            accessors.data.thickness &#x3D; (d) &#x3D;&gt; thicknessMap[d.__thresholds.status];
+            accessors.data.color &#x3D; (d) &#x3D;&gt;
+                d.__thresholds &amp;&amp; d.__thresholds.status
+                    ? colorProvider.get(d.__thresholds.status)
+                    : &quot;transparent&quot;;
+            accessors.data.thickness &#x3D; (d) &#x3D;&gt;
+                thicknessMap[d.__thresholds.status];
         } else {
-            data &#x3D; this.getBackgroundsDataForContinuousScale(sourceSeries, zones);
+            data &#x3D; this.getBackgroundsDataForContinuousScale(
+                sourceSeries,
+                zones
+            );
         }
         return {
             id: sourceSeries.id + ThresholdsService.SERIES_ID_SUFFIX,
@@ -1275,7 +1322,10 @@ export class ThresholdsService {
      * @param sourceSeries source data series from which to derive background data
      * @param zones zones defined as data series with IAreaAccessors
      */
-    private getBackgroundsDataForContinuousScale(sourceSeries: IDataSeries&lt;ILineAccessors&gt;, zones: IDataSeries&lt;IAreaAccessors&gt;[]) {
+    private getBackgroundsDataForContinuousScale(
+        sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+        zones: IDataSeries&lt;IAreaAccessors&gt;[]
+    ) {
         const backgroundData: ZoneCross[] &#x3D; [];
         const breakPoints &#x3D; this.getBreakPoints(sourceSeries, zones);
 
@@ -1288,16 +1338,32 @@ export class ThresholdsService {
                 throw new Error(&quot;p1 or p2 are undefined&quot;);
             }
 
-            const midPoint: IPosition &#x3D; { x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
+            const midPoint: IPosition &#x3D; {
+                x: (p1.x + p2.x) / 2,
+                y: (p1.y + p2.y) / 2,
+            };
 
-            const zone &#x3D; this.getZoneByXY(zones, zoneIndexes, midPoint.x, midPoint.y);
+            const zone &#x3D; this.getZoneByXY(
+                zones,
+                zoneIndexes,
+                midPoint.x,
+                midPoint.y
+            );
             if (zone) {
                 const lastBgPoint &#x3D; backgroundData[backgroundData.length - 1];
-                if (lastBgPoint &amp;&amp; lastBgPoint.end?.valueOf() &#x3D;&#x3D;&#x3D; p1.x &amp;&amp; lastBgPoint.status &#x3D;&#x3D;&#x3D; zone.value) {
+                if (
+                    lastBgPoint &amp;&amp;
+                    lastBgPoint.end?.valueOf() &#x3D;&#x3D;&#x3D; p1.x &amp;&amp;
+                    lastBgPoint.status &#x3D;&#x3D;&#x3D; zone.value
+                ) {
                     // Extend previous data point instead of creating a new one
                     lastBgPoint.end &#x3D; new Date(p2.x);
                 } else {
-                    backgroundData.push({ status: zone.value, start: new Date(p1.x), end: new Date(p2.x) });
+                    backgroundData.push({
+                        status: zone.value,
+                        start: new Date(p1.x),
+                        end: new Date(p2.x),
+                    });
                 }
             }
         }
@@ -1310,7 +1376,10 @@ export class ThresholdsService {
      * @param sourceSeries source data series from which to derive the break points
      * @param zones zones defined as data series with IAreaAccessors
      */
-    private getBreakPoints(sourceSeries: IDataSeries&lt;ILineAccessors&gt;, zones: IDataSeries&lt;IAreaAccessors&gt;[]): (IZoneCrossPoint | undefined)[] {
+    private getBreakPoints(
+        sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+        zones: IDataSeries&lt;IAreaAccessors&gt;[]
+    ): (IZoneCrossPoint | undefined)[] {
         const sourceAccessors &#x3D; sourceSeries.accessors.data;
 
         let breakPoints: (IZoneCrossPoint | undefined)[] &#x3D; [];
@@ -1322,12 +1391,20 @@ export class ThresholdsService {
 
             // calculate their positions
             const xy1: IZoneCrossPoint &#x3D; {
-                x: sourceAccessors.x(d1, i, sourceSeries.data, sourceSeries).valueOf(),
-                y: sourceAccessors.y(d1, i, sourceSeries.data, sourceSeries).valueOf(),
+                x: sourceAccessors
+                    .x(d1, i, sourceSeries.data, sourceSeries)
+                    .valueOf(),
+                y: sourceAccessors
+                    .y(d1, i, sourceSeries.data, sourceSeries)
+                    .valueOf(),
             };
             const xy2: IZoneCrossPoint &#x3D; {
-                x: sourceAccessors.x(d2, i + 1, sourceSeries.data, sourceSeries).valueOf(),
-                y: sourceAccessors.y(d2, i + 1, sourceSeries.data, sourceSeries).valueOf(),
+                x: sourceAccessors
+                    .x(d2, i + 1, sourceSeries.data, sourceSeries)
+                    .valueOf(),
+                y: sourceAccessors
+                    .y(d2, i + 1, sourceSeries.data, sourceSeries)
+                    .valueOf(),
             };
 
             // try every zone to see if it&#x27;s limits intersect the line between our two data points
@@ -1335,12 +1412,25 @@ export class ThresholdsService {
                 const zone &#x3D; zones[j];
 
                 // TODO: so far only works with constant thresholds
-                const zoneStartY &#x3D; zone.accessors.data.start?.(zone.data[0], 0, zone.data, zone);
-                const zoneEndY &#x3D; zone.accessors.data.end?.(zone.data[0], 0, zone.data, zone);
+                const zoneStartY &#x3D; zone.accessors.data.start?.(
+                    zone.data[0],
+                    0,
+                    zone.data,
+                    zone
+                );
+                const zoneEndY &#x3D; zone.accessors.data.end?.(
+                    zone.data[0],
+                    0,
+                    zone.data,
+                    zone
+                );
 
-                const zoneCrossPoints: (IZoneCrossPoint | undefined)[] &#x3D; [zoneStartY, zoneEndY]
-                    .map(y &#x3D;&gt; this.getCrossPointWithY(xy1, xy2, y)) // calculate cross points for both limits
-                    .filter(c &#x3D;&gt; c); // take only those that actually intersect
+                const zoneCrossPoints: (IZoneCrossPoint | undefined)[] &#x3D; [
+                    zoneStartY,
+                    zoneEndY,
+                ]
+                    .map((y) &#x3D;&gt; this.getCrossPointWithY(xy1, xy2, y)) // calculate cross points for both limits
+                    .filter((c) &#x3D;&gt; c); // take only those that actually intersect
 
                 [xy1, xy2].forEach((xy) &#x3D;&gt; {
                     if (xy.y &#x3D;&#x3D;&#x3D; zoneStartY || xy.y &#x3D;&#x3D;&#x3D; zoneEndY) {
@@ -1349,7 +1439,12 @@ export class ThresholdsService {
                 });
 
                 // add all crossPoints, dataPoints, but only those with unique &quot;x&quot; coordinate
-                breakPoints &#x3D; unionWith(breakPoints, zoneCrossPoints, [xy1, xy2], (a, b) &#x3D;&gt; a?.x &#x3D;&#x3D;&#x3D; b?.x &amp;&amp; a?.isZoneEdge &#x3D;&#x3D;&#x3D; b?.isZoneEdge);
+                breakPoints &#x3D; unionWith(
+                    breakPoints,
+                    zoneCrossPoints,
+                    [xy1, xy2],
+                    (a, b) &#x3D;&gt; a?.x &#x3D;&#x3D;&#x3D; b?.x &amp;&amp; a?.isZoneEdge &#x3D;&#x3D;&#x3D; b?.isZoneEdge
+                );
             }
         }
 
@@ -1365,20 +1460,21 @@ export class ThresholdsService {
      start or end value indicates an infinite zone.)
      * @param colorProvider A value provider for the colors to be used for each status
      */
-    public getThresholdZones(sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
-                             simpleZones: ISimpleThresholdZone[],
-                             colorProvider: IValueProvider&lt;string&gt;): IDataSeries&lt;IAreaAccessors&gt;[] {
+    public getThresholdZones(
+        sourceSeries: IDataSeries&lt;ILineAccessors&gt;,
+        simpleZones: ISimpleThresholdZone[],
+        colorProvider: IValueProvider&lt;string&gt;
+    ): IDataSeries&lt;IAreaAccessors&gt;[] {
         const areaAccessors &#x3D; new AreaAccessors();
         areaAccessors.data.start &#x3D; (d) &#x3D;&gt; d.start;
         areaAccessors.data.end &#x3D; (d) &#x3D;&gt; d.end;
-        areaAccessors.series.color &#x3D; (seriesId, series) &#x3D;&gt; colorProvider.get(series.value);
+        areaAccessors.series.color &#x3D; (seriesId, series) &#x3D;&gt;
+            colorProvider.get(series.value);
 
         return simpleZones.map((z, i) &#x3D;&gt; ({
             id: sourceSeries.id + &quot;__&quot; + z.status + &quot;-&quot; + i,
             value: z.status,
-            data: [
-                { start: z.start, end: z.end },
-            ],
+            data: [{ start: z.start, end: z.end }],
             scales: sourceSeries.scales,
             accessors: areaAccessors,
         }));
@@ -1389,17 +1485,33 @@ export class ThresholdsService {
      *
      * @param zones Zones defined as data series with IAreaAccessors
      */
-    public getThresholdLines(zones: IDataSeries&lt;IAreaAccessors&gt;[]): IChartAssistSeries&lt;ILineAccessors&gt;[] {
-        if (-1 &#x3D;&#x3D;&#x3D; zones.findIndex(z &#x3D;&gt; z.entered)) {
+    public getThresholdLines(
+        zones: IDataSeries&lt;IAreaAccessors&gt;[]
+    ): IChartAssistSeries&lt;ILineAccessors&gt;[] {
+        if (-1 &#x3D;&#x3D;&#x3D; zones.findIndex((z) &#x3D;&gt; z.entered)) {
             return [];
         }
 
         // TODO: works only for static thresholds
-        const limits: Record&lt;number, { series: IDataSeries&lt;IAreaAccessors&gt;, accessor: DataAccessor, zoneBoundary: ZoneBoundary }&gt; &#x3D; {};
+        const limits: Record&lt;
+            number,
+            {
+                series: IDataSeries&lt;IAreaAccessors&gt;;
+                accessor: DataAccessor;
+                zoneBoundary: ZoneBoundary;
+            }
+        &gt; &#x3D; {};
 
-        function addLimitEntry(accessor: DataAccessor, zone: IDataSeries&lt;IAreaAccessors&gt;, zoneBoundary: ZoneBoundary) {
+        function addLimitEntry(
+            accessor: DataAccessor,
+            zone: IDataSeries&lt;IAreaAccessors&gt;,
+            zoneBoundary: ZoneBoundary
+        ) {
             const value &#x3D; accessor(zone.data[0], 0, zone.data, zone);
-            if (typeof value !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp; typeof limits[value] &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
+            if (
+                typeof value !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+                typeof limits[value] &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+            ) {
                 limits[value] &#x3D; { series: zone, accessor, zoneBoundary };
             }
         }
@@ -1411,7 +1523,13 @@ export class ThresholdsService {
             }
         }
 
-        return values(limits).map((limit) &#x3D;&gt; this.getThresholdLine(limit.series, limit.accessor, limit.zoneBoundary));
+        return values(limits).map((limit) &#x3D;&gt;
+            this.getThresholdLine(
+                limit.series,
+                limit.accessor,
+                limit.zoneBoundary
+            )
+        );
     }
 
     /**
@@ -1421,9 +1539,11 @@ export class ThresholdsService {
      * @param valueAccessor Accessor for the threshold limit
      * @param zoneBoundary The zone boundary represented by the line. Default is ZoneBoundary.Start.
      */
-    public getThresholdLine(zone: IDataSeries&lt;IAreaAccessors&gt;,
-                            valueAccessor: DataAccessor,
-                            zoneBoundary &#x3D; ZoneBoundary.Start): IChartAssistSeries&lt;ILineAccessors&gt; {
+    public getThresholdLine(
+        zone: IDataSeries&lt;IAreaAccessors&gt;,
+        valueAccessor: DataAccessor,
+        zoneBoundary &#x3D; ZoneBoundary.Start
+    ): IChartAssistSeries&lt;ILineAccessors&gt; {
         const accessors &#x3D; new LineAccessors();
         accessors.data.y &#x3D; valueAccessor;
         accessors.series.color &#x3D; zone.accessors.series.color;
@@ -1431,7 +1551,9 @@ export class ThresholdsService {
             interactive: false,
             strokeWidth: 1,
             strokeStyle: LineRenderer.getStrokeStyleDashed(1),
-            stateStyles: cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG.stateStyles),
+            stateStyles: cloneDeep(
+                THRESHOLDS_MAIN_CHART_RENDERER_CONFIG.stateStyles
+            ),
             ignoreForDomainCalculation: true,
         });
 
@@ -1455,8 +1577,12 @@ export class ThresholdsService {
      * @param {IPosition} thresholdTo Threshold ending point
      * @returns {IPosition} the position of the cross point or &#x60;null&#x60; if lines don&#x27;t cross
      */
-    public getCrossPoint(dataFrom: IPosition, dataTo: IPosition,
-                         thresholdFrom: IPosition, thresholdTo: IPosition): IPosition | undefined {
+    public getCrossPoint(
+        dataFrom: IPosition,
+        dataTo: IPosition,
+        thresholdFrom: IPosition,
+        thresholdTo: IPosition
+    ): IPosition | undefined {
         /* Inspired by https://stackoverflow.com/a/1968345 */
         const dataShift: IPosition &#x3D; {
             x: dataTo.x - dataFrom.x,
@@ -1466,10 +1592,14 @@ export class ThresholdsService {
             x: thresholdTo.x - thresholdFrom.x,
             y: thresholdTo.y - thresholdFrom.y,
         };
-        const s &#x3D; (-dataShift.y * (dataFrom.x - thresholdFrom.x) + dataShift.x * (dataFrom.y - thresholdFrom.y))
-            / (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
-        const t &#x3D; (thresholdShift.x * (dataFrom.y - thresholdFrom.y) - thresholdShift.y * (dataFrom.x - thresholdFrom.x))
-            / (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
+        const s &#x3D;
+            (-dataShift.y * (dataFrom.x - thresholdFrom.x) +
+                dataShift.x * (dataFrom.y - thresholdFrom.y)) /
+            (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
+        const t &#x3D;
+            (thresholdShift.x * (dataFrom.y - thresholdFrom.y) -
+                thresholdShift.y * (dataFrom.x - thresholdFrom.x)) /
+            (-thresholdShift.x * dataShift.y + dataShift.x * thresholdShift.y);
 
         if (!(s &gt;&#x3D; 0 &amp;&amp; s &lt;&#x3D; 1 &amp;&amp; t &gt;&#x3D; 0 &amp;&amp; t &lt;&#x3D; 1)) {
             // No cross point detected
@@ -1477,8 +1607,8 @@ export class ThresholdsService {
         }
 
         return {
-            x: dataFrom.x + (t * dataShift.x),
-            y: dataFrom.y + (t * dataShift.y),
+            x: dataFrom.x + t * dataShift.x,
+            y: dataFrom.y + t * dataShift.y,
         };
     }
 
@@ -1492,7 +1622,12 @@ export class ThresholdsService {
      * @param x The x value of the zone
      * @param y The y value of the zone
      */
-    private getZoneByXY(zones: IDataSeries&lt;IAreaAccessors&gt;[], zoneIndexes: Record&lt;string, number&gt;, x: Numeric, y: Numeric) {
+    private getZoneByXY(
+        zones: IDataSeries&lt;IAreaAccessors&gt;[],
+        zoneIndexes: Record&lt;string, number&gt;,
+        x: Numeric,
+        y: Numeric
+    ) {
         for (const zone of zones) {
             if (!zoneIndexes[zone.id]) {
                 zoneIndexes[zone.id] &#x3D; 0;
@@ -1504,27 +1639,60 @@ export class ThresholdsService {
             const zoneDataPoint &#x3D; zone.data[zoneIndex];
 
             const zDataAccessors &#x3D; zone.accessors.data;
-            const start &#x3D; zDataAccessors.start?.(zoneDataPoint, zoneIndex, zone.data, zone);
-            const end &#x3D; zDataAccessors.end?.(zoneDataPoint, zoneIndex, zone.data, zone);
+            const start &#x3D; zDataAccessors.start?.(
+                zoneDataPoint,
+                zoneIndex,
+                zone.data,
+                zone
+            );
+            const end &#x3D; zDataAccessors.end?.(
+                zoneDataPoint,
+                zoneIndex,
+                zone.data,
+                zone
+            );
 
             // TODO: this is not going to work for dynamic thresholds, so still have some work to do here
-            if ((typeof start &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &gt;&#x3D; start) &amp;&amp;
-                (typeof end &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &lt;&#x3D; end)) {
+            if (
+                (typeof start &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &gt;&#x3D; start) &amp;&amp;
+                (typeof end &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || y &lt;&#x3D; end)
+            ) {
                 return zone;
             }
         }
         return null;
     }
 
-    private moveZoneIndex(zoneIndex: number, zone: IDataSeries&lt;IAreaAccessors&gt;, x: Numeric) {
-        while (zoneIndex &lt; zone.data.length - 1 &amp;&amp; zone.accessors.data.x(zone.data[zoneIndex + 1], zoneIndex + 1, zone.data, zone) &lt; x) {
+    private moveZoneIndex(
+        zoneIndex: number,
+        zone: IDataSeries&lt;IAreaAccessors&gt;,
+        x: Numeric
+    ) {
+        while (
+            zoneIndex &lt; zone.data.length - 1 &amp;&amp;
+            zone.accessors.data.x(
+                zone.data[zoneIndex + 1],
+                zoneIndex + 1,
+                zone.data,
+                zone
+            ) &lt; x
+        ) {
             zoneIndex++;
         }
         return zoneIndex;
     }
 
-    public getCrossPointWithY(dataFrom: IPosition, dataTo: IPosition, y: number) {
-        return this.getCrossPoint(dataFrom, dataTo, { x: dataFrom.x, y }, { x: dataTo.x, y });
+    public getCrossPointWithY(
+        dataFrom: IPosition,
+        dataTo: IPosition,
+        y: number
+    ) {
+        return this.getCrossPoint(
+            dataFrom,
+            dataTo,
+            { x: dataFrom.x, y },
+            { x: dataTo.x, y }
+        );
     }
 
     /**
@@ -1534,12 +1702,17 @@ export class ThresholdsService {
      * @param scales The scales to be used for the side indicators
      * @param rendererConfig Configuration for the renderer. Default is the exported constant &#x27;THRESHOLDS_MAIN_CHART_RENDERER_CONFIG&#x27;
      */
-    public getSideIndicators(zones: IDataSeries&lt;IAreaAccessors&gt;[],
-                             scales: Scales,
-                             rendererConfig?: IRendererConfig): IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] {
-        const sideIndicators: IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] &#x3D; [];
-        const renderer &#x3D; new SideIndicatorRenderer(rendererConfig || cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG));
-        const indicatorsActive &#x3D; -1 !&#x3D;&#x3D; zones.findIndex(z &#x3D;&gt; z.entered);
+    public getSideIndicators(
+        zones: IDataSeries&lt;IAreaAccessors&gt;[],
+        scales: Scales,
+        rendererConfig?: IRendererConfig
+    ): IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] {
+        const sideIndicators: IChartAssistSeries&lt;ISideIndicatorAccessors&gt;[] &#x3D;
+            [];
+        const renderer &#x3D; new SideIndicatorRenderer(
+            rendererConfig || cloneDeep(THRESHOLDS_MAIN_CHART_RENDERER_CONFIG)
+        );
+        const indicatorsActive &#x3D; -1 !&#x3D;&#x3D; zones.findIndex((z) &#x3D;&gt; z.entered);
         for (const z of zones) {
             const sideIndicatorAccessors &#x3D; new SideIndicatorAccessors();
             sideIndicatorAccessors.series &#x3D; {
@@ -1562,7 +1735,6 @@ export class ThresholdsService {
 
         return sideIndicators;
     }
-
 }
 </code></pre>
     </div>

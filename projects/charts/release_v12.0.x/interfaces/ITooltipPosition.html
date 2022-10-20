@@ -146,11 +146,22 @@ import values from &quot;lodash/values&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { CHART_VIEW_STATUS_EVENT, INTERACTION_DATA_POINTS_EVENT, SERIES_STATE_CHANGE_EVENT } from &quot;../../../constants&quot;;
+import {
+    CHART_VIEW_STATUS_EVENT,
+    INTERACTION_DATA_POINTS_EVENT,
+    SERIES_STATE_CHANGE_EVENT,
+} from &quot;../../../constants&quot;;
 import { RenderState } from &quot;../../../renderers/types&quot;;
 import { ChartPlugin } from &quot;../../common/chart-plugin&quot;;
 import {
-    IAccessors, IChartEvent, IChartSeries, IChartViewStatusEventPayload, IDataPoint, IDataPointsPayload, InteractionType, IPosition,
+    IAccessors,
+    IChartEvent,
+    IChartSeries,
+    IChartViewStatusEventPayload,
+    IDataPoint,
+    IDataPointsPayload,
+    InteractionType,
+    IPosition,
     IRenderStateData,
 } from &quot;../../common/types&quot;;
 
@@ -164,42 +175,47 @@ export const TOOLTIP_POSITION_OFFSET &#x3D; 10;
 
 /** @ignore
  * Used for charts where tooltips should be placed aside of some vertical line */
-export const getVerticalSetup &#x3D; (offset: number): ConnectedPosition[] &#x3D;&gt; [{
-    originX: &quot;end&quot;,
-    originY: &quot;top&quot;,
-    overlayX: &quot;start&quot;,
-    overlayY: &quot;center&quot;,
-    offsetX: offset,
-}, {
-    originX: &quot;start&quot;,
-    originY: &quot;center&quot;,
-    overlayX: &quot;end&quot;,
-    overlayY: &quot;center&quot;,
-    offsetX: -offset,
-}];
+export const getVerticalSetup &#x3D; (offset: number): ConnectedPosition[] &#x3D;&gt; [
+    {
+        originX: &quot;end&quot;,
+        originY: &quot;top&quot;,
+        overlayX: &quot;start&quot;,
+        overlayY: &quot;center&quot;,
+        offsetX: offset,
+    },
+    {
+        originX: &quot;start&quot;,
+        originY: &quot;center&quot;,
+        overlayX: &quot;end&quot;,
+        overlayY: &quot;center&quot;,
+        offsetX: -offset,
+    },
+];
 
 /** @ignore
  * Used for charts where tooltips should be placed aligned to some horizontal line (as Horizontal Bar Charts) */
-export const getHorizontalSetup &#x3D; (offset: number): ConnectedPosition[] &#x3D;&gt; [{
-    originX: &quot;end&quot;,
-    originY: &quot;top&quot;,
-    overlayX: &quot;center&quot;,
-    overlayY: &quot;bottom&quot;,
-    offsetY: -offset,
-}, {
-    originX: &quot;end&quot;,
-    originY: &quot;bottom&quot;,
-    overlayX: &quot;center&quot;,
-    overlayY: &quot;top&quot;,
-    offsetY: offset,
-}];
+export const getHorizontalSetup &#x3D; (offset: number): ConnectedPosition[] &#x3D;&gt; [
+    {
+        originX: &quot;end&quot;,
+        originY: &quot;top&quot;,
+        overlayX: &quot;center&quot;,
+        overlayY: &quot;bottom&quot;,
+        offsetY: -offset,
+    },
+    {
+        originX: &quot;end&quot;,
+        originY: &quot;bottom&quot;,
+        overlayX: &quot;center&quot;,
+        overlayY: &quot;top&quot;,
+        offsetY: offset,
+    },
+];
 
 /**
  * This plugin listens to the INTERACTION_DATA_POINTS_EVENT and transforms received data into tooltips inputs.
  * The actual tooltips are handled by the ChartTooltipsComponent.
  */
 export class ChartTooltipsPlugin extends ChartPlugin {
-
     /** Highlighted data points received from the chart */
     public dataPoints: IDataPointsPayload;
     /** Calculated positions for the data point tooltips */
@@ -219,14 +235,16 @@ export class ChartTooltipsPlugin extends ChartPlugin {
 
     private isChartInView &#x3D; false;
     private destroy$ &#x3D; new Subject();
-    private seriesVisibilityMap:  Record&lt;string, boolean&gt; &#x3D; {};
+    private seriesVisibilityMap: Record&lt;string, boolean&gt; &#x3D; {};
 
     /**
      * @param tooltipPositionOffset Offset of a tooltip from edge of a highlighted element
      * @param orientation
      */
-    constructor(readonly tooltipPositionOffset: number &#x3D; TOOLTIP_POSITION_OFFSET,
-        public orientation: &quot;right&quot; | &quot;top&quot; &#x3D; &quot;right&quot;) {
+    constructor(
+        readonly tooltipPositionOffset: number &#x3D; TOOLTIP_POSITION_OFFSET,
+        public orientation: &quot;right&quot; | &quot;top&quot; &#x3D; &quot;right&quot;
+    ) {
         super();
 
         if (orientation &#x3D;&#x3D;&#x3D; &quot;right&quot;) {
@@ -237,24 +255,35 @@ export class ChartTooltipsPlugin extends ChartPlugin {
     }
 
     public initialize(): void {
-        this.chart.getEventBus().getStream(INTERACTION_DATA_POINTS_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_DATA_POINTS_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent) &#x3D;&gt; {
-                if (event.data.interactionType &#x3D;&#x3D;&#x3D; InteractionType.MouseMove &amp;&amp; this.isChartInView) {
-                    const dataPoints: IDataPointsPayload &#x3D; event.data.dataPoints;
+                if (
+                    event.data.interactionType &#x3D;&#x3D;&#x3D; InteractionType.MouseMove &amp;&amp;
+                    this.isChartInView
+                ) {
+                    const dataPoints: IDataPointsPayload &#x3D;
+                        event.data.dataPoints;
                     this.processHighlightedDataPoints(dataPoints);
                 }
             });
-        
-        this.chart.getEventBus().getStream(SERIES_STATE_CHANGE_EVENT)
+
+        this.chart
+            .getEventBus()
+            .getStream(SERIES_STATE_CHANGE_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent&lt;IRenderStateData[]&gt;) &#x3D;&gt; {
-                event.data.forEach(series &#x3D;&gt; {
-                    this.seriesVisibilityMap[series.seriesId] &#x3D; series.state !&#x3D;&#x3D; RenderState.hidden;
+                event.data.forEach((series) &#x3D;&gt; {
+                    this.seriesVisibilityMap[series.seriesId] &#x3D;
+                        series.state !&#x3D;&#x3D; RenderState.hidden;
                 });
             });
 
-        this.chart.getEventBus().getStream(CHART_VIEW_STATUS_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(CHART_VIEW_STATUS_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent&lt;IChartViewStatusEventPayload&gt;) &#x3D;&gt; {
                 this.isChartInView &#x3D; event.data.isChartInView;
@@ -270,7 +299,13 @@ export class ChartTooltipsPlugin extends ChartPlugin {
     }
 
     public processHighlightedDataPoints(dataPoints: IDataPointsPayload) {
-        const validDataPoints &#x3D; pickBy(dataPoints, (d: IDataPoint) &#x3D;&gt; d.index &gt;&#x3D; 0 &amp;&amp; d.position &amp;&amp; (this.seriesVisibilityMap[d.seriesId] !&#x3D;&#x3D; false));
+        const validDataPoints &#x3D; pickBy(
+            dataPoints,
+            (d: IDataPoint) &#x3D;&gt;
+                d.index &gt;&#x3D; 0 &amp;&amp;
+                d.position &amp;&amp;
+                this.seriesVisibilityMap[d.seriesId] !&#x3D;&#x3D; false
+        );
 
         if (values(validDataPoints).length &#x3D;&#x3D;&#x3D; 0) {
             this.hideSubject.next();
@@ -285,18 +320,27 @@ export class ChartTooltipsPlugin extends ChartPlugin {
         }
 
         const bbox &#x3D; chartElement.getBoundingClientRect();
-        const offsetParentBbox &#x3D; chartElement.offsetParent.getBoundingClientRect();
+        const offsetParentBbox &#x3D;
+            chartElement.offsetParent.getBoundingClientRect();
         const chartPosition: IPosition &#x3D; {
             x: bbox.left - offsetParentBbox.left,
             y: bbox.top - offsetParentBbox.top,
         };
 
-        each(Object.keys(this.dataPoints), seriesId &#x3D;&gt; {
+        each(Object.keys(this.dataPoints), (seriesId) &#x3D;&gt; {
             const dataPoint &#x3D; this.dataPoints[seriesId];
 
-            const chartSeries &#x3D; this.chart.getDataManager().getChartSeries(dataPoint.seriesId);
-            const tooltipRelativePosition &#x3D; this.getTooltipPosition(dataPoint, chartSeries);
-            this.dataPointPositions[seriesId] &#x3D; this.getAbsolutePosition(tooltipRelativePosition, chartPosition);
+            const chartSeries &#x3D; this.chart
+                .getDataManager()
+                .getChartSeries(dataPoint.seriesId);
+            const tooltipRelativePosition &#x3D; this.getTooltipPosition(
+                dataPoint,
+                chartSeries
+            );
+            this.dataPointPositions[seriesId] &#x3D; this.getAbsolutePosition(
+                tooltipRelativePosition,
+                chartPosition
+            );
         });
 
         this.showSubject.next();
@@ -307,8 +351,10 @@ export class ChartTooltipsPlugin extends ChartPlugin {
      * @param dataPoint
      * @param chartSeries
      */
-    protected getTooltipPosition(dataPoint: IDataPoint, chartSeries: IChartSeries&lt;IAccessors&gt;): ITooltipPosition {
-
+    protected getTooltipPosition(
+        dataPoint: IDataPoint,
+        chartSeries: IChartSeries&lt;IAccessors&gt;
+    ): ITooltipPosition {
         if (!dataPoint.position) {
             throw new Error(&quot;Unable to get tooltip position&quot;);
         }
@@ -328,13 +374,21 @@ export class ChartTooltipsPlugin extends ChartPlugin {
      * @param relativePosition
      * @param chartPosition
      */
-    protected getAbsolutePosition(relativePosition: ITooltipPosition, chartPosition: IPosition): ITooltipPosition {
+    protected getAbsolutePosition(
+        relativePosition: ITooltipPosition,
+        chartPosition: IPosition
+    ): ITooltipPosition {
         return Object.assign({}, relativePosition, {
-            x: chartPosition.x + this.chart.getGrid().config().dimension.margin.left + relativePosition.x,
-            y: chartPosition.y + this.chart.getGrid().config().dimension.margin.top + relativePosition.y,
+            x:
+                chartPosition.x +
+                this.chart.getGrid().config().dimension.margin.left +
+                relativePosition.x,
+            y:
+                chartPosition.y +
+                this.chart.getGrid().config().dimension.margin.top +
+                relativePosition.y,
         });
     }
-
 }
 </code></pre>
     </div>

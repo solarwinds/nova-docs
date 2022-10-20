@@ -195,7 +195,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -275,7 +275,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:38</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -302,7 +302,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:43</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -329,7 +329,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:28</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -356,7 +356,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:33</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -400,8 +400,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -441,8 +441,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:70</a></div>
                 </td>
             </tr>
 
@@ -485,7 +485,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/legend/legend-tile/rich-legend-tile/rich-legend-tile.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -519,7 +519,9 @@ import { LegendComponent } from &quot;../../legend.component&quot;;
     styleUrls: [&quot;./rich-legend-tile.component.less&quot;],
     encapsulation: ViewEncapsulation.Emulated,
 })
-export class RichLegendTileComponent implements AfterContentInit, AfterViewInit {
+export class RichLegendTileComponent
+    implements AfterContentInit, AfterViewInit
+{
     /**
      * The series unit label
      */
@@ -542,20 +544,25 @@ export class RichLegendTileComponent implements AfterContentInit, AfterViewInit 
 
     public seriesHasAdditionalContent: boolean;
 
-    constructor(@Host() private legendSeries: LegendSeriesComponent,
-                @Optional() @Host() private legend: LegendComponent,
-                private changeDetector: ChangeDetectorRef) { }
+    constructor(
+        @Host() private legendSeries: LegendSeriesComponent,
+        @Optional() @Host() private legend: LegendComponent,
+        private changeDetector: ChangeDetectorRef
+    ) {}
 
     public ngAfterContentInit() {
         if (this.legend) {
             this.unitLabel &#x3D; this.unitLabel || this.legend.seriesUnitLabel;
-            this.backgroundColor &#x3D; this.backgroundColor || this.legend.seriesColor || &quot;white&quot;;
+            this.backgroundColor &#x3D;
+                this.backgroundColor || this.legend.seriesColor || &quot;white&quot;;
         }
     }
 
     public ngAfterViewInit() {
         if (this.legendSeries) {
-            this.seriesHasAdditionalContent &#x3D; this.legendSeries.hasInputDescription() || this.legendSeries.hasProjectedDescription();
+            this.seriesHasAdditionalContent &#x3D;
+                this.legendSeries.hasInputDescription() ||
+                this.legendSeries.hasProjectedDescription();
             this.changeDetector.detectChanges();
         }
     }
@@ -581,7 +588,7 @@ export class RichLegendTileComponent implements AfterContentInit, AfterViewInit 
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-rich-legend-tile"     [class.nui-rich-legend-tile--has-point-marker]="rightEdge.children.length > 0"     [class.nui-rich-legend-tile--series-has-additional-content]="seriesHasAdditionalContent">    <div class="nui-rich-legend-tile__tilebox d-flex justify-content-center align-items-end flex-column"         [ngStyle]="{\'background-color\': backgroundColor}"         [style.color]="color">        <div *ngIf="hasInputValue(); else projectedTopContent"             class="nui-rich-legend-tile__tilebox-value nui-rich-legend-tile__ellipsified">            {{ value }}        </div>        <div *ngIf="hasInputUnitLabel(); else projectedBottomContent"             class="nui-rich-legend-tile__tilebox-unit nui-rich-legend-tile__ellipsified">            {{ unitLabel }}        </div>        <ng-content></ng-content>    </div>    <div class="nui-rich-legend-tile__icon" #icon>        <ng-content select="[leftEdge]"></ng-content>    </div>    <div class="nui-rich-legend-tile__point-marker" #rightEdge>        <ng-content select="[rightEdge]"></ng-content>    </div></div><ng-template #projectedTopContent>    <ng-content select="[top]"></ng-content></ng-template><ng-template #projectedBottomContent>    <ng-content select="[bottom]"></ng-content></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div    class="nui-rich-legend-tile"    [class.nui-rich-legend-tile--has-point-marker]="        rightEdge.children.length > 0    "    [class.nui-rich-legend-tile--series-has-additional-content]="        seriesHasAdditionalContent    ">    <div        class="nui-rich-legend-tile__tilebox d-flex justify-content-center align-items-end flex-column"        [ngStyle]="{ \'background-color\': backgroundColor }"        [style.color]="color"    >        <div            *ngIf="hasInputValue(); else projectedTopContent"            class="nui-rich-legend-tile__tilebox-value nui-rich-legend-tile__ellipsified"        >            {{ value }}        </div>        <div            *ngIf="hasInputUnitLabel(); else projectedBottomContent"            class="nui-rich-legend-tile__tilebox-unit nui-rich-legend-tile__ellipsified"        >            {{ unitLabel }}        </div>        <ng-content></ng-content>    </div>    <div class="nui-rich-legend-tile__icon" #icon>        <ng-content select="[leftEdge]"></ng-content>    </div>    <div class="nui-rich-legend-tile__point-marker" #rightEdge>        <ng-content select="[rightEdge]"></ng-content>    </div></div><ng-template #projectedTopContent>    <ng-content select="[top]"></ng-content></ng-template><ng-template #projectedBottomContent>    <ng-content select="[bottom]"></ng-content></ng-template></div>'
     var COMPONENTS = [{'name': 'BasicLegendTileComponent', 'selector': 'nui-basic-legend-tile'},{'name': 'ChartComponent', 'selector': 'nui-chart'},{'name': 'ChartDonutContentComponent', 'selector': 'nui-chart-donut-content'},{'name': 'ChartMarkerComponent', 'selector': 'nui-chart-marker'},{'name': 'ChartPopoverComponent', 'selector': 'nui-chart-popover'},{'name': 'ChartTooltipComponent', 'selector': 'nui-chart-tooltip'},{'name': 'ChartTooltipsComponent', 'selector': 'nui-chart-tooltips'},{'name': 'LegendComponent', 'selector': 'nui-legend'},{'name': 'LegendSeriesComponent', 'selector': 'nui-legend-series'},{'name': 'RichLegendTileComponent', 'selector': 'nui-rich-legend-tile'}];
     var DIRECTIVES = [{'name': 'ChartCollectionIdDirective', 'selector': '[nuiChartCollectionId]'}];
     var ACTUAL_COMPONENT = {'name': 'RichLegendTileComponent'};

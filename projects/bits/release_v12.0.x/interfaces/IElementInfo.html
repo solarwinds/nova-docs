@@ -175,11 +175,13 @@
     ViewContainerRef,
 } from &quot;@angular/core&quot;;
 
-import { ResizeDirection, ResizeUnit } from &quot;../../../common/directives/resizer/public-api&quot;;
+import {
+    ResizeDirection,
+    ResizeUnit,
+} from &quot;../../../common/directives/resizer/public-api&quot;;
 import { LayoutResizerComponent } from &quot;../layout-resizer/layout-resizer.component&quot;;
 import { ILayoutElementDirection, ISheetType } from &quot;../public-api&quot;;
 import { SheetComponent } from &quot;../sheet/sheet.component&quot;;
-
 
 type Element &#x3D; SheetComponent | SheetGroupComponent;
 interface IElementInfo {
@@ -191,7 +193,7 @@ interface IElementInfo {
 @Component({
     selector: &quot;nui-sheet-group&quot;,
     templateUrl: &quot;./sheet-group.component.html&quot;,
-    host: { &quot;class&quot;: &quot;nui-sheet-group&quot; },
+    host: { class: &quot;nui-sheet-group&quot; },
     styleUrls: [&quot;./sheet-group.component.less&quot;],
 })
 export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -199,7 +201,8 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
      * Set whether the child elements can be resizable.
      */
     @HostBinding(&quot;class.nui-sheet-group--resizable&quot;)
-    @Input() isResizable: boolean;
+    @Input()
+    isResizable: boolean;
 
     /**
      * Set resize unit of child elements(pixel, percent). By default pixels are used.
@@ -216,20 +219,26 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
      */
     @Input() direction: ILayoutElementDirection &#x3D; &quot;row&quot;;
     /**
-    * Value for flexBasis of SheetComponent or SheetGroupComponent.
-    * Can be in &#x27;px&#x27; or &#x27;%&#x27;
-    */
+     * Value for flexBasis of SheetComponent or SheetGroupComponent.
+     * Can be in &#x27;px&#x27; or &#x27;%&#x27;
+     */
     @Input() initialSizeValue: string;
 
-    @HostBinding(&quot;class.nui-sheet-group--joined-sheets&quot;) applyJoinedSheetsClass: boolean;
-    @HostBinding(&quot;class.nui-sheet-group--separate-sheets&quot;) applySeparateSheetsClass: boolean;
+    @HostBinding(&quot;class.nui-sheet-group--joined-sheets&quot;)
+    applyJoinedSheetsClass: boolean;
+    @HostBinding(&quot;class.nui-sheet-group--separate-sheets&quot;)
+    applySeparateSheetsClass: boolean;
 
-    @HostBinding(&quot;class.sheet-group-direction-column&quot;) applyDirectionColumnClass &#x3D; false;
-    @HostBinding(&quot;class.sheet-group-direction-row&quot;) applyDirectionRowClass &#x3D; true;
+    @HostBinding(&quot;class.sheet-group-direction-column&quot;)
+    applyDirectionColumnClass &#x3D; false;
+    @HostBinding(&quot;class.sheet-group-direction-row&quot;) applyDirectionRowClass &#x3D;
+        true;
 
-    @ViewChild(&quot;resizerPlaceholder&quot;, { read: ViewContainerRef }) public resizerPlaceholder: ViewContainerRef;
+    @ViewChild(&quot;resizerPlaceholder&quot;, { read: ViewContainerRef })
+    public resizerPlaceholder: ViewContainerRef;
     @ContentChildren(SheetComponent) sheetList: QueryList&lt;SheetComponent&gt;;
-    @ContentChildren(SheetGroupComponent, { descendants: false }) sheetGroupList: QueryList&lt;SheetGroupComponent&gt;;
+    @ContentChildren(SheetGroupComponent, { descendants: false })
+    sheetGroupList: QueryList&lt;SheetGroupComponent&gt;;
 
     public resizersList: ComponentRef&lt;any&gt;[] &#x3D; [];
     public resizeDirection: ResizeDirection;
@@ -237,7 +246,9 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
     // workaround for issue when @ContentChildren can select host component - https://github.com/angular/angular/issues/10098;
     // TODO: remove when it&#x27;ll be fixed in Ivy
     private filterGroups(sheetGroupList: any) {
-        return sheetGroupList.filter((group: SheetGroupComponent) &#x3D;&gt; group !&#x3D;&#x3D; this);
+        return sheetGroupList.filter(
+            (group: SheetGroupComponent) &#x3D;&gt; group !&#x3D;&#x3D; this
+        );
     }
 
     public addResizers(resizableList: QueryList&lt;any&gt;) {
@@ -252,22 +263,31 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public appendResizer(factory: any, resizeEl: any) {
-        const componentRef &#x3D; this.componentFactoryResolver
-            .resolveComponentFactory(factory);
+        const componentRef &#x3D;
+            this.componentFactoryResolver.resolveComponentFactory(factory);
 
         const ref &#x3D; this.resizerPlaceholder.createComponent(componentRef);
         (&lt;LayoutResizerComponent&gt;ref.instance).resizeElement &#x3D; resizeEl;
-        (&lt;LayoutResizerComponent&gt;ref.instance).resizeDirection &#x3D; this.resizeDirection;
+        (&lt;LayoutResizerComponent&gt;ref.instance).resizeDirection &#x3D;
+            this.resizeDirection;
         (&lt;LayoutResizerComponent&gt;ref.instance).resizeUnit &#x3D; this.resizeUnit;
-        (&lt;LayoutResizerComponent&gt;ref.instance).enableSeparateOffsetSize &#x3D; this.sheetsType &#x3D;&#x3D;&#x3D; &quot;separate&quot;;
+        (&lt;LayoutResizerComponent&gt;ref.instance).enableSeparateOffsetSize &#x3D;
+            this.sheetsType &#x3D;&#x3D;&#x3D; &quot;separate&quot;;
         ref.changeDetectorRef.detectChanges();
         this.resizersList.push(ref);
     }
 
-    public calculateFlexBasis(resizableList: QueryList&lt;Element&gt;, numOfItems: number) {
+    public calculateFlexBasis(
+        resizableList: QueryList&lt;Element&gt;,
+        numOfItems: number
+    ) {
         let availableSpace: string &#x3D; &quot;100%&quot;;
-        const hasInitSize &#x3D; resizableList.some((element: Element) &#x3D;&gt; !!element.initialSizeValue);
-        const fitContent &#x3D; resizableList.some((element: Element) &#x3D;&gt; !!(element as any).fitContent);
+        const hasInitSize &#x3D; resizableList.some(
+            (element: Element) &#x3D;&gt; !!element.initialSizeValue
+        );
+        const fitContent &#x3D; resizableList.some(
+            (element: Element) &#x3D;&gt; !!(element as any).fitContent
+        );
         const itemsToRender: IElementInfo[] &#x3D; [];
         let itemsWithSize: Element[];
         let itemsWithoutSize: Element[];
@@ -275,12 +295,21 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         if (hasInitSize) {
             // calculation for init size
             // filter element so that those with size are dealt with first
-            itemsWithSize &#x3D; resizableList.filter((element: Element) &#x3D;&gt; !!element.initialSizeValue &amp;&amp; !(element as any).fitContent);
-            itemsWithoutSize &#x3D; resizableList.filter((element: Element) &#x3D;&gt; !element.initialSizeValue &amp;&amp; !(element as any).fitContent);
+            itemsWithSize &#x3D; resizableList.filter(
+                (element: Element) &#x3D;&gt;
+                    !!element.initialSizeValue &amp;&amp; !(element as any).fitContent
+            );
+            itemsWithoutSize &#x3D; resizableList.filter(
+                (element: Element) &#x3D;&gt;
+                    !element.initialSizeValue &amp;&amp; !(element as any).fitContent
+            );
 
             itemsWithSize.forEach((element: Element) &#x3D;&gt; {
                 availableSpace &#x3D; &#x60;(${availableSpace} - ${element.initialSizeValue})&#x60;;
-                itemsToRender.push({ item: element, value: &#x60;${element.initialSizeValue}&#x60; });
+                itemsToRender.push({
+                    item: element,
+                    value: &#x60;${element.initialSizeValue}&#x60;,
+                });
                 numOfItems--;
             });
             itemsWithoutSize.forEach((element: Element) &#x3D;&gt; {
@@ -291,26 +320,42 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         } else if (!fitContent) {
             // normal flow of calculation
             resizableList.forEach((resizableItem: Element) &#x3D;&gt; {
-                itemsToRender.push({ item: resizableItem, value: &#x60;${availableSpace} / ${numOfItems}&#x60; });
+                itemsToRender.push({
+                    item: resizableItem,
+                    value: &#x60;${availableSpace} / ${numOfItems}&#x60;,
+                });
             });
         }
 
         // rendering of calculation
         itemsToRender.forEach(({ item, value }) &#x3D;&gt; {
-            this.renderer.setStyle(item.elRef.nativeElement, &quot;flexBasis&quot;, &#x60;calc(${value})&#x60;);
+            this.renderer.setStyle(
+                item.elRef.nativeElement,
+                &quot;flexBasis&quot;,
+                &#x60;calc(${value})&#x60;
+            );
         });
     }
 
-    constructor(public elRef: ElementRef,
+    constructor(
+        public elRef: ElementRef,
         private renderer: Renderer2,
-        private componentFactoryResolver: ComponentFactoryResolver) { }
+        private componentFactoryResolver: ComponentFactoryResolver
+    ) {}
 
     ngOnInit() {
-        this.applyJoinedSheetsClass &#x3D; (this.applyJoinedSheetsClass &amp;&amp; !this.applySeparateSheetsClass) || this.sheetsType &#x3D;&#x3D;&#x3D; &quot;joined&quot;;
-        this.applySeparateSheetsClass &#x3D; (!this.applyJoinedSheetsClass &amp;&amp; this.applySeparateSheetsClass) || this.sheetsType &#x3D;&#x3D;&#x3D; &quot;separate&quot;;
+        this.applyJoinedSheetsClass &#x3D;
+            (this.applyJoinedSheetsClass &amp;&amp; !this.applySeparateSheetsClass) ||
+            this.sheetsType &#x3D;&#x3D;&#x3D; &quot;joined&quot;;
+        this.applySeparateSheetsClass &#x3D;
+            (!this.applyJoinedSheetsClass &amp;&amp; this.applySeparateSheetsClass) ||
+            this.sheetsType &#x3D;&#x3D;&#x3D; &quot;separate&quot;;
         this.applyDirectionColumnClass &#x3D; this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;
         this.applyDirectionRowClass &#x3D; this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;;
-        this.resizeDirection &#x3D; this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot; ? ResizeDirection.right : ResizeDirection.bottom;
+        this.resizeDirection &#x3D;
+            this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;
+                ? ResizeDirection.right
+                : ResizeDirection.bottom;
     }
 
     ngAfterViewInit() {
@@ -321,7 +366,10 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
             this.addResizers(this.filterGroups(this.sheetGroupList));
         } else {
             this.calculateFlexBasis(this.sheetList, this.sheetList.length);
-            this.calculateFlexBasis(this.filterGroups(this.sheetGroupList), this.filterGroups(this.sheetGroupList).length);
+            this.calculateFlexBasis(
+                this.filterGroups(this.sheetGroupList),
+                this.filterGroups(this.sheetGroupList).length
+            );
         }
     }
 

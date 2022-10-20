@@ -386,9 +386,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { defaultColorProvider, defaultMarkerProvider } from &quot;../../../core/common/palette/default-providers&quot;;
-import { DataAccessor, IAccessors, IDataSeries } from &quot;../../../core/common/types&quot;;
-import { IRectangleDataAccessors, IRectangleSeriesAccessors, RectangleAccessors } from &quot;../../accessors/rectangle-accessors&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    defaultColorProvider,
+    defaultMarkerProvider,
+} from &quot;../../../core/common/palette/default-providers&quot;;
+import {
+    DataAccessor,
+    IAccessors,
+    IDataSeries,
+} from &quot;../../../core/common/types&quot;;
+import {
+    IRectangleDataAccessors,
+    IRectangleSeriesAccessors,
+    RectangleAccessors,
+} from &quot;../../accessors/rectangle-accessors&quot;;
 
 export interface IBarDataAccessors extends IRectangleDataAccessors {
     category: DataAccessor;
@@ -406,16 +417,27 @@ export interface IBarAccessors extends IAccessors {
     series: IRectangleSeriesAccessors;
 }
 
-export abstract class BarAccessors extends RectangleAccessors implements IBarAccessors {
+export abstract class BarAccessors
+    extends RectangleAccessors
+    implements IBarAccessors
+{
     data: IBarDataAccessors;
     series: IRectangleSeriesAccessors;
 
-    constructor(private colorProvider &#x3D; defaultColorProvider(), private markerProvider &#x3D; defaultMarkerProvider()) {
+    constructor(
+        private colorProvider &#x3D; defaultColorProvider(),
+        private markerProvider &#x3D; defaultMarkerProvider()
+    ) {
         super();
 
         this.data &#x3D; {
             value: (data: any) &#x3D;&gt; data.value,
-            category: (d, i, series: any[], dataSeries: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt; {
+            category: (
+                d,
+                i,
+                series: any[],
+                dataSeries: IDataSeries&lt;IAccessors&gt;
+            ) &#x3D;&gt; {
                 if (d.category) {
                     return d.category;
                 }
@@ -426,7 +448,12 @@ export abstract class BarAccessors extends RectangleAccessors implements IBarAcc
 
                 return null;
             },
-            start: (data: any, index: number, series: any[], dataSeries: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt; {
+            start: (
+                data: any,
+                index: number,
+                series: any[],
+                dataSeries: IDataSeries&lt;IAccessors&gt;
+            ) &#x3D;&gt; {
                 if (data.__bar) {
                     return data.__bar.start;
                 }
@@ -434,14 +461,24 @@ export abstract class BarAccessors extends RectangleAccessors implements IBarAcc
                     return data.start;
                 }
 
-                const value &#x3D; this.getSingleValue(data, index, series, dataSeries);
+                const value &#x3D; this.getSingleValue(
+                    data,
+                    index,
+                    series,
+                    dataSeries
+                );
                 if (Number.isFinite(value)) {
                     return Math.min(0, value);
                 }
 
                 return null;
             },
-            end: (data: any, index: number, series: any[], dataSeries: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt; {
+            end: (
+                data: any,
+                index: number,
+                series: any[],
+                dataSeries: IDataSeries&lt;IAccessors&gt;
+            ) &#x3D;&gt; {
                 if (data.__bar) {
                     return data.__bar.end;
                 }
@@ -449,7 +486,12 @@ export abstract class BarAccessors extends RectangleAccessors implements IBarAcc
                     return data.end;
                 }
 
-                const value &#x3D; this.getSingleValue(data, index, series, dataSeries);
+                const value &#x3D; this.getSingleValue(
+                    data,
+                    index,
+                    series,
+                    dataSeries
+                );
                 if (Number.isFinite(value)) {
                     return Math.max(0, value);
                 }
@@ -463,10 +505,14 @@ export abstract class BarAccessors extends RectangleAccessors implements IBarAcc
             marker: this.markerProvider ? this.markerProvider.get : undefined,
             category: (seriesId, series) &#x3D;&gt; series.name || series.id,
         };
-
     }
 
-    private getSingleValue(data: any, index: number, series: any[], dataSeries: IDataSeries&lt;IAccessors&gt;) {
+    private getSingleValue(
+        data: any,
+        index: number,
+        series: any[],
+        dataSeries: IDataSeries&lt;IAccessors&gt;
+    ) {
         let value: any;
         if (this.data.value) {
             // try to use the value accessor to retrieve value

@@ -127,7 +127,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/services/table-formatter-registry.service.ts:49</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/services/table-formatter-registry.service.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -200,7 +200,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:17</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:21</a></code>
 </div>
                 </td>
             </tr>
@@ -296,7 +296,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:24</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:29</a></code>
 </div>
                 </td>
             </tr>
@@ -351,7 +351,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:14</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/FormatterRegistryService.html#source" target="_self" >FormatterRegistryService:17</a></code>
 </div>
                             </td>
                         </tr>
@@ -366,24 +366,29 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
-import { IFormatterDefinition, ITableFormatterDefinition } from &quot;../components/types&quot;;
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
+import {
+    IFormatterDefinition,
+    ITableFormatterDefinition,
+} from &quot;../components/types&quot;;
 import { RegistryService } from &quot;./registry-service&quot;;
 import { IAddFormattersOptions } from &quot;./types&quot;;
 
-export abstract class FormatterRegistryService&lt;TFormatter extends IFormatterDefinition &#x3D; IFormatterDefinition&gt;
-    extends RegistryService&lt;TFormatter&gt; {
-
+export abstract class FormatterRegistryService&lt;
+    TFormatter extends IFormatterDefinition &#x3D; IFormatterDefinition
+&gt; extends RegistryService&lt;TFormatter&gt; {
     /** @deprecated use &#x27;stateChanged$&#x27; instead - NUI-5852 */
-    public formattersStateChanged$: Observable &lt;TFormatter[]&gt; &#x3D; this.stateChanged$;
+    public formattersStateChanged$: Observable&lt;TFormatter[]&gt; &#x3D;
+        this.stateChanged$;
 
     /** @deprecated use &#x27;addItems&#x27; instead - NUI-5852 */
     public addFormatters(
         formatters: TFormatter[],
-        options: IAddFormattersOptions &#x3D; { overrideExisting: true }): void {
+        options: IAddFormattersOptions &#x3D; { overrideExisting: true }
+    ): void {
         super.addItems(formatters, options);
     }
 
@@ -396,7 +401,6 @@ export abstract class FormatterRegistryService&lt;TFormatter extends IFormatterD
         return item.componentType;
     }
 }
-
 
 @Injectable({ providedIn: &quot;root&quot; })
 export class TableFormatterRegistryService extends FormatterRegistryService&lt;ITableFormatterDefinition&gt; {

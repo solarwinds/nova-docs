@@ -159,7 +159,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:30</a></div>
                 </td>
             </tr>
 
@@ -293,8 +293,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:99</a></div>
                 </td>
             </tr>
 
@@ -401,8 +401,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/renderers/line/interaction-strategies/line-select-series-interaction-strategy.ts:109</a></div>
                 </td>
             </tr>
 
@@ -498,33 +498,57 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import isNil from &quot;lodash/isNil&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
-import { DATA_POINT_NOT_FOUND, HIGHLIGHT_SERIES_EVENT, INTERACTION_SERIES_EVENT } from &quot;../../../constants&quot;;
+import {
+    DATA_POINT_NOT_FOUND,
+    HIGHLIGHT_SERIES_EVENT,
+    INTERACTION_SERIES_EVENT,
+} from &quot;../../../constants&quot;;
 import { Scales } from &quot;../../../core/common/scales/types&quot;;
-import { D3Selection, IDataPoint, IDataSeries, InteractionType, IRendererEventPayload } from &quot;../../../core/common/types&quot;;
-import { IHighlightStrategy, IRenderSeries, RenderLayerName } from &quot;../../types&quot;;
+import {
+    D3Selection,
+    IDataPoint,
+    IDataSeries,
+    InteractionType,
+    IRendererEventPayload,
+} from &quot;../../../core/common/types&quot;;
+import {
+    IHighlightStrategy,
+    IRenderSeries,
+    RenderLayerName,
+} from &quot;../../types&quot;;
 import { ILineAccessors } from &quot;../line-accessors&quot;;
 import { LineRenderer } from &quot;../line-renderer&quot;;
 
-export class LineSelectSeriesInteractionStrategy implements IHighlightStrategy&lt;ILineAccessors, LineRenderer&gt; {
+export class LineSelectSeriesInteractionStrategy
+    implements IHighlightStrategy&lt;ILineAccessors, LineRenderer&gt;
+{
     public readonly INTERACTION_MARGIN &#x3D; 8;
 
-    public draw(renderer: LineRenderer, renderSeries: IRenderSeries&lt;ILineAccessors&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
+    public draw(
+        renderer: LineRenderer,
+        renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
         const target &#x3D; renderSeries.containers[RenderLayerName.data];
 
-        let interactionPath: D3Selection&lt;SVGPathElement&gt; &#x3D; target.select(&quot;path.interaction&quot;);
+        let interactionPath: D3Selection&lt;SVGPathElement&gt; &#x3D;
+            target.select(&quot;path.interaction&quot;);
 
         if (isNil(renderer.config.strokeWidth)) {
             throw new Error(&quot;renderer.config.strokeWidth is not defined&quot;);
         }
 
         if (interactionPath.empty()) {
-            interactionPath &#x3D; target.append(&quot;path&quot;)
+            interactionPath &#x3D; target
+                .append(&quot;path&quot;)
                 .classed(&quot;interaction&quot;, true)
                 .classed(&#x60;pointer-events pointer-events-click&#x60;, true)
                 .attrs({
-                    &quot;stroke-width&quot;: renderer.config.strokeWidth + (2 * this.INTERACTION_MARGIN),
-                    &quot;stroke&quot;: &quot;transparent&quot;,
-                    &quot;fill&quot;: &quot;none&quot;,
+                    &quot;stroke-width&quot;:
+                        renderer.config.strokeWidth +
+                        2 * this.INTERACTION_MARGIN,
+                    stroke: &quot;transparent&quot;,
+                    fill: &quot;none&quot;,
                 })
                 .on(&quot;mouseenter&quot;, () &#x3D;&gt; {
                     const dataPoint: Omit&lt;IDataPoint, &quot;position&quot;&gt; &#x3D; {
@@ -535,7 +559,10 @@ export class LineSelectSeriesInteractionStrategy implements IHighlightStrategy&l
                         data: renderSeries.dataSeries.data[0],
                     };
 
-                    rendererSubject.next({ eventName: HIGHLIGHT_SERIES_EVENT, data: dataPoint });
+                    rendererSubject.next({
+                        eventName: HIGHLIGHT_SERIES_EVENT,
+                        data: dataPoint,
+                    });
                 })
                 .on(&quot;mouseleave&quot;, () &#x3D;&gt; {
                     const dataPoint: Omit&lt;IDataPoint, &quot;position&quot; | &quot;data&quot;&gt; &#x3D; {
@@ -544,10 +571,21 @@ export class LineSelectSeriesInteractionStrategy implements IHighlightStrategy&l
                         index: DATA_POINT_NOT_FOUND,
                     };
 
-                    rendererSubject.next({ eventName: HIGHLIGHT_SERIES_EVENT, data: dataPoint });
+                    rendererSubject.next({
+                        eventName: HIGHLIGHT_SERIES_EVENT,
+                        data: dataPoint,
+                    });
                 })
                 .on(&quot;click&quot;, (d: any, i: number) &#x3D;&gt; {
-                    this.emitEvent(renderer, INTERACTION_SERIES_EVENT, InteractionType.Click, renderSeries, d, i, rendererSubject);
+                    this.emitEvent(
+                        renderer,
+                        INTERACTION_SERIES_EVENT,
+                        InteractionType.Click,
+                        renderSeries,
+                        d,
+                        i,
+                        rendererSubject
+                    );
                 });
         }
 
@@ -555,23 +593,42 @@ export class LineSelectSeriesInteractionStrategy implements IHighlightStrategy&l
     }
 
     // TODO: Get rid of this function or make it optional in interface
-    public getDataPointIndex(renderer: LineRenderer, series: IDataSeries&lt;ILineAccessors&gt;, values: { [p: string]: any }, scales: Scales): number {
+    public getDataPointIndex(
+        renderer: LineRenderer,
+        series: IDataSeries&lt;ILineAccessors&gt;,
+        values: { [p: string]: any },
+        scales: Scales
+    ): number {
         // @ts-ignore
         return;
     }
 
-    public highlightDataPoint(renderer: LineRenderer, renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
-                              dataPointIndex: number, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
-    }
+    public highlightDataPoint(
+        renderer: LineRenderer,
+        renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
+        dataPointIndex: number,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {}
 
-    private emitEvent(renderer: LineRenderer, eventName: string, interactionType: InteractionType, renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
-                      data: any, i: number, rendererSubject: Subject&lt;IRendererEventPayload&gt;) {
+    private emitEvent(
+        renderer: LineRenderer,
+        eventName: string,
+        interactionType: InteractionType,
+        renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
+        data: any,
+        i: number,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ) {
         const dataPoint: IDataPoint &#x3D; {
             seriesId: renderSeries.dataSeries.id,
             dataSeries: renderSeries.dataSeries,
             index: i,
             data: data,
-            position: renderer.getDataPointPosition(renderSeries.dataSeries, i, renderSeries.scales),
+            position: renderer.getDataPointPosition(
+                renderSeries.dataSeries,
+                i,
+                renderSeries.scales
+            ),
         };
         rendererSubject.next({
             eventName: eventName,
@@ -581,7 +638,6 @@ export class LineSelectSeriesInteractionStrategy implements IHighlightStrategy&l
             },
         });
     }
-
 }
 </code></pre>
     </div>

@@ -219,8 +219,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/lib/components/providers/refresher.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/lib/components/providers/refresher.ts:59</a></div>
                 </td>
             </tr>
 
@@ -260,8 +260,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/lib/components/providers/refresher.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/lib/components/providers/refresher.ts:49</a></div>
                 </td>
             </tr>
 
@@ -348,14 +348,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, NgZone, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, EventDefinition } from &quot;@nova-ui/bits&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, EventDefinition } from &quot;@nova-ui/bits&quot;;
 
 import { REFRESH } from &quot;../../services/types&quot;;
 import { IWidgetEvent } from &quot;../../services/widget-to-dashboard-event-proxy.service&quot;;
 import { IConfigurable, IProperties, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
 import { RefresherSettingsService } from &quot;./refresher-settings.service&quot;;
 import { DEFAULT_REFRESH_INTERVAL } from &quot;./types&quot;;
 
@@ -381,10 +381,13 @@ export class Refresher implements OnDestroy, IConfigurable {
 
     public destroy$ &#x3D; new Subject();
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IWidgetEvent&gt;,
-                protected ngZone: NgZone,
-                protected refresherSettings: RefresherSettingsService) {
-        this.refresherSettings.refreshRateSeconds$.pipe(takeUntil(this.destroy$))
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IWidgetEvent&gt;,
+        protected ngZone: NgZone,
+        protected refresherSettings: RefresherSettingsService
+    ) {
+        this.refresherSettings.refreshRateSeconds$
+            .pipe(takeUntil(this.destroy$))
             .subscribe((systemRefreshRate) &#x3D;&gt; {
                 if (!this.overrideDefaultSettings) {
                     this.initializeInterval();
@@ -395,7 +398,8 @@ export class Refresher implements OnDestroy, IConfigurable {
     public updateConfiguration(properties: IRefresherProperties) {
         this.interval &#x3D; properties.interval ?? DEFAULT_REFRESH_INTERVAL;
         this.enabled &#x3D; properties.enabled ?? true;
-        this.overrideDefaultSettings &#x3D; properties.overrideDefaultSettings ?? true;
+        this.overrideDefaultSettings &#x3D;
+            properties.overrideDefaultSettings ?? true;
         this.eventDef &#x3D; properties.event ?? REFRESH;
 
         this.initializeInterval();
@@ -410,7 +414,11 @@ export class Refresher implements OnDestroy, IConfigurable {
     private initializeInterval() {
         this.clearInterval();
 
-        if (typeof this.interval &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || this.getInterval() &lt;&#x3D; 0 || this.enabled &#x3D;&#x3D;&#x3D; false) {
+        if (
+            typeof this.interval &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
+            this.getInterval() &lt;&#x3D; 0 ||
+            this.enabled &#x3D;&#x3D;&#x3D; false
+        ) {
             return;
         }
 
@@ -430,7 +438,9 @@ export class Refresher implements OnDestroy, IConfigurable {
     }
 
     private getInterval() {
-        return this.overrideDefaultSettings ? this.interval : this.refresherSettings.refreshRateSeconds;
+        return this.overrideDefaultSettings
+            ? this.interval
+            : this.refresherSettings.refreshRateSeconds;
     }
 
     private clearInterval() {

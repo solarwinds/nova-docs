@@ -196,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -257,7 +257,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:23</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -278,7 +278,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:22</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -299,7 +299,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:24</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -326,7 +326,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -352,7 +352,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -389,7 +389,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -417,7 +417,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/lib/layout/sheet/sheet.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -430,22 +430,28 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ElementRef, HostBinding, Input, OnInit } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Component,
+    ElementRef,
+    HostBinding,
+    Input,
+    OnInit,
+} from &quot;@angular/core&quot;;
 
-import {ResizeDirection} from &quot;../../../common/directives/resizer/public-api&quot;;
-import {ILayoutElementDirection} from &quot;../public-api&quot;;
-
+import { ResizeDirection } from &quot;../../../common/directives/resizer/public-api&quot;;
+import { ILayoutElementDirection } from &quot;../public-api&quot;;
 
 // &lt;example-url&gt;./../examples/index.html#/layout&lt;/example-url&gt;
 @Component({
     selector: &quot;nui-sheet&quot;,
     templateUrl: &quot;./sheet.component.html&quot;,
-    host: {&quot;class&quot;: &quot;nui-sheet&quot;},
+    host: { class: &quot;nui-sheet&quot; },
     styleUrls: [&quot;./sheet.component.less&quot;],
 })
 export class SheetComponent implements OnInit {
     @HostBinding(&quot;class.sheet-fit-content&quot;)
-    @Input() fitContent: boolean;
+    @Input()
+    fitContent: boolean;
     @Input() direction: ILayoutElementDirection &#x3D; &quot;row&quot;;
     @Input() initialSizeValue: string;
     @HostBinding(&quot;class.sheet-direction-column&quot;) directionColumn &#x3D; false;
@@ -456,9 +462,16 @@ export class SheetComponent implements OnInit {
     constructor(public elRef: ElementRef) {}
 
     ngOnInit() {
-        this.directionColumn &#x3D; (this.directionColumn &amp;&amp; !this.directionRow) || this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;
-        this.directionRow &#x3D; (!this.directionColumn &amp;&amp; this.directionRow) || this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;;
-        this.resizeDirection &#x3D; this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot; ? ResizeDirection.right : ResizeDirection.bottom;
+        this.directionColumn &#x3D;
+            (this.directionColumn &amp;&amp; !this.directionRow) ||
+            this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;
+        this.directionRow &#x3D;
+            (!this.directionColumn &amp;&amp; this.directionRow) ||
+            this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;;
+        this.resizeDirection &#x3D;
+            this.direction &#x3D;&#x3D;&#x3D; &quot;row&quot;
+                ? ResizeDirection.right
+                : ResizeDirection.bottom;
     }
 }
 </code></pre>

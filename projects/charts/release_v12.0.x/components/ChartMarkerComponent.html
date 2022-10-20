@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/chart-marker/chart-marker.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/chart-marker/chart-marker.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -241,7 +241,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/chart-marker/chart-marker.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/chart-marker/chart-marker.component.ts:30</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -262,7 +262,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/chart-marker/chart-marker.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/chart-marker/chart-marker.component.ts:29</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -283,7 +283,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/chart-marker/chart-marker.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/chart-marker/chart-marker.component.ts:28</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -303,7 +303,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/chart-marker/chart-marker.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/chart-marker/chart-marker.component.ts:31</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -344,7 +344,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/chart-marker/chart-marker.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/chart-marker/chart-marker.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -381,7 +381,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/chart-marker/chart-marker.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/chart-marker/chart-marker.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -409,7 +409,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/chart-marker/chart-marker.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/chart-marker/chart-marker.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -442,7 +442,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/chart-marker/chart-marker.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/chart-marker/chart-marker.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -455,7 +455,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, ViewChild } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    Input,
+    OnChanges,
+    OnDestroy,
+    SimpleChanges,
+    ViewChild,
+} from &quot;@angular/core&quot;;
 import isFunction from &quot;lodash/isFunction&quot;;
 import { BehaviorSubject } from &quot;rxjs&quot;;
 
@@ -469,7 +479,9 @@ const SVG_PADDING &#x3D; 3;
     templateUrl: &quot;./chart-marker.component.html&quot;,
     styleUrls: [&quot;./chart-marker.component.less&quot;],
 })
-export class ChartMarkerComponent implements OnDestroy, AfterViewInit, OnChanges {
+export class ChartMarkerComponent
+    implements OnDestroy, AfterViewInit, OnChanges
+{
     @Input() marker: IChartMarker;
     @Input() drawLine: boolean;
     @Input() color: string;
@@ -483,8 +495,7 @@ export class ChartMarkerComponent implements OnDestroy, AfterViewInit, OnChanges
 
     private svg &#x3D; new BehaviorSubject&lt;string&gt;(&quot;&quot;);
 
-    constructor(private changeDetector: ChangeDetectorRef) {
-    }
+    constructor(private changeDetector: ChangeDetectorRef) {}
 
     public ngAfterViewInit() {
         this.svg.subscribe((svg: string) &#x3D;&gt; {
@@ -497,7 +508,11 @@ export class ChartMarkerComponent implements OnDestroy, AfterViewInit, OnChanges
             if (changes[&quot;color&quot;]) {
                 this.marker.setColor(this.color);
             }
-            if (this.marker &amp;&amp; this.marker.getSvg &amp;&amp; isFunction(this.marker.getSvg)) {
+            if (
+                this.marker &amp;&amp;
+                this.marker.getSvg &amp;&amp;
+                isFunction(this.marker.getSvg)
+            ) {
                 this.svg.next(this.marker.getSvg());
             }
         }
@@ -519,10 +534,17 @@ export class ChartMarkerComponent implements OnDestroy, AfterViewInit, OnChanges
 
         setTimeout(() &#x3D;&gt; {
             const clientRect &#x3D; svgContainerElement.getBBox();
-            this.viewBox &#x3D; &#x60;${clientRect.x - SVG_PADDING} ${clientRect.y - SVG_PADDING} &#x60; +
-                &#x60;${clientRect.width + 2 * SVG_PADDING} ${clientRect.height + 2 * SVG_PADDING}&#x60;;
-            this.width &#x3D; Math.min(clientRect.width + 2 * SVG_PADDING, this.maxSize) + &quot;px&quot;;
-            this.height &#x3D; Math.min(clientRect.height + 2 * SVG_PADDING, this.maxSize) + &quot;px&quot;;
+            this.viewBox &#x3D;
+                &#x60;${clientRect.x - SVG_PADDING} ${clientRect.y - SVG_PADDING} &#x60; +
+                &#x60;${clientRect.width + 2 * SVG_PADDING} ${
+                    clientRect.height + 2 * SVG_PADDING
+                }&#x60;;
+            this.width &#x3D;
+                Math.min(clientRect.width + 2 * SVG_PADDING, this.maxSize) +
+                &quot;px&quot;;
+            this.height &#x3D;
+                Math.min(clientRect.height + 2 * SVG_PADDING, this.maxSize) +
+                &quot;px&quot;;
 
             this.changeDetector.markForCheck();
         });

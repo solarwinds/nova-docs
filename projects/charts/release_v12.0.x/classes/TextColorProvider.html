@@ -135,7 +135,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/core/common/palette/text-color-provider.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/core/common/palette/text-color-provider.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -216,7 +216,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ProcessedColorProvider.html#source" target="_self" >ProcessedColorProvider:15</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ProcessedColorProvider.html#source" target="_self" >ProcessedColorProvider:17</a></code>
 </div>
                             </td>
                         </tr>
@@ -261,7 +261,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ProcessedColorProvider.html#source" target="_self" >ProcessedColorProvider:30</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ProcessedColorProvider.html#source" target="_self" >ProcessedColorProvider:32</a></code>
 </div>
                 </td>
             </tr>
@@ -291,7 +291,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { rgb, RGBColor } from &quot;d3-color&quot;;
 
 import { IValueProvider } from &quot;../types&quot;;
-
 import { getColorValueByName } from &quot;./color.helper&quot;;
 import { ProcessedColorProvider } from &quot;./processed-color-provider&quot;;
 
@@ -308,16 +307,26 @@ const lowc &#x3D; 1 / 12.92;
  * This color provider calculates foreground color based on contrast ratio of provided colors
  */
 export class TextColorProvider extends ProcessedColorProvider {
-
-    constructor(sourceProvider: IValueProvider&lt;string&gt;, colorDefinitions: { light: string, dark: string }) {
+    constructor(
+        sourceProvider: IValueProvider&lt;string&gt;,
+        colorDefinitions: { light: string; dark: string }
+    ) {
         super(sourceProvider, (input: string) &#x3D;&gt; {
             const color &#x3D; getColorValueByName(input);
             const rgbInput &#x3D; rgb(color);
 
-            const ratioToLight &#x3D; this.getContrastRatio(rgbInput, rgb(colorDefinitions.light));
-            const ratioToDark &#x3D; this.getContrastRatio(rgbInput, rgb(colorDefinitions.dark));
+            const ratioToLight &#x3D; this.getContrastRatio(
+                rgbInput,
+                rgb(colorDefinitions.light)
+            );
+            const ratioToDark &#x3D; this.getContrastRatio(
+                rgbInput,
+                rgb(colorDefinitions.dark)
+            );
 
-            return ratioToDark &gt; ratioToLight ? colorDefinitions.dark : colorDefinitions.light;
+            return ratioToDark &gt; ratioToLight
+                ? colorDefinitions.dark
+                : colorDefinitions.light;
         });
     }
 

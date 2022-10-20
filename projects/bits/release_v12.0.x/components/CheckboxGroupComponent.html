@@ -225,7 +225,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:78</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:79</a></div>
                             </td>
                         </tr>
 
@@ -280,7 +280,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:70</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:71</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -306,7 +306,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:76</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -433,8 +433,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="113"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:113</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:126</a></div>
                 </td>
             </tr>
 
@@ -505,8 +505,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="116"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:116</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:128</a></div>
                 </td>
             </tr>
 
@@ -546,8 +546,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="123"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:123</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="134"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:134</a></div>
                 </td>
             </tr>
 
@@ -618,8 +618,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="127"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:127</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:138</a></div>
                 </td>
             </tr>
 
@@ -690,8 +690,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:142</a></div>
                 </td>
             </tr>
 
@@ -762,8 +762,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="119"
-                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:119</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/lib/checkbox/checkbox-group.component.ts:130</a></div>
                 </td>
             </tr>
 
@@ -834,7 +834,6 @@ import _remove from &quot;lodash/remove&quot;;
 import { Subscription } from &quot;rxjs&quot;;
 
 import { NuiFormFieldControl } from &quot;../form-field/public-api&quot;;
-
 import { CheckboxComponent } from &quot;./checkbox.component&quot;;
 import { CheckboxChangeEvent, ICheckboxComponent } from &quot;./public-api&quot;;
 
@@ -854,14 +853,15 @@ import { CheckboxChangeEvent, ICheckboxComponent } from &quot;./public-api&quot;
             multi: true,
         },
     ],
-    host: { &quot;role&quot;: &quot;group&quot; },
+    host: { role: &quot;group&quot; },
 })
 /**
  * Component for combining of nui-checkbox components in to group
  * &lt;example-url&gt;./../examples/index.html#/checkbox-group&lt;/example-url&gt;
  */
-export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, ControlValueAccessor {
-
+export class CheckboxGroupComponent
+    implements AfterViewInit, OnDestroy, ControlValueAccessor
+{
     /**
      * Sets &quot;name&quot; attribute for inner input element of nui-checkbox
      */
@@ -880,7 +880,8 @@ export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, Control
     /**
      * CheckboxGroupComponent children array from CheckboxComponent items
      */
-    @ContentChildren(CheckboxComponent, { descendants: true }) private children: QueryList&lt;CheckboxComponent&gt;;
+    @ContentChildren(CheckboxComponent, { descendants: true })
+    private children: QueryList&lt;CheckboxComponent&gt;;
 
     /**
      * Input to set aria label text
@@ -895,44 +896,54 @@ export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, Control
     private subscriptionsArray &#x3D; new Array&lt;Subscription&gt;();
     private disabled: boolean &#x3D; false;
 
-    constructor(private renderer: Renderer2) { }
+    constructor(private renderer: Renderer2) {}
 
     /**
      * Subscribe to nui-checkbox-group children values change
      */
     public ngAfterViewInit(): void {
         this.children.toArray().forEach((child: ICheckboxComponent) &#x3D;&gt; {
-            this.renderer.setAttribute(child.inputViewContainer.element.nativeElement, &quot;name&quot;, this.name);
-            this.subscriptionsArray.push(
-                this.subscribeToCheckboxEvent(child)
+            this.renderer.setAttribute(
+                child.inputViewContainer.element.nativeElement,
+                &quot;name&quot;,
+                this.name
             );
+            this.subscriptionsArray.push(this.subscribeToCheckboxEvent(child));
             setTimeout(() &#x3D;&gt; {
                 child.checked &#x3D; this.values.indexOf(child.value) &gt; -1;
                 child.disabled &#x3D; child.disabled || this.disabled;
             });
         });
 
-        this.children.changes.subscribe((checkboxComponentQueryList: QueryList&lt;ICheckboxComponent&gt;) &#x3D;&gt; {
-            // verify that there are no observers on checkboxes as we are creating new.
-            this.subscriptionsArray.forEach(sub &#x3D;&gt; sub.unsubscribe());
-            checkboxComponentQueryList.toArray().forEach((checkbox: ICheckboxComponent) &#x3D;&gt; {
-                this.renderer.setAttribute(checkbox.inputViewContainer.element.nativeElement, &quot;name&quot;, this.name);
-                this.subscriptionsArray.push(
-                    this.subscribeToCheckboxEvent(checkbox)
-                );
-                setTimeout(() &#x3D;&gt; {
-                    checkbox.checked &#x3D; this.values.indexOf(checkbox.value) &gt; -1;
-                    checkbox.disabled &#x3D; checkbox.disabled || this.disabled;
-                });
-            });
-        });
+        this.children.changes.subscribe(
+            (checkboxComponentQueryList: QueryList&lt;ICheckboxComponent&gt;) &#x3D;&gt; {
+                // verify that there are no observers on checkboxes as we are creating new.
+                this.subscriptionsArray.forEach((sub) &#x3D;&gt; sub.unsubscribe());
+                checkboxComponentQueryList
+                    .toArray()
+                    .forEach((checkbox: ICheckboxComponent) &#x3D;&gt; {
+                        this.renderer.setAttribute(
+                            checkbox.inputViewContainer.element.nativeElement,
+                            &quot;name&quot;,
+                            this.name
+                        );
+                        this.subscriptionsArray.push(
+                            this.subscribeToCheckboxEvent(checkbox)
+                        );
+                        setTimeout(() &#x3D;&gt; {
+                            checkbox.checked &#x3D;
+                                this.values.indexOf(checkbox.value) &gt; -1;
+                            checkbox.disabled &#x3D;
+                                checkbox.disabled || this.disabled;
+                        });
+                    });
+            }
+        );
     }
 
-    public onChange(value: any[]) {
-    }
+    public onChange(value: any[]) {}
 
-    public onTouched() {
-    }
+    public onTouched() {}
 
     public writeValue(value: any) {
         this.values &#x3D; value;
@@ -949,7 +960,9 @@ export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, Control
     public setDisabledState(isDisabled: boolean): void {
         this.disabled &#x3D; isDisabled;
         if (this.children) {
-            this.children.toArray().forEach(child &#x3D;&gt; child.disabled &#x3D; this.disabled);
+            this.children
+                .toArray()
+                .forEach((child) &#x3D;&gt; (child.disabled &#x3D; this.disabled));
         }
     }
 
@@ -957,16 +970,17 @@ export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, Control
      * Unsubscribe from valuesChange event
      */
     public ngOnDestroy(): void {
-        this.subscriptionsArray.forEach(sub &#x3D;&gt; sub.unsubscribe());
+        this.subscriptionsArray.forEach((sub) &#x3D;&gt; sub.unsubscribe());
     }
 
-    private subscribeToCheckboxEvent(checkbox: ICheckboxComponent): Subscription {
+    private subscribeToCheckboxEvent(
+        checkbox: ICheckboxComponent
+    ): Subscription {
         return checkbox.valueChange.subscribe((event: CheckboxChangeEvent) &#x3D;&gt; {
             if (event.target.checked) {
                 this.values &#x3D; [...this.values, event.target.value];
             } else {
-                _remove(this.values, (x: any) &#x3D;&gt;
-                    x &#x3D;&#x3D;&#x3D; event.target.value);
+                _remove(this.values, (x: any) &#x3D;&gt; x &#x3D;&#x3D;&#x3D; event.target.value);
             }
             this.valuesChange.emit(this.values);
             this.onChange(this.values);
@@ -993,7 +1007,7 @@ export class CheckboxGroupComponent implements AfterViewInit, OnDestroy, Control
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="nui-checkbox-group"     [attr.aria-label]="ariaLabel || null"     [attr.aria-labeledby]="ariaLabeledby || null"     >    <ng-content></ng-content></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div    class="nui-checkbox-group"    [attr.aria-label]="ariaLabel || null"    [attr.aria-labeledby]="ariaLabeledby || null">    <ng-content></ng-content></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
     var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'CheckboxGroupComponent'};

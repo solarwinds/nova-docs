@@ -121,8 +121,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="11"
-                            class="link-to-prism">src/lib/pizzagna/services/dynamic-component-creator.service.ts:11</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/lib/pizzagna/services/dynamic-component-creator.service.ts:12</a></div>
                 </td>
             </tr>
 
@@ -200,6 +200,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+
 import { immutableSet } from &quot;@nova-ui/bits&quot;;
 
 import { IComponentConfiguration, IPizzagna, PizzagnaLayer } from &quot;../../types&quot;;
@@ -209,41 +210,87 @@ const CHILD_ELEM_COMPONENT_TYPE &#x3D; &quot;WidgetConfiguratorSectionComponent&
 
 @Injectable()
 export class DynamicComponentCreator {
-    public getPizzagnaUpdatedWithComponents(pizzagna: IPizzagna, parentPath: string, componentIds: string[]) {
+    public getPizzagnaUpdatedWithComponents(
+        pizzagna: IPizzagna,
+        parentPath: string,
+        componentIds: string[]
+    ) {
         const parent &#x3D; pizzagna[PizzagnaLayer.Structure][parentPath];
-        const template &#x3D; parent.properties?.template as Partial&lt;IComponentConfiguration&gt;[];
+        const template &#x3D; parent.properties
+            ?.template as Partial&lt;IComponentConfiguration&gt;[];
 
-        return this.getPizzagnaWithChildren(pizzagna, componentIds, template, parentPath);
+        return this.getPizzagnaWithChildren(
+            pizzagna,
+            componentIds,
+            template,
+            parentPath
+        );
     }
 
-    private getPizzagnaWithChildren(pizzagna: IPizzagna, componentIds: string[], template: Partial&lt;IComponentConfiguration&gt;[], parentPath: string) {
-        const children &#x3D; componentIds.map(id &#x3D;&gt; ({
+    private getPizzagnaWithChildren(
+        pizzagna: IPizzagna,
+        componentIds: string[],
+        template: Partial&lt;IComponentConfiguration&gt;[],
+        parentPath: string
+    ) {
+        const children &#x3D; componentIds.map((id) &#x3D;&gt; ({
             id,
             componentType: CHILD_ELEM_COMPONENT_TYPE,
         })) as IComponentConfiguration[];
 
-        let updatedPizzagna &#x3D; children.reduce((res, child) &#x3D;&gt; this.updateChildPizzagna(res, template, child), pizzagna);
-        updatedPizzagna &#x3D; this.getPizzagnaWithNodesSet(updatedPizzagna, parentPath, componentIds);
+        let updatedPizzagna &#x3D; children.reduce(
+            (res, child) &#x3D;&gt; this.updateChildPizzagna(res, template, child),
+            pizzagna
+        );
+        updatedPizzagna &#x3D; this.getPizzagnaWithNodesSet(
+            updatedPizzagna,
+            parentPath,
+            componentIds
+        );
 
         return updatedPizzagna;
     }
 
-    private updateChildPizzagna(pizzagna: IPizzagna, template: Partial&lt;IComponentConfiguration&gt;[], child: IComponentConfiguration) {
-        let updatedPizzagna &#x3D; immutableSet(pizzagna, &#x60;${PizzagnaLayer.Structure}.${child.id}&#x60;, child);
+    private updateChildPizzagna(
+        pizzagna: IPizzagna,
+        template: Partial&lt;IComponentConfiguration&gt;[],
+        child: IComponentConfiguration
+    ) {
+        let updatedPizzagna &#x3D; immutableSet(
+            pizzagna,
+            &#x60;${PizzagnaLayer.Structure}.${child.id}&#x60;,
+            child
+        );
 
-        const nodes &#x3D; template.map(node &#x3D;&gt; ({
+        const nodes &#x3D; template.map((node) &#x3D;&gt; ({
             ...node,
             id: &#x60;${child.id}/${node.id}&#x60;,
         }));
-        updatedPizzagna &#x3D; nodes.reduce((res, node) &#x3D;&gt; immutableSet(res, &#x60;${PizzagnaLayer.Structure}.${node.id}&#x60;, node), updatedPizzagna);
+        updatedPizzagna &#x3D; nodes.reduce(
+            (res, node) &#x3D;&gt;
+                immutableSet(
+                    res,
+                    &#x60;${PizzagnaLayer.Structure}.${node.id}&#x60;,
+                    node
+                ),
+            updatedPizzagna
+        );
 
-        const nodesIDs &#x3D; nodes.map(node &#x3D;&gt; node.id);
-        updatedPizzagna &#x3D; this.getPizzagnaWithNodesSet(updatedPizzagna, child.id, nodesIDs);
+        const nodesIDs &#x3D; nodes.map((node) &#x3D;&gt; node.id);
+        updatedPizzagna &#x3D; this.getPizzagnaWithNodesSet(
+            updatedPizzagna,
+            child.id,
+            nodesIDs
+        );
 
         return updatedPizzagna;
     }
 
-    private getPizzagnaWithNodesSet(pizzagna: IPizzagna, componentId: string, nodes: string[]) {
+    private getPizzagnaWithNodesSet(
+        pizzagna: IPizzagna,
+        componentId: string,
+        nodes: string[]
+    ) {
         const path &#x3D; &#x60;${PizzagnaLayer.Structure}.${componentId}.properties.nodes&#x60;;
 
         return immutableSet(pizzagna, path, nodes);

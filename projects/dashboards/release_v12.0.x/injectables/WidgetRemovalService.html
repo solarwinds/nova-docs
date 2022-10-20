@@ -102,7 +102,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/lib/services/widget-removal.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/lib/services/widget-removal.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -169,8 +169,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/lib/services/widget-removal.service.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/lib/services/widget-removal.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -260,10 +260,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { LoggerService } from &quot;@nova-ui/bits&quot;;
 import isFunction from &quot;lodash/isFunction&quot;;
 import { EMPTY, Observable, of } from &quot;rxjs&quot;;
 import { catchError } from &quot;rxjs/operators&quot;;
+
+import { LoggerService } from &quot;@nova-ui/bits&quot;;
 
 import { DashboardComponent } from &quot;../components/dashboard/dashboard.component&quot;;
 import { IConfiguratorSource } from &quot;../configurator/services/types&quot;;
@@ -271,14 +272,14 @@ import { WidgetRemovalOperation } from &quot;../configurator/services/types&quot
 
 @Injectable({ providedIn: &quot;root&quot; })
 export class WidgetRemovalService {
+    constructor(private logger: LoggerService) {}
 
-    constructor(private logger: LoggerService) {
-    }
-
-    public handleRemove(dashboardComponent: DashboardComponent,
-                        widgetId: string,
-                        configuratorSource: IConfiguratorSource,
-                        tryRemove?: WidgetRemovalOperation) {
+    public handleRemove(
+        dashboardComponent: DashboardComponent,
+        widgetId: string,
+        configuratorSource: IConfiguratorSource,
+        tryRemove?: WidgetRemovalOperation
+    ) {
         // TODO: Handle the case when tryRemove is undefined
         // @ts-ignore
         return this.tryRemove(tryRemove, widgetId, configuratorSource).pipe(
@@ -286,7 +287,11 @@ export class WidgetRemovalService {
         );
     }
 
-    private tryRemove(tryRemove: WidgetRemovalOperation, widgetId: string, configuratorSource: IConfiguratorSource) {
+    private tryRemove(
+        tryRemove: WidgetRemovalOperation,
+        widgetId: string,
+        configuratorSource: IConfiguratorSource
+    ) {
         if (isFunction(tryRemove)) {
             return tryRemove(widgetId, configuratorSource).pipe(
                 catchError((err: any) &#x3D;&gt; {
@@ -299,15 +304,17 @@ export class WidgetRemovalService {
         }
     }
 
-    private updateDashboard &#x3D; (dashboardComponent: DashboardComponent) &#x3D;&gt;
+    private updateDashboard &#x3D;
+        (dashboardComponent: DashboardComponent) &#x3D;&gt;
         (source: Observable&lt;string&gt;) &#x3D;&gt;
-            new Observable&lt;void&gt;(observer &#x3D;&gt;
+            new Observable&lt;void&gt;((observer) &#x3D;&gt;
                 source.subscribe((widgetId: string) &#x3D;&gt; {
                     if (widgetId) {
                         dashboardComponent.removeWidget(widgetId);
                     }
                     observer.next();
-                }))
+                })
+            );
 }
 </code></pre>
     </div>

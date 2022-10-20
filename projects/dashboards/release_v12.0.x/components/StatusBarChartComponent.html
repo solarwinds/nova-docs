@@ -185,7 +185,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:43</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -304,8 +304,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -391,7 +391,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:68</a></div>
                             </td>
                         </tr>
 
@@ -419,7 +419,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -452,7 +452,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:59</a></div>
                             </td>
                         </tr>
 
@@ -485,7 +485,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -513,7 +513,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:67</a></div>
                             </td>
                         </tr>
 
@@ -526,8 +526,23 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, Inject, OnInit, Optional } from &quot;@angular/core&quot;;
-import { EventBus, IconService, IDataSource, IEvent, uuid } from &quot;@nova-ui/bits&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Component,
+    Inject,
+    OnInit,
+    Optional,
+} from &quot;@angular/core&quot;;
+import { merge, Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import {
+    EventBus,
+    IconService,
+    IDataSource,
+    IEvent,
+    uuid,
+} from &quot;@nova-ui/bits&quot;;
 import {
     BandScale,
     BarHighlightStrategy,
@@ -547,13 +562,14 @@ import {
     TimeIntervalScale,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
-import { merge, Subject } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
-import { ITimeseriesWidgetData, ITimeseriesWidgetStatusData } from &quot;../../types&quot;;
+import {
+    ITimeseriesWidgetData,
+    ITimeseriesWidgetStatusData,
+} from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
 
 @Component({
@@ -561,7 +577,10 @@ import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quo
     templateUrl: &quot;./status-bar-chart.component.html&quot;,
     styleUrls: [&quot;./status-bar-chart.component.less&quot;],
 })
-export class StatusBarChartComponent extends TimeseriesChartComponent&lt;ITimeseriesWidgetStatusData&gt; implements OnInit {
+export class StatusBarChartComponent
+    extends TimeseriesChartComponent&lt;ITimeseriesWidgetStatusData&gt;
+    implements OnInit
+{
     public static lateLoadKey &#x3D; &quot;StatusChartComponent&quot;;
 
     public chartAssist: SparkChartAssist;
@@ -570,44 +589,62 @@ export class StatusBarChartComponent extends TimeseriesChartComponent&lt;ITimese
     protected renderer: Renderer&lt;IAccessors&gt;;
     private chartUpdate$ &#x3D; new Subject&lt;void&gt;();
 
-    constructor(private iconService: IconService,
+    constructor(
+        private iconService: IconService,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
         public changeDetector: ChangeDetectorRef,
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;) {
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
+    ) {
         super(timeseriesScalesService, dataSource);
     }
 
-    public ngOnInit() {
-    }
+    public ngOnInit() {}
 
-    public getDataPointData(series: IChartAssistSeries&lt;IAccessors&gt;, key: string): any {
+    public getDataPointData(
+        series: IChartAssistSeries&lt;IAccessors&gt;,
+        key: string
+    ): any {
         const data &#x3D; this.chartAssist.highlightedDataPoints[series.id]?.data;
         if (data) {
             return data[key];
         }
-        return series.data.length &gt; 0 ? series.data[series.data.length - 1][key] : undefined;
+        return series.data.length &gt; 0
+            ? series.data[series.data.length - 1][key]
+            : undefined;
     }
 
     protected buildChart(): void {
         this.buildChart$.next();
         this.chartAssist &#x3D; new SparkChartAssist();
 
-        this.accessors &#x3D; statusAccessors(this.chartAssist.palette.standardColors);
+        this.accessors &#x3D; statusAccessors(
+            this.chartAssist.palette.standardColors
+        );
         this.accessors.data.color &#x3D; (d, i, series, dataSeries) &#x3D;&gt;
-            typeof d.color &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ? &quot;var(--nui-color-semantic-unknown)&quot; : d.color;
+            typeof d.color &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+                ? &quot;var(--nui-color-semantic-unknown)&quot;
+                : d.color;
 
-        this.accessors.data.thickness &#x3D; (data: any) &#x3D;&gt; typeof data.thick &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || data.thick ?
-            BarRenderer.THICK : BarRenderer.THIN;
+        this.accessors.data.thickness &#x3D; (data: any) &#x3D;&gt;
+            typeof data.thick &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || data.thick
+                ? BarRenderer.THICK
+                : BarRenderer.THIN;
 
         const iconSize: number &#x3D; 8;
         this.accessors.data.marker &#x3D; (data: any) &#x3D;&gt;
-            data.icon ?
-                this.iconService.getIconResized(this.iconService.getIconData(data.icon).code, iconSize) :
-                undefined;
+            data.icon
+                ? this.iconService.getIconResized(
+                      this.iconService.getIconData(data.icon).code,
+                      iconSize
+                  )
+                : undefined;
 
         // disable pointer events on bars to ensure the zoom drag target is the mouse interactive area rather than the bars
-        this.renderer &#x3D; new BarRenderer({ highlightStrategy: new BarHighlightStrategy(&quot;x&quot;), pointerEvents: false });
+        this.renderer &#x3D; new BarRenderer({
+            highlightStrategy: new BarHighlightStrategy(&quot;x&quot;),
+            pointerEvents: false,
+        });
 
         this.scales.y &#x3D; new BandScale();
         this.scales.y.fixDomain(StatusAccessors.STATUS_DOMAIN);
@@ -618,27 +655,46 @@ export class StatusBarChartComponent extends TimeseriesChartComponent&lt;ITimese
 
         // Assemble the series set
         const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D;
-            this.widgetData.series.map((d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
-                ...d,
-                data: this.transformData(d.data, this.scales.x instanceof TimeIntervalScale),
-                accessors: this.accessors,
-                renderer: this.renderer,
-                scales: this.scales,
-            }));
+            this.widgetData.series.map(
+                (d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
+                    ...d,
+                    data: this.transformData(
+                        d.data,
+                        this.scales.x instanceof TimeIntervalScale
+                    ),
+                    accessors: this.accessors,
+                    renderer: this.renderer,
+                    scales: this.scales,
+                })
+            );
 
         // Update the chart
         this.chartAssist.update(seriesSet);
 
         if (this.configuration.enableZoom) {
-            this.chartAssist.sparks.forEach(spark &#x3D;&gt; {
+            this.chartAssist.sparks.forEach((spark) &#x3D;&gt; {
                 if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
-                    spark?.chart?.addPlugin(new ZoomPlugin({ enableExternalEvents: true }));
+                    spark?.chart?.addPlugin(
+                        new ZoomPlugin({ enableExternalEvents: true })
+                    );
                 }
             });
 
             // only need to subscribe to one chart&#x27;s SET_DOMAIN_EVENT
-            this.chartAssist.sparks[0].chart?.getEventBus().getStream(SET_DOMAIN_EVENT)
-                .pipe(takeUntil(merge(this.chartUpdate$, (this.chartAssist.sparks[0].chart as Chart)?.eventBus.getStream(DESTROY_EVENT), this.buildChart$)))
+            this.chartAssist.sparks[0].chart
+                ?.getEventBus()
+                .getStream(SET_DOMAIN_EVENT)
+                .pipe(
+                    takeUntil(
+                        merge(
+                            this.chartUpdate$,
+                            (
+                                this.chartAssist.sparks[0].chart as Chart
+                            )?.eventBus.getStream(DESTROY_EVENT),
+                            this.buildChart$
+                        )
+                    )
+                )
                 .subscribe((event: IChartEvent) &#x3D;&gt; {
                     const payload &#x3D; &lt;ISetDomainEventPayload&gt;event.data;
                     const newDomain &#x3D; payload[Object.keys(payload)[0]];
@@ -661,7 +717,10 @@ export class StatusBarChartComponent extends TimeseriesChartComponent&lt;ITimese
      *
      * @returns The transformed data
      */
-    protected transformData(data: ITimeseriesWidgetStatusData[], isIntervalProgression: boolean): IStatusData[] {
+    protected transformData(
+        data: ITimeseriesWidgetStatusData[],
+        isIntervalProgression: boolean
+    ): IStatusData[] {
         const statusDataArray: any[] &#x3D; [];
         data.forEach((d, i) &#x3D;&gt; {
             if (isIntervalProgression || data.length - 1 !&#x3D;&#x3D; i) {
@@ -677,7 +736,6 @@ export class StatusBarChartComponent extends TimeseriesChartComponent&lt;ITimese
         });
         return statusDataArray;
     }
-
 }
 
 interface IStatusData {
@@ -700,7 +758,7 @@ interface IStatusData {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="chartAssist" class="p-3 status-bar-chart">    <div class="d-flex" *ngFor="let spark of chartAssist.sparks; trackBy: chartAssist.trackByFn">        <nui-chart class="d-flex flex-grow-1" [chart]="spark.chart"                   [nuiChartCollectionId]="collectionId"></nui-chart>        <div class="d-flex flex-column pl-2"             *ngIf="spark.chartSeriesSet?.length > 0 && spark.chartSeriesSet[0]; let series">            <nui-legend class="status-bar-chart__legend" [active]="chartAssist.isLegendActive">                <nui-legend-series [descriptionPrimary]="series.legendDescriptionPrimary"                                   [descriptionSecondary]="series.legendDescriptionSecondary">                    <div class="status-bar-chart__legend__tile d-flex justify-content-center align-items-center">                        <div class="w-100 h-100 status-bar-chart__legend__tile__background"                            [style.background-color]="getDataPointData(series,\'color\')">                        </div>                        <nui-icon *ngIf="getDataPointData(series,\'icon\'); let icon;" class="status-bar-chart__legend__tile__icon" [icon]="icon"></nui-icon>                    </div>                </nui-legend-series>            </nui-legend>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="chartAssist" class="p-3 status-bar-chart">    <div        class="d-flex"        *ngFor="let spark of chartAssist.sparks; trackBy: chartAssist.trackByFn"    >        <nui-chart            class="d-flex flex-grow-1"            [chart]="spark.chart"            [nuiChartCollectionId]="collectionId"        ></nui-chart>        <div            class="d-flex flex-column pl-2"            *ngIf="                spark.chartSeriesSet?.length > 0 && spark.chartSeriesSet[0];                let series            "        >            <nui-legend                class="status-bar-chart__legend"                [active]="chartAssist.isLegendActive"            >                <nui-legend-series                    [descriptionPrimary]="series.legendDescriptionPrimary"                    [descriptionSecondary]="series.legendDescriptionSecondary"                >                    <div                        class="status-bar-chart__legend__tile d-flex justify-content-center align-items-center"                    >                        <div                            class="w-100 h-100 status-bar-chart__legend__tile__background"                            [style.background-color]="                                getDataPointData(series, \'color\')                            "                        ></div>                        <nui-icon                            *ngIf="getDataPointData(series, \'icon\'); let icon"                            class="status-bar-chart__legend__tile__icon"                            [icon]="icon"                        ></nui-icon>                    </div>                </nui-legend-series>            </nui-legend>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
     var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
     var ACTUAL_COMPONENT = {'name': 'StatusBarChartComponent'};

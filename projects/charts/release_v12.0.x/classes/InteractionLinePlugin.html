@@ -185,7 +185,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -219,7 +219,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:7</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:6</a></code>
 </div>
                             </td>
                         </tr>
@@ -258,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:114</a></div>
                 </td>
             </tr>
 
@@ -299,8 +299,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:35</a></div>
                 </td>
             </tr>
 
@@ -346,7 +346,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:15</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:14</a></code>
 </div>
                 </td>
             </tr>
@@ -393,7 +393,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:9</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:8</a></code>
 </div>
                 </td>
             </tr>
@@ -440,7 +440,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:11</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:10</a></code>
 </div>
                 </td>
             </tr>
@@ -487,7 +487,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:13</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:12</a></code>
 </div>
                 </td>
             </tr>
@@ -519,10 +519,18 @@ import isEmpty from &quot;lodash/isEmpty&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { CHART_VIEW_STATUS_EVENT, INTERACTION_VALUES_EVENT } from &quot;../../../constants&quot;;
+import {
+    CHART_VIEW_STATUS_EVENT,
+    INTERACTION_VALUES_EVENT,
+} from &quot;../../../constants&quot;;
 import { ChartPlugin } from &quot;../../common/chart-plugin&quot;;
 import { IScale } from &quot;../../common/scales/types&quot;;
-import { D3Selection, IChartEvent, IChartViewStatusEventPayload, InteractionType } from &quot;../../common/types&quot;;
+import {
+    D3Selection,
+    IChartEvent,
+    IChartViewStatusEventPayload,
+    InteractionType,
+} from &quot;../../common/types&quot;;
 import { XYGrid } from &quot;../../grid/xy-grid&quot;;
 import { IInteractionValuesPayload } from &quot;../types&quot;;
 
@@ -547,7 +555,9 @@ export class InteractionLinePlugin extends ChartPlugin {
             clipped: true,
         });
 
-        this.chart.getEventBus().getStream(INTERACTION_VALUES_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent) &#x3D;&gt; {
                 this.lastInteractionValuesPayload &#x3D; event.data;
@@ -556,7 +566,9 @@ export class InteractionLinePlugin extends ChartPlugin {
                 }
             });
 
-        this.chart.getEventBus().getStream(CHART_VIEW_STATUS_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(CHART_VIEW_STATUS_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent&lt;IChartViewStatusEventPayload&gt;) &#x3D;&gt; {
                 this.isChartInView &#x3D; event.data.isChartInView;
@@ -568,7 +580,11 @@ export class InteractionLinePlugin extends ChartPlugin {
 
     private handleLineUpdate() {
         const scales &#x3D; this.chart.getGrid().scales;
-        if (this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D; InteractionType.MouseMove || isEmpty(scales)) {
+        if (
+            this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D;
+                InteractionType.MouseMove ||
+            isEmpty(scales)
+        ) {
             return;
         }
 
@@ -579,7 +595,9 @@ export class InteractionLinePlugin extends ChartPlugin {
             throw new Error(&quot;xScale is not defined&quot;);
         }
 
-        const xValue &#x3D; this.lastInteractionValuesPayload.values.x ? this.lastInteractionValuesPayload.values.x[xScale.id] : null;
+        const xValue &#x3D; this.lastInteractionValuesPayload.values.x
+            ? this.lastInteractionValuesPayload.values.x[xScale.id]
+            : null;
         this.updateLine(this.interactionLineLayer, xScale, xValue);
     }
 
@@ -588,15 +606,17 @@ export class InteractionLinePlugin extends ChartPlugin {
         if (value) {
             data.push(value);
         }
-        const line &#x3D; layer.selectAll(&#x60;.${InteractionLinePlugin.LAYER_NAME}&#x60;).data(data);
+        const line &#x3D; layer
+            .selectAll(&#x60;.${InteractionLinePlugin.LAYER_NAME}&#x60;)
+            .data(data);
 
         const xFn &#x3D; (d: any) &#x3D;&gt; xScale.convert(d);
         const attrs &#x3D; {
-            &quot;class&quot;: InteractionLinePlugin.LAYER_NAME,
-            &quot;x1&quot;: xFn,
-            &quot;y1&quot;: 0,
-            &quot;x2&quot;: xFn,
-            &quot;y2&quot;: this.chart.getGrid().config().dimension.height(),
+            class: InteractionLinePlugin.LAYER_NAME,
+            x1: xFn,
+            y1: 0,
+            x2: xFn,
+            y2: this.chart.getGrid().config().dimension.height(),
         };
 
         line.enter()
@@ -608,7 +628,10 @@ export class InteractionLinePlugin extends ChartPlugin {
     }
 
     public destroy(): void {
-        this.chart.getGrid().getLasagna().removeLayer(InteractionLinePlugin.LAYER_NAME);
+        this.chart
+            .getGrid()
+            .getLasagna()
+            .removeLayer(InteractionLinePlugin.LAYER_NAME);
         this.destroy$.next();
         this.destroy$.complete();
     }

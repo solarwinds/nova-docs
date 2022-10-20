@@ -134,7 +134,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/services/theme-switch.service.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/services/theme-switch.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/services/theme-switch.service.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/services/theme-switch.service.ts:110</a></div>
                 </td>
             </tr>
 
@@ -281,8 +281,8 @@ system preference</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/services/theme-switch.service.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/services/theme-switch.service.ts:89</a></div>
                 </td>
             </tr>
 
@@ -325,8 +325,8 @@ light/dark mode system preference</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="72"
-                            class="link-to-prism">src/services/theme-switch.service.ts:72</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/services/theme-switch.service.ts:81</a></div>
                 </td>
             </tr>
 
@@ -412,7 +412,7 @@ light/dark mode system preference</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/services/theme-switch.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/services/theme-switch.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -451,7 +451,7 @@ light/dark mode system preference</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/services/theme-switch.service.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/services/theme-switch.service.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -482,10 +482,12 @@ import { filter, map } from &quot;rxjs/operators&quot;;
 })
 export class ThemeSwitchService {
     /** @ignore BehaviorSubject indicating whether we should display theme switcher */
-    public showThemeSwitcherSubject: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+    public showThemeSwitcherSubject: BehaviorSubject&lt;boolean&gt; &#x3D;
+        new BehaviorSubject&lt;boolean&gt;(false);
 
     /** BehaviorSubject indicating whether dark mode is enabled */
-    public isDarkModeEnabledSubject: BehaviorSubject&lt;boolean | null&gt; &#x3D; new BehaviorSubject&lt;boolean | null&gt;(null);
+    public isDarkModeEnabledSubject: BehaviorSubject&lt;boolean | null&gt; &#x3D;
+        new BehaviorSubject&lt;boolean | null&gt;(null);
 
     /** Should route be refreshed after theme switching */
     public withRefreshRoute: boolean &#x3D; false;
@@ -504,25 +506,32 @@ export class ThemeSwitchService {
         /** Getting renderer instance */
         this.renderer &#x3D; this.rendererFactory.createRenderer(null, null);
 
-        this.router.events.pipe(
-            filter(event &#x3D;&gt; event instanceof NavigationEnd),
-            map(() &#x3D;&gt; {
-                let route &#x3D; this._route.root;
-                while (route.firstChild) {
-                    route &#x3D; route.firstChild;
-                }
-                return route;
-            })
-        )
-            .subscribe(route &#x3D;&gt; {
-                const showThemeSwitcher &#x3D; (route.snapshot.data || {}).showThemeSwitcher;
+        this.router.events
+            .pipe(
+                filter((event) &#x3D;&gt; event instanceof NavigationEnd),
+                map(() &#x3D;&gt; {
+                    let route &#x3D; this._route.root;
+                    while (route.firstChild) {
+                        route &#x3D; route.firstChild;
+                    }
+                    return route;
+                })
+            )
+            .subscribe((route) &#x3D;&gt; {
+                const showThemeSwitcher &#x3D; (route.snapshot.data || {})
+                    .showThemeSwitcher;
 
                 this.showThemeSwitcherSubject.next(showThemeSwitcher);
 
                 if (showThemeSwitcher) {
                     /** Case when route is changed on the same page (see on breadcrumb component docs page) */
-                    if (typeof this.isDarkModeEnabledSubject.getValue() &#x3D;&#x3D;&#x3D; &quot;boolean&quot;) {
-                        this.darkThemePreference &#x3D; window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+                    if (
+                        typeof this.isDarkModeEnabledSubject.getValue() &#x3D;&#x3D;&#x3D;
+                        &quot;boolean&quot;
+                    ) {
+                        this.darkThemePreference &#x3D; window.matchMedia(
+                            &quot;(prefers-color-scheme: dark)&quot;
+                        );
                         return;
                     }
 
@@ -550,14 +559,19 @@ export class ThemeSwitchService {
      * light/dark mode system preference
      */
     public enableColorSchemePreferenceHandling() {
-        this.darkThemePreference &#x3D; window.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+        this.darkThemePreference &#x3D; window.matchMedia(
+            &quot;(prefers-color-scheme: dark)&quot;
+        );
 
         /** First call to set initial theme */
         this.darkModePreferenceHandler(this.darkThemePreference.matches);
 
         /** If browser supports subscribing to MediaQueryList event we do it */
         if (typeof this.darkThemePreference.addEventListener &#x3D;&#x3D;&#x3D; &quot;function&quot;) {
-            this.darkThemePreference.addEventListener(&quot;change&quot;, this.darkModePreferenceHandler);
+            this.darkThemePreference.addEventListener(
+                &quot;change&quot;,
+                this.darkModePreferenceHandler
+            );
         }
     }
 
@@ -566,29 +580,45 @@ export class ThemeSwitchService {
      * system preference
      */
     public disableColorSchemePreferenceHandling() {
-        if (this.darkThemePreference &amp;&amp; typeof this.darkThemePreference.removeEventListener &#x3D;&#x3D;&#x3D; &quot;function&quot;) {
-            this.darkThemePreference.removeEventListener(&quot;change&quot;, this.darkModePreferenceHandler);
+        if (
+            this.darkThemePreference &amp;&amp;
+            typeof this.darkThemePreference.removeEventListener &#x3D;&#x3D;&#x3D; &quot;function&quot;
+        ) {
+            this.darkThemePreference.removeEventListener(
+                &quot;change&quot;,
+                this.darkModePreferenceHandler
+            );
         }
     }
 
-    private darkModePreferenceHandler &#x3D; (event: MediaQueryListEvent | boolean) &#x3D;&gt; {
-        const isDarkModeEnabled &#x3D; typeof event &#x3D;&#x3D;&#x3D; &quot;boolean&quot; ? event : event.matches;
+    private darkModePreferenceHandler &#x3D; (
+        event: MediaQueryListEvent | boolean
+    ) &#x3D;&gt; {
+        const isDarkModeEnabled &#x3D;
+            typeof event &#x3D;&#x3D;&#x3D; &quot;boolean&quot; ? event : event.matches;
         const isDarkPrevColorMode &#x3D; this.isDarkModeEnabledSubject.getValue();
         const demoContainerElement &#x3D; this.document.children[0];
 
         /** Adding class &quot;dark-nova-theme&quot; to html element we make dark mode, otherwise - light mode */
-        this.renderer[isDarkModeEnabled ? &quot;addClass&quot; : &quot;removeClass&quot;](demoContainerElement, &quot;dark-nova-theme&quot;);
+        this.renderer[isDarkModeEnabled ? &quot;addClass&quot; : &quot;removeClass&quot;](
+            demoContainerElement,
+            &quot;dark-nova-theme&quot;
+        );
 
         /**
          * Reiniting route in case when theme is switching forced
          * It allows to avoid reiniting route while application is started
          */
-        if (isDarkPrevColorMode !&#x3D;&#x3D; null &amp;&amp; isDarkPrevColorMode !&#x3D;&#x3D; isDarkModeEnabled &amp;&amp; this.withRefreshRoute) {
+        if (
+            isDarkPrevColorMode !&#x3D;&#x3D; null &amp;&amp;
+            isDarkPrevColorMode !&#x3D;&#x3D; isDarkModeEnabled &amp;&amp;
+            this.withRefreshRoute
+        ) {
             this.reInitRoute();
         }
 
         this.isDarkModeEnabledSubject.next(isDarkModeEnabled);
-    }
+    };
 
     private reInitRoute() {
         /**
@@ -596,16 +626,20 @@ export class ThemeSwitchService {
          */
         const scrolledElement &#x3D; this.document.children[0];
         const currentScrollTopPosition &#x3D; scrolledElement.scrollTop;
-        const originalShouldReuseRoute &#x3D; this.router.routeReuseStrategy.shouldReuseRoute;
+        const originalShouldReuseRoute &#x3D;
+            this.router.routeReuseStrategy.shouldReuseRoute;
 
         this.router.routeReuseStrategy.shouldReuseRoute &#x3D; () &#x3D;&gt; false;
         this.router.navigated &#x3D; false;
 
         this.router.navigate([this.router.url]).then(() &#x3D;&gt; {
-            this.router.routeReuseStrategy.shouldReuseRoute &#x3D; originalShouldReuseRoute;
+            this.router.routeReuseStrategy.shouldReuseRoute &#x3D;
+                originalShouldReuseRoute;
 
             /** After reiniting route we should restore scroll position */
-            setTimeout(() &#x3D;&gt; scrolledElement.scrollTop &#x3D; currentScrollTopPosition);
+            setTimeout(
+                () &#x3D;&gt; (scrolledElement.scrollTop &#x3D; currentScrollTopPosition)
+            );
         });
     }
 }

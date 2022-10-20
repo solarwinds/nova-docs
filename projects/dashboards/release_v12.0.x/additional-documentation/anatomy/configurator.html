@@ -49,31 +49,31 @@
 
 
 <h1 id="configurator">Configurator</h1>
-<p>The Configurator refers to the form that pops up in the sidebar as you try to edit / create a widget. 
+<p>The Configurator refers to the form that pops up in the sidebar as you try to edit / create a widget.
 It&#39;s built around the very same concept as the widgets (i.e. Pizzagna) and is integrally linked to two things:</p>
 <ul>
-<li>the widget <em><strong>type</strong></em> being edited/created</li>
-<li>the <a href="./anatomy/data-sources.html">data source</a> that feeds the widget</li>
+<li>  the widget <strong><em>type</em></strong> being edited/created</li>
+<li>  the <a href="./anatomy/data-sources.html">data source</a> that feeds the widget</li>
 </ul>
-<p>A particular widget type will consist of the same data-configuration across different products/features. For example, 
-a table widget will always require the end-user to identify a set of columns to display, as well as a data type per column. 
-However, different <em><strong>sources</strong></em> of data require that the Configurator be highly customizable. For example, an Orion 
-product may want to expose a SWIS-based data source that allows the end-user to type in a SWQL query. On the other hand, 
-a standalone or AppMan product may wish to expose a list of RESTful endpoints from which the end-user can choose. Consequently, 
+<p>A particular widget type will consist of the same data-configuration across different products/features. For example,
+a table widget will always require the end-user to identify a set of columns to display, as well as a data type per column.
+However, different <strong><em>sources</em></strong> of data require that the Configurator be highly customizable. For example, an Orion
+product may want to expose a SWIS-based data source that allows the end-user to type in a SWQL query. On the other hand,
+a standalone or AppMan product may wish to expose a list of RESTful endpoints from which the end-user can choose. Consequently,
 the Configurator is both pluggable and overrideable.</p>
 <h2 id="form-parts">Form Parts</h2>
-<p>The form consists of independent parts that are visualized as accordions with expandable items containing 
-specific form input fields. This structure is common to all the forms, but it&#39;s by no means enforced. 
+<p>The form consists of independent parts that are visualized as accordions with expandable items containing
+specific form input fields. This structure is common to all the forms, but it&#39;s by no means enforced.
 Pizzagna is used to define the tree hierarchy of all these pieces, so any customization can be performed
-including extending or replacing the form parts provided by the standard widget type definitions. </p>
+including extending or replacing the form parts provided by the standard widget type definitions.</p>
 <h2 id="configurator-layout">Configurator Layout</h2>
 <p><img src="https://cp.solarwinds.com/rest/gliffy/1.0/embeddedDiagrams/02455210-f953-4622-98dd-7c4be3ff1330.png" alt="Configurator Layout" class="img-responsive"></p>
 <h2 id="converters">Converters</h2>
-<p>To transform data between the widget and the form, we leverage the concept of providers. Since the job 
-of our providers is more focused than the standard Angular providers, we refer to them as &quot;converters&quot;. 
-With every form, we register a converter that hooks up to the form of the related component. 
+<p>To transform data between the widget and the form, we leverage the concept of providers. Since the job
+of our providers is more focused than the standard Angular providers, we refer to them as &quot;converters&quot;.
+With every form, we register a converter that hooks up to the form of the related component.
 The converter then propagates the form changes to the widget. On initial form load, a converter also
-collects information from the widget itself to populate the form. </p>
+collects information from the widget itself to populate the form.</p>
 <p>An example of converter configuration might look something like this:</p>
 <div><pre class="line-numbers"><code class="language-none">// this demonstrates a theoretical form piece configuration
 &quot;someNodeId&quot;: {
@@ -85,19 +85,19 @@ collects information from the widget itself to populate the form. </p>
             providerId: &quot;AcmeSomethingConverter&quot;,
         },
     },
-},</code></pre></div><p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to 
+},</code></pre></div><p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to
 specific paths or a specialized implementation. Check out the widget types specifications for examples.</p>
 <h2 id="nuiwidgeteditor-directive">nuiWidgetEditor Directive</h2>
-<p>The configurator is an independent entity that can be invoked on its own without any dashboard 
-dependency. However, there is a clear relationship between them, so that&#39;s where the 
-<a href="../../directives/WidgetEditorDirective.html"><code>nuiWidgetEditor</code></a> directive enters. </p>
-<p>In a world where this directive didn&#39;t exist, we&#39;d have to subscribe to the 
-<a href="../../miscellaneous/variables.html#WIDGET_EDIT"><code>WIDGET_EDIT</code></a> event that is emitted after the widget&#39;s 
-edit menu item is activated and use the widget editor service to open the configurator with the correct 
-settings. Then, we&#39;d have to wait for the form submit result coming from the main widget configuration 
-form, at which point we&#39;d try to persist the widget in our storage. If persistence succeeded, we&#39;d need 
+<p>The configurator is an independent entity that can be invoked on its own without any dashboard
+dependency. However, there is a clear relationship between them, so that&#39;s where the
+<a href="../../directives/WidgetEditorDirective.html"><code>nuiWidgetEditor</code></a> directive enters.</p>
+<p>In a world where this directive didn&#39;t exist, we&#39;d have to subscribe to the
+<a href="../../miscellaneous/variables.html#WIDGET_EDIT"><code>WIDGET_EDIT</code></a> event that is emitted after the widget&#39;s
+edit menu item is activated and use the widget editor service to open the configurator with the correct
+settings. Then, we&#39;d have to wait for the form submit result coming from the main widget configuration
+form, at which point we&#39;d try to persist the widget in our storage. If persistence succeeded, we&#39;d need
 to close the configurator and update the widget on the dashboard.</p>
-<p>Thankfully, all of this is taken care of by the directive, so if you&#39;re ok with the functionality the 
+<p>Thankfully, all of this is taken care of by the directive, so if you&#39;re ok with the functionality the
 directive provides, just place it on the dashboard component in the template and you&#39;re done.</p>
 
                    </div><div class="search-results">

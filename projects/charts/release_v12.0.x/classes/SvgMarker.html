@@ -192,8 +192,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/core/common/palette/markers/svg-marker.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="13"
+                            class="link-to-prism">src/core/common/palette/markers/svg-marker.ts:13</a></div>
                 </td>
             </tr>
 
@@ -233,8 +233,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/core/common/palette/markers/svg-marker.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/core/common/palette/markers/svg-marker.ts:17</a></div>
                 </td>
             </tr>
 
@@ -301,15 +301,16 @@ import { IChartMarker } from &quot;../../types&quot;;
 export class SvgMarker implements IChartMarker {
     protected styledSvg: string;
 
-    constructor(protected svg: string) {
-    }
+    constructor(protected svg: string) {}
 
     public getSvg(): string {
         return this.styledSvg || this.svg;
     }
 
     public setColor(color: string): void {
-        this.styledSvg &#x3D; isUndefined(color) ? color : &#x60;&lt;g fill&#x3D;&quot;${color}&quot;&gt;${this.svg}&lt;/g&gt;&#x60;;
+        this.styledSvg &#x3D; isUndefined(color)
+            ? color
+            : &#x60;&lt;g fill&#x3D;&quot;${color}&quot;&gt;${this.svg}&lt;/g&gt;&#x60;;
     }
 }
 </code></pre>

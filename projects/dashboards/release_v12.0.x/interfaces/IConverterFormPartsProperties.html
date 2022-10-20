@@ -207,7 +207,8 @@ import { FormGroup } from &quot;@angular/forms&quot;;
 
 import { IPizzagna } from &quot;../../../types&quot;;
 
-export const CONFIGURATOR_CONVERTER &#x3D; new InjectionToken&lt;IConfiguratorConverter&gt;(&quot;CONFIGURATOR_CONVERTER&quot;);
+export const CONFIGURATOR_CONVERTER &#x3D;
+    new InjectionToken&lt;IConfiguratorConverter&gt;(&quot;CONFIGURATOR_CONVERTER&quot;);
 
 export interface IConfiguratorForm {
     pizzagna: IPizzagna;
@@ -216,11 +217,9 @@ export interface IConfiguratorForm {
 }
 
 export interface IConfiguratorConverter {
-
     buildForm(): any;
 
     toPreview(form: FormGroup): any;
-
 }
 
 export interface IConverterFormPartsProperties {

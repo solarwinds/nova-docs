@@ -224,11 +224,10 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ScaleLinear } from &quot;d3-scale&quot;;
 import { Selection } from &quot;d3-selection&quot;;
 import { ValueMap } from &quot;d3-selection-multi&quot;;
-import { StandardGaugeThresholdMarkerRadius } from &quot;../../gauge/constants&quot;;
 
+import { StandardGaugeThresholdMarkerRadius } from &quot;../../gauge/constants&quot;;
 import { RenderState } from &quot;../../renderers/types&quot;;
 import { IGrid } from &quot;../grid/types&quot;;
-
 import { ChartPlugin } from &quot;./chart-plugin&quot;;
 import { DataManager } from &quot;./data-manager&quot;;
 import { EventBus } from &quot;./event-bus&quot;;
@@ -239,7 +238,12 @@ import { Scales } from &quot;./scales/types&quot;;
 /**
  * Short-form alias for the most commonly used generic D3 Selection type
  */
-export type D3Selection&lt;T extends SVGElement &#x3D; SVGElement&gt; &#x3D; Selection&lt;T, any, SVGElement, any&gt;;
+export type D3Selection&lt;T extends SVGElement &#x3D; SVGElement&gt; &#x3D; Selection&lt;
+    T,
+    any,
+    SVGElement,
+    any
+&gt;;
 
 /**
  * Signature for data accessors
@@ -248,12 +252,20 @@ export type D3Selection&lt;T extends SVGElement &#x3D; SVGElement&gt; &#x3D; Sel
  * @param i index
  * @param series the whole data series
  */
-export type DataAccessor&lt;D &#x3D; any, T &#x3D; any&gt; &#x3D; (d: D, i: number, series: D[], dataSeries: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt; T;
+export type DataAccessor&lt;D &#x3D; any, T &#x3D; any&gt; &#x3D; (
+    d: D,
+    i: number,
+    series: D[],
+    dataSeries: IDataSeries&lt;IAccessors&gt;
+) &#x3D;&gt; T;
 
 /**
  * Signature for series accessors
  */
-export type SeriesAccessor &#x3D; (seriesId: string, series: IDataSeries&lt;IAccessors&gt;) &#x3D;&gt; any;
+export type SeriesAccessor &#x3D; (
+    seriesId: string,
+    series: IDataSeries&lt;IAccessors&gt;
+) &#x3D;&gt; any;
 
 /** @ignore */
 export interface ILasagnaLayer {
@@ -345,12 +357,16 @@ export interface IGaugeThresholdsRendererConfig {
 /**
  * Configuration for the DonutGaugeThresholdsRenderer
  */
-export interface IDonutGaugeThresholdsRendererConfig extends IRadialRendererConfig, IGaugeThresholdsRendererConfig {}
+export interface IDonutGaugeThresholdsRendererConfig
+    extends IRadialRendererConfig,
+        IGaugeThresholdsRendererConfig {}
 
 /**
  * Configuration for the LinearGaugeThresholdsRenderer
  */
-export interface ILinearGaugeThresholdsRendererConfig extends IRendererConfig, IGaugeThresholdsRendererConfig {}
+export interface ILinearGaugeThresholdsRendererConfig
+    extends IRendererConfig,
+        IGaugeThresholdsRendererConfig {}
 
 export interface ILinearScales {
     x: ScaleLinear&lt;number, number&gt;;
@@ -412,7 +428,8 @@ export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt
     renderState?: RenderState;
 }
 
-export interface IChartAssistSeries&lt;A extends IAccessors&gt; extends IChartSeries&lt;A&gt; {
+export interface IChartAssistSeries&lt;A extends IAccessors&gt;
+    extends IChartSeries&lt;A&gt; {
     /**
      * Whether this series should be shown in the legend
      */

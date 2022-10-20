@@ -175,9 +175,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &quot;@angular/core&quot;;
-import {Subscription} from &quot;rxjs&quot;;
-import {take} from &quot;rxjs/operators&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { Subscription } from &quot;rxjs&quot;;
+import { take } from &quot;rxjs/operators&quot;;
 
 import { WidgetEditorAccordionComponent } from &quot;../widget-editor-accordion/widget-editor-accordion.component&quot;;
 
@@ -198,20 +198,24 @@ export class WidgetConfiguratorSectionCoordinatorService {
                 this.closeAllAccordions();
                 accordion.open &#x3D; true;
             }),
-            destroySubscription: accordion.destroySubject.pipe(take(1)).subscribe(() &#x3D;&gt; {
-                this.removeAccordion(accordion);
-            }),
+            destroySubscription: accordion.destroySubject
+                .pipe(take(1))
+                .subscribe(() &#x3D;&gt; {
+                    this.removeAccordion(accordion);
+                }),
         });
     }
 
     private closeAllAccordions() {
-        this.accordions.forEach(state &#x3D;&gt; {
+        this.accordions.forEach((state) &#x3D;&gt; {
             state.instance.closeAccordion();
         });
     }
 
     private removeAccordion(instanceToRemove: WidgetEditorAccordionComponent) {
-        const stateToRemoveIndex &#x3D; this.accordions.findIndex(state &#x3D;&gt; state.instance &#x3D;&#x3D;&#x3D; instanceToRemove);
+        const stateToRemoveIndex &#x3D; this.accordions.findIndex(
+            (state) &#x3D;&gt; state.instance &#x3D;&#x3D;&#x3D; instanceToRemove
+        );
         this.accordions[stateToRemoveIndex].openSubscription.unsubscribe();
         this.accordions.splice(stateToRemoveIndex, 1);
     }

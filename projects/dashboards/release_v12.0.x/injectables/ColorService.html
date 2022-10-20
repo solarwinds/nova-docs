@@ -129,8 +129,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -201,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -273,8 +273,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="9"
-                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:9</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="8"
+                            class="link-to-prism">src/lib/configurator/components/color-picker/color.service.ts:8</a></div>
                 </td>
             </tr>
 
@@ -334,17 +334,16 @@ import { HTML_COLORS } from &quot;./HTMLcolors&quot;;
 
 @Injectable()
 export class ColorService {
-
     public RGBToHexRGBToHex(rgbColor: string): string {
         // Choose correct separator
         const sep &#x3D; rgbColor.indexOf(&quot;,&quot;) &gt; -1 ? &quot;,&quot; : &quot; &quot;;
         // Turn &quot;rgb(r,g,b)&quot; into [r,g,b]
         const rgbParts &#x3D; rgbColor.substr(4).split(&quot;)&quot;)[0].split(sep);
-      
+
         let r &#x3D; (+rgbParts[0]).toString(16),
             g &#x3D; (+rgbParts[1]).toString(16),
             b &#x3D; (+rgbParts[2]).toString(16);
-      
+
         if (r.length &#x3D;&#x3D;&#x3D; 1) {
             r &#x3D; &quot;0&quot; + r;
         }
@@ -354,12 +353,15 @@ export class ColorService {
         if (b.length &#x3D;&#x3D;&#x3D; 1) {
             b &#x3D; &quot;0&quot; + b;
         }
-      
+
         return &quot;#&quot; + r + g + b;
     }
 
     public isHEX(hexColor: string): boolean {
-        return /^#[0-9A-F]{6}$/i.test(hexColor) || /^#([0-9A-F]{3}){1,2}$/i.test(hexColor);
+        return (
+            /^#[0-9A-F]{6}$/i.test(hexColor) ||
+            /^#([0-9A-F]{3}){1,2}$/i.test(hexColor)
+        );
     }
 
     public colorKeywordsToHex(color: string): string {

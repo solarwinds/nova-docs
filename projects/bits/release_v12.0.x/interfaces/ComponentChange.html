@@ -157,7 +157,9 @@
  *
  * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Partial&lt;T&gt;.
  */
-export type DeepPartial&lt;T&gt; &#x3D; T extends object ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; } : T;
+export type DeepPartial&lt;T&gt; &#x3D; T extends object
+    ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; }
+    : T;
 
 export interface ComponentChange&lt;T, P extends keyof T&gt; extends SimpleChange {
     previousValue: T[P];

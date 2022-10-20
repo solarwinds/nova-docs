@@ -168,7 +168,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -231,7 +231,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -264,7 +264,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -298,7 +298,7 @@
                             </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:7</a></code>
+                                    <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:6</a></code>
 </div>
                             </td>
                         </tr>
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="131"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:131</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:167</a></div>
                 </td>
             </tr>
 
@@ -378,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:47</a></div>
                 </td>
             </tr>
 
@@ -425,7 +425,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:15</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:14</a></code>
 </div>
                 </td>
             </tr>
@@ -472,7 +472,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:9</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:8</a></code>
 </div>
                 </td>
             </tr>
@@ -519,7 +519,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:11</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:10</a></code>
 </div>
                 </td>
             </tr>
@@ -566,7 +566,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:13</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/ChartPlugin.html#source" target="_self" >ChartPlugin:12</a></code>
 </div>
                 </td>
             </tr>
@@ -599,11 +599,19 @@ import isEmpty from &quot;lodash/isEmpty&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { CHART_VIEW_STATUS_EVENT, INTERACTION_VALUES_EVENT } from &quot;../../../constants&quot;;
+import {
+    CHART_VIEW_STATUS_EVENT,
+    INTERACTION_VALUES_EVENT,
+} from &quot;../../../constants&quot;;
 import { ChartPlugin } from &quot;../../common/chart-plugin&quot;;
 import { convert } from &quot;../../common/scales/helpers/convert&quot;;
 import { IScale } from &quot;../../common/scales/types&quot;;
-import { D3Selection, IChartEvent, IChartViewStatusEventPayload, InteractionType } from &quot;../../common/types&quot;;
+import {
+    D3Selection,
+    IChartEvent,
+    IChartViewStatusEventPayload,
+    InteractionType,
+} from &quot;../../common/types&quot;;
 import { UtilityService } from &quot;../../common/utility.service&quot;;
 import { XYGrid } from &quot;../../grid/xy-grid&quot;;
 import { IInteractionValuesPayload } from &quot;../types&quot;;
@@ -632,13 +640,18 @@ export class InteractionLabelPlugin extends ChartPlugin {
     }
 
     public initialize(): void {
-        this.interactionLabelLayer &#x3D; this.chart.getGrid().getLasagna().addLayer({
-            name: InteractionLabelPlugin.LAYER_NAME,
-            order: 901,
-            clipped: false,
-        });
+        this.interactionLabelLayer &#x3D; this.chart
+            .getGrid()
+            .getLasagna()
+            .addLayer({
+                name: InteractionLabelPlugin.LAYER_NAME,
+                order: 901,
+                clipped: false,
+            });
 
-        this.chart.getEventBus().getStream(INTERACTION_VALUES_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent) &#x3D;&gt; {
                 this.lastInteractionValuesPayload &#x3D; event.data;
@@ -647,7 +660,9 @@ export class InteractionLabelPlugin extends ChartPlugin {
                 }
             });
 
-        this.chart.getEventBus().getStream(CHART_VIEW_STATUS_EVENT)
+        this.chart
+            .getEventBus()
+            .getStream(CHART_VIEW_STATUS_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent&lt;IChartViewStatusEventPayload&gt;) &#x3D;&gt; {
                 this.isChartInView &#x3D; event.data.isChartInView;
@@ -659,7 +674,12 @@ export class InteractionLabelPlugin extends ChartPlugin {
 
     protected handleLabelUpdate() {
         const scales &#x3D; this.chart.getGrid().scales;
-        if (!this.areLabelUpdatesEnabled || this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D; InteractionType.MouseMove || isEmpty(scales)) {
+        if (
+            !this.areLabelUpdatesEnabled ||
+            this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D;
+                InteractionType.MouseMove ||
+            isEmpty(scales)
+        ) {
             return;
         }
 
@@ -670,34 +690,47 @@ export class InteractionLabelPlugin extends ChartPlugin {
             throw new Error(&quot;xScale is not defined&quot;);
         }
 
-        const xValue &#x3D; this.lastInteractionValuesPayload.values.x ? this.lastInteractionValuesPayload.values.x[xScale.id] : null;
-        this.updateLabel(xScale, isArray(xValue) ? xValue.slice(0, xValue.length - 1) : xValue);
+        const xValue &#x3D; this.lastInteractionValuesPayload.values.x
+            ? this.lastInteractionValuesPayload.values.x[xScale.id]
+            : null;
+        this.updateLabel(
+            xScale,
+            isArray(xValue) ? xValue.slice(0, xValue.length - 1) : xValue
+        );
     }
 
     protected updateLabel(scale: IScale&lt;any&gt;, value: any) {
-        let interactionLabel: D3Selection&lt;SVGGElement&gt; &#x3D; this.interactionLabelLayer.select(&#x60;.${InteractionLabelPlugin.LAYER_NAME}&#x60;);
+        let interactionLabel: D3Selection&lt;SVGGElement&gt; &#x3D;
+            this.interactionLabelLayer.select(
+                &#x60;.${InteractionLabelPlugin.LAYER_NAME}&#x60;
+            );
         if (interactionLabel.empty() &amp;&amp; !!value) {
-            interactionLabel &#x3D; this.buildInteractionLabel(this.interactionLabelLayer);
+            interactionLabel &#x3D; this.buildInteractionLabel(
+                this.interactionLabelLayer
+            );
         } else if (!value) {
             interactionLabel.remove();
             return;
         }
 
-        const formatter &#x3D; scale.formatters[this.formatterName] || scale.formatters[FALLBACK_FORMATTER];
+        const formatter &#x3D;
+            scale.formatters[this.formatterName] ||
+            scale.formatters[FALLBACK_FORMATTER];
         const labelContent &#x3D; formatter?.(value);
 
         if (!labelContent) {
             throw new Error(&quot;labelContent is not defined&quot;);
         }
 
-        const textSelection &#x3D; interactionLabel.select(&quot;text&quot;)
+        const textSelection &#x3D; interactionLabel
+            .select(&quot;text&quot;)
             .text(labelContent);
         const bbox &#x3D; (textSelection.node() as any).getBBox();
         const gridDimension &#x3D; this.chart.getGrid().config().dimension;
 
         // subtract the relative vertical text offset inside the bbox from
         // the grid height to determine the label&#x27;s vertical placement
-        const heightOffset &#x3D; (gridDimension.height() - bbox.y);
+        const heightOffset &#x3D; gridDimension.height() - bbox.y;
 
         textSelection
             .attr(&quot;transform&quot;, &#x60;translate(0, ${heightOffset})&#x60;)
@@ -707,7 +740,10 @@ export class InteractionLabelPlugin extends ChartPlugin {
         const horizontalPadding &#x3D; (bbox.height + bbox.y) * 2;
 
         const labelWidth &#x3D; bbox.width + horizontalPadding;
-        const allowedRange: [number, number] &#x3D; [(labelWidth / 2), gridDimension.width() - (labelWidth / 2)];
+        const allowedRange: [number, number] &#x3D; [
+            labelWidth / 2,
+            gridDimension.width() - labelWidth / 2,
+        ];
         const x &#x3D; convert(scale, value, 0.5);
         const clampedX &#x3D; UtilityService.clampToRange(x, allowedRange);
 
@@ -715,33 +751,40 @@ export class InteractionLabelPlugin extends ChartPlugin {
             .attr(&quot;transform&quot;, &#x60;translate(${clampedX},0)&#x60;)
             .select(&quot;rect&quot;)
             .attrs({
-                &quot;transform&quot;: &#x60;translate(0,${heightOffset})&#x60;,
-                &quot;x&quot;: -(labelWidth / 2),
-                &quot;y&quot;: bbox.y,
-                &quot;width&quot;: labelWidth,
-                &quot;height&quot;: bbox.height,
+                transform: &#x60;translate(0,${heightOffset})&#x60;,
+                x: -(labelWidth / 2),
+                y: bbox.y,
+                width: labelWidth,
+                height: bbox.height,
             });
     }
 
     public destroy(): void {
-        this.chart.getGrid().getLasagna().removeLayer(InteractionLabelPlugin.LAYER_NAME);
+        this.chart
+            .getGrid()
+            .getLasagna()
+            .removeLayer(InteractionLabelPlugin.LAYER_NAME);
         this.destroy$.next();
         this.destroy$.complete();
     }
 
-    private buildInteractionLabel(target: D3Selection): D3Selection&lt;SVGGElement&gt; {
-        const label &#x3D; target.append(&quot;g&quot;)
+    private buildInteractionLabel(
+        target: D3Selection
+    ): D3Selection&lt;SVGGElement&gt; {
+        const label &#x3D; target
+            .append(&quot;g&quot;)
             .attr(&quot;class&quot;, InteractionLabelPlugin.LAYER_NAME);
 
-        label.append(&quot;rect&quot;)
+        label
+            .append(&quot;rect&quot;)
             .attr(&quot;class&quot;, &#x60;${InteractionLabelPlugin.LAYER_NAME}__rect&#x60;);
 
-        label.append(&quot;text&quot;)
+        label
+            .append(&quot;text&quot;)
             .attr(&quot;class&quot;, &#x60;${InteractionLabelPlugin.LAYER_NAME}__text&#x60;);
 
         return label;
     }
-
 }
 </code></pre>
     </div>

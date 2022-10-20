@@ -227,7 +227,10 @@ export interface IEdgeDetectionProperties {
     height: number;
 }
 export interface IEdgeDetectionService {
-    canBe(basePointElement: Element, placedElement: Element): IEdgeDetectionResult;
+    canBe(
+        basePointElement: Element,
+        placedElement: Element
+    ): IEdgeDetectionResult;
 }
 
 export interface IEdgeDefinerMeasurements {
@@ -239,10 +242,12 @@ export interface IEdgeDefinerMeasurements {
 }
 
 export interface ISearchService {
-    search(items: any[],
-           properties: string[],
-           searchValue: any,
-           dateFormat?: string): any[];
+    search(
+        items: any[],
+        properties: string[],
+        searchValue: any,
+        dateFormat?: string
+    ): any[];
 }
 
 export interface INotificationService {
@@ -302,14 +307,15 @@ export interface IEventDefinition&lt;T &#x3D; any&gt; {
 }
 
 export class EventDefinition&lt;T&gt; implements IEventDefinition&lt;IEvent&lt;T&gt;&gt; {
-    constructor(public id: string, public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;) {
-    }
+    constructor(
+        public id: string,
+        public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;
+    ) {}
 
     public toString() {
         return this.id;
     }
 }
-
 
 export interface IVirtualPageConfig {
     /**
@@ -328,7 +334,8 @@ export interface IVirtualPageConfig {
 /**
  * VirtualViewportManager reset configuration options
  */
-export interface IVirtualViewportResetOptions extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
+export interface IVirtualViewportResetOptions
+    extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
     /**
      * Set this boolean to false if the first batch of data will be loaded/requested
      * externally by a different entity (ex. search, sort, etc.).

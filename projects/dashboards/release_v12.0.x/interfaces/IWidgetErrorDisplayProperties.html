@@ -200,46 +200,45 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IPizzagna } from &quot;../../types&quot;;
 
 export interface IWidgets {
-  [key: string]: IWidget;
+    [key: string]: IWidget;
 }
 
 export interface IWidget {
-  id: string;
-  type: string;
-  version?: number;
-  pizzagna: IPizzagna;
-  metadata?: IWidgetMetadata;
+    id: string;
+    type: string;
+    version?: number;
+    pizzagna: IPizzagna;
+    metadata?: IWidgetMetadata;
 }
 
 export interface IWidgetMetadata extends Record&lt;string, any&gt; {
-  /**
-   * Set this to true to communicate to the widget cloner that the widget requires
-   * further configuration before it can be placed on the dashboard.
-   */
-  needsConfiguration?: boolean;
+    /**
+     * Set this to true to communicate to the widget cloner that the widget requires
+     * further configuration before it can be placed on the dashboard.
+     */
+    needsConfiguration?: boolean;
 }
 
 export interface IWidgetTypeDefinition {
-  configurator?: IPizzagna;
-  widget: IPizzagna;
-  /**
-   * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
-   */
-  paths?: {
-      widget?: Record&lt;string, string&gt;;
-      configurator?: Record&lt;string, string&gt;;
-  };
+    configurator?: IPizzagna;
+    widget: IPizzagna;
+    /**
+     * Paths to various important values in pizzagnas - this should be coupled with respective pizzagnas in v10 - NUI-5829
+     */
+    paths?: {
+        widget?: Record&lt;string, string&gt;;
+        configurator?: Record&lt;string, string&gt;;
+    };
 }
 
 /**
  * The properties for widget error display
  */
- export interface IWidgetErrorDisplayProperties {
-  image: string;
-  title: string;
-  description: string;
+export interface IWidgetErrorDisplayProperties {
+    image: string;
+    title: string;
+    description: string;
 }
-
 </code></pre>
     </div>
 </div>

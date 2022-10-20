@@ -132,7 +132,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/services/unit-conversion.service.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/services/unit-conversion.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -197,8 +197,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -318,8 +318,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:83</a></div>
                 </td>
             </tr>
 
@@ -456,8 +456,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:149</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:183</a></div>
                 </td>
             </tr>
 
@@ -576,8 +576,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:126</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:157</a></div>
                 </td>
             </tr>
 
@@ -672,8 +672,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="137"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:137</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:171</a></div>
                 </td>
             </tr>
 
@@ -752,8 +752,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/services/unit-conversion.service.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="129"
+                            class="link-to-prism">src/services/unit-conversion.service.ts:129</a></div>
                 </td>
             </tr>
 
@@ -876,7 +876,6 @@ the &quot;generic&quot; unit, e.g. &quot;1.1K&quot; for 1100, as the &quot;gener
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 
 import { UnitBase, unitConversionConstants, UnitOption } from &quot;../constants&quot;;
-
 import { LoggerService } from &quot;./log-service&quot;;
 import { IUnitConversionResult } from &quot;./public-api&quot;;
 
@@ -887,7 +886,7 @@ import { IUnitConversionResult } from &quot;./public-api&quot;;
  */
 @Injectable({ providedIn: &quot;root&quot; })
 export class UnitConversionService {
-    constructor(private logger: LoggerService) { }
+    constructor(private logger: LoggerService) {}
 
     /**
      * Converts a raw value to a larger unit approximation of the value. For example, 1024 B to 1 KB, 12345 Hz to 12.35 kHz, etc.
@@ -898,13 +897,19 @@ export class UnitConversionService {
      *
      * @returns {IUnitConversionResult} The conversion result
      */
-    convert(value: number, base: number &#x3D; UnitBase.Standard, scale: number &#x3D; 1): IUnitConversionResult {
+    convert(
+        value: number,
+        base: number &#x3D; UnitBase.Standard,
+        scale: number &#x3D; 1
+    ): IUnitConversionResult {
         let resultValue: number;
         let resultOrder: number;
         let strValue: string;
 
         if (value !&#x3D;&#x3D; 0) {
-            resultOrder &#x3D; Math.floor(Math.log(Math.abs(value)) / Math.log(base));
+            resultOrder &#x3D; Math.floor(
+                Math.log(Math.abs(value)) / Math.log(base)
+            );
             resultValue &#x3D; value / Math.pow(base, Math.floor(resultOrder));
 
             if (Math.abs(value) &gt; 0 &amp;&amp; Math.abs(value) &lt; 1) {
@@ -913,7 +918,7 @@ export class UnitConversionService {
                     scientificNotation: value.toExponential(scale),
                     order: 0,
                     scale,
-                }
+                };
             }
 
             // fix the precision edge case
@@ -923,7 +928,7 @@ export class UnitConversionService {
                 resultOrder +&#x3D; 1;
             }
 
-            strValue &#x3D; (resultValue).toFixed(scale);
+            strValue &#x3D; resultValue.toFixed(scale);
 
             // remove trailing zeros
             strValue &#x3D; parseFloat(strValue).toString();
@@ -950,21 +955,37 @@ export class UnitConversionService {
      *
      * @returns {string} The display string of the conversion result
      */
-    public getFullDisplay(conversion: IUnitConversionResult, unit: UnitOption, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;): string {
+    public getFullDisplay(
+        conversion: IUnitConversionResult,
+        unit: UnitOption,
+        plusSign &#x3D; false,
+        nanDisplay &#x3D; &quot;---&quot;
+    ): string {
         const isValidNumber &#x3D; this.isValidNumber(conversion.value);
         const spacing &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot; &amp;&amp; isValidNumber ? &quot; &quot; : &quot;&quot;;
-        let unitDisplay &#x3D; isValidNumber ? this.getUnitDisplay(conversion, unit) : &quot;&quot;;
+        let unitDisplay &#x3D; isValidNumber
+            ? this.getUnitDisplay(conversion, unit)
+            : &quot;&quot;;
 
         // The generic unit is not currently i18n friendly
         const localizeValue &#x3D; unit !&#x3D;&#x3D; &quot;generic&quot;;
 
         let displayValue: string;
 
-        if (!unitDisplay &amp;&amp; isValidNumber &amp;&amp; conversion.order ) {
+        if (!unitDisplay &amp;&amp; isValidNumber &amp;&amp; conversion.order) {
             unitDisplay &#x3D; this.getUnitDisplayBaseValue(unit);
-            displayValue&#x3D; this.getScientificDisplay(conversion, plusSign, nanDisplay);
+            displayValue &#x3D; this.getScientificDisplay(
+                conversion,
+                plusSign,
+                nanDisplay
+            );
         } else {
-            displayValue &#x3D; this.getValueDisplay(conversion, plusSign, nanDisplay, localizeValue)
+            displayValue &#x3D; this.getValueDisplay(
+                conversion,
+                plusSign,
+                nanDisplay,
+                localizeValue
+            );
         }
         return &#x60;${displayValue}${spacing}${unitDisplay}&#x60;;
     }
@@ -980,13 +1001,23 @@ export class UnitConversionService {
      *
      * @returns {string} The converted value display string
      */
-    public getValueDisplay(conversion: IUnitConversionResult, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;, localize &#x3D; true): string {
+    public getValueDisplay(
+        conversion: IUnitConversionResult,
+        plusSign &#x3D; false,
+        nanDisplay &#x3D; &quot;---&quot;,
+        localize &#x3D; true
+    ): string {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
 
-        const outputValue &#x3D; localize ? parseFloat(conversion.value).toLocaleString(undefined, { maximumFractionDigits: conversion.scale }) : conversion.value;
-        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
+        const outputValue &#x3D; localize
+            ? parseFloat(conversion.value).toLocaleString(undefined, {
+                  maximumFractionDigits: conversion.scale,
+              })
+            : conversion.value;
+        const prefix &#x3D;
+            plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
         return &#x60;${prefix}${outputValue}&#x60;;
     }
 
@@ -998,7 +1029,10 @@ export class UnitConversionService {
      *
      * @returns {string} The converted unit display string
      */
-    public getUnitDisplay(conversion: IUnitConversionResult, unit: UnitOption): string {
+    public getUnitDisplay(
+        conversion: IUnitConversionResult,
+        unit: UnitOption
+    ): string {
         return unitConversionConstants[unit][conversion.order];
     }
 
@@ -1021,11 +1055,16 @@ export class UnitConversionService {
      *
      * @returns {string} The converted value display string in scientific notation
      */
-    public getScientificDisplay(conversion: IUnitConversionResult, plusSign &#x3D; false, nanDisplay &#x3D; &quot;---&quot;): string {
+    public getScientificDisplay(
+        conversion: IUnitConversionResult,
+        plusSign &#x3D; false,
+        nanDisplay &#x3D; &quot;---&quot;
+    ): string {
         if (!this.isValidNumber(conversion.value)) {
             return nanDisplay;
         }
-        const prefix &#x3D; plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
+        const prefix &#x3D;
+            plusSign &amp;&amp; parseInt(conversion.value, 10) &gt; 0 ? &quot;+&quot; : &quot;&quot;;
 
         return &#x60;${prefix}${conversion.scientificNotation}&#x60;;
     }

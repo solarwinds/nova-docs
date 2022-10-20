@@ -151,8 +151,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/core/common/utility.service.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/core/common/utility.service.ts:82</a></div>
                 </td>
             </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="92"
-                            class="link-to-prism">src/core/common/utility.service.ts:92</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="114"
+                            class="link-to-prism">src/core/common/utility.service.ts:114</a></div>
                 </td>
             </tr>
 
@@ -311,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="179"
-                            class="link-to-prism">src/core/common/utility.service.ts:179</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/core/common/utility.service.ts:200</a></div>
                 </td>
             </tr>
 
@@ -434,8 +434,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/core/common/utility.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/core/common/utility.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -538,8 +538,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="224"
-                            class="link-to-prism">src/core/common/utility.service.ts:224</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="256"
+                            class="link-to-prism">src/core/common/utility.service.ts:256</a></div>
                 </td>
             </tr>
 
@@ -624,8 +624,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="204"
-                            class="link-to-prism">src/core/common/utility.service.ts:204</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/core/common/utility.service.ts:231</a></div>
                 </td>
             </tr>
 
@@ -734,8 +734,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/core/common/utility.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/core/common/utility.service.ts:94</a></div>
                 </td>
             </tr>
 
@@ -766,13 +766,14 @@ import isEmpty from &quot;lodash/isEmpty&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 
 import { IInteractionValues } from &quot;../plugins/types&quot;;
-
 import { invert } from &quot;./scales/helpers/invert&quot;;
 import { IScale } from &quot;./scales/types&quot;;
 
 export class UtilityService {
-
-    private static getValueAccessor(accessor: (d: any, i: number) &#x3D;&gt; any, dataPoint: any) {
+    private static getValueAccessor(
+        accessor: (d: any, i: number) &#x3D;&gt; any,
+        dataPoint: any
+    ) {
         const value &#x3D; accessor(dataPoint, 0);
         if (typeof value &#x3D;&#x3D;&#x3D; &quot;number&quot; || typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
             return accessor;
@@ -781,39 +782,57 @@ export class UtilityService {
             return (d: any, i: number) &#x3D;&gt; accessor(d, i).valueOf();
         }
 
-        throw new Error(&quot;Value in the data series does not return numeric valueOf().&quot;);
+        throw new Error(
+            &quot;Value in the data series does not return numeric valueOf().&quot;
+        );
     }
 
-    public static getClosestIndex&lt;T&gt;(haystack: T[], accessor: (d: T, i: number) &#x3D;&gt; any, needle: any): number | undefined {
+    public static getClosestIndex&lt;T&gt;(
+        haystack: T[],
+        accessor: (d: T, i: number) &#x3D;&gt; any,
+        needle: any
+    ): number | undefined {
         if (haystack.length &#x3D;&#x3D;&#x3D; 1) {
             return 0;
         } else if (haystack.length &#x3D;&#x3D;&#x3D; 0) {
             return;
         }
 
-        const valueAccessor &#x3D; UtilityService.getValueAccessor(accessor, haystack[0]);
+        const valueAccessor &#x3D; UtilityService.getValueAccessor(
+            accessor,
+            haystack[0]
+        );
         if (typeof needle &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
-            return haystack.findIndex(straw &#x3D;&gt; valueAccessor(straw, 0) &#x3D;&#x3D;&#x3D; needle);
+            return haystack.findIndex(
+                (straw) &#x3D;&gt; valueAccessor(straw, 0) &#x3D;&#x3D;&#x3D; needle
+            );
         }
 
-        let closestDataIndex &#x3D; this.findNearestIndex(haystack, needle, accessor);
+        let closestDataIndex &#x3D; this.findNearestIndex(
+            haystack,
+            needle,
+            accessor
+        );
 
         // Compensate for bisect
-        closestDataIndex &#x3D; (closestDataIndex &gt; 0) ? closestDataIndex - 1 : closestDataIndex;
+        closestDataIndex &#x3D;
+            closestDataIndex &gt; 0 ? closestDataIndex - 1 : closestDataIndex;
         // Ensure inbounds reference if right end of data
-        closestDataIndex &#x3D; (closestDataIndex &gt;&#x3D; haystack.length - 1 &amp;&amp; haystack.length !&#x3D;&#x3D; 1)
-            ? haystack.length - 2
-            : closestDataIndex;
+        closestDataIndex &#x3D;
+            closestDataIndex &gt;&#x3D; haystack.length - 1 &amp;&amp; haystack.length !&#x3D;&#x3D; 1
+                ? haystack.length - 2
+                : closestDataIndex;
         const indexIncrement &#x3D; UtilityService.getCloser(
             valueAccessor(haystack[closestDataIndex], closestDataIndex),
             valueAccessor(haystack[closestDataIndex + 1], closestDataIndex + 1),
-            needle);
+            needle
+        );
 
         return closestDataIndex + indexIncrement;
     }
 
     private static getCloser(a: number, b: number, test: number): number {
-        return (Math.abs(test - a) &lt;&#x3D; Math.abs(test - b)) ? 0 : 1;
+        return Math.abs(test - a) &lt;&#x3D; Math.abs(test - b) ? 0 : 1;
     }
 
     /**
@@ -837,13 +856,16 @@ export class UtilityService {
 
     public static uuid() {
         let dt &#x3D; new Date().getTime();
-        const uuid &#x3D; &quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;.replace(/[xy]/g, (c) &#x3D;&gt; {
-            // eslint-disable-next-line
-            const r &#x3D; (dt + Math.random() * 16) % 16 | 0;
-            dt &#x3D; Math.floor(dt / 16);
-            // eslint-disable-next-line
-            return (c &#x3D;&#x3D;&#x3D; &quot;x&quot; ? r : (r &amp; 0x3 | 0x8)).toString(16);
-        });
+        const uuid &#x3D; &quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;.replace(
+            /[xy]/g,
+            (c) &#x3D;&gt; {
+                // eslint-disable-next-line
+                const r &#x3D; (dt + Math.random() * 16) % 16 | 0;
+                dt &#x3D; Math.floor(dt / 16);
+                // eslint-disable-next-line
+                return (c &#x3D;&#x3D;&#x3D; &quot;x&quot; ? r : (r &amp; 0x3) | 0x8).toString(16);
+            }
+        );
         return uuid;
     }
 
@@ -878,18 +900,18 @@ export class UtilityService {
 
             if (
                 // If the character is in the range [\1-\1F] (U+0001 to U+001F) or is
-            // U+007F, […]
-                (codeUnit &gt;&#x3D; 0x0001 &amp;&amp; codeUnit &lt;&#x3D; 0x001F) || codeUnit &#x3D;&#x3D;&#x3D; 0x007F ||
+                // U+007F, […]
+                (codeUnit &gt;&#x3D; 0x0001 &amp;&amp; codeUnit &lt;&#x3D; 0x001f) ||
+                codeUnit &#x3D;&#x3D;&#x3D; 0x007f ||
                 // If the character is the first character and is in the range [0-9]
                 // (U+0030 to U+0039), […]
                 (index &#x3D;&#x3D;&#x3D; 0 &amp;&amp; codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039) ||
                 // If the character is the second character and is in the range [0-9]
                 // (U+0030 to U+0039) and the first character is a &#x60;-&#x60; (U+002D), […]
-                (
-                    index &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
-                    codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039 &amp;&amp;
-                    firstCodeUnit &#x3D;&#x3D;&#x3D; 0x002D
-                )
+                (index &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+                    codeUnit &gt;&#x3D; 0x0030 &amp;&amp;
+                    codeUnit &lt;&#x3D; 0x0039 &amp;&amp;
+                    firstCodeUnit &#x3D;&#x3D;&#x3D; 0x002d)
             ) {
                 // https://drafts.csswg.org/cssom/#escape-a-character-as-code-point
                 result +&#x3D; &quot;\\&quot; + codeUnit.toString(16) + &quot; &quot;;
@@ -898,10 +920,10 @@ export class UtilityService {
 
             if (
                 // If the character is the first character and is a &#x60;-&#x60; (U+002D), and
-            // there is no second character, […]
+                // there is no second character, […]
                 index &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
                 length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
-                codeUnit &#x3D;&#x3D;&#x3D; 0x002D
+                codeUnit &#x3D;&#x3D;&#x3D; 0x002d
             ) {
                 result +&#x3D; &quot;\\&quot; + sstring.charAt(index);
                 continue;
@@ -913,11 +935,11 @@ export class UtilityService {
             // U+005A), or [a-z] (U+0061 to U+007A), […]
             if (
                 codeUnit &gt;&#x3D; 0x0080 ||
-                codeUnit &#x3D;&#x3D;&#x3D; 0x002D ||
-                codeUnit &#x3D;&#x3D;&#x3D; 0x005F ||
-                codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039 ||
-                codeUnit &gt;&#x3D; 0x0041 &amp;&amp; codeUnit &lt;&#x3D; 0x005A ||
-                codeUnit &gt;&#x3D; 0x0061 &amp;&amp; codeUnit &lt;&#x3D; 0x007A
+                codeUnit &#x3D;&#x3D;&#x3D; 0x002d ||
+                codeUnit &#x3D;&#x3D;&#x3D; 0x005f ||
+                (codeUnit &gt;&#x3D; 0x0030 &amp;&amp; codeUnit &lt;&#x3D; 0x0039) ||
+                (codeUnit &gt;&#x3D; 0x0041 &amp;&amp; codeUnit &lt;&#x3D; 0x005a) ||
+                (codeUnit &gt;&#x3D; 0x0061 &amp;&amp; codeUnit &lt;&#x3D; 0x007a)
             ) {
                 // the character itself
                 result +&#x3D; sstring.charAt(index);
@@ -927,7 +949,6 @@ export class UtilityService {
             // Otherwise, the escaped character.
             // https://drafts.csswg.org/cssom/#escape-a-character
             result +&#x3D; &quot;\\&quot; + sstring.charAt(index);
-
         }
         return result;
     }
@@ -939,14 +960,20 @@ export class UtilityService {
      * @param needle
      * @param selector this function is used to process the &#x60;haystack&#x60; elements
      */
-    public static findNearestIndex&lt;T&gt;(haystack: T[], needle: any, selector: (d: T, index: number) &#x3D;&gt; any &#x3D; identity) {
-        let low &#x3D; 0, high &#x3D; haystack &#x3D;&#x3D; null ? low : haystack.length;
+    public static findNearestIndex&lt;T&gt;(
+        haystack: T[],
+        needle: any,
+        selector: (d: T, index: number) &#x3D;&gt; any &#x3D; identity
+    ) {
+        let low &#x3D; 0,
+            high &#x3D; haystack &#x3D;&#x3D; null ? low : haystack.length;
 
         while (low &lt; high) {
             // eslint-disable-next-line no-bitwise
-            const mid &#x3D; (low + high) &gt;&gt;&gt; 1, computed &#x3D; selector(haystack[mid], mid);
+            const mid &#x3D; (low + high) &gt;&gt;&gt; 1,
+                computed &#x3D; selector(haystack[mid], mid);
 
-            if (computed !&#x3D;&#x3D; null &amp;&amp; (computed &lt; needle)) {
+            if (computed !&#x3D;&#x3D; null &amp;&amp; computed &lt; needle) {
                 low &#x3D; mid + 1;
             } else {
                 high &#x3D; mid;
@@ -964,7 +991,12 @@ export class UtilityService {
      * @param xCoordinate
      * @param yCoordinate
      */
-    public static getXYValues(xScales: IScale&lt;any&gt;[], yScales: IScale&lt;any&gt;[], xCoordinate: number, yCoordinate: number) {
+    public static getXYValues(
+        xScales: IScale&lt;any&gt;[],
+        yScales: IScale&lt;any&gt;[],
+        xCoordinate: number,
+        yCoordinate: number
+    ) {
         const xValue &#x3D; UtilityService.getScaleValues(xScales, xCoordinate);
         const yValue &#x3D; UtilityService.getScaleValues(yScales, yCoordinate);
 
@@ -984,7 +1016,10 @@ export class UtilityService {
      * @param scales
      * @param coordinate
      */
-    public static getScaleValues(scales: IScale&lt;any&gt;[], coordinate: number): Record&lt;string, any&gt; {
+    public static getScaleValues(
+        scales: IScale&lt;any&gt;[],
+        coordinate: number
+    ): Record&lt;string, any&gt; {
         function callbackFn(result: Record&lt;string, any&gt;, next: IScale&lt;any&gt;) {
             const inverted &#x3D; invert(next, coordinate);
             if (isUndefined(inverted)) {

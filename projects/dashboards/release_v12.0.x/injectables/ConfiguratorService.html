@@ -260,8 +260,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:77</a></div>
                 </td>
             </tr>
 
@@ -301,8 +301,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:45</a></div>
                 </td>
             </tr>
 
@@ -375,7 +375,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:94</a></div>
                             </td>
                         </tr>
 
@@ -400,18 +400,18 @@
     RendererFactory2,
 } from &quot;@angular/core&quot;;
 import { NavigationEnd, Router } from &quot;@angular/router&quot;;
-import { LoggerService, uuid } from &quot;@nova-ui/bits&quot;;
 import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import isFunction from &quot;lodash/isFunction&quot;;
 import { EMPTY, Observable, of, Subject } from &quot;rxjs&quot;;
 import { catchError, filter, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
-import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
-import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
-import { IWidget } from &quot;../../components/widget/types&quot;;
-import { WidgetUpdateOperation } from &quot;../../configurator/services/types&quot;
-import { ConfiguratorComponent } from &quot;../components/configurator/configurator.component&quot;;
+import { LoggerService, uuid } from &quot;@nova-ui/bits&quot;;
 
+import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
+import { IWidget } from &quot;../../components/widget/types&quot;;
+import { WidgetUpdateOperation } from &quot;../../configurator/services/types&quot;;
+import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
+import { ConfiguratorComponent } from &quot;../components/configurator/configurator.component&quot;;
 import { IConfigurator, IConfiguratorSource } from &quot;./types&quot;;
 
 @Injectable()
@@ -420,13 +420,15 @@ export class ConfiguratorService {
     private componentRef: ComponentRef&lt;ConfiguratorComponent&gt;;
     private close$: Subject&lt;void&gt; &#x3D; new Subject();
 
-    constructor(private componentFactoryResolver: ComponentFactoryResolver,
-                private widgetTypesService: WidgetTypesService,
-                private injector: Injector,
-                private appRef: ApplicationRef,
-                private logger: LoggerService,
-                rendererFactory: RendererFactory2,
-                @Optional() private router: Router) {
+    constructor(
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private widgetTypesService: WidgetTypesService,
+        private injector: Injector,
+        private appRef: ApplicationRef,
+        private logger: LoggerService,
+        rendererFactory: RendererFactory2,
+        @Optional() private router: Router
+    ) {
         this.renderer &#x3D; rendererFactory.createRenderer(null, null);
     }
 
@@ -446,15 +448,20 @@ export class ConfiguratorService {
         // @ts-ignore
         component.previewWidget &#x3D; cloneDeep(configurator.widget);
         if (configurator.portalBundle?.attached) {
-            component.formPortalAttached.pipe(takeUntil(this.close$)).subscribe(configurator.portalBundle.attached);
+            component.formPortalAttached
+                .pipe(takeUntil(this.close$))
+                .subscribe(configurator.portalBundle.attached);
         }
 
         component.changeDetector.detectChanges();
 
-        return component.result.asObservable()
-            // TODO: Handle the case when trySubmit is undefined
-            // @ts-ignore
-            .pipe(this.handleSubmit(source, configurator.trySubmit));
+        return (
+            component.result
+                .asObservable()
+                // TODO: Handle the case when trySubmit is undefined
+                // @ts-ignore
+                .pipe(this.handleSubmit(source, configurator.trySubmit))
+        );
     }
 
     public close(): void {
@@ -463,82 +470,109 @@ export class ConfiguratorService {
         }
 
         this.close$.next();
-        this.renderer.removeChild(document.body, (this.componentRef.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes[0] as HTMLElement);
+        this.renderer.removeChild(
+            document.body,
+            (this.componentRef.hostView as EmbeddedViewRef&lt;any&gt;)
+                .rootNodes[0] as HTMLElement
+        );
         this.appRef.detachView(this.componentRef.hostView);
         this.componentRef.destroy();
 
         this.renderer.removeStyle(document.body, &quot;overflow&quot;);
     }
 
-    public handleSubmit &#x3D; (confSource: IConfiguratorSource,
-                           trySubmit: WidgetUpdateOperation) &#x3D;&gt;
+    public handleSubmit &#x3D;
+        (confSource: IConfiguratorSource, trySubmit: WidgetUpdateOperation) &#x3D;&gt;
         (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
             source.pipe(
                 this.trySubmit(trySubmit, confSource),
                 this.updateDashboard(confSource.dashboardComponent)
-            )
+            );
 
-    private trySubmit &#x3D; (trySubmit: WidgetUpdateOperation, confSource: IConfigurator) &#x3D;&gt;
+    private trySubmit &#x3D;
+        (trySubmit: WidgetUpdateOperation, confSource: IConfigurator) &#x3D;&gt;
         (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
-            source.pipe(switchMap((widget: IWidget) &#x3D;&gt; {
-                if (widget &amp;&amp; isFunction(trySubmit)) {
-                    return trySubmit(widget, confSource).pipe(
-                        catchError((err: any) &#x3D;&gt; {
-                            this.logger.error(err);
-                            this.componentRef.instance.handleSubmitError();
-                            return EMPTY;
-                        })
-                    );
-                } else {
-                    return of(widget);
-                }
-            }))
-
-    private updateDashboard &#x3D; (dashboardComponent: DashboardComponent) &#x3D;&gt; (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
-        new Observable&lt;void&gt;(observer &#x3D;&gt;
-            source.subscribe((widget: IWidget) &#x3D;&gt; {
-                if (widget) {
-                    widget.id &#x3D; widget.id || uuid();
-
-                    let widgetToSet: IWidget;
-                    const dashboardWidget &#x3D; dashboardComponent.dashboard.widgets[widget.id];
-                    if (dashboardWidget) {
-                        widgetToSet &#x3D; {
-                            ...widget,
-                            pizzagna: {
-                                ...this.widgetTypesService.getWidgetType(widget.type, widget.version).widget,
-                                configuration: widget.pizzagna.configuration,
-                            },
-                        };
+            source.pipe(
+                switchMap((widget: IWidget) &#x3D;&gt; {
+                    if (widget &amp;&amp; isFunction(trySubmit)) {
+                        return trySubmit(widget, confSource).pipe(
+                            catchError((err: any) &#x3D;&gt; {
+                                this.logger.error(err);
+                                this.componentRef.instance.handleSubmitError();
+                                return EMPTY;
+                            })
+                        );
                     } else {
-                        widgetToSet &#x3D; widget;
+                        return of(widget);
+                    }
+                })
+            );
+
+    private updateDashboard &#x3D;
+        (dashboardComponent: DashboardComponent) &#x3D;&gt;
+        (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
+            new Observable&lt;void&gt;((observer) &#x3D;&gt;
+                source.subscribe((widget: IWidget) &#x3D;&gt; {
+                    if (widget) {
+                        widget.id &#x3D; widget.id || uuid();
+
+                        let widgetToSet: IWidget;
+                        const dashboardWidget &#x3D;
+                            dashboardComponent.dashboard.widgets[widget.id];
+                        if (dashboardWidget) {
+                            widgetToSet &#x3D; {
+                                ...widget,
+                                pizzagna: {
+                                    ...this.widgetTypesService.getWidgetType(
+                                        widget.type,
+                                        widget.version
+                                    ).widget,
+                                    configuration:
+                                        widget.pizzagna.configuration,
+                                },
+                            };
+                        } else {
+                            widgetToSet &#x3D; widget;
+                        }
+
+                        // first we remove the widget so that we can recreate it from scratch
+                        dashboardComponent.removeWidget(
+                            widgetToSet.id,
+                            false /* this is set to preserve the widget location */
+                        );
+
+                        // then we wait for the removal to take effect and we create the widget again
+                        setTimeout(() &#x3D;&gt; {
+                            dashboardComponent.updateWidget(widgetToSet);
+                        });
                     }
 
-                    // first we remove the widget so that we can recreate it from scratch
-                    dashboardComponent.removeWidget(widgetToSet.id, false /* this is set to preserve the widget location */);
-
-                    // then we wait for the removal to take effect and we create the widget again
-                    setTimeout(() &#x3D;&gt; {
-                        dashboardComponent.updateWidget(widgetToSet);
-                    });
-                }
-
-                this.close();
-                observer.next();
-            }))
+                    this.close();
+                    observer.next();
+                })
+            );
 
     private appendComponentToBody(): ComponentRef&lt;ConfiguratorComponent&gt; {
-        const factory &#x3D; this.componentFactoryResolver.resolveComponentFactory(ConfiguratorComponent);
-        const componentRef: ComponentRef&lt;ConfiguratorComponent&gt; &#x3D; factory.create(this.injector);
+        const factory &#x3D; this.componentFactoryResolver.resolveComponentFactory(
+            ConfiguratorComponent
+        );
+        const componentRef: ComponentRef&lt;ConfiguratorComponent&gt; &#x3D;
+            factory.create(this.injector);
 
         this.appRef.attachView(componentRef.hostView);
-        this.renderer.appendChild(document.body, (componentRef.hostView as EmbeddedViewRef&lt;any&gt;).rootNodes[0] as HTMLElement);
+        this.renderer.appendChild(
+            document.body,
+            (componentRef.hostView as EmbeddedViewRef&lt;any&gt;)
+                .rootNodes[0] as HTMLElement
+        );
         this.renderer.setStyle(document.body, &quot;overflow&quot;, &quot;hidden&quot;);
         if (this.router) {
-            this.router.events.pipe(
-                filter(event &#x3D;&gt; event instanceof NavigationEnd),
-                takeUntil(this.close$)
-            ).subscribe(() &#x3D;&gt; this.close());
+            this.router.events
+                .pipe(
+                    filter((event) &#x3D;&gt; event instanceof NavigationEnd),
+                    takeUntil(this.close$)
+                )
+                .subscribe(() &#x3D;&gt; this.close());
         }
         return componentRef;
     }

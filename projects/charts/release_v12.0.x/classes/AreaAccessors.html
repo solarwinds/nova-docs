@@ -115,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/renderers/area/area-accessors.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/renderers/area/area-accessors.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -183,7 +183,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/renderers/area/area-accessors.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/renderers/area/area-accessors.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -210,7 +210,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/renderers/area/area-accessors.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/renderers/area/area-accessors.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -229,8 +229,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { defaultColorProvider, defaultMarkerProvider } from &quot;../../core/common/palette/default-providers&quot;;
-import { DataAccessor, IAccessors, IDataAccessors, ISeriesAccessors, SeriesAccessor } from &quot;../../core/common/types&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    defaultColorProvider,
+    defaultMarkerProvider,
+} from &quot;../../core/common/palette/default-providers&quot;;
+import {
+    DataAccessor,
+    IAccessors,
+    IDataAccessors,
+    ISeriesAccessors,
+    SeriesAccessor,
+} from &quot;../../core/common/types&quot;;
 
 export interface IAreaDataAccessors extends IDataAccessors {
     x: DataAccessor;
@@ -259,7 +268,10 @@ export class AreaAccessors implements IAreaAccessors {
     data: IAreaDataAccessors;
     series: IAreaSeriesAccessors;
 
-    constructor(private colorProvider &#x3D; defaultColorProvider(), private markerProvider &#x3D; defaultMarkerProvider()) {
+    constructor(
+        private colorProvider &#x3D; defaultColorProvider(),
+        private markerProvider &#x3D; defaultMarkerProvider()
+    ) {
         this.data &#x3D; {
             x: (d, i, ds, s) &#x3D;&gt; d.x,
             x0: (d, i, ds, s) &#x3D;&gt; this.data.x(d, i, ds, s),
@@ -267,10 +279,14 @@ export class AreaAccessors implements IAreaAccessors {
             y: (d, i, ds, s) &#x3D;&gt; d.y,
             y0: (d, i, ds, s) &#x3D;&gt; this.data.y(d, i, ds, s),
             y1: (d, i, ds, s) &#x3D;&gt; this.data.y(d, i, ds, s),
-            absoluteX0: (d, i, ds, s) &#x3D;&gt; d[&quot;__stack_x&quot;]?.start ?? this.data.x0(d, i, ds, s),
-            absoluteX1: (d, i, ds, s) &#x3D;&gt; d[&quot;__stack_x&quot;]?.end ?? this.data.x1(d, i, ds, s),
-            absoluteY0: (d, i, ds, s) &#x3D;&gt; d[&quot;__stack_y&quot;]?.start ?? this.data.y0(d, i, ds, s),
-            absoluteY1: (d, i, ds, s) &#x3D;&gt; d[&quot;__stack_y&quot;]?.end ?? this.data.y1(d, i, ds, s),
+            absoluteX0: (d, i, ds, s) &#x3D;&gt;
+                d[&quot;__stack_x&quot;]?.start ?? this.data.x0(d, i, ds, s),
+            absoluteX1: (d, i, ds, s) &#x3D;&gt;
+                d[&quot;__stack_x&quot;]?.end ?? this.data.x1(d, i, ds, s),
+            absoluteY0: (d, i, ds, s) &#x3D;&gt;
+                d[&quot;__stack_y&quot;]?.start ?? this.data.y0(d, i, ds, s),
+            absoluteY1: (d, i, ds, s) &#x3D;&gt;
+                d[&quot;__stack_y&quot;]?.end ?? this.data.y1(d, i, ds, s),
         };
 
         this.series &#x3D; {
@@ -279,7 +295,6 @@ export class AreaAccessors implements IAreaAccessors {
         };
     }
 }
-
 </code></pre>
     </div>
 </div>

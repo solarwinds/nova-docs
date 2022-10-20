@@ -110,7 +110,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -177,8 +177,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="78"
-                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:78</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:80</a></div>
                 </td>
             </tr>
 
@@ -218,8 +218,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -302,8 +302,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/lib/components/providers/pizzagna-broadcaster.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -365,7 +365,6 @@ import { getParentComponentId } from &quot;../../functions/get-parent-component-
 import { parseStringWithData } from &quot;../../functions/parse-string-with-data&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { IConfigurable, IProperties } from &quot;../../types&quot;;
-
 import { BroadcasterTrackOnType, IBroadcasterConfig } from &quot;./types&quot;;
 
 @Injectable()
@@ -378,8 +377,7 @@ export class PizzagnaBroadcasterService implements IConfigurable, OnDestroy {
     private componentId: string;
     private parentComponentId: string;
 
-    constructor(private pizzagnaService: PizzagnaService) {
-    }
+    constructor(private pizzagnaService: PizzagnaService) {}
 
     public setComponent(component: any, componentId: string) {
         this.component &#x3D; component;
@@ -398,7 +396,10 @@ export class PizzagnaBroadcasterService implements IConfigurable, OnDestroy {
             const observable &#x3D; this.getObservableFor(config);
 
             if (!observable) {
-                console.warn(&quot;no observable found on &#x27;PizzagnaBroadcasterService&#x27;, for part: &quot;, config);
+                console.warn(
+                    &quot;no observable found on &#x27;PizzagnaBroadcasterService&#x27;, for part: &quot;,
+                    config
+                );
                 return;
             }
 
@@ -413,19 +414,20 @@ export class PizzagnaBroadcasterService implements IConfigurable, OnDestroy {
     }
 
     private getObservableFor(config: IBroadcasterConfig) {
-        const trackOn: BroadcasterTrackOnType &#x3D; config.trackOn || this.defaultTrackOn;
-        const observable: Observable&lt;any&gt; &#x3D; trackOn &#x3D;&#x3D;&#x3D; &quot;component&quot;
-            ? this.getComponentObservableFor(config)
-            : this.getPizzagnaObservableFor(config);
+        const trackOn: BroadcasterTrackOnType &#x3D;
+            config.trackOn || this.defaultTrackOn;
+        const observable: Observable&lt;any&gt; &#x3D;
+            trackOn &#x3D;&#x3D;&#x3D; &quot;component&quot;
+                ? this.getComponentObservableFor(config)
+                : this.getPizzagnaObservableFor(config);
         return observable;
     }
 
     private getPizzagnaObservableFor(part: IBroadcasterConfig) {
-        return this.pizzagnaService.pizzaChanged
-            .pipe(
-                map(v &#x3D;&gt; get(v, part.key)),
-                distinctUntilChanged()
-            );
+        return this.pizzagnaService.pizzaChanged.pipe(
+            map((v) &#x3D;&gt; get(v, part.key)),
+            distinctUntilChanged()
+        );
     }
 
     private getComponentObservableFor(part: IBroadcasterConfig) {

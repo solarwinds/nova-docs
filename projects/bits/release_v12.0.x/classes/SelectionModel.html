@@ -121,7 +121,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/services/public-api.ts:95</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/services/public-api.ts:100</a></div>
                             </td>
                         </tr>
 
@@ -190,7 +190,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/services/public-api.ts:93</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/services/public-api.ts:98</a></div>
                             </td>
                         </tr>
 
@@ -223,7 +223,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/services/public-api.ts:94</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/services/public-api.ts:99</a></div>
                             </td>
                         </tr>
 
@@ -256,7 +256,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/services/public-api.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/services/public-api.ts:100</a></div>
                             </td>
                         </tr>
 
@@ -312,7 +312,10 @@ export interface IEdgeDetectionProperties {
     height: number;
 }
 export interface IEdgeDetectionService {
-    canBe(basePointElement: Element, placedElement: Element): IEdgeDetectionResult;
+    canBe(
+        basePointElement: Element,
+        placedElement: Element
+    ): IEdgeDetectionResult;
 }
 
 export interface IEdgeDefinerMeasurements {
@@ -324,10 +327,12 @@ export interface IEdgeDefinerMeasurements {
 }
 
 export interface ISearchService {
-    search(items: any[],
-           properties: string[],
-           searchValue: any,
-           dateFormat?: string): any[];
+    search(
+        items: any[],
+        properties: string[],
+        searchValue: any,
+        dateFormat?: string
+    ): any[];
 }
 
 export interface INotificationService {
@@ -387,14 +392,15 @@ export interface IEventDefinition&lt;T &#x3D; any&gt; {
 }
 
 export class EventDefinition&lt;T&gt; implements IEventDefinition&lt;IEvent&lt;T&gt;&gt; {
-    constructor(public id: string, public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;) {
-    }
+    constructor(
+        public id: string,
+        public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;
+    ) {}
 
     public toString() {
         return this.id;
     }
 }
-
 
 export interface IVirtualPageConfig {
     /**
@@ -413,7 +419,8 @@ export interface IVirtualPageConfig {
 /**
  * VirtualViewportManager reset configuration options
  */
-export interface IVirtualViewportResetOptions extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
+export interface IVirtualViewportResetOptions
+    extends Required&lt;Pick&lt;IVirtualPageConfig, &quot;emitFirstPage&quot;&gt;&gt; {
     /**
      * Set this boolean to false if the first batch of data will be loaded/requested
      * externally by a different entity (ex. search, sort, etc.).

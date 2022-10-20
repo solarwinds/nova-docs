@@ -131,7 +131,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -210,8 +210,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:55</a></div>
                 </td>
             </tr>
 
@@ -288,7 +288,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/StatusContentFallbackAdapter.html#source" target="_self" >StatusContentFallbackAdapter:26</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/StatusContentFallbackAdapter.html#source" target="_self" >StatusContentFallbackAdapter:29</a></code>
 </div>
                 </td>
             </tr>
@@ -335,7 +335,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/StatusContentFallbackAdapter.html#source" target="_self" >StatusContentFallbackAdapter:31</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/StatusContentFallbackAdapter.html#source" target="_self" >StatusContentFallbackAdapter:34</a></code>
 </div>
                 </td>
             </tr>
@@ -427,7 +427,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/components/providers/kpi-status-content-fallback-adapter.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -447,15 +447,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import uniq from &quot;lodash/uniq&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { DATA_SOURCE_DESTROYED } from &quot;../../configurator/types&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
-import { HttpStatusCode, IConfigurable, IHasComponent, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
+import {
+    HttpStatusCode,
+    IConfigurable,
+    IHasComponent,
+    IProperties,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../types&quot;;
 import { StatusContentFallbackAdapter } from &quot;./status-content-fallback-adapter&quot;;
 import { IComponentIdPayload, IDataSourceOutputPayload } from &quot;./types&quot;;
 
@@ -465,8 +472,10 @@ export interface IKpiFallbackAdapterProperties extends IProperties {
 }
 
 @Injectable()
-export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapter implements OnDestroy, IHasComponent, IConfigurable {
-
+export class KpiStatusContentFallbackAdapter
+    extends StatusContentFallbackAdapter
+    implements OnDestroy, IHasComponent, IConfigurable
+{
     /**
      * Fallback node key to use if multiple tile data sources report different errors
      */
@@ -477,12 +486,16 @@ export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapte
      */
     private errorMap: Record&lt;string, string&gt; &#x3D; {};
 
-    constructor(@Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
-                                            pizzagnaService: PizzagnaService) {
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
+        pizzagnaService: PizzagnaService
+    ) {
         super(eventBus, pizzagnaService);
 
-        this.eventBus.getStream(DATA_SOURCE_DESTROYED)
-            .pipe(takeUntil(this.destroy$)).subscribe((event: IEvent&lt;IComponentIdPayload&gt;) &#x3D;&gt; {
+        this.eventBus
+            .getStream(DATA_SOURCE_DESTROYED)
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((event: IEvent&lt;IComponentIdPayload&gt;) &#x3D;&gt; {
                 this.handleDataSourceDestroyed(event);
             });
     }
@@ -493,7 +506,9 @@ export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapte
         }
     }
 
-    protected handleDataSourceOutput(event: IEvent&lt;any | IDataSourceOutputPayload&lt;any&gt;&gt;) {
+    protected handleDataSourceOutput(
+        event: IEvent&lt;any | IDataSourceOutputPayload&lt;any&gt;&gt;
+    ) {
         this.errorMap &#x3D; this.updateErrorMap(event);
 
         this.setFallbackKeyProperty();
@@ -508,11 +523,14 @@ export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapte
     }
 
     private setFallbackKeyProperty() {
-        this.pizzagnaService.setProperty({
-            componentId: this.componentId,
-            propertyPath: [&quot;fallbackKey&quot;],
-            pizzagnaKey: PizzagnaLayer.Data,
-        }, this.getFallbackKey());
+        this.pizzagnaService.setProperty(
+            {
+                componentId: this.componentId,
+                propertyPath: [&quot;fallbackKey&quot;],
+                pizzagnaKey: PizzagnaLayer.Data,
+            },
+            this.getFallbackKey()
+        );
     }
 
     private getFallbackKey(): string | undefined {
@@ -521,12 +539,17 @@ export class KpiStatusContentFallbackAdapter extends StatusContentFallbackAdapte
         }
 
         const uniqueErrors &#x3D; uniq(Object.values(this.errorMap));
-        return uniqueErrors.length &#x3D;&#x3D;&#x3D; 1 ? uniqueErrors[0] : this.multipleErrorFallbackKey;
+        return uniqueErrors.length &#x3D;&#x3D;&#x3D; 1
+            ? uniqueErrors[0]
+            : this.multipleErrorFallbackKey;
     }
 
     private updateErrorMap(event: IEvent&lt;any | IDataSourceOutputPayload&lt;any&gt;&gt;) {
         const errorMap &#x3D; this.errorMap;
-        const errorCode &#x3D; typeof event.payload?.error?.type !&#x3D;&#x3D; &quot;undefined&quot; ? event.payload?.error?.type.toString() : undefined;
+        const errorCode &#x3D;
+            typeof event.payload?.error?.type !&#x3D;&#x3D; &quot;undefined&quot;
+                ? event.payload?.error?.type.toString()
+                : undefined;
 
         // an undefined result indicates the kpi tile was destroyed
         if (!errorCode) {

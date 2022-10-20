@@ -218,8 +218,9 @@ export interface IComponentIdPayload {
     componentId: string;
 }
 
-export interface IDataSourceOutputPayload&lt;T&gt; extends IDataSourceOutput&lt;T&gt;, IComponentIdPayload {
-}
+export interface IDataSourceOutputPayload&lt;T&gt;
+    extends IDataSourceOutput&lt;T&gt;,
+        IComponentIdPayload {}
 
 export interface IDataSourceBusyPayload extends IComponentIdPayload {
     busy: boolean;
@@ -230,7 +231,6 @@ export interface IDataSourceError {
     message?: string;
 }
 
-
 export type BroadcasterTrackOnType &#x3D; &quot;component&quot; | &quot;pizzagna&quot;;
 
 export interface IBroadcasterConfig {
@@ -238,7 +238,6 @@ export interface IBroadcasterConfig {
     key: string;
     paths: string[];
 }
-
 
 export interface IKpiColorRules {
     comparisonType: ComparatorTypes;

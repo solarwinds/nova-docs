@@ -642,6 +642,8 @@ import { PortalModule } from &quot;@angular/cdk/portal&quot;;
 import { ScrollingModule } from &quot;@angular/cdk/scrolling&quot;;
 import { NgModule } from &quot;@angular/core&quot;;
 import { ReactiveFormsModule } from &quot;@angular/forms&quot;;
+import { GridsterModule } from &quot;angular-gridster2&quot;;
+
 import {
     NuiBusyModule,
     NuiButtonModule,
@@ -668,14 +670,15 @@ import {
     NuiValidationMessageModule,
     NuiWizardModule,
 } from &quot;@nova-ui/bits&quot;;
-import { GridsterModule } from &quot;angular-gridster2&quot;;
 
 import { NuiDashboardsCommonModule } from &quot;../common/common.module&quot;;
 import { TimeseriesChartPresetService } from &quot;../components/timeseries-widget/timeseries-chart-preset.service&quot;;
 import { TimeseriesScalesService } from &quot;../components/timeseries-widget/timeseries-scales.service&quot;;
 import { NuiPizzagnaModule } from &quot;../pizzagna/pizzagna.module&quot;;
-import { ComponentRegistryService, IComponentWithLateLoadKey } from &quot;../pizzagna/services/component-registry.service&quot;;
-
+import {
+    ComponentRegistryService,
+    IComponentWithLateLoadKey,
+} from &quot;../pizzagna/services/component-registry.service&quot;;
 import { ColorPickerComponent } from &quot;./components/color-picker/color-picker.component&quot;;
 import { ConfiguratorComponent } from &quot;./components/configurator/configurator.component&quot;;
 import { DropAreaComponent } from &quot;./components/drop-area/drop-area.component&quot;;
@@ -701,6 +704,8 @@ import { WidgetEditorComponent } from &quot;./components/widget-editor/widget-ed
 import { BackgroundColorRulesConfigurationComponent } from &quot;./components/widgets/configurator-items/background-color-rules-configuration/background-color-rules-configuration.component&quot;;
 import { DataSourceConfigurationV2Component } from &quot;./components/widgets/configurator-items/data-source-configuration-v2/data-source-configuration-v2.component&quot;;
 import { DataSourceConfigurationComponent } from &quot;./components/widgets/configurator-items/data-source-configuration/data-source-configuration.component&quot;;
+import { DataSourceErrorComponent } from &quot;./components/widgets/configurator-items/data-source-error/data-source-error.component&quot;;
+import { TableDataSourceErrorComponent } from &quot;./components/widgets/configurator-items/data-source-error/table/table-data-source-error.component&quot;;
 import { EmbeddedContentConfigurationComponent } from &quot;./components/widgets/configurator-items/embedded-content-configuration/embedded-content-configuration.component&quot;;
 import { InfoMessageConfigurationComponent } from &quot;./components/widgets/configurator-items/info-message-configuration/info-message-configuration.component&quot;;
 import { KpiDescriptionConfigurationComponent } from &quot;./components/widgets/configurator-items/kpi-description-configuration/kpi-description-configuration.component&quot;;
@@ -740,11 +745,9 @@ import { WidgetEditorAccordionFormStatePipe } from &quot;./pipe/widget-editor-ac
 import { FormHeaderIconPipePipe } from &quot;./pipe/widget-editor-accordion-header-icon.pipe&quot;;
 import { ConfiguratorService } from &quot;./services/configurator.service&quot;;
 import { KpiWidgetColorService } from &quot;./services/kpi-widget-color.service&quot;;
+import { ConfiguratorHeadingService } from &quot;./services/public-api&quot;;
 import { WidgetClonerService } from &quot;./services/widget-cloner.service&quot;;
 import { WidgetEditorService } from &quot;./services/widget-editor.service&quot;;
-import { DataSourceErrorComponent } from &quot;./components/widgets/configurator-items/data-source-error/data-source-error.component&quot;;
-import { TableDataSourceErrorComponent } from &quot;./components/widgets/configurator-items/data-source-error/table/table-data-source-error.component&quot;;
-import { ConfiguratorHeadingService } from &quot;./services/public-api&quot;;
 /* eslint-enable max-len */
 
 const entryComponents: IComponentWithLateLoadKey[] &#x3D; [
@@ -851,9 +854,7 @@ const exportedDeclarations &#x3D; [
         NuiRepeatModule,
         NuiImageModule,
     ],
-    declarations: [
-        ...exportedDeclarations,
-    ],
+    declarations: [...exportedDeclarations],
     providers: [
         ConfiguratorService,
         ConfiguratorHeadingService,
@@ -868,13 +869,13 @@ const exportedDeclarations &#x3D; [
     entryComponents: entryComponents,
 })
 export class NuiDashboardConfiguratorModule {
-
     constructor(componentRegistry: ComponentRegistryService) {
-        for (const ec of entryComponents.filter((c: IComponentWithLateLoadKey) &#x3D;&gt; c.lateLoadKey)) {
+        for (const ec of entryComponents.filter(
+            (c: IComponentWithLateLoadKey) &#x3D;&gt; c.lateLoadKey
+        )) {
             componentRegistry.registerByLateLoadKey(ec);
         }
     }
-
 }
 </code></pre>
     </div>

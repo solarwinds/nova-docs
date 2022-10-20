@@ -123,7 +123,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:121</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:141</a></div>
                             </td>
                         </tr>
 
@@ -193,7 +193,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:121</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="140" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:140</a></div>
                             </td>
                         </tr>
 
@@ -231,8 +231,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:125</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:145</a></div>
                 </td>
             </tr>
 
@@ -290,15 +290,20 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
-import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 import isArray from &quot;lodash/isArray&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 import { distinctUntilChanged, filter, takeUntil, tap } from &quot;rxjs/operators&quot;;
 
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
+
 import { IPizzagnaProperty } from &quot;../../pizzagna/functions/get-pizzagna-property-path&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
-import { IConfigurable, IProperties, PizzagnaLayer, PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
-
+import {
+    IConfigurable,
+    IProperties,
+    PizzagnaLayer,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../types&quot;;
 import { IBroker, IBrokerUserConfig, IBrokerValue } from &quot;./types&quot;;
 
 @Injectable()
@@ -314,7 +319,8 @@ export class KpiScaleSyncBroker implements IConfigurable {
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
-        private pizzagnaService: PizzagnaService) {
+        private pizzagnaService: PizzagnaService
+    ) {
         this.valuesObject &#x3D; this.builder.valuesObject;
     }
 
@@ -337,15 +343,16 @@ export class KpiScaleSyncBroker implements IConfigurable {
     public subscribeToBrokers() {
         this.destroy();
 
-        this.brokers.forEach(broker &#x3D;&gt; {
+        this.brokers.forEach((broker) &#x3D;&gt; {
             broker.in$
                 .pipe(
-                    filter(_ &#x3D;&gt; !!broker.in$.observers.length),
+                    filter((_) &#x3D;&gt; !!broker.in$.observers.length),
                     distinctUntilChanged(),
-                    tap(data &#x3D;&gt; this.configureValueModel(data)),
-                    tap(data &#x3D;&gt; this.processAndEmitSyncedValue(data, broker)),
+                    tap((data) &#x3D;&gt; this.configureValueModel(data)),
+                    tap((data) &#x3D;&gt; this.processAndEmitSyncedValue(data, broker)),
                     takeUntil(this.destroySubscriptions$)
-                ).subscribe();
+                )
+                .subscribe();
         });
     }
 
@@ -366,8 +373,11 @@ export class KpiScaleSyncBroker implements IConfigurable {
             fn &#x3D; broker.type &#x3D;&#x3D;&#x3D; &quot;min&quot; ? this.getMin : this.getMax;
         }
 
-        const valuesToCompare: (number | undefined)[] &#x3D;
-            this.valuesObject[broker.id].filter(item &#x3D;&gt; item.targetID &amp;&amp; item.targetValue).map(item &#x3D;&gt; item.targetValue);
+        const valuesToCompare: (number | undefined)[] &#x3D; this.valuesObject[
+            broker.id
+        ]
+            .filter((item) &#x3D;&gt; item.targetID &amp;&amp; item.targetValue)
+            .map((item) &#x3D;&gt; item.targetValue);
 
         broker.out$.next({
             ...data,
@@ -376,15 +386,22 @@ export class KpiScaleSyncBroker implements IConfigurable {
     }
 
     private configureValueModel(data: IBrokerValue) {
-        const targetObj &#x3D; this.valuesObject[data.id].filter(obj &#x3D;&gt; obj.targetID &#x3D;&#x3D;&#x3D; data.targetID);
+        const targetObj &#x3D; this.valuesObject[data.id].filter(
+            (obj) &#x3D;&gt; obj.targetID &#x3D;&#x3D;&#x3D; data.targetID
+        );
 
         targetObj.length
-            ? targetObj[0].targetValue &#x3D; data.targetValue
-            : this.valuesObject[data.id].push({ targetID: data.targetID, targetValue: data.targetValue });
+            ? (targetObj[0].targetValue &#x3D; data.targetValue)
+            : this.valuesObject[data.id].push({
+                  targetID: data.targetID,
+                  targetValue: data.targetValue,
+              });
     }
 
     private createPropertiesAndSubscribeToBrokers() {
-        this.tileNodes &#x3D; this.pizzagnaService.getComponent(this.componentId).properties?.nodes;
+        this.tileNodes &#x3D; this.pizzagnaService.getComponent(
+            this.componentId
+        ).properties?.nodes;
         const { scaleSyncConfig } &#x3D; this.properties;
 
         if (this.tileNodes?.length) {
@@ -398,7 +415,9 @@ export class KpiScaleSyncBroker implements IConfigurable {
             });
 
             if (scaleSyncConfig &amp;&amp; isArray(scaleSyncConfig)) {
-                scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt; this.configure().addBroker({ id: s.id, type: s?.type }));
+                scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt;
+                    this.configure().addBroker({ id: s.id, type: s?.type })
+                );
                 this.subscribeToBrokers();
             }
         }
@@ -409,12 +428,17 @@ export class KpiScaleSyncBroker implements IConfigurable {
 }
 
 class KpiScaleSyncBrokerBuilder {
-    public readonly valuesObject: Record&lt;string, Array&lt;Partial&lt;IBrokerValue&gt;&gt;&gt; &#x3D; {};
+    public readonly valuesObject: Record&lt;string, Array&lt;Partial&lt;IBrokerValue&gt;&gt;&gt; &#x3D;
+        {};
 
     constructor(private brokers: IBroker[]) {}
 
     public addBroker(broker: IBrokerUserConfig) {
-        const newBrokerSetting: IBrokerValue &#x3D; { id: broker.id, targetID: &quot;&quot;, targetValue: 1 };
+        const newBrokerSetting: IBrokerValue &#x3D; {
+            id: broker.id,
+            targetID: &quot;&quot;,
+            targetValue: 1,
+        };
         this.valuesObject[broker.id] &#x3D; new Array&lt;Partial&lt;IBrokerValue&gt;&gt;();
         this.brokers.push({
             ...broker,

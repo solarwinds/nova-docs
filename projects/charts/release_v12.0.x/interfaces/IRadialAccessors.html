@@ -165,7 +165,11 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { defaultColorProvider } from &quot;../../../core/common/palette/default-providers&quot;;
-import { DataAccessor, IAccessors, SeriesAccessor } from &quot;../../../core/common/types&quot;;
+import {
+    DataAccessor,
+    IAccessors,
+    SeriesAccessor,
+} from &quot;../../../core/common/types&quot;;
 
 export interface IRadialDataAccessors {
     value: DataAccessor;
@@ -191,7 +195,7 @@ export class RadialAccessors implements IRadialAccessors {
 
     constructor(private colorProvider &#x3D; defaultColorProvider()) {
         this.data &#x3D; {
-            value: (d: any) &#x3D;&gt; Number.isFinite(d) ? d : d.value,
+            value: (d: any) &#x3D;&gt; (Number.isFinite(d) ? d : d.value),
         };
         this.series &#x3D; {
             color: this.colorProvider ? this.colorProvider.get : undefined,

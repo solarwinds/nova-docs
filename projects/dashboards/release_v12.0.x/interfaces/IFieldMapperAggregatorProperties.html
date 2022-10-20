@@ -140,28 +140,38 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import get from &quot;lodash/get&quot;;
 
-import { IProportionalAggregatorFn, IProportionalDonutContentAggregatorProperties } from &quot;./types&quot;;
+import {
+    IProportionalAggregatorFn,
+    IProportionalDonutContentAggregatorProperties,
+} from &quot;./types&quot;;
 
-export interface IFieldMapperAggregatorProperties extends IProportionalDonutContentAggregatorProperties {
+export interface IFieldMapperAggregatorProperties
+    extends IProportionalDonutContentAggregatorProperties {
     chartSeriesDataFieldId?: string;
 }
 
-export const fieldMapper: IProportionalAggregatorFn &#x3D;
-    (origin, properties?: IFieldMapperAggregatorProperties) &#x3D;&gt; {
-        const chartSeriesDataFieldId &#x3D; properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
+export const fieldMapper: IProportionalAggregatorFn &#x3D; (
+    origin,
+    properties?: IFieldMapperAggregatorProperties
+) &#x3D;&gt; {
+    const chartSeriesDataFieldId &#x3D;
+        properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
 
-        let metric: any &#x3D; origin[0];
-        if (properties?.activeMetricId) {
-            metric &#x3D; origin.find(entry &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; properties?.activeMetricId);
+    let metric: any &#x3D; origin[0];
+    if (properties?.activeMetricId) {
+        metric &#x3D; origin.find(
+            (entry) &#x3D;&gt; entry.id &#x3D;&#x3D;&#x3D; properties?.activeMetricId
+        );
 
-            if (!metric) {
-                console.warn(&#x60;No metric with id: ${properties?.activeMetricId} found. Taking first available.&#x60;);
-            }
+        if (!metric) {
+            console.warn(
+                &#x60;No metric with id: ${properties?.activeMetricId} found. Taking first available.&#x60;
+            );
         }
+    }
 
-        return get(metric, chartSeriesDataFieldId);
-
-    };
+    return get(metric, chartSeriesDataFieldId);
+};
 
 fieldMapper.aggregatorType &#x3D; &quot;fieldMapper&quot;;
 </code></pre>

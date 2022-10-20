@@ -164,8 +164,23 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnDestroy, QueryList, SimpleChanges, ViewChildren } from &quot;@angular/core&quot;;
-import { forceCollide, forceSimulation, Simulation, SimulationNodeDatum } from &quot;d3-force&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    Input,
+    OnChanges,
+    OnDestroy,
+    QueryList,
+    SimpleChanges,
+    ViewChildren,
+} from &quot;@angular/core&quot;;
+import {
+    forceCollide,
+    forceSimulation,
+    Simulation,
+    SimulationNodeDatum,
+} from &quot;d3-force&quot;;
 import { select } from &quot;d3-selection&quot;;
 import each from &quot;lodash/each&quot;;
 import isEqual from &quot;lodash/isEqual&quot;;
@@ -175,7 +190,6 @@ import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { IPosition } from &quot;../core/common/types&quot;;
 import { ChartTooltipsPlugin } from &quot;../core/plugins/tooltips/chart-tooltips-plugin&quot;;
-
 import { ChartTooltipDirective } from &quot;./chart-tooltip.directive&quot;;
 
 interface ITooltipNode extends SimulationNodeDatum {
@@ -189,12 +203,12 @@ interface ITooltipNode extends SimulationNodeDatum {
     styleUrls: [&quot;./chart-tooltips.component.less&quot;],
 })
 export class ChartTooltipsComponent implements OnChanges, OnDestroy {
-
     @Input() plugin: ChartTooltipsPlugin;
 
     @Input() template: ElementRef;
 
-    @ViewChildren(ChartTooltipDirective) tooltips: QueryList&lt;ChartTooltipDirective&gt;;
+    @ViewChildren(ChartTooltipDirective)
+    tooltips: QueryList&lt;ChartTooltipDirective&gt;;
 
     public openTooltips &#x3D; new Subject&lt;void&gt;();
     public closeTooltips &#x3D; new Subject&lt;void&gt;();
@@ -202,15 +216,16 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
     private unsubscribe$ &#x3D; new Subject();
     private simulation: Simulation&lt;ITooltipNode, undefined&gt;;
     // index we use for fast access of tooltip directives by seriesId
-    private tooltipDirectivesIndex: { [seriesId: string]: ChartTooltipDirective } &#x3D; {};
+    private tooltipDirectivesIndex: {
+        [seriesId: string]: ChartTooltipDirective;
+    } &#x3D; {};
     private closePending &#x3D; false;
     private isOpen &#x3D; false;
     private openTimeout: number;
     private collisionTimeout: number;
     private closeTimeout: number;
 
-    constructor(private changeDetector: ChangeDetectorRef) {
-    }
+    constructor(private changeDetector: ChangeDetectorRef) {}
 
     public ngOnChanges(changes: SimpleChanges) {
         if (!(changes[&quot;plugin&quot;] &amp;&amp; changes[&quot;plugin&quot;].currentValue)) {
@@ -219,8 +234,12 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
 
         this.unsubscribe$.next();
 
-        this.plugin.showSubject.pipe(takeUntil(this.unsubscribe$)).subscribe(() &#x3D;&gt; this.handleOpen());
-        this.plugin.hideSubject.pipe(takeUntil(this.unsubscribe$)).subscribe(() &#x3D;&gt; this.handleClose());
+        this.plugin.showSubject
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(() &#x3D;&gt; this.handleOpen());
+        this.plugin.hideSubject
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(() &#x3D;&gt; this.handleClose());
     }
 
     public ngOnDestroy(): void {
@@ -235,10 +254,14 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
     private handleOpen() {
         this.changeDetector.detectChanges();
 
-        const currentTooltipDirectivesIndex: { [seriesId: string]: ChartTooltipDirective } &#x3D; {};
-        this.tooltips.forEach(tooltip &#x3D;&gt; {
+        const currentTooltipDirectivesIndex: {
+            [seriesId: string]: ChartTooltipDirective;
+        } &#x3D; {};
+        this.tooltips.forEach((tooltip) &#x3D;&gt; {
             // this is how we identify which series does the tooltip belong to
-            const seriesId: string | undefined &#x3D; tooltip.elementRef.nativeElement.getAttribute(&quot;series-id&quot;) ?? undefined;
+            const seriesId: string | undefined &#x3D;
+                tooltip.elementRef.nativeElement.getAttribute(&quot;series-id&quot;) ??
+                undefined;
 
             if (!seriesId) {
                 throw new Error(&quot;SeriesId is not defined&quot;);
@@ -247,7 +270,10 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
             currentTooltipDirectivesIndex[seriesId] &#x3D; tooltip;
         });
 
-        const directivesChanged &#x3D; !isEqual(currentTooltipDirectivesIndex, this.tooltipDirectivesIndex);
+        const directivesChanged &#x3D; !isEqual(
+            currentTooltipDirectivesIndex,
+            this.tooltipDirectivesIndex
+        );
         if (this.closePending || directivesChanged || !this.isOpen) {
             clearTimeout(this.openTimeout);
 
@@ -289,11 +315,13 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
         // extracted tooltip positions from tooltip directives
         const tooltipPositions: { [seriesId: string]: IPosition } &#x3D; {};
 
-        this.tooltips.forEach(tooltip &#x3D;&gt; {
+        this.tooltips.forEach((tooltip) &#x3D;&gt; {
             const element &#x3D; tooltip.getOverlayElement();
 
             // this is how we identify which series does the tooltip belong to
-            const seriesId: string | undefined &#x3D; tooltip.elementRef.nativeElement.getAttribute(&quot;series-id&quot;) ?? undefined;
+            const seriesId: string | undefined &#x3D;
+                tooltip.elementRef.nativeElement.getAttribute(&quot;series-id&quot;) ??
+                undefined;
 
             if (!seriesId) {
                 throw new Error(&quot;SeriesId is not defined&quot;);
@@ -314,7 +342,10 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
             this.simulation.stop();
         }
 
-        this.simulation &#x3D; this.startSimulation(this.tooltipDirectivesIndex, tooltipPositions);
+        this.simulation &#x3D; this.startSimulation(
+            this.tooltipDirectivesIndex,
+            tooltipPositions
+        );
     }
 
     /**
@@ -323,9 +354,11 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
      * @param tooltipIndex
      * @param tooltipPositions
      */
-    private startSimulation(tooltipIndex: { [p: string]: ChartTooltipDirective },
-                            tooltipPositions: { [seriesId: string]: IPosition }) {
-        const nodes &#x3D; Object.keys(tooltipPositions).map(seriesId &#x3D;&gt; {
+    private startSimulation(
+        tooltipIndex: { [p: string]: ChartTooltipDirective },
+        tooltipPositions: { [seriesId: string]: IPosition }
+    ) {
+        const nodes &#x3D; Object.keys(tooltipPositions).map((seriesId) &#x3D;&gt; {
             const position &#x3D; tooltipPositions[seriesId];
 
             if (isNil(position.height) || isNil(position.width)) {
@@ -336,7 +369,9 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
                 seriesId: seriesId,
                 x: position.x,
                 y: position.y,
-                radius: this.isVertical() ? position.height / 2 : position.width / 2,
+                radius: this.isVertical()
+                    ? position.height / 2
+                    : position.width / 2,
             };
             if (this.isVertical()) {
                 props.fx &#x3D; position.x;
@@ -359,8 +394,10 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
             each(nodes, (node: ITooltipNode) &#x3D;&gt; {
                 const tooltip &#x3D; tooltipIndex[node.seriesId];
 
-                select(tooltip.getOverlayElement())
-                    .style(this.isVertical() ? &quot;top&quot; : &quot;left&quot;, (this.isVertical() ? node.y : node.x) + &quot;px&quot;);
+                select(tooltip.getOverlayElement()).style(
+                    this.isVertical() ? &quot;top&quot; : &quot;left&quot;,
+                    (this.isVertical() ? node.y : node.x) + &quot;px&quot;
+                );
             });
         });
 
@@ -370,7 +407,6 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
     private isVertical() {
         return this.plugin.orientation &#x3D;&#x3D;&#x3D; &quot;right&quot;;
     }
-
 }
 </code></pre>
     </div>

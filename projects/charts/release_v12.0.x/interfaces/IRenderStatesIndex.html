@@ -80,7 +80,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RenderState } from &quot;../../renderers/types&quot;;
-import { IAccessors, IChart, IChartAssistSeries, IChartSeries, IRenderStateData } from &quot;../common/types&quot;;
+import {
+    IAccessors,
+    IChart,
+    IChartAssistSeries,
+    IChartSeries,
+    IRenderStateData,
+} from &quot;../common/types&quot;;
 
 /**
  * Interface representing the spark chart assist&#x27;s
@@ -112,7 +118,11 @@ export interface IChartAssist {
      *
      * @returns {string} The highlighted value
      */
-    getHighlightedValue(chartSeries: IChartSeries&lt;IAccessors&gt;, scaleKey: string, formatterName?: string): string | number | undefined;
+    getHighlightedValue(
+        chartSeries: IChartSeries&lt;IAccessors&gt;,
+        scaleKey: string,
+        formatterName?: string
+    ): string | number | undefined;
 
     /**
      * Returns visible series that are represented by a legend
@@ -137,19 +147,20 @@ export interface IChartAssistEvent {
  * Legend interaction assist uses this class to present the state that consists of emphasisState+visible as one state
  */
 export class ChartAssistRenderStateData implements IRenderStateData {
-    constructor(public seriesId: string,
-                public series: IChartAssistSeries&lt;IAccessors&gt;,
-                public emphasisState &#x3D; RenderState.default,
-                public visible &#x3D; true) {
-    }
+    constructor(
+        public seriesId: string,
+        public series: IChartAssistSeries&lt;IAccessors&gt;,
+        public emphasisState &#x3D; RenderState.default,
+        public visible &#x3D; true
+    ) {}
 
     get state(): RenderState {
         return this.visible ? this.emphasisState : RenderState.hidden;
     }
 }
 
-export interface IRenderStatesIndex extends Record&lt;string, ChartAssistRenderStateData&gt; {
-}
+export interface IRenderStatesIndex
+    extends Record&lt;string, ChartAssistRenderStateData&gt; {}
 </code></pre>
     </div>
 </div>

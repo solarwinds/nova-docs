@@ -292,7 +292,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Inject, Injectable, NgZone, TrackByFunction } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    forwardRef,
+    Inject,
+    Injectable,
+    NgZone,
+    TrackByFunction,
+} from &quot;@angular/core&quot;;
 import _includes from &quot;lodash/includes&quot;;
 import _isNil from &quot;lodash/isNil&quot;;
 import _isNumber from &quot;lodash/isNumber&quot;;
@@ -302,7 +308,6 @@ import { ISelection, ISelectorState } from &quot;../../services/public-api&quot;
 import { SelectionType } from &quot;../selector/public-api&quot;;
 import { SelectorService } from &quot;../selector/selector.service&quot;;
 import { ISortedItem, SorterDirection } from &quot;../sorter/public-api&quot;;
-
 import { TableResizePhase } from &quot;./table-resizer/table-resizer.directive&quot;;
 
 export const enum AlignmentClasses {
@@ -318,7 +323,9 @@ export const enum DropAlignment {
 
 export interface ITableState {
     columnAlignments: { [key: string]: string };
-    columnsWidths: { [key: string]: { width: number, autoCalculated?: boolean } };
+    columnsWidths: {
+        [key: string]: { width: number; autoCalculated?: boolean };
+    };
     columns: string[];
     sortedColumn?: ISortedItem;
     widthCalculationPerformed: boolean;
@@ -354,7 +361,7 @@ const ICON_CELL_WIDTH_PX &#x3D; 40;
 const SELECTABLE_CELL_WIDTH_PX &#x3D; 75;
 
 /** @ignore */
-const DEFAULT_TRACK_BY: TrackByFunction&lt;any&gt; &#x3D; ((i, d) &#x3D;&gt; d);
+const DEFAULT_TRACK_BY: TrackByFunction&lt;any&gt; &#x3D; (i, d) &#x3D;&gt; d;
 
 @Injectable()
 export class TableStateHandlerService {
@@ -399,12 +406,15 @@ export class TableStateHandlerService {
     };
 
     protected sortIcons: { [key: string]: string } &#x3D; {
-        &quot;asc&quot;: &quot;triangle-up&quot;,
-        &quot;desc&quot;: &quot;triangle-down&quot;,
+        asc: &quot;triangle-up&quot;,
+        desc: &quot;triangle-down&quot;,
     };
 
-    constructor(protected zone: NgZone, @Inject(forwardRef(() &#x3D;&gt; SelectorService)) protected selectorService: SelectorService) {
-    }
+    constructor(
+        protected zone: NgZone,
+        @Inject(forwardRef(() &#x3D;&gt; SelectorService))
+        protected selectorService: SelectorService
+    ) {}
 
     /**
      * Used to sync directives and components in table to apply additional styles and logic
@@ -598,8 +608,12 @@ export class TableStateHandlerService {
      * @param alignment the new alignment direction
      *
      */
-    public setAlignment(column: string, alignment: string &#x3D; AlignmentClasses.LEFT): void {
-        this.state.columnAlignments[column] &#x3D; alignment || this.state.columnAlignments[column];
+    public setAlignment(
+        column: string,
+        alignment: string &#x3D; AlignmentClasses.LEFT
+    ): void {
+        this.state.columnAlignments[column] &#x3D;
+            alignment || this.state.columnAlignments[column];
     }
 
     /**
@@ -623,30 +637,43 @@ export class TableStateHandlerService {
     public calculateWidthsOfColumns() {
         // Apply width of 40px for non-resizable columns of type &quot;icon&quot;
         this.state.columns
-            .filter(columnName &#x3D;&gt; {
+            .filter((columnName) &#x3D;&gt; {
                 const columnIndex &#x3D; this.state.columns.indexOf(columnName);
                 return this.state.columnsTypes[columnIndex] &#x3D;&#x3D;&#x3D; &quot;icon&quot;;
             })
-            .forEach(column &#x3D;&gt; {
-                this.state.columnsWidths[column] &#x3D; { width: ICON_CELL_WIDTH_PX };
+            .forEach((column) &#x3D;&gt; {
+                this.state.columnsWidths[column] &#x3D; {
+                    width: ICON_CELL_WIDTH_PX,
+                };
             });
 
         // &quot;selectable&quot; adding one more column with 75px width which is not in the &quot;this.state.columns&quot;, so we need take it to the consideration
-        const accumulator &#x3D; (this.resizable &amp;&amp; this.selectable) ? SELECTABLE_CELL_WIDTH_PX : 0;
+        const accumulator &#x3D;
+            this.resizable &amp;&amp; this.selectable ? SELECTABLE_CELL_WIDTH_PX : 0;
         const userColumnsWidths &#x3D; this.state.columns
-            .filter(columnName &#x3D;&gt; this.state.columnsWidths[columnName])
-            .reduce((total, curr) &#x3D;&gt;
-                total + this.state.columnsWidths[curr].width, accumulator);
-        const widthConsideringUserInputs &#x3D; userColumnsWidths &gt; this.tableParentWidth ? 0 : this.tableParentWidth - userColumnsWidths - 1;
-        const columnsToCalculateWidth &#x3D; this.state.columns
-            .filter(columnName &#x3D;&gt; !this.state.columnsWidths[columnName])
-            .length;
-        const calculatedWidth &#x3D; Math.floor(widthConsideringUserInputs / columnsToCalculateWidth);
-        const widthOfColumn &#x3D; calculatedWidth &gt; MIN_COLUMN_WIDTH_PX ? calculatedWidth : MIN_COLUMN_WIDTH_PX;
+            .filter((columnName) &#x3D;&gt; this.state.columnsWidths[columnName])
+            .reduce(
+                (total, curr) &#x3D;&gt; total + this.state.columnsWidths[curr].width,
+                accumulator
+            );
+        const widthConsideringUserInputs &#x3D;
+            userColumnsWidths &gt; this.tableParentWidth
+                ? 0
+                : this.tableParentWidth - userColumnsWidths - 1;
+        const columnsToCalculateWidth &#x3D; this.state.columns.filter(
+            (columnName) &#x3D;&gt; !this.state.columnsWidths[columnName]
+        ).length;
+        const calculatedWidth &#x3D; Math.floor(
+            widthConsideringUserInputs / columnsToCalculateWidth
+        );
+        const widthOfColumn &#x3D;
+            calculatedWidth &gt; MIN_COLUMN_WIDTH_PX
+                ? calculatedWidth
+                : MIN_COLUMN_WIDTH_PX;
 
         this.state.columns
-            .filter(columnName &#x3D;&gt; !this.state.columnsWidths[columnName])
-            .forEach(column &#x3D;&gt; {
+            .filter((columnName) &#x3D;&gt; !this.state.columnsWidths[columnName])
+            .forEach((column) &#x3D;&gt; {
                 // There is a case when sum of columns can exceed width of parent
                 // Then width of other columns should be set to min width
                 this.state.columnsWidths[column] &#x3D; { width: widthOfColumn };
@@ -659,18 +686,22 @@ export class TableStateHandlerService {
      * Updates the state&#x27;s sortedColumn and sortedColumn.direction properties and then broadcasts the
      *  state object to all listeners of sortingState
      *
-    * @param sortCellIndex the index of the column to sort by
+     * @param sortCellIndex the index of the column to sort by
      */
     public sortColumn(sortCellIndex: number) {
         const newSortedColumn &#x3D; this.state.columns[sortCellIndex];
-        const prevSortedColumn &#x3D; this.state.sortedColumn &amp;&amp; this.state.sortedColumn.sortBy;
-        const prevSortDirection &#x3D; this.state.sortedColumn &amp;&amp; this.state.sortedColumn.direction;
+        const prevSortedColumn &#x3D;
+            this.state.sortedColumn &amp;&amp; this.state.sortedColumn.sortBy;
+        const prevSortDirection &#x3D;
+            this.state.sortedColumn &amp;&amp; this.state.sortedColumn.direction;
 
         let newSortDirection &#x3D; SorterDirection.original;
 
         if (newSortedColumn &#x3D;&#x3D;&#x3D; prevSortedColumn) {
-            newSortDirection &#x3D; (prevSortDirection &#x3D;&#x3D;&#x3D; SorterDirection.ascending) ?
-                SorterDirection.descending : SorterDirection.ascending;
+            newSortDirection &#x3D;
+                prevSortDirection &#x3D;&#x3D;&#x3D; SorterDirection.ascending
+                    ? SorterDirection.descending
+                    : SorterDirection.ascending;
         } else {
             newSortDirection &#x3D; SorterDirection.ascending;
         }
@@ -703,7 +734,11 @@ export class TableStateHandlerService {
     public reorderColumnsOnDrop(): void {
         this.getNewCellIndex();
 
-        if (!_isNil(this.newCellIndex) &amp;&amp; (this.newCellIndex !&#x3D;&#x3D; this.dragCellIndex) &amp;&amp; (this.dragCellIndex !&#x3D;&#x3D; this.draggedOverCellIndex)) {
+        if (
+            !_isNil(this.newCellIndex) &amp;&amp;
+            this.newCellIndex !&#x3D;&#x3D; this.dragCellIndex &amp;&amp;
+            this.dragCellIndex !&#x3D;&#x3D; this.draggedOverCellIndex
+        ) {
             this.reorderColumns(this.dragCellIndex, this.newCellIndex);
         }
     }
@@ -713,9 +748,14 @@ export class TableStateHandlerService {
      */
     public getNewCellIndex(): void {
         if (this.dragCellIndex !&#x3D;&#x3D; this.draggedOverCellIndex) {
-            this.newCellIndex &#x3D; (this.dragCellIndex &lt; this.draggedOverCellIndex)
-                ? ((this.dropCellOffsetX &lt; this.dropCellWidth / 2) ? (this.draggedOverCellIndex - 1) : this.draggedOverCellIndex)
-                : ((this.dropCellOffsetX &lt; this.dropCellWidth / 2) ? this.draggedOverCellIndex : (this.draggedOverCellIndex + 1));
+            this.newCellIndex &#x3D;
+                this.dragCellIndex &lt; this.draggedOverCellIndex
+                    ? this.dropCellOffsetX &lt; this.dropCellWidth / 2
+                        ? this.draggedOverCellIndex - 1
+                        : this.draggedOverCellIndex
+                    : this.dropCellOffsetX &lt; this.dropCellWidth / 2
+                    ? this.draggedOverCellIndex
+                    : this.draggedOverCellIndex + 1;
         }
     }
 
@@ -739,9 +779,13 @@ export class TableStateHandlerService {
      * @returns The drop alignment direction
      */
     public getDropCellAlignment(): DropAlignment {
-        return ((this.dragCellIndex &lt; this.draggedOverCellIndex)
-            ? ((this.newCellIndex &lt; this.draggedOverCellIndex) ? DropAlignment.left : DropAlignment.right)
-            : ((this.newCellIndex &gt; this.draggedOverCellIndex) ? DropAlignment.right : DropAlignment.left));
+        return this.dragCellIndex &lt; this.draggedOverCellIndex
+            ? this.newCellIndex &lt; this.draggedOverCellIndex
+                ? DropAlignment.left
+                : DropAlignment.right
+            : this.newCellIndex &gt; this.draggedOverCellIndex
+            ? DropAlignment.right
+            : DropAlignment.left;
     }
 
     /**
@@ -750,7 +794,10 @@ export class TableStateHandlerService {
      */
     public emitDraggedOverCell(): void {
         this.zone.run(() &#x3D;&gt; {
-            if ((this.dragCellIndex !&#x3D;&#x3D; this.draggedOverCellIndex) &amp;&amp; (this.dragCellIndex !&#x3D;&#x3D; this.newCellIndex)) {
+            if (
+                this.dragCellIndex !&#x3D;&#x3D; this.draggedOverCellIndex &amp;&amp;
+                this.dragCellIndex !&#x3D;&#x3D; this.newCellIndex
+            ) {
                 this.draggedOverCell.next(&lt;DraggedOverCell&gt;{
                     cellIndex: this.draggedOverCellIndex,
                     dropAlignment: this.getDropCellAlignment(),
@@ -767,8 +814,15 @@ export class TableStateHandlerService {
      * @param columnIndex
      * @param eventPhase
      */
-    public emitResizeEvent(columnIndex: number, eventPhase: TableResizePhase): void {
-        this.shouldHighlightEdge.next({ columnIndex, side: DropAlignment.right, eventPhase });
+    public emitResizeEvent(
+        columnIndex: number,
+        eventPhase: TableResizePhase
+    ): void {
+        this.shouldHighlightEdge.next({
+            columnIndex,
+            side: DropAlignment.right,
+            eventPhase,
+        });
     }
 
     /**
@@ -779,8 +833,10 @@ export class TableStateHandlerService {
     public setDraggedOverCell(event: DragEvent): void {
         const dropCellOffsetX: number &#x3D; event.offsetX;
         const dropCellWidth: number &#x3D; (event.target as HTMLElement).clientWidth;
-        const dragOverDirection: string &#x3D; (dropCellOffsetX &lt; dropCellWidth / 2) ? &quot;left-right&quot; : &quot;right-left&quot;;
-        const draggedOverCellIndex: number &#x3D; this.getTargetElementCellIndex(event);
+        const dragOverDirection: string &#x3D;
+            dropCellOffsetX &lt; dropCellWidth / 2 ? &quot;left-right&quot; : &quot;right-left&quot;;
+        const draggedOverCellIndex: number &#x3D;
+            this.getTargetElementCellIndex(event);
 
         const draggedOverCellChanged: boolean &#x3D;
             _isNil(this.dragOverDirection) ||
@@ -814,8 +870,11 @@ export class TableStateHandlerService {
      * @returns An array of all currently selected items
      */
     public getSelectedItems() {
-        const trackedItems &#x3D; this.dataSource.map(d &#x3D;&gt; this.trackBy(d?.id, d));
-        return this.selectorService.getSelectedItems(this.selection, trackedItems);
+        const trackedItems &#x3D; this.dataSource.map((d) &#x3D;&gt; this.trackBy(d?.id, d));
+        return this.selectorService.getSelectedItems(
+            this.selection,
+            trackedItems
+        );
     }
 
     /**
@@ -863,7 +922,10 @@ export class TableStateHandlerService {
         const excludedRows &#x3D; this.selection.exclude;
         const includedRows &#x3D; this.selection.include;
 
-        const rowObjectTrackBy &#x3D; this.trackBy((&lt;{id: number}&gt;rowObject)?.id, rowObject);
+        const rowObjectTrackBy &#x3D; this.trackBy(
+            (&lt;{ id: number }&gt;rowObject)?.id,
+            rowObject
+        );
 
         if (this.selection.isAllPages) {
             if (!_includes(excludedRows, rowObjectTrackBy)) {
@@ -894,7 +956,11 @@ export class TableStateHandlerService {
             return {
                 sortingIcon: this.sortIcons[this.state.sortedColumn.direction],
                 // comparing column index with index of sorted column
-                isColumnSorted: cellIndex &#x3D;&#x3D;&#x3D; this.state.columns.indexOf(this.state.sortedColumn.sortBy) &amp;&amp; this.sortable,
+                isColumnSorted:
+                    cellIndex &#x3D;&#x3D;&#x3D;
+                        this.state.columns.indexOf(
+                            this.state.sortedColumn.sortBy
+                        ) &amp;&amp; this.sortable,
             };
         }
         return {

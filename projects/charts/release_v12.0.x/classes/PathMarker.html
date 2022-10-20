@@ -372,14 +372,14 @@ export class PathMarker implements IChartMarker {
         this.element &#x3D; document.createElement(&quot;path&quot;);
 
         this.setAttributes({
-            &quot;class&quot;: &quot;nui-chart-element-marker nui-chart--path__outline&quot;,
+            class: &quot;nui-chart-element-marker nui-chart--path__outline&quot;,
             &quot;vector-effect&quot;: &quot;non-scaling-stroke&quot;,
-            &quot;d&quot;: d,
+            d: d,
         });
     }
 
     public setColor(color: string): void {
-        this.setAttributes({&quot;fill&quot;: color});
+        this.setAttributes({ fill: color });
     }
 
     private setAttributes(attrs: { [key: string]: string }) {
@@ -397,7 +397,6 @@ export class PathMarker implements IChartMarker {
     protected updateSvg() {
         this.svg &#x3D; this.element.outerHTML;
     }
-
 }
 </code></pre>
     </div>

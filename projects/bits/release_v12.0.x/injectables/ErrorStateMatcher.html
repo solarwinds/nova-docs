@@ -184,13 +184,20 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &quot;@angular/core&quot;;
-import {FormControl, FormGroupDirective, NgForm} from &quot;@angular/forms&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { FormControl, FormGroupDirective, NgForm } from &quot;@angular/forms&quot;;
 
-@Injectable({providedIn: &quot;root&quot;})
+@Injectable({ providedIn: &quot;root&quot; })
 export class ErrorStateMatcher {
-    isErrorState(control?: FormControl, form?: FormGroupDirective | NgForm): boolean {
-        return !!(control &amp;&amp; control.invalid &amp;&amp; (control.touched || (form &amp;&amp; form.submitted)));
+    isErrorState(
+        control?: FormControl,
+        form?: FormGroupDirective | NgForm
+    ): boolean {
+        return !!(
+            control &amp;&amp;
+            control.invalid &amp;&amp;
+            (control.touched || (form &amp;&amp; form.submitted))
+        );
     }
 }
 </code></pre>

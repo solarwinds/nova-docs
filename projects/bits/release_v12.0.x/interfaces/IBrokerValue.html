@@ -190,7 +190,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, ChangeDetectorRef, Directive, ElementRef, HostBinding, Input, NgZone, OnChanges, OnDestroy, SimpleChanges } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Directive,
+    ElementRef,
+    HostBinding,
+    Input,
+    NgZone,
+    OnChanges,
+    OnDestroy,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 import isFinite from &quot;lodash/isFinite&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
@@ -212,7 +223,9 @@ export interface IBrokerValue {
 @Directive({
     selector: &quot;[nuiZoomContent]&quot;,
 })
-export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges {
+export class ZoomContentDirective
+    implements OnDestroy, AfterViewInit, OnChanges
+{
     private destroy$ &#x3D; new Subject();
 
     @HostBinding(&quot;style.zoom&quot;)
@@ -261,14 +274,11 @@ export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes.scaleOUT$ &amp;&amp; this.scaleOUT$) {
-
-            this.scaleIN$
-                .pipe(takeUntil(this.destroy$))
-                .subscribe(data &#x3D;&gt; {
-                    this.latestDataFromBroker &#x3D; {...data};
-                    this.element.style.transform &#x3D; &#x60;scale(${data.targetValue})&#x60;;
-                    this.checkScaleBoundaries(data.targetValue);
-                });
+            this.scaleIN$.pipe(takeUntil(this.destroy$)).subscribe((data) &#x3D;&gt; {
+                this.latestDataFromBroker &#x3D; { ...data };
+                this.element.style.transform &#x3D; &#x60;scale(${data.targetValue})&#x60;;
+                this.checkScaleBoundaries(data.targetValue);
+            });
         }
     }
 
@@ -308,8 +318,12 @@ export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges
         const heightZoom &#x3D; this.parentRect.height / this.elementRect.height;
 
         let zoom &#x3D; Math.min(widthZoom, heightZoom) * this.zoomRatio;
-        if (this.minZoom) { zoom &#x3D; Math.max(zoom, this.minZoom); }
-        if (this.maxZoom) { zoom &#x3D; Math.min(zoom, this.maxZoom); }
+        if (this.minZoom) {
+            zoom &#x3D; Math.max(zoom, this.minZoom);
+        }
+        if (this.maxZoom) {
+            zoom &#x3D; Math.min(zoom, this.maxZoom);
+        }
 
         if (Math.abs(zoom - this.zoom) &gt; this.minZoomDifference) {
             this.zoom &#x3D; zoom;
@@ -319,19 +333,22 @@ export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges
 
     private applyScale() {
         const parentSize &#x3D; {
-            width: this.parentElement.offsetWidth - (2 * this.margin),
-            height: this.parentElement.offsetHeight  - (2 * this.margin),
+            width: this.parentElement.offsetWidth - 2 * this.margin,
+            height: this.parentElement.offsetHeight - 2 * this.margin,
         };
 
-        const scale &#x3D; Math.min(parentSize.width / this.element.offsetWidth, parentSize.height / this.element.offsetHeight);
+        const scale &#x3D; Math.min(
+            parentSize.width / this.element.offsetWidth,
+            parentSize.height / this.element.offsetHeight
+        );
 
         this.scaleOUT$
             ? this.scaleOUT$.next({
-                ...this.latestDataFromBroker,
-                targetID: this.uuid,
-                targetValue: isFinite(scale) ? scale : 0,
-            })
-            : this.element.style.transform &#x3D;  &#x60;scale(${scale})&#x60;;
+                  ...this.latestDataFromBroker,
+                  targetID: this.uuid,
+                  targetValue: isFinite(scale) ? scale : 0,
+              })
+            : (this.element.style.transform &#x3D; &#x60;scale(${scale})&#x60;);
 
         this.checkScaleBoundaries(scale);
     }
@@ -341,7 +358,7 @@ export class ZoomContentDirective implements OnDestroy, AfterViewInit, OnChanges
             this.element.style.transform &#x3D; &#x60;scale(${this.minScale})&#x60;;
         }
 
-        if (this.maxScale &amp;&amp; (scale &gt; this.maxScale)) {
+        if (this.maxScale &amp;&amp; scale &gt; this.maxScale) {
             this.element.style.transform &#x3D; &#x60;scale(${this.maxScale})&#x60;;
         }
     }

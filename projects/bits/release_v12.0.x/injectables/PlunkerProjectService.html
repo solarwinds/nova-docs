@@ -202,8 +202,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:89</a></div>
                 </td>
             </tr>
 
@@ -286,8 +286,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:81</a></div>
                 </td>
             </tr>
 
@@ -327,8 +327,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="62"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:62</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:69</a></div>
                 </td>
             </tr>
 
@@ -368,8 +368,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/lib/docs/example-wrapper/plunker-project.service.ts:77</a></div>
                 </td>
             </tr>
 
@@ -507,19 +507,26 @@ export class PlunkerProjectService {
 
         const modifySources &#x3D; (source: string) &#x3D;&gt;
             // Handle non-existent less references that are just killing plunker
-            source.replace(/^.*@import \(reference\).*$/mg, &quot;/* NUI LESS VARIABLES ARE NOT SUPPORTED YET */&quot;);
+            source.replace(
+                /^.*@import \(reference\).*$/gm,
+                &quot;/* NUI LESS VARIABLES ARE NOT SUPPORTED YET */&quot;
+            );
 
         // HACK FOR HANDLING FILENAME VARIATION: We&#x27;re only appending &#x27;.example&#x27; to the prefix if the component doesn&#x27;t already
         // have &#x27;-example&#x27; in its prefix. The presence of &#x27;-example&#x27; in the prefix indicates that the component doesn&#x27;t
         // follow the convention of having a &#x27;.example&#x27; substring in its filenames. The &#x27;.example&#x27; substring is normally
         // used in determining the filename prefix to use for the example wrapper&#x27;s code sources.
         const hyphenExampleSubstr &#x3D; &quot;-example&quot;;
-        const hyphenExampleSubstrFound &#x3D; (prefix.indexOf(hyphenExampleSubstr) + hyphenExampleSubstr.length) &#x3D;&#x3D;&#x3D; prefix.length;
-        const modifiedPrefix &#x3D; &#x60;${prefix}${hyphenExampleSubstrFound ? &quot;&quot; : &quot;.example&quot;}&#x60;
+        const hyphenExampleSubstrFound &#x3D;
+            prefix.indexOf(hyphenExampleSubstr) + hyphenExampleSubstr.length &#x3D;&#x3D;&#x3D;
+            prefix.length;
+        const modifiedPrefix &#x3D; &#x60;${prefix}${
+            hyphenExampleSubstrFound ? &quot;&quot; : &quot;.example&quot;
+        }&#x60;;
         // END HACK
 
         // example files
-        Object.keys(sources).forEach( key &#x3D;&gt; {
+        Object.keys(sources).forEach((key) &#x3D;&gt; {
             form.append(
                 this.formInput(
                     &#x60;${modifiedPrefix}.component&#x60;,
@@ -549,7 +556,11 @@ export class PlunkerProjectService {
     }
 
     public getIndexHTMLInput(): HTMLInputElement {
-        return this.formInput(&quot;index&quot;, &quot;html&quot;, this.plunkerFiles.getIndexFile());
+        return this.formInput(
+            &quot;index&quot;,
+            &quot;html&quot;,
+            this.plunkerFiles.getIndexFile()
+        );
     }
 
     public getMainTSInput(): HTMLInputElement {
@@ -557,13 +568,20 @@ export class PlunkerProjectService {
     }
 
     public getConfigJSInput(): HTMLInputElement {
-
-        return this.formInput(&quot;config&quot;, &quot;js&quot;, this.plunkerFiles.getSystemJsConfigFile());
+        return this.formInput(
+            &quot;config&quot;,
+            &quot;js&quot;,
+            this.plunkerFiles.getSystemJsConfigFile()
+        );
     }
 
-    public getAppComponentTSInput(filePrefix: string, fileContent: string): HTMLInputElement {
+    public getAppComponentTSInput(
+        filePrefix: string,
+        fileContent: string
+    ): HTMLInputElement {
         const className: string | undefined &#x3D; this.getClassName(fileContent);
-        const selectorName: string | undefined &#x3D; this.getSelectorName(fileContent);
+        const selectorName: string | undefined &#x3D;
+            this.getSelectorName(fileContent);
 
         if (!className) {
             throw new Error(&quot;Provided file should contain a class&quot;);
@@ -573,10 +591,18 @@ export class PlunkerProjectService {
             throw new Error(&quot;Provided file should contain selector&quot;);
         }
 
-        return this.formInput(&quot;app&quot;, &quot;ts&quot;, this.plunkerFiles.getAppFile(filePrefix, className, selectorName));
+        return this.formInput(
+            &quot;app&quot;,
+            &quot;ts&quot;,
+            this.plunkerFiles.getAppFile(filePrefix, className, selectorName)
+        );
     }
 
-    private formInput(prefixName: string, extName: string, content: string): HTMLInputElement {
+    private formInput(
+        prefixName: string,
+        extName: string,
+        content: string
+    ): HTMLInputElement {
         const inputEl: HTMLInputElement &#x3D; this.document.createElement(&quot;input&quot;);
         inputEl.setAttribute(&quot;type&quot;, &quot;hidden&quot;);
         inputEl.setAttribute(&quot;name&quot;, &#x60;files[${prefixName}.${extName}]&#x60;);
@@ -586,11 +612,14 @@ export class PlunkerProjectService {
     }
 
     private getClassName(fileContent: string): string | undefined {
-        const matches: RegExpMatchArray | null &#x3D; fileContent.match(/export class (\w+Component)/);
+        const matches: RegExpMatchArray | null &#x3D; fileContent.match(
+            /export class (\w+Component)/
+        );
         return (matches || [])[1]; // capture exported component name
     }
     private getSelectorName(fileContent: string): string | undefined {
-        const matches: RegExpMatchArray | null &#x3D; fileContent.match(/selector: \&quot;(.*)\&quot;/);
+        const matches: RegExpMatchArray | null &#x3D;
+            fileContent.match(/selector: \&quot;(.*)\&quot;/);
         return (matches || [])[1]; // capture selector
     }
 }

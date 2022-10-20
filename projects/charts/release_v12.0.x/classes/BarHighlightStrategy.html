@@ -124,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -224,8 +224,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="115"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:115</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:191</a></div>
                 </td>
             </tr>
 
@@ -320,8 +320,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:58</a></div>
                 </td>
             </tr>
 
@@ -427,8 +427,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:42</a></div>
                 </td>
             </tr>
 
@@ -535,8 +535,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="149"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:149</a></div>
                 </td>
             </tr>
 
@@ -635,26 +635,47 @@ import isArray from &quot;lodash/isArray&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
-import { DATA_POINT_INTERACTION_RESET, DATA_POINT_NOT_FOUND } from &quot;../../../constants&quot;;
-import { isBandScale, IXYScales, Scales } from &quot;../../../core/common/scales/types&quot;;
+import {
+    DATA_POINT_INTERACTION_RESET,
+    DATA_POINT_NOT_FOUND,
+} from &quot;../../../constants&quot;;
+import {
+    isBandScale,
+    IXYScales,
+    Scales,
+} from &quot;../../../core/common/scales/types&quot;;
 import { IDataSeries, IRendererEventPayload } from &quot;../../../core/common/types&quot;;
 import { UtilityService } from &quot;../../../core/common/utility.service&quot;;
 import { IRectangleAccessors } from &quot;../../accessors/rectangle-accessors&quot;;
-import { IHighlightStrategy, IRenderSeries, RenderLayerName, RenderState } from &quot;../../types&quot;;
+import {
+    IHighlightStrategy,
+    IRenderSeries,
+    RenderLayerName,
+    RenderState,
+} from &quot;../../types&quot;;
 import { BarRenderer } from &quot;../bar-renderer&quot;;
 
 export type SelectedDatPointIdxFn &#x3D; (seriesId: string) &#x3D;&gt; number;
 
-export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAccessors, BarRenderer&gt; {
-
+export class BarHighlightStrategy
+    implements IHighlightStrategy&lt;IRectangleAccessors, BarRenderer&gt;
+{
     /**
      * @param scaleKey scale that will be used for searching for the data point that will be highlighted
      * @param levels for band scales, how many levels deep do we go to compare values
      */
-    constructor(private scaleKey: keyof IXYScales, private levels &#x3D; 1, private selectedDataPointIdxFn?: SelectedDatPointIdxFn) {
-    }
+    constructor(
+        private scaleKey: keyof IXYScales,
+        private levels &#x3D; 1,
+        private selectedDataPointIdxFn?: SelectedDatPointIdxFn
+    ) {}
 
-    public getDataPointIndex(renderer: BarRenderer, series: IDataSeries&lt;IRectangleAccessors&gt;, values: { [p: string]: any }, scales: Scales) {
+    public getDataPointIndex(
+        renderer: BarRenderer,
+        series: IDataSeries&lt;IRectangleAccessors&gt;,
+        values: { [p: string]: any },
+        scales: Scales
+    ) {
         const value &#x3D; values[this.scaleKey];
         if (typeof value &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
             // if there is no value we&#x27;re returning -2 (DATA_POINT_INTERACTION_RESET) which helps highlightDataPoint
@@ -665,7 +686,12 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
         return this.findDataPointByValue(series, value, this.scaleKey, scales);
     }
 
-    public findDataPointByValue(series: IDataSeries&lt;IRectangleAccessors&gt;, value: any, scaleKey: keyof IXYScales, scales?: Scales) {
+    public findDataPointByValue(
+        series: IDataSeries&lt;IRectangleAccessors&gt;,
+        value: any,
+        scaleKey: keyof IXYScales,
+        scales?: Scales
+    ) {
         const accessorSuffix &#x3D; (scaleKey as string).toUpperCase();
         const dataAccessors &#x3D; series.accessors.data;
 
@@ -673,69 +699,119 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
         const endAccessor &#x3D; dataAccessors[&quot;end&quot; + accessorSuffix];
 
         if (typeof value &#x3D;&#x3D;&#x3D; &quot;string&quot;) {
-            return findIndex(series.data,
-                             (d, i) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; startAccessor?.(d, i, series.data, series));
+            return findIndex(
+                series.data,
+                (d, i) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; startAccessor?.(d, i, series.data, series)
+            );
         } else if (isArray(value)) {
-            return findIndex(series.data,
-                             (d, i) &#x3D;&gt; {
-                                 const start &#x3D; startAccessor?.(d, i, series.data, series);
-                                 const lengthLimit &#x3D; Math.min(this.levels, value.length, start.length);
-                                 // diy efficient array comparison
-                                 for (let j &#x3D; 0; j &lt; lengthLimit; j++) {
-                                     if (value[j] !&#x3D;&#x3D; start[j]) {
-                                         return false;
-                                     }
-                                 }
-                                 return true;
-                             });
+            return findIndex(series.data, (d, i) &#x3D;&gt; {
+                const start &#x3D; startAccessor?.(d, i, series.data, series);
+                const lengthLimit &#x3D; Math.min(
+                    this.levels,
+                    value.length,
+                    start.length
+                );
+                // diy efficient array comparison
+                for (let j &#x3D; 0; j &lt; lengthLimit; j++) {
+                    if (value[j] !&#x3D;&#x3D; start[j]) {
+                        return false;
+                    }
+                }
+                return true;
+            });
         } else if (value.valueOf) {
             const valueOf &#x3D; value.valueOf();
             if (scales &amp;&amp; scales[scaleKey]?.isContinuous()) {
-                let index &#x3D; findIndex(series.data,
-                                      (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
-                        valueOf &lt;&#x3D; endAccessor?.(d, i, series.data, series).valueOf());
+                let index &#x3D; findIndex(
+                    series.data,
+                    (d, i) &#x3D;&gt;
+                        valueOf &gt;&#x3D;
+                            startAccessor?.(
+                                d,
+                                i,
+                                series.data,
+                                series
+                            ).valueOf() &amp;&amp;
+                        valueOf &lt;&#x3D;
+                            endAccessor?.(d, i, series.data, series).valueOf()
+                );
                 if (index &#x3D;&#x3D;&#x3D; -1 &amp;&amp; typeof endAccessor !&#x3D;&#x3D; &quot;undefined&quot;) {
                     if (isBandScale(scales[scaleKey])) {
-                        const accessor &#x3D; (d: any, i: any) &#x3D;&gt; startAccessor?.(d, i, series.data, series);
-                        const nearestIndex &#x3D; UtilityService.findNearestIndex(series.data, value, accessor);
-                        index &#x3D; (nearestIndex &gt;&#x3D; series.data.length || accessor(series.data[nearestIndex], nearestIndex) &gt; valueOf) ? -1 : nearestIndex;
+                        const accessor &#x3D; (d: any, i: any) &#x3D;&gt;
+                            startAccessor?.(d, i, series.data, series);
+                        const nearestIndex &#x3D; UtilityService.findNearestIndex(
+                            series.data,
+                            value,
+                            accessor
+                        );
+                        index &#x3D;
+                            nearestIndex &gt;&#x3D; series.data.length ||
+                            accessor(series.data[nearestIndex], nearestIndex) &gt;
+                                valueOf
+                                ? -1
+                                : nearestIndex;
                     } else {
                         // @ts-ignore
                         // Needs to catch -1 otherwise typescript errors
-                        index &#x3D; UtilityService.getClosestIndex(series.data, (d, i) &#x3D;&gt; endAccessor(d, i, series.data, series), value) ?? -1;
+                        index &#x3D;
+                            UtilityService.getClosestIndex(
+                                series.data,
+                                (d, i) &#x3D;&gt;
+                                    endAccessor(d, i, series.data, series),
+                                value
+                            ) ?? -1;
                     }
                 }
                 return index;
             }
-            return findIndex(series.data,
-                             (d, i) &#x3D;&gt; valueOf &gt;&#x3D; startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
-                    valueOf &lt;&#x3D; endAccessor?.(d, i, series.data, series).valueOf());
+            return findIndex(
+                series.data,
+                (d, i) &#x3D;&gt;
+                    valueOf &gt;&#x3D;
+                        startAccessor?.(d, i, series.data, series).valueOf() &amp;&amp;
+                    valueOf &lt;&#x3D;
+                        endAccessor?.(d, i, series.data, series).valueOf()
+            );
         }
 
         return DATA_POINT_INTERACTION_RESET;
     }
 
-    public highlightDataPoint(renderer: BarRenderer, renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;,
-                              dataPointIndex: number, rendererSubject: Subject&lt;IRendererEventPayload&gt;): void {
+    public highlightDataPoint(
+        renderer: BarRenderer,
+        renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;,
+        dataPointIndex: number,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
         const target &#x3D; renderSeries.containers[RenderLayerName.data];
         const barStylesFn &#x3D; renderer.getContainerStateStyles;
-        const selectedDataPointIdx &#x3D; !isUndefined(this.selectedDataPointIdxFn) ? this.selectedDataPointIdxFn(renderSeries.dataSeries.id) : DATA_POINT_NOT_FOUND;
+        const selectedDataPointIdx &#x3D; !isUndefined(this.selectedDataPointIdxFn)
+            ? this.selectedDataPointIdxFn(renderSeries.dataSeries.id)
+            : DATA_POINT_NOT_FOUND;
 
-        target.selectAll(&#x60;g.${ renderer.barContainerClass }&#x60;).each(function (d: any, index: number) {
-            let renderState: RenderState;
-            if (dataPointIndex &#x3D;&#x3D;&#x3D; DATA_POINT_INTERACTION_RESET) {
-                if (index &#x3D;&#x3D;&#x3D; selectedDataPointIdx || selectedDataPointIdx &#x3D;&#x3D;&#x3D; DATA_POINT_NOT_FOUND) {
-                    renderState &#x3D; RenderState.default;
+        target
+            .selectAll(&#x60;g.${renderer.barContainerClass}&#x60;)
+            .each(function (d: any, index: number) {
+                let renderState: RenderState;
+                if (dataPointIndex &#x3D;&#x3D;&#x3D; DATA_POINT_INTERACTION_RESET) {
+                    if (
+                        index &#x3D;&#x3D;&#x3D; selectedDataPointIdx ||
+                        selectedDataPointIdx &#x3D;&#x3D;&#x3D; DATA_POINT_NOT_FOUND
+                    ) {
+                        renderState &#x3D; RenderState.default;
+                    } else {
+                        renderState &#x3D; RenderState.deemphasized;
+                    }
+                } else if (
+                    dataPointIndex &#x3D;&#x3D;&#x3D; index ||
+                    index &#x3D;&#x3D;&#x3D; selectedDataPointIdx
+                ) {
+                    renderState &#x3D; RenderState.emphasized;
                 } else {
                     renderState &#x3D; RenderState.deemphasized;
                 }
-            } else if (dataPointIndex &#x3D;&#x3D;&#x3D; index || index &#x3D;&#x3D;&#x3D; selectedDataPointIdx) {
-                renderState &#x3D; RenderState.emphasized;
-            } else {
-                renderState &#x3D; RenderState.deemphasized;
-            }
-            select(this).attrs(barStylesFn(renderState));
-        });
+                select(this).attrs(barStylesFn(renderState));
+            });
 
         // rendererSubject.next({
         //     eventName: HIGHLIGHT_SERIES_EVENT,
@@ -743,9 +819,11 @@ export class BarHighlightStrategy implements IHighlightStrategy&lt;IRectangleAcc
         // });
     }
 
-    draw(renderer: BarRenderer, renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;, rendererSubject: Subject&lt;IRendererEventPayload&gt;) {
-    }
-
+    draw(
+        renderer: BarRenderer,
+        renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ) {}
 }
 </code></pre>
     </div>

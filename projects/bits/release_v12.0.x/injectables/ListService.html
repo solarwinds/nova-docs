@@ -110,7 +110,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/services/list.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/services/list.service.ts:10</a></div>
                             </td>
                         </tr>
 
@@ -177,8 +177,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/services/list.service.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/services/list.service.ts:107</a></div>
                 </td>
             </tr>
 
@@ -274,8 +274,8 @@ selected items in the repeat based on the selection type.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/services/list.service.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/services/list.service.ts:65</a></div>
                 </td>
             </tr>
 
@@ -388,8 +388,8 @@ mode.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/services/list.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/services/list.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -450,18 +450,17 @@ mode.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Injectable} from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 
-import {RepeatSelectionMode} from &quot;../lib/repeat/types&quot;;
-import {SelectionType} from &quot;../lib/selector/public-api&quot;;
-import {SelectorService} from &quot;../lib/selector/selector.service&quot;;
-
+import { RepeatSelectionMode } from &quot;../lib/repeat/types&quot;;
+import { SelectionType } from &quot;../lib/selector/public-api&quot;;
+import { SelectorService } from &quot;../lib/selector/selector.service&quot;;
 import { INovaFilteringOutputs } from &quot;./data-source/public-api&quot;;
 import { SelectionModel } from &quot;./public-api&quot;;
 
 @Injectable({ providedIn: &quot;root&quot; })
 export class ListService {
-    constructor(private selectorService: SelectorService) { }
+    constructor(private selectorService: SelectorService) {}
 
     /**
      * Updates the selector checkbox status, selector menu items, and the repeat selected items.
@@ -470,12 +469,17 @@ export class ListService {
      *
      * @returns {INovaFilteringOutputs} The updated state
      */
-    public updateSelectionState(state: INovaFilteringOutputs): INovaFilteringOutputs {
+    public updateSelectionState(
+        state: INovaFilteringOutputs
+    ): INovaFilteringOutputs {
         const selection &#x3D; new SelectionModel(state.selector?.selection ?? {});
         const itemsSource &#x3D; (state.repeat &amp;&amp; state.repeat.itemsSource) || [];
         const paginator &#x3D; state.paginator || { total: undefined };
 
-        const selectedItems &#x3D; this.selectorService.getSelectedItems(selection, itemsSource);
+        const selectedItems &#x3D; this.selectorService.getSelectedItems(
+            selection,
+            itemsSource
+        );
         const outputState &#x3D; {
             ...state,
             repeat: {
@@ -510,8 +514,11 @@ export class ListService {
      *
      * @returns {INovaFilteringOutputs} The updated state
      */
-    public selectItems(selectedItems: any[], selectionMode: RepeatSelectionMode, state: INovaFilteringOutputs): INovaFilteringOutputs {
-
+    public selectItems(
+        selectedItems: any[],
+        selectionMode: RepeatSelectionMode,
+        state: INovaFilteringOutputs
+    ): INovaFilteringOutputs {
         if (!state.selector || !state.selector.selection) {
             throw new Error(&quot;State must contain selector property&quot;);
         }
@@ -549,7 +556,10 @@ export class ListService {
      *
      * @returns {INovaFilteringOutputs} The updated state
      */
-    public applySelector(selectionType: SelectionType, state: INovaFilteringOutputs): INovaFilteringOutputs {
+    public applySelector(
+        selectionType: SelectionType,
+        state: INovaFilteringOutputs
+    ): INovaFilteringOutputs {
         if (!state.selector || !state.selector.selection) {
             throw new Error(&quot;State must contain selector property&quot;);
         }
