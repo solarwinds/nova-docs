@@ -1,0 +1,2249 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>WizardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li >
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/wizard/wizard.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Component that provides wizard functionality.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterContentInit" target="_blank" >AfterContentInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewChecked" target="_blank" >AfterViewChecked</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-wizard</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./wizard.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./wizard.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#currentStep">currentStep</a>
+                            </li>
+                            <li>
+                                <a href="#dynamicStep">dynamicStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#navigationControl">navigationControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stepLineWidth">stepLineWidth</a>
+                            </li>
+                            <li>
+                                <a href="#steps">steps</a>
+                            </li>
+                            <li>
+                                <a href="#stepTitles">stepTitles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addStepDynamic">addStepDynamic</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#disableStep">disableStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enableStep">enableStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enterAnotherStep">enterAnotherStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goToStep">goToStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hideStep">hideStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onBackClick">onBackClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCancelClick">onCancelClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onFinishClick">onFinishClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onNextClick">onNextClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeStep">removeStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#resetStep">resetStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectStep">selectStep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showStep">showStep</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bodyContainerHeight">bodyContainerHeight</a>
+                            </li>
+                            <li>
+                                <a href="#canFinish">canFinish</a>
+                            </li>
+                            <li>
+                                <a href="#enableScroll">enableScroll</a>
+                            </li>
+                            <li>
+                                <a href="#finishText">finishText</a>
+                            </li>
+                            <li>
+                                <a href="#stretchStepLines">stretchStepLines</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#back">back</a>
+                            </li>
+                            <li>
+                                <a href="#cancel">cancel</a>
+                            </li>
+                            <li>
+                                <a href="#finish">finish</a>
+                            </li>
+                            <li>
+                                <a href="#next">next</a>
+                            </li>
+                            <li>
+                                <a href="#selectionChange">selectionChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, componentFactoryResolver: <a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank">ComponentFactoryResolver</a>, logger: LoggerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="132" class="link-to-prism">src/lib/wizard/wizard.component.ts:132</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>componentFactoryResolver</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ComponentFactoryResolver" target="_blank" >ComponentFactoryResolver</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bodyContainerHeight"></a>
+                        <b>bodyContainerHeight</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/wizard/wizard.component.ts:85</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Use this to set wizard body container height.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canFinish"></a>
+                        <b>canFinish</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/wizard/wizard.component.ts:77</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Set to true to show the &quot;Finish&quot; button at any point during the wizard process.
+(default: false)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="enableScroll"></a>
+                        <b>enableScroll</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/lib/wizard/wizard.component.ts:81</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Set to true to enable overflow in wizard body container.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="finishText"></a>
+                        <b>finishText</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>WizardComponent.placeholderFinishText</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/wizard/wizard.component.ts:90</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Overrides the default text on the finish step button.
+(default: &#39;Action&#39;)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stretchStepLines"></a>
+                        <b>stretchStepLines</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/wizard/wizard.component.ts:95</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Use this to stretch lines between step labels according to largest label width.
+(default: false)</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="back"></a>
+                        <b>back</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/wizard/wizard.component.ts:116</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emits when Back button is clicked.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancel"></a>
+                        <b>cancel</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/wizard/wizard.component.ts:104</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Evaluated when the user attempts to cancel the wizard.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="finish"></a>
+                        <b>finish</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/wizard/wizard.component.ts:108</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Evaluated when the user completes the wizard.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="next"></a>
+                        <b>next</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/lib/wizard/wizard.component.ts:112</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emits when next button is clicked.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectionChange"></a>
+                        <b>selectionChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/lib/wizard/wizard.component.ts:99</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Evaluated when a step is selected.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addStepDynamic"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            addStepDynamic
+                        </b>
+                        <a href="#addStepDynamic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addStepDynamic(wizardStep: <a href="../interfaces/IWizardStepComponent.html">IWizardStepComponent</a>, indexToInsert: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="192"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:192</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>wizardStep</td>
+                                    <td>
+                                                <code><a href="../interfaces/IWizardStepComponent.html" target="_self" >IWizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>indexToInsert</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IWizardStepComponent.html" target="_self" >IWizardStepComponent</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            disableStep
+                        </b>
+                        <a href="#disableStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disableStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:246</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enableStep
+                        </b>
+                        <a href="#enableStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enableStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="253"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:253</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enterAnotherStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enterAnotherStep
+                        </b>
+                        <a href="#enterAnotherStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enterAnotherStep()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="371"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:371</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            goToStep
+                        </b>
+                        <a href="#goToStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToStep(stepIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="289"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:289</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>stepIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            hideStep
+                        </b>
+                        <a href="#hideStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hideStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="260"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:260</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBackClick"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onBackClick
+                        </b>
+                        <a href="#onBackClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBackClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="308"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:308</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancelClick"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onCancelClick
+                        </b>
+                        <a href="#onCancelClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCancelClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="365"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:365</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFinishClick"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onFinishClick
+                        </b>
+                        <a href="#onFinishClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onFinishClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="361"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:361</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNextClick"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onNextClick
+                        </b>
+                        <a href="#onNextClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onNextClick()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:326</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            removeStep
+                        </b>
+                        <a href="#removeStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeStep(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="224"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:224</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            resetStep
+                        </b>
+                        <a href="#resetStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="272"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:272</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            selectStep
+                        </b>
+                        <a href="#selectStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="293"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:293</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showStep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            showStep
+                        </b>
+                        <a href="#showStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showStep(step: <a href="../components/WizardStepComponent.html">WizardStepComponent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="266"
+                            class="link-to-prism">src/lib/wizard/wizard.component.ts:266</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>step</td>
+                                    <td>
+                                                <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentStep"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Optional</span>
+                            currentStep</b>
+                            <a href="#currentStep"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/WizardStepComponent.html" target="_self" >WizardStepComponent</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/lib/wizard/wizard.component.ts:118</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dynamicStep"></a>
+                        <span class="name">
+                            <b>
+                            dynamicStep</b>
+                            <a href="#dynamicStep"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;container&#x27;, {read: ViewContainerRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/wizard/wizard.component.ts:71</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navigationControl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            navigationControl</b>
+                            <a href="#navigationControl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IWizardWaitEvent.html" target="_self" >BehaviorSubject&lt;IWizardWaitEvent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;IWizardWaitEvent&gt;({
+            busyState: { busy: false },
+            allowStepChange: true,
+        })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/lib/wizard/wizard.component.ts:120</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stepLineWidth"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            stepLineWidth</b>
+                            <a href="#stepLineWidth"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>65</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/lib/wizard/wizard.component.ts:119</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="steps"></a>
+                        <span class="name">
+                            <b>
+                            steps</b>
+                            <a href="#steps"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../components/WizardStepComponent.html" target="_self" >QueryList&lt;WizardStepComponent&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ContentChildren(WizardStepComponent)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/wizard/wizard.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stepTitles"></a>
+                        <span class="name">
+                            <b>
+                            stepTitles</b>
+                            <a href="#stepTitles"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >QueryList&lt;ElementRef&gt;</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(&#x27;stepTitle&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/wizard/wizard.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterContentInit,
+    AfterViewChecked,
+    ChangeDetectorRef,
+    Component,
+    ComponentFactoryResolver,
+    ContentChildren,
+    ElementRef,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    QueryList,
+    ViewChild,
+    ViewChildren,
+    ViewContainerRef,
+    ViewEncapsulation,
+} from &quot;@angular/core&quot;;
+import _find from &quot;lodash/find&quot;;
+import _findIndex from &quot;lodash/findIndex&quot;;
+import _isUndefined from &quot;lodash/isUndefined&quot;;
+import { BehaviorSubject } from &quot;rxjs&quot;;
+
+import { LoggerService } from &quot;../../services/log-service&quot;;
+import {
+    IWizardSelectionEvent,
+    IWizardStepComponent,
+    IWizardWaitEvent,
+} from &quot;./public-api&quot;;
+import { WizardStepComponent } from &quot;./wizard-step.component&quot;;
+
+// &lt;example-url&gt;./../examples/index.html#/wizard&lt;/example-url&gt;
+
+/**
+ * Component that provides wizard functionality.
+ */
+@Component({
+    selector: &quot;nui-wizard&quot;,
+    templateUrl: &quot;./wizard.component.html&quot;,
+    styleUrls: [&quot;./wizard.component.less&quot;],
+    encapsulation: ViewEncapsulation.None,
+})
+export class WizardComponent
+    implements OnInit, AfterContentInit, AfterViewChecked, OnDestroy
+{
+    private static placeholderFinishText &#x3D; &quot;Action&quot;; // as a placeholder &quot;Action&quot; does not need to be i18n
+
+    @ContentChildren(WizardStepComponent) steps: QueryList&lt;WizardStepComponent&gt;;
+    @ViewChildren(&quot;stepTitle&quot;) stepTitles: QueryList&lt;ElementRef&gt;;
+    @ViewChild(&quot;container&quot;, { read: ViewContainerRef }) dynamicStep: any;
+
+    /**
+     * Set to true to show the &quot;Finish&quot; button at any point during the wizard process.
+     *(default: false)
+     */
+    @Input() public canFinish &#x3D; false;
+    /**
+     * Set to true to enable overflow in wizard body container.
+     */
+    @Input() public enableScroll: boolean &#x3D; false;
+    /**
+     * Use this to set wizard body container height.
+     */
+    @Input() public bodyContainerHeight: string;
+    /**
+     * Overrides the default text on the finish step button.
+     *(default: &#x27;Action&#x27;)
+     */
+    @Input() public finishText &#x3D; WizardComponent.placeholderFinishText;
+    /**
+     * Use this to stretch lines between step labels according to largest label width.
+     *(default: false)
+     */
+    @Input() public stretchStepLines: boolean &#x3D; false;
+    /**
+     * Evaluated when a step is selected.
+     */
+    @Output() public selectionChange &#x3D;
+        new EventEmitter&lt;IWizardSelectionEvent&gt;();
+    /**
+     * Evaluated when the user attempts to cancel the wizard.
+     */
+    @Output() public cancel &#x3D; new EventEmitter&lt;boolean&gt;();
+    /**
+     * Evaluated when the user completes the wizard.
+     */
+    @Output() public finish &#x3D; new EventEmitter();
+    /**
+     * Emits when next button is clicked.
+     */
+    @Output() public next &#x3D; new EventEmitter();
+    /**
+     * Emits when Back button is clicked.
+     */
+    @Output() public back &#x3D; new EventEmitter();
+
+    public currentStep?: WizardStepComponent;
+    public stepLineWidth: number &#x3D; 65;
+    public navigationControl: BehaviorSubject&lt;IWizardWaitEvent&gt; &#x3D;
+        new BehaviorSubject&lt;IWizardWaitEvent&gt;({
+            busyState: { busy: false },
+            allowStepChange: true,
+        });
+    private selectionEvent: IWizardSelectionEvent;
+    private stepIndex: number;
+    private previousStepIndex &#x3D; 0;
+    private futureStep?: WizardStepComponent;
+
+    private arraySteps: any[];
+    private dynamicSubscriptions &#x3D; new Map();
+    private dynamicRefs &#x3D; new Map();
+
+    constructor(
+        private changeDetector: ChangeDetectorRef,
+        private componentFactoryResolver: ComponentFactoryResolver,
+        private logger: LoggerService
+    ) {}
+
+    public ngOnInit(): void {
+        if (this.finishText &#x3D;&#x3D;&#x3D; WizardComponent.placeholderFinishText) {
+            this.logger
+                .warn(&#x60;WizardComponent input &quot;finishText&quot; is using placeholder text
+&quot;${WizardComponent.placeholderFinishText}&quot;. A value should be specified.&#x60;);
+        }
+    }
+
+    public ngAfterContentInit(): void {
+        const activeTabs &#x3D; this.steps.filter((item) &#x3D;&gt; item.active);
+        this.arraySteps &#x3D; this.steps.toArray();
+        if (activeTabs.length &#x3D;&#x3D;&#x3D; 0) {
+            this.currentStep &#x3D; this.steps.first;
+            this.selectStep(this.currentStep);
+            this.changeDetector.detectChanges();
+        }
+        this.steps.toArray().forEach((step: WizardStepComponent) &#x3D;&gt; {
+            step.valid.subscribe((event: any) &#x3D;&gt; {
+                if (!_isUndefined(event)) {
+                    this.handleStepControl(step);
+                }
+            });
+        });
+        this.navigationControl.subscribe((value) &#x3D;&gt; {
+            if (this.currentStep) {
+                this.currentStep.busyConfig &#x3D; value.busyState;
+            }
+            if (
+                value.allowStepChange &amp;&amp;
+                !_isUndefined(this.futureStep) &amp;&amp;
+                this.currentStep !&#x3D;&#x3D; this.futureStep
+            ) {
+                this.enterAnotherStep();
+                this.futureStep &#x3D; undefined;
+            }
+        });
+    }
+
+    public ngAfterViewChecked(): void {
+        if (this.stretchStepLines) {
+            this.stepLineWidth &#x3D; Math.round(this.getLargestLabelWidth() / 2);
+            this.changeDetector.detectChanges();
+        }
+    }
+
+    public ngOnDestroy(): void {
+        this.steps
+            .toArray()
+            .forEach((step: WizardStepComponent) &#x3D;&gt; step.valid.unsubscribe());
+        this.navigationControl.unsubscribe();
+    }
+
+    public addStepDynamic(
+        wizardStep: IWizardStepComponent,
+        indexToInsert: number
+    ): IWizardStepComponent {
+        const componentFactory &#x3D;
+            this.componentFactoryResolver.resolveComponentFactory(
+                WizardStepComponent
+            );
+        const componentRef &#x3D; this.dynamicStep.createComponent(componentFactory);
+        const instance: IWizardStepComponent &#x3D; componentRef.instance;
+        const wizardStepInputs &#x3D; this.getInputsAndOutputs(wizardStep);
+
+        wizardStepInputs.forEach((key) &#x3D;&gt; {
+            instance[key] &#x3D; wizardStep[key];
+        });
+        this.handleStepControl(componentRef.instance);
+
+        const subscription &#x3D; instance.valid?.subscribe((event: any) &#x3D;&gt; {
+            if (!_isUndefined(event)) {
+                instance.stepControl &#x3D; wizardStep.stepControl;
+                this.handleStepControl(componentRef.instance);
+            }
+        });
+
+        this.dynamicRefs.set(instance, componentRef);
+        this.dynamicSubscriptions.set(instance, subscription);
+        this.arraySteps.splice(indexToInsert, 0, componentRef.instance);
+        this.steps.reset([]);
+        this.steps.reset(this.arraySteps);
+        return componentRef.instance;
+    }
+
+    public removeStep(index: number): void {
+        const steps &#x3D; this.steps.toArray();
+
+        if (index &lt; 1 || index &gt; steps.length - 1) {
+            return;
+        }
+
+        const stepToRemove &#x3D; steps[index];
+
+        if (this.currentStep &#x3D;&#x3D;&#x3D; stepToRemove) {
+            this.onBackClick();
+        }
+
+        this.onRemoveDynamic(stepToRemove);
+        this.arraySteps.splice(index, 1);
+        this.steps.reset([]);
+        this.steps.reset(this.arraySteps);
+        this.stepIndex &#x3D; this.steps
+            .toArray()
+            .findIndex((s) &#x3D;&gt; s &#x3D;&#x3D;&#x3D; this.currentStep);
+    }
+
+    public disableStep(step: WizardStepComponent): void {
+        const indexOfStep &#x3D; this.arraySteps.indexOf(step);
+        const toDisable &#x3D; this.arraySteps[indexOfStep];
+        toDisable.disabled &#x3D; true;
+        this.changeDetector.detectChanges();
+    }
+
+    public enableStep(step: WizardStepComponent): void {
+        const indexOfStep &#x3D; this.arraySteps.indexOf(step);
+        const toDisable &#x3D; this.arraySteps[indexOfStep];
+        toDisable.disabled &#x3D; false;
+        this.changeDetector.detectChanges();
+    }
+
+    public hideStep(step: WizardStepComponent): void {
+        const indexOfStep &#x3D; this.arraySteps.indexOf(step);
+        const toHide &#x3D; this.arraySteps[indexOfStep];
+        toHide.hidden &#x3D; true;
+    }
+
+    public showStep(step: WizardStepComponent): void {
+        const indexOfStep &#x3D; this.arraySteps.indexOf(step);
+        const visibleStep &#x3D; this.arraySteps[indexOfStep];
+        visibleStep.hidden &#x3D; false;
+    }
+
+    public resetStep(step: WizardStepComponent): void {
+        let index &#x3D; this.arraySteps.findIndex((s) &#x3D;&gt; s &#x3D;&#x3D;&#x3D; step);
+        const length &#x3D; this.arraySteps.length;
+
+        for (index; index &lt; length; index++) {
+            const stepToReset &#x3D; this.arraySteps[index];
+
+            stepToReset.visited &#x3D; false;
+            stepToReset.complete &#x3D; false;
+            stepToReset.icon &#x3D; &quot;step&quot;;
+        }
+
+        if (this.currentStep) {
+            this.currentStep.complete &#x3D; false;
+        }
+    }
+
+    public goToStep(stepIndex: number): void {
+        this.selectStep(this.arraySteps[stepIndex]);
+    }
+
+    public selectStep(step: WizardStepComponent): void {
+        if (!step.disabled) {
+            this.futureStep &#x3D; step;
+            this.currentStep?.exitStep({
+                selectedIndex: this.arraySteps.indexOf(this.futureStep),
+                selectedStep: this.futureStep,
+                previouslySelectedStep: this.arraySteps[this.stepIndex],
+                previouslySelectedIndex: this.stepIndex,
+            });
+            if (this.navigationControl.value.allowStepChange) {
+                this.enterAnotherStep();
+            }
+        }
+    }
+
+    public onBackClick(): void {
+        if (!_isUndefined(this.stepIndex)) {
+            let previousStep &#x3D; this.arraySteps[this.stepIndex - 1];
+            if (previousStep.hidden || previousStep.disabled) {
+                previousStep &#x3D; _find(
+                    this.arraySteps.slice(0).reverse(),
+                    (step) &#x3D;&gt; !step.hidden,
+                    _findIndex(
+                        this.arraySteps.slice(0).reverse(),
+                        this.arraySteps[this.stepIndex]
+                    ) + 1
+                );
+            }
+            this.selectStep(previousStep);
+            this.back.emit();
+        }
+    }
+
+    public onNextClick(): void {
+        let nextStep &#x3D; this.arraySteps[this.stepIndex + 1];
+        this.handleStepControl(this.currentStep);
+        this.currentStep?.nextStep({
+            selectedIndex: this.stepIndex,
+            selectedStep: this.currentStep,
+            previouslySelectedStep: this.currentStep,
+            previouslySelectedIndex: this.stepIndex,
+        });
+        if (
+            nextStep.hidden ||
+            (nextStep.disabled &amp;&amp; !_isUndefined(nextStep.stepControl))
+        ) {
+            // this disabled does not let user to go forward when next is disabled. Needs to be changed after validation
+            nextStep &#x3D; _find(
+                this.arraySteps,
+                (step) &#x3D;&gt; !step.hidden,
+                this.stepIndex + 1
+            );
+        }
+        if (this.currentStep) {
+            if (
+                _isUndefined(this.currentStep?.stepControl) ||
+                this.currentStep?.stepControl
+            ) {
+                this.currentStep.complete &#x3D; true;
+            }
+            if (nextStep.disabled &amp;&amp; !nextStep.visited) {
+                this.currentStep.complete &#x3D; false;
+            }
+        }
+        this.selectStep(nextStep);
+        this.next.emit();
+    }
+
+    public onFinishClick(): void {
+        this.finish.emit();
+    }
+
+    public onCancelClick(): void {
+        this.cancel.emit(
+            this.steps.toArray().filter((step) &#x3D;&gt; step.complete).length !&#x3D;&#x3D; 0
+        );
+    }
+
+    public enterAnotherStep(): void {
+        this.currentStep?.applyExitingStep();
+        this.futureStep?.enterStep();
+        this.currentStep &#x3D; this.futureStep;
+        this.currentStep?.applyEnteringStep();
+        this.stepIndex &#x3D; this.arraySteps.indexOf(this.currentStep);
+        this.selectionEvent &#x3D; {
+            selectedIndex: this.stepIndex,
+            selectedStep: this.currentStep,
+            previouslySelectedStep: this.arraySteps[this.previousStepIndex],
+            previouslySelectedIndex: this.previousStepIndex,
+        };
+        this.selectionChange.emit(this.selectionEvent);
+        this.previousStepIndex &#x3D; this.stepIndex;
+    }
+
+    private disableFollowingSteps(): void {
+        this.arraySteps.slice(this.stepIndex + 1).map((item) &#x3D;&gt; {
+            item.disabled &#x3D; true;
+        });
+    }
+
+    private enableFollowingSteps(): void {
+        this.arraySteps.slice(this.stepIndex + 1).map((item) &#x3D;&gt; {
+            item.disabled &#x3D; false;
+        });
+    }
+
+    private getInputsAndOutputs(compType: IWizardStepComponent): string[] {
+        const inputs &#x3D; compType.inputsList;
+        const outputs &#x3D; Object.keys(compType).filter(
+            (key) &#x3D;&gt; compType[key] instanceof EventEmitter
+        );
+        return [...inputs, ...outputs];
+    }
+
+    private handleStepControl(step?: WizardStepComponent) {
+        if (!_isUndefined(step?.stepControl)) {
+            if (step?.stepControl) {
+                this.enableFollowingSteps();
+            } else {
+                this.disableFollowingSteps();
+            }
+        }
+    }
+
+    private getLargestLabelWidth() {
+        const widths &#x3D; this.stepTitles.map(
+            (title) &#x3D;&gt; title.nativeElement.offsetWidth
+        );
+
+        return Math.round(Math.max(...widths));
+    }
+
+    private onRemoveDynamic(step: WizardStepComponent): void {
+        const dynamicSubscription &#x3D; this.dynamicSubscriptions.get(step);
+        const ref &#x3D; this.dynamicRefs.get(step);
+
+        if (ref) {
+            ref.destroy();
+        }
+
+        if (dynamicSubscription) {
+            dynamicSubscription.unsubscribe();
+        }
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    <div class="tab-pane fade active in" id="c-example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/wizard">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="nui-wizard">    <div        class="nui-wizard__header"        [class.nui-wizard__header--lines-stretched]="stretchStepLines"    >        <ul class="nui-wizard__header-steps" *ngIf="steps">            <li                *ngFor="let step of steps; let first = first; let last = last"                (click)="selectStep(step)"                [ngClass]="{                    \'nui-wizard__header-step--first\': first,                    \'nui-wizard__header-step--last\': last,                    \'nui-wizard__header-step--visited\': step.visited,                    \'nui-wizard__header-step--disabled\':                        step.disabled ||                        !step.visited ||                        currentStep?.busyConfig.busy,                    \'nui-wizard__header-step--active\': step.active,                    \'nui-wizard__header-step--complete\': step.complete                }"                class="nui-wizard__header-step"            >                <div                    class="nui-wizard__header-step-container"                    *ngIf="!step.hidden"                >                    <div class="nui-wizard__header-step-row">                        <div class="nui-wizard__header-step-col">                            <div class="nui-wizard__header-step-content">                                <span class="nui-wizard__header-step-link">                                    <span                                        class="nui-wizard__header-step-title"                                        #stepTitle                                    >                                        {{                                            step.shortTitle || step.title                                        }}</span                                    >                                    <div                                        class="nui-wizard__header-step-link-container"                                    >                                        <div                                            class="nui-wizard__header-step-col nui-wizard__header-step-col-right"                                        >                                            <div                                                class="nui-wizard__header-step-line"                                                [ngStyle]="{                                                    \'min-width.px\':                                                        stepLineWidth                                                }"                                            ></div>                                        </div>                                        <nui-icon                                            [icon]="step.icon"                                            [iconColor]="step.iconColor"                                        ></nui-icon>                                        <div                                            class="nui-wizard__header-step-col nui-wizard__header-step-col-left"                                        >                                            <div                                                class="nui-wizard__header-step-line"                                                [ngStyle]="{                                                    \'min-width.px\':                                                        stepLineWidth                                                }"                                            ></div>                                        </div>                                    </div>                                </span>                            </div>                        </div>                    </div>                </div>            </li>        </ul>    </div>    <div        class="nui-wizard__container"        [class.show-scroll]="enableScroll"        [style.height]="bodyContainerHeight"    >        <ng-content></ng-content>        <ng-template #container></ng-template>    </div>    <div class="nui-wizard__footer">        <button            nui-button            type="button"            (click)="onCancelClick()"            class="nui-wizard__cancel-button"        >            <span i18n>Cancel</span>        </button>        <ng-content select="[nui-button]"></ng-content>        <button            *ngIf="!steps.first.active"            nui-button            type="button"            class="nui-wizard__back-button"            [isBusy]="currentStep?.busyConfig?.busy"            [icon]="\'caret-left\'"            (click)="onBackClick()"        >            <span i18n>Back</span>        </button>        <button            *ngIf="!steps.last.active"            nui-button            type="button"            class="nui-wizard__next-button"            [isBusy]="currentStep?.busyConfig?.busy"            [displayStyle]="\'primary\'"            [icon]="\'caret-right\'"            [iconRight]="true"            (click)="onNextClick()"        >            <span>{{ currentStep?.nextText }}</span>        </button>        <button            *ngIf="canFinish || steps.last.active"            nui-button            type="button"            class="nui-wizard__finish-button"            [displayStyle]="\'primary\'"            (click)="onFinishClick()"        >            <span>{{ finishText }}</span>        </button>    </div></div></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
+    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
+    var ACTUAL_COMPONENT = {'name': 'WizardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WizardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

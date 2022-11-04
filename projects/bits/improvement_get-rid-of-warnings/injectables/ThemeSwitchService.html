@@ -1,0 +1,713 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>ThemeSwitchService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/services/theme-switch.service.ts</code>
+        </p>
+
+
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isDarkModeEnabledSubject">isDarkModeEnabledSubject</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#withRefreshRoute">withRefreshRoute</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#disableColorSchemePreferenceHandling">disableColorSchemePreferenceHandling</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#enableColorSchemePreferenceHandling">enableColorSchemePreferenceHandling</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setDarkTheme">setDarkTheme</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(rendererFactory: <a href="https://angular.io/api/core/RendererFactory2" target="_blank">RendererFactory2</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, document: Document)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/services/theme-switch.service.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rendererFactory</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/RendererFactory2" target="_blank" >RendererFactory2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>document</td>
+                                                  
+                                                        <td>
+                                                                    <code>Document</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableColorSchemePreferenceHandling"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            disableColorSchemePreferenceHandling
+                        </b>
+                        <a href="#disableColorSchemePreferenceHandling"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>disableColorSchemePreferenceHandling()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">src/services/theme-switch.service.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Use this method to disable synchronization of your app&#39;s theme with the user&#39;s light/dark mode
+system preference</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enableColorSchemePreferenceHandling"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            enableColorSchemePreferenceHandling
+                        </b>
+                        <a href="#enableColorSchemePreferenceHandling"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>enableColorSchemePreferenceHandling()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">src/services/theme-switch.service.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Use this method to configure the service to synchronize your app&#39;s theme with the user&#39;s
+light/dark mode system preference</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDarkTheme"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            setDarkTheme
+                        </b>
+                        <a href="#setDarkTheme"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setDarkTheme(isDarkModeEnabled: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/services/theme-switch.service.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Use this method to manually toggle your app between light and dark theme</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>isDarkModeEnabled</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Use true for dark theme and false for light theme</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDarkModeEnabledSubject"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            isDarkModeEnabledSubject</b>
+                            <a href="#isDarkModeEnabledSubject"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>BehaviorSubject&lt;boolean | null&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;boolean | null&gt;(null)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/services/theme-switch.service.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>BehaviorSubject indicating whether dark mode is enabled </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="withRefreshRoute"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            withRefreshRoute</b>
+                            <a href="#withRefreshRoute"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/services/theme-switch.service.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Should route be refreshed after theme switching </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DOCUMENT } from &quot;@angular/common&quot;;
+import { Inject, Injectable, Renderer2, RendererFactory2 } from &quot;@angular/core&quot;;
+import { ActivatedRoute, NavigationEnd, Router } from &quot;@angular/router&quot;;
+import { BehaviorSubject } from &quot;rxjs&quot;;
+import { filter, map } from &quot;rxjs/operators&quot;;
+
+/** @dynamic */
+@Injectable({
+    providedIn: &quot;root&quot;,
+})
+export class ThemeSwitchService {
+    /** @ignore BehaviorSubject indicating whether we should display theme switcher */
+    public showThemeSwitcherSubject: BehaviorSubject&lt;boolean&gt; &#x3D;
+        new BehaviorSubject&lt;boolean&gt;(false);
+
+    /** BehaviorSubject indicating whether dark mode is enabled */
+    public isDarkModeEnabledSubject: BehaviorSubject&lt;boolean | null&gt; &#x3D;
+        new BehaviorSubject&lt;boolean | null&gt;(null);
+
+    /** Should route be refreshed after theme switching */
+    public withRefreshRoute: boolean &#x3D; false;
+
+    /** Keep information about preferred dark color scheme on OS */
+    private darkThemePreference: MediaQueryList;
+
+    private renderer: Renderer2;
+
+    constructor(
+        private rendererFactory: RendererFactory2,
+        private router: Router,
+        private _route: ActivatedRoute,
+        @Inject(DOCUMENT) private document: Document
+    ) {
+        /** Getting renderer instance */
+        this.renderer &#x3D; this.rendererFactory.createRenderer(null, null);
+
+        this.router.events
+            .pipe(
+                filter((event) &#x3D;&gt; event instanceof NavigationEnd),
+                map(() &#x3D;&gt; {
+                    let route &#x3D; this._route.root;
+                    while (route.firstChild) {
+                        route &#x3D; route.firstChild;
+                    }
+                    return route;
+                })
+            )
+            .subscribe((route) &#x3D;&gt; {
+                const showThemeSwitcher &#x3D; (route.snapshot.data || {})
+                    .showThemeSwitcher;
+
+                this.showThemeSwitcherSubject.next(showThemeSwitcher);
+
+                if (showThemeSwitcher) {
+                    /** Case when route is changed on the same page (see on breadcrumb component docs page) */
+                    if (
+                        typeof this.isDarkModeEnabledSubject.getValue() &#x3D;&#x3D;&#x3D;
+                        &quot;boolean&quot;
+                    ) {
+                        this.darkThemePreference &#x3D; window.matchMedia(
+                            &quot;(prefers-color-scheme: dark)&quot;
+                        );
+                        return;
+                    }
+
+                    this.enableColorSchemePreferenceHandling();
+                } else {
+                    /** Reset to light theme */
+                    this.darkModePreferenceHandler(false);
+
+                    this.disableColorSchemePreferenceHandling();
+                }
+            });
+    }
+
+    /**
+     * Use this method to manually toggle your app between light and dark theme
+     *
+     * @param isDarkModeEnabled Use true for dark theme and false for light theme
+     */
+    public setDarkTheme(isDarkModeEnabled: boolean): void {
+        this.darkModePreferenceHandler(isDarkModeEnabled);
+    }
+
+    /**
+     * Use this method to configure the service to synchronize your app&#x27;s theme with the user&#x27;s
+     * light/dark mode system preference
+     */
+    public enableColorSchemePreferenceHandling(): void {
+        this.darkThemePreference &#x3D; window.matchMedia(
+            &quot;(prefers-color-scheme: dark)&quot;
+        );
+
+        /** First call to set initial theme */
+        this.darkModePreferenceHandler(this.darkThemePreference.matches);
+
+        /** If browser supports subscribing to MediaQueryList event we do it */
+        if (typeof this.darkThemePreference.addEventListener &#x3D;&#x3D;&#x3D; &quot;function&quot;) {
+            this.darkThemePreference.addEventListener(
+                &quot;change&quot;,
+                this.darkModePreferenceHandler
+            );
+        }
+    }
+
+    /**
+     * Use this method to disable synchronization of your app&#x27;s theme with the user&#x27;s light/dark mode
+     * system preference
+     */
+    public disableColorSchemePreferenceHandling(): void {
+        if (
+            this.darkThemePreference &amp;&amp;
+            typeof this.darkThemePreference.removeEventListener &#x3D;&#x3D;&#x3D; &quot;function&quot;
+        ) {
+            this.darkThemePreference.removeEventListener(
+                &quot;change&quot;,
+                this.darkModePreferenceHandler
+            );
+        }
+    }
+
+    private darkModePreferenceHandler &#x3D; (
+        event: MediaQueryListEvent | boolean
+    ) &#x3D;&gt; {
+        const isDarkModeEnabled &#x3D;
+            typeof event &#x3D;&#x3D;&#x3D; &quot;boolean&quot; ? event : event.matches;
+        const isDarkPrevColorMode &#x3D; this.isDarkModeEnabledSubject.getValue();
+        const demoContainerElement &#x3D; this.document.children[0];
+
+        /** Adding class &quot;dark-nova-theme&quot; to html element we make dark mode, otherwise - light mode */
+        this.renderer[isDarkModeEnabled ? &quot;addClass&quot; : &quot;removeClass&quot;](
+            demoContainerElement,
+            &quot;dark-nova-theme&quot;
+        );
+
+        /**
+         * Reiniting route in case when theme is switching forced
+         * It allows to avoid reiniting route while application is started
+         */
+        if (
+            isDarkPrevColorMode !&#x3D;&#x3D; null &amp;&amp;
+            isDarkPrevColorMode !&#x3D;&#x3D; isDarkModeEnabled &amp;&amp;
+            this.withRefreshRoute
+        ) {
+            this.reInitRoute();
+        }
+
+        this.isDarkModeEnabledSubject.next(isDarkModeEnabled);
+    };
+
+    private reInitRoute() {
+        /**
+         * Logic for refreshing route
+         */
+        const scrolledElement &#x3D; this.document.children[0];
+        const currentScrollTopPosition &#x3D; scrolledElement.scrollTop;
+        const originalShouldReuseRoute &#x3D;
+            this.router.routeReuseStrategy.shouldReuseRoute;
+
+        this.router.routeReuseStrategy.shouldReuseRoute &#x3D; () &#x3D;&gt; false;
+        this.router.navigated &#x3D; false;
+
+        this.router.navigate([this.router.url]).then(() &#x3D;&gt; {
+            this.router.routeReuseStrategy.shouldReuseRoute &#x3D;
+                originalShouldReuseRoute;
+
+            /** After reiniting route we should restore scroll position */
+            setTimeout(
+                () &#x3D;&gt; (scrolledElement.scrollTop &#x3D; currentScrollTopPosition)
+            );
+        });
+    }
+}
+
+export default ThemeSwitchService;
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThemeSwitchService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

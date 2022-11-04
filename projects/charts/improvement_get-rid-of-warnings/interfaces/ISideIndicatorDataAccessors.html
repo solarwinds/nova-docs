@@ -1,0 +1,353 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>ISideIndicatorDataAccessors</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/renderers/side-indicator-renderer.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Interface for side indicator data accessors </p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../interfaces/IDataAccessors.html" target="_self" >IDataAccessors</a></code>
+            </p>
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#active">active</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="active"></a>
+                                        <span class="name"><b>active</b><a href="#active"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>active:         <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#DataAccessor" target="_self" >DataAccessor</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Accessor indicating whether the side indicator should be active </p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
+import { Subject } from &quot;rxjs&quot;;
+
+import { STANDARD_RENDER_LAYERS } from &quot;../constants&quot;;
+import { Scales } from &quot;../core/common/scales/types&quot;;
+import {
+    DataAccessor,
+    IDataAccessors,
+    IDataSeries,
+    ILasagnaLayer,
+    IRendererConfig,
+    IRendererEventPayload,
+    ISeriesAccessors,
+    SeriesAccessor,
+} from &quot;../core/common/types&quot;;
+import { GRAYSCALE_FILTER } from &quot;../core/types&quot;;
+import { IRenderSeries, RenderLayerName } from &quot;./types&quot;;
+import { XYRenderer } from &quot;./xy-renderer&quot;;
+
+/** Interface for side indicator data accessors */
+export interface ISideIndicatorDataAccessors extends IDataAccessors {
+    /** Accessor indicating whether the side indicator should be active */
+    active: DataAccessor;
+}
+
+/** Interface for side indicator series accessors */
+export interface ISideIndicatorSeriesAccessors extends ISeriesAccessors {
+    /** Indicates the start value of the side indicator */
+    start: SeriesAccessor;
+    /** Indicates the end value of the side indicator */
+    end: SeriesAccessor;
+    /** Indicates the active color of the side indicator */
+    activeColor: SeriesAccessor;
+    /** Optional accessor indicating the inactive color of the side indicator. A grayscale filter is applied to the active color by default */
+    inactiveColor?: SeriesAccessor;
+}
+
+/** Interface for side indicator accessors */
+export interface ISideIndicatorAccessors {
+    /** Accessors for the side indicator data */
+    data: ISideIndicatorDataAccessors;
+    /** Accessors for the side indicator series */
+    series: ISideIndicatorSeriesAccessors;
+}
+
+/** Standard definition for side indicator series and data accessors */
+export class SideIndicatorAccessors implements ISideIndicatorAccessors {
+    public data: ISideIndicatorDataAccessors;
+    public series: ISideIndicatorSeriesAccessors;
+
+    constructor() {
+        this.data &#x3D; {
+            active: (d: any) &#x3D;&gt; d.active,
+        };
+        this.series &#x3D; {
+            start: () &#x3D;&gt; null,
+            end: () &#x3D;&gt; null,
+            activeColor: () &#x3D;&gt; &quot;magenta&quot;,
+        };
+    }
+}
+
+/**
+ * Renderer for drawing threshold side indicators
+ */
+export class SideIndicatorRenderer extends XYRenderer&lt;ISideIndicatorAccessors&gt; {
+    /** @deprecated As of Nova v9, use RenderLayerName.unclippedData enum value instead. Removal: NUI-5753 */
+    public static SIDE_INDICATORS_LAYER &#x3D; &quot;side-indicators&quot;;
+
+    private DEFAULT_CONFIG: IRendererConfig &#x3D; {};
+
+    /**
+     * Creates an instance of SideIndicatorRenderer.
+     * @param {IRendererConfig} [config&#x3D;{}] Renderer configuration object
+     */
+    constructor(config: IRendererConfig &#x3D; {}) {
+        super(config);
+        // setting default values to the properties that were not set by user
+        this.config &#x3D; defaultsDeep(this.config, this.DEFAULT_CONFIG);
+    }
+
+    /** See {@link Renderer#draw} */
+    public draw(
+        renderSeries: IRenderSeries&lt;ISideIndicatorAccessors&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
+        const target &#x3D; renderSeries.containers[RenderLayerName.unclippedData];
+        const dataSeries &#x3D; renderSeries.dataSeries;
+        const scales &#x3D; renderSeries.scales;
+        const accessors &#x3D; renderSeries.dataSeries.accessors;
+
+        let rect &#x3D; target.select&lt;SVGRectElement&gt;(&quot;rect&quot;);
+        const isActive &#x3D;
+            dataSeries.data.length &gt; 0
+                ? accessors.data.active(
+                      dataSeries.data[0],
+                      0,
+                      renderSeries.dataSeries.data,
+                      renderSeries.dataSeries
+                  )
+                : false;
+        const colorAccessor &#x3D;
+            !isActive &amp;&amp; accessors.series.inactiveColor
+                ? accessors.series.inactiveColor
+                : accessors.series.activeColor;
+        if (rect.empty()) {
+            rect &#x3D; target.append(&quot;rect&quot;).attrs({
+                fill: colorAccessor(dataSeries.id, dataSeries),
+            });
+
+            if (!isActive &amp;&amp; !accessors.series.inactiveColor) {
+                rect.style(&quot;filter&quot;, GRAYSCALE_FILTER);
+            }
+        }
+
+        const start &#x3D; accessors.series.start(dataSeries.id, dataSeries);
+        const end &#x3D; accessors.series.end(dataSeries.id, dataSeries);
+        const top &#x3D; end &#x3D;&#x3D; null ? 0 : scales.y.convert(end);
+        const bottom &#x3D;
+            start &#x3D;&#x3D; null
+                ? scales.y.range()[0]
+                : Math.min(scales.y.range()[0], scales.y.convert(start));
+        const height &#x3D; bottom - top;
+        const width &#x3D; 2;
+        rect.attrs({
+            x: -width,
+            y: top,
+            height: height &lt; 0 ? 0 : height,
+            width: width,
+        });
+    }
+
+    /** See {@link Renderer#getDataPointIndex} */
+    public getDataPointIndex(
+        series: IDataSeries&lt;ISideIndicatorAccessors&gt;,
+        values: { [p: string]: any },
+        scales: Scales
+    ): number {
+        return -1;
+    }
+
+    /** See {@link Renderer#getRequiredLayers} */
+    public getRequiredLayers(): ILasagnaLayer[] {
+        return [STANDARD_RENDER_LAYERS[RenderLayerName.unclippedData]];
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ISideIndicatorDataAccessors.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
