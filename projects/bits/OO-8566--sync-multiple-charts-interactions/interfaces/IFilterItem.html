@@ -1,0 +1,322 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>IFilterItem</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/services/data-source/public-api.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:    <code>T</code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/services/data-source/public-api.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
+
+import { IMenuGroup } from &quot;../../lib/menu/public-api&quot;;
+import { RepeatSelectionMode } from &quot;../../lib/repeat/types&quot;;
+import { CheckboxStatus, SelectionType } from &quot;../../lib/selector/public-api&quot;;
+import { SorterDirection } from &quot;../../lib/sorter/public-api&quot;;
+import { ISelection } from &quot;../public-api&quot;;
+
+export interface IFilterItem&lt;T&gt; {
+    [key: string]: T;
+}
+export interface IFilterGroup&lt;T&gt; {
+    [key: string]: T;
+}
+export interface IMultiFilterMetadata {
+    allCategories: string[];
+}
+export interface IMultiFilter {
+    [key: string]: IFilter&lt;string[], IMultiFilterMetadata&gt;;
+}
+export interface IFilteringOutputs {
+    [key: string]: any;
+}
+export interface INovaFilteringOutputs extends IFilteringOutputs {
+    repeat?: Repeat;
+    paginator?: Paginator;
+    selector?: Selector;
+}
+export interface Repeat {
+    itemsSource: any[];
+    selectedItems?: any[];
+}
+export interface Selector {
+    selectorState?: ISelectorState;
+    selection?: ISelection;
+}
+export interface Paginator {
+    total: number;
+    reset?: boolean;
+}
+export interface IFilterPub&lt;F extends IFilters &#x3D; IFilters&gt; {
+    onDestroy$?: Subject&lt;void&gt;;
+    detectFilterChanges?: boolean;
+    resetFilter?: () &#x3D;&gt; void;
+    getFilters: () &#x3D;&gt; F;
+}
+export interface IFilters {
+    [key: string]: any;
+}
+export interface INovaFilters extends IFilters {
+    search?: IFilter&lt;string&gt;;
+    paginator?: IFilter&lt;IRange&lt;number&gt;&gt;;
+    sorter?: IFilter&lt;ISorterFilter&gt;;
+    timerange?: IFilter&lt;IRange&lt;number&gt;&gt;;
+    selection?: any;
+    virtualScroll?: IFilter&lt;IRange&lt;number&gt;&gt;;
+    [key: string]: IFilter&lt;any&gt; | undefined;
+}
+export interface IFilteringParticipant {
+    componentInstance: IFilterPub;
+}
+export interface ISorterFilter {
+    sortBy: string;
+    direction: SorterDirection;
+}
+export interface IRepeatFilter {
+    selection: any[];
+    itemsSource: any[];
+    selectionMode: RepeatSelectionMode;
+    selectionHasChanged: boolean;
+}
+export interface ISelectorFilter {
+    selectorState: ISelectorState;
+    status: SelectionType;
+}
+export interface ISelectorState {
+    checkboxStatus: CheckboxStatus;
+    selectorItems: IMenuGroup[];
+}
+export interface IFilter&lt;T, E &#x3D; any&gt; extends IFilters {
+    type: string;
+    value: T;
+    metadata?: E;
+}
+export interface IRange&lt;T&gt; {
+    start: T;
+    end: T;
+}
+export interface IFilteringParticipants {
+    [key: string]: IFilteringParticipant;
+}
+export const defaultFilters: INovaFilters &#x3D; {
+    search: {
+        type: &quot;string&quot;,
+        value: &quot;&quot;,
+    },
+    sorter: {
+        type: &quot;sorter&quot;,
+        value: {
+            sortBy: &quot;&quot;,
+            direction: SorterDirection.original,
+        },
+    },
+    paginator: {
+        type: &quot;range&quot;,
+        value: {
+            start: 0,
+            end: 5,
+        },
+    },
+};
+
+export interface IDataSourceError {
+    type: string | number;
+    message?: string;
+}
+
+export interface IDataSourceOutput&lt;T&gt; {
+    result: T;
+    error?: IDataSourceError;
+}
+
+export interface IDataSource&lt;T extends IFilteringOutputs &#x3D; IFilteringOutputs&gt; {
+    outputsSubject: Subject&lt;any | IDataSourceOutput&lt;T&gt;&gt;;
+    busy?: Subject&lt;boolean&gt;;
+    features?: IDataSourceFeaturesConfiguration;
+    dataFieldsConfig?: IDataFieldsConfig;
+    applyFilters(): Promise&lt;void&gt;;
+    registerComponent(components: Partial&lt;IFilteringParticipants&gt;): void;
+    deregisterComponent?(componentKey: string): void;
+}
+
+export interface IDataSourceFeaturesConfiguration {
+    featuresChanged: Subject&lt;IDataSourceFeatures&gt;;
+    getSupportedFeatures: () &#x3D;&gt; IDataSourceFeatures | undefined;
+    setSupportedFeatures: (features: IDataSourceFeatures) &#x3D;&gt; void;
+    getFeatureConfig: (key: string) &#x3D;&gt; IDataSourceFeature | undefined; // should it be?
+}
+
+export interface IDataSourceFeatures {
+    search?: IDataSourceFeature;
+    sorting?: IDataSourceFeature;
+    pagination?: IDataSourceFeature;
+    [key: string]: IDataSourceFeature | undefined;
+}
+
+export interface IDataSourceFeature {
+    enabled: boolean;
+    metadata?: {
+        [key: string]: any;
+    };
+}
+
+export interface IDataSourceDrilldown extends IDataSource {
+    busy?: BehaviorSubject&lt;boolean&gt;;
+}
+
+export interface IDataFieldsConfig {
+    dataFields$: BehaviorSubject&lt;IDataField[]&gt;;
+}
+
+// TODO: mark dataType field as optional in vNext, because previously it was used only for TableWidget,
+//  but IDataField is using in DataSource now so that consumers are required to fill these fields - will be done in the scope of NUI-5836
+export interface IDataField {
+    id: string;
+    label: string;
+    dataType: string;
+    sortable?: boolean;
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'IFilterItem.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
