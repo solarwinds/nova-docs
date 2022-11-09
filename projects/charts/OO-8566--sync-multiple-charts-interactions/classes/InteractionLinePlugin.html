@@ -185,7 +185,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -258,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:141</a></div>
                 </td>
             </tr>
 
@@ -299,8 +299,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-line-plugin.ts:56</a></div>
                 </td>
             </tr>
 
@@ -531,6 +531,7 @@ import {
     IChartViewStatusEventPayload,
     InteractionType,
 } from &quot;../../common/types&quot;;
+import { UtilityService } from &quot;../../common/utility.service&quot;;
 import { XYGrid } from &quot;../../grid/xy-grid&quot;;
 import { IInteractionValuesPayload } from &quot;../types&quot;;
 
@@ -579,7 +580,12 @@ export class InteractionLinePlugin extends ChartPlugin {
     }
 
     private handleLineUpdate() {
-        const scales &#x3D; this.chart.getGrid().scales;
+        const grid &#x3D; this.chart.getGrid();
+        if (!(grid instanceof XYGrid)) {
+            throw new Error(&#x60;${InteractionLinePlugin.name} requires XYGrid&#x60;);
+        }
+
+        const scales &#x3D; grid.scales;
         if (
             this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D;
                 InteractionType.MouseMove ||
@@ -588,17 +594,16 @@ export class InteractionLinePlugin extends ChartPlugin {
             return;
         }
 
-        const grid: XYGrid &#x3D; &lt;any&gt;this.chart.getGrid();
         const xScale &#x3D; find(scales[&quot;x&quot;].index, { id: grid.bottomScaleId });
 
         if (!xScale) {
             throw new Error(&quot;xScale is not defined&quot;);
         }
 
-        const xValue &#x3D; this.lastInteractionValuesPayload.values.x
-            ? this.lastInteractionValuesPayload.values.x[xScale.id] ??
-              Object.values(this.lastInteractionValuesPayload.values.x)[0]
-            : null;
+        const xValue &#x3D; UtilityService.getInteractionValues(
+            this.lastInteractionValuesPayload.values.x,
+            xScale.id
+        );
 
         this.updateLine(this.interactionLineLayer, xScale, xValue);
     }
