@@ -1668,7 +1668,7 @@ export abstract class Renderer&lt;TA extends IAccessors&gt; {
         target: Selection&lt;any, any, any, any&gt;,
         dataPointSubject: Subject&lt;IRendererEventPayload&gt;,
         dataPoint: Partial&lt;IDataPoint&gt;
-    ) {
+    ): void {
         const eventList: string[] &#x3D; get(this.interaction, path, {})[
             nativeEvent
         ];

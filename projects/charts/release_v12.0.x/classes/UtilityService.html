@@ -98,6 +98,10 @@
                             </li>
                             <li>
                                     <span class="modifier">Static</span>
+                                <a href="#getInteractionValues">getInteractionValues</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
                                 <a href="#getScaleValues">getScaleValues</a>
                             </li>
                             <li>
@@ -400,7 +404,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </div>
                     <div class="io-description">
@@ -509,6 +513,102 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getInteractionValues"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            getInteractionValues
+                        </b>
+                        <a href="#getInteractionValues"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getInteractionValues(valueMap: Record<string | any> | null | undefined, scaleId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="298"
+                            class="link-to-prism">src/core/common/utility.service.ts:298</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>get values for interaction</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>valueMap</td>
+                                    <td>
+                                            <code>Record&lt;string | any&gt; | null | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>map of values by scaleId</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>scaleId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>preferred scaleId</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>value from scaleId or first availabel scale</p>
+
                     </div>
                 </td>
             </tr>
@@ -700,7 +800,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IInteractionValues.html" target="_self" >IInteractionValues</a></code>
 
                     </div>
                     <div class="io-description">
@@ -744,7 +844,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                 </td>
@@ -842,7 +942,7 @@ export class UtilityService {
      * @param {[number , number]} range
      * @returns {number}
      */
-    public static clampToRange(value: number, range: [number, number]) {
+    public static clampToRange(value: number, range: [number, number]): number {
         if (value &lt; range[0]) {
             return range[0];
         }
@@ -854,7 +954,7 @@ export class UtilityService {
         return value;
     }
 
-    public static uuid() {
+    public static uuid(): string {
         let dt &#x3D; new Date().getTime();
         const uuid &#x3D; &quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;.replace(
             /[xy]/g,
@@ -964,7 +1064,7 @@ export class UtilityService {
         haystack: T[],
         needle: any,
         selector: (d: T, index: number) &#x3D;&gt; any &#x3D; identity
-    ) {
+    ): number {
         let low &#x3D; 0,
             high &#x3D; haystack &#x3D;&#x3D; null ? low : haystack.length;
 
@@ -996,7 +1096,7 @@ export class UtilityService {
         yScales: IScale&lt;any&gt;[],
         xCoordinate: number,
         yCoordinate: number
-    ) {
+    ): IInteractionValues {
         const xValue &#x3D; UtilityService.getScaleValues(xScales, xCoordinate);
         const yValue &#x3D; UtilityService.getScaleValues(yScales, yCoordinate);
 
@@ -1030,6 +1130,21 @@ export class UtilityService {
             return result;
         }
         return scales.reduce(callbackFn, {});
+    }
+
+    /**
+     * get values for interaction
+     * @param valueMap map of values by scaleId
+     * @param scaleId preferred scaleId
+     * @returns value from scaleId or first availabel scale
+     */
+    public static getInteractionValues(
+        valueMap: Record&lt;string, any&gt; | null | undefined,
+        scaleId: string
+    ): any {
+        return valueMap
+            ? valueMap[scaleId] ?? Object.values(valueMap)[0]
+            : null;
     }
 }
 </code></pre>

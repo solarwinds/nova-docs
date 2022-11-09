@@ -974,8 +974,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="145"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:145</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:147</a></div>
                 </td>
             </tr>
 
@@ -1067,8 +1067,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="191"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:191</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:193</a></div>
                 </td>
             </tr>
 
@@ -1165,8 +1165,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="182"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:182</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:184</a></div>
                 </td>
             </tr>
 
@@ -1352,8 +1352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/renderers/line/line-renderer.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="159"
+                            class="link-to-prism">src/renderers/line/line-renderer.ts:159</a></div>
                 </td>
             </tr>
 
@@ -3940,13 +3940,14 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { curveLinear, line } from &quot;d3-shape&quot;;
 import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
-import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
 import {
     DATA_POINT_INTERACTION_RESET,
     STANDARD_RENDER_LAYERS,
 } from &quot;../../constants&quot;;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Renderer } from &quot;../../core/common/renderer&quot;;
 import { IXYScales, Scales } from &quot;../../core/common/scales/types&quot;;
 import {
     D3Selection,
@@ -3955,7 +3956,6 @@ import {
     IPosition,
     IRendererEventPayload,
 } from &quot;../../core/common/types&quot;;
-import { UtilityService } from &quot;../../core/common/utility.service&quot;;
 import { DEFAULT_MARKER_INTERACTION_CONFIG } from &quot;../constants&quot;;
 import { MarkerUtils } from &quot;../marker-utils&quot;;
 import { ILineRendererConfig, IRenderSeries, RenderLayerName } from &quot;../types&quot;;
@@ -3969,12 +3969,12 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
     public static UNCLIPPED_DATA_LAYER_NAME &#x3D; &quot;unclipped-data&quot;;
     public static LINE_CAP_CLASS_NAME &#x3D; &quot;nui-chart-line-cap&quot;;
 
-    public static getStrokeStyleDashed(width: number) {
+    public static getStrokeStyleDashed(width: number): string {
         const dash &#x3D; width * 2;
         return &#x60;${dash},${dash}&#x60;;
     }
 
-    public static getStrokeStyleDotted(width: number) {
+    public static getStrokeStyleDotted(width: number): string {
         return &#x60;${width},${width}&#x60;;
     }
 
@@ -4043,7 +4043,9 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
      *
      * @param renderSeries
      */
-    public isInfiniteLineData(renderSeries: IRenderSeries&lt;ILineAccessors&gt;) {
+    public isInfiniteLineData(
+        renderSeries: IRenderSeries&lt;ILineAccessors&gt;
+    ): boolean {
         const dataSeries &#x3D; renderSeries.dataSeries;
         return (
             dataSeries.data.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
@@ -4065,7 +4067,7 @@ export class LineRenderer extends XYRenderer&lt;ILineAccessors&gt; {
     public drawLine(
         renderSeries: IRenderSeries&lt;ILineAccessors&gt;,
         path: D3Selection&lt;SVGPathElement&gt;
-    ) {
+    ): void {
         if (this.isInfiniteLineData(renderSeries)) {
             this.drawInfiniteLine(renderSeries, path);
         } else {

@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="187"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:187</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:193</a></div>
                 </td>
             </tr>
 
@@ -672,8 +672,13 @@ export class InteractionLabelPlugin extends ChartPlugin {
             });
     }
 
-    protected handleLabelUpdate() {
-        const scales &#x3D; this.chart.getGrid().scales;
+    protected handleLabelUpdate(): void {
+        const grid &#x3D; this.chart.getGrid();
+        if (!(grid instanceof XYGrid)) {
+            throw new Error(&#x60;${InteractionLabelPlugin.name} requires XYGrid&#x60;);
+        }
+
+        const scales &#x3D; grid.scales;
         if (
             !this.areLabelUpdatesEnabled ||
             this.lastInteractionValuesPayload.interactionType !&#x3D;&#x3D;
@@ -683,23 +688,24 @@ export class InteractionLabelPlugin extends ChartPlugin {
             return;
         }
 
-        const grid: XYGrid &#x3D; &lt;any&gt;this.chart.getGrid();
         const xScale &#x3D; find(scales[&quot;x&quot;].index, { id: grid.bottomScaleId });
 
         if (!xScale) {
             throw new Error(&quot;xScale is not defined&quot;);
         }
 
-        const xValue &#x3D; this.lastInteractionValuesPayload.values.x
-            ? this.lastInteractionValuesPayload.values.x[xScale.id]
-            : null;
+        const xValue &#x3D; UtilityService.getInteractionValues(
+            this.lastInteractionValuesPayload.values.x,
+            xScale.id
+        );
+
         this.updateLabel(
             xScale,
             isArray(xValue) ? xValue.slice(0, xValue.length - 1) : xValue
         );
     }
 
-    protected updateLabel(scale: IScale&lt;any&gt;, value: any) {
+    protected updateLabel(scale: IScale&lt;any&gt;, value: any): void {
         let interactionLabel: D3Selection&lt;SVGGElement&gt; &#x3D;
             this.interactionLabelLayer.select(
                 &#x60;.${InteractionLabelPlugin.LAYER_NAME}&#x60;
