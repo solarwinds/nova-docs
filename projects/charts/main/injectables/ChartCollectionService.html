@@ -166,7 +166,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../classes/Chart.html" target="_self" >ChartCollection</a></code>
 
                     </div>
                     <div class="io-description">
@@ -194,7 +194,7 @@ import { ChartCollection } from &quot;../core/chart-collection&quot;;
 export class ChartCollectionService {
     private collections: { [key: string]: ChartCollection } &#x3D; {};
 
-    public getChartCollection(collectionId: string) {
+    public getChartCollection(collectionId: string): ChartCollection {
         let collection &#x3D; this.collections[collectionId];
         if (isUndefined(collection)) {
             collection &#x3D; new ChartCollection();
