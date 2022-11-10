@@ -1,0 +1,614 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  IInteractionDataPointEvent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/core/common/types.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Payload for interaction events regarding a single data point</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../interfaces/IInteractionPayload.html" target="_self" >IInteractionPayload</a></code>
+            </p>
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#dataPoint" 
+>
+                                            dataPoint
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="dataPoint"></a>
+                                        <span class="name "><b>dataPoint</b>
+                                            <a href="#dataPoint">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>dataPoint:         <code><a href="../interfaces/IDataPoint.html" target="_self" >IDataPoint</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/IDataPoint.html" target="_self" >IDataPoint</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ScaleLinear } from &quot;d3-scale&quot;;
+import { Selection } from &quot;d3-selection&quot;;
+import { ValueMap } from &quot;d3-selection-multi&quot;;
+
+import { StandardGaugeThresholdMarkerRadius } from &quot;../../gauge/constants&quot;;
+import { RenderState } from &quot;../../renderers/types&quot;;
+import { IGrid } from &quot;../grid/types&quot;;
+import { ChartPlugin } from &quot;./chart-plugin&quot;;
+import { DataManager } from &quot;./data-manager&quot;;
+import { EventBus } from &quot;./event-bus&quot;;
+import { RenderEngine } from &quot;./render-engine&quot;;
+import { Renderer } from &quot;./renderer&quot;;
+import { Scales } from &quot;./scales/types&quot;;
+
+/**
+ * Short-form alias for the most commonly used generic D3 Selection type
+ */
+export type D3Selection&lt;T extends SVGElement &#x3D; SVGElement&gt; &#x3D; Selection&lt;
+    T,
+    any,
+    SVGElement,
+    any
+&gt;;
+
+/**
+ * Signature for data accessors
+ *
+ * @param d data point
+ * @param i index
+ * @param series the whole data series
+ */
+export type DataAccessor&lt;D &#x3D; any, T &#x3D; any&gt; &#x3D; (
+    d: D,
+    i: number,
+    series: D[],
+    dataSeries: IDataSeries&lt;IAccessors&gt;
+) &#x3D;&gt; T;
+
+/**
+ * Signature for series accessors
+ */
+export type SeriesAccessor &#x3D; (
+    seriesId: string,
+    series: IDataSeries&lt;IAccessors&gt;
+) &#x3D;&gt; any;
+
+/** @ignore */
+export interface ILasagnaLayer {
+    name: string;
+    order: number;
+    clipped: boolean;
+}
+
+/** Mouse interaction types */
+export enum InteractionType {
+    /** Indicates that an element has been clicked */
+    Click &#x3D; &quot;click&quot;,
+    /** Indicates that an element is hovered */
+    Hover &#x3D; &quot;hover&quot;,
+    /** Indicates a &#x27;mousedown&#x27; event */
+    MouseDown &#x3D; &quot;mousedown&quot;,
+    /** Indicates that the mouse has entered the bounds of an element */
+    MouseEnter &#x3D; &quot;mouseenter&quot;,
+    /** Indicates that the mouse has left the bounds of an element */
+    MouseLeave &#x3D; &quot;mouseleave&quot;,
+    /** Indicates a movement of the mouse across the chart */
+    MouseMove &#x3D; &quot;mousemove&quot;,
+    /** Indicates a &#x27;mouseup&#x27; event */
+    MouseUp &#x3D; &quot;mouseup&quot;,
+}
+
+/** @ignore */
+export interface ICoordinates {
+    x: number;
+    y: number;
+}
+
+/** @ignore */
+export interface IInteractionEvent {
+    type: InteractionType;
+    coordinates: ICoordinates;
+}
+
+/**
+ * Information about the render state of a series
+ */
+export interface IRenderStateData {
+    /** Series identifier */
+    seriesId: string;
+    /** Series render state */
+    state: RenderState;
+    /** Series */
+    series?: IChartSeries&lt;IAccessors&gt;;
+}
+
+/** @ignore */
+export interface IDomainLimits&lt;T&gt; {
+    min: T;
+    max: T;
+}
+
+export interface IRendererConfig {
+    stateStyles?: Record&lt;RenderState, ValueMap&lt;any, any&gt;&gt;;
+    transitionDuration?: number;
+    interactive?: boolean;
+    /** Excludes series from scale domain calculations */
+    ignoreForDomainCalculation?: boolean;
+}
+
+export interface IRadialRendererConfig extends IRendererConfig {
+    annularWidth?: number;
+    annularPadding?: number;
+    /** annularGrowth is a percentage value to define annular width automatically.
+     *  It will grow until it reaches maxThickness.
+     *  Set one to 0 to use annularWidth constant value instead */
+    maxThickness?: number;
+    annularGrowth?: number;
+    cursor?: string;
+    strokeWidth?: number;
+    enableSeriesHighlighting?: boolean;
+    enableDataPointHighlighting?: boolean;
+}
+
+/**
+ * Standard configuration for gauge threshold renderers
+ */
+export interface IGaugeThresholdsRendererConfig {
+    /** The radius of each threshold marker */
+    markerRadius?: StandardGaugeThresholdMarkerRadius | number;
+    /** Boolean indicating whether the renderer is enabled */
+    enabled?: boolean;
+}
+
+/**
+ * Configuration for the DonutGaugeThresholdsRenderer
+ */
+export interface IDonutGaugeThresholdsRendererConfig
+    extends IRadialRendererConfig,
+        IGaugeThresholdsRendererConfig {}
+
+/**
+ * Configuration for the LinearGaugeThresholdsRenderer
+ */
+export interface ILinearGaugeThresholdsRendererConfig
+    extends IRendererConfig,
+        IGaugeThresholdsRendererConfig {}
+
+export interface ILinearScales {
+    x: ScaleLinear&lt;number, number&gt;;
+    y: ScaleLinear&lt;number, number&gt;;
+}
+
+export interface IDataAccessors&lt;D &#x3D; any&gt; {
+    [key: string]: DataAccessor&lt;D&gt; | undefined;
+}
+
+export interface ISeriesAccessors {
+    [key: string]: SeriesAccessor | undefined;
+}
+
+/**
+ * Accessors describe the data for the consumers.
+ */
+export interface IAccessors&lt;D &#x3D; any&gt; {
+    /** Data point level accessors for defining what part of a datum is used for visualizations */
+    data?: IDataAccessors&lt;D&gt;;
+    /** Series level accessors - e.g. for colors, markers, etc. */
+    series?: ISeriesAccessors;
+}
+
+/**
+ * A set of data to visualize on the chart
+ */
+export interface IDataSeries&lt;A extends IAccessors&lt;D&gt;, D &#x3D; any&gt; {
+    /** The series identifier */
+    id: string;
+    /**
+     * The series data. It is an array of arbitrary objects, the structure of which is prescribed by the consumer of this data series. Specific
+     * renderers require specific accessor keys that are used to access values on data points. The renderers and other consumers rarely access
+     * data point properties directly, but usually through accessors.
+     */
+    data: D[];
+    /** Accessors describing the data */
+    accessors: A;
+
+    /** Allow any properties to be stored on this object to facilitate the transfer of data from APIs */
+    [key: string]: any;
+}
+
+/**
+ * The set of elements required for a chart to visualize some data
+ */
+export interface IChartSeries&lt;A extends IAccessors&gt; extends IDataSeries&lt;A&gt; {
+    /** The renderer to be used for visualizing the data */
+    renderer: Renderer&lt;A&gt;;
+    /**
+     * Information about how chart data should conform to the drawable area.
+     * Grids expect certain scale keys to be used depending on the type of grid, for example an x-y grid
+     * uses &#x27;x&#x27; and &#x27;y&#x27; as the keys for its scales.
+     */
+    scales: Scales;
+    /**
+     * Represents an emphasis/visibility state of this series
+     */
+    renderState?: RenderState;
+}
+
+export interface IChartAssistSeries&lt;A extends IAccessors&gt;
+    extends IChartSeries&lt;A&gt; {
+    /**
+     * Whether this series should be shown in the legend
+     */
+    showInLegend?: boolean;
+    /**
+     * Whether this series should be preprocessed in the chart assist
+     */
+    preprocess?: boolean;
+}
+
+export interface IChartMarker {
+    getSvg(): string;
+    setColor(color: string): void;
+}
+
+export interface IChart {
+    target?: D3Selection&lt;SVGSVGElement&gt;;
+    configuration?: IChartConfiguration;
+    getEventBus(): EventBus&lt;IChartEvent&gt;;
+    getDataManager(): DataManager;
+    getRenderEngine(): RenderEngine;
+    getGrid(): IGrid;
+    addPlugin(plugin: IChartPlugin): void;
+    removePlugin?(classRef: typeof ChartPlugin): void;
+    build(element: HTMLElement): void;
+    update(seriesSet: IChartSeries&lt;IAccessors&gt;[]): void;
+    updateDimensions(): void;
+    setSeriesStates(renderStateData: IRenderStateData[]): void;
+    destroy(): void;
+}
+
+export interface IChartConfiguration {
+    updateDomainForEmptySeries?: boolean;
+}
+
+/** @ignore */
+export interface IChartComponent {
+    chart: IChart;
+}
+
+/** Interface defining a chart plugin */
+export interface IChartPlugin {
+    /**
+     * Associated chart - set automatically on chart initialization
+     */
+    chart: IChart;
+
+    /** Initialize the plugin - Invoked automatically on chart initialization */
+    initialize(): void;
+
+    /** Update the plugin - Invoked automatically on chart update */
+    update(): void;
+
+    /** Update the plugin&#x27;s dimensions - Invoked automatically on update of the chart&#x27;s dimensions */
+    updateDimensions(): void;
+
+    /** Perform plugin cleanup - Invoked automatically on chart destruction */
+    destroy(): void;
+}
+
+export interface IChartEvent&lt;T &#x3D; any&gt; {
+    broadcast?: boolean;
+    data: T;
+}
+
+/** @ignore */
+export interface IChartCollectionEvent {
+    chartIndex: string;
+    event: IChartEvent;
+}
+
+/**
+ * Dictionary of render container name to render container
+ */
+export interface IRenderContainers {
+    /** Container name as key to render container */
+    [name: string]: D3Selection&lt;SVGGElement&gt;;
+}
+
+/**
+ * Position on the chart
+ */
+export interface IPosition {
+    x: number;
+    y: number;
+    width?: number;
+    height?: number;
+}
+
+/**
+ * A point at which a data series enters or exits a threshold zone
+ */
+export interface IZoneCrossPoint extends IPosition {
+    /** Indicates whether the cross point is on the edge of a threshold zone */
+    isZoneEdge?: boolean;
+}
+
+/**
+ * Information about a data point
+ */
+export interface IDataPoint {
+    /** Series identifier */
+    seriesId: string;
+    /** Series */
+    dataSeries: IDataSeries&lt;IAccessors&gt;;
+    /** Data index */
+    index: number;
+    /** Data */
+    data: any;
+    /** Position */
+    position?: IPosition;
+}
+
+/**
+ * Payload for the chart&#x27;s visibility status in relation to the nearest scrollable parent
+ */
+export interface IChartViewStatusEventPayload {
+    /**
+     * Indicates whether at least one pixel of the chart&#x27;s parent element has
+     * intersected with the visible area of its nearest scrollable parent
+     */
+    isChartInView: boolean;
+}
+
+/**
+ * Payload for events regarding a data point
+ */
+export interface IRendererEventPayload&lt;T &#x3D; any&gt; {
+    /** Name of the event */
+    eventName: string;
+    /** Information about the data point */
+    data: T;
+}
+
+/**
+ * Collection of one or more data points as a dictionary of seriesId to IDataPoint
+ */
+export interface IDataPointsPayload {
+    /** Series id as key to highlighted data point */
+    [seriesId: string]: IDataPoint;
+}
+
+/**
+ * Payload for interaction events
+ */
+export interface IInteractionPayload {
+    interactionType: InteractionType;
+}
+
+/**
+ * Payload for interaction events regarding a single data point
+ */
+export interface IInteractionDataPointEvent extends IInteractionPayload {
+    dataPoint: IDataPoint;
+}
+
+/**
+ * Payload for axes style change when emphasizing series on grid
+ */
+export type IAxesStyleChangeEventPayload &#x3D; Record&lt;string, Record&lt;string, any&gt;&gt;;
+
+/**
+ * Payload for interaction events regarding one or more data points
+ */
+export interface IInteractionDataPointsEvent extends IInteractionPayload {
+    dataPoints: IDataPointsPayload;
+}
+
+export interface ISetDomainEventPayload {
+    [scaleId: string]: any[];
+}
+
+export interface IValueProvider&lt;T&gt; {
+    get(entityId: string): T | undefined;
+    reset(): void;
+}
+
+export interface IChartPalette {
+    readonly standardColors: IValueProvider&lt;string&gt;;
+    readonly backgroundColors: IValueProvider&lt;string&gt;;
+    readonly textColors: IValueProvider&lt;string&gt;;
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'IInteractionDataPointEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
