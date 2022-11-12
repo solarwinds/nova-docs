@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
 
@@ -36,70 +37,70 @@
 <p>Getting started with charts is quite simple:</p>
 <ol>
 <li><p>Include charts in your package.json file</p>
-<div><pre class="line-numbers"><code class="language-none"> &quot;devDependencies&quot;: {
-     ...
-     &quot;&#64;nova-ui/charts&quot;: &gt;&gt;last release version&lt;&lt;,
-     ...
- }</code></pre></div></li>
+<div><pre class="line-numbers"><code class="language-none">&quot;devDependencies&quot;: {
+    ...
+    &quot;&#64;nova-ui/charts&quot;: &gt;&gt;last release version&lt;&lt;,
+    ...
+}</code></pre></div></li>
 <li><p>Add a reference to charts styles in your angular.json file. Without this step, the charts will render, but will look and act in unpredictable ways.</p>
-<div><pre class="line-numbers"><code class="language-none"> &quot;projects&quot;: {
-     &quot;your-project&quot;: {
-         ...
-         &quot;architect&quot;: {
-             ...
-             &quot;styles&quot;: [
-                 &quot;src/styles.less&quot;,
-                 &quot;./node_modules/&#64;nova-ui/bits/bundles/css/styles.css&quot;,
-                 &quot;./node_modules/&#64;nova-ui/charts/bundles/css/styles.css&quot;
-              ],</code></pre></div></li>
+<div><pre class="line-numbers"><code class="language-none">&quot;projects&quot;: {
+    &quot;your-project&quot;: {
+        ...
+        &quot;architect&quot;: {
+            ...
+            &quot;styles&quot;: [
+                &quot;src/styles.less&quot;,
+                &quot;./node_modules/&#64;nova-ui/bits/bundles/css/styles.css&quot;,
+                &quot;./node_modules/&#64;nova-ui/charts/bundles/css/styles.css&quot;
+             ],</code></pre></div></li>
 <li><p>Import NuiChartsModule</p>
-<div><pre class="line-numbers"><code class="language-none"> import { NuiChartsModule } from &quot;&#64;nova-ui/charts&quot;;
+<div><pre class="line-numbers"><code class="language-none">import { NuiChartsModule } from &quot;&#64;nova-ui/charts&quot;;
 
- &#64;NgModule({
-     declarations: [ ... ],
-     imports: [ NuiChartsModule ],
-     exports: [ ... ],
-     providers: [ ... ]
- })</code></pre></div></li>
-<li><p> Copy/Paste any of our examples (see TOC below) to create your own component, add it to your view and then play around with the options.</p>
+&#64;NgModule({
+    declarations: [ ... ],
+    imports: [ NuiChartsModule ],
+    exports: [ ... ],
+    providers: [ ... ]
+})</code></pre></div></li>
+<li><p>Copy/Paste any of our examples (see TOC below) to create your own component, add it to your view and then play around with the options.</p>
 </li>
 </ol>
 <h1 id="toc">TOC</h1>
 <ul>
-<li>  <a href="./additional-documentation/layout.html">Layout</a></li>
+<li><a href="./additional-documentation/layout.html">Layout</a></li>
 <li><a href="./additional-documentation/chart-types.html">Chart Types</a><ul>
-<li>  <a href="./additional-documentation/chart-types/line.html">Line</a></li>
+<li><a href="./additional-documentation/chart-types/line.html">Line</a></li>
 <li><a href="./additional-documentation/chart-types/bar.html">Bar</a><ul>
-<li>  <a href="./additional-documentation/chart-types/bar/bucketed-bar.html">Bucketed Bar</a></li>
-<li>  <a href="./additional-documentation/chart-types/bar/status.html">Status</a></li>
-<li>  <a href="./additional-documentation/chart-types/bar/waterfall.html">Waterfall</a></li>
+<li><a href="./additional-documentation/chart-types/bar/bucketed-bar.html">Bucketed Bar</a></li>
+<li><a href="./additional-documentation/chart-types/bar/status.html">Status</a></li>
+<li><a href="./additional-documentation/chart-types/bar/waterfall.html">Waterfall</a></li>
 </ul>
 </li>
-<li>  <a href="./additional-documentation/chart-types/pie-and-donut.html">Pie and Donut</a></li>
-<li>  <a href="./additional-documentation/chart-types/spark.html">Spark</a></li>
+<li><a href="./additional-documentation/chart-types/pie-and-donut.html">Pie and Donut</a></li>
+<li><a href="./additional-documentation/chart-types/spark.html">Spark</a></li>
 </ul>
 </li>
 <li><a href="./additional-documentation/plugins.html">Plugins</a><ul>
-<li>  <a href="./additional-documentation/plugins/tooltips.html">Tooltips</a></li>
-<li>  <a href="./additional-documentation/plugins/popovers.html">Popovers</a></li>
+<li><a href="./additional-documentation/plugins/tooltips.html">Tooltips</a></li>
+<li><a href="./additional-documentation/plugins/popovers.html">Popovers</a></li>
 </ul>
 </li>
-<li>  <a href="./additional-documentation/thresholds.html">Thresholds</a></li>
-<li>  <a href="./additional-documentation/timeframe-selection.html">Timeframe Selection</a></li>
+<li><a href="./additional-documentation/thresholds.html">Thresholds</a></li>
+<li><a href="./additional-documentation/timeframe-selection.html">Timeframe Selection</a></li>
 <li><a href="./additional-documentation/advanced-usage.html">Advanced Usage</a><ul>
-<li>  <a href="./additional-documentation/advanced-usage/chart.html">Chart</a></li>
-<li>  <a href="./additional-documentation/advanced-usage/legend.html">Legend</a></li>
+<li><a href="./additional-documentation/advanced-usage/chart.html">Chart</a></li>
+<li><a href="./additional-documentation/advanced-usage/legend.html">Legend</a></li>
 <li><a href="./additional-documentation/advanced-usage/input-structure.html">Input Structure</a><ul>
-<li>  <a href="./additional-documentation/advanced-usage/input-structure/data.html">Data</a></li>
-<li>  <a href="./additional-documentation/advanced-usage/input-structure/colors.html">Colors</a></li>
-<li>  <a href="./additional-documentation/advanced-usage/input-structure/markers.html">Markers</a></li>
+<li><a href="./additional-documentation/advanced-usage/input-structure/data.html">Data</a></li>
+<li><a href="./additional-documentation/advanced-usage/input-structure/colors.html">Colors</a></li>
+<li><a href="./additional-documentation/advanced-usage/input-structure/markers.html">Markers</a></li>
 </ul>
 </li>
-<li>  <a href="./additional-documentation/advanced-usage/events.html">Events</a></li>
-<li>  <a href="./additional-documentation/advanced-usage/grid.html">Grid</a></li>
+<li><a href="./additional-documentation/advanced-usage/events.html">Events</a></li>
+<li><a href="./additional-documentation/advanced-usage/grid.html">Grid</a></li>
 <li><a href="./additional-documentation/advanced-usage/scales.html">Scales</a><ul>
-<li>  <a href="./additional-documentation/advanced-usage/scales/domains.html">Domains</a></li>
-<li>  <a href="./additional-documentation/advanced-usage/scales/formatters.html">Formatters</a></li>
+<li><a href="./additional-documentation/advanced-usage/scales/domains.html">Domains</a></li>
+<li><a href="./additional-documentation/advanced-usage/scales/formatters.html">Formatters</a></li>
 </ul>
 </li>
 </ul>
@@ -119,14 +120,16 @@
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -138,6 +141,15 @@
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
@@ -147,9 +159,9 @@
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>
 

@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -43,7 +44,9 @@
 
 
 
-                   
+
+
+
 
 
 
@@ -52,16 +55,16 @@
 <p>The Nova Dashboards framework was built upon a couple of special requirements:</p>
 <ul>
 <li>Consumers must have the ability to change the behavior, appearance, and/or functionality of existing
-  widgets without breaking the bond with existing framework-provided functionality.</li>
+widgets without breaking the bond with existing framework-provided functionality.</li>
 <li>Satisfaction of product-specific requirements can be achieved by swapping out, removing, or adding the
-  smallest piece necessary without having to rewrite an entire section of the framework.</li>
+smallest piece necessary without having to rewrite an entire section of the framework.</li>
 </ul>
 <p>Beyond the requirements, the framework strives to follow the paradigm of pure Angular components that adhere
 to the following important tenets:</p>
 <ul>
-<li>  one-way data flow</li>
-<li>  on-demand serializable state</li>
-<li>  centralized, event-based communication</li>
+<li>one-way data flow</li>
+<li>on-demand serializable state</li>
+<li>centralized, event-based communication</li>
 </ul>
 <p>The diagrams below outline the main architectural players and their relationships to one another. You can also
 dive a little deeper on the <a href="./anatomy/pizzagna.html">Pizzagna</a>, <a href="./anatomy/configurator.html">Configurator</a>
@@ -77,7 +80,7 @@ and <a href="./anatomy/data-sources.html">Data Sources</a> topics.</p>
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -89,6 +92,15 @@ and <a href="./anatomy/data-sources.html">Data Sources</a> topics.</p>
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
@@ -98,9 +110,9 @@ and <a href="./anatomy/data-sources.html">Data Sources</a> topics.</p>
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

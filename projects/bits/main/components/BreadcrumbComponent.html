@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>BreadcrumbComponent</li>
+  <li
+  >
+  BreadcrumbComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -62,9 +65,10 @@
 
 
 
+
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -128,7 +132,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#handleClick">handleClick</a>
+                                <a href="#handleClick" >handleClick</a>
                             </li>
                         </ul>
                     </td>
@@ -143,10 +147,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ariaLabel">ariaLabel</a>
+                                <a href="#ariaLabel" >ariaLabel</a>
                             </li>
                             <li>
-                                <a href="#items">items</a>
+                                <a href="#items" >items</a>
                             </li>
                         </ul>
                     </td>
@@ -161,7 +165,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#navigation">navigation</a>
+                                <a href="#navigation" >navigation</a>
                             </li>
                         </ul>
                     </td>
@@ -261,10 +265,8 @@
                 <td class="col-md-4">
                     <a name="handleClick"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            handleClick
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>handleClick</b></span>
                         <a href="#handleClick"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -272,7 +274,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleClick(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>, item: <a href="../interfaces/BreadcrumbItem.html">BreadcrumbItem</a>)</code>
+                    <code>handleClick(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>, item: <a href="../interfaces/BreadcrumbItem.html" target="_self">BreadcrumbItem</a>)</code>
                 </td>
             </tr>
 
@@ -290,6 +292,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -405,7 +408,7 @@ export class BreadcrumbComponent {
 <script>
         var COMPONENT_TEMPLATE = '<div><div    [attr.aria-label]="ariaLabel"    class="nui-breadcrumb"    *ngIf="items?.length > 1">    <span        class="nui-breadcrumb__wrapper"        *ngFor="let item of items; let isLast = last"    >        <ng-container *ngIf="!isLast">            <a                [attr.href]="item?.url"                class="nui-breadcrumb__crumb nui-breadcrumb__crumb__link"                (click)="handleClick($event, item)"                >{{ item.title }}</a            >            <nui-icon                class="nui-breadcrumb__caret-icon"                icon="caret-right"                iconColor="disabled-gray"                iconSize="small"            ></nui-icon>        </ng-container>        <span            *ngIf="isLast"            aria-current="page"            class="nui-breadcrumb__crumb nui-breadcrumb__crumb-current-level"            >{{ item.title }}</span        >    </span></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
+    var DIRECTIVES = [{'name': 'BaseSelect', 'selector': ''},{'name': 'BaseSelectV2', 'selector': ''},{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'BreadcrumbComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -419,14 +422,16 @@ export class BreadcrumbComponent {
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -438,6 +443,15 @@ export class BreadcrumbComponent {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
@@ -447,9 +461,9 @@ export class BreadcrumbComponent {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

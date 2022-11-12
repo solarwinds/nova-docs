@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
-	      <link rel="stylesheet" href="../../styles/style.css">
+	   <link rel="stylesheet" href="../../styles/style.css">
+        <link rel="stylesheet" href="../../styles/dark.css">
     </head>
     <body>
 
@@ -43,7 +44,9 @@
 
 
 
-                   
+
+
+
 
 
 
@@ -70,10 +73,10 @@ defining its type and properties, like this:</p>
 }</code></pre></div><p>We can immediately identify a few design problems here, especially:</p>
 <ul>
 <li>From the consumer point of view, the widget is a monolith, and some parts are likely duplicated in
-  other widgets.</li>
-<li>  The presence of a dataSource is hardwired into the widget.</li>
+other widgets.</li>
+<li>The presence of a dataSource is hardwired into the widget.</li>
 <li>Data visualized by the widget is not present here (It could be passed as a separate input, but let&#39;s
-  presume it&#39;s just stored inside the widget as internal state).</li>
+presume it&#39;s just stored inside the widget as internal state).</li>
 </ul>
 <p>We&#39;ll now try to address all of these issues and see where it takes us.</p>
 <h3 id="configuration-of-separate-components">Configuration of Separate Components</h3>
@@ -174,11 +177,11 @@ purposes of properties.</p>
 <p>Pizzagna can contain any number of layers, but we currently just use 3 layers:</p>
 <ul>
 <li><code>structure</code>: defines the structure of a widget, i.e. what components the widget consists of and their
-  initial setup.</li>
+initial setup.</li>
 <li><code>configuration</code>: defines the storable configuration for a widget instance--things such as title, data
-  source, property values, etc.</li>
+source, property values, etc.</li>
 <li><code>data</code>: defines the transient state of a widget as it&#39;s displayed in the browser--includes displayed
-  data as well as other transient properties that are not intended to be persisted anywhere.</li>
+data as well as other transient properties that are not intended to be persisted anywhere.</li>
 </ul>
 <h3 id="pizzagna-service">Pizzagna Service</h3>
 <p>There is an important design pattern that needs to be respected at all times--the rule of one-way data flow.
@@ -210,7 +213,7 @@ it as necessary.</p>
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -222,6 +225,15 @@ it as necessary.</p>
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 2;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
@@ -231,9 +243,9 @@ it as necessary.</p>
 
        <script src="../../js/libs/custom-elements.min.js"></script>
        <script src="../../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../../js/menu-wc.js" defer></script>
+       <script nomodule src="../../js/menu-wc_es5.js" defer></script>
 
        <script src="../../js/libs/bootstrap-native.js"></script>
 

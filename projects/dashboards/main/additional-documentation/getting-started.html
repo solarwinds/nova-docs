@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -43,7 +44,9 @@
 
 
 
-                   
+
+
+
 
 
 
@@ -60,10 +63,10 @@ remember that the more customizations you create, the more initial work and main
 absorb into your product&#39;s code base.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>  The consumer app must be Angular-based</li>
-<li>  Your development environment includes Node.js®, a package manager such as npm, and the Angular CLI</li>
-<li>  Your package manager registries are set</li>
-<li>  Nova Bits has been installed using the following command:</li>
+<li>The consumer app must be Angular-based</li>
+<li>Your development environment includes Node.js®, a package manager such as npm, and the Angular CLI</li>
+<li>Your package manager registries are set</li>
+<li>Nova Bits has been installed using the following command:</li>
 </ul>
 <div><pre class="line-numbers"><code class="language-sh">$ ng add &#64;nova-ui/bits</code></pre></div><p>If needed, further instructions for Bits installation can be found
 <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/" target="_blank">here</a>.</p>
@@ -80,10 +83,10 @@ maintain Angular applications.</p>
 <p>The following schematics command will get dashboards ready for consumption in your project:</p>
 <div><pre class="line-numbers"><code class="language-sh">$ ng add &#64;nova-ui/dashboards</code></pre></div><p>Tasks performed by this command:</p>
 <ul>
-<li>  Adds the <code>@nova-ui/dashboards</code> package and its associated dependencies to your package.json</li>
-<li>  Performs an <code>npm install</code></li>
-<li>  Adds the necessary imports to your app&#39;s main module</li>
-<li>  Adds the necessary style definitions to your app&#39;s angular.json file.</li>
+<li>Adds the <code>@nova-ui/dashboards</code> package and its associated dependencies to your package.json</li>
+<li>Performs an <code>npm install</code></li>
+<li>Adds the necessary imports to your app&#39;s main module</li>
+<li>Adds the necessary style definitions to your app&#39;s angular.json file.</li>
 </ul>
 <h4 id="manual-installation-and-setup">Manual Installation and Setup</h4>
 <p>Install with npm:</p>
@@ -124,7 +127,7 @@ but if you&#39;d prefer to dive right in, you can start with our <strong>Hello, 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -136,6 +139,15 @@ but if you&#39;d prefer to dive right in, you can start with our <strong>Hello, 
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'additional-page';
@@ -145,9 +157,9 @@ but if you&#39;d prefer to dive right in, you can start with our <strong>Hello, 
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

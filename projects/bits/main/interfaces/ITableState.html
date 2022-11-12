@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -41,9 +42,12 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>ITableState</li>
+  <li
+  >
+  ITableState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +70,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -79,23 +84,41 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#columnAlignments">columnAlignments</a>
+                                        <a href="#columnAlignments" 
+>
+                                            columnAlignments
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#columns">columns</a>
+                                        <a href="#columns" 
+>
+                                            columns
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#columnsTypes">columnsTypes</a>
+                                        <a href="#columnsTypes" 
+>
+                                            columnsTypes
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#columnsWidths">columnsWidths</a>
+                                        <a href="#columnsWidths" 
+>
+                                            columnsWidths
+                                        </a>
                                 </li>
                                 <li>
                                             <span class="modifier">Optional</span>
-                                        <a href="#sortedColumn">sortedColumn</a>
+                                        <a href="#sortedColumn" 
+>
+                                            sortedColumn
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#widthCalculationPerformed">widthCalculationPerformed</a>
+                                        <a href="#widthCalculationPerformed" 
+>
+                                            widthCalculationPerformed
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -113,7 +136,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="columnAlignments"></a>
-                                        <span class="name"><b>columnAlignments</b><a href="#columnAlignments"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>columnAlignments</b>
+                                            <a href="#columnAlignments">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -142,7 +169,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="columns"></a>
-                                        <span class="name"><b>columns</b><a href="#columns"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>columns</b>
+                                            <a href="#columns">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -171,7 +202,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="columnsTypes"></a>
-                                        <span class="name"><b>columnsTypes</b><a href="#columnsTypes"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>columnsTypes</b>
+                                            <a href="#columnsTypes">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -200,7 +235,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="columnsWidths"></a>
-                                        <span class="name"><b>columnsWidths</b><a href="#columnsWidths"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>columnsWidths</b>
+                                            <a href="#columnsWidths">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -229,7 +268,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="sortedColumn"></a>
-                                        <span class="name"><b>sortedColumn</b><a href="#sortedColumn"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>sortedColumn</b>
+                                            <a href="#sortedColumn">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -263,7 +306,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="widthCalculationPerformed"></a>
-                                        <span class="name"><b>widthCalculationPerformed</b><a href="#widthCalculationPerformed"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>widthCalculationPerformed</b>
+                                            <a href="#widthCalculationPerformed">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -368,7 +415,7 @@ export class TableStateHandlerService {
     public tableParentWidth: number;
     public columnsState &#x3D; new Subject&lt;string[]&gt;();
     public sortingState &#x3D; new Subject&lt;ISortedItem&gt;();
-    public draggedOverCell &#x3D; new Subject&lt;DraggedOverCell&gt;();
+    public draggedOverCell &#x3D; new Subject&lt;DraggedOverCell | undefined&gt;();
     public shouldHighlightEdge &#x3D; new Subject&lt;TableCellEdgeHighlight&gt;();
     public dataSourceChanged &#x3D; new Subject&lt;Array&lt;any&gt;&gt;();
     public selectionChanged &#x3D; new Subject&lt;ISelection&gt;();
@@ -423,7 +470,7 @@ export class TableStateHandlerService {
         this._sortable &#x3D; isSortable;
     }
 
-    get sortable() {
+    get sortable(): boolean {
         return this._sortable;
     }
 
@@ -431,7 +478,7 @@ export class TableStateHandlerService {
         this._dragCellIndex &#x3D; cellIndex;
     }
 
-    get dragCellIndex() {
+    get dragCellIndex(): number {
         return this._dragCellIndex;
     }
 
@@ -439,7 +486,7 @@ export class TableStateHandlerService {
         this._draggedOverCellIndex &#x3D; cellIndex;
     }
 
-    get draggedOverCellIndex() {
+    get draggedOverCellIndex(): number {
         return this._draggedOverCellIndex;
     }
 
@@ -447,7 +494,7 @@ export class TableStateHandlerService {
         this._newCellIndex &#x3D; cellIndex;
     }
 
-    get newCellIndex() {
+    get newCellIndex(): number {
         return this._newCellIndex;
     }
 
@@ -455,7 +502,7 @@ export class TableStateHandlerService {
         this._dropCellOffsetX &#x3D; cellIndex;
     }
 
-    get dropCellOffsetX() {
+    get dropCellOffsetX(): number {
         return this._dropCellOffsetX;
     }
 
@@ -463,7 +510,7 @@ export class TableStateHandlerService {
         this._dropCellWidth &#x3D; cellIndex;
     }
 
-    get dropCellWidth() {
+    get dropCellWidth(): number {
         return this._dropCellWidth;
     }
 
@@ -471,7 +518,7 @@ export class TableStateHandlerService {
         this._dragOverDirection &#x3D; cellIndex;
     }
 
-    get dragOverDirection() {
+    get dragOverDirection(): string {
         return this._dragOverDirection;
     }
 
@@ -479,7 +526,7 @@ export class TableStateHandlerService {
         this._reorderable &#x3D; isDraggable;
     }
 
-    get reorderable() {
+    get reorderable(): boolean {
         return this._reorderable;
     }
 
@@ -487,7 +534,7 @@ export class TableStateHandlerService {
         this._resizable &#x3D; isResizable;
     }
 
-    get resizable() {
+    get resizable(): boolean {
         return this._resizable;
     }
 
@@ -495,7 +542,7 @@ export class TableStateHandlerService {
         this.state.columns &#x3D; columns;
     }
 
-    get tableColumns() {
+    get tableColumns(): string[] {
         return this.state.columns;
     }
 
@@ -504,7 +551,7 @@ export class TableStateHandlerService {
         this.state.columnsTypes[columnIndex] &#x3D; column.columnType;
     }
 
-    get columnsTypes() {
+    get columnsTypes(): string[] {
         return this.state.columnsTypes;
     }
 
@@ -519,7 +566,7 @@ export class TableStateHandlerService {
         this._selectable &#x3D; isSelectable;
     }
 
-    get selectable() {
+    get selectable(): boolean {
         return this._selectable;
     }
 
@@ -535,7 +582,7 @@ export class TableStateHandlerService {
         this._totalItems &#x3D; paginationTotal;
     }
 
-    get totalItems() {
+    get totalItems(): number {
         return this._totalItems;
     }
 
@@ -543,7 +590,7 @@ export class TableStateHandlerService {
         this._dataSource &#x3D; dataSource;
     }
 
-    get dataSource() {
+    get dataSource(): any[] {
         return this._dataSource;
     }
 
@@ -551,7 +598,7 @@ export class TableStateHandlerService {
         this._selection &#x3D; selection;
     }
 
-    get selection() {
+    get selection(): ISelection {
         return this._selection;
     }
 
@@ -559,7 +606,7 @@ export class TableStateHandlerService {
         return this._trackBy || DEFAULT_TRACK_BY;
     }
 
-    set trackBy(value) {
+    set trackBy(value: TrackByFunction&lt;any&gt;) {
         this._trackBy &#x3D; value;
     }
 
@@ -634,7 +681,7 @@ export class TableStateHandlerService {
      * Updates the state&#x27;s columnWidths for each column and sets the state&#x27;s widthCalculationPerformed property
      * to true once the calculation is complete
      */
-    public calculateWidthsOfColumns() {
+    public calculateWidthsOfColumns(): void {
         // Apply width of 40px for non-resizable columns of type &quot;icon&quot;
         this.state.columns
             .filter((columnName) &#x3D;&gt; {
@@ -688,7 +735,7 @@ export class TableStateHandlerService {
      *
      * @param sortCellIndex the index of the column to sort by
      */
-    public sortColumn(sortCellIndex: number) {
+    public sortColumn(sortCellIndex: number): void {
         const newSortedColumn &#x3D; this.state.columns[sortCellIndex];
         const prevSortedColumn &#x3D;
             this.state.sortedColumn &amp;&amp; this.state.sortedColumn.sortBy;
@@ -859,7 +906,7 @@ export class TableStateHandlerService {
      *
      * @param dataSource
      */
-    public changeDataSource(dataSource: any[]) {
+    public changeDataSource(dataSource: any[]): void {
         this.dataSource &#x3D; dataSource;
         this.dataSourceChanged.next(dataSource);
     }
@@ -869,7 +916,7 @@ export class TableStateHandlerService {
      *
      * @returns An array of all currently selected items
      */
-    public getSelectedItems() {
+    public getSelectedItems(): any[] {
         const trackedItems &#x3D; this.dataSource.map((d) &#x3D;&gt; this.trackBy(d?.id, d));
         return this.selectorService.getSelectedItems(
             this.selection,
@@ -918,7 +965,7 @@ export class TableStateHandlerService {
      *
      * @param rowObject
      */
-    public handleRowCheckbox(rowObject: Object) {
+    public handleRowCheckbox(rowObject: Object): void {
         const excludedRows &#x3D; this.selection.exclude;
         const includedRows &#x3D; this.selection.include;
 
@@ -981,14 +1028,15 @@ export class TableStateHandlerService {
 </div>
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1000,6 +1048,15 @@ export class TableStateHandlerService {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
@@ -1009,9 +1066,9 @@ export class TableStateHandlerService {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

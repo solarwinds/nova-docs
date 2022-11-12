@@ -1,6 +1,5 @@
 'use strict';
 
-
 customElements.define('compodoc-menu', class extends HTMLElement {
     constructor() {
         super();
@@ -44,6 +43,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <span class="icon ion-ios-list"></span>Dependencies
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="properties.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-apps"></span>Properties
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter additional">
@@ -63,12 +67,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/anatomy.html" data-context-id="additional">
                                             <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-aa58741a48b631ae2fe7d1f5a0fa5fe7"' : 'data-target="#xs-additional-page-aa58741a48b631ae2fe7d1f5a0fa5fe7"' }>
+                                            'data-target="#additional-page-dd90422569b7250b83ae36bd9714bdee1b512ea959d42147678ca0859736c317d1d70ca03ab629a94eed802f81c515c2099a3f3463bbe185b0c96bdaf93526a7"' : 'data-target="#xs-additional-page-dd90422569b7250b83ae36bd9714bdee1b512ea959d42147678ca0859736c317d1d70ca03ab629a94eed802f81c515c2099a3f3463bbe185b0c96bdaf93526a7"' }>
                                                 <span class="link-name">Anatomy</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
                                         </a>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-aa58741a48b631ae2fe7d1f5a0fa5fe7"' : 'id="xs-additional-page-aa58741a48b631ae2fe7d1f5a0fa5fe7"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-dd90422569b7250b83ae36bd9714bdee1b512ea959d42147678ca0859736c317d1d70ca03ab629a94eed802f81c515c2099a3f3463bbe185b0c96bdaf93526a7"' : 'id="xs-additional-page-dd90422569b7250b83ae36bd9714bdee1b512ea959d42147678ca0859736c317d1d70ca03ab629a94eed802f81c515c2099a3f3463bbe185b0c96bdaf93526a7"' }>
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/anatomy/pizzagna.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Pizzagna</a>
                                             </li>
@@ -86,12 +90,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/tutorials.html" data-context-id="additional">
                                             <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-f94ebd442397b49764f00e4c66ad38f3"' : 'data-target="#xs-additional-page-f94ebd442397b49764f00e4c66ad38f3"' }>
+                                            'data-target="#additional-page-8efc26b8552b5dd85405a867deb592a2ee15b278b744e17eeab2846e41c309df7e1cfe456975f89d4c1614d527bad6fd6aa2e72bb070477bcfe8e1b9da2fe861"' : 'data-target="#xs-additional-page-8efc26b8552b5dd85405a867deb592a2ee15b278b744e17eeab2846e41c309df7e1cfe456975f89d4c1614d527bad6fd6aa2e72bb070477bcfe8e1b9da2fe861"' }>
                                                 <span class="link-name">Tutorials</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
                                         </a>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-f94ebd442397b49764f00e4c66ad38f3"' : 'id="xs-additional-page-f94ebd442397b49764f00e4c66ad38f3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-8efc26b8552b5dd85405a867deb592a2ee15b278b744e17eeab2846e41c309df7e1cfe456975f89d4c1614d527bad6fd6aa2e72bb070477bcfe8e1b9da2fe861"' : 'id="xs-additional-page-8efc26b8552b5dd85405a867deb592a2ee15b278b744e17eeab2846e41c309df7e1cfe456975f89d4c1614d527bad6fd6aa2e72bb070477bcfe8e1b9da2fe861"' }>
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/tutorials/hello-dashboards.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Hello Dashboards</a>
                                             </li>
@@ -139,12 +143,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/widget-types.html" data-context-id="additional">
                                             <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-f47ec7857488bd680cc5085fd0a60b19"' : 'data-target="#xs-additional-page-f47ec7857488bd680cc5085fd0a60b19"' }>
+                                            'data-target="#additional-page-954850e4d17b0c7af148a18e8a6c7f1bc74fedc4b73d8d7ead5f1728e9cde0770b31fa11f77bedd0bc518f06bc3661cb386e2583b0ebcb8658331ddf4c0a62f0"' : 'data-target="#xs-additional-page-954850e4d17b0c7af148a18e8a6c7f1bc74fedc4b73d8d7ead5f1728e9cde0770b31fa11f77bedd0bc518f06bc3661cb386e2583b0ebcb8658331ddf4c0a62f0"' }>
                                                 <span class="link-name">Widget Types</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
                                         </a>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-f47ec7857488bd680cc5085fd0a60b19"' : 'id="xs-additional-page-f47ec7857488bd680cc5085fd0a60b19"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="additional-page-954850e4d17b0c7af148a18e8a6c7f1bc74fedc4b73d8d7ead5f1728e9cde0770b31fa11f77bedd0bc518f06bc3661cb386e2583b0ebcb8658331ddf4c0a62f0"' : 'id="xs-additional-page-954850e4d17b0c7af148a18e8a6c7f1bc74fedc4b73d8d7ead5f1728e9cde0770b31fa11f77bedd0bc518f06bc3661cb386e2583b0ebcb8658331ddf4c0a62f0"' }>
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/widget-types/kpi.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">KPI</a>
                                             </li>
@@ -190,327 +194,342 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/NuiDashboardConfiguratorModule.html" data-type="entity-link">NuiDashboardConfiguratorModule</a>
+                                <a href="modules/NuiDashboardConfiguratorModule.html" data-type="entity-link" >NuiDashboardConfiguratorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
+                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                             <li class="link">
-                                                <a href="components/ColorPickerComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ColorPickerComponent</a>
+                                                <a href="components/ColorPickerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ColorPickerComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ConfiguratorHeadingComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ConfiguratorHeadingComponent</a>
+                                                <a href="components/ConfiguratorHeadingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ConfiguratorHeadingComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/DashwizComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashwizComponent</a>
+                                                <a href="components/DashwizComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashwizComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/DashwizStepComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashwizStepComponent</a>
+                                                <a href="components/DashwizStepComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashwizStepComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/DropAreaComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DropAreaComponent</a>
+                                                <a href="components/DropAreaComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DropAreaComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/RefreshRateConfiguratorComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">RefreshRateConfiguratorComponent</a>
+                                                <a href="components/EmbeddedContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EmbeddedContentComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/KpiComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >KpiComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/LineChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LineChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ListGroupItemComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListGroupItemComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ListLeafItemComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListLeafItemComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ListNavigationBarComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListNavigationBarComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ListWidgetComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListWidgetComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/LoadingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LoadingComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/ProportionalDonutContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ProportionalDonutContentComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/RefreshRateConfiguratorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefreshRateConfiguratorComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/StackComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/StackedAreaChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedAreaChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/StackedBarChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedBarChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/StackedPercentageAreaChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedPercentageAreaChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/StatusBarChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StatusBarChartComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TilesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TilesComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TimeframeSelectionComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeframeSelectionComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetBodyComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetBodyComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetBodyContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetBodyContentComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetErrorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetErrorComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetHeaderComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetHeaderComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/WidgetSearchComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetSearchComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
+                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                         <li class="link">
-                                            <a href="injectables/ConfiguratorHeadingService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>ConfiguratorHeadingService</a>
+                                            <a href="injectables/ConfiguratorHeadingService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ConfiguratorHeadingService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/ConfiguratorService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>ConfiguratorService</a>
+                                            <a href="injectables/ConfiguratorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ConfiguratorService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/KpiWidgetColorService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>KpiWidgetColorService</a>
+                                            <a href="injectables/KpiWidgetColorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >KpiWidgetColorService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/TimeseriesChartPresetService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>TimeseriesChartPresetService</a>
+                                            <a href="injectables/TimeseriesChartPresetService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeseriesChartPresetService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/TimeseriesScalesService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>TimeseriesScalesService</a>
+                                            <a href="injectables/TimeseriesScalesService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeseriesScalesService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/WidgetClonerService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>WidgetClonerService</a>
+                                            <a href="injectables/WidgetClonerService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetClonerService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/WidgetConfiguratorSectionCoordinatorService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>WidgetConfiguratorSectionCoordinatorService</a>
+                                            <a href="injectables/WidgetConfiguratorSectionCoordinatorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetConfiguratorSectionCoordinatorService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/WidgetEditorService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>WidgetEditorService</a>
+                                            <a href="injectables/WidgetEditorService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetEditorService</a>
                                         </li>
                                     </ul>
                                 </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
+                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
                                             <li class="link">
-                                                <a href="pipes/AddDataPipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">AddDataPipe</a>
+                                                <a href="pipes/AddDataPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AddDataPipe</a>
                                             </li>
                                             <li class="link">
-                                                <a href="pipes/FormHeaderIconPipePipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">FormHeaderIconPipePipe</a>
+                                                <a href="pipes/FormHeaderIconPipePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >FormHeaderIconPipePipe</a>
                                             </li>
                                             <li class="link">
-                                                <a href="pipes/PizzagnaRootPipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PizzagnaRootPipe</a>
+                                                <a href="pipes/PizzagnaRootPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PizzagnaRootPipe</a>
                                             </li>
                                             <li class="link">
-                                                <a href="pipes/WidgetConfiguratorSectionHeaderPipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetConfiguratorSectionHeaderPipe</a>
+                                                <a href="pipes/WidgetConfiguratorSectionHeaderPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetConfiguratorSectionHeaderPipe</a>
                                             </li>
                                             <li class="link">
-                                                <a href="pipes/WidgetEditorAccordionFormStatePipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetEditorAccordionFormStatePipe</a>
+                                                <a href="pipes/WidgetEditorAccordionFormStatePipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetEditorAccordionFormStatePipe</a>
                                             </li>
                                         </ul>
                                     </li>
                             </li>
                             <li class="link">
-                                <a href="modules/NuiDashboardsCommonModule.html" data-type="entity-link">NuiDashboardsCommonModule</a>
+                                <a href="modules/NuiDashboardsCommonModule.html" data-type="entity-link" >NuiDashboardsCommonModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' : 'data-target="#xs-components-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' }>
+                                            'data-target="#components-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' : 'data-target="#xs-components-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' :
-                                            'id="xs-components-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' :
+                                            'id="xs-components-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' }>
                                             <li class="link">
-                                                <a href="components/PreviewOverlayComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PreviewOverlayComponent</a>
+                                                <a href="components/PreviewOverlayComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PreviewOverlayComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetErrorComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetErrorComponent</a>
+                                                <a href="components/WidgetErrorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetErrorComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' : 'data-target="#xs-pipes-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' }>
+                                            'data-target="#pipes-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' : 'data-target="#xs-pipes-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' :
-                                            'id="xs-pipes-links-module-NuiDashboardsCommonModule-0844babfb553b442b4be627ef6602f8d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' :
+                                            'id="xs-pipes-links-module-NuiDashboardsCommonModule-d3bfa2140ad12dc72b85292294af0b78bcf9c4e598d47581e98f6c48fc56b39b2d4c57ec7529674253f76d88107f03c6617e2599e1e711237dd98e4f435e533e"' }>
                                             <li class="link">
-                                                <a href="pipes/DashboardUnitConversionPipe.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashboardUnitConversionPipe</a>
+                                                <a href="pipes/DashboardUnitConversionPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardUnitConversionPipe</a>
                                             </li>
                                         </ul>
                                     </li>
                             </li>
                             <li class="link">
-                                <a href="modules/NuiDashboardsModule.html" data-type="entity-link">NuiDashboardsModule</a>
+                                <a href="modules/NuiDashboardsModule.html" data-type="entity-link" >NuiDashboardsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                            'data-target="#components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' :
-                                            'id="xs-components-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
+                                            'id="xs-components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                             <li class="link">
-                                                <a href="components/DashboardComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashboardComponent</a>
+                                                <a href="components/DashboardComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/EmbeddedContentComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">EmbeddedContentComponent</a>
+                                                <a href="components/EmbeddedContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EmbeddedContentComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/KpiComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">KpiComponent</a>
+                                                <a href="components/KpiComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >KpiComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/LineChartComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">LineChartComponent</a>
+                                                <a href="components/LineChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LineChartComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ListGroupItemComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListGroupItemComponent</a>
+                                                <a href="components/ListGroupItemComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListGroupItemComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ListLeafItemComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListLeafItemComponent</a>
+                                                <a href="components/ListLeafItemComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListLeafItemComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ListNavigationBarComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListNavigationBarComponent</a>
+                                                <a href="components/ListNavigationBarComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListNavigationBarComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ListWidgetComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ListWidgetComponent</a>
+                                                <a href="components/ListWidgetComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ListWidgetComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/LoadingComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">LoadingComponent</a>
+                                                <a href="components/LoadingComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LoadingComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/ProportionalDonutContentComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProportionalDonutContentComponent</a>
+                                                <a href="components/ProportionalDonutContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ProportionalDonutContentComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/StackComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">StackComponent</a>
+                                                <a href="components/StackComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/StackedAreaChartComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">StackedAreaChartComponent</a>
+                                                <a href="components/StackedAreaChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedAreaChartComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/StackedBarChartComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">StackedBarChartComponent</a>
+                                                <a href="components/StackedBarChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedBarChartComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/StackedPercentageAreaChartComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">StackedPercentageAreaChartComponent</a>
+                                                <a href="components/StackedPercentageAreaChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackedPercentageAreaChartComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/StatusBarChartComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">StatusBarChartComponent</a>
+                                                <a href="components/StatusBarChartComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StatusBarChartComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/TilesComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">TilesComponent</a>
+                                                <a href="components/TilesComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TilesComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/TimeframeSelectionComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">TimeframeSelectionComponent</a>
+                                                <a href="components/TimeframeSelectionComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeframeSelectionComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetBodyComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetBodyComponent</a>
+                                                <a href="components/WidgetBodyComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetBodyComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetBodyContentComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetBodyContentComponent</a>
+                                                <a href="components/WidgetBodyContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetBodyContentComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetComponent</a>
+                                                <a href="components/WidgetComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetHeaderComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetHeaderComponent</a>
+                                                <a href="components/WidgetHeaderComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetHeaderComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/WidgetSearchComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetSearchComponent</a>
+                                                <a href="components/WidgetSearchComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetSearchComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                        'data-target="#directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' :
-                                        'id="xs-directives-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
+                                        'id="xs-directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                         <li class="link">
-                                            <a href="directives/DelayedMousePresenceDetectionDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">DelayedMousePresenceDetectionDirective</a>
+                                            <a href="directives/DelayedMousePresenceDetectionDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DelayedMousePresenceDetectionDirective</a>
                                         </li>
                                         <li class="link">
-                                            <a href="directives/GridsterItemWidgetIdDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">GridsterItemWidgetIdDirective</a>
+                                            <a href="directives/GridsterItemWidgetIdDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GridsterItemWidgetIdDirective</a>
                                         </li>
                                         <li class="link">
-                                            <a href="directives/WidgetEditorDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">WidgetEditorDirective</a>
+                                            <a href="directives/WidgetEditorDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetEditorDirective</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' :
-                                        'id="xs-injectables-links-module-NuiDashboardsModule-aa4e5b28bea0ad982ed47246eb008f5c"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
+                                        'id="xs-injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
                                         <li class="link">
-                                            <a href="injectables/RefresherSettingsService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>RefresherSettingsService</a>
+                                            <a href="injectables/RefresherSettingsService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefresherSettingsService</a>
                                         </li>
                                         <li class="link">
-                                            <a href="injectables/WidgetTypesService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>WidgetTypesService</a>
+                                            <a href="injectables/WidgetTypesService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetTypesService</a>
                                         </li>
                                     </ul>
                                 </li>
                             </li>
                             <li class="link">
-                                <a href="modules/NuiPizzagnaModule.html" data-type="entity-link">NuiPizzagnaModule</a>
+                                <a href="modules/NuiPizzagnaModule.html" data-type="entity-link" >NuiPizzagnaModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' : 'data-target="#xs-components-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' }>
+                                            'data-target="#components-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' : 'data-target="#xs-components-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' :
-                                            'id="xs-components-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' :
+                                            'id="xs-components-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' }>
                                             <li class="link">
-                                                <a href="components/PizzagnaComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PizzagnaComponent</a>
+                                                <a href="components/PizzagnaComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PizzagnaComponent</a>
                                             </li>
                                         </ul>
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' : 'data-target="#xs-directives-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' }>
+                                        'data-target="#directives-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' : 'data-target="#xs-directives-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' :
-                                        'id="xs-directives-links-module-NuiPizzagnaModule-8d2cb43c77bb20ab4d3397438f08474e"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' :
+                                        'id="xs-directives-links-module-NuiPizzagnaModule-51223c8c61efcde37384299985a91e9783c67bf9382be87bc4f6e03be2a8c478716a9e7b08f605d8e2a915126250d971f32538ed538aecd56d09f5ffeee41c77"' }>
                                         <li class="link">
-                                            <a href="directives/ComponentPortalDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">ComponentPortalDirective</a>
+                                            <a href="directives/ComponentPortalDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ComponentPortalDirective</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -526,151 +545,167 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="components-links"' : 'id="xs-components-links"' }>
                             <li class="link">
-                                <a href="components/AggregatorMetricSelectorConfigurationComponent.html" data-type="entity-link">AggregatorMetricSelectorConfigurationComponent</a>
+                                <a href="components/AggregatorMetricSelectorConfigurationComponent.html" data-type="entity-link" >AggregatorMetricSelectorConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/BackgroundColorRulesConfigurationComponent.html" data-type="entity-link">BackgroundColorRulesConfigurationComponent</a>
+                                <a href="components/BackgroundColorRulesConfigurationComponent.html" data-type="entity-link" >BackgroundColorRulesConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DashwizButtonsComponent.html" data-type="entity-link">DashwizButtonsComponent</a>
+                                <a href="components/DashwizButtonsComponent.html" data-type="entity-link" >DashwizButtonsComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DataSourceConfigurationComponent.html" data-type="entity-link">DataSourceConfigurationComponent</a>
+                                <a href="components/DataSourceConfigurationComponent.html" data-type="entity-link" >DataSourceConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DataSourceConfigurationV2Component.html" data-type="entity-link">DataSourceConfigurationV2Component</a>
+                                <a href="components/DataSourceConfigurationV2Component.html" data-type="entity-link" >DataSourceConfigurationV2Component</a>
                             </li>
                             <li class="link">
-                                <a href="components/DataSourceErrorComponent.html" data-type="entity-link">DataSourceErrorComponent</a>
+                                <a href="components/DataSourceErrorComponent.html" data-type="entity-link" >DataSourceErrorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DescriptionConfigurationComponent.html" data-type="entity-link">DescriptionConfigurationComponent</a>
+                                <a href="components/DescriptionConfigurationComponent.html" data-type="entity-link" >DescriptionConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DescriptionConfigurationV2Component.html" data-type="entity-link">DescriptionConfigurationV2Component</a>
+                                <a href="components/DescriptionConfigurationV2Component.html" data-type="entity-link" >DescriptionConfigurationV2Component</a>
                             </li>
                             <li class="link">
-                                <a href="components/DonutContentConfigurationComponent.html" data-type="entity-link">DonutContentConfigurationComponent</a>
+                                <a href="components/DonutContentConfigurationComponent.html" data-type="entity-link" >DonutContentConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DonutContentPercentageConfigurationComponent.html" data-type="entity-link">DonutContentPercentageConfigurationComponent</a>
+                                <a href="components/DonutContentPercentageConfigurationComponent.html" data-type="entity-link" >DonutContentPercentageConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DonutContentPercentageFormatterComponent.html" data-type="entity-link">DonutContentPercentageFormatterComponent</a>
+                                <a href="components/DonutContentPercentageFormatterComponent.html" data-type="entity-link" >DonutContentPercentageFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DonutContentRawFormatterComponent.html" data-type="entity-link">DonutContentRawFormatterComponent</a>
+                                <a href="components/DonutContentRawFormatterComponent.html" data-type="entity-link" >DonutContentRawFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/DonutContentSumFormatterComponent.html" data-type="entity-link">DonutContentSumFormatterComponent</a>
+                                <a href="components/DonutContentSumFormatterComponent.html" data-type="entity-link" >DonutContentSumFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/EmbeddedContentConfigurationComponent.html" data-type="entity-link">EmbeddedContentConfigurationComponent</a>
+                                <a href="components/EmbeddedContentConfigurationComponent.html" data-type="entity-link" >EmbeddedContentConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/EntityFormattingConfigurationComponent.html" data-type="entity-link">EntityFormattingConfigurationComponent</a>
+                                <a href="components/EntityFormattingConfigurationComponent.html" data-type="entity-link" >EntityFormattingConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/FieldMapperAggregatorConfiguratorComponent.html" data-type="entity-link">FieldMapperAggregatorConfiguratorComponent</a>
+                                <a href="components/FieldMapperAggregatorConfiguratorComponent.html" data-type="entity-link" >FieldMapperAggregatorConfiguratorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/FormStackComponent.html" data-type="entity-link">FormStackComponent</a>
+                                <a href="components/FormStackComponent.html" data-type="entity-link" >FormStackComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/GroupingConfigurationComponent.html" data-type="entity-link">GroupingConfigurationComponent</a>
+                                <a href="components/GroupingConfigurationComponent.html" data-type="entity-link" >GroupingConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/IconFormatterComponent.html" data-type="entity-link">IconFormatterComponent</a>
+                                <a href="components/IconFormatterComponent.html" data-type="entity-link" >IconFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/InfoMessageConfigurationComponent.html" data-type="entity-link">InfoMessageConfigurationComponent</a>
+                                <a href="components/InfoMessageConfigurationComponent.html" data-type="entity-link" >InfoMessageConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/KpiDescriptionConfigurationComponent.html" data-type="entity-link">KpiDescriptionConfigurationComponent</a>
+                                <a href="components/KpiDescriptionConfigurationComponent.html" data-type="entity-link" >KpiDescriptionConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/KpiTilesConfigurationComponent.html" data-type="entity-link">KpiTilesConfigurationComponent</a>
+                                <a href="components/KpiTilesConfigurationComponent.html" data-type="entity-link" >KpiTilesConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/LinkConfiguratorComponent.html" data-type="entity-link">LinkConfiguratorComponent</a>
+                                <a href="components/LinkConfiguratorComponent.html" data-type="entity-link" >LinkConfiguratorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/LinkFormatterComponent.html" data-type="entity-link">LinkFormatterComponent</a>
+                                <a href="components/LinkFormatterComponent.html" data-type="entity-link" >LinkFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/PercentageFormatterComponent.html" data-type="entity-link">PercentageFormatterComponent</a>
+                                <a href="components/PercentageFormatterComponent.html" data-type="entity-link" >PercentageFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/PresentationConfigurationComponent.html" data-type="entity-link">PresentationConfigurationComponent</a>
+                                <a href="components/PresentationConfigurationComponent.html" data-type="entity-link" >PresentationConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/PresentationConfigurationV2Component.html" data-type="entity-link">PresentationConfigurationV2Component</a>
+                                <a href="components/PresentationConfigurationV2Component.html" data-type="entity-link" >PresentationConfigurationV2Component</a>
                             </li>
                             <li class="link">
-                                <a href="components/PreviewPlaceholderComponent.html" data-type="entity-link">PreviewPlaceholderComponent</a>
+                                <a href="components/PreviewPlaceholderComponent.html" data-type="entity-link" >PreviewPlaceholderComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/ProportionalChartOptionsEditorComponent.html" data-type="entity-link">ProportionalChartOptionsEditorComponent</a>
+                                <a href="components/ProportionalChartOptionsEditorComponent.html" data-type="entity-link" >ProportionalChartOptionsEditorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/ProportionalChartOptionsEditorV2Component.html" data-type="entity-link">ProportionalChartOptionsEditorV2Component</a>
+                                <a href="components/ProportionalChartOptionsEditorV2Component.html" data-type="entity-link" >ProportionalChartOptionsEditorV2Component</a>
                             </li>
                             <li class="link">
-                                <a href="components/RawFormatterComponent.html" data-type="entity-link">RawFormatterComponent</a>
+                                <a href="components/RawFormatterComponent.html" data-type="entity-link" >RawFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/RefresherConfigurationComponent.html" data-type="entity-link">RefresherConfigurationComponent</a>
+                                <a href="components/RefresherConfigurationComponent.html" data-type="entity-link" >RefresherConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/SiUnitsFormatterComponent.html" data-type="entity-link">SiUnitsFormatterComponent</a>
+                                <a href="components/SiUnitsFormatterComponent.html" data-type="entity-link" >SiUnitsFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/StatusWithIconFormatterComponent.html" data-type="entity-link">StatusWithIconFormatterComponent</a>
+                                <a href="components/StatusWithIconFormatterComponent.html" data-type="entity-link" >StatusWithIconFormatterComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableColumnConfigurationComponent.html" data-type="entity-link">TableColumnConfigurationComponent</a>
+                                <a href="components/TableColumnConfigurationComponent.html" data-type="entity-link" >TableColumnConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableColumnsConfigurationComponent.html" data-type="entity-link">TableColumnsConfigurationComponent</a>
+                                <a href="components/TableColumnsConfigurationComponent.html" data-type="entity-link" >TableColumnsConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableColumnsConfigurationV2Component.html" data-type="entity-link">TableColumnsConfigurationV2Component</a>
+                                <a href="components/TableColumnsConfigurationV2Component.html" data-type="entity-link" >TableColumnsConfigurationV2Component</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableDataSourceErrorComponent.html" data-type="entity-link">TableDataSourceErrorComponent</a>
+                                <a href="components/TableDataSourceErrorComponent.html" data-type="entity-link" >TableDataSourceErrorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TableFiltersEditorComponent.html" data-type="entity-link">TableFiltersEditorComponent</a>
+                                <a href="components/TableFiltersEditorComponent.html" data-type="entity-link" >TableFiltersEditorComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/ThresholdsConfigurationComponent.html" data-type="entity-link">ThresholdsConfigurationComponent</a>
+                                <a href="components/ThresholdsConfigurationComponent.html" data-type="entity-link" >ThresholdsConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TimeseriesMetadataConfigurationComponent.html" data-type="entity-link">TimeseriesMetadataConfigurationComponent</a>
+                                <a href="components/TimeseriesMetadataConfigurationComponent.html" data-type="entity-link" >TimeseriesMetadataConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TimeseriesSeriesCollectionConfigurationComponent.html" data-type="entity-link">TimeseriesSeriesCollectionConfigurationComponent</a>
+                                <a href="components/TimeseriesSeriesCollectionConfigurationComponent.html" data-type="entity-link" >TimeseriesSeriesCollectionConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TimeseriesTileDescriptionConfigurationComponent.html" data-type="entity-link">TimeseriesTileDescriptionConfigurationComponent</a>
+                                <a href="components/TimeseriesTileDescriptionConfigurationComponent.html" data-type="entity-link" >TimeseriesTileDescriptionConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TimeseriesTileIndicatorDataConfigurationComponent.html" data-type="entity-link">TimeseriesTileIndicatorDataConfigurationComponent</a>
+                                <a href="components/TimeseriesTileIndicatorDataConfigurationComponent.html" data-type="entity-link" >TimeseriesTileIndicatorDataConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/TitleAndDescriptionConfigurationComponent.html" data-type="entity-link">TitleAndDescriptionConfigurationComponent</a>
+                                <a href="components/TitleAndDescriptionConfigurationComponent.html" data-type="entity-link" >TitleAndDescriptionConfigurationComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/WidgetClonerComponent.html" data-type="entity-link">WidgetClonerComponent</a>
+                                <a href="components/WidgetClonerComponent.html" data-type="entity-link" >WidgetClonerComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/WidgetConfiguratorSectionComponent.html" data-type="entity-link">WidgetConfiguratorSectionComponent</a>
+                                <a href="components/WidgetConfiguratorSectionComponent.html" data-type="entity-link" >WidgetConfiguratorSectionComponent</a>
                             </li>
                             <li class="link">
-                                <a href="components/WidgetEditorComponent.html" data-type="entity-link">WidgetEditorComponent</a>
+                                <a href="components/WidgetEditorComponent.html" data-type="entity-link" >WidgetEditorComponent</a>
                             </li>
                         </ul>
                     </li>
+                        <li class="chapter">
+                            <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#directives-links"' :
+                                'data-target="#xs-directives-links"' }>
+                                <span class="icon ion-md-code-working"></span>
+                                <span>Directives</span>
+                                <span class="icon ion-ios-arrow-down"></span>
+                            </div>
+                            <ul class="links collapse " ${ isNormalMode ? 'id="directives-links"' : 'id="xs-directives-links"' }>
+                                <li class="link">
+                                    <a href="directives/RegistryService.html" data-type="entity-link" >RegistryService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="directives/TimeseriesChartComponent.html" data-type="entity-link" >TimeseriesChartComponent</a>
+                                </li>
+                            </ul>
+                        </li>
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#classes-links"' :
                             'data-target="#xs-classes-links"' }>
@@ -680,25 +715,25 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/DrilldownDataSourceAdapter.html" data-type="entity-link">DrilldownDataSourceAdapter</a>
+                                <a href="classes/DrilldownDataSourceAdapter.html" data-type="entity-link" >DrilldownDataSourceAdapter</a>
                             </li>
                             <li class="link">
-                                <a href="classes/FormatterRegistryService.html" data-type="entity-link">FormatterRegistryService</a>
+                                <a href="classes/FormatterRegistryService.html" data-type="entity-link" >FormatterRegistryService</a>
                             </li>
                             <li class="link">
-                                <a href="classes/KpiDataSourceAdapter.html" data-type="entity-link">KpiDataSourceAdapter</a>
+                                <a href="classes/KpiDataSourceAdapter.html" data-type="entity-link" >KpiDataSourceAdapter</a>
                             </li>
                             <li class="link">
-                                <a href="classes/KpiScaleSyncBrokerBuilder.html" data-type="entity-link">KpiScaleSyncBrokerBuilder</a>
+                                <a href="classes/KpiScaleSyncBrokerBuilder.html" data-type="entity-link" >KpiScaleSyncBrokerBuilder</a>
                             </li>
                             <li class="link">
-                                <a href="classes/TableDataSourceAdapter.html" data-type="entity-link">TableDataSourceAdapter</a>
+                                <a href="classes/TableDataSourceAdapter.html" data-type="entity-link" >TableDataSourceAdapter</a>
                             </li>
                             <li class="link">
-                                <a href="classes/TimeseriesDataSourceAdapter.html" data-type="entity-link">TimeseriesDataSourceAdapter</a>
+                                <a href="classes/TimeseriesDataSourceAdapter.html" data-type="entity-link" >TimeseriesDataSourceAdapter</a>
                             </li>
                             <li class="link">
-                                <a href="classes/WindowObject.html" data-type="entity-link">WindowObject</a>
+                                <a href="classes/WindowObject.html" data-type="entity-link" >WindowObject</a>
                             </li>
                         </ul>
                     </li>
@@ -711,160 +746,160 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
                                 <li class="link">
-                                    <a href="injectables/BaseConverter.html" data-type="entity-link">BaseConverter</a>
+                                    <a href="injectables/BaseConverter.html" data-type="entity-link" >BaseConverter</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/BaseLayout.html" data-type="entity-link">BaseLayout</a>
+                                    <a href="injectables/BaseLayout.html" data-type="entity-link" >BaseLayout</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/CategoryChartUtilService.html" data-type="entity-link">CategoryChartUtilService</a>
+                                    <a href="injectables/CategoryChartUtilService.html" data-type="entity-link" >CategoryChartUtilService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ColorService.html" data-type="entity-link">ColorService</a>
+                                    <a href="injectables/ColorService.html" data-type="entity-link" >ColorService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ComponentRegistryService.html" data-type="entity-link">ComponentRegistryService</a>
+                                    <a href="injectables/ComponentRegistryService.html" data-type="entity-link" >ComponentRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ConfiguratorDataSourceManagerService.html" data-type="entity-link">ConfiguratorDataSourceManagerService</a>
+                                    <a href="injectables/ConfiguratorDataSourceManagerService.html" data-type="entity-link" >ConfiguratorDataSourceManagerService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ConfiguratorHeadingService.html" data-type="entity-link">ConfiguratorHeadingService</a>
+                                    <a href="injectables/ConfiguratorHeadingService.html" data-type="entity-link" >ConfiguratorHeadingService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/DashwizService.html" data-type="entity-link">DashwizService</a>
+                                    <a href="injectables/DashwizService.html" data-type="entity-link" >DashwizService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/DataSourceAdapter.html" data-type="entity-link">DataSourceAdapter</a>
+                                    <a href="injectables/DataSourceAdapter.html" data-type="entity-link" >DataSourceAdapter</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/DonutChartFormatterConfiguratorComponent.html" data-type="entity-link">DonutChartFormatterConfiguratorComponent</a>
+                                    <a href="injectables/DonutChartFormatterConfiguratorComponent.html" data-type="entity-link" >DonutChartFormatterConfiguratorComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/DynamicComponentCreator.html" data-type="entity-link">DynamicComponentCreator</a>
+                                    <a href="injectables/DynamicComponentCreator.html" data-type="entity-link" >DynamicComponentCreator</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/EventBusDebugger.html" data-type="entity-link">EventBusDebugger</a>
+                                    <a href="injectables/EventBusDebugger.html" data-type="entity-link" >EventBusDebugger</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/EventRegistryService.html" data-type="entity-link">EventRegistryService</a>
+                                    <a href="injectables/EventRegistryService.html" data-type="entity-link" >EventRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/FormatterConfiguratorComponent.html" data-type="entity-link">FormatterConfiguratorComponent</a>
+                                    <a href="injectables/FormatterConfiguratorComponent.html" data-type="entity-link" >FormatterConfiguratorComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/GenericArrayConverterService.html" data-type="entity-link">GenericArrayConverterService</a>
+                                    <a href="injectables/GenericArrayConverterService.html" data-type="entity-link" >GenericArrayConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/GenericConverterService.html" data-type="entity-link">GenericConverterService</a>
+                                    <a href="injectables/GenericConverterService.html" data-type="entity-link" >GenericConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/InteractionHandler.html" data-type="entity-link">InteractionHandler</a>
+                                    <a href="injectables/InteractionHandler.html" data-type="entity-link" >InteractionHandler</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiColorComparatorsRegistryService.html" data-type="entity-link">KpiColorComparatorsRegistryService</a>
+                                    <a href="injectables/KpiColorComparatorsRegistryService.html" data-type="entity-link" >KpiColorComparatorsRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiColorPrioritizer.html" data-type="entity-link">KpiColorPrioritizer</a>
+                                    <a href="injectables/KpiColorPrioritizer.html" data-type="entity-link" >KpiColorPrioritizer</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiFormattersRegistryService.html" data-type="entity-link">KpiFormattersRegistryService</a>
+                                    <a href="injectables/KpiFormattersRegistryService.html" data-type="entity-link" >KpiFormattersRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiScaleSyncBroker.html" data-type="entity-link">KpiScaleSyncBroker</a>
+                                    <a href="injectables/KpiScaleSyncBroker.html" data-type="entity-link" >KpiScaleSyncBroker</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiSectionConverterService.html" data-type="entity-link">KpiSectionConverterService</a>
+                                    <a href="injectables/KpiSectionConverterService.html" data-type="entity-link" >KpiSectionConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiStatusContentFallbackAdapter.html" data-type="entity-link">KpiStatusContentFallbackAdapter</a>
+                                    <a href="injectables/KpiStatusContentFallbackAdapter.html" data-type="entity-link" >KpiStatusContentFallbackAdapter</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/KpiTilesConverterService.html" data-type="entity-link">KpiTilesConverterService</a>
+                                    <a href="injectables/KpiTilesConverterService.html" data-type="entity-link" >KpiTilesConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/LoadingAdapter.html" data-type="entity-link">LoadingAdapter</a>
+                                    <a href="injectables/LoadingAdapter.html" data-type="entity-link" >LoadingAdapter</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/PizzagnaBroadcasterService.html" data-type="entity-link">PizzagnaBroadcasterService</a>
+                                    <a href="injectables/PizzagnaBroadcasterService.html" data-type="entity-link" >PizzagnaBroadcasterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/PizzagnaService.html" data-type="entity-link">PizzagnaService</a>
+                                    <a href="injectables/PizzagnaService.html" data-type="entity-link" >PizzagnaService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/PreviewService.html" data-type="entity-link">PreviewService</a>
+                                    <a href="injectables/PreviewService.html" data-type="entity-link" >PreviewService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ProportionalContentAggregatorsRegistryService.html" data-type="entity-link">ProportionalContentAggregatorsRegistryService</a>
+                                    <a href="injectables/ProportionalContentAggregatorsRegistryService.html" data-type="entity-link" >ProportionalContentAggregatorsRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ProportionalDonutContentFormattersRegistryService.html" data-type="entity-link">ProportionalDonutContentFormattersRegistryService</a>
+                                    <a href="injectables/ProportionalDonutContentFormattersRegistryService.html" data-type="entity-link" >ProportionalDonutContentFormattersRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ProportionalLegendFormattersRegistryService.html" data-type="entity-link">ProportionalLegendFormattersRegistryService</a>
+                                    <a href="injectables/ProportionalLegendFormattersRegistryService.html" data-type="entity-link" >ProportionalLegendFormattersRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ProportionalWidgetChartOptionsConverterService.html" data-type="entity-link">ProportionalWidgetChartOptionsConverterService</a>
+                                    <a href="injectables/ProportionalWidgetChartOptionsConverterService.html" data-type="entity-link" >ProportionalWidgetChartOptionsConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/ProviderRegistryService.html" data-type="entity-link">ProviderRegistryService</a>
+                                    <a href="injectables/ProviderRegistryService.html" data-type="entity-link" >ProviderRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/Refresher.html" data-type="entity-link">Refresher</a>
+                                    <a href="injectables/Refresher.html" data-type="entity-link" >Refresher</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/SearchFeatureAddonService.html" data-type="entity-link">SearchFeatureAddonService</a>
+                                    <a href="injectables/SearchFeatureAddonService.html" data-type="entity-link" >SearchFeatureAddonService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/StatusContentFallbackAdapter.html" data-type="entity-link">StatusContentFallbackAdapter</a>
+                                    <a href="injectables/StatusContentFallbackAdapter.html" data-type="entity-link" >StatusContentFallbackAdapter</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TableColumnsConverterService.html" data-type="entity-link">TableColumnsConverterService</a>
+                                    <a href="injectables/TableColumnsConverterService.html" data-type="entity-link" >TableColumnsConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TableFiltersConverterService.html" data-type="entity-link">TableFiltersConverterService</a>
+                                    <a href="injectables/TableFiltersConverterService.html" data-type="entity-link" >TableFiltersConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TableFormatterRegistryService.html" data-type="entity-link">TableFormatterRegistryService</a>
+                                    <a href="injectables/TableFormatterRegistryService.html" data-type="entity-link" >TableFormatterRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TimeframeSerializationService.html" data-type="entity-link">TimeframeSerializationService</a>
+                                    <a href="injectables/TimeframeSerializationService.html" data-type="entity-link" >TimeframeSerializationService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TimeseriesMetadataConverterService.html" data-type="entity-link">TimeseriesMetadataConverterService</a>
+                                    <a href="injectables/TimeseriesMetadataConverterService.html" data-type="entity-link" >TimeseriesMetadataConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TimeseriesSeriesConverterService.html" data-type="entity-link">TimeseriesSeriesConverterService</a>
+                                    <a href="injectables/TimeseriesSeriesConverterService.html" data-type="entity-link" >TimeseriesSeriesConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TimeseriesTileIndicatorDataConverterService.html" data-type="entity-link">TimeseriesTileIndicatorDataConverterService</a>
+                                    <a href="injectables/TimeseriesTileIndicatorDataConverterService.html" data-type="entity-link" >TimeseriesTileIndicatorDataConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/TitleAndDescriptionConverterService.html" data-type="entity-link">TitleAndDescriptionConverterService</a>
+                                    <a href="injectables/TitleAndDescriptionConverterService.html" data-type="entity-link" >TitleAndDescriptionConverterService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/UnitTestRegistryService.html" data-type="entity-link">UnitTestRegistryService</a>
+                                    <a href="injectables/UnitTestRegistryService.html" data-type="entity-link" >UnitTestRegistryService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/UrlInteractionHandler.html" data-type="entity-link">UrlInteractionHandler</a>
+                                    <a href="injectables/UrlInteractionHandler.html" data-type="entity-link" >UrlInteractionHandler</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/UrlInteractionService.html" data-type="entity-link">UrlInteractionService</a>
+                                    <a href="injectables/UrlInteractionService.html" data-type="entity-link" >UrlInteractionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/VirtualScrollFeatureAddonService.html" data-type="entity-link">VirtualScrollFeatureAddonService</a>
+                                    <a href="injectables/VirtualScrollFeatureAddonService.html" data-type="entity-link" >VirtualScrollFeatureAddonService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/WidgetConfigurationService.html" data-type="entity-link">WidgetConfigurationService</a>
+                                    <a href="injectables/WidgetConfigurationService.html" data-type="entity-link" >WidgetConfigurationService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/WidgetRemovalService.html" data-type="entity-link">WidgetRemovalService</a>
+                                    <a href="injectables/WidgetRemovalService.html" data-type="entity-link" >WidgetRemovalService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/WidgetToDashboardEventProxyService.html" data-type="entity-link">WidgetToDashboardEventProxyService</a>
+                                    <a href="injectables/WidgetToDashboardEventProxyService.html" data-type="entity-link" >WidgetToDashboardEventProxyService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/XYChartComponent.html" data-type="entity-link">XYChartComponent</a>
+                                    <a href="injectables/XYChartComponent.html" data-type="entity-link" >XYChartComponent</a>
                                 </li>
                             </ul>
                         </li>
@@ -877,403 +912,403 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/AccordionCoordinatorState.html" data-type="entity-link">AccordionCoordinatorState</a>
+                                <a href="interfaces/AccordionCoordinatorState.html" data-type="entity-link" >AccordionCoordinatorState</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IAddFormattersOptions.html" data-type="entity-link">IAddFormattersOptions</a>
+                                <a href="interfaces/IAddFormattersOptions.html" data-type="entity-link" >IAddFormattersOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IAggregatorChartData.html" data-type="entity-link">IAggregatorChartData</a>
+                                <a href="interfaces/IAggregatorChartData.html" data-type="entity-link" >IAggregatorChartData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IAggregatorConfiguratorProperties.html" data-type="entity-link">IAggregatorConfiguratorProperties</a>
+                                <a href="interfaces/IAggregatorConfiguratorProperties.html" data-type="entity-link" >IAggregatorConfiguratorProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBackgroundColorComparator.html" data-type="entity-link">IBackgroundColorComparator</a>
+                                <a href="interfaces/IBackgroundColorComparator.html" data-type="entity-link" >IBackgroundColorComparator</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBroadcasterConfig.html" data-type="entity-link">IBroadcasterConfig</a>
+                                <a href="interfaces/IBroadcasterConfig.html" data-type="entity-link" >IBroadcasterConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBroker.html" data-type="entity-link">IBroker</a>
+                                <a href="interfaces/IBroker.html" data-type="entity-link" >IBroker</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBrokerUserConfig.html" data-type="entity-link">IBrokerUserConfig</a>
+                                <a href="interfaces/IBrokerUserConfig.html" data-type="entity-link" >IBrokerUserConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IBrokerValue.html" data-type="entity-link">IBrokerValue</a>
+                                <a href="interfaces/IBrokerValue.html" data-type="entity-link" >IBrokerValue</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IChartAttributes.html" data-type="entity-link">IChartAttributes</a>
+                                <a href="interfaces/IChartAttributes.html" data-type="entity-link" >IChartAttributes</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IChartOptionViewModel.html" data-type="entity-link">IChartOptionViewModel</a>
+                                <a href="interfaces/IChartOptionViewModel.html" data-type="entity-link" >IChartOptionViewModel</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IChartPreset.html" data-type="entity-link">IChartPreset</a>
+                                <a href="interfaces/IChartPreset.html" data-type="entity-link" >IChartPreset</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IChartTools.html" data-type="entity-link">IChartTools</a>
+                                <a href="interfaces/IChartTools.html" data-type="entity-link" >IChartTools</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IComparatorsDict.html" data-type="entity-link">IComparatorsDict</a>
+                                <a href="interfaces/IComparatorsDict.html" data-type="entity-link" >IComparatorsDict</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IComponentConfiguration.html" data-type="entity-link">IComponentConfiguration</a>
+                                <a href="interfaces/IComponentConfiguration.html" data-type="entity-link" >IComponentConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IComponentIdPayload.html" data-type="entity-link">IComponentIdPayload</a>
+                                <a href="interfaces/IComponentIdPayload.html" data-type="entity-link" >IComponentIdPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IComponentPortalBundle.html" data-type="entity-link">IComponentPortalBundle</a>
+                                <a href="interfaces/IComponentPortalBundle.html" data-type="entity-link" >IComponentPortalBundle</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IComponentWithLateLoadKey.html" data-type="entity-link">IComponentWithLateLoadKey</a>
+                                <a href="interfaces/IComponentWithLateLoadKey.html" data-type="entity-link" >IComponentWithLateLoadKey</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConfigurable.html" data-type="entity-link">IConfigurable</a>
+                                <a href="interfaces/IConfigurable.html" data-type="entity-link" >IConfigurable</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConfigurator.html" data-type="entity-link">IConfigurator</a>
+                                <a href="interfaces/IConfigurator.html" data-type="entity-link" >IConfigurator</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConfiguratorConverter.html" data-type="entity-link">IConfiguratorConverter</a>
+                                <a href="interfaces/IConfiguratorConverter.html" data-type="entity-link" >IConfiguratorConverter</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConfiguratorForm.html" data-type="entity-link">IConfiguratorForm</a>
+                                <a href="interfaces/IConfiguratorForm.html" data-type="entity-link" >IConfiguratorForm</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConfiguratorSource.html" data-type="entity-link">IConfiguratorSource</a>
+                                <a href="interfaces/IConfiguratorSource.html" data-type="entity-link" >IConfiguratorSource</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IConverterFormPartsProperties.html" data-type="entity-link">IConverterFormPartsProperties</a>
+                                <a href="interfaces/IConverterFormPartsProperties.html" data-type="entity-link" >IConverterFormPartsProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashboard.html" data-type="entity-link">IDashboard</a>
+                                <a href="interfaces/IDashboard.html" data-type="entity-link" >IDashboard</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashboardBelowFoldLazyLoadingConfig.html" data-type="entity-link">IDashboardBelowFoldLazyLoadingConfig</a>
+                                <a href="interfaces/IDashboardBelowFoldLazyLoadingConfig.html" data-type="entity-link" >IDashboardBelowFoldLazyLoadingConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashboardPersistenceHandler.html" data-type="entity-link">IDashboardPersistenceHandler</a>
+                                <a href="interfaces/IDashboardPersistenceHandler.html" data-type="entity-link" >IDashboardPersistenceHandler</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizButtonsComponent.html" data-type="entity-link">IDashwizButtonsComponent</a>
+                                <a href="interfaces/IDashwizButtonsComponent.html" data-type="entity-link" >IDashwizButtonsComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizComponent.html" data-type="entity-link">IDashwizComponent</a>
+                                <a href="interfaces/IDashwizComponent.html" data-type="entity-link" >IDashwizComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizStepComponent.html" data-type="entity-link">IDashwizStepComponent</a>
+                                <a href="interfaces/IDashwizStepComponent.html" data-type="entity-link" >IDashwizStepComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizStepNavigatedEvent.html" data-type="entity-link">IDashwizStepNavigatedEvent</a>
+                                <a href="interfaces/IDashwizStepNavigatedEvent.html" data-type="entity-link" >IDashwizStepNavigatedEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDashwizWaitEvent.html" data-type="entity-link">IDashwizWaitEvent</a>
+                                <a href="interfaces/IDashwizWaitEvent.html" data-type="entity-link" >IDashwizWaitEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDataSourceBusyPayload.html" data-type="entity-link">IDataSourceBusyPayload</a>
+                                <a href="interfaces/IDataSourceBusyPayload.html" data-type="entity-link" >IDataSourceBusyPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDataSourceError.html" data-type="entity-link">IDataSourceError</a>
+                                <a href="interfaces/IDataSourceError.html" data-type="entity-link" >IDataSourceError</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDataSourceOutput.html" data-type="entity-link">IDataSourceOutput</a>
+                                <a href="interfaces/IDataSourceOutput.html" data-type="entity-link" >IDataSourceOutput</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDataSourceOutputPayload.html" data-type="entity-link">IDataSourceOutputPayload</a>
+                                <a href="interfaces/IDataSourceOutputPayload.html" data-type="entity-link" >IDataSourceOutputPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDonutContentConfig.html" data-type="entity-link">IDonutContentConfig</a>
+                                <a href="interfaces/IDonutContentConfig.html" data-type="entity-link" >IDonutContentConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDrilldownComponentConfiguration.html" data-type="entity-link">IDrilldownComponentConfiguration</a>
+                                <a href="interfaces/IDrilldownComponentConfiguration.html" data-type="entity-link" >IDrilldownComponentConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IDrilldownComponentsConfiguration.html" data-type="entity-link">IDrilldownComponentsConfiguration</a>
+                                <a href="interfaces/IDrilldownComponentsConfiguration.html" data-type="entity-link" >IDrilldownComponentsConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFieldMapperAggregatorProperties.html" data-type="entity-link">IFieldMapperAggregatorProperties</a>
+                                <a href="interfaces/IFieldMapperAggregatorProperties.html" data-type="entity-link" >IFieldMapperAggregatorProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatter.html" data-type="entity-link">IFormatter</a>
+                                <a href="interfaces/IFormatter.html" data-type="entity-link" >IFormatter</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatterConfigurator.html" data-type="entity-link">IFormatterConfigurator</a>
+                                <a href="interfaces/IFormatterConfigurator.html" data-type="entity-link" >IFormatterConfigurator</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatterData.html" data-type="entity-link">IFormatterData</a>
+                                <a href="interfaces/IFormatterData.html" data-type="entity-link" >IFormatterData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatterDefinition.html" data-type="entity-link">IFormatterDefinition</a>
+                                <a href="interfaces/IFormatterDefinition.html" data-type="entity-link" >IFormatterDefinition</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatterDefinitionProperties.html" data-type="entity-link">IFormatterDefinitionProperties</a>
+                                <a href="interfaces/IFormatterDefinitionProperties.html" data-type="entity-link" >IFormatterDefinitionProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IFormatterProperties.html" data-type="entity-link">IFormatterProperties</a>
+                                <a href="interfaces/IFormatterProperties.html" data-type="entity-link" >IFormatterProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IHasChangeDetector.html" data-type="entity-link">IHasChangeDetector</a>
+                                <a href="interfaces/IHasChangeDetector.html" data-type="entity-link" >IHasChangeDetector</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IHasComponent.html" data-type="entity-link">IHasComponent</a>
+                                <a href="interfaces/IHasComponent.html" data-type="entity-link" >IHasComponent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IHasForm.html" data-type="entity-link">IHasForm</a>
+                                <a href="interfaces/IHasForm.html" data-type="entity-link" >IHasForm</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IHeaderLinkProvider.html" data-type="entity-link">IHeaderLinkProvider</a>
+                                <a href="interfaces/IHeaderLinkProvider.html" data-type="entity-link" >IHeaderLinkProvider</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IInfoMessage.html" data-type="entity-link">IInfoMessage</a>
+                                <a href="interfaces/IInfoMessage.html" data-type="entity-link" >IInfoMessage</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IInfoMessageProperties.html" data-type="entity-link">IInfoMessageProperties</a>
+                                <a href="interfaces/IInfoMessageProperties.html" data-type="entity-link" >IInfoMessageProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IInteractionHandlerProperties.html" data-type="entity-link">IInteractionHandlerProperties</a>
+                                <a href="interfaces/IInteractionHandlerProperties.html" data-type="entity-link" >IInteractionHandlerProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IInteractionPayload.html" data-type="entity-link">IInteractionPayload</a>
+                                <a href="interfaces/IInteractionPayload.html" data-type="entity-link" >IInteractionPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IItemConfiguration.html" data-type="entity-link">IItemConfiguration</a>
+                                <a href="interfaces/IItemConfiguration.html" data-type="entity-link" >IItemConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiColorRules.html" data-type="entity-link">IKpiColorRules</a>
+                                <a href="interfaces/IKpiColorRules.html" data-type="entity-link" >IKpiColorRules</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiConfiguration.html" data-type="entity-link">IKpiConfiguration</a>
+                                <a href="interfaces/IKpiConfiguration.html" data-type="entity-link" >IKpiConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiData.html" data-type="entity-link">IKpiData</a>
+                                <a href="interfaces/IKpiData.html" data-type="entity-link" >IKpiData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiDataSourceAdapterConfiguration.html" data-type="entity-link">IKpiDataSourceAdapterConfiguration</a>
+                                <a href="interfaces/IKpiDataSourceAdapterConfiguration.html" data-type="entity-link" >IKpiDataSourceAdapterConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiFallbackAdapterProperties.html" data-type="entity-link">IKpiFallbackAdapterProperties</a>
+                                <a href="interfaces/IKpiFallbackAdapterProperties.html" data-type="entity-link" >IKpiFallbackAdapterProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiFormatterProperties.html" data-type="entity-link">IKpiFormatterProperties</a>
+                                <a href="interfaces/IKpiFormatterProperties.html" data-type="entity-link" >IKpiFormatterProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiFormattersConfiguration.html" data-type="entity-link">IKpiFormattersConfiguration</a>
+                                <a href="interfaces/IKpiFormattersConfiguration.html" data-type="entity-link" >IKpiFormattersConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiItemConfiguration.html" data-type="entity-link">IKpiItemConfiguration</a>
+                                <a href="interfaces/IKpiItemConfiguration.html" data-type="entity-link" >IKpiItemConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiThresholdsConfig.html" data-type="entity-link">IKpiThresholdsConfig</a>
+                                <a href="interfaces/IKpiThresholdsConfig.html" data-type="entity-link" >IKpiThresholdsConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IKpiWidgetIndicatorData.html" data-type="entity-link">IKpiWidgetIndicatorData</a>
+                                <a href="interfaces/IKpiWidgetIndicatorData.html" data-type="entity-link" class="deprecated-name">IKpiWidgetIndicatorData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ILegendFormat.html" data-type="entity-link">ILegendFormat</a>
+                                <a href="interfaces/ILegendFormat.html" data-type="entity-link" >ILegendFormat</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ILegendPlacementOption.html" data-type="entity-link">ILegendPlacementOption</a>
+                                <a href="interfaces/ILegendPlacementOption.html" data-type="entity-link" >ILegendPlacementOption</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ILinkDefinition.html" data-type="entity-link">ILinkDefinition</a>
+                                <a href="interfaces/ILinkDefinition.html" data-type="entity-link" >ILinkDefinition</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ILinkFormatterData.html" data-type="entity-link">ILinkFormatterData</a>
+                                <a href="interfaces/ILinkFormatterData.html" data-type="entity-link" >ILinkFormatterData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IListWidgetConfiguration.html" data-type="entity-link">IListWidgetConfiguration</a>
+                                <a href="interfaces/IListWidgetConfiguration.html" data-type="entity-link" >IListWidgetConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/INavigationBarButtons.html" data-type="entity-link">INavigationBarButtons</a>
+                                <a href="interfaces/INavigationBarButtons.html" data-type="entity-link" >INavigationBarButtons</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/INavigationBarConfig.html" data-type="entity-link">INavigationBarConfig</a>
+                                <a href="interfaces/INavigationBarConfig.html" data-type="entity-link" >INavigationBarConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPaletteColor.html" data-type="entity-link">IPaletteColor</a>
+                                <a href="interfaces/IPaletteColor.html" data-type="entity-link" >IPaletteColor</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPercentageAggregatorProperties.html" data-type="entity-link">IPercentageAggregatorProperties</a>
+                                <a href="interfaces/IPercentageAggregatorProperties.html" data-type="entity-link" >IPercentageAggregatorProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPizza.html" data-type="entity-link">IPizza</a>
+                                <a href="interfaces/IPizza.html" data-type="entity-link" >IPizza</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPizzagna.html" data-type="entity-link">IPizzagna</a>
+                                <a href="interfaces/IPizzagna.html" data-type="entity-link" >IPizzagna</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPizzagnaLayer.html" data-type="entity-link">IPizzagnaLayer</a>
+                                <a href="interfaces/IPizzagnaLayer.html" data-type="entity-link" >IPizzagnaLayer</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPizzagnaProperty.html" data-type="entity-link">IPizzagnaProperty</a>
+                                <a href="interfaces/IPizzagnaProperty.html" data-type="entity-link" >IPizzagnaProperty</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPortalEnvironment.html" data-type="entity-link">IPortalEnvironment</a>
+                                <a href="interfaces/IPortalEnvironment.html" data-type="entity-link" >IPortalEnvironment</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IPreviewEventPayload.html" data-type="entity-link">IPreviewEventPayload</a>
+                                <a href="interfaces/IPreviewEventPayload.html" data-type="entity-link" >IPreviewEventPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProperties.html" data-type="entity-link">IProperties</a>
+                                <a href="interfaces/IProperties.html" data-type="entity-link" >IProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalAggregatorOrigin.html" data-type="entity-link">IProportionalAggregatorOrigin</a>
+                                <a href="interfaces/IProportionalAggregatorOrigin.html" data-type="entity-link" >IProportionalAggregatorOrigin</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalDataFieldsConfig.html" data-type="entity-link">IProportionalDataFieldsConfig</a>
+                                <a href="interfaces/IProportionalDataFieldsConfig.html" data-type="entity-link" >IProportionalDataFieldsConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalDonutContentAggregator.html" data-type="entity-link">IProportionalDonutContentAggregator</a>
+                                <a href="interfaces/IProportionalDonutContentAggregator.html" data-type="entity-link" >IProportionalDonutContentAggregator</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalDonutContentAggregatorDefinition.html" data-type="entity-link">IProportionalDonutContentAggregatorDefinition</a>
+                                <a href="interfaces/IProportionalDonutContentAggregatorDefinition.html" data-type="entity-link" >IProportionalDonutContentAggregatorDefinition</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalDonutContentAggregatorProperties.html" data-type="entity-link">IProportionalDonutContentAggregatorProperties</a>
+                                <a href="interfaces/IProportionalDonutContentAggregatorProperties.html" data-type="entity-link" >IProportionalDonutContentAggregatorProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalWidgetChartEditorOptions.html" data-type="entity-link">IProportionalWidgetChartEditorOptions</a>
+                                <a href="interfaces/IProportionalWidgetChartEditorOptions.html" data-type="entity-link" >IProportionalWidgetChartEditorOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalWidgetChartOptions.html" data-type="entity-link">IProportionalWidgetChartOptions</a>
+                                <a href="interfaces/IProportionalWidgetChartOptions.html" data-type="entity-link" >IProportionalWidgetChartOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalWidgetChartTypeConfiguration.html" data-type="entity-link">IProportionalWidgetChartTypeConfiguration</a>
+                                <a href="interfaces/IProportionalWidgetChartTypeConfiguration.html" data-type="entity-link" >IProportionalWidgetChartTypeConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalWidgetConfig.html" data-type="entity-link">IProportionalWidgetConfig</a>
+                                <a href="interfaces/IProportionalWidgetConfig.html" data-type="entity-link" >IProportionalWidgetConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProportionalWidgetData.html" data-type="entity-link">IProportionalWidgetData</a>
+                                <a href="interfaces/IProportionalWidgetData.html" data-type="entity-link" >IProportionalWidgetData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProviderConfiguration.html" data-type="entity-link">IProviderConfiguration</a>
+                                <a href="interfaces/IProviderConfiguration.html" data-type="entity-link" >IProviderConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProviderConfigurationForDisplay.html" data-type="entity-link">IProviderConfigurationForDisplay</a>
+                                <a href="interfaces/IProviderConfigurationForDisplay.html" data-type="entity-link" >IProviderConfigurationForDisplay</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IProviderProperties.html" data-type="entity-link">IProviderProperties</a>
+                                <a href="interfaces/IProviderProperties.html" data-type="entity-link" >IProviderProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IRefresherProperties.html" data-type="entity-link">IRefresherProperties</a>
+                                <a href="interfaces/IRefresherProperties.html" data-type="entity-link" >IRefresherProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IRegistryAddOptions.html" data-type="entity-link">IRegistryAddOptions</a>
+                                <a href="interfaces/IRegistryAddOptions.html" data-type="entity-link" >IRegistryAddOptions</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link">ISearchOnKeyUp</a>
+                                <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link" >ISearchOnKeyUp</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ISerializableTimeframe.html" data-type="entity-link">ISerializableTimeframe</a>
+                                <a href="interfaces/ISerializableTimeframe.html" data-type="entity-link" >ISerializableTimeframe</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ISetPropertyPayload.html" data-type="entity-link">ISetPropertyPayload</a>
+                                <a href="interfaces/ISetPropertyPayload.html" data-type="entity-link" >ISetPropertyPayload</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ISiUnitsPrefix.html" data-type="entity-link">ISiUnitsPrefix</a>
+                                <a href="interfaces/ISiUnitsPrefix.html" data-type="entity-link" >ISiUnitsPrefix</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IStaticProviders.html" data-type="entity-link">IStaticProviders</a>
+                                <a href="interfaces/IStaticProviders.html" data-type="entity-link" >IStaticProviders</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IStatusData.html" data-type="entity-link">IStatusData</a>
+                                <a href="interfaces/IStatusData.html" data-type="entity-link" >IStatusData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITableFormatterDefinition.html" data-type="entity-link">ITableFormatterDefinition</a>
+                                <a href="interfaces/ITableFormatterDefinition.html" data-type="entity-link" >ITableFormatterDefinition</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITableWidgetColumnConfig.html" data-type="entity-link">ITableWidgetColumnConfig</a>
+                                <a href="interfaces/ITableWidgetColumnConfig.html" data-type="entity-link" >ITableWidgetColumnConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITableWidgetConfig.html" data-type="entity-link">ITableWidgetConfig</a>
+                                <a href="interfaces/ITableWidgetConfig.html" data-type="entity-link" >ITableWidgetConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITableWidgetSorterConfig.html" data-type="entity-link">ITableWidgetSorterConfig</a>
+                                <a href="interfaces/ITableWidgetSorterConfig.html" data-type="entity-link" >ITableWidgetSorterConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITickLabelConfig.html" data-type="entity-link">ITickLabelConfig</a>
+                                <a href="interfaces/ITickLabelConfig.html" data-type="entity-link" >ITickLabelConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesChartTypeOption.html" data-type="entity-link">ITimeseriesChartTypeOption</a>
+                                <a href="interfaces/ITimeseriesChartTypeOption.html" data-type="entity-link" >ITimeseriesChartTypeOption</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesDataSourceAdapterConfiguration.html" data-type="entity-link">ITimeseriesDataSourceAdapterConfiguration</a>
+                                <a href="interfaces/ITimeseriesDataSourceAdapterConfiguration.html" data-type="entity-link" >ITimeseriesDataSourceAdapterConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesItemConfiguration.html" data-type="entity-link">ITimeseriesItemConfiguration</a>
+                                <a href="interfaces/ITimeseriesItemConfiguration.html" data-type="entity-link" >ITimeseriesItemConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesOutput.html" data-type="entity-link">ITimeseriesOutput</a>
+                                <a href="interfaces/ITimeseriesOutput.html" data-type="entity-link" >ITimeseriesOutput</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesScaleConfig.html" data-type="entity-link">ITimeseriesScaleConfig</a>
+                                <a href="interfaces/ITimeseriesScaleConfig.html" data-type="entity-link" >ITimeseriesScaleConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesScalesConfig.html" data-type="entity-link">ITimeseriesScalesConfig</a>
+                                <a href="interfaces/ITimeseriesScalesConfig.html" data-type="entity-link" >ITimeseriesScalesConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesWidgetConfig.html" data-type="entity-link">ITimeseriesWidgetConfig</a>
+                                <a href="interfaces/ITimeseriesWidgetConfig.html" data-type="entity-link" >ITimeseriesWidgetConfig</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesWidgetData.html" data-type="entity-link">ITimeseriesWidgetData</a>
+                                <a href="interfaces/ITimeseriesWidgetData.html" data-type="entity-link" >ITimeseriesWidgetData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesWidgetSeries.html" data-type="entity-link">ITimeseriesWidgetSeries</a>
+                                <a href="interfaces/ITimeseriesWidgetSeries.html" data-type="entity-link" >ITimeseriesWidgetSeries</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesWidgetSeriesData.html" data-type="entity-link">ITimeseriesWidgetSeriesData</a>
+                                <a href="interfaces/ITimeseriesWidgetSeriesData.html" data-type="entity-link" >ITimeseriesWidgetSeriesData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeseriesWidgetStatusData.html" data-type="entity-link">ITimeseriesWidgetStatusData</a>
+                                <a href="interfaces/ITimeseriesWidgetStatusData.html" data-type="entity-link" >ITimeseriesWidgetStatusData</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ITimeSpanOption.html" data-type="entity-link">ITimeSpanOption</a>
+                                <a href="interfaces/ITimeSpanOption.html" data-type="entity-link" >ITimeSpanOption</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link">IUrlInteractionHandlerProperties</a>
+                                <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link" >IUrlInteractionHandlerProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IValueChange.html" data-type="entity-link">IValueChange</a>
+                                <a href="interfaces/IValueChange.html" data-type="entity-link" >IValueChange</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidget.html" data-type="entity-link">IWidget</a>
+                                <a href="interfaces/IWidget.html" data-type="entity-link" >IWidget</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetEditor.html" data-type="entity-link">IWidgetEditor</a>
+                                <a href="interfaces/IWidgetEditor.html" data-type="entity-link" >IWidgetEditor</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetErrorDisplayProperties.html" data-type="entity-link">IWidgetErrorDisplayProperties</a>
+                                <a href="interfaces/IWidgetErrorDisplayProperties.html" data-type="entity-link" >IWidgetErrorDisplayProperties</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetEvent.html" data-type="entity-link">IWidgetEvent</a>
+                                <a href="interfaces/IWidgetEvent.html" data-type="entity-link" >IWidgetEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetMetadata.html" data-type="entity-link">IWidgetMetadata</a>
+                                <a href="interfaces/IWidgetMetadata.html" data-type="entity-link" >IWidgetMetadata</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgets.html" data-type="entity-link">IWidgets</a>
+                                <a href="interfaces/IWidgets.html" data-type="entity-link" >IWidgets</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetSearchConfiguration.html" data-type="entity-link">IWidgetSearchConfiguration</a>
+                                <a href="interfaces/IWidgetSearchConfiguration.html" data-type="entity-link" >IWidgetSearchConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetSelector.html" data-type="entity-link">IWidgetSelector</a>
+                                <a href="interfaces/IWidgetSelector.html" data-type="entity-link" >IWidgetSelector</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetTemplateSelector.html" data-type="entity-link">IWidgetTemplateSelector</a>
+                                <a href="interfaces/IWidgetTemplateSelector.html" data-type="entity-link" >IWidgetTemplateSelector</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetToDashboardEventProxyConfiguration.html" data-type="entity-link">IWidgetToDashboardEventProxyConfiguration</a>
+                                <a href="interfaces/IWidgetToDashboardEventProxyConfiguration.html" data-type="entity-link" >IWidgetToDashboardEventProxyConfiguration</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/IWidgetTypeDefinition.html" data-type="entity-link">IWidgetTypeDefinition</a>
+                                <a href="interfaces/IWidgetTypeDefinition.html" data-type="entity-link" >IWidgetTypeDefinition</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/NumberValidationParams.html" data-type="entity-link">NumberValidationParams</a>
+                                <a href="interfaces/NumberValidationParams.html" data-type="entity-link" >NumberValidationParams</a>
                             </li>
                         </ul>
                     </li>

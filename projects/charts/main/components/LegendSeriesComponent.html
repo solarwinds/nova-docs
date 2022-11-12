@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>LegendSeriesComponent</li>
+  <li
+  >
+  LegendSeriesComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,6 +60,7 @@
 
 
 
+
     <p class="comment">
         <h3>Implements</h3>
     </p>
@@ -67,7 +71,7 @@
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
             <tr>
@@ -116,6 +120,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isHorizontalClassApplied" >isHorizontalClassApplied</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -127,11 +146,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#hasInputDescription">hasInputDescription</a>
+                                <a href="#hasInputDescription" >hasInputDescription</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#hasProjectedDescription">hasProjectedDescription</a>
+                                <a href="#hasProjectedDescription" >hasProjectedDescription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onClick" >onClick</a>
                             </li>
                         </ul>
                     </td>
@@ -146,28 +169,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#active">active</a>
+                                <a href="#active" >active</a>
                             </li>
                             <li>
-                                <a href="#color">color</a>
+                                <a href="#color" >color</a>
                             </li>
                             <li>
-                                <a href="#descriptionPrimary">descriptionPrimary</a>
+                                <a href="#descriptionPrimary" >descriptionPrimary</a>
                             </li>
                             <li>
-                                <a href="#descriptionSecondary">descriptionSecondary</a>
+                                <a href="#descriptionSecondary" >descriptionSecondary</a>
                             </li>
                             <li>
-                                <a href="#icon">icon</a>
+                                <a href="#icon" >icon</a>
                             </li>
                             <li>
-                                <a href="#interactive">interactive</a>
+                                <a href="#interactive" >interactive</a>
                             </li>
                             <li>
-                                <a href="#isSelected">isSelected</a>
+                                <a href="#isSelected" >isSelected</a>
                             </li>
                             <li>
-                                <a href="#seriesRenderState">seriesRenderState</a>
+                                <a href="#seriesRenderState" >seriesRenderState</a>
                             </li>
                         </ul>
                     </td>
@@ -182,7 +205,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isSelectedChange">isSelectedChange</a>
+                                <a href="#isSelectedChange" >isSelectedChange</a>
                             </li>
                         </ul>
                     </td>
@@ -197,13 +220,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#class.inverse">class.inverse</a>
+                                <a href="#class.inverse" >class.inverse</a>
                             </li>
                             <li>
-                                <a href="#"></a>
+                                <a href="#" ></a>
                             </li>
                             <li>
-                                <a href="#"></a>
+                                <a href="#" ></a>
                             </li>
                         </ul>
                     </td>
@@ -218,7 +241,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#click">click</a>
+                                <a href="#click" >click</a>
                             </li>
                         </ul>
                     </td>
@@ -233,13 +256,19 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#active">active</a>
+                                    <a href="#active" >active</a>
                                 </li>
                                 <li>
-                                    <a href="#interactive">interactive</a>
+                                    <a href="#interactive" >interactive</a>
                                 </li>
                                 <li>
-                                    <a href="#seriesRenderState">seriesRenderState</a>
+                                    <a href="#seriesRenderState" >seriesRenderState</a>
+                                </li>
+                                <li>
+                                    <a href="#isInteractiveClassApplied" >isInteractiveClassApplied</a>
+                                </li>
+                                <li>
+                                    <a href="#isActiveClassApplied" >isActiveClassApplied</a>
                                 </li>
                             </ul>
                         </td>
@@ -254,7 +283,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(legend: <a href="../components/LegendComponent.html">LegendComponent</a>)</code>
+<code>constructor(legend: <a href="../components/LegendComponent.html" target="_self">LegendComponent</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -471,6 +500,12 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
                         <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
@@ -493,6 +528,12 @@
                     <td class="col-md-4">
                         <a name="seriesRenderState"></a>
                         <b>seriesRenderState</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
+
                     </td>
                 </tr>
                         <tr>
@@ -540,86 +581,89 @@
         </table>
 </section>
     <section>
-    <h3>HostBindings</h3>        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.inverse"></a>
+                    <span class="name">
+                        <span ><b>class.inverse</b></span>
+                        <a href="#class.inverse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="class.inverse"></a>
-                        <span class="name">
-                            <b>
-                            class.inverse</b>
-                            <a href="#class.inverse"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:133</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:133</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name=""></a>
-                        <span class="name">
-                            <b>
-                            </b>
-                            <a href="#"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:125</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:125</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name=""></a>
-                        <span class="name">
-                            <b>
-                            </b>
-                            <a href="#"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
+                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:130</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:130</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     <section>
@@ -629,9 +673,7 @@
                 <td class="col-md-4">
                     <a name="click"></a>
                     <span class="name">
-                        <b>
-                            click
-                        </b>
+                        <span ><b>click</b></span>
                         <a href="#click"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -672,10 +714,8 @@
                 <td class="col-md-4">
                     <a name="hasInputDescription"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            hasInputDescription
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>hasInputDescription</b></span>
                         <a href="#hasInputDescription"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -719,10 +759,8 @@
                 <td class="col-md-4">
                     <a name="hasProjectedDescription"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            hasProjectedDescription
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>hasProjectedDescription</b></span>
                         <a href="#hasProjectedDescription"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -758,6 +796,95 @@
                     </div>
                 </td>
             </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>onClick</b></span>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onClick()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;click&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/legend/legend-series/legend-series.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Emits an isSelectedChange event on series click if the series is in interactive mode</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isHorizontalClassApplied"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isHorizontalClassApplied</b></span>
+                        <a href="#isHorizontalClassApplied"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(undefined)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
         </tbody>
     </table>
 </section>
@@ -815,8 +942,8 @@
                                                         </td>
                                                         
                                                             <td>
-                                                                    <code><p>The new active status</p>
-</code>
+                                                                    <p>The new active status</p>
+
                                                             </td>
                                                     </tr>
                                             </tbody>
@@ -904,8 +1031,8 @@
                                                         </td>
                                                         
                                                             <td>
-                                                                    <code><p>The new interactive mode</p>
-</code>
+                                                                    <p>The new interactive mode</p>
+
                                                             </td>
                                                     </tr>
                                             </tbody>
@@ -943,7 +1070,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>set</b><code>seriesRenderState(renderState)</code></span>
+                        <span class="accessor"><b>set</b><code>seriesRenderState(renderState: <a href="../undefineds/RenderState.html" target="_self">RenderState</a>)</code></span>
                     </td>
                 </tr>
                             <tr>
@@ -962,6 +1089,7 @@
                                             <thead>
                                                 <tr>
                                                     <td>Name</td>
+                                                        <td>Type</td>
                                                     <td>Optional</td>
                                                 </tr>
                                             </thead>
@@ -969,6 +1097,9 @@
                                                     <tr>
                                                             <td>renderState</td>
                                                     
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
+                                                            </td>
                                                     
                                                         <td>
                                                                 No
@@ -986,6 +1117,50 @@
                                 </div>
                         </td>
                     </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isInteractiveClassApplied"></a>
+                        <span class="name"><b>isInteractiveClassApplied</b><a href="#isInteractiveClassApplied"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isInteractiveClassApplied()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:125</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isActiveClassApplied"></a>
+                        <span class="name"><b>isActiveClassApplied</b><a href="#isActiveClassApplied"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isActiveClassApplied()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/legend/legend-series/legend-series.component.ts:133</a></div>
+                                </td>
+                            </tr>
+
             </tbody>
         </table>
 </section>
@@ -1188,14 +1363,16 @@ export class LegendSeriesComponent implements AfterContentInit {
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1207,6 +1384,15 @@ export class LegendSeriesComponent implements AfterContentInit {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
@@ -1216,9 +1402,9 @@ export class LegendSeriesComponent implements AfterContentInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

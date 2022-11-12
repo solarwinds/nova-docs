@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -35,7 +36,9 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>ToastComponent</li>
+  <li
+  >
+  ToastComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,6 +60,7 @@
 <p class="comment">
     <code>src/lib/toast/toast.component.ts</code>
 </p>
+
 
     <p class="comment">
         <h3>Description</h3>
@@ -82,7 +86,7 @@ This component is created dynamically in ToastContainerService</p>
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
 
@@ -146,29 +150,38 @@ This component is created dynamically in ToastContainerService</p>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Optional</span>
-                                <a href="#body">body</a>
+                                <a href="#body" >body</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Optional</span>
-                                <a href="#closeButton">closeButton</a>
+                                <a href="#closeButton" >closeButton</a>
+                            </li>
+                            <li>
+                                <a href="#display" >display</a>
+                            </li>
+                            <li>
+                                <a href="#fadeOut" >fadeOut</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#options">options</a>
+                                <a href="#options" >options</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Optional</span>
-                                <a href="#title">title</a>
+                                <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                <a href="#toastClasses" >toastClasses</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#toastIcon">toastIcon</a>
+                                <a href="#toastIcon" >toastIcon</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#width">width</a>
+                                <a href="#width" >width</a>
                             </li>
                         </ul>
                     </td>
@@ -184,11 +197,23 @@ This component is created dynamically in ToastContainerService</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#activateToast">activateToast</a>
+                                <a href="#activateToast" >activateToast</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#remove">remove</a>
+                                <a href="#clickToast" >clickToast</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#delayedHideToast" >delayedHideToast</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#remove" >remove</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#stickAround" >stickAround</a>
                             </li>
                         </ul>
                     </td>
@@ -205,13 +230,13 @@ This component is created dynamically in ToastContainerService</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#class">class</a>
+                                <a href="#class" >class</a>
                             </li>
                             <li>
-                                <a href="#class.nui-toast--fade-out">class.nui-toast--fade-out</a>
+                                <a href="#class.nui-toast--fade-out" >class.nui-toast--fade-out</a>
                             </li>
                             <li>
-                                <a href="#style.display">style.display</a>
+                                <a href="#style.display" >style.display</a>
                             </li>
                         </ul>
                     </td>
@@ -226,13 +251,13 @@ This component is created dynamically in ToastContainerService</p>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#click">click</a>
+                                <a href="#click" >click</a>
                             </li>
                             <li>
-                                <a href="#mouseenter">mouseenter</a>
+                                <a href="#mouseenter" >mouseenter</a>
                             </li>
                             <li>
-                                <a href="#mouseleave">mouseleave</a>
+                                <a href="#mouseleave" >mouseleave</a>
                             </li>
                         </ul>
                     </td>
@@ -247,7 +272,7 @@ This component is created dynamically in ToastContainerService</p>
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#role">role</a>
+                                    <a href="#role" >role</a>
                                 </li>
                             </ul>
                         </td>
@@ -332,90 +357,105 @@ This component is created dynamically in ToastContainerService</p>
 
 
     <section>
-    <h3>HostBindings</h3>        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class"></a>
+                    <span class="name">
+                        <span ><b>class</b></span>
+                        <a href="#class"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="class"></a>
-                        <span class="name">
-                            <b>
-                            class</b>
-                            <a href="#class"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&quot;&quot;</code>
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/toast/toast.component.ts:77</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/toast/toast.component.ts:77</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>a combination of toast type and options.toastClass </p>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>a combination of toast type and options.toastClass</p>
 </div>
-                    </td>
-                </tr>
+                </td>
+            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.nui-toast--fade-out"></a>
+                    <span class="name">
+                        <span ><b>class.nui-toast--fade-out</b></span>
+                        <a href="#class.nui-toast--fade-out"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="class.nui-toast--fade-out"></a>
-                        <span class="name">
-                            <b>
-                            class.nui-toast--fade-out</b>
-                            <a href="#class.nui-toast--fade-out"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>true</code>
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/toast/toast.component.ts:78</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/toast/toast.component.ts:78</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="style.display"></a>
+                    <span class="name">
+                        <span ><b>style.display</b></span>
+                        <a href="#style.display"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="style.display"></a>
-                        <span class="name">
-                            <b>
-                            style.display</b>
-                            <a href="#style.display"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;none&quot;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&quot;none&quot;</code>
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/toast/toast.component.ts:79</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/toast/toast.component.ts:79</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
     <section>
@@ -425,9 +465,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="click"></a>
                     <span class="name">
-                        <b>
-                            click
-                        </b>
+                        <span ><b>click</b></span>
                         <a href="#click"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -462,9 +500,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="mouseenter"></a>
                     <span class="name">
-                        <b>
-                            mouseenter
-                        </b>
+                        <span ><b>mouseenter</b></span>
                         <a href="#mouseenter"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -499,9 +535,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="mouseleave"></a>
                     <span class="name">
-                        <b>
-                            mouseleave
-                        </b>
+                        <span ><b>mouseleave</b></span>
                         <a href="#mouseleave"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -523,7 +557,7 @@ This component is created dynamically in ToastContainerService</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>using extendedTimeOut value to delay toast&#39;s closure</p>
+                    <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
 </div>
 
                 </td>
@@ -542,10 +576,8 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="activateToast"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            activateToast
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>activateToast</b></span>
                         <a href="#activateToast"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -583,12 +615,106 @@ This component is created dynamically in ToastContainerService</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="clickToast"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>clickToast</b></span>
+                        <a href="#clickToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clickToast()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;click&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">src/lib/toast/toast.component.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>handles click on toast itself</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delayedHideToast"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>delayedHideToast</b></span>
+                        <a href="#delayedHideToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>delayedHideToast()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;mouseleave&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/lib/toast/toast.component.ts:200</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="remove"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            remove
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>remove</b></span>
                         <a href="#remove"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -622,188 +748,350 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stickAround"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>stickAround</b></span>
+                        <a href="#stickAround"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>stickAround()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;mouseenter&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="183"
+                            class="link-to-prism">src/lib/toast/toast.component.ts:183</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>disables progressBar and prevents toast from closing</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="body"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>body</b></span>
+                        <a href="#body"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="body"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Optional</span>
-                            body</b>
-                            <a href="#body"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>    <code>string | SafeHtml | null</code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>string | SafeHtml | null</code>
-
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/toast/toast.component.ts:61</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/toast/toast.component.ts:61</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeButton"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>closeButton</b></span>
+                        <a href="#closeButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="closeButton"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Optional</span>
-                            closeButton</b>
-                            <a href="#closeButton"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/toast/toast.component.ts:67</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/toast/toast.component.ts:67</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="display"></a>
+                    <span class="name">
+                        <span ><b>display</b></span>
+                        <a href="#display"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="options"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            options</b>
-                            <a href="#options"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;none&quot;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;style.display&#x27;)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="../interfaces/IToastConfig.html" target="_self" >IToastConfig</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/lib/toast/toast.component.ts:79</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/toast/toast.component.ts:63</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fadeOut"></a>
+                    <span class="name">
+                        <span ><b>fadeOut</b></span>
+                        <a href="#fadeOut"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="title"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                                <span class="modifier">Optional</span>
-                            title</b>
-                            <a href="#title"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;class.nui-toast--fade-out&#x27;)<br />
+                        </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/lib/toast/toast.component.ts:78</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/toast/toast.component.ts:62</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="options"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>options</b></span>
+                        <a href="#options"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="toastIcon"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            toastIcon</b>
-                            <a href="#toastIcon"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="../interfaces/IToastConfig.html" target="_self" >IToastConfig</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/toast/toast.component.ts:63</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/toast/toast.component.ts:66</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="title"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>title</b></span>
+                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="width"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            width</b>
-                            <a href="#width"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>-1</code>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/toast/toast.component.ts:62</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/toast/toast.component.ts:65</a></div>
-                            </td>
-                        </tr>
 
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastClasses"></a>
+                    <span class="name">
+                        <span ><b>toastClasses</b></span>
+                        <a href="#toastClasses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>width of progress bar </p>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;class&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/toast/toast.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>a combination of toast type and options.toastClass</p>
 </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toastIcon"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>toastIcon</b></span>
+                        <a href="#toastIcon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/toast/toast.component.ts:66</a></div>
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="width"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>width</b></span>
+                        <a href="#width"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/toast/toast.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>width of progress bar</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
     <section>
@@ -1109,7 +1397,7 @@ export class ToastComponent implements OnDestroy {
 <script>
         var COMPONENT_TEMPLATE = '<div><div    class="nui-toast__content d-flex flex-nowrap flex-row justify-content-between align-items-start"    [class.nui-toast__content--without-close-button]="!closeButton">    <nui-icon        class="nui-toast__status-icon"        iconSize="large"        icon="{{ toastIcon }}"    ></nui-icon>    <div class="nui-toast__content-message flex-grow-1">        <span            *ngIf="title"            class="nui-toast__content-title"            [attr.aria-label]="title"            >{{ title }}</span        >        <span            *ngIf="body && options.enableHtml"            class="nui-toast__content-body"            [innerHTML]="body"        ></span>        <span            *ngIf="body && !options.enableHtml"            class="nui-toast__content-body"            [attr.aria-label]="body"            >{{ body }}</span        >    </div>    <button        *ngIf="options.closeButton"        nui-button        type="button"        class="nui-toast__dismiss-button"        displayStyle="action"        size="default"        icon="close"        (click)="remove()"    ></button></div><div    *ngIf="options.progressBar"    class="nui-toast__progress"    [style.width.%]="width"></div></div>'
     var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
-    var DIRECTIVES = [{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
+    var DIRECTIVES = [{'name': 'BaseSelect', 'selector': ''},{'name': 'BaseSelectV2', 'selector': ''},{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
     var ACTUAL_COMPONENT = {'name': 'ToastComponent'};
 </script>
 <script src="../js/tree.js"></script>
@@ -1123,14 +1411,16 @@ export class ToastComponent implements OnDestroy {
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1142,6 +1432,15 @@ export class ToastComponent implements OnDestroy {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
@@ -1151,9 +1450,9 @@ export class ToastComponent implements OnDestroy {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

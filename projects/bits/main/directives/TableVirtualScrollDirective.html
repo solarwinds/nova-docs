@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -35,9 +36,12 @@
 
 
 
+
 <ol class="breadcrumb">
   <li>Directives</li>
-  <li>TableVirtualScrollDirective</li>
+  <li 
+        class="deprecated-name"
+    >TableVirtualScrollDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,6 +62,14 @@
             <code>src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts</code>
         </p>
 
+            <p class="comment">
+                <h3 class="deprecated">Deprecated</h3>
+            </p>
+            <p class="comment">
+                in v11 - Use tableVirtualScroll with 'rowCount' attribute instead of 'offset' attribute - Removal: NUI-5796
+            </p>
+
+
 
             <p class="comment">
                 <h3>Implements</h3>
@@ -66,15 +78,10 @@
                             <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
             </p>
 
-            <p class="comment">
-                <h3>Example</h3>
-            </p>
-            <div class="io-description">
-            </div>
 
         <section>
             <h3>Metadata</h3>
-            <table class="table table-sm table-hover">
+            <table class="table table-sm table-hover metadata">
                 <tbody>
                     <tr>
                         <td class="col-md-3">Providers</td>
@@ -110,7 +117,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#scrollStrategy">scrollStrategy</a>
+                                <a href="#scrollStrategy" >scrollStrategy</a>
                             </li>
                         </ul>
                     </td>
@@ -126,11 +133,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#setMaxItems">setMaxItems</a>
+                                <a href="#setMaxItems" >setMaxItems</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#updateDataLength">updateDataLength</a>
+                                <a href="#updateDataLength" >updateDataLength</a>
                             </li>
                         </ul>
                     </td>
@@ -145,10 +152,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#offset">offset</a>
+                                <a href="#offset" >offset</a>
                             </li>
                             <li>
-                                <a href="#rowHeight">rowHeight</a>
+                                <a href="#rowHeight" >rowHeight</a>
                             </li>
                         </ul>
                     </td>
@@ -190,7 +197,7 @@
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Space to be saved for the header. Will be assigned to headerOffset value inside custom strategy </p>
+                        <div class="io-description"><p>Space to be saved for the header. Will be assigned to headerOffset value inside custom strategy</p>
 </div>
                     </td>
                 </tr>
@@ -222,7 +229,7 @@
                         </tr>
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>Height of table row. </p>
+                        <div class="io-description"><p>Height of table row.</p>
 </div>
                     </td>
                 </tr>
@@ -243,10 +250,8 @@
                 <td class="col-md-4">
                     <a name="setMaxItems"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            setMaxItems
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>setMaxItems</b></span>
                         <a href="#setMaxItems"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -272,6 +277,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -315,10 +321,8 @@
                 <td class="col-md-4">
                     <a name="updateDataLength"></a>
                     <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            updateDataLength
-                        </b>
+                        <span class="modifier">Public</span>
+                        <span ><b>updateDataLength</b></span>
                         <a href="#updateDataLength"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
@@ -346,6 +350,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -386,39 +391,38 @@
 </section>
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scrollStrategy"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>scrollStrategy</b></span>
+                        <a href="#scrollStrategy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="scrollStrategy"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            scrollStrategy</b>
-                            <a href="#scrollStrategy"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Default value : </i><code>new TableVirtualScrollStrategy(
+        +this.rowHeight,
+        +this.offset
+    )</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new TableVirtualScrollStrategy(
-        +this.rowHeight,
-        +this.offset
-    )</code>
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:103</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:103</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
 
@@ -541,14 +545,15 @@ export class TableVirtualScrollDirective implements OnChanges {
 
 
 
-                   
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -560,6 +565,15 @@ export class TableVirtualScrollDirective implements OnChanges {
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
@@ -569,9 +583,9 @@ export class TableVirtualScrollDirective implements OnChanges {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+
        <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
