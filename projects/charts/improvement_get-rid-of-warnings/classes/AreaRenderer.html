@@ -1,0 +1,1971 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >AreaRenderer</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/renderers/area/area-renderer.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Renderer that is able to draw line chart</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../classes/XYRenderer.html" target="_self" >XYRenderer</a></code>
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#config" >config</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#DEFAULT_CONFIG" >DEFAULT_CONFIG</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getContainerStateStyles" >getContainerStateStyles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#interaction" >interaction</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#draw" >draw</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#drawArea" >drawArea</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filterDataByDomain" >filterDataByDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDomain" >getDomain</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getRequiredLayers" >getRequiredLayers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#highlightDataPoint" >highlightDataPoint</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#safetyCheck" >safetyCheck</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDataPointIndex" >getDataPointIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDataPointPosition" >getDataPointPosition</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDomainOfFilteredData" >getDomainOfFilteredData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setDataPointState" >setDataPointState</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setSeriesState" >setSeriesState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(config: <a href="../interfaces/IAreaRendererConfig.html" target="_self">IAreaRendererConfig</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/renderers/area/area-renderer.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of AreaRenderer.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>config</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/IAreaRendererConfig.html" target="_self" >IAreaRendererConfig</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Renderer configuration object</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IAreaRendererConfig.html" target="_self" >IAreaRendererConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:59</a></code>
+</div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">Renderer configuration object</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_CONFIG"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>DEFAULT_CONFIG</b></span>
+                        <a href="#DEFAULT_CONFIG"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRendererConfig.html" target="_self" >IRendererConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+        stateStyles: {
+            [RenderState.default]: {
+                opacity: 1,
+            },
+            [RenderState.hidden]: {
+                opacity: 0,
+            },
+            [RenderState.deemphasized]: {
+                opacity: 0.1,
+            },
+            [RenderState.emphasized]: {
+                opacity: 1,
+            },
+        },
+    }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:54</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContainerStateStyles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getContainerStateStyles</b></span>
+                        <a href="#getContainerStateStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:140</a></code>
+</div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the style attributes for the specified state that we need to apply to a series container</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>state</td>
+                                                    <td>
+                                                            <code><p>the state for which to retrieve container styles</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="interaction"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>interaction</b></span>
+                        <a href="#interaction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Record&lt;string | any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:76</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="draw"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>draw</b></span>
+                        <a href="#draw"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>draw(renderSeries: <a href="../classes/AreaAccessors.html" target="_self">IRenderSeries&lt;IAreaAccessors&gt;</a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html" target="_self">Subject&lt;IRendererEventPayload&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:66</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#draw">Renderer</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderSeries</td>
+                                    <td>
+                                                <code><a href="../classes/AreaAccessors.html" target="_self" >IRenderSeries&lt;IAreaAccessors&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rendererSubject</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererEventPayload.html" target="_self" >Subject&lt;IRendererEventPayload&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drawArea"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>drawArea</b></span>
+                        <a href="#drawArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>drawArea(renderSeries: <a href="../classes/AreaAccessors.html" target="_self">IRenderSeries&lt;IAreaAccessors&gt;</a>, path: <a href="../undefineds/D3Selection.html" target="_self">D3Selection&lt;SVGPathElement&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/renderers/area/area-renderer.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Renders the line in prepared <path> element</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderSeries</td>
+                                    <td>
+                                                <code><a href="../classes/AreaAccessors.html" target="_self" >IRenderSeries&lt;IAreaAccessors&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>path</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGPathElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>D3 Selection with <path> element pre-created and pre-styled</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterDataByDomain"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>filterDataByDomain</b></span>
+                        <a href="#filterDataByDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filterDataByDomain(data: any[], dataSeries: IDataSeries<IAreaAccessors>, scaleName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, domain: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:258</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Filters given dataset by domain of provided scale</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scaleName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>domain</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDomain"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getDomain</b></span>
+                        <a href="#getDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDomain(data: any[], dataSeries: IDataSeries<IAreaAccessors>, scaleName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, scale: <a href="../interfaces/IScale.html" target="_self">IScale&lt;any&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:208</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                            <code>IDataSeries&lt;IAreaAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scaleName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scale</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >IScale&lt;any&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRequiredLayers"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getRequiredLayers</b></span>
+                        <a href="#getRequiredLayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRequiredLayers()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:243</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getRequiredLayers">Renderer</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ILasagnaLayer[]</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="highlightDataPoint"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>highlightDataPoint</b></span>
+                        <a href="#highlightDataPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>highlightDataPoint(renderSeries: <a href="../classes/AreaAccessors.html" target="_self">IRenderSeries&lt;IAreaAccessors&gt;</a>, dataPointIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html" target="_self">Subject&lt;IRendererEventPayload&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:278</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderSeries</td>
+                                    <td>
+                                                <code><a href="../classes/AreaAccessors.html" target="_self" >IRenderSeries&lt;IAreaAccessors&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>dataPointIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>rendererSubject</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererEventPayload.html" target="_self" >Subject&lt;IRendererEventPayload&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="safetyCheck"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>safetyCheck</b></span>
+                        <a href="#safetyCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>safetyCheck(value: number | undefined)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="300"
+                            class="link-to-prism">src/renderers/area/area-renderer.ts:300</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                            <code>number | undefined</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDataPointIndex"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getDataPointIndex</b></span>
+                        <a href="#getDataPointIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDataPointIndex(series: <a href="../interfaces/IDataSeries.html" target="_self">IDataSeries&lt;TA&gt;</a>, values: literal type, scales: <a href="../classes/Scale.html" target="_self">Scales</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:79</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointIndex">Renderer</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>series</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>values</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDataPointPosition"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getDataPointPosition</b></span>
+                        <a href="#getDataPointPosition"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDataPointPosition(dataSeries: <a href="../interfaces/IDataSeries.html" target="_self">IDataSeries&lt;TA&gt;</a>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, scales: <a href="../classes/Scale.html" target="_self">Scales</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:45</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>See <a href="../classes/Renderer.html#getDataPointPosition">Renderer</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../classes/Scale.html" target="_self" >Scales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IPosition.html" target="_self" >IPosition | undefined</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDomainOfFilteredData"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getDomainOfFilteredData</b></span>
+                        <a href="#getDomainOfFilteredData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDomainOfFilteredData(dataSeries: <a href="../interfaces/IDataSeries.html" target="_self">IDataSeries&lt;TA&gt;</a>, filterScales: <a href="../interfaces/IScale.html" target="_self">Record&lt;string | IScale&lt;any&gt;&gt;</a>, scaleKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, scale: <a href="../interfaces/IScale.html" target="_self">IScale&lt;any&gt;</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:177</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Calculate domain for data filtered by given filterScales</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDataSeries.html" target="_self" >IDataSeries&lt;TA&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>filterScales</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >Record&lt;string | IScale&lt;any&gt;&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scaleKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>scale</td>
+                                    <td>
+                                                <code><a href="../interfaces/IScale.html" target="_self" >IScale&lt;any&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>array of datapoints from <code>dataSeries</code> filtered by domains of given <code>filterScale</code>s</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDataPointState"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setDataPointState</b></span>
+                        <a href="#setDataPointState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setDataPointState(target: <a href="../undefineds/D3Selection.html" target="_self">D3Selection</a>, state: <a href="../undefineds/RenderState.html" target="_self">RenderState</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:166</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set the RenderState of the target data point</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the target data point</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new state for the target data point</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSeriesState"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setSeriesState</b></span>
+                        <a href="#setSeriesState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setSeriesState(renderContainers: <a href="../interfaces/IRenderContainers.html" target="_self">IRenderContainers</a>, state: <a href="../undefineds/RenderState.html" target="_self">RenderState</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/Renderer.html" target="_self" >Renderer</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:155</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set the RenderState of the target data series</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>renderContainers</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRenderContainers.html" target="_self" >IRenderContainers</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>the render containers of the series</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#RenderState" target="_self" >RenderState</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The new state for the target series</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { max, min } from &quot;d3-array&quot;;
+import { area, curveLinear } from &quot;d3-shape&quot;;
+import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
+import { Subject } from &quot;rxjs&quot;;
+
+import { STANDARD_RENDER_LAYERS } from &quot;../../constants&quot;;
+import {
+    EMPTY_CONTINUOUS_DOMAIN,
+    IScale,
+    IXYScales,
+} from &quot;../../core/common/scales/types&quot;;
+import {
+    D3Selection,
+    IDataSeries,
+    ILasagnaLayer,
+    IRendererEventPayload,
+} from &quot;../../core/common/types&quot;;
+import { DEFAULT_MARKER_INTERACTION_CONFIG } from &quot;../constants&quot;;
+import { MarkerUtils } from &quot;../marker-utils&quot;;
+import { IAreaRendererConfig, IRenderSeries, RenderLayerName } from &quot;../types&quot;;
+import { XYRenderer } from &quot;../xy-renderer&quot;;
+import { IAreaAccessors } from &quot;./area-accessors&quot;;
+
+/**
+ * Renderer that is able to draw line chart
+ */
+export class AreaRenderer extends XYRenderer&lt;IAreaAccessors&gt; {
+    private DEFAULT_CONFIG: IAreaRendererConfig &#x3D; {
+        curveType: curveLinear,
+        interactive: true,
+        areaClass: &quot;nui-chart-area&quot;,
+        markerInteraction: DEFAULT_MARKER_INTERACTION_CONFIG,
+    };
+
+    /**
+     * Creates an instance of AreaRenderer.
+     * @param {IAreaRendererConfig} [config&#x3D;{}] Renderer configuration object
+     */
+    constructor(public config: IAreaRendererConfig &#x3D; {}) {
+        super(config);
+        // setting default values to the properties that were not set by user
+        this.config &#x3D; defaultsDeep(this.config, this.DEFAULT_CONFIG);
+    }
+
+    /** See {@link Renderer#draw} */
+    public draw(
+        renderSeries: IRenderSeries&lt;IAreaAccessors&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
+        const target &#x3D; renderSeries.containers[RenderLayerName.data];
+
+        const accessors &#x3D; renderSeries.dataSeries.accessors;
+        let path: D3Selection&lt;SVGPathElement&gt; &#x3D; target.select(
+            &#x60;path.${this.config.areaClass}&#x60;
+        );
+
+        if (path.empty()) {
+            if (!this.config.areaClass) {
+                throw new Error(&quot;areaClass is not defined&quot;);
+            }
+            path &#x3D; target
+                .append(&quot;path&quot;)
+                .classed(this.config.areaClass, true)
+                .attrs({
+                    fill: accessors.series.color?.(
+                        renderSeries.dataSeries.id,
+                        renderSeries.dataSeries
+                    ),
+                })
+                .style(&quot;stroke-width&quot;, this.config.strokeWidth ?? 1);
+        }
+        this.drawArea(renderSeries, path);
+    }
+
+    /**
+     * Renders the line in prepared &lt;path&gt; element
+     *
+     * @param {IRenderSeries&lt;IAreaAccessors&gt;} renderSeries
+     * @param {D3Selection} path D3 Selection with &lt;path&gt; element pre-created and pre-styled
+     */
+    public drawArea(
+        renderSeries: IRenderSeries&lt;IAreaAccessors&gt;,
+        path: D3Selection&lt;SVGPathElement&gt;
+    ): void {
+        const dataSeries &#x3D; renderSeries.dataSeries;
+        const accessors &#x3D; dataSeries.accessors;
+
+        let warned &#x3D; false;
+        const validatedData &#x3D; dataSeries.data.filter((d, i) &#x3D;&gt; {
+            const valid &#x3D;
+                typeof accessors.data.absoluteX0?.(
+                    d,
+                    i,
+                    dataSeries.data,
+                    dataSeries
+                ) !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+                typeof accessors.data.absoluteX1?.(
+                    d,
+                    i,
+                    dataSeries.data,
+                    dataSeries
+                ) !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+                typeof accessors.data.absoluteY0?.(
+                    d,
+                    i,
+                    dataSeries.data,
+                    dataSeries
+                ) !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+                typeof accessors.data.absoluteY1?.(
+                    d,
+                    i,
+                    dataSeries.data,
+                    dataSeries
+                ) !&#x3D;&#x3D; &quot;undefined&quot;;
+            if (!valid &amp;&amp; !warned) {
+                console.warn(
+                    &quot;Data point&quot;,
+                    d,
+                    &quot;was skipped as accessors didn&#x27;t manage to extract any data.&quot;
+                );
+                console.warn(&quot; -&gt; accessors.data.x0:&quot;, accessors.data.x0);
+                console.warn(&quot; -&gt; accessors.data.y0:&quot;, accessors.data.y0);
+                console.warn(&quot; -&gt; accessors.data.x1:&quot;, accessors.data.x1);
+                console.warn(&quot; -&gt; accessors.data.y1:&quot;, accessors.data.y1);
+                warned &#x3D; true;
+            }
+            return valid;
+        });
+
+        if (!this.config.curveType) {
+            throw new Error(&quot;curveType is not defined&quot;);
+        }
+
+        const areaFunc &#x3D; area()
+            .x0((d: any, i: number) &#x3D;&gt;
+                this.safetyCheck(
+                    renderSeries.scales.x.convert(
+                        accessors.data.absoluteX0?.(
+                            d,
+                            i,
+                            dataSeries.data,
+                            dataSeries
+                        )
+                    )
+                )
+            )
+            .x1((d: any, i: number) &#x3D;&gt;
+                this.safetyCheck(
+                    renderSeries.scales.x.convert(
+                        accessors.data.absoluteX1?.(
+                            d,
+                            i,
+                            dataSeries.data,
+                            dataSeries
+                        )
+                    )
+                )
+            )
+            .y0((d: any, i: number) &#x3D;&gt;
+                this.safetyCheck(
+                    renderSeries.scales.y.convert(
+                        accessors.data.absoluteY0?.(
+                            d,
+                            i,
+                            dataSeries.data,
+                            dataSeries
+                        )
+                    )
+                )
+            )
+            .y1((d: any, i: number) &#x3D;&gt;
+                this.safetyCheck(
+                    renderSeries.scales.y.convert(
+                        accessors.data.absoluteY1?.(
+                            d,
+                            i,
+                            dataSeries.data,
+                            dataSeries
+                        )
+                    )
+                )
+            )
+            .curve(this.config.curveType);
+
+        path.attr(&quot;d&quot;, areaFunc(validatedData) ?? &quot;&quot;);
+    }
+
+    public getDomain(
+        data: any[],
+        dataSeries: IDataSeries&lt;IAreaAccessors&gt;,
+        scaleName: string,
+        scale: IScale&lt;any&gt;
+    ): any[] {
+        if (!data || data.length &#x3D;&#x3D;&#x3D; 0) {
+            return EMPTY_CONTINUOUS_DOMAIN;
+        }
+        const dataAccessors &#x3D; dataSeries.accessors.data;
+
+        if (scaleName !&#x3D;&#x3D; &quot;x&quot; &amp;&amp; scaleName !&#x3D;&#x3D; &quot;y&quot;) {
+            return [undefined, undefined];
+        }
+
+        const accessor0 &#x3D; dataAccessors[&#x60;absolute${scaleName.toUpperCase()}0&#x60;];
+        const accessor1 &#x3D; dataAccessors[&#x60;absolute${scaleName.toUpperCase()}1&#x60;];
+
+        return [
+            min(data, (datum, index, arr) &#x3D;&gt;
+                min([
+                    accessor0?.(datum, index, arr as any[], dataSeries),
+                    accessor1?.(datum, index, arr as any[], dataSeries),
+                ])
+            ),
+            max(data, (datum, index, arr) &#x3D;&gt;
+                max([
+                    accessor0?.(datum, index, arr as any[], dataSeries),
+                    accessor1?.(datum, index, arr as any[], dataSeries),
+                ])
+            ),
+        ];
+    }
+
+    /** See {@link Renderer#getRequiredLayers} */
+    public getRequiredLayers(): ILasagnaLayer[] {
+        return [
+            STANDARD_RENDER_LAYERS[RenderLayerName.data],
+            STANDARD_RENDER_LAYERS[RenderLayerName.foreground],
+        ];
+    }
+
+    /**
+     * Filters given dataset by domain of provided scale
+     *
+     * @param data
+     * @param dataSeries
+     * @param scaleName
+     * @param domain
+     */
+    public filterDataByDomain(
+        data: any[],
+        dataSeries: IDataSeries&lt;IAreaAccessors&gt;,
+        scaleName: string,
+        domain: any[]
+    ): any[] {
+        const accessor0 &#x3D; dataSeries.accessors.data[scaleName + &quot;0&quot;];
+        const accessor1 &#x3D; dataSeries.accessors.data[scaleName + &quot;1&quot;];
+
+        return data.filter((d, i) &#x3D;&gt; {
+            const value0 &#x3D; accessor0?.(d, i, data, dataSeries);
+            const value1 &#x3D; accessor1?.(d, i, data, dataSeries);
+
+            return (
+                Math.max(value0, value1) &gt;&#x3D; domain[0] &amp;&amp;
+                Math.min(value0, value1) &lt;&#x3D; domain[1]
+            );
+        });
+    }
+
+    public highlightDataPoint(
+        renderSeries: IRenderSeries&lt;IAreaAccessors&gt;,
+        dataPointIndex: number,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;
+    ): void {
+        const dataSeries &#x3D; renderSeries.dataSeries;
+        const accessors &#x3D; dataSeries.accessors;
+        if (!accessors.series.marker || !this.config.interactive) {
+            return;
+        }
+
+        const container &#x3D; renderSeries.containers[RenderLayerName.foreground];
+        MarkerUtils.manageMarker(
+            renderSeries.dataSeries,
+            renderSeries.scales as IXYScales,
+            dataPointIndex,
+            container,
+            rendererSubject,
+            this.config.markerInteraction
+        );
+    }
+
+    public safetyCheck(value: number | undefined): number {
+        return typeof value &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || isNaN(value) ? 0 : value;
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'AreaRenderer.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
