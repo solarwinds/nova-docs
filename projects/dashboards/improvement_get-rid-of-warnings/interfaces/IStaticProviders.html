@@ -134,19 +134,19 @@ export interface IWidgetResizePayload {
     width: number;
 }
 
-export const REFRESH &#x3D; new EventDefinition(&quot;REFRESH&quot;);
-export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;);
-export const WIDGET_REMOVE &#x3D; new EventDefinition(&quot;WIDGET_REMOVE&quot;);
-export const WIDGET_EDIT &#x3D; new EventDefinition(&quot;WIDGET_EDIT&quot;);
-export const WIDGET_CREATE &#x3D; new EventDefinition(&quot;WIDGET_CREATE&quot;);
-export const WIDGET_READY &#x3D; new EventDefinition(&quot;WIDGET_READY&quot;);
+export const REFRESH &#x3D; new EventDefinition&lt;void&gt;(&quot;REFRESH&quot;);
+export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition&lt;void&gt;(&quot;SCROLL_NEXT_PAGE&quot;);
+export const WIDGET_REMOVE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_REMOVE&quot;);
+export const WIDGET_EDIT &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_EDIT&quot;);
+export const WIDGET_CREATE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_CREATE&quot;);
+export const WIDGET_READY &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_READY&quot;);
 export const WIDGET_RESIZE &#x3D; new EventDefinition&lt;IWidgetResizePayload&gt;(
     &quot;WIDGET_RESIZE&quot;
 );
 export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition&lt;GridsterItem&gt;(
     &quot;WIDGET_POSITION_CHANGE&quot;
 );
-export const WIDGET_SEARCH &#x3D; new EventDefinition(
+export const WIDGET_SEARCH &#x3D; new EventDefinition&lt;string&gt;(
     &quot;WIDGET_SEARCH&quot;,
     () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; })
 );

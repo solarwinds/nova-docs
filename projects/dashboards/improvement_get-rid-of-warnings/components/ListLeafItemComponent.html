@@ -675,7 +675,7 @@ export class ListLeafItemComponent implements IHasChangeDetector, OnInit {
             .getStream(WIDGET_SEARCH)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event) &#x3D;&gt; {
-                this.searchTerm &#x3D; event.payload;
+                this.searchTerm &#x3D; event.payload ?? &quot;&quot;;
                 this.changeDetector.markForCheck();
             });
     }
