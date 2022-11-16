@@ -368,7 +368,7 @@ export class CardGroupComponent implements OnInit {
     @Input() direction: ILayoutElementDirection &#x3D; &quot;row&quot;;
     @HostBinding(&quot;class.card-group-direction-column&quot;) directionColumn &#x3D; false;
     @HostBinding(&quot;class.card-group-direction-row&quot;) directionRow &#x3D; true;
-    ngOnInit() {
+    public ngOnInit(): void {
         this.directionColumn &#x3D;
             (this.directionColumn &amp;&amp; !this.directionRow) ||
             this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;

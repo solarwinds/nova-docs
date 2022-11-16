@@ -139,7 +139,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:54</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -444,10 +444,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Optional } from &quot;@angular/core&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { merge, Observable, zip } from &quot;rxjs&quot;;
 import {
     debounceTime,
+    map,
     startWith,
+    // eslint-disable-next-line import/no-deprecated
     switchMap,
     takeUntil,
     tap,
@@ -487,7 +490,7 @@ export class TableDataSourceAdapter&lt;
         super(eventBus, dataSource, pizzagnaService);
     }
 
-    protected setupRefreshListener() {
+    protected setupRefreshListener(): void {
         // Note: We should wait until TableWidget is ready to be able to proceed with reset event
         // We can also listen after SCROLL_NEXT_PAGE instead of WIDGET_READY because right now
         // they are executed simultaneously but we don&#x27;t know how things will change in the future
@@ -496,12 +499,16 @@ export class TableDataSourceAdapter&lt;
             this.eventBus.getStream(REFRESH)
         ).pipe(
             // Note: Using startWith() to re-trigger the REFRESH stream that was triggered at least on time before WIDGET_READY
+            // eslint-disable-next-line import/no-deprecated
             switchMap(() &#x3D;&gt;
+                // eslint-disable-next-line import/no-deprecated
                 this.eventBus.getStream(REFRESH).pipe(startWith(undefined))
             ),
-            tap(() &#x3D;&gt; this.virtualViewport.reset({ emitFirstPage: false }))
+            tap(() &#x3D;&gt; this.virtualViewport.reset({ emitFirstPage: false })),
+            map(() &#x3D;&gt; {})
         );
 
+        // eslint-disable-next-line import/no-deprecated
         merge(refresh$, this.eventBus.getStream(SCROLL_NEXT_PAGE))
             .pipe(
                 // Note: While SCROLL_NEXT_PAGE is triggered on TableWidget initialization aka WIDGET_READY
@@ -514,13 +521,13 @@ export class TableDataSourceAdapter&lt;
             .subscribe();
     }
 
-    protected updateAdapterProperties(properties: IProperties) {
+    protected updateAdapterProperties(properties: IProperties): void {
         this.dataPath &#x3D; properties.dataPath;
         this.dataFieldsPath &#x3D; properties.dataFieldsPath;
         this.totalItemsPath &#x3D; properties.totalItemsPath;
     }
 
-    protected updateOutput(output: IFilteringOutputs | undefined) {
+    protected updateOutput(output: IFilteringOutputs | undefined): void {
         const total &#x3D; output?.paginator?.total;
         const items &#x3D; output?.repeat?.itemsSource;
         const dataFields &#x3D; output?.dataFields;

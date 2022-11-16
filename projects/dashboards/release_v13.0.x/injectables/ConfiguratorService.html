@@ -124,7 +124,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -261,8 +261,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:98</a></div>
                 </td>
             </tr>
 
@@ -300,8 +300,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="65"
-                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:65</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/lib/configurator/services/configurator.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -374,7 +374,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:114</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:115</a></div>
                         </td>
                     </tr>
 
@@ -402,6 +402,7 @@ import { NavigationEnd, Router } from &quot;@angular/router&quot;;
 import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import isFunction from &quot;lodash/isFunction&quot;;
 import { EMPTY, Observable, of, Subject } from &quot;rxjs&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { catchError, filter, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import { LoggerService, uuid } from &quot;@nova-ui/bits&quot;;
@@ -482,7 +483,7 @@ export class ConfiguratorService {
 
     public handleSubmit &#x3D;
         (confSource: IConfiguratorSource, trySubmit: WidgetUpdateOperation) &#x3D;&gt;
-        (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
+        (source: Observable&lt;IWidget&gt;): Observable&lt;void&gt; &#x3D;&gt;
             source.pipe(
                 this.trySubmit(trySubmit, confSource),
                 this.updateDashboard(confSource.dashboardComponent)
@@ -492,6 +493,7 @@ export class ConfiguratorService {
         (trySubmit: WidgetUpdateOperation, confSource: IConfigurator) &#x3D;&gt;
         (source: Observable&lt;IWidget&gt;) &#x3D;&gt;
             source.pipe(
+                // eslint-disable-next-line import/no-deprecated
                 switchMap((widget: IWidget) &#x3D;&gt; {
                     if (widget &amp;&amp; isFunction(trySubmit)) {
                         return trySubmit(widget, confSource).pipe(

@@ -1115,7 +1115,7 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
         this.dismissEvent.emit(reason);
     }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.elWithFocus &#x3D; this.document.activeElement;
         this.renderer.addClass(this.document.body, &quot;dialog-open&quot;);
         this.scrollableElement &#x3D; new CdkScrollable(
@@ -1129,7 +1129,7 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
         });
     }
 
-    ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         if (!this.elRef.nativeElement.contains(document.activeElement)) {
             this.elRef.nativeElement[&quot;focus&quot;].apply(
                 this.elRef.nativeElement,
@@ -1138,7 +1138,7 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         const body &#x3D; this.document.body;
         const elWithFocus &#x3D; this.elWithFocus;
 

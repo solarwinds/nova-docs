@@ -962,7 +962,7 @@ export class DonutContentConfigurationComponent
         | undefined;
     public aggregatorConfiguratorProps: IAggregatorConfiguratorProperties;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         private formBuilder: FormBuilder,
@@ -994,7 +994,7 @@ export class DonutContentConfigurationComponent
         this.formReady.emit(this.form);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.formatter) {
             this.form.get(&quot;formatter&quot;)?.patchValue({
                 ...changes.formatter.currentValue,
@@ -1013,18 +1013,18 @@ export class DonutContentConfigurationComponent
         }
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.destroy$.complete();
     }
 
-    public onFormReady(formControlName: string, form: FormGroup) {
+    public onFormReady(formControlName: string, form: FormGroup): void {
         (&lt;FormGroup&gt;this.form.get(formControlName)).setControl(
             &quot;properties&quot;,
             form
         );
     }
 
-    public get subtitleText() {
+    public get subtitleText(): string {
         return &#x60;${this.currentAggregatorDefinition?.label}, ${this.currentFormatterDefinition?.label}&#x60;;
     }
 

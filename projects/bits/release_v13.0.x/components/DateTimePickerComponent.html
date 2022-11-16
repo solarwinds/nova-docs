@@ -1547,12 +1547,12 @@ export class DateTimePickerComponent
 
     private _ariaLabel: string &#x3D; &quot;&quot;;
 
-    onTouched &#x3D; () &#x3D;&gt; {};
-    onChange &#x3D; (value: any) &#x3D;&gt; {};
+    onTouched &#x3D; (): void &#x3D;&gt; {};
+    onChange &#x3D; (value: any): void &#x3D;&gt; {};
 
     constructor(private renderer: Renderer2, private cd: ChangeDetectorRef) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         if (!this.initEmpty &amp;&amp; !this.model) {
             this.model &#x3D; moment();
             this.onChange(this.model);
@@ -1560,7 +1560,7 @@ export class DateTimePickerComponent
         }
     }
 
-    ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         if (this.displayMode &#x3D;&#x3D;&#x3D; &quot;inline&quot;) {
             this.renderer.addClass(
                 this.codeElement.nativeElement,
@@ -1573,16 +1573,16 @@ export class DateTimePickerComponent
         }
     }
 
-    writeValue(value: Moment) {
+    writeValue(value: Moment): void {
         this.model &#x3D; value;
         this.updateChildrenModels();
     }
 
-    registerOnTouched(fn: () &#x3D;&gt; void) {
+    registerOnTouched(fn: () &#x3D;&gt; void): void {
         this.onTouched &#x3D; fn;
     }
 
-    registerOnChange(fn: () &#x3D;&gt; void) {
+    registerOnChange(fn: () &#x3D;&gt; void): void {
         this.onChange &#x3D; fn;
     }
 
@@ -1591,14 +1591,14 @@ export class DateTimePickerComponent
         this.cd.markForCheck(); // This is needed to update &quot;disabled&quot; state for child date and time pickers
     }
 
-    onTimeChanged(event: Moment) {
+    onTimeChanged(event: Moment): void {
         this.updateTime(event);
         this.modelChanged.emit(moment(this.model));
         this.onChange(this.model);
         this.onTouched();
     }
 
-    onDateChanged(event: Moment) {
+    onDateChanged(event: Moment): void {
         const isDateTheSame &#x3D;
             moment.isMoment(this.date) &amp;&amp; this.date.isSame(event);
 

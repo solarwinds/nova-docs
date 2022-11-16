@@ -1290,6 +1290,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IWidgetMetadata.html" data-type="entity-link" >IWidgetMetadata</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IWidgetResizePayload.html" data-type="entity-link" >IWidgetResizePayload</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/IWidgets.html" data-type="entity-link" >IWidgets</a>
                             </li>
                             <li class="link">

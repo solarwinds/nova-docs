@@ -139,7 +139,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/providers/drilldown-data-source-adapter.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/components/providers/drilldown-data-source-adapter.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -241,7 +241,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:51</a></code>
+                                <div class="io-line">Defined in         <code><a href="../injectables/DataSourceAdapter.html#source" target="_self" >DataSourceAdapter:54</a></code>
 </div>
                         </td>
                     </tr>
@@ -450,7 +450,10 @@ import {
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
 import { DataSourceAdapter } from &quot;./data-source-adapter&quot;;
-import { IDrilldownComponentsConfiguration } from &quot;./types&quot;;
+import {
+    IDrilldownComponentConfiguration,
+    IDrilldownComponentsConfiguration,
+} from &quot;./types&quot;;
 
 export class DrilldownDataSourceAdapter extends DataSourceAdapter {
     protected dataPath: string;
@@ -479,7 +482,7 @@ export class DrilldownDataSourceAdapter extends DataSourceAdapter {
         this.registerFilters();
     }
 
-    protected updateAdapterProperties(properties: IProperties) {
+    protected updateAdapterProperties(properties: IProperties): void {
         this.dataPath &#x3D; properties.dataPath;
         this.drillstate &#x3D; properties.drillstate || this.drillstate;
         this.groupBy &#x3D; properties.groupBy;
@@ -487,7 +490,7 @@ export class DrilldownDataSourceAdapter extends DataSourceAdapter {
         this.navigationBarId &#x3D; properties.navigationBarId;
     }
 
-    protected updateOutput(output: IFilteringOutputs | undefined) {
+    protected updateOutput(output: IFilteringOutputs | undefined): void {
         const widgetInput &#x3D; this.getWidgetInput(
             output,
             this.drillstate.length !&#x3D;&#x3D; this.groupBy.length
@@ -515,7 +518,12 @@ export class DrilldownDataSourceAdapter extends DataSourceAdapter {
         }
     }
 
-    protected getWidgetInput(data: any, group: boolean) {
+    protected getWidgetInput(
+        data: any,
+        group: boolean
+    ): Record&lt;string, any&gt; &amp; {
+        configuration: IDrilldownComponentConfiguration;
+    } {
         const configuration &#x3D; this.componentsConfig[group ? &quot;group&quot; : &quot;leaf&quot;];
 
         return {
@@ -524,23 +532,23 @@ export class DrilldownDataSourceAdapter extends DataSourceAdapter {
         };
     }
 
-    protected onDrilldown(event: IEvent) {
+    protected onDrilldown(event: IEvent): void {
         const { payload } &#x3D; event;
 
         if (payload.reset) {
             this.drillstate &#x3D; [];
-            this.eventBus.next(REFRESH);
+            this.eventBus.next(REFRESH, {});
             return;
         }
 
         if (payload.back) {
             this.drillstate.length &#x3D; this.drillstate.length - 1;
-            this.eventBus.next(REFRESH);
+            this.eventBus.next(REFRESH, {});
             return;
         }
 
         this.drillstate.push(payload.id);
-        this.eventBus.next(REFRESH);
+        this.eventBus.next(REFRESH, {});
     }
 
     private registerFilters() {

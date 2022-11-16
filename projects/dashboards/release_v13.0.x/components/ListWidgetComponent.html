@@ -156,6 +156,7 @@
                                 <a href="#getPropsFor" >getPropsFor</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onListItemEvent" >onListItemEvent</a>
                             </li>
                         </ul>
@@ -426,6 +427,7 @@
                 <td class="col-md-4">
                     <a name="onListItemEvent"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onListItemEvent</b></span>
                         <a href="#onListItemEvent"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -433,7 +435,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onListItemEvent(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onListItemEvent(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                 </td>
             </tr>
 
@@ -601,7 +604,7 @@ export class ListWidgetComponent
     @Input() @HostBinding(&quot;class&quot;) public elementClass: string;
 
     private itemFormatterProps &#x3D; new Map();
-    private destroy$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private widgetWidth: number;
 
     constructor(
@@ -611,11 +614,11 @@ export class ListWidgetComponent
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;
     ) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.initResizeObserver();
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.data?.currentValue) {
             changes.data.currentValue.forEach((v: any) &#x3D;&gt;
                 this.itemFormatterProps.set(v, this.calcItemProps(v))
@@ -625,17 +628,17 @@ export class ListWidgetComponent
 
     // TODO: think of how to get rid of this logic on listWidget
     // since it&#x27;s very specific for drilldown and appstack
-    onListItemEvent(item: any) {
+    public onListItemEvent(item: any): void {
         this.eventBus.getStream(DRILLDOWN).next({ payload: item });
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
         this.itemFormatterProps.clear();
     }
 
-    public getPropsFor(item: any) {
+    public getPropsFor(item: any): any {
         return {
             ...this.itemFormatterProps.get(item),
             widgetWidth: this.widgetWidth,

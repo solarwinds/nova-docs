@@ -193,7 +193,7 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>T</code>
 
                     </div>
                 </td>
@@ -541,6 +541,10 @@
                                 <div class="io-description"><p>Returns the current history step (starts from 0 when there are no items, 1 for one item)</p>
 </div>
 
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                </div>
                         </td>
                     </tr>
 
@@ -570,6 +574,10 @@
                                 <div class="io-description"><p>Number of total saved steps in the history</p>
 </div>
 
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                </div>
                         </td>
                     </tr>
 
@@ -628,7 +636,7 @@ export class HistoryStorage&lt;T&gt; {
     /**
      * Clears the storage
      */
-    public reset() {
+    public reset(): void {
         this.index &#x3D; -1;
         this.stack &#x3D; [];
     }
@@ -647,21 +655,21 @@ export class HistoryStorage&lt;T&gt; {
     /**
      * Returns the currently valid stored element
      */
-    public current() {
+    public current(): T {
         return this.stack[this.index];
     }
 
     /**
      * Returns the current history step (starts from 0 when there are no items, 1 for one item)
      */
-    public get step() {
+    public get step(): number {
         return this.index + 1;
     }
 
     /**
      * Number of total saved steps in the history
      */
-    public get length() {
+    public get length(): number {
         return this.stack.length;
     }
 }

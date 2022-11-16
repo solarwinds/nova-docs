@@ -1023,21 +1023,21 @@ export class TimeFramePickerComponent implements OnChanges, OnInit {
         public changeDetector: ChangeDetectorRef
     ) {}
 
-    ngOnChanges(changes: any): void {
+    public ngOnChanges(changes: any): void {
         if (changes[&quot;startModel&quot;]) {
             this.model &#x3D; TimeframeService.cloneTimeFrame(this.startModel);
             this.validateCombination();
         }
     }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         if (this.startModel) {
             this.model &#x3D; TimeframeService.cloneTimeFrame(this.startModel);
             this.validateCombination();
         }
     }
 
-    public selectPreset(key: string, value: ITimeFramePreset) {
+    public selectPreset(key: string, value: ITimeFramePreset): void {
         const timeframe &#x3D; this.timeFrameService.getTimeframe(
             value.startDatetimePattern,
             value.endDatetimePattern
@@ -1046,21 +1046,21 @@ export class TimeFramePickerComponent implements OnChanges, OnInit {
         this.model &#x3D; timeframe;
     }
 
-    public isPresetSelected(key: string) {
+    public isPresetSelected(key: string): boolean {
         return this.model &amp;&amp; this.model.selectedPresetId &#x3D;&#x3D;&#x3D; key;
     }
 
-    public onChangeInternalStart(event: any) {
+    public onChangeInternalStart(event: any): void {
         this.model.startDatetime &#x3D; event;
         this.onChangeInternal();
     }
 
-    public onChangeInternalEnd(event: any) {
+    public onChangeInternalEnd(event: any): void {
         this.model.endDatetime &#x3D; event;
         this.onChangeInternal();
     }
 
-    public onBlurInternal() {
+    public onBlurInternal(): void {
         this.validateCombination();
 
         if (!this.model.startDatetime || !this.model.endDatetime) {
@@ -1071,7 +1071,7 @@ export class TimeFramePickerComponent implements OnChanges, OnInit {
         this.isFocused &#x3D; false;
     }
 
-    public onFocusInternal() {
+    public onFocusInternal(): void {
         this.modelDefault &#x3D; _cloneDeep(this.model);
         this.isFocused &#x3D; true;
     }

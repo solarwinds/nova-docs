@@ -175,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:58</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -207,7 +207,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:55</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -249,8 +249,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:80</a></div>
                 </td>
             </tr>
 
@@ -327,7 +327,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:58</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/table/table-virtual-scroll/table-virtual-scroll.directive.ts:62</a></div>
                         </td>
                     </tr>
 
@@ -341,12 +341,16 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { VIRTUAL_SCROLL_STRATEGY } from &quot;@angular/cdk/scrolling&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    VirtualScrollStrategy,
+    VIRTUAL_SCROLL_STRATEGY,
+} from &quot;@angular/cdk/scrolling&quot;;
 import { Directive, forwardRef, Input, OnChanges } from &quot;@angular/core&quot;;
 
 import { ComponentChanges } from &quot;../../../types&quot;;
 import {
     TableVirtualScrollLinearStrategy,
+    // eslint-disable-next-line import/no-deprecated
     TableVirtualScrollStrategy,
 } from &quot;./table-virtual-scroll-strategy&quot;;
 
@@ -355,7 +359,7 @@ export const TABLE_ROW_HEIGHT &#x3D; 24;
 
 export function complexScrollStrategyFactory(
     scroll: TableVirtualScrollDirective | TableVirtualScrollLinearDirective
-) {
+): VirtualScrollStrategy {
     return scroll.scrollStrategy;
 }
 
@@ -384,7 +388,7 @@ export class TableVirtualScrollLinearDirective implements OnChanges {
 
     public ngOnChanges(
         changes: ComponentChanges&lt;TableVirtualScrollLinearDirective&gt;
-    ) {
+    ): void {
         this.scrollStrategy.setRowHeight(+this.rowHeight);
 
         if (changes.rowCount) {
@@ -396,7 +400,7 @@ export class TableVirtualScrollLinearDirective implements OnChanges {
      * Updates the size of the items in the virtually scrolling list.
      * @param length
      */
-    public updateDataLength(length: number) {
+    public updateDataLength(length: number): void {
         this.scrollStrategy.setDataLength(length);
     }
 }
@@ -423,12 +427,13 @@ export class TableVirtualScrollDirective implements OnChanges {
 
     // Converting parameters to numbers here to avoid inputs become strings in case user sets rowHeight and offset
     // without square brackets in the template
+    // eslint-disable-next-line import/no-deprecated
     public scrollStrategy &#x3D; new TableVirtualScrollStrategy(
         +this.rowHeight,
         +this.offset
     );
 
-    public ngOnChanges() {
+    public ngOnChanges(): void {
         this.scrollStrategy.setScrollHeight(+this.rowHeight, +this.offset);
     }
 
@@ -436,11 +441,11 @@ export class TableVirtualScrollDirective implements OnChanges {
      * Updates the size of the items in the virtually scrolling list.
      * @param length
      */
-    public updateDataLength(length: number) {
+    public updateDataLength(length: number): void {
         this.scrollStrategy.setDataLength(length);
     }
 
-    public setMaxItems(maxItems: number) {
+    public setMaxItems(maxItems: number): void {
         this.scrollStrategy.maxItems &#x3D; maxItems;
     }
 }

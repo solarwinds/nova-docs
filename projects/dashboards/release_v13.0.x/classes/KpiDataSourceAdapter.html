@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/lib/components/providers/kpi-data-source-adapter.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/lib/components/providers/kpi-data-source-adapter.ts:66</a></div>
                 </td>
             </tr>
 
@@ -561,7 +561,9 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
         super(eventBus, dataSource, pizzagnaService);
     }
 
-    public updateConfiguration(properties: IKpiDataSourceAdapterConfiguration) {
+    public updateConfiguration(
+        properties: IKpiDataSourceAdapterConfiguration
+    ): void {
         this.thresholds &#x3D; properties.thresholds;
 
         super.updateConfiguration(properties);
@@ -573,7 +575,7 @@ export class KpiDataSourceAdapter extends DataSourceAdapter&lt;IKpiData&gt; {
         return this.processNumberFormat(processedValue);
     }
 
-    public setComponent(component: any, componentId: string) {
+    public setComponent(component: any, componentId: string): void {
         if (componentId) {
             this.componentId &#x3D; componentId;
         }

@@ -125,7 +125,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -217,7 +217,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/directives/widget-editor/widget-editor.directive.ts:44</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -236,6 +236,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, Host, Input, OnDestroy, OnInit, Self } from &quot;@angular/core&quot;;
 import cloneDeep from &quot;lodash/cloneDeep&quot;;
 import { Subject } from &quot;rxjs&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
@@ -247,6 +248,7 @@ import {
 import { WidgetEditorService } from &quot;../../configurator/services/widget-editor.service&quot;;
 import { WIDGET_EDIT, WIDGET_REMOVE } from &quot;../../services/types&quot;;
 import { WidgetRemovalService } from &quot;../../services/widget-removal.service&quot;;
+import { IWidgetEvent } from &quot;../../services/widget-to-dashboard-event-proxy.service&quot;;
 import { WidgetTypesService } from &quot;../../services/widget-types.service&quot;;
 
 @Directive({
@@ -256,7 +258,7 @@ export class WidgetEditorDirective implements OnInit, OnDestroy {
     @Input(&quot;nuiWidgetEditor&quot;)
     dashboardPersistenceHandler: IDashboardPersistenceHandler;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         @Host() @Self() private dashboardComponent: DashboardComponent,
@@ -269,6 +271,7 @@ export class WidgetEditorDirective implements OnInit, OnDestroy {
         this.dashboardComponent.eventBus
             .getStream(WIDGET_EDIT)
             .pipe(
+                // eslint-disable-next-line import/no-deprecated
                 switchMap((event) &#x3D;&gt; {
                     const widget &#x3D;
                         this.dashboardComponent.dashboard.widgets[
@@ -300,7 +303,11 @@ export class WidgetEditorDirective implements OnInit, OnDestroy {
         this.dashboardComponent.eventBus
             .getStream(WIDGET_REMOVE)
             .pipe(
+                // eslint-disable-next-line import/no-deprecated
                 switchMap((event) &#x3D;&gt; {
+                    if (!event.widgetId) {
+                        throw new Error(&#x60;event has to have widgetId&#x60;);
+                    }
                     const widgetId &#x3D; event.widgetId;
                     const tryRemove &#x3D;
                         this.dashboardPersistenceHandler &amp;&amp;

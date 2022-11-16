@@ -228,11 +228,11 @@ import { IWidget } from &quot;../components/widget/types&quot;;
 export class WidgetConfigurationService {
     private widget: IWidget;
 
-    public updateWidget(widget: IWidget) {
+    public updateWidget(widget: IWidget): void {
         this.widget &#x3D; widget;
     }
 
-    public getWidget() {
+    public getWidget(): IWidget {
         return this.widget;
     }
 }

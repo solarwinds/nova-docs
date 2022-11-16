@@ -563,8 +563,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="191"
-                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:191</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -634,8 +634,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="221"
-                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:221</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="223"
+                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:223</a></div>
                 </td>
             </tr>
 
@@ -722,8 +722,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="240"
-                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:240</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:242</a></div>
                 </td>
             </tr>
 
@@ -761,7 +761,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                     <div class="io-description">
@@ -793,8 +793,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="199"
-                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:199</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/lib/components/dashboard/dashboard.component.ts:201</a></div>
                 </td>
             </tr>
 
@@ -1245,7 +1245,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
     @Output() dashboardChange &#x3D; new EventEmitter&lt;IDashboard&gt;();
 
     @HostBinding(&quot;class.nui-dashboard&quot;)
-    get hostClass() {
+    get hostClass(): boolean {
         return true;
     }
 
@@ -1262,12 +1262,12 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         public readonly eventBus: EventBus&lt;IWidgetEvent&gt;
     ) {}
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         // need to wait till DOM is rendered because of &quot;getBoundingClientRect&quot; under the hood
         setTimeout(() &#x3D;&gt; this.calculateWidgetsVisibility());
     }
 
-    public onGridsterScroll() {
+    public onGridsterScroll(): void {
         this.calculateWidgetsVisibility();
     }
 
@@ -1337,10 +1337,12 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         return nextWidget.y - currentWidget.y || nextWidget.x - currentWidget.x;
     };
 
-    public trackByFn &#x3D; (index: number, item: KeyValue&lt;string, IWidget&gt;) &#x3D;&gt;
-        item.key;
+    public trackByFn &#x3D; (
+        index: number,
+        item: KeyValue&lt;string, IWidget&gt;
+    ): string &#x3D;&gt; item.key;
 
-    public onWidgetChange(widget: IWidget) {
+    public onWidgetChange(widget: IWidget): void {
         // this could happen when changes are being made on a widget that is being removed
         if (!this.dashboard.widgets[widget.id]) {
             return;
@@ -1348,7 +1350,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         this.updateWidget(widget);
     }
 
-    public updateWidget(widget: IWidget) {
+    public updateWidget(widget: IWidget): void {
         let dashboard: IDashboard &#x3D; this.dashboard;
         if (!this.dashboard.positions[widget.id] &amp;&amp; this.gridsterConfig?.api) {
             const gridsterItem &#x3D;
@@ -1370,7 +1372,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         this.dashboardChange.emit(dashboard);
     }
 
-    public removeWidget(widgetId: string, removePosition &#x3D; true) {
+    public removeWidget(widgetId: string, removePosition &#x3D; true): void {
         let dashboard: IDashboard &#x3D; this.dashboard;
         if (!dashboard.widgets[widgetId]) {
             return;
@@ -1389,7 +1391,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         this.dashboardChange.emit(dashboard);
     }
 
-    public shouldWidgetRender(key: string) {
+    public shouldWidgetRender(key: string): boolean {
         return this.belowFoldLazyLoadingConfig?.enabled
             ? this.gridsterItemsVisibilityMap[key]
             : true;
@@ -1399,7 +1401,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         item: GridsterItem,
         itemComponent: GridsterItemComponentInterface
     ): void &#x3D;&gt; {
-        const widgetId &#x3D; (itemComponent as any).widgetId;
+        const widgetId &#x3D; String((itemComponent as any).widgetId);
         const dashboard &#x3D; immutableSet(
             this.dashboard,
             &quot;positions.&quot; + widgetId,
@@ -1409,7 +1411,7 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         this.dashboardChange.emit(dashboard);
 
         this.eventBus.getStream(WIDGET_POSITION_CHANGE).next({
-            widgetId: widgetId,
+            widgetId,
             payload: item,
         });
     };
@@ -1421,9 +1423,9 @@ export class DashboardComponent implements OnChanges, AfterViewInit {
         const widgetId &#x3D; (itemComponent as any).widgetId;
 
         this.eventBus.getStream(WIDGET_RESIZE).next({
-            widgetId: widgetId,
+            widgetId,
             payload: {
-                widgetId: widgetId,
+                widgetId,
                 height: itemComponent.height,
                 width: itemComponent.width,
             },

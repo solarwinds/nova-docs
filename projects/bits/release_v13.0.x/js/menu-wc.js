@@ -544,6 +544,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ColumnType.html" data-type="entity-link" >ColumnType</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ColumnWidthInfo.html" data-type="entity-link" >ColumnWidthInfo</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ComponentChange.html" data-type="entity-link" >ComponentChange</a>
                             </li>
                             <li class="link">

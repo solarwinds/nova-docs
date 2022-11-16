@@ -612,7 +612,7 @@ to clear it on inputChange - handle it in host component</p>
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                 </td>
@@ -1087,7 +1087,7 @@ export class SearchComponent implements IFilterPub, OnDestroy {
         this.focusChange.emit(true);
     }
 
-    public onFocusChange(event: boolean) {
+    public onFocusChange(event: boolean): void {
         this.captureFocus &#x3D; event;
         this.focusChange.emit(event);
     }
@@ -1102,7 +1102,7 @@ export class SearchComponent implements IFilterPub, OnDestroy {
         }
     }
 
-    public isButtonDisabled() {
+    public isButtonDisabled(): boolean {
         return _isEmpty(this.value);
     }
 
@@ -1110,7 +1110,7 @@ export class SearchComponent implements IFilterPub, OnDestroy {
         this.search.emit(this.value);
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
     }

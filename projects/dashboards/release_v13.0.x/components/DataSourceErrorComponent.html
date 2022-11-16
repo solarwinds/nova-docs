@@ -162,6 +162,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onDataSourceChanged" >onDataSourceChanged</a>
                             </li>
                         </ul>
@@ -314,6 +315,7 @@
                 <td class="col-md-4">
                     <a name="onDataSourceChanged"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onDataSourceChanged</b></span>
                         <a href="#onDataSourceChanged"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -321,7 +323,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onDataSourceChanged()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDataSourceChanged()</code>
                 </td>
             </tr>
 
@@ -568,13 +571,13 @@ export class DataSourceErrorComponent implements OnDestroy, OnChanges {
 
     constructor(public changeDetector: ChangeDetectorRef) {}
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.dataSource) {
             this.onDataSourceChanged();
         }
     }
 
-    onDataSourceChanged() {
+    public onDataSourceChanged(): void {
         this.dataSourceClear$.next();
 
         this.dataSource?.busy
@@ -594,7 +597,7 @@ export class DataSourceErrorComponent implements OnDestroy, OnChanges {
             });
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
         this.dataSourceClear$.next();

@@ -463,7 +463,7 @@ export class TimeseriesDataSourceAdapter extends DataSourceAdapter {
 
     public updateConfiguration(
         properties: ITimeseriesDataSourceAdapterConfiguration
-    ) {
+    ): void {
         this.seriesIndex &#x3D; clone(properties.series);
 
         super.updateConfiguration(properties);

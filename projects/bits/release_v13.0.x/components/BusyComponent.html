@@ -208,7 +208,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/busy/busy.component.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/busy/busy.component.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -276,7 +276,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/busy/busy.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/busy/busy.component.ts:53</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -302,7 +302,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/busy/busy.component.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/lib/busy/busy.component.ts:58</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -342,7 +342,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/busy/busy.component.ts:51</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/busy/busy.component.ts:49</a></div>
                         </td>
                     </tr>
 
@@ -368,7 +368,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/busy/busy.component.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/lib/busy/busy.component.ts:51</a></div>
                         </td>
                     </tr>
 
@@ -394,7 +394,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/busy/busy.component.ts:52</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/busy/busy.component.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -429,7 +429,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/busy/busy.component.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/busy/busy.component.ts:61</a></div>
                         </td>
                     </tr>
 
@@ -464,7 +464,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/busy/busy.component.ts:62</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/busy/busy.component.ts:60</a></div>
                         </td>
                     </tr>
 
@@ -495,8 +495,6 @@ import { SpinnerComponent } from &quot;../spinner/spinner.component&quot;;
 /**
  * &lt;example-url&gt;./../examples/index.html#/busy&lt;/example-url&gt;
  */
-
-/* eslint-disable @angular-eslint/component-selector */
 @Component({
     selector: &quot;[nui-busy]&quot;,
     templateUrl: &quot;./busy.component.html&quot;,
@@ -526,7 +524,7 @@ export class BusyComponent implements AfterContentInit, OnChanges {
         private elRef: ElementRef
     ) {}
 
-    public ngAfterContentInit() {
+    public ngAfterContentInit(): void {
         this.setBusyStateForContentComponents();
 
         this.isSpinnerTemplate &#x3D; Boolean(this.spinnerComponent);
@@ -541,7 +539,7 @@ export class BusyComponent implements AfterContentInit, OnChanges {
         }
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (
             this.disableTabNavigation &amp;&amp;
             changes.busy?.currentValue !&#x3D;&#x3D; undefined

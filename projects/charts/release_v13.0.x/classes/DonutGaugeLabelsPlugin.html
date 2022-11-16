@@ -586,7 +586,7 @@ export class DonutGaugeLabelsPlugin extends ChartPlugin {
         disableThresholdLabels: false,
     };
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private lasagnaLayer: D3Selection&lt;SVGElement&gt;;
 
     constructor(public config: IGaugeLabelsPluginConfig &#x3D; {}) {

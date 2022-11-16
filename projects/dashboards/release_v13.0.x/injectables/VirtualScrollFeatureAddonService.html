@@ -145,8 +145,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:42</a></div>
                 </td>
             </tr>
 
@@ -184,8 +184,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -255,8 +255,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="70"
-                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:70</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="71"
+                            class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:71</a></div>
                 </td>
             </tr>
 
@@ -305,7 +305,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/components/table-widget/addons/virtual-scroll-feature-addon.service.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -320,6 +320,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ListRange } from &quot;@angular/cdk/collections&quot;;
 import { Injectable } from &quot;@angular/core&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { merge } from &quot;rxjs&quot;;
 import { filter, map, takeUntil, tap } from &quot;rxjs/operators&quot;;
 
@@ -334,11 +335,11 @@ export class VirtualScrollFeatureAddonService {
 
     public visibleItems: unknown[] &#x3D; [];
 
-    public initWidget(widget: TableWidgetComponent) {
+    public initWidget(widget: TableWidgetComponent): void {
         this.widget &#x3D; widget;
     }
 
-    public initVirtualScroll() {
+    public initVirtualScroll(): void {
         if (this.widget.hasVirtualScroll) {
             this.registerVirtualScroll();
         } else {
@@ -367,13 +368,14 @@ export class VirtualScrollFeatureAddonService {
     /**
      * Subscribe to virtual scroll rendered items and fetches next items
      */
-    public subscribeToVirtualScroll() {
+    public subscribeToVirtualScroll(): void {
         if (!this.widget.vscrollViewport) {
             return;
         }
 
         // Note: Using this additional stream to pass the visible range to
         // the table and trigger change detection on range change and table data update.
+        // eslint-disable-next-line import/no-deprecated
         merge(
             this.widget.vscrollViewport.renderedRangeStream,
             this.widget.tableUpdate$.pipe(
@@ -414,7 +416,7 @@ export class VirtualScrollFeatureAddonService {
                             range.end / (range.end - range.start);
                         this.widget.eventBus
                             .getStream(SCROLL_NEXT_PAGE)
-                            .next(undefined);
+                            .next({});
                         this.widget.changeDetector.detectChanges();
                     })
                 ),

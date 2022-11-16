@@ -166,6 +166,24 @@
 </section>
 
 
+            <section>
+    <h3 id="inputs">Indexable</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <code>[key: string]:        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/services/public-api.ts:129</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -284,6 +302,7 @@ export class SelectionModel implements ISelection {
 export class IEvent&lt;T &#x3D; any&gt; {
     id?: string;
     payload?: T;
+    [key: string]: any;
 }
 
 export interface IEventDefinition&lt;T &#x3D; any&gt; {
@@ -297,7 +316,7 @@ export class EventDefinition&lt;T&gt; implements IEventDefinition&lt;IEvent&lt;T
         public subjectFactory?: () &#x3D;&gt; Subject&lt;IEvent&lt;T&gt;&gt;
     ) {}
 
-    public toString() {
+    public toString(): string {
         return this.id;
     }
 }

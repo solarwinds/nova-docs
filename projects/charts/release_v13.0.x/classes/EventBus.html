@@ -243,7 +243,7 @@ export class EventBus&lt;T&gt; {
         return this.streams[streamId];
     }
 
-    public destroy() {
+    public destroy(): void {
         each(Object.keys(this.streams), (key: string) &#x3D;&gt; {
             this.streams[key].complete();
         });

@@ -120,6 +120,7 @@
                                 <a href="#getFilters" >getFilters</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngOnDestroy" >ngOnDestroy</a>
                             </li>
                             <li>
@@ -280,6 +281,7 @@
                 <td class="col-md-4">
                     <a name="ngOnDestroy"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngOnDestroy</b></span>
                         <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -287,7 +289,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnDestroy()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
                 </td>
             </tr>
 
@@ -592,7 +595,7 @@ export class DataFilterService implements IFilterPub, OnDestroy {
         }
     }
 
-    public registerFilter(filter: IFilteringParticipants) {
+    public registerFilter(filter: IFilteringParticipants): void {
         this._filters &#x3D; {
             ...this._filters,
             ...filter,
@@ -611,7 +614,7 @@ export class DataFilterService implements IFilterPub, OnDestroy {
         this.filteringSubject.next();
     }
 
-    public unregisterFilters(filtersToUnregister: string[]) {
+    public unregisterFilters(filtersToUnregister: string[]): void {
         this._filters &#x3D; _omit(this._filters, filtersToUnregister);
         this.filteringSubject.next();
     }
@@ -636,11 +639,11 @@ export class DataFilterService implements IFilterPub, OnDestroy {
         return filters;
     }
 
-    public applyFilters() {
+    public applyFilters(): void {
         this.filteringSubject.next();
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
         this.destroySubscriptions.forEach((subscription) &#x3D;&gt;

@@ -2686,7 +2686,7 @@ export class DatePickerComponent
 
     constructor(private cd: ChangeDetectorRef) {}
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         _defaults(this, datePickerDefaults);
         this.selectedDate &#x3D; this._value;
         this.initDate &#x3D; this.value &amp;&amp; this.value.clone();
@@ -2727,7 +2727,7 @@ export class DatePickerComponent
         }
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         this.calendarChanged &#x3D; this._datePicker.calendarMoved.subscribe(
             (value: Moment) &#x3D;&gt; this.calendarNavigated.emit(value)
         );
@@ -2841,7 +2841,7 @@ export class DatePickerComponent
             : datePickerDefaults.dateFormat;
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         // The following resolves a known &#x27;Error during cleanup of component:&#x27; error during unit tests
         // Details: https://github.com/angular/angular/issues/17013
         if (this.calendarChanged) {

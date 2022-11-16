@@ -1043,7 +1043,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;boolean&gt;()</code>
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
                     </td>
                 </tr>
                     <tr>
@@ -1256,7 +1256,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
      */
     @Output() public blurred &#x3D; new EventEmitter();
 
-    public menuOpenStream &#x3D; new Subject&lt;boolean&gt;();
+    public menuOpenStream &#x3D; new Subject&lt;void&gt;();
     // Only menu that resolves *ngIf on &lt;ng-content&gt; with these menuItems can correctly get ContentChildren
     @ContentChildren(MenuItemBaseComponent, { descendants: true })
     public menuItems: QueryList&lt;MenuItemBaseComponent&gt;;
@@ -1285,7 +1285,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
         }
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         // setting data for key-control service
         this.setKeyboardManagerServiceData();
         // initializing key-control manager
@@ -1330,7 +1330,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
 
     public onMenuOpen(): void {
-        this.menuOpenStream.next(true);
+        this.menuOpenStream.next();
     }
 
     public isJustified(): boolean {
@@ -1347,7 +1347,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
         this.keyControlService.menuOpenListener &#x3D; this.menuOpenStream;
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.menuKeyControlListeners.forEach((listener) &#x3D;&gt; listener());
         this.focusMonitorSubscription.unsubscribe();
     }

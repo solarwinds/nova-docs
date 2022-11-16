@@ -500,8 +500,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="300"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:300</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="301"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:301</a></div>
                 </td>
             </tr>
 
@@ -539,8 +539,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="243"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:243</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="244"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:244</a></div>
                 </td>
             </tr>
 
@@ -610,8 +610,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="284"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:284</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="285"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:285</a></div>
                 </td>
             </tr>
 
@@ -681,8 +681,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="312"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:312</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="313"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:313</a></div>
                 </td>
             </tr>
 
@@ -720,8 +720,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="316"
-                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:316</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="317"
+                            class="link-to-prism">src/lib/configurator/components/widgets/table/columns-editor/table-columns-configuration.component.ts:317</a></div>
                 </td>
             </tr>
 
@@ -1021,6 +1021,7 @@ export class TableColumnsConfigurationComponent
                     const presentationIndex &#x3D; columnsTemplate.findIndex(
                         (val: { id: string }) &#x3D;&gt; val.id &#x3D;&#x3D;&#x3D; &quot;presentation&quot;
                     );
+                    // eslint-disable-next-line max-len
                     const presentationPizzagnaPath: string &#x3D; &#x60;${PizzagnaLayer.Structure}.columns.properties.template[${presentationIndex}].properties.dataFields&#x60;;
                     formPizzagna &#x3D; immutableSet(
                         formPizzagna,
@@ -1058,7 +1059,7 @@ export class TableColumnsConfigurationComponent
         );
     }
 
-    public ngOnInit() {}
+    public ngOnInit(): void {}
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (changes.dataFields &amp;&amp; changes.dataFields.currentValue) {
@@ -1116,7 +1117,7 @@ export class TableColumnsConfigurationComponent
         }
     }
 
-    public onFormReady(form: AbstractControl) {
+    public onFormReady(form: AbstractControl): void {
         this.form &#x3D; this.formBuilder.group({
             columns: form as FormArray,
             // this form field serves as a source of truth for anybody interesting in reading/modifying the columns value
@@ -1157,7 +1158,7 @@ export class TableColumnsConfigurationComponent
         });
     }
 
-    public onItemsChange(columns: ITableWidgetColumnConfig[]) {
+    public onItemsChange(columns: ITableWidgetColumnConfig[]): void {
         const parentPath &#x3D; &quot;columns&quot;;
         const componentIds &#x3D; columns.map((tile) &#x3D;&gt; tile.id);
         this.pizzagnaService.createComponentsFromTemplate(
@@ -1173,7 +1174,7 @@ export class TableColumnsConfigurationComponent
         this.pizzagnaService.setProperty(property, columns);
     }
 
-    public addColumn() {
+    public addColumn(): void {
         // @ts-ignore: Types of property &#x27;formatter&#x27; are incompatible.
         this.onItemsChange([
             ...this.columns,
@@ -1185,11 +1186,11 @@ export class TableColumnsConfigurationComponent
         ]);
     }
 
-    public onResetColumns() {
+    public onResetColumns(): void {
         this.resetColumns(!!this.columns?.length);
     }
 
-    public resetColumns(confirmation: boolean) {
+    public resetColumns(confirmation: boolean): void {
         const reset &#x3D; () &#x3D;&gt; {
             const columns: ITableWidgetColumnConfig[] &#x3D;
                 this.lastValidDataFields.map((df) &#x3D;&gt; ({
@@ -1256,7 +1257,7 @@ export class TableColumnsConfigurationComponent
         });
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
     }

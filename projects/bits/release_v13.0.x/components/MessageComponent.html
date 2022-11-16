@@ -933,7 +933,7 @@ export class MessageComponent implements OnInit, OnDestroy {
 
     constructor(private element: ElementRef, private renderer: Renderer2) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         if (this.manualControl) {
             this.dismissSubscription &#x3D; this.manualControl.subscribe(
                 (shown: boolean) &#x3D;&gt; {
@@ -943,19 +943,19 @@ export class MessageComponent implements OnInit, OnDestroy {
         }
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.dismiss.complete();
         if (this.dismissSubscription) {
             this.dismissSubscription.unsubscribe();
         }
     }
 
-    public dismissMessage() {
+    public dismissMessage(): void {
         this.dismissState &#x3D; &quot;dismissed&quot;;
         this.dismiss.emit();
     }
 
-    public animationFinished(event: AnimationEvent) {
+    public animationFinished(event: AnimationEvent): void {
         if (event.toState &#x3D;&#x3D;&#x3D; &quot;dismissed&quot;) {
             if (this.manualControl) {
                 this.isHidden &#x3D; true;
@@ -968,7 +968,7 @@ export class MessageComponent implements OnInit, OnDestroy {
         }
     }
 
-    public animationStart(event: AnimationEvent) {
+    public animationStart(event: AnimationEvent): void {
         if (event.fromState &#x3D;&#x3D;&#x3D; &quot;dismissed&quot;) {
             this.isHidden &#x3D; false;
         }
@@ -978,10 +978,11 @@ export class MessageComponent implements OnInit, OnDestroy {
         return this.type ? &#x60;nui-message-${this.type.toLowerCase()}&#x60; : &quot;&quot;;
     }
 
-    public get icon() {
-        // @ts-ignore: Type &#x27;null&#x27; cannot be used as an index type.
-        const icon &#x3D; MessageComponent.ICON_MAP[this.type];
-        return icon ? icon : MessageComponent.UNKNOWN_ICON;
+    public get icon(): string {
+        return (
+            MessageComponent.ICON_MAP[this.type ?? &quot;&quot;] ||
+            MessageComponent.UNKNOWN_ICON
+        );
     }
 }
 </code></pre>

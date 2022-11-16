@@ -145,8 +145,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="152"
-                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:152</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:154</a></div>
                 </td>
             </tr>
 
@@ -287,8 +287,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/lib/overlay/overlay-position.service.ts:73</a></div>
                 </td>
             </tr>
 
@@ -427,7 +427,9 @@ export class OverlayPositionService {
     private arrowPadding: number;
     public config: IOverlayPositionServiceConfig;
 
-    public setOverlayPositionConfig(config?: IOverlayPositionServiceConfig) {
+    public setOverlayPositionConfig(
+        config?: IOverlayPositionServiceConfig
+    ): void {
         this.arrowSize &#x3D; !isNil(config?.arrowSize)
             ? &lt;number&gt;config?.arrowSize
             : OVERLAY_ARROW_SIZE;

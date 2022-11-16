@@ -1275,7 +1275,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         );
     }
 
-    public addResizers(resizableList: QueryList&lt;any&gt;) {
+    public addResizers(resizableList: QueryList&lt;any&gt;): void {
         resizableList.forEach((resizableItem, index) &#x3D;&gt; {
             if (index &#x3D;&#x3D;&#x3D; resizableList.length - 1) {
                 return;
@@ -1286,7 +1286,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         this.calculateFlexBasis(resizableList, resizableList.length);
     }
 
-    public appendResizer(factory: any, resizeEl: any) {
+    public appendResizer(factory: any, resizeEl: any): void {
         const componentRef &#x3D;
             this.componentFactoryResolver.resolveComponentFactory(factory);
 
@@ -1304,7 +1304,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
     public calculateFlexBasis(
         resizableList: QueryList&lt;Element&gt;,
         numOfItems: number
-    ) {
+    ): void {
         let availableSpace: string &#x3D; &quot;100%&quot;;
         const hasInitSize &#x3D; resizableList.some(
             (element: Element) &#x3D;&gt; !!element.initialSizeValue
@@ -1367,7 +1367,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         private componentFactoryResolver: ComponentFactoryResolver
     ) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.applyJoinedSheetsClass &#x3D;
             (this.applyJoinedSheetsClass &amp;&amp; !this.applySeparateSheetsClass) ||
             this.sheetsType &#x3D;&#x3D;&#x3D; &quot;joined&quot;;
@@ -1382,7 +1382,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
                 : ResizeDirection.bottom;
     }
 
-    ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         // 2 addResizers needed for correct handling sheetGroups and sheets elements,
         // f.e. flex basis calculation or detection last element of correspondent type
         if (this.isResizable) {
@@ -1397,7 +1397,7 @@ export class SheetGroupComponent implements OnInit, AfterViewInit, OnDestroy {
         }
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         if (this.resizersList.length &gt; 0) {
             this.resizersList.forEach((resizer) &#x3D;&gt; {
                 resizer.destroy();

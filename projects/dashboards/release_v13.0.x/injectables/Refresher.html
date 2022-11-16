@@ -86,6 +86,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#destroy$" >destroy$</a>
                             </li>
                         </ul>
@@ -321,6 +322,7 @@
                     <a name="destroy$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>destroy$</b></span>
                         <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -378,7 +380,7 @@ export class Refresher implements OnDestroy, IConfigurable {
     protected interval &#x3D; DEFAULT_REFRESH_INTERVAL;
     protected eventDef &#x3D; REFRESH;
 
-    public destroy$ &#x3D; new Subject&lt;void&gt;();
+    public readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IWidgetEvent&gt;,
@@ -433,7 +435,7 @@ export class Refresher implements OnDestroy, IConfigurable {
     }
 
     protected performAction(): void {
-        this.eventBus.getStream(this.eventDef).next(undefined);
+        this.eventBus.getStream(this.eventDef).next({});
     }
 
     private getInterval() {

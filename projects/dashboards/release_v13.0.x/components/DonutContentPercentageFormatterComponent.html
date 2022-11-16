@@ -618,7 +618,7 @@ export class DonutContentPercentageFormatterComponent
     public currentMetricData: number | undefined;
     public chartContent: string;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(public changeDetector: ChangeDetectorRef) {}
 
@@ -626,7 +626,7 @@ export class DonutContentPercentageFormatterComponent
     @Input() chartAssist: ChartAssist;
     @Input() properties: IProperties;
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.data) {
             this.sum &#x3D; sumBy(this.data, (s) &#x3D;&gt; s.data[0]);
         }
@@ -642,7 +642,7 @@ export class DonutContentPercentageFormatterComponent
         this.getProperContentValue();
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.chartAssist.chartAssistSubject
             .pipe(
                 tap(

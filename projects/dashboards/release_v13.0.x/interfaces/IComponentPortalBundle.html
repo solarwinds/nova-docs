@@ -215,13 +215,6 @@ export interface IWidgetEditor&lt;T &#x3D; any&gt; extends IConfigurator&lt;T&gt
     paths: Record&lt;string, string&gt;;
 }
 
-export interface ISerializableTimeframe {
-    startDatetime: string;
-    endDatetime: string;
-    selectedPresetId?: string;
-    title?: string;
-}
-
 export type WidgetUpdateOperation &#x3D; (
     widget: IWidget,
     source: IConfiguratorSource

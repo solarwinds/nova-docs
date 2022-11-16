@@ -602,7 +602,7 @@ fallback content in place of the primary content</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -891,7 +891,7 @@ export class WidgetBodyContentComponent
         super(changeDetector, pizzagnaService, logger);
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.classNames &#x3D; &#x60;${this.defaultClasses} ${this.elementClass}&#x60;;
     }
 

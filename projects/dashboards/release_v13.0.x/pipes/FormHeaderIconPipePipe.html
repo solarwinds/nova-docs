@@ -105,8 +105,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-header-icon.pipe.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-header-icon.pipe.ts:37</a></div>
                 </td>
             </tr>
 
@@ -218,7 +218,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-header-icon.pipe.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/configurator/pipe/widget-editor-accordion-header-icon.pipe.ts:35</a></div>
                         </td>
                     </tr>
 
@@ -233,7 +233,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { combineLatest, Observable } from &quot;rxjs&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { map, startWith } from &quot;rxjs/operators&quot;;
 
 import { hasControlInErrorState } from &quot;../functions/has-control-in-error-state&quot;;
@@ -253,7 +255,9 @@ export class FormHeaderIconPipePipe implements PipeTransform {
         if (!form) {
             throw new Error(&quot;Provided form is undefined&quot;);
         }
+        // eslint-disable-next-line import/no-deprecated
         return combineLatest([form.statusChanges, form.valueChanges]).pipe(
+            // eslint-disable-next-line import/no-deprecated
             startWith(null),
             map(() &#x3D;&gt; (hasControlInErrorState(form) ? errorIcon : defaultIcon))
         );

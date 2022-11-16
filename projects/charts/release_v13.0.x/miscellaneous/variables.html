@@ -127,7 +127,19 @@
                             <a href="#emptyShapes" title="src/core/common/palette/palettes.ts" ><b>emptyShapes</b>&nbsp;&nbsp;&nbsp;(src/.../palettes.ts)</a>
                         </li>
                         <li>
+                            <a href="#formatMinute" title="src/core/common/scales/formatters/datetime-formatter.ts" ><b>formatMinute</b>&nbsp;&nbsp;&nbsp;(src/.../datetime-formatter.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formatMonth" title="src/core/common/scales/formatters/datetime-formatter.ts" ><b>formatMonth</b>&nbsp;&nbsp;&nbsp;(src/.../datetime-formatter.ts)</a>
+                        </li>
+                        <li>
                             <a href="#formatSecond" title="src/core/common/scales/formatters/datetime-formatter.ts" ><b>formatSecond</b>&nbsp;&nbsp;&nbsp;(src/.../datetime-formatter.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formatWeek" title="src/core/common/scales/formatters/datetime-formatter.ts" ><b>formatWeek</b>&nbsp;&nbsp;&nbsp;(src/.../datetime-formatter.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#formatYear" title="src/core/common/scales/formatters/datetime-formatter.ts" ><b>formatYear</b>&nbsp;&nbsp;&nbsp;(src/.../datetime-formatter.ts)</a>
                         </li>
                         <li>
                             <a href="#GAUGE_LABEL_FORMATTER_NAME_DEFAULT" title="src/core/plugins/gauge/constants.ts" ><b>GAUGE_LABEL_FORMATTER_NAME_DEFAULT</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
@@ -1272,16 +1284,21 @@ on the source element for the tooltip position starting with EAST and going cloc
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(date: Date): string &#x3D;&gt;
-    (timeMinute(date) &lt; date
-        ? formatSecond
-        : timeDay(date) &lt; date
-        ? formatMinute
-        : timeMonth(date) &lt; date
-        ? formatWeek
-        : timeYear(date) &lt; date
-        ? formatMonth
-        : formatYear)(date)</code>
+                        <i>Default value : </i><code>(date: Date): string &#x3D;&gt; {
+    if (timeMinute(date) &lt; date) {
+        return formatSecond(date);
+    }
+    if (timeDay(date) &lt; date) {
+        return formatMinute(date);
+    }
+    if (timeMonth(date) &lt; date) {
+        return formatWeek(date);
+    }
+    if (timeYear(date) &lt; date) {
+        return formatMonth(date);
+    }
+    return formatYear(date);
+}</code>
                     </td>
                 </tr>
 
@@ -1291,6 +1308,47 @@ on the source element for the tooltip position starting with EAST and going cloc
 </div>
                 </td>
             </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatMinute"></a>
+                    <span class="name">
+                        <span ><b>formatMinute</b></span>
+                        <a href="#formatMinute"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(d: Date) &#x3D;&gt;
+    intlFormat(d, { hour: &quot;numeric&quot;, minute: &quot;2-digit&quot; })</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatMonth"></a>
+                    <span class="name">
+                        <span ><b>formatMonth</b></span>
+                        <a href="#formatMonth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(d: Date) &#x3D;&gt; intlFormat(d, { month: &quot;short&quot; })</code>
+                    </td>
+                </tr>
+
 
         </tbody>
     </table>
@@ -1308,11 +1366,52 @@ on the source element for the tooltip position starting with EAST and going cloc
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(d: Date) &#x3D;&gt;
-        intlFormat(d, {
-            hour: &quot;numeric&quot;,
-            minute: &quot;2-digit&quot;,
-            second: &quot;2-digit&quot;,
-        })</code>
+    intlFormat(d, {
+        hour: &quot;numeric&quot;,
+        minute: &quot;2-digit&quot;,
+        second: &quot;2-digit&quot;,
+    })</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatWeek"></a>
+                    <span class="name">
+                        <span ><b>formatWeek</b></span>
+                        <a href="#formatWeek"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(d: Date) &#x3D;&gt;
+    intlFormat(d, { month: &quot;short&quot;, day: &quot;2-digit&quot; })</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatYear"></a>
+                    <span class="name">
+                        <span ><b>formatYear</b></span>
+                        <a href="#formatYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(d: Date) &#x3D;&gt; intlFormat(d, { year: &quot;numeric&quot; })</code>
                     </td>
                 </tr>
 
@@ -1649,7 +1748,7 @@ on the source element for the tooltip position starting with EAST and going cloc
         chartSeriesSet: IChartSeries&lt;any&gt;[],
         scaleId: string,
         scale: IScale&lt;any&gt;
-    ) &#x3D;&gt;
+    ): any[] &#x3D;&gt;
         domainCalculator(
             additionalSeriesFn().concat(chartSeriesSet),
             scaleId,

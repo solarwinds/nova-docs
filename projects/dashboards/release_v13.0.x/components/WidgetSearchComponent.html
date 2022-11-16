@@ -140,6 +140,11 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#destroy$" >destroy$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#enabled" >enabled</a>
                             </li>
                             <li>
@@ -149,10 +154,6 @@
                             <li>
                                     <span class="modifier">Static</span>
                                 <a href="#lateLoadKey" >lateLoadKey</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#onDestroy$" >onDestroy$</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -505,6 +506,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="destroy$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>destroy$</b></span>
+                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/widget-search/widget-search.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="enabled"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -605,32 +633,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="onDestroy$"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>onDestroy$</b></span>
-                        <a href="#onDestroy$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/widget-search/widget-search.component.ts:57</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="searchTerm$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
@@ -695,7 +697,7 @@ export class WidgetSearchComponent implements OnInit, OnDestroy, OnChanges {
     public enabled: boolean &#x3D; false;
 
     public searchTerm$ &#x3D; new Subject&lt;string&gt;();
-    public onDestroy$ &#x3D; new Subject&lt;void&gt;();
+    public readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private searchTermSubscription: Subscription;
 
     constructor(
@@ -711,31 +713,31 @@ export class WidgetSearchComponent implements OnInit, OnDestroy, OnChanges {
         this.handleSearchTermSubscription(this.configuration?.searchOnKeyUp);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.configuration) {
             const searchCfg &#x3D; changes.configuration.currentValue;
             this.handleSearchTermSubscription(searchCfg.searchOnKeyUp);
         }
     }
 
-    public onSearchInputChanged(searchTerm: string) {
+    public onSearchInputChanged(searchTerm: string): void {
         if (this.configuration?.searchOnKeyUp?.enabled) {
             this.searchValue &#x3D; searchTerm;
             this.searchTerm$.next(searchTerm);
         }
     }
 
-    public onSearch(searchTerm: string) {
+    public onSearch(searchTerm: string): void {
         this.searchValue &#x3D; searchTerm;
         this.searchTerm$.next(searchTerm);
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.eventBus.getStream(WIDGET_SEARCH).next({
             payload: &quot;&quot;,
         });
-        this.onDestroy$.next();
-        this.onDestroy$.complete();
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 
     private registerFilters() {
@@ -756,14 +758,14 @@ export class WidgetSearchComponent implements OnInit, OnDestroy, OnChanges {
         this.searchTermSubscription?.unsubscribe();
         this.searchTermSubscription &#x3D; this.searchTerm$
             .pipe(
-                takeUntil(this.onDestroy$),
+                takeUntil(this.destroy$),
                 debounceTime(
                     searchOnKeyUpCfg?.debounceTime ||
                         WidgetSearchComponent.defaultSearchDebounce
                 )
             )
             .subscribe((searchTerm) &#x3D;&gt; {
-                this.eventBus.getStream(REFRESH).next(undefined);
+                this.eventBus.getStream(REFRESH).next({});
                 this.eventBus.getStream(WIDGET_SEARCH).next({
                     payload: searchTerm,
                 });

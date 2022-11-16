@@ -806,9 +806,9 @@ export class KpiTilesConfigurationComponent
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;
     ) {}
 
-    ngOnChanges(changes: SimpleChanges): void {}
+    public ngOnChanges(changes: SimpleChanges): void {}
 
-    public onFormReady(form: AbstractControl) {
+    public onFormReady(form: AbstractControl): void {
         this.form &#x3D; this.formBuilder.group({
             tiles: form as FormArray,
         });
@@ -819,7 +819,7 @@ export class KpiTilesConfigurationComponent
         this.formReady.emit(this.form);
     }
 
-    public onItemsChange(tiles: IItemConfiguration[]) {
+    public onItemsChange(tiles: IItemConfiguration[]): void {
         const parentPath &#x3D; &quot;tiles&quot;;
         const componentIds &#x3D; tiles.map((tile) &#x3D;&gt; tile.id);
         this.pizzagnaService.createComponentsFromTemplate(
@@ -835,7 +835,7 @@ export class KpiTilesConfigurationComponent
         this.pizzagnaService.setProperty(property, tiles);
     }
 
-    public addTile() {
+    public addTile(): void {
         this.onItemsChange([
             ...this.tiles,
             {

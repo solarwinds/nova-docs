@@ -547,7 +547,7 @@ export class SheetComponent implements OnInit {
 
     constructor(public elRef: ElementRef) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.directionColumn &#x3D;
             (this.directionColumn &amp;&amp; !this.directionRow) ||
             this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;

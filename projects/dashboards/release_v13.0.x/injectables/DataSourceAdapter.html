@@ -430,7 +430,7 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
 {
     protected componentId: string;
     protected lastValue: T;
-    protected destroy$ &#x3D; new Subject&lt;void&gt;();
+    protected readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     protected dataSourceConfiguration: Record&lt;string, any&gt;;
 
     private propertyPath: string;
@@ -473,7 +473,7 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
     }
 
     protected handleRefresh(): void {
-        this.eventBus.getStream(DATA_SOURCE_INVOKED).next(undefined);
+        this.eventBus.getStream(DATA_SOURCE_INVOKED).next({});
         this.dataSource.applyFilters();
     }
 
@@ -530,7 +530,7 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
                     properties.dataSource?.properties
                 );
             }
-            this.eventBus.getStream(REFRESH).next(undefined);
+            this.eventBus.getStream(REFRESH).next({});
         }
 
         // check if this is the first call of updateConfiguration and there is no dataSource configuration present in the incoming properties
@@ -541,7 +541,7 @@ export class DataSourceAdapter&lt;T extends IFilteringOutputs &#x3D; IFilteringO
             typeof dataSourceConfiguration &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
         ) {
             // using a setTimeout here to give configurable data sources time to receive their configurations before they&#x27;re invoked
-            setTimeout(() &#x3D;&gt; this.eventBus.getStream(REFRESH).next(undefined));
+            setTimeout(() &#x3D;&gt; this.eventBus.getStream(REFRESH).next({}));
         }
     }
 

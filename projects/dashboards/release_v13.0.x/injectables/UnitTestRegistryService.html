@@ -403,11 +403,11 @@ export class UnitTestRegistryService {
     public componentMap: any &#x3D; {};
     public providersMap: any &#x3D; {};
 
-    setComponent(component: any, componentId: string) {
+    setComponent(component: any, componentId: string): void {
         this.componentMap[componentId] &#x3D; component;
     }
 
-    setProviders(services: any, componentId: string) {
+    setProviders(services: any, componentId: string): void {
         this.providersMap[componentId] &#x3D; services;
     }
 }

@@ -93,6 +93,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#destroy$" >destroy$</a>
                             </li>
                         </ul>
@@ -124,6 +125,7 @@
                                 <a href="#getPreview" >getPreview</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
@@ -476,6 +478,7 @@
                 <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngAfterViewInit</b></span>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -483,7 +486,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
@@ -882,6 +886,7 @@
                     <a name="destroy$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>destroy$</b></span>
                         <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -946,13 +951,13 @@ export class GenericArrayConverterService extends BaseConverter {
 
     public updateConfiguration(properties: {
         formParts: IConverterFormPartsProperties[];
-    }) {
+    }): void {
         if (properties &amp;&amp; properties.formParts) {
             this.formParts &#x3D; properties.formParts;
         }
     }
 
-    public buildForm() {
+    public buildForm(): void {
         const preview &#x3D; this.getPreview();
 
         const updatedPizzagna &#x3D; this.formParts.reduce((res, v) &#x3D;&gt; {
@@ -973,7 +978,7 @@ export class GenericArrayConverterService extends BaseConverter {
         this.updateFormPizzagna(updatedPizzagna);
     }
 
-    public toPreview(form: FormGroup) {
+    public toPreview(form: FormGroup): void {
         form.valueChanges
             .pipe(takeUntil(this.destroy$))
             .subscribe((formData) &#x3D;&gt; {

@@ -590,7 +590,7 @@ If a status is not specified in the map, the default thickness is the full heigh
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IPosition.html" target="_self" >IPosition | undefined</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1217,7 +1217,7 @@ export class ThresholdsService {
     public injectThresholdsData(
         dataSeries: IDataSeries&lt;ILineAccessors&gt;,
         zones: IDataSeries&lt;IAreaAccessors&gt;[]
-    ) {
+    ): void {
         const zoneIndexes: Record&lt;string, number&gt; &#x3D; {};
         zones.forEach((z) &#x3D;&gt; (z.entered &#x3D; false));
 
@@ -1681,7 +1681,7 @@ export class ThresholdsService {
         dataFrom: IPosition,
         dataTo: IPosition,
         y: number
-    ) {
+    ): IPosition | undefined {
         return this.getCrossPoint(
             dataFrom,
             dataTo,

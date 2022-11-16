@@ -167,6 +167,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onDataSourceChanged" >onDataSourceChanged</a>
                             </li>
                         </ul>
@@ -220,7 +221,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-error/table/table-data-source-error.component.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/data-source-error/table/table-data-source-error.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -333,6 +334,7 @@
                 <td class="col-md-4">
                     <a name="onDataSourceChanged"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onDataSourceChanged</b></span>
                         <a href="#onDataSourceChanged"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -340,7 +342,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onDataSourceChanged()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onDataSourceChanged()</code>
                 </td>
             </tr>
 
@@ -402,7 +405,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:46</a></code>
+                                <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:41</a></code>
 </div>
                         </td>
                     </tr>
@@ -441,7 +444,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:44</a></code>
+                                <div class="io-line">Defined in         <code><a href="../components/DataSourceErrorComponent.html#source" target="_self" >DataSourceErrorComponent:39</a></code>
 </div>
                         </td>
                     </tr>
@@ -600,13 +603,8 @@
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
-    OnChanges,
     OnDestroy,
-    OnInit,
-    SimpleChanges,
 } from &quot;@angular/core&quot;;
-
-import { IDataField } from &quot;@nova-ui/bits&quot;;
 
 import { DataSourceErrorComponent } from &quot;../data-source-error.component&quot;;
 
@@ -625,7 +623,7 @@ export class TableDataSourceErrorComponent
         super(changeDetector);
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         super.ngOnDestroy();
     }
 }

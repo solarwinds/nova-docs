@@ -354,7 +354,7 @@ export class ChipsOverflowComponent {
         group?: IChipsGroup;
     }&gt;();
 
-    public onClear(data: { item: IChipsItem; group?: IChipsGroup }) {
+    public onClear(data: { item: IChipsItem; group?: IChipsGroup }): void {
         if (data.group) {
             data.group &#x3D; this.itemsSource.groupedItems?.find((g) &#x3D;&gt;
                 g.items.find((item) &#x3D;&gt; item &#x3D;&#x3D;&#x3D; data.item)

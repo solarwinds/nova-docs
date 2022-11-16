@@ -227,8 +227,8 @@ export interface IXYDataAccessors {
 export class XYAccessors implements IAccessors {
     /** The default data accessors for using with renderers deriving from XYRenderer */
     public data: IXYDataAccessors &#x3D; {
-        x: (d: any) &#x3D;&gt; d.x,
-        y: (d: any) &#x3D;&gt; d.y,
+        x: (d: any): number | undefined &#x3D;&gt; d.x,
+        y: (d: any): number | undefined &#x3D;&gt; d.y,
     };
 }
 </code></pre>

@@ -139,7 +139,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/services/data-source/data-source-features.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/services/data-source/data-source-features.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -201,7 +201,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/services/data-source/data-source-features.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/services/data-source/data-source-features.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -237,8 +237,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/services/data-source/data-source-features.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/services/data-source/data-source-features.ts:47</a></div>
                 </td>
             </tr>
 
@@ -276,7 +276,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/IDataSourceFeatures.html" target="_self" >IDataSourceFeatures</a></code>
+                        <b>Returns : </b>    <code>IDataSourceFeature | undefined</code>
 
                     </div>
                     <div class="io-description">
@@ -308,8 +308,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/services/data-source/data-source-features.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/services/data-source/data-source-features.ts:38</a></div>
                 </td>
             </tr>
 
@@ -347,8 +347,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/services/data-source/data-source-features.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/services/data-source/data-source-features.ts:42</a></div>
                 </td>
             </tr>
 
@@ -409,6 +409,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &quot;rxjs&quot;;
 
 import {
+    IDataSourceFeature,
     IDataSourceFeatures,
     IDataSourceFeaturesConfiguration,
 } from &quot;./public-api&quot;;
@@ -426,12 +427,12 @@ export class DataSourceFeatures implements IDataSourceFeaturesConfiguration {
         return this.supportedFeatures;
     }
 
-    public setSupportedFeatures(features: IDataSourceFeatures) {
+    public setSupportedFeatures(features: IDataSourceFeatures): void {
         this.supportedFeatures &#x3D; features;
         this.featuresChanged.next(features);
     }
 
-    public getFeatureConfig(key: string) {
+    public getFeatureConfig(key: string): IDataSourceFeature | undefined {
         return this.supportedFeatures?.[key];
     }
 }

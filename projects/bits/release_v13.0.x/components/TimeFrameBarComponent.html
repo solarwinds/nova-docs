@@ -467,9 +467,9 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&lt;any&gt;{
-        startDatetime: undefined,
-        endDatetime: undefined,
+                        <i>Default value : </i><code>{
+        startDatetime: moment(undefined),
+        endDatetime: moment(undefined),
     }</code>
                     </td>
                 </tr>
@@ -1353,9 +1353,9 @@ export class TimeFrameBarComponent
     @Input() maxDate: Moment;
 
     /** Current time frame value */
-    @Input() timeFrame: ITimeframe &#x3D; &lt;any&gt;{
-        startDatetime: undefined,
-        endDatetime: undefined,
+    @Input() timeFrame: ITimeframe &#x3D; {
+        startDatetime: moment(undefined),
+        endDatetime: moment(undefined),
     };
     @Output() timeFrameChange &#x3D; new EventEmitter&lt;ITimeframe&gt;();
 
@@ -1380,7 +1380,7 @@ export class TimeFrameBarComponent
     public humanizedTimeframe: string;
     public readonly defaultPickerTitle &#x3D; $localize&#x60;:Label indicating that the user can select a custom start date and/or end date:Custom Range&#x60;;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         public timeframeService: TimeframeService,

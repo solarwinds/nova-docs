@@ -149,7 +149,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="416" class="link-to-prism">src/core/chart-assists/chart-assist.ts:416</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="418" class="link-to-prism">src/core/chart-assists/chart-assist.ts:418</a></div>
                             </td>
                         </tr>
 
@@ -217,7 +217,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="416" class="link-to-prism">src/core/chart-assists/chart-assist.ts:416</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="418" class="link-to-prism">src/core/chart-assists/chart-assist.ts:418</a></div>
                         </td>
                     </tr>
 
@@ -253,8 +253,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="493"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:493</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="495"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:495</a></div>
                 </td>
             </tr>
 
@@ -324,8 +324,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="439"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:439</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="441"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:441</a></div>
                 </td>
             </tr>
 
@@ -363,8 +363,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="443"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:443</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="445"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:445</a></div>
                 </td>
             </tr>
 
@@ -434,8 +434,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="504"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:504</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="506"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:506</a></div>
                 </td>
             </tr>
 
@@ -473,8 +473,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="469"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:469</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="471"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:471</a></div>
                 </td>
             </tr>
 
@@ -563,8 +563,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="483"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:483</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="485"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:485</a></div>
                 </td>
             </tr>
 
@@ -653,8 +653,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="420"
-                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:420</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="422"
+                            class="link-to-prism">src/core/chart-assists/chart-assist.ts:422</a></div>
                 </td>
             </tr>
 
@@ -716,6 +716,7 @@
 import keyBy from &quot;lodash/keyBy&quot;;
 import values from &quot;lodash/values&quot;;
 import { Observable, of, Subject, Subscription } from &quot;rxjs&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { filter, map, switchMap, takeUntil } from &quot;rxjs/operators&quot;;
 
 import {
@@ -883,6 +884,7 @@ export class ChartAssist&lt;T extends IAccessors &#x3D; IAccessors&gt;
             highlightData &amp;&amp; highlightData.index &gt;&#x3D; 0;
 
         return seriesHighlight$.pipe(
+            // eslint-disable-next-line import/no-deprecated
             switchMap((highlightData) &#x3D;&gt;
                 highlightDataPresentPredicate(highlightData)
                     ? of(highlightData.data)

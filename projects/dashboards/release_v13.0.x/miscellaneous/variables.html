@@ -948,7 +948,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(
+                        <i>Default value : </i><code>new EventDefinition&lt;boolean&gt;(
     &quot;DASHBOARD_EDIT_MODE&quot;,
     () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1)
 )</code>
@@ -993,7 +993,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;DATA_SOURCE_INVOKED&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(
+    &quot;DATA_SOURCE_INVOKED&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -1059,7 +1061,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;INTERACTION&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;IInteractionPayload&lt;any&gt;&gt;(
+    &quot;INTERACTION&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -1911,7 +1915,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;PREVIEW_EVENT&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;IPreviewEventPayload&gt;(
+    &quot;PREVIEW_EVENT&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -1931,7 +1937,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;REFRESH&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;REFRESH&quot;)</code>
                     </td>
                 </tr>
 
@@ -1951,7 +1957,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;SCROLL_NEXT_PAGE&quot;)</code>
                     </td>
                 </tr>
 
@@ -1971,7 +1977,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;SET_PROPERTY_VALUE&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;ISetPropertyPayload&gt;(
+    &quot;SET_PROPERTY_VALUE&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -1991,7 +1999,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;SET_TIMEFRAME&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;ISerializableTimeframe&gt;(
+    &quot;SET_TIMEFRAME&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -2011,7 +2021,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_CREATE&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;WIDGET_CREATE&quot;)</code>
                     </td>
                 </tr>
 
@@ -2031,7 +2041,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_EDIT&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;WIDGET_EDIT&quot;)</code>
                     </td>
                 </tr>
 
@@ -2051,7 +2061,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(
+                        <i>Default value : </i><code>new EventDefinition&lt;GridsterItem&gt;(
     &quot;WIDGET_POSITION_CHANGE&quot;
 )</code>
                     </td>
@@ -2073,7 +2083,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_READY&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;WIDGET_READY&quot;)</code>
                     </td>
                 </tr>
 
@@ -2093,7 +2103,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_REMOVE&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;void&gt;(&quot;WIDGET_REMOVE&quot;)</code>
                     </td>
                 </tr>
 
@@ -2113,7 +2123,9 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(&quot;WIDGET_RESIZE&quot;)</code>
+                        <i>Default value : </i><code>new EventDefinition&lt;IWidgetResizePayload&gt;(
+    &quot;WIDGET_RESIZE&quot;
+)</code>
                     </td>
                 </tr>
 
@@ -2133,7 +2145,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(
+                        <i>Default value : </i><code>new EventDefinition&lt;string&gt;(
     &quot;WIDGET_SEARCH&quot;,
     () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; })
 )</code>
@@ -2159,7 +2171,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;DASHBOARD_EVENT_BUS&quot;
 )</code>
                     </td>
@@ -2181,7 +2193,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;)</code>
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;DATA_SOURCE&quot;)</code>
                     </td>
                 </tr>
 
@@ -2201,7 +2213,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;FORMATTERS_REGISTRY&quot;
 )</code>
                     </td>
@@ -2223,7 +2235,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;HEADER_LINK_PROVIDER&quot;
 )</code>
                     </td>
@@ -2245,7 +2257,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;PIZZAGNA_EVENT_BUS&quot;
 )</code>
                     </td>
@@ -2267,7 +2279,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+                        <i>Default value : </i><code>new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;TEST_REGISTRY&quot;
 )</code>
                     </td>
@@ -2446,7 +2458,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new EventDefinition(
+                        <i>Default value : </i><code>new EventDefinition&lt;IComponentIdPayload&gt;(
     &quot;DATA_SOURCE_DESTROYED&quot;
 )</code>
                     </td>
@@ -4698,9 +4710,9 @@ error configuration node defined in the widget structure.</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(
-    origin,
+    origin: IProportionalAggregatorOrigin,
     properties?: IFieldMapperAggregatorProperties
-) &#x3D;&gt; {
+): any &#x3D;&gt; {
     const chartSeriesDataFieldId &#x3D;
         properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
 
@@ -5508,9 +5520,9 @@ This function represents the linear dependency (approximately).</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(
-    origin,
+    origin: IProportionalAggregatorOrigin,
     properties?: IPercentageAggregatorProperties
-) &#x3D;&gt; {
+): string &#x3D;&gt; {
     const data &#x3D; origin.map((v) &#x3D;&gt; v.data[0]);
     const { activeMetricId, base100 } &#x3D; properties || {};
 
@@ -6063,9 +6075,9 @@ This function represents the linear dependency (approximately).</p>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>(
-    origin,
-    properties?
-) &#x3D;&gt; {
+    origin: IProportionalAggregatorOrigin,
+    properties?: IProportionalDonutContentAggregatorProperties
+): string &#x3D;&gt; {
     const { activeMetricId } &#x3D; properties || {};
 
     if (activeMetricId) {
@@ -6418,7 +6430,9 @@ This function represents the linear dependency (approximately).</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>(form: AbstractControl) &#x3D;&gt; {
+                        <i>Default value : </i><code>(
+    form: AbstractControl
+): ValidationErrors | null &#x3D;&gt; {
     const critical &#x3D; form.get(&quot;criticalThresholdValue&quot;);
     const warning &#x3D; form.get(&quot;warningThresholdValue&quot;);
     const reverse &#x3D; form.get(&quot;reversedThresholds&quot;);

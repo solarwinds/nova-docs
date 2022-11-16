@@ -756,7 +756,7 @@ export class ChartPopoverPlugin extends ChartPlugin {
     };
 
     private isOpen &#x3D; false;
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(public config: IPopoverPluginConfig &#x3D; {}) {
         super();
@@ -798,7 +798,7 @@ export class ChartPopoverPlugin extends ChartPlugin {
         }
     }
 
-    protected getAbsolutePosition(valuesArray: any[]) {
+    protected getAbsolutePosition(valuesArray: any[]): IElementPosition {
         const chartElement: any &#x3D; this.chart.target?.node()?.parentNode; // the one above svg
 
         if (!chartElement) {

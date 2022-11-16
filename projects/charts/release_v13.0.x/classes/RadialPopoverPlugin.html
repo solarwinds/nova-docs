@@ -699,12 +699,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChartPopoverPlugin } from &quot;./chart-popover-plugin&quot;;
+import { IElementPosition } from &quot;./types&quot;;
 
 /**
  * Extends ChartPopoverPlugin to handle popover positioning for radial charts.
  */
 export class RadialPopoverPlugin extends ChartPopoverPlugin {
-    protected getAbsolutePosition(valArr: any[]) {
+    protected getAbsolutePosition(valArr: any[]): IElementPosition {
         const chartElement: any &#x3D; this.chart.target?.node()?.parentNode; // the one above svg
 
         if (!chartElement) {

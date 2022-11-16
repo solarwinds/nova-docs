@@ -185,7 +185,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IPizzagna.html" target="_self" >IPizzagna</a></code>
 
                     </div>
                     <div class="io-description">
@@ -216,7 +216,7 @@ export class DynamicComponentCreator {
         pizzagna: IPizzagna,
         parentPath: string,
         componentIds: string[]
-    ) {
+    ): IPizzagna {
         const parent &#x3D; pizzagna[PizzagnaLayer.Structure][parentPath];
         const template &#x3D; parent.properties
             ?.template as Partial&lt;IComponentConfiguration&gt;[];

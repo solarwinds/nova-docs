@@ -349,7 +349,7 @@ export class DonutContentSumFormatterComponent implements OnChanges {
 
     @Input() data: IFormatterData[];
 
-    ngOnChanges() {
+    public ngOnChanges(): void {
         this.sum &#x3D; sumBy(this.data, (s) &#x3D;&gt; s.data[0]);
     }
 }

@@ -143,9 +143,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onBack" >onBack</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onHome" >onHome</a>
                             </li>
                         </ul>
@@ -310,6 +312,7 @@
                 <td class="col-md-4">
                     <a name="onBack"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onBack</b></span>
                         <a href="#onBack"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -317,7 +320,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onBack()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBack()</code>
                 </td>
             </tr>
 
@@ -347,6 +351,7 @@
                 <td class="col-md-4">
                     <a name="onHome"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onHome</b></span>
                         <a href="#onHome"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -354,7 +359,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onHome()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onHome()</code>
                 </td>
             </tr>
 
@@ -483,7 +489,7 @@ export class ListNavigationBarComponent {
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;
     ) {}
 
-    onBack() {
+    public onBack(): void {
         if (this.navBarConfig) {
             this.eventBus.getStream(DRILLDOWN).next({
                 payload: {
@@ -493,7 +499,7 @@ export class ListNavigationBarComponent {
         }
     }
 
-    onHome() {
+    public onHome(): void {
         this.eventBus.getStream(DRILLDOWN).next({ payload: { reset: true } });
     }
 }

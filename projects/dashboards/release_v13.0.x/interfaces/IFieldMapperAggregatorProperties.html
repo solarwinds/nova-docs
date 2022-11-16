@@ -154,6 +154,7 @@
 
 import {
     IProportionalAggregatorFn,
+    IProportionalAggregatorOrigin,
     IProportionalDonutContentAggregatorProperties,
 } from &quot;./types&quot;;
 
@@ -163,9 +164,9 @@ export interface IFieldMapperAggregatorProperties
 }
 
 export const fieldMapper: IProportionalAggregatorFn &#x3D; (
-    origin,
+    origin: IProportionalAggregatorOrigin,
     properties?: IFieldMapperAggregatorProperties
-) &#x3D;&gt; {
+): any &#x3D;&gt; {
     const chartSeriesDataFieldId &#x3D;
         properties?.chartSeriesDataFieldId || &quot;data[0]&quot;;
 

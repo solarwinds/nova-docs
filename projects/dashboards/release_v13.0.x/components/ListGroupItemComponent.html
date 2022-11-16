@@ -161,6 +161,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onButtonClick" >onButtonClick</a>
                             </li>
                         </ul>
@@ -423,6 +424,7 @@
                 <td class="col-md-4">
                     <a name="onButtonClick"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onButtonClick</b></span>
                         <a href="#onButtonClick"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -430,7 +432,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onButtonClick()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onButtonClick()</code>
                 </td>
             </tr>
 
@@ -686,7 +689,7 @@ export class ListGroupItemComponent implements IHasChangeDetector {
 
     constructor(public changeDetector: ChangeDetectorRef) {}
 
-    onButtonClick() {
+    public onButtonClick(): void {
         if (this.canNavigate) {
             this.navigated.emit(this);
         }

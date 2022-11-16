@@ -687,8 +687,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="161"
-                            class="link-to-prism">src/core/chart-assists/spark-chart-assist.ts:161</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/core/chart-assists/spark-chart-assist.ts:164</a></div>
                 </td>
             </tr>
 
@@ -726,8 +726,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/core/chart-assists/spark-chart-assist.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/core/chart-assists/spark-chart-assist.ts:160</a></div>
                 </td>
             </tr>
 
@@ -863,7 +863,7 @@ and assign this function to the ngFor trackBy property</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>string | undefined</code>
 
                     </div>
                     <div class="io-description">
@@ -1168,8 +1168,11 @@ export class SparkChartAssist implements IChartAssist {
      * To use the for-cycle trackBy, set the id value on each spark
      * and assign this function to the ngFor trackBy property
      */
-    public trackByFn(_index: number, spark: ISpark&lt;IAccessors&gt;) {
-        return spark.id;
+    public trackByFn(
+        _index: number,
+        spark: ISpark&lt;IAccessors&gt;
+    ): string | undefined {
+        return spark?.id;
     }
 
     public setRenderState(_seriesId: string, _state: RenderState): void {
@@ -1180,7 +1183,7 @@ export class SparkChartAssist implements IChartAssist {
         return [];
     }
 
-    protected createChart(lastSpark: boolean) {
+    protected createChart(lastSpark: boolean): Chart {
         const grid &#x3D; new XYGrid(
             lastSpark ? this.lastGridConfig : this.gridConfig
         );
