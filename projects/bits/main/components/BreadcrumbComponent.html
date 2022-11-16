@@ -274,7 +274,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>handleClick(event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>, item: <a href="../interfaces/BreadcrumbItem.html" target="_self">BreadcrumbItem</a>)</code>
+                    <code>handleClick(event: KeyboardEvent, item: <a href="../interfaces/BreadcrumbItem.html" target="_self">BreadcrumbItem</a>)</code>
                 </td>
             </tr>
 
@@ -305,7 +305,7 @@
                                 <tr>
                                     <td>event</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                            <code>KeyboardEvent</code>
                                     </td>
 
                                     <td>
@@ -372,18 +372,19 @@ export class BreadcrumbComponent {
     @Input() ariaLabel: string &#x3D; &quot;Breadcrumb&quot;;
     @Output() navigation &#x3D; new EventEmitter&lt;string&gt;();
 
-    public handleClick(event: Event, item: BreadcrumbItem) {
+    public handleClick(event: KeyboardEvent, item: BreadcrumbItem): void {
         event.preventDefault();
 
         // We want to only handle the CRTL + Click event separately because Middle Mouse click
         // requires a different way of handling it, and so it doesn&#x27;t conflict with the regular click event.
-        if ((event as any).ctrlKey) {
+        if (event.ctrlKey) {
             if (item?.url) {
                 // This opens the url link in a new browser tab
                 window.open(item?.url, &quot;_blank&quot;);
             }
             return;
         }
+
         // We only navigate the angular router on regular clicks
         this.navigation.emit(item.routerState);
     }

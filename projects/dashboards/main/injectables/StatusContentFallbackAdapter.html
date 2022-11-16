@@ -305,7 +305,7 @@ import { IDataSourceOutputPayload } from &quot;./types&quot;;
 
 @Injectable()
 export class StatusContentFallbackAdapter implements OnDestroy, IHasComponent {
-    protected destroy$ &#x3D; new Subject&lt;void&gt;();
+    protected readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     protected componentId: string;
 
     constructor(
@@ -325,13 +325,13 @@ export class StatusContentFallbackAdapter implements OnDestroy, IHasComponent {
         this.destroy$.complete();
     }
 
-    public setComponent(component: any, componentId: string) {
+    public setComponent(component: any, componentId: string): void {
         this.componentId &#x3D; componentId;
     }
 
     protected handleDataSourceOutput(
         event: IEvent&lt;any | IDataSourceOutputPayload&lt;any&gt;&gt;
-    ) {
+    ): void {
         this.pizzagnaService.setProperty(
             {
                 componentId: this.componentId,

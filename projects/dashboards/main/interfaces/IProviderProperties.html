@@ -165,29 +165,29 @@
 } from &quot;@angular/core&quot;;
 import { AbstractControl, FormGroup } from &quot;@angular/forms&quot;;
 
-import { EventBus } from &quot;@nova-ui/bits&quot;;
+import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
 
 /**
- * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Partial&lt;T&gt;.
+ * Same as Partial&lt;T&gt; but goes deeper and makes all of its properties and sub-properties Parti al&lt;T&gt;.
  */
 export type DeepPartial&lt;T&gt; &#x3D; T extends object
     ? { [K in keyof T]?: DeepPartial&lt;T[K]&gt; }
     : T;
 
-export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+export const PIZZAGNA_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;PIZZAGNA_EVENT_BUS&quot;
 );
-export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+export const DASHBOARD_EVENT_BUS &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;DASHBOARD_EVENT_BUS&quot;
 );
-export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(&quot;DATA_SOURCE&quot;);
-export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+export const DATA_SOURCE &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(&quot;DATA_SOURCE&quot;);
+export const FORMATTERS_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;FORMATTERS_REGISTRY&quot;
 );
-export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+export const TEST_REGISTRY &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;TEST_REGISTRY&quot;
 );
-export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;Event&gt;&gt;(
+export const HEADER_LINK_PROVIDER &#x3D; new InjectionToken&lt;EventBus&lt;IEvent&gt;&gt;(
     &quot;HEADER_LINK_PROVIDER&quot;
 );
 
@@ -227,6 +227,13 @@ export interface IProperties extends Record&lt;string, any&gt; {}
 export interface IProviderProperties extends IProperties {
     /** This is property is set by the component portal directive to give providers self-awareness they need to update properties in pizzagna. */
     providerKey?: string;
+}
+
+export interface ISerializableTimeframe {
+    startDatetime: string;
+    endDatetime: string;
+    selectedPresetId?: string;
+    title?: string;
 }
 
 export interface IComponentConfiguration {

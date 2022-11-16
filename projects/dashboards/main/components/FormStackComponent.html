@@ -692,7 +692,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1001,7 +1001,7 @@ export class FormStackComponent
         super(changeDetector, pizzagnaService, logger);
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.form &#x3D; this.formDirective.form;
     }
 
@@ -1009,13 +1009,13 @@ export class FormStackComponent
         super.ngOnChanges(changes);
     }
 
-    public onEvent(componentId: string, event: IEvent) {
+    public onEvent(componentId: string, event: IEvent): void {
         if (event.id &#x3D;&#x3D;&#x3D; &quot;formReady&quot;) {
             this.addFormGroup(componentId, event.payload);
         }
     }
 
-    public addFormGroup(name: string, formGroup: FormGroup) {
+    public addFormGroup(name: string, formGroup: FormGroup): void {
         this.form.addControl(name, formGroup);
     }
 

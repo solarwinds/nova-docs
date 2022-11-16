@@ -93,6 +93,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#destroy$" >destroy$</a>
                             </li>
                         </ul>
@@ -112,6 +113,7 @@
                                 <a href="#buildForm" >buildForm</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
@@ -291,6 +293,7 @@
                 <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngAfterViewInit</b></span>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -298,7 +301,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
@@ -819,6 +823,7 @@
                     <a name="destroy$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>destroy$</b></span>
                         <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -883,7 +888,7 @@ export class TimeseriesMetadataConverterService
         super(eventBus, previewService, pizzagnaService);
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         super.ngAfterViewInit();
     }
 

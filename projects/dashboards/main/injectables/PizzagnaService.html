@@ -843,11 +843,11 @@ export class PizzagnaService {
     public pizzaChanged &#x3D; new ReplaySubject&lt;IPizza&gt;(1);
     private components: IPizza;
 
-    public updatePizzagna(pizzagna: IPizzagna) {
+    public updatePizzagna(pizzagna: IPizzagna): void {
         this.pizzagna &#x3D; pizzagna;
     }
 
-    public updateComponents(components: IPizza) {
+    public updateComponents(components: IPizza): void {
         this.components &#x3D; components;
         this.pizzaChanged.next(components);
     }
@@ -860,7 +860,7 @@ export class PizzagnaService {
         return component;
     }
 
-    public setProperty(property: IPizzagnaProperty | string, value: any) {
+    public setProperty(property: IPizzagnaProperty | string, value: any): void {
         const path &#x3D;
             typeof property &#x3D;&#x3D;&#x3D; &quot;string&quot;
                 ? property
@@ -873,7 +873,7 @@ export class PizzagnaService {
     public createComponentsFromTemplateWithProperties(
         parentPath: string,
         components: any
-    ) {
+    ): void {
         const componentIds &#x3D; components.map((c: any) &#x3D;&gt; c.id);
         let updatedPizzagna: IPizzagna &#x3D;
             this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(
@@ -906,7 +906,7 @@ export class PizzagnaService {
     public createComponentsFromTemplate(
         parentPath: string,
         componentIds: string[]
-    ) {
+    ): void {
         const updatedPizzagna &#x3D;
             this.dynamicComponentCreator.getPizzagnaUpdatedWithComponents(
                 this.pizzagna,
@@ -923,7 +923,7 @@ export class PizzagnaService {
         });
     }
 
-    public removeComponents(ids: string | string[]) {
+    public removeComponents(ids: string | string[]): void {
         if (isArray(ids)) {
             ids.forEach((id) &#x3D;&gt; this.removeComponent(id));
         } else {

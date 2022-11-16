@@ -420,7 +420,7 @@ export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
 
     @ViewChild(PopoverComponent) popover: PopoverComponent;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private initPlugin$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
@@ -428,13 +428,13 @@ export class ChartPopoverComponent implements OnChanges, OnInit, OnDestroy {
         public element: ElementRef
     ) {}
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.plugin &amp;&amp; !changes.plugin.isFirstChange()) {
             this.initPlugin();
         }
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.initPlugin();
     }
 

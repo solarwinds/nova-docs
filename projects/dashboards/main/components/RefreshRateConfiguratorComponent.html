@@ -849,8 +849,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="287"
-                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:287</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="285"
+                            class="link-to-prism">src/lib/configurator/components/widgets/configurator-items/refresher-configuration/refresh-rate-configurator/refresh-rate-configurator.component.ts:285</a></div>
                 </td>
             </tr>
 
@@ -1238,19 +1238,19 @@ export class RefreshRateConfiguratorComponent
     valueChangeFix &#x3D; noop; // TODO this can be removed after NUI-3442 is fixed
 
     private onChange: (value: number | null) &#x3D;&gt; void;
-    private destroy$$ &#x3D; new Subject&lt;void&gt;();
+    private destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.generateUnitItems();
         this.filterUnitItems();
         this.createForm();
     }
 
-    ngOnDestroy(): void {
-        this.destroy$$.next();
-        this.destroy$$.complete();
+    public ngOnDestroy(): void {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 
     getNumberMin(): number | undefined {
@@ -1351,7 +1351,7 @@ export class RefreshRateConfiguratorComponent
             this.currentUnit &#x3D; this.unitControl.value.id;
         }
 
-        this.form.valueChanges.pipe(takeUntil(this.destroy$$)).subscribe(() &#x3D;&gt; {
+        this.form.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(() &#x3D;&gt; {
             this.updateError();
             this.emitValueChange();
         });
@@ -1419,22 +1419,20 @@ export class RefreshRateConfiguratorComponent
         params: NumberValidationParams
     ): string {
         const { min, max, whole } &#x3D; params;
-        let numberTypeText: string;
-        if (whole) {
-            numberTypeText &#x3D; $localize&#x60;a whole number&#x60;;
-        } else {
-            numberTypeText &#x3D; $localize&#x60;a number&#x60;;
-        }
+        const numberTypeText &#x3D; whole
+            ? $localize&#x60;a whole number&#x60;
+            : $localize&#x60;a number&#x60;;
 
         if (min !&#x3D; null &amp;&amp; max !&#x3D; null) {
             if (min &#x3D;&#x3D;&#x3D; max) {
                 return $localize&#x60;Must be ${numberTypeText} equal to ${min}&#x60;;
-            } else {
-                return $localize&#x60;Must be ${numberTypeText} between ${min} and ${max}&#x60;;
             }
-        } else if (min &#x3D;&#x3D; null &amp;&amp; max !&#x3D; null) {
+            return $localize&#x60;Must be ${numberTypeText} between ${min} and ${max}&#x60;;
+        }
+        if (min &#x3D;&#x3D; null &amp;&amp; max !&#x3D; null) {
             return $localize&#x60;Must be ${numberTypeText} not larger than ${max}&#x60;;
-        } else if (min !&#x3D; null &amp;&amp; max &#x3D;&#x3D; null) {
+        }
+        if (min !&#x3D; null &amp;&amp; max &#x3D;&#x3D; null) {
             return $localize&#x60;Must be ${numberTypeText} not smaller than ${min}&#x60;;
         }
         return $localize&#x60;Must be ${numberTypeText}&#x60;;

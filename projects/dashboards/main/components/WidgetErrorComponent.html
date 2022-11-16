@@ -548,7 +548,7 @@ export class WidgetErrorComponent
 
     constructor(public changeDetector: ChangeDetectorRef) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.classNames &#x3D; &#x60;${this.defaultClasses} ${this.elementClass}&#x60;;
     }
 }

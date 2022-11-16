@@ -356,7 +356,7 @@ export class CardComponent implements OnInit {
     @HostBinding(&quot;class.card-direction-column&quot;) directionColumn: boolean;
     @HostBinding(&quot;class.card-direction-row&quot;) directionRow: boolean;
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.directionColumn &#x3D;
             (this.directionColumn &amp;&amp; !this.directionRow) ||
             this.direction &#x3D;&#x3D;&#x3D; &quot;column&quot;;

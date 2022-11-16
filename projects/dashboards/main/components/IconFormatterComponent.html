@@ -471,7 +471,7 @@ export class IconFormatterComponent implements OnChanges, IHasChangeDetector {
     public iconFound: boolean &#x3D; true;
     @Input() public data?: IFormatterData;
 
-    ngOnChanges() {
+    public ngOnChanges(): void {
         this.isValid &#x3D; !!this.data?.value;
         this.iconFound &#x3D; !!this.iconService.getIconData(this.data?.value);
     }

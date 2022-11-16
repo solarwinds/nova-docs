@@ -90,6 +90,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#draw" >draw</a>
                             </li>
                             <li>
@@ -211,6 +212,7 @@
                 <td class="col-md-4">
                     <a name="draw"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>draw</b></span>
                         <a href="#draw"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -218,15 +220,16 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>draw(renderer: <a href="../classes/BarRenderer.html" target="_self">BarRenderer</a>, renderSeries: <a href="../classes/RectangleAccessors.html" target="_self">IRenderSeries&lt;IRectangleAccessors&gt;</a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html" target="_self">Subject&lt;IRendererEventPayload&gt;</a>)</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>draw(renderer: <a href="../classes/BarRenderer.html" target="_self">BarRenderer</a>, renderSeries: <a href="../classes/RectangleAccessors.html" target="_self">IRenderSeries&lt;IRectangleAccessors&gt;</a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html" target="_self">Subject&lt;IRendererEventPayload&gt;</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="211"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:211</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:213</a></div>
                 </td>
             </tr>
 
@@ -394,7 +397,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </div>
                     <div class="io-description">
@@ -501,7 +504,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 
                     </div>
                     <div class="io-description">
@@ -533,8 +536,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="169"
-                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:169</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">src/renderers/bar/highlight-strategies/bar-highlight-strategy.ts:171</a></div>
                 </td>
             </tr>
 
@@ -674,7 +677,7 @@ export class BarHighlightStrategy
         series: IDataSeries&lt;IRectangleAccessors&gt;,
         values: { [p: string]: any },
         scales: Scales
-    ) {
+    ): number {
         const value &#x3D; values[this.scaleKey];
         if (typeof value &#x3D;&#x3D;&#x3D; &quot;undefined&quot;) {
             // if there is no value we&#x27;re returning -2 (DATA_POINT_INTERACTION_RESET) which helps highlightDataPoint
@@ -690,7 +693,7 @@ export class BarHighlightStrategy
         value: any,
         scaleKey: keyof IXYScales,
         scales?: Scales
-    ) {
+    ): number {
         const accessorSuffix &#x3D; (scaleKey as string).toUpperCase();
         const dataAccessors &#x3D; series.accessors.data;
 
@@ -702,7 +705,8 @@ export class BarHighlightStrategy
                 series.data,
                 (d, i) &#x3D;&gt; value &#x3D;&#x3D;&#x3D; startAccessor?.(d, i, series.data, series)
             );
-        } else if (isArray(value)) {
+        }
+        if (isArray(value)) {
             return findIndex(series.data, (d, i) &#x3D;&gt; {
                 const start &#x3D; startAccessor?.(d, i, series.data, series);
                 const lengthLimit &#x3D; Math.min(
@@ -718,7 +722,8 @@ export class BarHighlightStrategy
                 }
                 return true;
             });
-        } else if (value.valueOf) {
+        }
+        if (value.valueOf) {
             const valueOf &#x3D; value.valueOf();
             if (scales &amp;&amp; scales[scaleKey]?.isContinuous()) {
                 let index &#x3D; findIndex(
@@ -818,11 +823,11 @@ export class BarHighlightStrategy
         // });
     }
 
-    draw(
+    public draw(
         renderer: BarRenderer,
         renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;,
         rendererSubject: Subject&lt;IRendererEventPayload&gt;
-    ) {}
+    ): void {}
 }
 </code></pre>
     </div>

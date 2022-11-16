@@ -727,7 +727,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>any[]</code>
 
                     </div>
                 </td>
@@ -1071,7 +1071,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>string | undefined</code>
 
                     </div>
                     <div class="io-description">
@@ -1682,7 +1682,7 @@ export class TableColumnsConfigurationV2Component
             });
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.formReady.emit(this.form);
 
         if (this.template &amp;&amp; !this.tableFormatterRegistry.getItems()?.length) {
@@ -1703,14 +1703,14 @@ export class TableColumnsConfigurationV2Component
         this.onDestroy$.complete();
     }
 
-    public getColumns() {
+    public getColumns(): any[] {
         return this.form.controls[&quot;columns&quot;].value;
     }
 
     public updateColumns(
         columns: ITableWidgetColumnConfig[],
         emitEvent: boolean &#x3D; true
-    ) {
+    ): void {
         const cols &#x3D; this.form.controls[&quot;columns&quot;] as FormArray;
         cols.controls &#x3D; columns.map((c) &#x3D;&gt; {
             const fc &#x3D; new FormControl(c);
@@ -1732,11 +1732,11 @@ export class TableColumnsConfigurationV2Component
         this.changeDetector.markForCheck();
     }
 
-    public trackBy(index: number, item: FormControl) {
+    public trackBy(index: number, item: FormControl): string | undefined {
         return item?.value?.id;
     }
 
-    public addColumn() {
+    public addColumn(): void {
         (this.form.controls[&quot;columns&quot;] as FormArray).push(
             new FormControl({
                 id: uuid(&quot;column&quot;),
@@ -1747,11 +1747,11 @@ export class TableColumnsConfigurationV2Component
         );
     }
 
-    public onResetColumns() {
+    public onResetColumns(): void {
         this.resetColumns(!!this.getColumns()?.length);
     }
 
-    public resetColumns(confirmation: boolean) {
+    public resetColumns(confirmation: boolean): void {
         const reset &#x3D; () &#x3D;&gt; {
             const columns: ITableWidgetColumnConfig[] &#x3D;
                 this.dataSourceFields?.map((df) &#x3D;&gt; ({
@@ -1839,7 +1839,7 @@ export class TableColumnsConfigurationV2Component
 
     // ------------------------------------------------- items dynamic stuff ------------------------------------------------
 
-    public moveItem(index: number, toIndex: number) {
+    public moveItem(index: number, toIndex: number): void {
         const columns &#x3D; this.form.controls[&quot;columns&quot;] as FormArray;
 
         const column &#x3D; columns.at(index);
@@ -1856,7 +1856,7 @@ export class TableColumnsConfigurationV2Component
         this.changeDetector.detectChanges();
     }
 
-    public drop(event: CdkDragDrop&lt;string[]&gt;) {
+    public drop(event: CdkDragDrop&lt;string[]&gt;): void {
         this.moveItem(event.previousIndex, event.currentIndex);
     }
 

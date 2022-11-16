@@ -1640,7 +1640,7 @@ export class PieRenderer extends RadialRenderer {
         range: [number, number],
         arc: Arc&lt;any, DefaultArcObject&gt;,
         index: number
-    ) {
+    ): Arc&lt;any, DefaultArcObject&gt; {
         return arc.outerRadius(range[1] - range[0]).innerRadius(0);
     }
 }

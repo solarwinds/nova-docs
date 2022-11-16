@@ -778,7 +778,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:270</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:269</a></code>
 </div>
                 </td>
             </tr>
@@ -849,8 +849,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="250"
-                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:250</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/renderers/bar/bar-renderer.ts:249</a></div>
                 </td>
             </tr>
 
@@ -950,7 +950,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:209</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:208</a></code>
 </div>
                 </td>
             </tr>
@@ -1053,7 +1053,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:241</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:240</a></code>
 </div>
                 </td>
             </tr>
@@ -1156,7 +1156,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:274</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:273</a></code>
 </div>
                 </td>
             </tr>
@@ -1269,7 +1269,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:225</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:224</a></code>
 </div>
                 </td>
             </tr>
@@ -1791,7 +1791,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
     public draw(
         renderSeries: IRenderSeries&lt;IRectangleAccessors&gt;,
         rendererSubject: Subject&lt;IRendererEventPayload&gt;
-    ) {
+    ): void {
         const target &#x3D; renderSeries.containers[RenderLayerName.data];
         const dataSeries &#x3D; renderSeries.dataSeries;
         const accessors &#x3D; dataSeries.accessors;
@@ -1837,7 +1837,6 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
             .merge(bars as any)
             .property(generatedAttrs, (d, i) &#x3D;&gt; attrsGenerator(d, i)) // This saves attrsGenerator() output to local d3 variable generatedAttrs
             .select&lt;Element&gt;(&quot;rect&quot;)
-            // eslint-disable-next-line max-len
             .attr(
                 &quot;class&quot;,
                 (d, i) &#x3D;&gt;
@@ -2020,7 +2019,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
         data: any,
         i: number,
         rendererSubject: Subject&lt;IRendererEventPayload&gt;
-    ) {
+    ): void {
         rendererSubject.next({
             eventName: SELECT_DATA_POINT_EVENT,
             data: this.getDataPoint(renderSeries, data, i),
@@ -2037,7 +2036,7 @@ export class BarRenderer extends XYRenderer&lt;IRectangleAccessors&gt; {
     protected getAttrsGenerator(
         dataSeries: IDataSeries&lt;IRectangleAccessors&gt;,
         scales: Scales
-    ) {
+    ): (d: any, i: number) &#x3D;&gt; IPosition {
         const accessors &#x3D; dataSeries.accessors.data;
         return (d: any, i: number): IPosition &#x3D;&gt; {
             const x &#x3D; this.getDimensions(

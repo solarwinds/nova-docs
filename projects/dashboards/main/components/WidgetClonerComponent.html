@@ -995,7 +995,7 @@ export class WidgetClonerComponent
             allowStepChange: true,
         });
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private resetForm$ &#x3D; new Subject&lt;void&gt;();
     public busy &#x3D; false;
     public isFormDisplayed &#x3D; false;
@@ -1037,7 +1037,7 @@ export class WidgetClonerComponent
 
     // --------------------------------------------------------------------------------
 
-    public onPreviewPizzagnaUpdate(configLayer: IPizzagnaLayer) {
+    public onPreviewPizzagnaUpdate(configLayer: IPizzagnaLayer): void {
         if (!this.isFormDisplayed) {
             return;
         }
@@ -1054,14 +1054,14 @@ export class WidgetClonerComponent
         this.configurator.updateWidget(previewWidget);
     }
 
-    public canFinish() {
+    public canFinish(): boolean {
         return (
             !!this.widgetTemplate?.pizzagna?.configuration &amp;&amp;
             !this.widgetTemplate?.metadata?.needsConfiguration
         );
     }
 
-    public onFinish() {
+    public onFinish(): void {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             // is used to trigger valueChanges to detect changes in forms
@@ -1076,11 +1076,11 @@ export class WidgetClonerComponent
         this.configurator.formSubmit();
     }
 
-    public onCancel() {
+    public onCancel(): void {
         this.configurator.formCancel();
     }
 
-    public onStepNavigated(event: IDashwizStepNavigatedEvent) {
+    public onStepNavigated(event: IDashwizStepNavigatedEvent): void {
         this.isFormDisplayed &#x3D; event.currentStepIndex &#x3D;&#x3D;&#x3D; 1;
 
         if (event.currentStepIndex &#x3D;&#x3D;&#x3D; 0 &amp;&amp; event.previousStepIndex &#x3D;&#x3D;&#x3D; 1) {
@@ -1097,7 +1097,7 @@ export class WidgetClonerComponent
         }
     }
 
-    public onSelect(widget: IWidget) {
+    public onSelect(widget: IWidget): void {
         this.widgetTemplate &#x3D; widget;
         const previewWidget &#x3D; {
             ...widget,

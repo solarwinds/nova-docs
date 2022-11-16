@@ -87,6 +87,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#destroy$" >destroy$</a>
                             </li>
                         </ul>
@@ -111,6 +112,7 @@
                                 <a href="#getPreview" >getPreview</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
@@ -309,6 +311,7 @@
                 <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngAfterViewInit</b></span>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -316,7 +319,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
@@ -743,6 +747,7 @@
                     <a name="destroy$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>destroy$</b></span>
                         <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -790,7 +795,7 @@ export abstract class BaseConverter
     public component: any;
     public componentId: string;
 
-    public destroy$ &#x3D; new Subject&lt;void&gt;();
+    public readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
@@ -798,7 +803,7 @@ export abstract class BaseConverter
         protected pizzagnaService: PizzagnaService
     ) {}
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         this.buildForm();
 
         this.toPreview(this.component.form);
@@ -808,7 +813,7 @@ export abstract class BaseConverter
 
     public abstract toPreview(form: FormGroup): void;
 
-    public setComponent(component: any, componentId: string) {
+    public setComponent(component: any, componentId: string): void {
         this.component &#x3D; component;
         this.componentId &#x3D; componentId;
     }
@@ -817,11 +822,11 @@ export abstract class BaseConverter
         return this.previewService.preview;
     }
 
-    public updatePreview(preview: IPizzagnaLayer) {
+    public updatePreview(preview: IPizzagnaLayer): void {
         this.previewService.preview &#x3D; preview;
     }
 
-    public updateFormPizzagna(pizzagna: IPizzagna) {
+    public updateFormPizzagna(pizzagna: IPizzagna): void {
         this.pizzagnaService.updatePizzagna(pizzagna);
         this.eventBus.getStream(SET_PROPERTY_VALUE).next({
             payload: { path: &quot;&quot;, value: pizzagna } as ISetPropertyPayload,

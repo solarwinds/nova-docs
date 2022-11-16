@@ -688,11 +688,11 @@ export class ProgressComponent implements OnChanges {
     public isIndeterminate &#x3D; false;
     public ariaValueNow: string | undefined;
 
-    public ngOnChanges() {
+    public ngOnChanges(): void {
         this.isIndeterminate &#x3D; this.percent &#x3D;&#x3D;&#x3D; undefined;
     }
 
-    public cancelProgress() {
+    public cancelProgress(): void {
         this.cancel.emit();
     }
 }

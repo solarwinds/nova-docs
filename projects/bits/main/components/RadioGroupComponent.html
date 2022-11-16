@@ -240,7 +240,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/radio/radio-group.component.ts:116</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/lib/radio/radio-group.component.ts:115</a></div>
                             </td>
                         </tr>
 
@@ -453,8 +453,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="155"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:155</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:154</a></div>
                 </td>
             </tr>
 
@@ -524,8 +524,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:156</a></div>
                 </td>
             </tr>
 
@@ -563,8 +563,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="163"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:163</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="162"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:162</a></div>
                 </td>
             </tr>
 
@@ -634,8 +634,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:167</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:166</a></div>
                 </td>
             </tr>
 
@@ -705,8 +705,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="171"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:171</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:170</a></div>
                 </td>
             </tr>
 
@@ -776,8 +776,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="159"
-                            class="link-to-prism">src/lib/radio/radio-group.component.ts:159</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="158"
+                            class="link-to-prism">src/lib/radio/radio-group.component.ts:158</a></div>
                 </td>
             </tr>
 
@@ -1006,7 +1006,6 @@ export class RadioGroupComponent
      */
     @Output() public valueChange &#x3D; new EventEmitter&lt;any&gt;();
 
-    /* eslint-disable-next-line @typescript-eslint/no-use-before-define */
     @ContentChildren(forwardRef(() &#x3D;&gt; RadioComponent), { descendants: true })
     private children: QueryList&lt;RadioComponent&gt;;
     private _value: any &#x3D; null;
@@ -1050,11 +1049,11 @@ export class RadioGroupComponent
         );
     }
 
-    public onChange(value: any) {}
+    public onChange(value: any): void {}
 
-    public onTouched() {}
+    public onTouched(): void {}
 
-    public writeValue(value: any) {
+    public writeValue(value: any): void {
         this.value &#x3D; value;
     }
 
@@ -1227,7 +1226,7 @@ export class RadioComponent implements OnInit, OnDestroy {
         this.valueChange.emit(this.value);
     }
 
-    public onInputClick(event: Event) {
+    public onInputClick(event: MouseEvent): void {
         // We have to stop propagation for click events on the visual hidden input element.
         // By default, when a user clicks on a label element, a generated click event will be
         // dispatched on the associated input element. Since we are using a label element as our
@@ -1236,9 +1235,7 @@ export class RadioComponent implements OnInit, OnDestroy {
         // This will lead to multiple click events.
         // Preventing bubbling for the second event will solve that issue.
         event.stopPropagation();
-        this.eventBusService
-            .getStream({ id: DOCUMENT_CLICK_EVENT })
-            .next(event);
+        this.eventBusService.getStream(DOCUMENT_CLICK_EVENT).next(event);
     }
 }
 </code></pre>

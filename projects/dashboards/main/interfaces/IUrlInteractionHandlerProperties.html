@@ -193,8 +193,8 @@
 
 import { EventBus, IEvent, LoggerService } from &quot;@nova-ui/bits&quot;;
 
+import { UrlInteractionService } from &quot;../../../services/url-interaction.service&quot;;
 import { PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
-import { UrlInteractionService } from &quot;./../../../services/url-interaction.service&quot;;
 import {
     IInteractionHandlerProperties,
     IInteractionPayload,
@@ -224,7 +224,7 @@ export class UrlInteractionHandler extends InteractionHandler&lt;
         super(eventBus);
     }
 
-    protected handleInteraction(interaction: IInteractionPayload&lt;any&gt;) {
+    protected handleInteraction(interaction: IInteractionPayload&lt;any&gt;): void {
         if (!this.properties?.url) {
             this.logger.warn(&quot;The target url has not been defined.&quot;);
             return;

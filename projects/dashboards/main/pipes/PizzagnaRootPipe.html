@@ -168,7 +168,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>string | null | undefined</code>
 
                     </div>
                     <div class="io-description">
@@ -199,7 +199,7 @@ export class PizzagnaRootPipe implements PipeTransform {
     public transform(
         widget: IWidget | null,
         key: &quot;configurator&quot; | &quot;widget&quot; &#x3D; &quot;widget&quot;
-    ) {
+    ): string | null | undefined {
         if (!widget?.type) {
             return null;
         }

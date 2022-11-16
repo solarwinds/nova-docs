@@ -160,6 +160,7 @@
 
 import {
     IProportionalAggregatorFn,
+    IProportionalAggregatorOrigin,
     IProportionalDonutContentAggregatorProperties,
 } from &quot;./types&quot;;
 
@@ -175,9 +176,9 @@ export interface IPercentageAggregatorProperties
  * Receives all the metrics from the donut and gets the active metric percentage.
  */
 export const percentageAggregator: IProportionalAggregatorFn &#x3D; (
-    origin,
+    origin: IProportionalAggregatorOrigin,
     properties?: IPercentageAggregatorProperties
-) &#x3D;&gt; {
+): string &#x3D;&gt; {
     const data &#x3D; origin.map((v) &#x3D;&gt; v.data[0]);
     const { activeMetricId, base100 } &#x3D; properties || {};
 

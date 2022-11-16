@@ -166,6 +166,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#unsetMetric" >unsetMetric</a>
                             </li>
                         </ul>
@@ -423,6 +424,7 @@
                 <td class="col-md-4">
                     <a name="unsetMetric"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>unsetMetric</b></span>
                         <a href="#unsetMetric"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -430,7 +432,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>unsetMetric()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unsetMetric()</code>
                 </td>
             </tr>
 
@@ -723,7 +726,7 @@ export class FieldMapperAggregatorConfiguratorComponent
         chartSeriesDataFieldId: [],
     });
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         changeDetector: ChangeDetectorRef,
@@ -751,7 +754,7 @@ export class FieldMapperAggregatorConfiguratorComponent
             });
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         super.ngOnChanges(changes);
 
         if (changes.chartSeriesDataFieldId) {
@@ -761,7 +764,7 @@ export class FieldMapperAggregatorConfiguratorComponent
         }
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
     }

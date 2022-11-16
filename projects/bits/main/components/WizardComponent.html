@@ -747,7 +747,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IWizardStepComponent.html" target="_self" >IWizardStepComponent</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1851,7 +1851,7 @@ export class WizardComponent
         private logger: LoggerService
     ) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         if (this.finishText &#x3D;&#x3D;&#x3D; WizardComponent.placeholderFinishText) {
             this.logger
                 .warn(&#x60;WizardComponent input &quot;finishText&quot; is using placeholder text
@@ -1859,7 +1859,7 @@ export class WizardComponent
         }
     }
 
-    public ngAfterContentInit() {
+    public ngAfterContentInit(): void {
         const activeTabs &#x3D; this.steps.filter((item) &#x3D;&gt; item.active);
         this.arraySteps &#x3D; this.steps.toArray();
         if (activeTabs.length &#x3D;&#x3D;&#x3D; 0) {
@@ -1889,14 +1889,14 @@ export class WizardComponent
         });
     }
 
-    public ngAfterViewChecked() {
+    public ngAfterViewChecked(): void {
         if (this.stretchStepLines) {
             this.stepLineWidth &#x3D; Math.round(this.getLargestLabelWidth() / 2);
             this.changeDetector.detectChanges();
         }
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.steps
             .toArray()
             .forEach((step: WizardStepComponent) &#x3D;&gt; step.valid.unsubscribe());
@@ -1906,7 +1906,7 @@ export class WizardComponent
     public addStepDynamic(
         wizardStep: IWizardStepComponent,
         indexToInsert: number
-    ) {
+    ): IWizardStepComponent {
         const componentFactory &#x3D;
             this.componentFactoryResolver.resolveComponentFactory(
                 WizardStepComponent
@@ -1957,27 +1957,27 @@ export class WizardComponent
             .findIndex((s) &#x3D;&gt; s &#x3D;&#x3D;&#x3D; this.currentStep);
     }
 
-    public disableStep(step: WizardStepComponent) {
+    public disableStep(step: WizardStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toDisable &#x3D; this.arraySteps[indexOfStep];
         toDisable.disabled &#x3D; true;
         this.changeDetector.detectChanges();
     }
 
-    public enableStep(step: WizardStepComponent) {
+    public enableStep(step: WizardStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toDisable &#x3D; this.arraySteps[indexOfStep];
         toDisable.disabled &#x3D; false;
         this.changeDetector.detectChanges();
     }
 
-    public hideStep(step: WizardStepComponent) {
+    public hideStep(step: WizardStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toHide &#x3D; this.arraySteps[indexOfStep];
         toHide.hidden &#x3D; true;
     }
 
-    public showStep(step: WizardStepComponent) {
+    public showStep(step: WizardStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const visibleStep &#x3D; this.arraySteps[indexOfStep];
         visibleStep.hidden &#x3D; false;
@@ -2000,11 +2000,11 @@ export class WizardComponent
         }
     }
 
-    public goToStep(stepIndex: number) {
+    public goToStep(stepIndex: number): void {
         this.selectStep(this.arraySteps[stepIndex]);
     }
 
-    public selectStep(step: WizardStepComponent) {
+    public selectStep(step: WizardStepComponent): void {
         if (!step.disabled) {
             this.futureStep &#x3D; step;
             this.currentStep?.exitStep({
@@ -2019,7 +2019,7 @@ export class WizardComponent
         }
     }
 
-    public onBackClick() {
+    public onBackClick(): void {
         if (!_isUndefined(this.stepIndex)) {
             let previousStep &#x3D; this.arraySteps[this.stepIndex - 1];
             if (previousStep.hidden || previousStep.disabled) {
@@ -2037,7 +2037,7 @@ export class WizardComponent
         }
     }
 
-    public onNextClick() {
+    public onNextClick(): void {
         let nextStep &#x3D; this.arraySteps[this.stepIndex + 1];
         this.handleStepControl(this.currentStep);
         this.currentStep?.nextStep({
@@ -2072,17 +2072,17 @@ export class WizardComponent
         this.next.emit();
     }
 
-    public onFinishClick() {
+    public onFinishClick(): void {
         this.finish.emit();
     }
 
-    public onCancelClick() {
+    public onCancelClick(): void {
         this.cancel.emit(
             this.steps.toArray().filter((step) &#x3D;&gt; step.complete).length !&#x3D;&#x3D; 0
         );
     }
 
-    public enterAnotherStep() {
+    public enterAnotherStep(): void {
         this.currentStep?.applyExitingStep();
         this.futureStep?.enterStep();
         this.currentStep &#x3D; this.futureStep;

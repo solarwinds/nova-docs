@@ -810,7 +810,7 @@ export class TableVirtualScrollLinearStrategy implements VirtualScrollStrategy {
      * Sets scroll height.
      * @param rowHeight
      */
-    public setRowHeight(rowHeight: number) {
+    public setRowHeight(rowHeight: number): void {
         this.rowHeight &#x3D; rowHeight;
         if (this.viewport) {
             this.updateContent(this.viewport);
@@ -889,7 +889,7 @@ export class TableVirtualScrollStrategy implements VirtualScrollStrategy {
         this._maxItems &#x3D; isNaN(maxItems) ? 10 : +maxItems;
     }
 
-    public get maxItems() {
+    public get maxItems(): number {
         return this._maxItems;
     }
 
@@ -941,7 +941,7 @@ export class TableVirtualScrollStrategy implements VirtualScrollStrategy {
      * @param rowHeight
      * @param headerOffset
      */
-    public setScrollHeight(rowHeight: number, headerOffset: number) {
+    public setScrollHeight(rowHeight: number, headerOffset: number): void {
         this.rowHeight &#x3D; rowHeight;
         this.headerOffset &#x3D; headerOffset;
         this.updateContent(this.viewport);

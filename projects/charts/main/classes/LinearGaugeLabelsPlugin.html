@@ -544,7 +544,7 @@ export class LinearGaugeLabelsPlugin extends ChartPlugin {
         flippedLabels: false,
     };
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private lasagnaLayer: D3Selection&lt;SVGElement&gt;;
     private isHorizontal &#x3D; true;
     private thresholdsSeries: IChartSeries&lt;IAccessors&lt;any&gt;&gt; | undefined;

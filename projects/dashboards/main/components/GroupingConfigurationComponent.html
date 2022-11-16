@@ -577,7 +577,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                 </td>
@@ -924,7 +924,7 @@ export class GroupingConfigurationComponent
 
     public selectData: Array&lt;Array&lt;string&gt;&gt;;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         public changeDetector: ChangeDetectorRef,
@@ -991,7 +991,7 @@ export class GroupingConfigurationComponent
         this.fillGroupsOptions();
     }
 
-    public isAddRestricted() {
+    public isAddRestricted(): boolean {
         return this.selectData.some((i) &#x3D;&gt; i.length &#x3D;&#x3D;&#x3D; 1);
     }
 
@@ -1008,7 +1008,7 @@ export class GroupingConfigurationComponent
             : $localize&#x60;${subtitle}&#x60;;
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
     }

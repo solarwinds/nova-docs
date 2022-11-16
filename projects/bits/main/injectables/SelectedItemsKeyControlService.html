@@ -490,10 +490,10 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager, LiveAnnouncer } from &quot;@angular/cdk/a11y&quot;;
-import { BACKSPACE, LEFT_ARROW, RIGHT_ARROW } from &quot;@angular/cdk/keycodes&quot;;
 import { Injectable, QueryList } from &quot;@angular/core&quot;;
 import isNil from &quot;lodash/isNil&quot;;
 
+import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
 import { ComboboxV2Component } from &quot;./combobox-v2/combobox-v2.component&quot;;
 import { MarkAsSelectedItemDirective } from &quot;./mark-as-selected-item.directive&quot;;
 
@@ -647,7 +647,7 @@ export class SelectedItemsKeyControlService {
     }
 
     private isBackspace(event: KeyboardEvent): boolean {
-        return event.keyCode &#x3D;&#x3D;&#x3D; BACKSPACE;
+        return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.BACKSPACE;
     }
 
     private isLeftOrRightArrow(event: KeyboardEvent) {
@@ -655,11 +655,11 @@ export class SelectedItemsKeyControlService {
     }
 
     private isRightArrow(event: KeyboardEvent) {
-        return event.keyCode &#x3D;&#x3D;&#x3D; RIGHT_ARROW;
+        return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_RIGHT;
     }
 
     private isLeftArrow(event: KeyboardEvent) {
-        return event.keyCode &#x3D;&#x3D;&#x3D; LEFT_ARROW;
+        return event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_LEFT;
     }
 
     private get activeItem() {

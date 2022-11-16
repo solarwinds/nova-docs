@@ -389,14 +389,14 @@ export class ChartComponent
         private cd: ChangeDetectorRef
     ) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.intersectionObserver &#x3D; new IntersectionObserver(
             this.intersectionObserverCallback
         );
         this.intersectionObserver.observe(this.elRef.nativeElement);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes[&quot;chart&quot;]) {
             const previousChart: IChart &#x3D; changes[&quot;chart&quot;].previousValue;
             if (previousChart) {
@@ -410,7 +410,7 @@ export class ChartComponent
         }
     }
 
-    public ngAfterContentInit() {
+    public ngAfterContentInit(): void {
         this.chart
             .getEventBus()
             .getStream(REFRESH_EVENT)
@@ -419,7 +419,7 @@ export class ChartComponent
             });
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         this.resizeHandler &#x3D; debounce(() &#x3D;&gt; this.redraw(), 10);
         this.resizeObserver &#x3D; new ResizeObserver(() &#x3D;&gt; {
             // This was suggested here https://github.com/angular/zone.js/issues/1011
@@ -430,13 +430,13 @@ export class ChartComponent
         );
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.intersectionObserver?.unobserve(&lt;Element&gt;this.elRef.nativeElement);
         this.resizeObserver?.unobserve(&lt;Element&gt;this.elRef.nativeElement);
         this.chart?.destroy();
     }
 
-    public redraw &#x3D; () &#x3D;&gt; {
+    public redraw &#x3D; (): void &#x3D;&gt; {
         this.chart.updateDimensions();
         this.cd.detectChanges();
     };

@@ -590,7 +590,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -837,14 +837,14 @@ export class IconComponent implements OnChanges {
         private sanitizer: DomSanitizer
     ) {}
 
-    getIconByStatus(status: string) {
+    getIconByStatus(status: string): string {
         if (!status) {
-            return;
+            return &quot;&quot;;
         }
         return this.iconService.getStatusIcon(status);
     }
 
-    get iconClass() {
+    get iconClass(): string {
         const iconClass: string[] &#x3D; [&quot;nui-icon&quot;];
 
         if (!this.iconFound) {
@@ -900,7 +900,7 @@ export class IconComponent implements OnChanges {
         return isNil(this._counter) ? this._counter : this._counter.toString();
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes[&quot;status&quot;] || changes[&quot;childStatus&quot;] || changes[&quot;icon&quot;]) {
             this.generateIcon();
         }

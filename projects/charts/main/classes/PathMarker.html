@@ -393,7 +393,7 @@ export class PathMarker implements IChartMarker {
         return this.svg;
     }
 
-    protected updateSvg() {
+    protected updateSvg(): void {
         this.svg &#x3D; this.element.outerHTML;
     }
 }

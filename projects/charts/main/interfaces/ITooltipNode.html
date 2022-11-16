@@ -199,8 +199,8 @@ import {
     forceSimulation,
     Simulation,
     SimulationNodeDatum,
-} from &quot;d3-force&quot;;
-import { select } from &quot;d3-selection&quot;;
+} from &quot;d3&quot;;
+import { select } from &quot;d3&quot;;
 import each from &quot;lodash/each&quot;;
 import isEqual from &quot;lodash/isEqual&quot;;
 import isNil from &quot;lodash/isNil&quot;;
@@ -246,7 +246,7 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
 
     constructor(private changeDetector: ChangeDetectorRef) {}
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (!(changes[&quot;plugin&quot;] &amp;&amp; changes[&quot;plugin&quot;].currentValue)) {
             return;
         }
@@ -266,7 +266,7 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
         this.unsubscribe$.complete();
     }
 
-    public trackByFn(index: number, item: any) {
+    public trackByFn(index: number, item: any): string | undefined {
         return item.value.seriesId;
     }
 
@@ -296,11 +296,11 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
         if (this.closePending || directivesChanged || !this.isOpen) {
             clearTimeout(this.openTimeout);
 
-            this.openTimeout &#x3D; setTimeout(() &#x3D;&gt; {
+            this.openTimeout &#x3D; window.setTimeout(() &#x3D;&gt; {
                 this.openTooltips.next();
                 clearTimeout(this.collisionTimeout);
 
-                this.collisionTimeout &#x3D; setTimeout(() &#x3D;&gt; {
+                this.collisionTimeout &#x3D; window.setTimeout(() &#x3D;&gt; {
                     this.avoidTooltipCollisions();
                     this.isOpen &#x3D; true;
                 });
@@ -320,7 +320,7 @@ export class ChartTooltipsComponent implements OnChanges, OnDestroy {
         this.closePending &#x3D; true;
         clearTimeout(this.closeTimeout);
 
-        this.closeTimeout &#x3D; setTimeout(() &#x3D;&gt; {
+        this.closeTimeout &#x3D; window.setTimeout(() &#x3D;&gt; {
             this.closeTooltips.next();
             this.closePending &#x3D; false;
             this.isOpen &#x3D; false;

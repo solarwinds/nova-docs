@@ -1412,7 +1412,7 @@ import { TimeScale } from &quot;./time-scale&quot;;
 import { EMPTY_CONTINUOUS_DOMAIN, IBandScale } from &quot;./types&quot;;
 
 // algorithm found here: https://stackoverflow.com/a/30280636/5108336
-export function isDaylightSavingTime(d: Date) {
+export function isDaylightSavingTime(d: Date): boolean {
     const jan &#x3D; new Date(d.getFullYear(), 0, 1).getTimezoneOffset();
     const jul &#x3D; new Date(d.getFullYear(), 6, 1).getTimezoneOffset();
     return Math.max(jan, jul) !&#x3D;&#x3D; d.getTimezoneOffset();
@@ -1567,7 +1567,7 @@ export class TimeIntervalScale extends TimeScale implements IBandScale&lt;Date&g
         return true;
     }
 
-    public defaultTitleFormatter &#x3D; (inputDate: Date) &#x3D;&gt; {
+    public defaultTitleFormatter &#x3D; (inputDate: Date): string &#x3D;&gt; {
         const intervalDays &#x3D; this.interval().asDays();
         const isDst &#x3D; isDaylightSavingTime(inputDate);
         const isDomainStartDst &#x3D; isDaylightSavingTime(this.domain()[0]);

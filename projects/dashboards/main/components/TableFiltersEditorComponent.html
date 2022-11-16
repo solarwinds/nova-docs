@@ -618,7 +618,7 @@ export class TableFiltersEditorComponent
         public changeDetector: ChangeDetectorRef
     ) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.form &#x3D; this.formBuilder.group({
             sorterConfiguration: this.formBuilder.group({
                 sortBy: get(this.sorterConfiguration, &quot;sortBy&quot;, &quot;&quot;),
@@ -638,7 +638,7 @@ export class TableFiltersEditorComponent
         this.formReady.emit(this.form);
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         const sortByFormControl &#x3D; this.form
             .get(&quot;sorterConfiguration&quot;)
             ?.get(&quot;sortBy&quot;);
@@ -707,7 +707,7 @@ export class TableFiltersEditorComponent
         }
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
     }

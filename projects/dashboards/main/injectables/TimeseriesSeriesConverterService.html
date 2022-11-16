@@ -93,6 +93,7 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#destroy$" >destroy$</a>
                             </li>
                         </ul>
@@ -124,6 +125,7 @@
                                 <a href="#getPreview" >getPreview</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngAfterViewInit" >ngAfterViewInit</a>
                             </li>
                             <li>
@@ -161,7 +163,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:60</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/configurator/services/converters/timeseries/timeseries-series-converter.service.ts:61</a></div>
                             </td>
                         </tr>
 
@@ -256,7 +258,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:177</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:178</a></code>
 </div>
                 </td>
             </tr>
@@ -301,7 +303,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:249</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:250</a></code>
 </div>
                 </td>
             </tr>
@@ -346,7 +348,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:208</a></code>
+                        <div class="io-line">Defined in         <code><a href="../injectables/BaseConverter.html#source" target="_self" >BaseConverter:209</a></code>
 </div>
                 </td>
             </tr>
@@ -446,6 +448,7 @@
                 <td class="col-md-4">
                     <a name="ngAfterViewInit"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngAfterViewInit</b></span>
                         <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -453,7 +456,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngAfterViewInit()</code>
                 </td>
             </tr>
 
@@ -807,6 +811,7 @@
                     <a name="destroy$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>destroy$</b></span>
                         <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -845,6 +850,7 @@ import get from &quot;lodash/get&quot;;
 import isEmpty from &quot;lodash/isEmpty&quot;;
 import isEqual from &quot;lodash/isEqual&quot;;
 import isUndefined from &quot;lodash/isUndefined&quot;;
+// eslint-disable-next-line import/no-deprecated
 import { combineLatest, Subject } from &quot;rxjs&quot;;
 import { distinctUntilChanged, map, takeUntil } from &quot;rxjs/operators&quot;;
 
@@ -1121,6 +1127,7 @@ export class TimeseriesSeriesConverterService
     }
 
     private subscribeToAvailableDataFieldsChange() {
+        // eslint-disable-next-line import/no-deprecated
         combineLatest([this.dataSourceSeries$, this.selectedSeriesIds$])
             .pipe(
                 takeUntil(this.destroy$),

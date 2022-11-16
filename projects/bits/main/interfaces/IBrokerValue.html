@@ -252,7 +252,7 @@ export interface IBrokerValue {
 export class ZoomContentDirective
     implements OnDestroy, AfterViewInit, OnChanges
 {
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     @HostBinding(&quot;style.zoom&quot;)
     public zoom &#x3D; 1;
@@ -298,7 +298,7 @@ export class ZoomContentDirective
         this.parentElement &#x3D; this.element.parentElement;
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.scaleOUT$ &amp;&amp; this.scaleOUT$) {
             this.scaleIN$.pipe(takeUntil(this.destroy$)).subscribe((data) &#x3D;&gt; {
                 this.latestDataFromBroker &#x3D; { ...data };
@@ -328,7 +328,7 @@ export class ZoomContentDirective
         }
     }
 
-    public onResize() {
+    public onResize(): void {
         this.elementRect &#x3D; this.element?.getBoundingClientRect();
         this.parentRect &#x3D; this.parentElement?.getBoundingClientRect();
 

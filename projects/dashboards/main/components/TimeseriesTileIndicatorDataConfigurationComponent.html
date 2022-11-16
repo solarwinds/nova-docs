@@ -785,7 +785,7 @@ export class TimeseriesTileIndicatorDataConfigurationComponent
 
     public form: FormGroup;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private _selectedSeries?: ITimeseriesWidgetData;
 
     constructor(
@@ -795,7 +795,7 @@ export class TimeseriesTileIndicatorDataConfigurationComponent
         private pizzagnaService: PizzagnaService
     ) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.form &#x3D; this.formBuilder.group({
             id: [this.selectedSeriesId || null, [Validators.required]],
         });
@@ -820,7 +820,7 @@ export class TimeseriesTileIndicatorDataConfigurationComponent
         }
     }
 
-    public onSelect(selectedSeries: ITimeseriesWidgetData) {
+    public onSelect(selectedSeries: ITimeseriesWidgetData): void {
         this.selectedSeriesId &#x3D; selectedSeries.id;
         this.selectedSeries &#x3D; selectedSeries;
         this.form.patchValue({ id: selectedSeries.id });

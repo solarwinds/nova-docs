@@ -307,7 +307,7 @@ import { IDataSourceBusyPayload } from &quot;./types&quot;;
 @Injectable()
 export class LoadingAdapter implements OnDestroy, IHasComponent {
     private loadingMap: Record&lt;string, boolean&gt; &#x3D; {};
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private componentId: string;
 
     constructor(

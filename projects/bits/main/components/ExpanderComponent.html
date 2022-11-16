@@ -251,7 +251,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/expander/expander.component.ts:85</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/expander/expander.component.ts:87</a></div>
                             </td>
                         </tr>
 
@@ -506,8 +506,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="102"
-                            class="link-to-prism">src/lib/expander/expander.component.ts:102</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/lib/expander/expander.component.ts:104</a></div>
                 </td>
             </tr>
 
@@ -545,8 +545,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">src/lib/expander/expander.component.ts:106</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/lib/expander/expander.component.ts:108</a></div>
                 </td>
             </tr>
 
@@ -616,8 +616,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/lib/expander/expander.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/lib/expander/expander.component.ts:96</a></div>
                 </td>
             </tr>
 
@@ -834,7 +834,7 @@
 } from &quot;@angular/core&quot;;
 
 import { expandV2 } from &quot;../../animations/expand&quot;;
-import { KEYBOARD_CODE } from &quot;../../constants&quot;;
+import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
 
 /**
  * &lt;example-url&gt;./../examples/index.html#/expander&lt;/example-url&gt;
@@ -887,9 +887,11 @@ export class ExpanderComponent implements AfterContentInit {
     public state: &quot;expanded&quot; | &quot;collapsed&quot; &#x3D; &quot;collapsed&quot;;
     public isCustomHeaderContentEmpty: boolean &#x3D; false;
 
+    private actionKeys &#x3D; [KEYBOARD_CODE.SPACE, KEYBOARD_CODE.ENTER].map(String);
+
     constructor(private cdRef: ChangeDetectorRef) {}
 
-    ngAfterContentInit(): void {
+    public ngAfterContentInit(): void {
         this.isCustomHeaderContentEmpty &#x3D;
             this.customHeaderContent.nativeElement.childNodes.length &#x3D;&#x3D;&#x3D; 0;
     }
@@ -907,10 +909,7 @@ export class ExpanderComponent implements AfterContentInit {
     }
 
     public onKeyDown(event: KeyboardEvent): void {
-        if (
-            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.SPACE ||
-            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER
-        ) {
+        if (this.actionKeys.includes(event.code)) {
             if (event.target &#x3D;&#x3D;&#x3D; event.currentTarget) {
                 event.preventDefault();
                 this.toggle();

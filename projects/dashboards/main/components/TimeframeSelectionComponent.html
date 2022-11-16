@@ -495,8 +495,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="157"
-                            class="link-to-prism">src/lib/components/time-frame-selection/timeframe-selection.component.ts:157</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="153"
+                            class="link-to-prism">src/lib/components/time-frame-selection/timeframe-selection.component.ts:153</a></div>
                 </td>
             </tr>
 
@@ -810,12 +810,12 @@ import {
 } from &quot;@nova-ui/bits&quot;;
 
 import { TimeframeSerializationService } from &quot;../../configurator/services/timeframe-serialization.service&quot;;
-import { ISerializableTimeframe } from &quot;../../configurator/services/types&quot;;
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
 import { REFRESH, SET_TIMEFRAME } from &quot;../../services/types&quot;;
 import {
     DATA_SOURCE,
     IHasChangeDetector,
+    ISerializableTimeframe,
     PizzagnaLayer,
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../types&quot;;
@@ -856,7 +856,7 @@ export class TimeframeSelectionComponent
             this.timeframeService.getTimeframeByPresetId(&quot;last7Days&quot;);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.timeframe) {
             let timeframe &#x3D; this.tfSerialization.convertFromSerializable(
                 this.timeframe
@@ -870,7 +870,7 @@ export class TimeframeSelectionComponent
             }
             this.currentTimeframe &#x3D; timeframe;
             if (!changes.timeframe.isFirstChange()) {
-                this.eventBus.getStream(REFRESH).next(undefined);
+                this.eventBus.getStream(REFRESH).next({});
             }
         }
 
@@ -883,24 +883,20 @@ export class TimeframeSelectionComponent
         }
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.history.restart(this.currentTimeframe);
-        this.eventBus
-            .getStream(SET_TIMEFRAME)
-            .subscribe((event: IEvent&lt;ISerializableTimeframe&gt;) &#x3D;&gt; {
-                if (!event.payload) {
-                    throw new Error(
-                        &quot;Unable to set timeframe. Event payload is undefined&quot;
-                    );
-                }
-                this.onTimeframeChange(
-                    this.history.save(
-                        this.tfSerialization.convertFromSerializable(
-                            event.payload
-                        )
-                    )
+        this.eventBus.getStream(SET_TIMEFRAME).subscribe((event) &#x3D;&gt; {
+            if (!event.payload) {
+                throw new Error(
+                    &quot;Unable to set timeframe. Event payload is undefined&quot;
                 );
-            });
+            }
+            this.onTimeframeChange(
+                this.history.save(
+                    this.tfSerialization.convertFromSerializable(event.payload)
+                )
+            );
+        });
 
         if (this.dataSource) {
             this.dataSource.registerComponent({

@@ -249,7 +249,7 @@ export class TimeseriesMetadataConfigurationComponent
 
     public form: FormGroup;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         public changeDetector: ChangeDetectorRef,
@@ -281,7 +281,7 @@ export class TimeseriesMetadataConfigurationComponent
         this.formReady.emit(this.form);
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
+    public ngOnChanges(changes: SimpleChanges): void {
         const startingTimespanControl &#x3D; this.form.get(&quot;startingTimespan&quot;);
 
         if (changes.leftAxisLabel) {
@@ -315,7 +315,7 @@ export class TimeseriesMetadataConfigurationComponent
         }
     }
 
-    public getSecondaryText() {
+    public getSecondaryText(): string {
         const startingTimespan &#x3D; this.form.controls[&quot;startingTimespan&quot;].value;
         const forTimeframe &#x3D;
             (startingTimespan &amp;&amp; startingTimespan.name) ||

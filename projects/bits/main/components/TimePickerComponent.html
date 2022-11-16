@@ -943,7 +943,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1190,7 +1190,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IMenuItem.html" target="_self" >IMenuItem | undefined</a></code>
 
                     </div>
                 </td>
@@ -1258,7 +1258,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
                     </div>
                     <div class="io-description">
@@ -2777,7 +2777,7 @@ export class TimePickerComponent
         private cdr: ChangeDetectorRef
     ) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.times &#x3D; this.generateTimeItems(this.timeStep);
         this.times.map((value: Moment) &#x3D;&gt; {
             this.itemsSource[0].itemsSource.push({
@@ -2804,13 +2804,13 @@ export class TimePickerComponent
         this.onAppendToBodyChange(this.appendToBody);
     }
 
-    public ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes.appendToBody) {
             this.onAppendToBodyChange(changes.appendToBody.currentValue);
         }
     }
 
-    public ngAfterViewInit() {
+    public ngAfterViewInit(): void {
         this.overlay.clickOutside
             .pipe(takeUntil(this.onDestroy$))
             .subscribe((_) &#x3D;&gt; this.overlay.hide());
@@ -2824,9 +2824,9 @@ export class TimePickerComponent
         this.cdr.detectChanges();
     }
 
-    onChange(value: any) {}
+    onChange(value: any): void {}
 
-    onTouched() {}
+    onTouched(): void {}
 
     @HostListener(&quot;keydown&quot;, [&quot;$event&quot;])
     public onKeyDown(event: KeyboardEvent): void {
@@ -2856,7 +2856,7 @@ export class TimePickerComponent
         }
     }
 
-    updateInnerModel(value: any) {
+    updateInnerModel(value: any): void {
         setTimeout(() &#x3D;&gt; this.inputBlurred.emit(), 100);
         if (value instanceof moment &amp;&amp; !this.preserveInsignificant) {
             (value as Moment).year(0);
@@ -2891,20 +2891,20 @@ export class TimePickerComponent
         this.setErrorState(value);
     }
 
-    writeValue(value: any) {
+    writeValue(value: any): void {
         this.textbox.writeValue(this.formatValue(value));
         this.updateInnerModel(this.formatValue(value));
     }
 
-    setErrorState(value: string) {
+    setErrorState(value: string): void {
         this.isInErrorState &#x3D; !moment(value, this.timeFormat, true).isValid();
     }
 
-    registerOnChange(fn: (value: any) &#x3D;&gt; {}) {
+    registerOnChange(fn: (value: any) &#x3D;&gt; {}): void {
         this.onChange &#x3D; fn;
     }
 
-    registerOnTouched(fn: () &#x3D;&gt; {}) {
+    registerOnTouched(fn: () &#x3D;&gt; {}): void {
         this.onTouched &#x3D; fn;
     }
 
@@ -2912,7 +2912,7 @@ export class TimePickerComponent
         this.isDisabled &#x3D; isDisabled;
     }
 
-    focusOnForm() {
+    focusOnForm(): void {
         this.textbox.focus();
     }
 
@@ -2920,7 +2920,7 @@ export class TimePickerComponent
         this.inputChanged.next(value);
     }
 
-    public select(time: IMenuItem) {
+    public select(time: IMenuItem): void {
         this.updateInnerModel(time.title);
         this.textbox.writeValue(this.formatValue() as string);
         this.timeChanged.emit(this.innerModel);
@@ -2928,7 +2928,7 @@ export class TimePickerComponent
         this.overlay.hide();
     }
 
-    public scrollToView() {
+    public scrollToView(): void {
         if (!this.isDisabled) {
             this.overlay.toggle();
         }
@@ -2953,7 +2953,7 @@ export class TimePickerComponent
         return times;
     }
 
-    public isItemSelected(timeItem: Moment) {
+    public isItemSelected(timeItem: Moment): boolean {
         return moment(timeItem).isSame(this.itemToSelect.title);
     }
 
@@ -2968,7 +2968,7 @@ export class TimePickerComponent
         return index &#x3D;&#x3D;&#x3D; times.length ? 0 : index;
     }
 
-    public getItemToSelect() {
+    public getItemToSelect(): IMenuItem | undefined {
         if (_isEmpty(this.innerModel) || _isNil(this.innerModel)) {
             this.unselectAllItems();
             return;
@@ -2986,13 +2986,13 @@ export class TimePickerComponent
         }
     }
 
-    public unselectAllItems() {
+    public unselectAllItems(): void {
         this.itemsSource[0].itemsSource.forEach(
             (el: IMenuItem) &#x3D;&gt; (el.isSelected &#x3D; false)
         );
     }
 
-    public formatValue(value: any &#x3D; this.innerModel) {
+    public formatValue(value: any &#x3D; this.innerModel): string {
         return moment(value).isValid()
             ? moment(value).format(this.timeFormat)
             : value;
@@ -3021,7 +3021,7 @@ export class TimePickerComponent
         });
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         if (this.overlay?.showing) {
             this.overlay.hide();
         }

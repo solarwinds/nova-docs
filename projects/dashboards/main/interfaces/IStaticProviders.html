@@ -85,7 +85,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/services/types.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/services/types.ts:33</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -97,11 +97,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { StaticProvider } from &quot;@angular/core&quot;;
+import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { BehaviorSubject, ReplaySubject } from &quot;rxjs&quot;;
 
 import { EventDefinition, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
 
+import { IInteractionPayload } from &quot;../components/providers/interaction/interaction-handler&quot;;
 import { IDataSourceBusyPayload } from &quot;../components/providers/types&quot;;
+import { ISerializableTimeframe } from &quot;../types&quot;;
 
 export const DEFAULT_PIZZAGNA_ROOT &#x3D; &quot;/&quot;;
 
@@ -125,32 +128,50 @@ export interface IRegistryAddOptions {
 export interface IAddFormattersOptions
     extends Pick&lt;IRegistryAddOptions, &quot;overrideExisting&quot;&gt; {}
 
-export const REFRESH &#x3D; new EventDefinition(&quot;REFRESH&quot;);
-export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;);
-export const WIDGET_REMOVE &#x3D; new EventDefinition(&quot;WIDGET_REMOVE&quot;);
-export const WIDGET_EDIT &#x3D; new EventDefinition(&quot;WIDGET_EDIT&quot;);
-export const WIDGET_CREATE &#x3D; new EventDefinition(&quot;WIDGET_CREATE&quot;);
-export const WIDGET_READY &#x3D; new EventDefinition(&quot;WIDGET_READY&quot;);
-export const WIDGET_RESIZE &#x3D; new EventDefinition(&quot;WIDGET_RESIZE&quot;);
-export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition(
+export interface IWidgetResizePayload {
+    widgetId: number;
+    height: number;
+    width: number;
+}
+
+export const REFRESH &#x3D; new EventDefinition&lt;void&gt;(&quot;REFRESH&quot;);
+export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition&lt;void&gt;(&quot;SCROLL_NEXT_PAGE&quot;);
+export const WIDGET_REMOVE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_REMOVE&quot;);
+export const WIDGET_EDIT &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_EDIT&quot;);
+export const WIDGET_CREATE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_CREATE&quot;);
+export const WIDGET_READY &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_READY&quot;);
+export const WIDGET_RESIZE &#x3D; new EventDefinition&lt;IWidgetResizePayload&gt;(
+    &quot;WIDGET_RESIZE&quot;
+);
+export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition&lt;GridsterItem&gt;(
     &quot;WIDGET_POSITION_CHANGE&quot;
 );
-export const WIDGET_SEARCH &#x3D; new EventDefinition(
+export const WIDGET_SEARCH &#x3D; new EventDefinition&lt;string&gt;(
     &quot;WIDGET_SEARCH&quot;,
     () &#x3D;&gt; new BehaviorSubject&lt;IEvent&gt;({ payload: &quot;&quot; })
 );
-export const SET_PROPERTY_VALUE &#x3D; new EventDefinition(&quot;SET_PROPERTY_VALUE&quot;);
-export const SET_TIMEFRAME &#x3D; new EventDefinition(&quot;SET_TIMEFRAME&quot;);
-export const PREVIEW_EVENT &#x3D; new EventDefinition(&quot;PREVIEW_EVENT&quot;);
+export const SET_PROPERTY_VALUE &#x3D; new EventDefinition&lt;ISetPropertyPayload&gt;(
+    &quot;SET_PROPERTY_VALUE&quot;
+);
+export const SET_TIMEFRAME &#x3D; new EventDefinition&lt;ISerializableTimeframe&gt;(
+    &quot;SET_TIMEFRAME&quot;
+);
+export const PREVIEW_EVENT &#x3D; new EventDefinition&lt;IPreviewEventPayload&gt;(
+    &quot;PREVIEW_EVENT&quot;
+);
 export const DATA_SOURCE_BUSY &#x3D; new EventDefinition&lt;IDataSourceBusyPayload&gt;(
     &quot;DATA_SOURCE_BUSY&quot;
 );
-export const DASHBOARD_EDIT_MODE &#x3D; new EventDefinition(
+export const DASHBOARD_EDIT_MODE &#x3D; new EventDefinition&lt;boolean&gt;(
     &quot;DASHBOARD_EDIT_MODE&quot;,
     () &#x3D;&gt; new ReplaySubject&lt;IEvent&gt;(1)
 );
-export const INTERACTION &#x3D; new EventDefinition(&quot;INTERACTION&quot;);
-export const DATA_SOURCE_INVOKED &#x3D; new EventDefinition(&quot;DATA_SOURCE_INVOKED&quot;);
+export const INTERACTION &#x3D; new EventDefinition&lt;IInteractionPayload&lt;any&gt;&gt;(
+    &quot;INTERACTION&quot;
+);
+export const DATA_SOURCE_INVOKED &#x3D; new EventDefinition&lt;void&gt;(
+    &quot;DATA_SOURCE_INVOKED&quot;
+);
 export const DRILLDOWN &#x3D; new EventDefinition(&quot;DRILLDOWN&quot;);
 
 export const NOVA_DATASOURCE_INTERVAL_REFRESHER &#x3D;

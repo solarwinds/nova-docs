@@ -162,6 +162,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#onButtonClick" >onButtonClick</a>
                             </li>
                         </ul>
@@ -446,6 +447,7 @@
                 <td class="col-md-4">
                     <a name="onButtonClick"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>onButtonClick</b></span>
                         <a href="#onButtonClick"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -453,7 +455,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onButtonClick()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onButtonClick()</code>
                 </td>
             </tr>
 
@@ -654,9 +657,9 @@ export class ListLeafItemComponent implements IHasChangeDetector, OnInit {
     @Output() public navigated &#x3D; new EventEmitter&lt;ListLeafItemComponent&gt;();
 
     public searchTerm: string &#x3D; &quot;&quot;;
-    protected destroy$ &#x3D; new Subject&lt;void&gt;();
+    protected readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
-    onButtonClick() {
+    public onButtonClick(): void {
         if (this.canNavigate) {
             this.navigated.emit(this);
         }
@@ -667,12 +670,12 @@ export class ListLeafItemComponent implements IHasChangeDetector, OnInit {
         @Inject(PIZZAGNA_EVENT_BUS) public eventBus: EventBus&lt;IEvent&gt;
     ) {}
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.eventBus
             .getStream(WIDGET_SEARCH)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event) &#x3D;&gt; {
-                this.searchTerm &#x3D; event.payload;
+                this.searchTerm &#x3D; event.payload ?? &quot;&quot;;
                 this.changeDetector.markForCheck();
             });
     }

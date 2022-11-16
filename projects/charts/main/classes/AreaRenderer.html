@@ -195,7 +195,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/renderers/area/area-renderer.ts:59</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/renderers/area/area-renderer.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -276,7 +276,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:65</a></code>
+                                <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:59</a></code>
 </div>
                         </td>
                     </tr>
@@ -481,7 +481,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:72</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:66</a></code>
 </div>
                 </td>
             </tr>
@@ -566,8 +566,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/renderers/area/area-renderer.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/renderers/area/area-renderer.ts:101</a></div>
                 </td>
             </tr>
 
@@ -664,7 +664,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:264</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:258</a></code>
 </div>
                 </td>
             </tr>
@@ -779,7 +779,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:214</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:208</a></code>
 </div>
                 </td>
             </tr>
@@ -892,7 +892,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:249</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:243</a></code>
 </div>
                 </td>
             </tr>
@@ -939,7 +939,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:284</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Renderer.html#source" target="_self" >Renderer:278</a></code>
 </div>
                 </td>
             </tr>
@@ -1027,15 +1027,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>safetyCheck(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    <code>safetyCheck(value: number | undefined)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="306"
-                            class="link-to-prism">src/renderers/area/area-renderer.ts:306</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="300"
+                            class="link-to-prism">src/renderers/area/area-renderer.ts:300</a></div>
                 </td>
             </tr>
 
@@ -1058,7 +1058,7 @@
                                 <tr>
                                     <td>value</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            <code>number | undefined</code>
                                     </td>
 
                                     <td>
@@ -1618,18 +1618,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { max, min } from &quot;d3-array&quot;;
 import { area, curveLinear } from &quot;d3-shape&quot;;
 import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
-import isUndefined from &quot;lodash/isUndefined&quot;;
 import { Subject } from &quot;rxjs&quot;;
 
-import {
-    DATA_POINT_INTERACTION_RESET,
-    STANDARD_RENDER_LAYERS,
-} from &quot;../../constants&quot;;
+import { STANDARD_RENDER_LAYERS } from &quot;../../constants&quot;;
 import {
     EMPTY_CONTINUOUS_DOMAIN,
     IScale,
     IXYScales,
-    Scales,
 } from &quot;../../core/common/scales/types&quot;;
 import {
     D3Selection,
@@ -1637,7 +1632,6 @@ import {
     ILasagnaLayer,
     IRendererEventPayload,
 } from &quot;../../core/common/types&quot;;
-import { UtilityService } from &quot;../../core/common/utility.service&quot;;
 import { DEFAULT_MARKER_INTERACTION_CONFIG } from &quot;../constants&quot;;
 import { MarkerUtils } from &quot;../marker-utils&quot;;
 import { IAreaRendererConfig, IRenderSeries, RenderLayerName } from &quot;../types&quot;;
@@ -1704,7 +1698,7 @@ export class AreaRenderer extends XYRenderer&lt;IAreaAccessors&gt; {
     public drawArea(
         renderSeries: IRenderSeries&lt;IAreaAccessors&gt;,
         path: D3Selection&lt;SVGPathElement&gt;
-    ) {
+    ): void {
         const dataSeries &#x3D; renderSeries.dataSeries;
         const accessors &#x3D; dataSeries.accessors;
 
@@ -1900,8 +1894,8 @@ export class AreaRenderer extends XYRenderer&lt;IAreaAccessors&gt; {
         );
     }
 
-    public safetyCheck(value: number) {
-        return isNaN(value) || typeof value &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ? 0 : value;
+    public safetyCheck(value: number | undefined): number {
+        return typeof value &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || isNaN(value) ? 0 : value;
     }
 }
 </code></pre>

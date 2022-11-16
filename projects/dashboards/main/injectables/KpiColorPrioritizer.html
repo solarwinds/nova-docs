@@ -94,6 +94,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngOnDestroy" >ngOnDestroy</a>
                             </li>
                             <li>
@@ -200,6 +201,7 @@
                 <td class="col-md-4">
                     <a name="ngOnDestroy"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngOnDestroy</b></span>
                         <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -207,7 +209,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnDestroy()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
                 </td>
             </tr>
 
@@ -447,7 +450,7 @@ import { IDataSourceOutput, IKpiColorRules } from &quot;./types&quot;;
 
 @Injectable()
 export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
-    protected destroy$ &#x3D; new Subject&lt;void&gt;();
+    protected readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     protected componentId: string;
     protected propertyPath: string &#x3D; &quot;backgroundColor&quot;;
     protected rules: IKpiColorRules[] | undefined;
@@ -464,12 +467,12 @@ export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
         this.comparators &#x3D; comparatorsRegistry.getComparators();
     }
 
-    ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.destroy$.next();
         this.destroy$.complete();
     }
 
-    public updateConfiguration(properties: any) {
+    public updateConfiguration(properties: any): void {
         if (properties?.rules) {
             this.rules &#x3D; properties?.rules;
             this.subscribeToDataChanges();
@@ -477,7 +480,7 @@ export class KpiColorPrioritizer implements IConfigurable, OnDestroy {
         }
     }
 
-    public setComponent(component: any, componentId: string) {
+    public setComponent(component: any, componentId: string): void {
         this.subscribeToDataChanges();
 
         this.componentId &#x3D; componentId;

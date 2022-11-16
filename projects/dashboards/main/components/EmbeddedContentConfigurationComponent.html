@@ -630,7 +630,7 @@
     Output,
     SimpleChanges,
 } from &quot;@angular/core&quot;;
-import { FormBuilder, FormGroup } from &quot;@angular/forms&quot;;
+import { AbstractControl, FormBuilder, FormGroup } from &quot;@angular/forms&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
@@ -657,7 +657,7 @@ export class EmbeddedContentConfigurationComponent
 
     @Output() formReady &#x3D; new EventEmitter&lt;FormGroup&gt;();
 
-    private destroyed$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     public form: FormGroup &#x3D; this.formBuilder.group({
         mode: [this.mode],
@@ -677,19 +677,19 @@ export class EmbeddedContentConfigurationComponent
         },
     ];
 
-    get urlCustomContent() {
+    get urlCustomContent(): AbstractControl | null {
         return this.form.get(&quot;urlCustomContent&quot;);
     }
 
-    get htmlCustomContent() {
+    get htmlCustomContent(): AbstractControl | null {
         return this.form.get(&quot;htmlCustomContent&quot;);
     }
 
-    get modeValue() {
+    get modeValue(): AbstractControl | null {
         return this.form.get(&quot;mode&quot;);
     }
 
-    get customEmbeddedContentValue() {
+    get customEmbeddedContentValue(): AbstractControl | null {
         return this.form.get(&quot;customEmbeddedContent&quot;);
     }
 
@@ -717,14 +717,14 @@ export class EmbeddedContentConfigurationComponent
         }
     }
 
-    public ngOnDestroy() {
-        this.destroyed$.next();
-        this.destroyed$.complete();
+    public ngOnDestroy(): void {
+        this.destroy$.next();
+        this.destroy$.complete();
     }
 
     private initializeForm() {
         this.modeValue?.valueChanges
-            .pipe(takeUntil(this.destroyed$))
+            .pipe(takeUntil(this.destroy$))
             .subscribe((value) &#x3D;&gt; {
                 if (value &#x3D;&#x3D;&#x3D; EmbeddedContentMode.URL) {
                     this.customEmbeddedContentValue?.setValue(
@@ -742,13 +742,13 @@ export class EmbeddedContentConfigurationComponent
             });
 
         this.urlCustomContent?.valueChanges
-            .pipe(takeUntil(this.destroyed$))
+            .pipe(takeUntil(this.destroy$))
             .subscribe((value) &#x3D;&gt; {
                 this.customEmbeddedContentValue?.setValue(value);
             });
 
         this.htmlCustomContent?.valueChanges
-            .pipe(takeUntil(this.destroyed$))
+            .pipe(takeUntil(this.destroy$))
             .subscribe((value) &#x3D;&gt; {
                 this.customEmbeddedContentValue?.setValue(value);
             });

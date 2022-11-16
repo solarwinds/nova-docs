@@ -481,7 +481,7 @@ export class ChartDonutContentPlugin extends ChartPlugin {
         height: 0,
     };
 
-    public updateDimensions() {
+    public updateDimensions(): void {
         const radius &#x3D; this.chart
             .getDataManager()
             .chartSeriesSet.reduce((prev: number | undefined, current) &#x3D;&gt; {

@@ -1563,12 +1563,12 @@ export class WizardHorizontalComponent
         super(dir, cdRef, el, _document);
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         // Checking the validity of previous steps by default.
         this.linear &#x3D; true;
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         super.ngAfterViewInit();
 
         this.stepsCachedArray &#x3D; [...this.stepsArray];

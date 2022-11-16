@@ -179,6 +179,10 @@
 the system settings to leverage this value.</p>
 </div>
 
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                </div>
                         </td>
                     </tr>
 
@@ -255,7 +259,7 @@ export class RefresherSettingsService {
      * This is a system wide definition of refresh rate. Widgets have to be configured to use
      * the system settings to leverage this value.
      */
-    public get refreshRateSeconds() {
+    public get refreshRateSeconds(): number {
         return this._refreshRateSeconds;
     }
 

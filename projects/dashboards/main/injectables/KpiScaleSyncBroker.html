@@ -290,7 +290,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IBroker.html" target="_self" >IBroker[]</a></code>
 
                     </div>
                 </td>
@@ -539,15 +539,15 @@ export class KpiScaleSyncBroker implements IConfigurable {
         }
     }
 
-    public configure() {
+    public configure(): KpiScaleSyncBrokerBuilder {
         return this.builder;
     }
 
-    public getBrokers() {
+    public getBrokers(): readonly IBroker[] {
         return this.brokers;
     }
 
-    public subscribeToBrokers() {
+    public subscribeToBrokers(): void {
         this.destroy();
 
         this.brokers.forEach((broker) &#x3D;&gt; {
@@ -563,12 +563,12 @@ export class KpiScaleSyncBroker implements IConfigurable {
         });
     }
 
-    public setComponent(component: any, componentId: string) {
+    public setComponent(component: any, componentId: string): void {
         this.componentId &#x3D; componentId;
         this.updateConfiguration(this.properties);
     }
 
-    public destroy() {
+    public destroy(): void {
         this.destroySubscriptions$.next();
         this.destroySubscriptions$.complete();
     }
@@ -640,7 +640,7 @@ class KpiScaleSyncBrokerBuilder {
 
     constructor(private brokers: IBroker[]) {}
 
-    public addBroker(broker: IBrokerUserConfig) {
+    public addBroker(broker: IBrokerUserConfig): KpiScaleSyncBrokerBuilder {
         const newBrokerSetting: IBrokerValue &#x3D; {
             id: broker.id,
             targetID: &quot;&quot;,

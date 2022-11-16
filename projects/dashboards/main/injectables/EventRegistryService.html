@@ -165,7 +165,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Record&lt;string, IEventDefinition&gt;</code>
+                        <b>Returns : </b>    <code>IEventDefinition</code>
 
                     </div>
                     <div class="io-description">
@@ -261,11 +261,11 @@ import { IEventDefinition } from &quot;@nova-ui/bits&quot;;
 export class EventRegistryService {
     private events: Record&lt;string, IEventDefinition&gt; &#x3D; {};
 
-    public registerEvent(eventDefinition: IEventDefinition) {
+    public registerEvent(eventDefinition: IEventDefinition): void {
         this.events[eventDefinition.id] &#x3D; eventDefinition;
     }
 
-    public getEvent(id: string) {
+    public getEvent(id: string): IEventDefinition {
         const event &#x3D; this.events[id];
 
         if (!event) {

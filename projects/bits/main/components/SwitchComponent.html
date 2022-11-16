@@ -797,7 +797,7 @@ export class SwitchComponent implements OnInit, ControlValueAccessor {
 
     @Output() valueChange: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter&lt;boolean&gt;();
 
-    toggle() {
+    toggle(): void {
         if (this.disabled) {
             return;
         }
@@ -814,13 +814,13 @@ export class SwitchComponent implements OnInit, ControlValueAccessor {
         this.onTouched();
     }
 
-    onChange(value: any) {}
+    onChange(value: any): void {}
 
-    onTouched() {}
+    onTouched(): void {}
 
-    writeValue(value: any) {
+    writeValue(value: any): void {
         if (value !&#x3D;&#x3D; undefined) {
-            this.value &#x3D; value;
+            this.value &#x3D; !!value;
         }
     }
 
@@ -836,7 +836,7 @@ export class SwitchComponent implements OnInit, ControlValueAccessor {
         this.disabled &#x3D; isDisabled;
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.value &#x3D; !!this.value;
     }
 }

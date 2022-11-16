@@ -106,6 +106,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngOnDestroy" >ngOnDestroy</a>
                             </li>
                             <li>
@@ -195,6 +196,7 @@
                 <td class="col-md-4">
                     <a name="ngOnDestroy"></a>
                     <span class="name">
+                        <span class="modifier">Public</span>
                         <span ><b>ngOnDestroy</b></span>
                         <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -202,7 +204,8 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnDestroy()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
                 </td>
             </tr>
 
@@ -509,7 +512,7 @@ export class ConfiguratorDataSourceManagerService implements OnDestroy {
             });
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.onDestroy$.next();
         this.onDestroy$.complete();
     }

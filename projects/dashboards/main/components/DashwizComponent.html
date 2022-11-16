@@ -836,7 +836,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -1896,7 +1896,7 @@ export class DashwizComponent
         }
     }
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.buttonComponentTypes &#x3D; this.buttonComponentTypes || [
             DashwizButtonsComponent.lateLoadKey,
         ];
@@ -1908,7 +1908,7 @@ export class DashwizComponent
         }
     }
 
-    public ngDoCheck() {
+    public ngDoCheck(): void {
         if (this.currentStep) {
             this.buttonProperties &#x3D; {
                 busy: this.currentStep.busyConfig.busy,
@@ -1922,7 +1922,7 @@ export class DashwizComponent
         }
     }
 
-    public ngAfterContentInit() {
+    public ngAfterContentInit(): void {
         const activeTabs &#x3D; this.steps.filter((item) &#x3D;&gt; item.active);
         this.arraySteps &#x3D; this.steps.toArray();
         if (activeTabs.length &#x3D;&#x3D;&#x3D; 0) {
@@ -1954,14 +1954,14 @@ export class DashwizComponent
         );
     }
 
-    public ngAfterViewChecked() {
+    public ngAfterViewChecked(): void {
         if (this.stretchStepLines) {
             this.stepLineWidth &#x3D; Math.round(this.getLargestLabelWidth() / 2);
             this.changeDetector.detectChanges();
         }
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         this.steps
             .toArray()
             .forEach((step: DashwizStepComponent) &#x3D;&gt; step.valid.unsubscribe());
@@ -1972,7 +1972,7 @@ export class DashwizComponent
     public addStepDynamic(
         wizardStep: IDashwizStepComponent,
         indexToInsert: number
-    ) {
+    ): void {
         const componentFactory &#x3D;
             this.componentFactoryResolver.resolveComponentFactory(
                 DashwizStepComponent
@@ -1985,37 +1985,37 @@ export class DashwizComponent
         return componentRef.instance;
     }
 
-    public disableStep(step: DashwizStepComponent) {
+    public disableStep(step: DashwizStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toDisable &#x3D; this.arraySteps[indexOfStep];
         toDisable.disabled &#x3D; true;
         this.changeDetector.detectChanges();
     }
 
-    public enableStep(step: DashwizStepComponent) {
+    public enableStep(step: DashwizStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toDisable &#x3D; this.arraySteps[indexOfStep];
         toDisable.disabled &#x3D; false;
         this.changeDetector.detectChanges();
     }
 
-    public hideStep(step: DashwizStepComponent) {
+    public hideStep(step: DashwizStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const toHide &#x3D; this.arraySteps[indexOfStep];
         toHide.hidden &#x3D; true;
     }
 
-    public showStep(step: DashwizStepComponent) {
+    public showStep(step: DashwizStepComponent): void {
         const indexOfStep &#x3D; this.arraySteps.indexOf(step);
         const visibleStep &#x3D; this.arraySteps[indexOfStep];
         visibleStep.hidden &#x3D; false;
     }
 
-    public goToStep(stepIndex: number) {
+    public goToStep(stepIndex: number): void {
         this.selectStep(this.arraySteps[stepIndex]);
     }
 
-    public selectStep(step: DashwizStepComponent) {
+    public selectStep(step: DashwizStepComponent): void {
         if (!step.disabled) {
             this.futureStep &#x3D; step;
             this.currentStep.exitStep({
@@ -2030,7 +2030,7 @@ export class DashwizComponent
         }
     }
 
-    public onBack &#x3D; () &#x3D;&gt; {
+    public onBack &#x3D; (): void &#x3D;&gt; {
         if (!isUndefined(this.stepIndex)) {
             let previousStep &#x3D; this.arraySteps[this.stepIndex - 1];
             if (previousStep.hidden || previousStep.disabled) {
@@ -2048,7 +2048,7 @@ export class DashwizComponent
         }
     };
 
-    public onNext &#x3D; () &#x3D;&gt; {
+    public onNext &#x3D; (): void &#x3D;&gt; {
         let nextStep &#x3D; this.arraySteps[this.stepIndex + 1];
         this.handleStepControl(this.currentStep);
         this.currentStep.nextStep({
@@ -2081,11 +2081,11 @@ export class DashwizComponent
         this.next.emit();
     };
 
-    public onFinish &#x3D; () &#x3D;&gt; {
+    public onFinish &#x3D; (): void &#x3D;&gt; {
         this.finish.emit();
     };
 
-    public onCancel &#x3D; () &#x3D;&gt; {
+    public onCancel &#x3D; (): void &#x3D;&gt; {
         this.cancel.emit(
             this.steps.toArray().filter((step) &#x3D;&gt; step.complete).length !&#x3D;&#x3D; 0
         );
@@ -2099,7 +2099,7 @@ export class DashwizComponent
         finish: this.onFinish,
     };
 
-    public enterAnotherStep() {
+    public enterAnotherStep(): void {
         this.currentStep.applyExitingStep();
         this.futureStep?.enterStep();
 
@@ -2119,7 +2119,7 @@ export class DashwizComponent
         this.previousStepIndex &#x3D; this.stepIndex;
     }
 
-    public onButtonPortalOutput(event: IEvent) {
+    public onButtonPortalOutput(event: IEvent): void {
         // @ts-ignore
         this.buttonPortalActionMap[event.id]?.();
     }

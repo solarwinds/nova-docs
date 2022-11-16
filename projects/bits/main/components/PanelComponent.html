@@ -1908,7 +1908,7 @@ show the left pane conditionally.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="430" class="link-to-prism">src/lib/panel/panel.component.ts:430</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="428" class="link-to-prism">src/lib/panel/panel.component.ts:428</a></div>
                                 </td>
                             </tr>
 
@@ -1930,7 +1930,7 @@ show the left pane conditionally.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="436" class="link-to-prism">src/lib/panel/panel.component.ts:436</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="434" class="link-to-prism">src/lib/panel/panel.component.ts:434</a></div>
                                 </td>
                             </tr>
 
@@ -2153,17 +2153,17 @@ export class PanelComponent
         private changeDetectorRef: ChangeDetectorRef
     ) {}
 
-    ngOnInit() {
+    public ngOnInit(): void {
         this.defineSizes();
         this.defineState();
         this.togglesSubscription &#x3D; this.toggles
             .pipe(filter((toggle) &#x3D;&gt; toggle &#x3D;&#x3D;&#x3D; this._isCollapsed))
             .pipe(distinctUntilChanged())
             .pipe(debounceTime(PanelComponent.ANIMATION_TIME))
-            .subscribe((toggle) &#x3D;&gt; this.toggleHideOrCollapsed());
+            .subscribe((_) &#x3D;&gt; this.toggleHideOrCollapsed());
     }
 
-    ngOnChanges(changes: SimpleChanges) {
+    public ngOnChanges(changes: SimpleChanges): void {
         if (changes[&quot;panelMode&quot;] &amp;&amp; changes[&quot;panelMode&quot;].isFirstChange()) {
             this.defineSizes();
         }
@@ -2179,7 +2179,7 @@ export class PanelComponent
         }
     }
 
-    ngAfterViewInit(): void {
+    public ngAfterViewInit(): void {
         if (this.orientation &#x3D;&#x3D;&#x3D; panelMap.bottom.orientation) {
             this.isResizable &#x3D; false;
         }
@@ -2189,7 +2189,7 @@ export class PanelComponent
         this.updatePaneContainerSizeWithoutAnimation();
     }
 
-    ngOnDestroy(): void {
+    public ngOnDestroy(): void {
         this.destroyLastAnimationPlayer();
         this.destroyAnimationFactories();
         if (this.togglesSubscription) {
@@ -2197,7 +2197,7 @@ export class PanelComponent
         }
     }
 
-    public onSizeChanged(newSize: string) {
+    public onSizeChanged(newSize: string): void {
         this.paneSize &#x3D; newSize;
     }
 
@@ -2343,9 +2343,7 @@ export class PanelComponent
     }
 
     public toggleCollapsedOnClick(): void {
-        if (this.isHoverable) {
-            return;
-        } else {
+        if (!this.isHoverable) {
             this.toggleHideOrCollapsed();
         }
     }
@@ -2459,9 +2457,7 @@ export class PanelComponent
                 }),
                 animate(
                     &#x60;${PanelComponent.ANIMATION_TIME}ms ease-in-out&#x60;,
-                    style({
-                        height: endSize,
-                    })
+                    style({ height: endSize })
                 ),
             ]);
         }
@@ -2471,9 +2467,7 @@ export class PanelComponent
             }),
             animate(
                 &#x60;${PanelComponent.ANIMATION_TIME}ms ease-in-out&#x60;,
-                style({
-                    width: endSize,
-                })
+                style({ width: endSize })
             ),
         ]);
     }

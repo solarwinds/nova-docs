@@ -445,7 +445,7 @@ export class InteractionLinePlugin extends ChartPlugin {
     private isChartInView &#x3D; false;
     private lastInteractionValuesPayload: IInteractionValuesPayload;
     private interactionLineLayer: D3Selection&lt;SVGElement&gt;;
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     public initialize(): void {
         this.interactionLineLayer &#x3D; this.chart.getGrid().getLasagna().addLayer({

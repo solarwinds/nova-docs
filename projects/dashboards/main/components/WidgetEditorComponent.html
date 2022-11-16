@@ -237,7 +237,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:92</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:91</a></div>
                             </td>
                         </tr>
 
@@ -386,8 +386,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="170"
-                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:170</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="169"
+                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:169</a></div>
                 </td>
             </tr>
 
@@ -425,8 +425,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="152"
-                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:152</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:151</a></div>
                 </td>
             </tr>
 
@@ -464,8 +464,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="133"
-                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:133</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:132</a></div>
                 </td>
             </tr>
 
@@ -538,7 +538,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:89</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:88</a></div>
                         </td>
                     </tr>
 
@@ -565,7 +565,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:95</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:94</a></div>
                         </td>
                     </tr>
 
@@ -592,7 +592,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:90</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:89</a></div>
                         </td>
                     </tr>
 
@@ -619,7 +619,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:83</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:82</a></div>
                         </td>
                     </tr>
 
@@ -686,7 +686,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:84</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/configurator/components/widget-editor/widget-editor.component.ts:83</a></div>
                         </td>
                     </tr>
 
@@ -848,12 +848,11 @@ export class WidgetEditorComponent
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IEvent&lt;IPreviewEventPayload&gt;) &#x3D;&gt; {
                 const payload &#x3D; event.payload;
-                // TODO: Ensure that we have payload
-                this.configurator?.previewPizzagnaComponent?.eventBus
-                    // @ts-ignore
-                    ?.getStream(payload.id)
-                    // @ts-ignore
-                    .next(payload.payload);
+                if (payload &amp;&amp; payload.id) {
+                    this.configurator?.previewPizzagnaComponent?.eventBus
+                        ?.getStream(payload.id)
+                        .next(payload.payload);
+                }
             });
         this._formPizzagnaComponent &#x3D; value;
     }
@@ -867,7 +866,7 @@ export class WidgetEditorComponent
     public busy &#x3D; false;
     public configuratorTitle: string;
 
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         public changeDetector: ChangeDetectorRef,
@@ -878,7 +877,7 @@ export class WidgetEditorComponent
         this.form &#x3D; this.formBuilder.group({});
     }
 
-    public ngOnInit() {
+    public ngOnInit(): void {
         // TODO: Reconsider this
         // @ts-ignore: We can depend on preview being undefined somewhere
         this.previewService.preview &#x3D;
@@ -908,7 +907,7 @@ export class WidgetEditorComponent
 
     // --------------------------------------------------------------------------------
 
-    public onPreviewPizzagnaUpdate(configLayer: IPizzagnaLayer) {
+    public onPreviewPizzagnaUpdate(configLayer: IPizzagnaLayer): void {
         const previewWidget &#x3D; {
             ...this.configurator.previewWidget,
             pizzagna: {
@@ -927,7 +926,7 @@ export class WidgetEditorComponent
         this.configuratorTitle &#x3D; $localize&#x60;Editing ${widgetTitle}&#x60;;
     }
 
-    public onFinish() {
+    public onFinish(): void {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
             // is used to trigger valueChanges to detect changes in forms
@@ -945,7 +944,7 @@ export class WidgetEditorComponent
         this.configurator.formSubmit();
     }
 
-    public onCancel() {
+    public onCancel(): void {
         this.configurator.formCancel();
     }
 

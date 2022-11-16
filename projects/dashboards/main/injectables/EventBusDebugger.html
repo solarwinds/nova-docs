@@ -213,7 +213,7 @@ import { PIZZAGNA_EVENT_BUS } from &quot;../../types&quot;;
  */
 @Injectable()
 export class EventBusDebugger implements OnDestroy {
-    private destroy$ &#x3D; new Subject&lt;void&gt;();
+    private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;

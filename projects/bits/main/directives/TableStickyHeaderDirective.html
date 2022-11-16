@@ -667,7 +667,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
     private tableElRef?: HTMLTableElement;
     private userProvidedHeight: string;
 
-    private unsubscribe$ &#x3D; new Subject&lt;void&gt;();
+    private readonly unsubscribe$ &#x3D; new Subject&lt;void&gt;();
     private headResizeObserver: ResizeObserver;
     // this is for keeping track of the original viewport height on head resize
     private origViewportHeight: number;
@@ -855,7 +855,9 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         const resize$ &#x3D; new Subject&lt;void&gt;();
         // Note: Passing the resize event to resize$ subject to be able
         // to handle all the columnWidth update trigger in a single stream
-        const resizeObserver &#x3D; new ResizeObserver(() &#x3D;&gt; resize$.next());
+        const resizeObserver: ResizeObserver &#x3D; new ResizeObserver(() &#x3D;&gt; {
+            resize$.next();
+        });
         resizeObserver.observe(this.viewportEl);
         this.unsubscribe$
             .pipe(

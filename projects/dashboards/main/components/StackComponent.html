@@ -532,7 +532,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </div>
                     <div class="io-description">
@@ -797,7 +797,7 @@ export class StackComponent extends BaseLayout implements OnInit, OnDestroy {
         this.classNames &#x3D; &#x60;${this.defaultClassNames} flex-${this.direction} ${this.elementClass}&#x60;;
     }
 
-    public ngOnDestroy() {
+    public ngOnDestroy(): void {
         // Ensures that any base class observables are unsubscribed.
         super.ngOnDestroy();
     }

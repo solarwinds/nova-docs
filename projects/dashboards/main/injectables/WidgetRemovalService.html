@@ -245,7 +245,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;void&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -281,7 +281,7 @@ export class WidgetRemovalService {
         widgetId: string,
         configuratorSource: IConfiguratorSource,
         tryRemove?: WidgetRemovalOperation
-    ) {
+    ): Observable&lt;void&gt; {
         // TODO: Handle the case when tryRemove is undefined
         // @ts-ignore
         return this.tryRemove(tryRemove, widgetId, configuratorSource).pipe(
