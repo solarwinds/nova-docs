@@ -76,7 +76,7 @@ registering the CHART_COMPONENT provider can be injected into this.</p>
                 <h3>Implements</h3>
             </p>
             <p class="comment">
-                            <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                            <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
             </p>
 
 
@@ -133,7 +133,7 @@ registering the CHART_COMPONENT provider can be injected into this.</p>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/chart-collection/chart-collection-id.directive.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/chart-collection/chart-collection-id.directive.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -201,7 +201,7 @@ registering the CHART_COMPONENT provider can be injected into this.</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/chart-collection/chart-collection-id.directive.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/chart-collection/chart-collection-id.directive.ts:44</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -217,7 +217,13 @@ registering the CHART_COMPONENT provider can be injected into this.</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Directive, Inject, Input } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    Directive,
+    Inject,
+    Input,
+    OnChanges,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
 
 import { CHART_COMPONENT } from &quot;../constants&quot;;
 import { IChartComponent } from &quot;../core/common/types&quot;;
@@ -232,7 +238,7 @@ import { ChartCollectionService } from &quot;./chart-collection.service&quot;;
 @Directive({
     selector: &quot;[nuiChartCollectionId]&quot;,
 })
-export class ChartCollectionIdDirective implements AfterViewInit {
+export class ChartCollectionIdDirective implements OnChanges {
     @Input(&quot;nuiChartCollectionId&quot;)
     public collectionId: string;
 
@@ -241,10 +247,22 @@ export class ChartCollectionIdDirective implements AfterViewInit {
         private chartCollectionService: ChartCollectionService
     ) {}
 
-    public ngAfterViewInit(): void {
-        this.chartCollectionService
-            .getChartCollection(this.collectionId)
-            .addChart(this.chartComponent.chart);
+    public ngOnChanges(changes: SimpleChanges): void {
+        console.log(&quot;ngOnChanges&quot;);
+        const collectionIdChange &#x3D; changes.collectionId;
+        if (collectionIdChange) {
+            console.log(&quot;collectionIdChange&quot;, collectionIdChange);
+            if (collectionIdChange.previousValue) {
+                this.chartCollectionService
+                    .getChartCollection(collectionIdChange.previousValue)
+                    .removeChart(this.chartComponent.chart);
+            }
+            if (collectionIdChange.currentValue) {
+                this.chartCollectionService
+                    .getChartCollection(collectionIdChange.currentValue)
+                    .addChart(this.chartComponent.chart);
+            }
+        }
     }
 }
 </code></pre>
