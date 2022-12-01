@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { firstValueFrom } from "rxjs";
 
 import { IProject } from "../app/header/header.component";
 import { environment } from "../environments/environment";
@@ -19,6 +20,6 @@ export class AppServiceBackend extends AppService {
 
   public async getProjects(): Promise<ReadonlyArray<IProject>> {
     const url = `${environment.apiUrl}${this.PROJECT_URL}`;
-    return this.http.get<IProject[]>(url).toPromise();
+    return firstValueFrom(this.http.get<IProject[]>(url));
   }
 }

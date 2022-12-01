@@ -1,15 +1,25 @@
-Hello friend.
-This awesome repo is a lightweight NodeJS-based webserver that runs inside docker to provide
-devs with some documentation.
+# nova-docs
 
-Unfortunately, this is a mere container that does not really contain docs at first start,
-but you might have noticed that on TeamCity there are tasks like 'Deploy docs'.
-These tasks copy files necessary to provide demos into this container's 'projects' folder.
+## Folder structure
 
-To ease local development there are two main commands:
- - 'npm run dev' - runs the website on port 8282, restarting it when you make changes in files
- - 'npm run host' - build docker image (like it will be done in TeamCity) and spins it up
+- `/bin` utility scripts
 
-As for the latter command, you will need docker on your machine.
-If you don't have it, please refer to mini-guide in DOCKER.MD file.
-If you're a developer, check out the DEVELOPMENT.MD file to find some useful tips.
+- `/nova-docs-client` sources for the nova-docs client application
+
+- `/projects` used as storage for built documentation apps for nova projects and
+  branches
+
+- `/server` lightweight express server to serve the `nova-docs-client` app and
+  the doc apps from `projects` folder
+
+- `/views` handlebars templates for express views (only error view currently)
+
+The client app is being built as part of nova-docs task inside nova CircleCI.
+That task clones current main of this repo, installs deps, assembles the client
+app and executes `package` script to create `nova-docs.zip` that should contain
+everything neccessary to run the whole documentation server, uploading it as
+artifact on CircleCI. The machine where production/staging of nova-docs is
+actually running should consume these artifacts.
+
+You can test the whole thing by unzipping said archive and run `node ./bin/www`
+inside (that's what is actually happening on the machine that hosts nova-docs).

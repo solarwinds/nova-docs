@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+zip -r nova-docs.zip ./* -x "./nova-docs-client/*" -x "./client-dev/*"
