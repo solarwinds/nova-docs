@@ -1,19 +1,19 @@
 {
   "dependencies": {
-    "body-parser": "^1.20.0",
+    "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "fs-extra": "^10.1.0",
     "hbs": "^4.2.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
-    "@types/express": "^4.17.13",
+    "@types/express": "^4.17.14",
     "cross-env": "^7.0.3",
-    "nodemon": "^2.0.19",
-    "prettier": "^2.7.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
     "prettier-plugin-sort-json": "^0.0.3"
   },
   "name": "apollo-doc-service",
@@ -21,13 +21,11 @@
   "scripts": {
     "build": "cd nova-docs-client && yarn --check && npm run assemble",
     "build:dev": "cd nova-docs-client && yarn --check && npm run build:dev",
+    "package": "sh ./bin/package",
     "prettier-check": "prettier --check",
     "prettier-fix": "prettier --write",
     "start": "node ./bin/www",
     "start:dev": "cross-env DEV=1 nodemon ./bin/www ./client-dev/*.*"
   },
-  "version": "1.22.0-0",
-  "workspaces": [
-    "./nova-docs-client"
-  ]
+  "version": "2.0.0-0"
 }
