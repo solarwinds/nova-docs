@@ -38,8 +38,8 @@
 <ul>
 <li>Node.js®</li>
 <li>A package manager such as <a href="https://www.npmjs.com/get-npm">npm</a></li>
-<li>Angular CLI v12</li>
-<li>Angular CDK v12 as a devDependency<br></li>
+<li>Angular CLI v13</li>
+<li>Angular CDK v13 as a devDependency</li>
 </ul>
 <h3 id="installing-nodejs-and-npm">Installing NodeJS and <code>npm</code></h3>
 <p>To check your version, run node -v in a terminal/console window.
@@ -47,19 +47,19 @@ To get Node.js (which comes with <code>npm</code> out of the box), go to <a href
 <h3 id="installing-angular-cli">Installing Angular CLI</h3>
 <p>The Angular CLI is a command-line interface tool that you can use to initialize, develop, scaffold and maintain Angular applications.</p>
 <p>You may want to check first whether it&#39;s already installed by running the following command:</p>
-<div><pre class="line-numbers"><code class="language-bash">ng --version</code></pre></div><p>If you want to install the latest Angular CLI globally, run the following command:</p>
-<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;angular/cli&#64;^12</code></pre></div><h3 id="installing-angular-cdk">Installing Angular CDK</h3>
+<div><pre class="line-numbers"><code class="language-sh">ng --version</code></pre></div><p>If you want to install the latest Angular CLI globally, run the following command:</p>
+<div><pre class="line-numbers"><code class="language-sh">npm install -g &#64;angular/cli&#64;^12</code></pre></div><h3 id="installing-angular-cdk">Installing Angular CDK</h3>
 <p>Nova uses Angular CDK as part of its schematics functionality. To install it, you can run the following command:</p>
-<div><pre class="line-numbers"><code class="language-none">npm install &#64;angular/cdk&#64;^12 --save-dev</code></pre></div><h3 id="install-nova-bits">Install Nova Bits</h3>
+<div><pre class="line-numbers"><code class="language-sh">npm install &#64;angular/cdk&#64;^12 --save-dev</code></pre></div><h3 id="install-nova-bits">Install Nova Bits</h3>
 <h4 id="using-angular-cli">Using Angular CLI</h4>
 <p>In order to install bits in your project root using the CLI, run the following command:</p>
-<div><pre class="line-numbers"><code class="language-bash">ng add &#64;nova-ui/bits</code></pre></div><p>This will automatically perform most of the steps for you.</p>
+<div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/bits</code></pre></div><p>This will automatically perform most of the steps for you.</p>
 <p>If you do not want to override your dependency versions, you can use skipPackageJson flag.</p>
-<div><pre class="line-numbers"><code class="language-none">ng add &#64;nova-ui/bits --skipPackageJson</code></pre></div><p>But, there&#39;s one additional step that needs to be done manually. Since bits uses <code>@angular/localize</code> for localization, this dependency
+<div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/bits --skipPackageJson</code></pre></div><p>But, there&#39;s one additional step that needs to be done manually. Since bits uses <code>@angular/localize</code> for localization, this dependency
 needs to be imported in your app&#39;s polyfills.ts file. The easiest way to do this is to run the following command:</p>
-<div><pre class="line-numbers"><code class="language-bash">ng add &#64;angular/localize</code></pre></div><h4 id="using-npm">Using npm</h4>
+<div><pre class="line-numbers"><code class="language-sh">ng add &#64;angular/localize</code></pre></div><h4 id="using-npm">Using npm</h4>
 <p>Installation is quite simple using npm. Nui includes all of its dependencies as part of the final build such as Angular, RxJs and more.</p>
-<div><pre class="line-numbers"><code class="language-bash">npm install &#64;nova-ui/bits</code></pre></div><h3 id="module-usage">Module Usage</h3>
+<div><pre class="line-numbers"><code class="language-sh">npm install &#64;nova-ui/bits</code></pre></div><h3 id="module-usage">Module Usage</h3>
 <h4 id="adding-modules-to-your-project">Adding Modules to Your Project</h4>
 <p>Once all dependencies and project files are downloaded, import any component modules you want to use to the appropriate Angular
 module in your project. The following example imports the <code>NuiButtonModule</code> to make the <code>ButtonComponent</code> available for use.</p>
@@ -137,25 +137,22 @@ export class OverriddenNuiEnv extends NuiEnvironment {
 <h4 id="typescript-compiler-options">Typescript Compiler Options</h4>
 <h2 id="schematics">Schematics</h2>
 <p>A <a href="https://angular.io/guide/schematics">schematic</a> is a template-based code generator that supports complex logic. It is a set of instructions for transforming a software project by generating or modifying code. Schematics are part of the Angular ecosystem.
-Nova Bits offers the following <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/additional-documentation/schematics.html">schematics</a>:</p>
-<h4 id="filtered-view">Filtered View</h4>
-<p><a href="https://nova-ui.solarwinds.io/bits/release_v12.x/additional-documentation/schematics/filtered-view.html">The Filtered View</a>
+Nova Bits offers the following <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/additional-documentation/schematics.html">schematics</a>:</p>
+<h3 id="filtered-view">Filtered View</h3>
+<p><a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/additional-documentation/schematics/filtered-view.html">The Filtered View</a>
 schematic provides the ability to create a generic filtered view that can cover many use cases for filtering a set of data. Its main responsibility is to integrate a filter group panel with a list or table view that displays the filtered data. More details can be found <a href="https://solarwinds.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&amp;p=p&amp;chid=8511af43-214a-435d-a605-dbe722ca04a0&amp;vid=a5dbbef3-3582-49bf-b537-f789f946d09f">here</a>
 To add a filtered view to your project, run the following command:</p>
-<div><pre class="line-numbers"><code class="language-bash">ng generate &#64;nova-ui/bits:filtered-view --name=custom-name-for-filtered-view</code></pre></div><h4 id="filtered-group">Filtered Group</h4>
-<p><a href="https://nova-ui.solarwinds.io/bits/release_v12.x/additional-documentation/schematics/filter-group.html">The Filtered Group</a>
-schematic provides the ability to create a filtered group view. It depends heavily on the <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/injectables/LocalFilteringDataSource.html">LocalFilteringDataSource</a> service, so first and foremost please check out the documentation for it.
+<div><pre class="line-numbers"><code class="language-sh">ng generate &#64;nova-ui/bits:filtered-view --name=custom-name-for-filtered-view</code></pre></div><h3 id="filtered-group">Filtered Group</h3>
+<p><a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/additional-documentation/schematics/filter-group.html">The Filtered Group</a>
+schematic provides the ability to create a filtered group view. It depends heavily on the <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/injectables/LocalFilteringDataSource.html">LocalFilteringDataSource</a> service, so first and foremost please check out the documentation for it.
 This code can be generated using the following command:</p>
-<div><pre class="line-numbers"><code class="language-none">ng generate &#64;nova-ui/bits:filter-group --name=basic-filter-group --p=app</code></pre></div><h4 id="list">List</h4>
-<p><a href="https://nova-ui.solarwinds.io/bits/release_v12.x/additional-documentation/schematics/list.html">The List</a> schematic provides the
-ability to create a generic list that can cover a majority of use cases for a list. Its main responsibility is to integrate the functionality of the <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/components/RepeatComponent.html">nui-repeat</a> component with other components commonly used with a list such as <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/components/SelectV2Component.html">nui-select-v2</a>, <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/components/SearchComponent.html">nui-search</a>, <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/components/PaginatorComponent.html">nui-paginator</a> and <a href="https://nova-ui.solarwinds.io/bits/release_v12.x/components/SorterComponent.html">nui-sorter</a>.
+<div><pre class="line-numbers"><code class="language-sh">ng generate &#64;nova-ui/bits:filter-group --name=basic-filter-group --p=app</code></pre></div><h3 id="list">List</h3>
+<p><a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/additional-documentation/schematics/list.html">The List</a> schematic provides the
+ability to create a generic list that can cover a majority of use cases for a list. Its main responsibility is to integrate the functionality of the <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/components/RepeatComponent.html">nui-repeat</a> component with other components commonly used with a list such as <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/components/SelectV2Component.html">nui-select-v2</a>, <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/components/SearchComponent.html">nui-search</a>, <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/components/PaginatorComponent.html">nui-paginator</a> and <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/components/SorterComponent.html">nui-sorter</a>.
 This code can be generated using the following command:</p>
-<div><pre class="line-numbers"><code class="language-none">ng g &#64;nova-ui/bits:list --name=basic-list --p=app</code></pre></div><h2 id="what-are-atoms">What are Atoms?</h2>
+<div><pre class="line-numbers"><code class="language-sh">ng g &#64;nova-ui/bits:list --name=basic-list --p=app</code></pre></div><h2 id="what-are-atoms">What are Atoms?</h2>
 <p>Information about Atoms can be found <a href="../../README.md#Atoms">here</a>
 Bits atoms can be imported from here: <code>@nova-ui/bits/sdk/atoms</code>.</p>
-<h2 id="aot-support">AoT Support</h2>
-<p>Nova Nui supports AoT. For a primer on AoT, you can go <a href="https://angular-2-training-book.rangle.io/handout/aot/">here</a> or for
-a more detailed overview you can go <a href="https://angular.io/guide/aot-compiler">here</a>.</p>
 <h2 id="additional-information">Additional Information</h2>
 <h3 id="supported-browsers">Supported browsers</h3>
 <p>Nova formally supports the following browsers. Support for IE11 has been dropped as of Nova v9.0.0.</p>
