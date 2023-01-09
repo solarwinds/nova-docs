@@ -306,6 +306,7 @@ import {
     StatusAccessors,
     statusAccessors,
     TimeIntervalScale,
+    XYGridConfig,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
 
@@ -392,11 +393,33 @@ export class StatusBarChartComponent
             pointerEvents: false,
         });
 
+        this.setGridConfigFromConfiguration(this.chartAssist.gridConfig);
+        this.setGridConfigFromConfiguration(this.chartAssist.lastGridConfig);
+
         this.scales.y &#x3D; new BandScale();
         this.scales.y.fixDomain(StatusAccessors.STATUS_DOMAIN);
+        this.scales.y.isTimeseriesScale &#x3D; true;
+
+        if (this.scales.yRight) {
+            this.scales.yRight &#x3D; this.scales.y;
+        }
     }
 
     protected updateChartData(): void {
+        const { gridConfig, lastGridConfig } &#x3D; this.chartAssist;
+        // hides botom axis if it&#x27;s not last chart in the group
+        gridConfig.axis.bottom.visible &#x3D; !this.configuration?.hasAdjacentChart;
+        lastGridConfig.axis.bottom.visible &#x3D;
+            !this.configuration?.hasAdjacentChart;
+        gridConfig.borders.bottom.className &#x3D; this.configuration
+            ?.hasAdjacentChart
+            ? &quot;nui-chart-border&quot;
+            : &quot;nui-chart-border nui-chart-border--thick&quot;;
+        lastGridConfig.borders.bottom.className &#x3D; this.configuration
+            ?.hasAdjacentChart
+            ? &quot;nui-chart-border&quot;
+            : &quot;nui-chart-border nui-chart-border--thick&quot;;
+
         this.chartUpdate$.next();
 
         // Assemble the series set
@@ -481,6 +504,30 @@ export class StatusBarChartComponent
             }
         });
         return statusDataArray;
+    }
+
+    private setGridConfigFromConfiguration(gridConfig: XYGridConfig): void {
+        const configuration &#x3D; this.configuration;
+
+        if (configuration.gridConfig?.xAxisTicksCount) {
+            gridConfig.axis.bottom.approximateTicks &#x3D;
+                configuration.gridConfig.xAxisTicksCount;
+        }
+
+        if (
+            gridConfig.dimension.marginLocked &amp;&amp;
+            configuration.gridConfig?.sideMarginLocked
+        ) {
+            gridConfig.dimension.marginLocked.left &#x3D; true;
+            gridConfig.dimension.marginLocked.right &#x3D; true;
+        }
+
+        if (configuration.gridConfig?.sideMargin) {
+            gridConfig.dimension.margin.left &#x3D;
+                configuration.gridConfig.sideMargin;
+            gridConfig.dimension.margin.right &#x3D;
+                configuration.gridConfig.sideMargin;
+        }
     }
 }
 
