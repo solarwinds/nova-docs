@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="193"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:193</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="207"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:207</a></div>
                 </td>
             </tr>
 
@@ -654,6 +654,20 @@ export class InteractionLabelPlugin extends ChartPlugin {
             .getStream(INTERACTION_VALUES_EVENT)
             .pipe(takeUntil(this.destroy$))
             .subscribe((event: IChartEvent) &#x3D;&gt; {
+                if (event.data.values?.y) {
+                    const chartGrid &#x3D; this.chart.getGrid();
+
+                    const eventYAxisIds &#x3D; Object.keys(event.data.values.y);
+                    const chartLeftYAxis &#x3D; chartGrid.scales.y.list[0];
+                    // shows label only for a chart that is currently being hovered
+                    if (
+                        chartLeftYAxis.isTimeseriesScale &amp;&amp;
+                        !eventYAxisIds.includes(chartLeftYAxis.id)
+                    ) {
+                        return;
+                    }
+                }
+
                 this.lastInteractionValuesPayload &#x3D; event.data;
                 if (this.isChartInView) {
                     this.handleLabelUpdate();
