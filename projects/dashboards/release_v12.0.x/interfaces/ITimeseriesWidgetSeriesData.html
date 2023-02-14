@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/components/timeseries-widget/types.ts:63</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/components/timeseries-widget/types.ts:67</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -199,6 +199,8 @@ export interface ITimeseriesWidgetConfig {
         [key: string]: any;
     };
     hasAdjacentChart?: boolean;
+    groupUniqueId?: string;
+    allowLegendMenu?: boolean;
 }
 
 export interface ITimeseriesWidgetSeries {
@@ -212,6 +214,8 @@ export interface ITimeseriesWidgetData&lt;T &#x3D; ITimeseriesWidgetSeriesData&g
     name: string;
     description: string;
     data: T[];
+    rawData?: T[];
+    transformer?: (data: T[], hasPercentile?: boolean) &#x3D;&gt; T[];
     link?: string;
     secondaryLink?: string;
 }
@@ -283,6 +287,19 @@ export enum TimeseriesChartPreset {
 
     StackedBar &#x3D; &quot;stackedBar&quot;,
     StatusBar &#x3D; &quot;statusBar&quot;,
+}
+
+export enum TimeseriesTransformer {
+    None &#x3D; &quot;none&quot;,
+    Normalize &#x3D; &quot;normalize&quot;,
+    ChangePoint &#x3D; &quot;changePoint&quot;,
+    Difference &#x3D; &quot;difference&quot;,
+    Linear &#x3D; &quot;linear&quot;,
+    PercentileStd &#x3D; &quot;percentileStd&quot;,
+    Smoothing &#x3D; &quot;smoothing&quot;,
+    LoessStandardize &#x3D; &quot;loessStandardize&quot;,
+    Standardize &#x3D; &quot;standardize&quot;,
+    FloatingAverage &#x3D; &quot;floatingAverage&quot;,
 }
 </code></pre>
     </div>

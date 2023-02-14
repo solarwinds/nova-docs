@@ -1165,6 +1165,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IRegistryAddOptions.html" data-type="entity-link">IRegistryAddOptions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IRemoveMetricPayload.html" data-type="entity-link">IRemoveMetricPayload</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link">ISearchOnKeyUp</a>
                             </li>
                             <li class="link">
@@ -1232,6 +1235,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITimeSpanOption.html" data-type="entity-link">ITimeSpanOption</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITransformerDescription.html" data-type="entity-link">ITransformerDescription</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link">IUrlInteractionHandlerProperties</a>

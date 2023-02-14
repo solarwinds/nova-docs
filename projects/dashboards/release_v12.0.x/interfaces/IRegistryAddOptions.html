@@ -155,6 +155,11 @@ export interface IRegistryAddOptions {
 export interface IAddFormattersOptions
     extends Pick&lt;IRegistryAddOptions, &quot;overrideExisting&quot;&gt; {}
 
+export interface IRemoveMetricPayload {
+    metricId: string;
+    groupUniqueId: string;
+}
+
 export const REFRESH &#x3D; new EventDefinition(&quot;REFRESH&quot;);
 export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;);
 export const WIDGET_REMOVE &#x3D; new EventDefinition(&quot;WIDGET_REMOVE&quot;);
@@ -227,6 +232,12 @@ export const NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY &#x3D;
 export const NOVA_TEST_REGISTRY &#x3D; &quot;NOVA_TEST_REGISTRY&quot;;
 export const NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER &#x3D;
     &quot;NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER&quot;;
+
+export const CHART_METRIC_REMOVE: IEventDefinition&lt;
+    IEvent&lt;IRemoveMetricPayload&gt;
+&gt; &#x3D; {
+    id: &quot;CHART_METRIC_REMOVE&quot;,
+};
 </code></pre>
     </div>
 </div>
