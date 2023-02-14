@@ -1,0 +1,629 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>ITransformerDescription</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#displayName">displayName</a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#transformer">transformer</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="displayName"></a>
+                                        <span class="name"><b>displayName</b><a href="#displayName"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>displayName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="transformer"></a>
+                                        <span class="name"><b>transformer</b><a href="#transformer"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>transformer:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Inject,
+    Injectable,
+    OnChanges,
+    OnDestroy,
+    Optional,
+} from &quot;@angular/core&quot;;
+import { merge } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+import {
+    ChartAssist,
+    ChartPalette,
+    defaultColorProvider,
+    IAccessors,
+    IChartAssistSeries,
+    IChartEvent,
+    IDataPointsPayload,
+    IInteractionDataPointsEvent,
+    IInteractionValuesPayload,
+    INTERACTION_DATA_POINTS_EVENT,
+    INTERACTION_VALUES_EVENT,
+    InteractionType,
+    IScale,
+    ISetDomainEventPayload,
+    IValueProvider,
+    IXYGridConfig,
+    IXYScales,
+    Renderer,
+    SequentialColorProvider,
+    SET_DOMAIN_EVENT,
+    XYGrid,
+    ZoomPlugin,
+} from &quot;@nova-ui/charts&quot;;
+
+import {
+    CHART_METRIC_REMOVE,
+    INTERACTION,
+    SET_TIMEFRAME,
+} from &quot;../../../../services/types&quot;;
+import {
+    DATA_SOURCE,
+    IHasChangeDetector,
+    PIZZAGNA_EVENT_BUS,
+} from &quot;../../../../types&quot;;
+import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;;
+import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
+import {
+    transformChangePoint,
+    transformDifference,
+    transformFloatingAverage,
+    transformLinReg,
+    transformLoessSmoothing,
+    transformLoessStandardize,
+    transformNormalize,
+    transformPercentileStd,
+    transformStandardize,
+} from &quot;../../transformer/public-api&quot;;
+import {
+    ITimeseriesWidgetSeriesData,
+    TimeseriesChartPreset,
+    TimeseriesInteractionType,
+    TimeseriesTransformer,
+} from &quot;../../types&quot;;
+import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+
+interface ITransformerDescription {
+    displayName: string;
+    transformer?: (
+        data: ITimeseriesWidgetSeriesData[],
+        hasPercentile?: boolean
+    ) &#x3D;&gt; ITimeseriesWidgetSeriesData[];
+}
+
+@Injectable()
+export abstract class XYChartComponent
+    extends TimeseriesChartComponent
+    implements OnChanges, OnDestroy, IHasChangeDetector
+{
+    public chartAssist: ChartAssist;
+    public valueAccessorKey: string &#x3D; &quot;y&quot;;
+    public collectionId: string &#x3D; &quot;&quot;;
+
+    protected renderer: Renderer&lt;IAccessors&gt;;
+    protected accessors: IAccessors;
+
+    public transformers &#x3D; new Map&lt;
+        TimeseriesTransformer,
+        ITransformerDescription
+    &gt;([
+        [
+            TimeseriesTransformer.None,
+            { displayName: $localize&#x60;None&#x60;, transformer: undefined },
+        ],
+        [
+            TimeseriesTransformer.ChangePoint,
+            {
+                displayName: $localize&#x60;Change Point&#x60;,
+                transformer: transformChangePoint,
+            },
+        ],
+        [
+            TimeseriesTransformer.Difference,
+            {
+                displayName: $localize&#x60;Difference&#x60;,
+                transformer: transformDifference,
+            },
+        ],
+        [
+            TimeseriesTransformer.FloatingAverage,
+            {
+                displayName: $localize&#x60;Floating Average&#x60;,
+                transformer: transformFloatingAverage,
+            },
+        ],
+        [
+            TimeseriesTransformer.Linear,
+            { displayName: $localize&#x60;Linear&#x60;, transformer: transformLinReg },
+        ],
+        [
+            TimeseriesTransformer.Normalize,
+            {
+                displayName: $localize&#x60;Normalize&#x60;,
+                transformer: transformNormalize,
+            },
+        ],
+        [
+            TimeseriesTransformer.PercentileStd,
+            {
+                displayName: $localize&#x60;Percentile Standardized&#x60;,
+                transformer: transformPercentileStd,
+            },
+        ],
+        [
+            TimeseriesTransformer.Smoothing,
+            {
+                displayName: $localize&#x60;Smoothing&#x60;,
+                transformer: transformLoessSmoothing,
+            },
+        ],
+        [
+            TimeseriesTransformer.LoessStandardize,
+            {
+                displayName: $localize&#x60;Smoothing Standardized&#x60;,
+                transformer: transformLoessStandardize,
+            },
+        ],
+        [
+            TimeseriesTransformer.Standardize,
+            {
+                displayName: $localize&#x60;Standardize&#x60;,
+                transformer: transformStandardize,
+            },
+        ],
+    ]);
+
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
+        @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
+        public timeseriesScalesService: TimeseriesScalesService,
+        public changeDetector: ChangeDetectorRef
+    ) {
+        super(timeseriesScalesService, dataSource);
+    }
+
+    protected abstract createAccessors(
+        colorProvider: IValueProvider&lt;string&gt;
+    ): IAccessors;
+
+    protected abstract createChartAssist(palette: ChartPalette): ChartAssist;
+
+    public mapSeriesSet(
+        data: any[],
+        scales: IXYScales
+    ): IChartAssistSeries&lt;IAccessors&gt;[] {
+        const yScales: IScale&lt;any&gt;[] &#x3D; [scales.y];
+        if (scales.yRight) {
+            yScales.push(scales.yRight);
+        }
+        return data.map((series: any, i: number) &#x3D;&gt; {
+            // matches scale units to the metric unit for either left y-axis scale or right y-axis scale
+            let yScale &#x3D; yScales.find(
+                (yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; series.metricUnits
+            );
+            if (!yScale) {
+                yScale &#x3D;
+                    yScales.find((yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; &quot;generic&quot;) ??
+                    scales.y;
+            }
+
+            return {
+                ...series,
+                scales: {
+                    x: scales.x,
+                    y: yScale,
+                },
+                renderer: this.renderer,
+                accessors: this.accessors,
+            };
+        });
+    }
+
+    /** Checks if legend should be shown. */
+    public hasLegend(): boolean {
+        return (
+            this.configuration.legendPlacement &amp;&amp;
+            this.configuration.legendPlacement !&#x3D;&#x3D; LegendPlacement.None
+        );
+    }
+
+    /** Checks if legend should be aligned to right. */
+    public legendShouldBeAlignedRight(): boolean {
+        return this.configuration.legendPlacement &#x3D;&#x3D;&#x3D; LegendPlacement.Right;
+    }
+
+    public onPrimaryDescClick(
+        event: MouseEvent,
+        legendSeries: IChartAssistSeries&lt;IAccessors&gt;
+    ) {
+        if (!this.seriesInteractive) {
+            return;
+        }
+
+        event.stopPropagation();
+        this.eventBus.getStream(INTERACTION).next({
+            payload: {
+                data: legendSeries,
+                interactionType: TimeseriesInteractionType.Series,
+            },
+        });
+    }
+
+    /** Updates chart data. */
+    protected updateChartData(): void {
+        const grid &#x3D; this.chartAssist.chart.getGrid() as XYGrid;
+        if (this.scales.y?.id) {
+            grid.leftScaleId &#x3D; this.scales.y.id;
+        }
+
+        if (
+            (this.scales.yRight &amp;&amp; this.widgetData.series.length &#x3D;&#x3D;&#x3D; 1) ||
+            (this.scales.y &amp;&amp;
+                this.scales.yRight &amp;&amp;
+                this.scales.y.scaleUnits &#x3D;&#x3D;&#x3D; this.scales.yRight.scaleUnits)
+        ) {
+            // if there is only one series to display, or if the left y-axis and right y-axis have the same units, both y-axises are same
+            this.scales.yRight &#x3D; this.scales.y;
+            grid.rightScaleId &#x3D; this.scales.y.id;
+        } else {
+            if (this.scales.yRight?.id) {
+                grid.rightScaleId &#x3D; this.scales.yRight.id;
+            }
+        }
+
+        const gridConfig &#x3D; grid.config();
+        // hides botom axis if it&#x27;s not last chart in the group
+        gridConfig.axis.bottom.visible &#x3D; !this.configuration?.hasAdjacentChart;
+        gridConfig.borders.bottom.visible &#x3D;
+            !this.configuration?.hasAdjacentChart;
+
+        this.chartAssist.update(
+            this.mapSeriesSet(this.widgetData.series, this.scales)
+        );
+    }
+
+    /**
+     * Initialize chart
+     */
+    protected buildChart() {
+        this.buildChart$.next();
+
+        const colorProvider &#x3D;
+            this.configuration.chartColors &amp;&amp;
+            this.configuration.chartColors?.length &gt; 0
+                ? new SequentialColorProvider(this.configuration.chartColors)
+                : defaultColorProvider();
+
+        const palette &#x3D; new ChartPalette(colorProvider);
+        this.accessors &#x3D; this.createAccessors(palette.standardColors);
+        this.chartAssist &#x3D; this.createChartAssist(palette);
+
+        const chart &#x3D; this.chartAssist.chart;
+        const gridConfig &#x3D; chart.getGrid().config() as IXYGridConfig;
+
+        if (this.configuration.gridConfig?.xAxisTicksCount) {
+            gridConfig.axis.bottom.approximateTicks &#x3D;
+                this.configuration.gridConfig.xAxisTicksCount;
+        }
+
+        if (
+            gridConfig.dimension.marginLocked &amp;&amp;
+            this.configuration.gridConfig?.sideMarginLocked
+        ) {
+            gridConfig.dimension.marginLocked.left &#x3D; true;
+            gridConfig.dimension.marginLocked.right &#x3D; true;
+        }
+
+        if (this.configuration.gridConfig?.sideMargin) {
+            gridConfig.dimension.margin.left &#x3D;
+                this.configuration.gridConfig.sideMargin;
+            gridConfig.dimension.margin.right &#x3D;
+                this.configuration.gridConfig.sideMargin;
+        }
+
+        if (this.configuration.enableZoom) {
+            chart.addPlugin(new ZoomPlugin());
+        }
+
+        chart
+            .getEventBus()
+            .getStream(SET_DOMAIN_EVENT)
+            .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
+            .subscribe((event) &#x3D;&gt; {
+                const payload &#x3D; &lt;ISetDomainEventPayload&gt;event.data;
+                const newDomain &#x3D; payload[Object.keys(payload)[0]];
+                this.eventBus.getStream(SET_TIMEFRAME).next({
+                    payload: {
+                        startDatetime: newDomain[0],
+                        endDatetime: newDomain[1],
+                        selectedPresetId: null,
+                    },
+                });
+            });
+
+        this.setupInteraction();
+    }
+
+    /**
+     * Subscribe to chart events and emit
+     */
+    protected setupInteraction() {
+        // interaction with chart data points
+        this.chartAssist.chart
+            .getEventBus()
+            .getStream(INTERACTION_DATA_POINTS_EVENT)
+            .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
+            .subscribe((values: IChartEvent) &#x3D;&gt; {
+                const payload: IInteractionDataPointsEvent &#x3D; values.data;
+                if (payload.interactionType &#x3D;&#x3D;&#x3D; InteractionType.Click) {
+                    this.eventBus.getStream(INTERACTION).next({
+                        payload: {
+                            data: payload.dataPoints as IDataPointsPayload,
+                            interactionType:
+                                TimeseriesInteractionType.DataPoints,
+                        },
+                    });
+                }
+            });
+
+        // interaction with values
+        this.chartAssist.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_EVENT)
+            .pipe(takeUntil(merge(this.destroy$, this.buildChart$)))
+            .subscribe((values: IChartEvent) &#x3D;&gt; {
+                const payload: IInteractionValuesPayload &#x3D; values.data;
+                if (payload.interactionType &#x3D;&#x3D;&#x3D; InteractionType.Click) {
+                    this.eventBus.getStream(INTERACTION).next({
+                        payload: {
+                            data: payload.values,
+                            interactionType: TimeseriesInteractionType.Values,
+                        },
+                    });
+                }
+            });
+    }
+
+    public displayLegendMenu(): boolean {
+        return (
+            this.configuration.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.Line &amp;&amp;
+            !!this.configuration.allowLegendMenu
+        );
+    }
+
+    public removeMetric(metricId: string): void {
+        this.eventBus.next(CHART_METRIC_REMOVE, {
+            payload: {
+                metricId: metricId,
+                groupUniqueId: this.configuration.groupUniqueId,
+            },
+        });
+    }
+
+    public transformData(metricId: string, trId: TimeseriesTransformer): void {
+        const serie &#x3D; this.widgetData.series.find((s) &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; metricId);
+        if (!serie) {
+            return;
+        }
+        serie.transformer &#x3D; this.transformers.get(trId)?.transformer;
+
+        if (serie.rawData) {
+            if (serie.transformer &#x3D;&#x3D;&#x3D; undefined) {
+                // revert transformed data
+                serie.data &#x3D; serie.rawData;
+            } else {
+                this.transformSeriesData(serie);
+            }
+        }
+        this.updateChartData();
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'ITransformerDescription.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
