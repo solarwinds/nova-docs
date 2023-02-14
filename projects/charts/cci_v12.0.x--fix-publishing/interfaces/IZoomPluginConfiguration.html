@@ -1,0 +1,393 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>IZoomPluginConfiguration</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/core/plugins/zoom-plugin.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#enableExternalEvents">enableExternalEvents</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="enableExternalEvents"></a>
+                                        <span class="name"><b>enableExternalEvents</b><a href="#enableExternalEvents"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>enableExternalEvents:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrushBehavior, BrushSelection, brushX } from &quot;d3-brush&quot;;
+import { event } from &quot;d3-selection&quot;;
+import defaultsDeep from &quot;lodash/defaultsDeep&quot;;
+import isEmpty from &quot;lodash/isEmpty&quot;;
+import isUndefined from &quot;lodash/isUndefined&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import {
+    INTERACTION_COORDINATES_EVENT,
+    INTERACTION_VALUES_ACTIVE_EVENT,
+    SET_DOMAIN_EVENT,
+    STANDARD_RENDER_LAYERS,
+} from &quot;../../constants&quot;;
+import { RenderLayerName } from &quot;../../renderers/types&quot;;
+import { ChartPlugin } from &quot;../common/chart-plugin&quot;;
+import { IScale } from &quot;../common/scales/types&quot;;
+import {
+    D3Selection,
+    IChartEvent,
+    InteractionType,
+    ISetDomainEventPayload,
+} from &quot;../common/types&quot;;
+import { Grid } from &quot;../grid/grid&quot;;
+import { XYGrid } from &quot;../grid/xy-grid&quot;;
+import { IInteractionCoordinatesPayload } from &quot;./types&quot;;
+
+export interface IZoomPluginConfiguration {
+    enableExternalEvents?: boolean;
+}
+
+export class ZoomPlugin extends ChartPlugin {
+    // *Note:* This plugin manually moves the d3 brush across the screen to accommodate a known Firefox
+    // bug in which mouse events report an incorrect pointer position for svg children of an element
+    // transformed by a translate function: https://github.com/d3/d3-selection/issues/81
+
+    public static LAYER_NAME &#x3D; &quot;zoom-brush&quot;;
+    public static readonly DEFAULT_CONFIG: IZoomPluginConfiguration &#x3D; {
+        enableExternalEvents: false,
+    };
+
+    private grid: XYGrid;
+    private brush: BrushBehavior&lt;any&gt;;
+    private zoomBrushLayer: D3Selection;
+    private brushElement: D3Selection&lt;SVGGElement&gt;;
+    private destroy$ &#x3D; new Subject();
+    private brushStartX: number | undefined;
+    private interactionHandlerMap: Record&lt;string, Function&gt;;
+
+    constructor(public config: IZoomPluginConfiguration &#x3D; {}) {
+        super();
+        this.config &#x3D; defaultsDeep(this.config, ZoomPlugin.DEFAULT_CONFIG);
+        this.interactionHandlerMap &#x3D; {
+            [InteractionType.MouseDown]: this.brushStart,
+            [InteractionType.MouseMove]: this.brushMove,
+            [InteractionType.MouseUp]: this.brushEnd,
+        };
+    }
+
+    public initialize(): void {
+        this.grid &#x3D; this.chart.getGrid() as XYGrid;
+        this.zoomBrushLayer &#x3D; this.grid.getLasagna().addLayer({
+            name: ZoomPlugin.LAYER_NAME,
+            // add 1 to the foreground layer&#x27;s order to ensure the brush is rendered in front of it
+            order: STANDARD_RENDER_LAYERS[RenderLayerName.foreground].order + 1,
+            clipped: true,
+        });
+
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_COORDINATES_EVENT)
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((chartEvent: IChartEvent) &#x3D;&gt; {
+                if (chartEvent.broadcast &amp;&amp; !this.config.enableExternalEvents) {
+                    return;
+                }
+
+                const data: IInteractionCoordinatesPayload &#x3D; chartEvent.data;
+                if (isEmpty(this.grid.scales) || isEmpty(data.coordinates)) {
+                    return;
+                }
+
+                if (this.interactionHandlerMap[data.interactionType]) {
+                    const xCoord &#x3D; data.coordinates &amp;&amp; data.coordinates.x;
+                    this.interactionHandlerMap[data.interactionType](xCoord);
+                }
+            });
+
+        this.brush &#x3D; brushX();
+        this.brushElement &#x3D; this.zoomBrushLayer
+            .append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;brush&quot;);
+
+        // engage pointer capture to confine mouse events to the interactive area
+        // (in other words, if the &#x27;mouseup&#x27; is physically triggered outside the interactive area,
+        // the pointer capture allows us to still zoom based on that event)
+        this.chart
+            .getGrid()
+            .getInteractiveArea()
+            .on(&quot;pointerdown&quot;, () &#x3D;&gt;
+                event.target.setPointerCapture(event.pointerId)
+            )
+            .on(&quot;pointerup&quot;, () &#x3D;&gt;
+                event.target.releasePointerCapture(event.pointerId)
+            );
+    }
+
+    public updateDimensions(): void {
+        const dimension &#x3D; this.grid.config().dimension;
+
+        // set the brush area&#x27;s dimensions
+        this.brush.extent([
+            [0, 0],
+            [dimension.width(), dimension.height()],
+        ]);
+
+        // render the brush area after we have dimensions
+        this.brush(this.zoomBrushLayer.select(&quot;.brush&quot;));
+
+        // prevent the brush from handling its own pointer events
+        this.brushElement.select(&quot;.overlay&quot;).style(&quot;pointer-events&quot;, &quot;none&quot;);
+
+        // remove stroke per mockups
+        this.brushElement.select(&quot;.selection&quot;).attr(&quot;stroke&quot;, null);
+    }
+
+    public destroy(): void {
+        this.grid.getLasagna().removeLayer(ZoomPlugin.LAYER_NAME);
+        this.destroy$.next();
+        this.destroy$.complete();
+    }
+
+    private brushStart &#x3D; (xCoord: number) &#x3D;&gt; {
+        if (!isUndefined(this.brushStartX)) {
+            return;
+        }
+
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_ACTIVE_EVENT)
+            .next({ data: false });
+        this.brushStartX &#x3D; xCoord;
+    };
+
+    private brushMove &#x3D; (xCoord: number) &#x3D;&gt; {
+        if (isUndefined(this.brushStartX)) {
+            return;
+        }
+
+        const selection &#x3D; [this.brushStartX, xCoord].sort((a, b) &#x3D;&gt; a - b);
+        this.brush.move(this.brushElement, selection as BrushSelection);
+    };
+
+    private brushEnd &#x3D; (xCoord: number) &#x3D;&gt; {
+        if (isUndefined(this.brushStartX)) {
+            return;
+        }
+
+        const selection &#x3D; [this.brushStartX, xCoord].sort((a, b) &#x3D;&gt; a - b);
+        this.brushStartX &#x3D; undefined;
+        this.chart
+            .getEventBus()
+            .getStream(INTERACTION_VALUES_ACTIVE_EVENT)
+            .next({ data: true });
+
+        // remove the brush
+        this.brush.move(this.brushElement, null);
+
+        const xScales &#x3D; this.grid.scales.x.list;
+        if (!xScales || selection[0] &#x3D;&#x3D;&#x3D; selection[1]) {
+            return;
+        }
+
+        let widthCorrection &#x3D; 0;
+        const gridConfig &#x3D; this.grid.config();
+        if (
+            !gridConfig.disableRenderAreaWidthCorrection &amp;&amp;
+            selection[1] &#x3D;&#x3D;&#x3D;
+                gridConfig.dimension.width() - Grid.RENDER_AREA_WIDTH_CORRECTION
+        ) {
+            // Width correction to accommodate similar adjustment in grid. This ensures that the right-most column of pixels on the chart is selectable.
+            widthCorrection &#x3D; Grid.RENDER_AREA_WIDTH_CORRECTION;
+        }
+
+        const data: ISetDomainEventPayload &#x3D; xScales.reduce(
+            (result, next: IScale&lt;any&gt;) &#x3D;&gt; {
+                result[next.id] &#x3D; [
+                    selection[0],
+                    (selection[1] as number) + widthCorrection,
+                ].map((x) &#x3D;&gt; next.invert(x as number));
+                return result;
+            },
+            &lt;ISetDomainEventPayload&gt;{}
+        );
+
+        // zoom the chart
+        this.chart.getEventBus().getStream(SET_DOMAIN_EVENT).next({ data });
+    };
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'IZoomPluginConfiguration.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
