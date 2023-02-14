@@ -1,0 +1,1179 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>DonutContentConfigurationComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="../interfaces/IHasChangeDetector.html" target="_self" >IHasChangeDetector</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-donut-content-configuration</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./donut-content-configuration.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./donut-content-configuration.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#aggregatorConfiguratorProps">aggregatorConfiguratorProps</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#aggregators">aggregators</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeDetector">changeDetector</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentAggregatorDefinition">currentAggregatorDefinition</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentFormatterDefinition">currentFormatterDefinition</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dataFields">dataFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formatterConfiguratorProps">formatterConfiguratorProps</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formatters">formatters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#lateLoadKey">lateLoadKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#shown">shown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onFormReady">onFormReady</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#aggregator">aggregator</a>
+                            </li>
+                            <li>
+                                <a href="#chartType">chartType</a>
+                            </li>
+                            <li>
+                                <a href="#formatter">formatter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#formReady">formReady</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#subtitleText">subtitleText</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, eventBus: EventBus<IEvent>, contentFormattersRegistry: <a href="../injectables/ProportionalDonutContentFormattersRegistryService.html">ProportionalDonutContentFormattersRegistryService</a>, aggregatorRegistry: <a href="../injectables/ProportionalContentAggregatorsRegistryService.html">ProportionalContentAggregatorsRegistryService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:96</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventBus</td>
+                                                  
+                                                        <td>
+                                                                    <code>EventBus&lt;IEvent&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>contentFormattersRegistry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProportionalDonutContentFormattersRegistryService.html" target="_self" >ProportionalDonutContentFormattersRegistryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>aggregatorRegistry</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProportionalContentAggregatorsRegistryService.html" target="_self" >ProportionalContentAggregatorsRegistryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="aggregator"></a>
+                        <b>aggregator</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IProportionalDonutContentAggregator.html" target="_self" >IProportionalDonutContentAggregator</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:69</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartType"></a>
+                        <b>chartType</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#ProportionalWidgetChartTypes" target="_self" >ProportionalWidgetChartTypes</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:67</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formatter"></a>
+                        <b>formatter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IFormatter.html" target="_self" >IFormatter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:68</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formReady"></a>
+                        <b>formReady</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:71</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFormReady"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onFormReady
+                        </b>
+                        <a href="#onFormReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onFormReady(formControlName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, form: <a href="https://angular.io/api/forms/FormGroup" target="_blank">FormGroup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>formControlName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="aggregatorConfiguratorProps"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            aggregatorConfiguratorProps</b>
+                            <a href="#aggregatorConfiguratorProps"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IAggregatorConfiguratorProperties.html" target="_self" >IAggregatorConfiguratorProperties</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:94</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="aggregators"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            aggregators</b>
+                            <a href="#aggregators"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IProportionalDonutContentAggregatorDefinition[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="changeDetector"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            changeDetector</b>
+                            <a href="#changeDetector"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:100</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentAggregatorDefinition"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            currentAggregatorDefinition</b>
+                            <a href="#currentAggregatorDefinition"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IProportionalDonutContentAggregatorDefinition | undefined</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:91</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentFormatterDefinition"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            currentFormatterDefinition</b>
+                            <a href="#currentFormatterDefinition"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IFormatterDefinition | undefined</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:88</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataFields"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dataFields</b>
+                            <a href="#dataFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IDataField[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            form</b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.formBuilder.group({
+        formatter: this.formBuilder.group({
+            componentType: [undefined],
+            properties: [],
+        }),
+        aggregator: this.formBuilder.group({
+            aggregatorType: [undefined],
+            properties: [],
+        }),
+    })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:74</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formatterConfiguratorProps"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            formatterConfiguratorProps</b>
+                            <a href="#formatterConfiguratorProps"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/IFormatterConfigurator.html" target="_self" >IFormatterConfigurator</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:89</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="formatters"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            formatters</b>
+                            <a href="#formatters"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>IFormatterDefinition[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lateLoadKey"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            lateLoadKey</b>
+                            <a href="#lateLoadKey"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;DonutContentConfigurationComponent&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shown"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            shown</b>
+                            <a href="#shown"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subtitleText"></a>
+                        <span class="name"><b>subtitleText</b><a href="#subtitleText"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>subtitleText()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/lib/configurator/components/widgets/proportional/donut-content-configuration/donut-content-configuration.component.ts:158</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    EventEmitter,
+    Inject,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    Output,
+    SimpleChanges,
+} from &quot;@angular/core&quot;;
+import { FormBuilder, FormGroup } from &quot;@angular/forms&quot;;
+import { Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { EventBus, IDataField, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+
+import { ProportionalWidgetChartTypes } from &quot;../../../../../components/proportional-widget/types&quot;;
+import {
+    IFormatter,
+    IFormatterConfigurator,
+    IFormatterDefinition,
+} from &quot;../../../../../components/types&quot;;
+import {
+    IProportionalDonutContentAggregator,
+    IProportionalDonutContentAggregatorDefinition,
+} from &quot;../../../../../functions/proportional-aggregators/types&quot;;
+import { ProportionalContentAggregatorsRegistryService } from &quot;../../../../../services/proportional-content-aggregators-registry.service&quot;;
+import { ProportionalDonutContentFormattersRegistryService } from &quot;../../../../../services/table-formatter-registry.service&quot;;
+import { IHasChangeDetector, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
+import { DATA_SOURCE_CREATED } from &quot;../../../../types&quot;;
+import { IAggregatorConfiguratorProperties } from &quot;../aggregators-configurators/aggregator-configurator/aggregator-configurator.component&quot;;
+
+@Component({
+    selector: &quot;nui-donut-content-configuration&quot;,
+    templateUrl: &quot;./donut-content-configuration.component.html&quot;,
+    styleUrls: [&quot;./donut-content-configuration.component.less&quot;],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class DonutContentConfigurationComponent
+    implements OnInit, OnChanges, IHasChangeDetector, OnDestroy
+{
+    static lateLoadKey &#x3D; &quot;DonutContentConfigurationComponent&quot;;
+
+    @Input() public chartType: ProportionalWidgetChartTypes;
+    @Input() public formatter: IFormatter;
+    @Input() public aggregator: IProportionalDonutContentAggregator;
+
+    @Output() public formReady &#x3D; new EventEmitter();
+
+    public shown: boolean &#x3D; true;
+    public form &#x3D; this.formBuilder.group({
+        formatter: this.formBuilder.group({
+            componentType: [undefined],
+            properties: [],
+        }),
+        aggregator: this.formBuilder.group({
+            aggregatorType: [undefined],
+            properties: [],
+        }),
+    });
+    public formatters: IFormatterDefinition[];
+    public aggregators: IProportionalDonutContentAggregatorDefinition[];
+    public dataFields: IDataField[] &#x3D; [];
+
+    public currentFormatterDefinition: IFormatterDefinition | undefined;
+    public formatterConfiguratorProps: IFormatterConfigurator;
+
+    public currentAggregatorDefinition:
+        | IProportionalDonutContentAggregatorDefinition
+        | undefined;
+    public aggregatorConfiguratorProps: IAggregatorConfiguratorProperties;
+
+    private destroy$ &#x3D; new Subject();
+
+    constructor(
+        private formBuilder: FormBuilder,
+        public changeDetector: ChangeDetectorRef,
+        @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
+        private contentFormattersRegistry: ProportionalDonutContentFormattersRegistryService,
+        private aggregatorRegistry: ProportionalContentAggregatorsRegistryService
+    ) {}
+
+    public ngOnInit(): void {
+        this.watchFormChanges();
+        this.setFromRegistry();
+
+        this.eventBus
+            .getStream(DATA_SOURCE_CREATED)
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((event: IEvent&lt;IDataSource&gt;) &#x3D;&gt; {
+                const dataSource &#x3D; event.payload;
+                if (dataSource) {
+                    dataSource.dataFieldsConfig?.dataFields$
+                        .pipe(takeUntil(this.destroy$))
+                        .subscribe((dataFields) &#x3D;&gt; {
+                            this.dataFields &#x3D; dataFields;
+                            this.updateAggregatorConfiguratorProps();
+                        });
+                }
+            });
+
+        this.formReady.emit(this.form);
+    }
+
+    public ngOnChanges(changes: SimpleChanges) {
+        if (changes.formatter) {
+            this.form.get(&quot;formatter&quot;)?.patchValue({
+                ...changes.formatter.currentValue,
+            });
+        }
+
+        if (changes.aggregator) {
+            this.form.get(&quot;aggregator&quot;)?.patchValue({
+                ...changes.aggregator.currentValue,
+            });
+        }
+
+        if (changes.chartType) {
+            const chartType &#x3D; changes.chartType.currentValue;
+            this.shown &#x3D; chartType &#x3D;&#x3D;&#x3D; ProportionalWidgetChartTypes.DonutChart;
+        }
+    }
+
+    public ngOnDestroy() {
+        this.destroy$.complete();
+    }
+
+    public onFormReady(formControlName: string, form: FormGroup) {
+        (&lt;FormGroup&gt;this.form.get(formControlName)).setControl(
+            &quot;properties&quot;,
+            form
+        );
+    }
+
+    public get subtitleText() {
+        return &#x60;${this.currentAggregatorDefinition?.label}, ${this.currentFormatterDefinition?.label}&#x60;;
+    }
+
+    private setFromRegistry() {
+        this.formatters &#x3D; this.contentFormattersRegistry.getItems();
+        this.aggregators &#x3D; this.aggregatorRegistry.getItems();
+
+        let formatterToSet &#x3D; this.formatters.find(
+            (formatter) &#x3D;&gt;
+                formatter.componentType &#x3D;&#x3D;&#x3D; this.formatter?.componentType
+        );
+        if (!formatterToSet) {
+            formatterToSet &#x3D; this.formatters[0];
+        }
+        this.form
+            .get(&quot;formatter.componentType&quot;)
+            ?.setValue(formatterToSet.componentType);
+
+        let aggregatorToSet &#x3D; this.aggregators.find(
+            (aggregator) &#x3D;&gt;
+                aggregator.aggregatorType &#x3D;&#x3D;&#x3D; this.aggregator?.aggregatorType
+        );
+        if (!aggregatorToSet) {
+            aggregatorToSet &#x3D; this.aggregators[0];
+        }
+        this.form
+            .get(&quot;aggregator.aggregatorType&quot;)
+            ?.setValue(aggregatorToSet.aggregatorType);
+    }
+
+    private watchFormChanges() {
+        this.form
+            .get(&quot;aggregator.aggregatorType&quot;)
+            ?.valueChanges.pipe(takeUntil(this.destroy$))
+            .subscribe((aggregatorType: string) &#x3D;&gt; {
+                this.currentAggregatorDefinition &#x3D; this.aggregators.find(
+                    (f) &#x3D;&gt; f.aggregatorType &#x3D;&#x3D;&#x3D; aggregatorType
+                ) as IProportionalDonutContentAggregatorDefinition;
+                this.updateAggregatorConfiguratorProps();
+            });
+
+        this.form
+            .get(&quot;formatter.componentType&quot;)
+            ?.valueChanges.pipe(takeUntil(this.destroy$))
+            .subscribe((componentType: string) &#x3D;&gt; {
+                this.currentFormatterDefinition &#x3D; this.formatters.find(
+                    (f) &#x3D;&gt; f.componentType &#x3D;&#x3D;&#x3D; componentType
+                ) as IFormatterDefinition;
+                this.updateAggregatorConfiguratorProps();
+            });
+    }
+
+    private updateAggregatorConfiguratorProps() {
+        this.aggregatorConfiguratorProps &#x3D; {
+            ...this.currentAggregatorDefinition?.properties,
+            ...this.aggregator?.properties,
+            metrics: this.dataFields,
+        };
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="shown" [formGroup]="form">    <nui-widget-editor-accordion        [state]="form | nuiWidgetEditorAccordionFormState | async"    >        <div accordionHeader class="d-flex align-items-center px-4 py-2">            <nui-icon                class="align-self-start pt-2"                [icon]="form | nuiFormHeaderIconPipe: \'customize\' | async"            ></nui-icon>            <div class="d-flex flex-column ml-4 pt-1">                <span class="nui-text-label" i18n                    >Donut Content Configuration</span                >                <div class="nui-text-secondary" [title]="subtitleText">                    {{ subtitleText }}                </div>            </div>        </div>        <div class="donut-content-configuration__accordion-content">            <!-- aggregator -->            <div class="mb-4" formGroupName="aggregator">                <nui-form-field                    caption="Aggregate"                    i18n-caption                    [control]="form.get(\'aggregator.aggregatorType\')"                >                    <nui-select-v2                        placeholder="Select Format"                        i18n-placeholder                        formControlName="aggregatorType"                    >                        <nui-select-v2-option                            *ngFor="let aggregator of aggregators"                            [displayValueContext]="aggregator.label"                            [value]="aggregator.aggregatorType"                        >                            {{ aggregator.label }}                        </nui-select-v2-option>                    </nui-select-v2>                </nui-form-field>            </div>            <!-- formatter -->            <div class="mb-4" formGroupName="formatter">                <nui-form-field                    caption="Format"                    i18n-caption                    [control]="form.get(\'formatter.componentType\')"                >                    <nui-select-v2                        placeholder="Select Format"                        i18n-placeholder                        formControlName="componentType"                    >                        <nui-select-v2-option                            *ngFor="let formatter of formatters"                            [displayValueContext]="formatter.label"                            [value]="formatter.componentType"                        >                            {{ formatter.label }}                        </nui-select-v2-option>                    </nui-select-v2>                </nui-form-field>            </div>            <!-- aggregator configuration component -->            <ng-container                *ngIf="currentAggregatorDefinition?.configurationComponent"                nuiComponentPortal                componentId="formatterConfigurator"                [componentType]="                    currentAggregatorDefinition?.configurationComponent                "                [properties]="aggregatorConfiguratorProps"                [outputs]="[\'formReady\']"                (output)="onFormReady(\'aggregator\', $event.payload)"                #componentPortal="nuiComponentPortal"            >                <ng-template                    [cdkPortalOutlet]="componentPortal.portal"                    (attached)="componentPortal.attached($event)"                ></ng-template>            </ng-container>            <!-- formatter configuration component -->            <ng-container                *ngIf="currentFormatterDefinition?.configurationComponent"                nuiComponentPortal                componentId="formatterConfigurator"                [componentType]="                    currentFormatterDefinition?.configurationComponent                "                [properties]="formatterConfiguratorProps"                [outputs]="[\'formReady\']"                (output)="onFormReady(\'formatter\', $event.payload)"                #componentPortal="nuiComponentPortal"            >                <ng-template                    [cdkPortalOutlet]="componentPortal.portal"                    (attached)="componentPortal.attached($event)"                ></ng-template>            </ng-container>        </div>    </nui-widget-editor-accordion></ng-container></div>'
+    var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesInspectionMenuComponent', 'selector': 'nui-timeseries-inspection-menu'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
+    var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
+    var ACTUAL_COMPONENT = {'name': 'DonutContentConfigurationComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DonutContentConfigurationComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
