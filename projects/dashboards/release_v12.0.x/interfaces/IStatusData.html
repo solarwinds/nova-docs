@@ -306,8 +306,9 @@ import {
     StatusAccessors,
     statusAccessors,
     TimeIntervalScale,
+    TimeseriesZoomPlugin,
+    TimeseriesZoomPluginsSyncService,
     XYGridConfig,
-    ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
 
 import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
@@ -336,12 +337,15 @@ export class StatusBarChartComponent
     protected renderer: Renderer&lt;IAccessors&gt;;
     private chartUpdate$ &#x3D; new Subject&lt;void&gt;();
 
+    public zoomPlugin: TimeseriesZoomPlugin;
+
     constructor(
         private iconService: IconService,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
         public changeDetector: ChangeDetectorRef,
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
+        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
     ) {
         super(timeseriesScalesService, dataSource);
     }
@@ -442,10 +446,11 @@ export class StatusBarChartComponent
 
         if (this.configuration.enableZoom) {
             this.chartAssist.sparks.forEach((spark) &#x3D;&gt; {
-                if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
-                    spark?.chart?.addPlugin(
-                        new ZoomPlugin({ enableExternalEvents: true })
-                    );
+                if (
+                    !(spark?.chart as Chart)?.hasPlugin(TimeseriesZoomPlugin) &amp;&amp;
+                    this.configuration.enableZoom
+                ) {
+                    spark?.chart?.addPlugin(this.zoomPlugin);
                 }
             });
 
