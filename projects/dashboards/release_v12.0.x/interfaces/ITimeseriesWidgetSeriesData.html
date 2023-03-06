@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/components/timeseries-widget/types.ts:70</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/components/timeseries-widget/types.ts:71</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -204,6 +204,7 @@ export interface ITimeseriesWidgetConfig {
     metricIds?: string;
     realTimeIds?: string[];
     type?: number;
+    projectType?: TimeseriesWidgetProjectType;
 }
 
 export interface ITimeseriesWidgetSeries {
@@ -313,6 +314,11 @@ export enum TimeseriesTransformer {
     LoessStandardize &#x3D; &quot;loessStandardize&quot;,
     Standardize &#x3D; &quot;standardize&quot;,
     FloatingAverage &#x3D; &quot;floatingAverage&quot;,
+}
+
+export enum TimeseriesWidgetProjectType {
+    ModernDashboard,
+    PerfstackApp,
 }
 </code></pre>
     </div>
