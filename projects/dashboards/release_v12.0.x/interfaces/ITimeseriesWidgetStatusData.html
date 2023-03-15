@@ -260,6 +260,7 @@ export interface ITimeseriesWidgetData&lt;T &#x3D; ITimeseriesWidgetSeriesData&g
     transformer?: (data: T[], hasPercentile?: boolean) &#x3D;&gt; T[];
     link?: string;
     secondaryLink?: string;
+    metricUnits?: UnitOption;
 }
 
 export interface ITimeseriesWidgetSeriesData {
