@@ -188,7 +188,7 @@ export class DashboardUnitConversionPipe implements PipeTransform {
         if (
             valueAsNumber &#x3D;&#x3D;&#x3D; undefined ||
             isNaN(valueAsNumber) ||
-            valueAsNumber &lt; defaultThreshold
+            (valueAsNumber &lt; defaultThreshold &amp;&amp; units !&#x3D;&#x3D; &quot;percent&quot;)
         ) {
             return value?.toString() || &quot;&quot;;
         }

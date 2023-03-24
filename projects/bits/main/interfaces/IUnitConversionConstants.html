@@ -113,6 +113,12 @@
                                             hertz
                                         </a>
                                 </li>
+                                <li>
+                                        <a href="#percent" 
+>
+                                            percent
+                                        </a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -289,6 +295,39 @@
 
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="percent"></a>
+                                        <span class="name "><b>percent</b>
+                                            <a href="#percent">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>percent:     <code>string[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
             </section>
     </div>
 
@@ -306,6 +345,7 @@ export interface IUnitConversionConstants {
     bytesPerSecond: string[];
     bitsPerSecond: string[];
     hertz: string[];
+    percent: string[];
 }
 
 /** Standard base values used in unit conversion */
@@ -343,6 +383,7 @@ export const unitConversionConstants: IUnitConversionConstants &#x3D; {
         &quot;Ybps&quot;,
     ],
     hertz: [&quot;Hz&quot;, &quot;kHz&quot;, &quot;MHz&quot;, &quot;GHz&quot;, &quot;THz&quot;, &quot;PHz&quot;, &quot;EHz&quot;, &quot;ZHz&quot;, &quot;YHz&quot;],
+    percent: [&quot;%&quot;],
 };
 
 /** Available options for unit conversion */
@@ -351,7 +392,8 @@ export type UnitOption &#x3D;
     | &quot;bytes&quot;
     | &quot;bytesPerSecond&quot;
     | &quot;bitsPerSecond&quot;
-    | &quot;hertz&quot;;
+    | &quot;hertz&quot;
+    | &quot;percent&quot;;
 </code></pre>
     </div>
 </div>

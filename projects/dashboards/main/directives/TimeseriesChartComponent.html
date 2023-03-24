@@ -287,24 +287,33 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
             if (
                 configurationCurrent?.scales !&#x3D;&#x3D; configurationPrevious?.scales
             ) {
-                for (const scaleKey of Object.keys(
+                const scaleKeys &#x3D; Object.keys(
                     configurationCurrent?.scales
-                ) as Array&lt;keyof ITimeseriesScalesConfig&gt;) {
+                ) as Array&lt;keyof ITimeseriesScalesConfig&gt;;
+
+                for (const scaleKey of scaleKeys) {
                     const scaleConfigCurrent &#x3D;
                         configurationCurrent?.scales?.[scaleKey];
                     const scaleConfigPrevious &#x3D;
                         configurationPrevious?.scales?.[scaleKey];
 
+                    if (!scaleConfigCurrent) {
+                        continue;
+                    }
+
                     if (
                         scaleConfigCurrent?.type !&#x3D;&#x3D;
                             scaleConfigPrevious?.type ||
-                        !this.scales[scaleKey]
+                        scaleConfigCurrent?.properties?.axisUnits !&#x3D;&#x3D;
+                            scaleConfigPrevious?.properties?.axisUnits
                     ) {
                         this.scales[scaleKey] &#x3D;
                             this.timeseriesScalesService.getScale(
                                 scaleConfigCurrent,
-                                configurationCurrent.units
+                                configurationCurrent.units,
+                                this.configuration
                             );
+
                         shouldUpdateChart &#x3D; true;
                     } else if (
                         scaleConfigCurrent?.properties !&#x3D;&#x3D;
@@ -312,7 +321,8 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
                     ) {
                         this.timeseriesScalesService.updateConfiguration(
                             this.scales[scaleKey],
-                            scaleConfigCurrent
+                            scaleConfigCurrent,
+                            this.configuration
                         );
                         shouldUpdateChart &#x3D; true;
                     }
