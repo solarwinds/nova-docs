@@ -1,0 +1,1180 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li >MenuKeyControlService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/menu/menu-key-control.service.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#keyboardEventsManager" >keyboardEventsManager</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#keyControlItemsSource" >keyControlItemsSource</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuGroups" >menuGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuItems" >menuItems</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuOpenListener" >menuOpenListener</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuOpenListenerSubscription" >menuOpenListenerSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuPopup" >menuPopup</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuToggle" >menuToggle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#popup" >popup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getActiveItemIndex" >getActiveItemIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#handleKeydown" >handleKeydown</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#initKeyboardManager" >initKeyboardManager</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setActiveItem" >setActiveItem</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#scrollContainer" >scrollContainer</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(live: LiveAnnouncer)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>live</td>
+                                                  
+                                                        <td>
+                                                                    <code>LiveAnnouncer</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActiveItemIndex"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getActiveItemIndex</b></span>
+                        <a href="#getActiveItemIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getActiveItemIndex()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>number | null</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="handleKeydown"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>handleKeydown</b></span>
+                        <a href="#handleKeydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>handleKeydown(event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initKeyboardManager"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>initKeyboardManager</b></span>
+                        <a href="#initKeyboardManager"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initKeyboardManager()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="295"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:295</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setActiveItem"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>setActiveItem</b></span>
+                        <a href="#setActiveItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setActiveItem(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/lib/menu/menu-key-control.service.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keyboardEventsManager"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>keyboardEventsManager</b></span>
+                        <a href="#keyboardEventsManager"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keyControlItemsSource"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>keyControlItemsSource</b></span>
+                        <a href="#keyControlItemsSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuGroups"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuGroups</b></span>
+                        <a href="#menuGroups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QueryList&lt;MenuGroupComponent&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuItems"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuItems</b></span>
+                        <a href="#menuItems"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>QueryList&lt;MenuItemBaseComponent&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuOpenListener"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuOpenListener</b></span>
+                        <a href="#menuOpenListener"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuOpenListenerSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuOpenListenerSubscription</b></span>
+                        <a href="#menuOpenListenerSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuPopup"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuPopup</b></span>
+                        <a href="#menuPopup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/PopupComponent.html" target="_self" >MenuPopupComponent</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuToggle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>menuToggle</b></span>
+                        <a href="#menuToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="popup"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>popup</b></span>
+                        <a href="#popup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/PopupComponent.html" target="_self" >PopupComponent</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scrollContainer"></a>
+                        <span class="name"><b>scrollContainer</b><a href="#scrollContainer"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>scrollContainer()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:53</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>scrollContainer(container: <a href="../undefineds/Element.html" target="_self">ElementRef</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/lib/menu/menu-key-control.service.ts:49</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>container</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ActiveDescendantKeyManager, LiveAnnouncer } from &quot;@angular/cdk/a11y&quot;;
+import { ElementRef, Injectable, OnDestroy, QueryList } from &quot;@angular/core&quot;;
+import isNull from &quot;lodash/isNull&quot;;
+import { Subject, Subscription } from &quot;rxjs&quot;;
+
+import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
+import { MenuActionComponent } from &quot;../menu/menu-item/menu-action/menu-action.component&quot;;
+import { MenuItemBaseComponent } from &quot;../menu/menu-item/menu-item/menu-item-base&quot;;
+import { PopupComponent } from &quot;../popup-adapter/popup-adapter.component&quot;;
+import { IPopupActiveOptions } from &quot;../public-api&quot;;
+import { MenuGroupComponent } from &quot;./menu-item/menu-group/menu-group.component&quot;;
+import { MenuItemComponent } from &quot;./menu-item/menu-item/menu-item.component&quot;;
+import { MenuPopupComponent } from &quot;./menu-popup/menu-popup.component&quot;;
+
+@Injectable()
+export class MenuKeyControlService implements OnDestroy {
+    public popup: PopupComponent;
+    public menuGroups: QueryList&lt;MenuGroupComponent&gt;;
+    public menuItems: QueryList&lt;MenuItemBaseComponent&gt;;
+    public menuToggle: ElementRef;
+    public menuPopup: MenuPopupComponent;
+    public menuOpenListener: Subject&lt;void&gt;;
+    public keyControlItemsSource: boolean &#x3D; false;
+    public keyboardEventsManager: ActiveDescendantKeyManager&lt;MenuItemBaseComponent&gt;;
+    public menuOpenListenerSubscription: Subscription;
+    private keyboardEventsSubscription: Subscription;
+    private _scrollContainer: ElementRef;
+
+    public set scrollContainer(container: ElementRef) {
+        this._scrollContainer &#x3D; container;
+    }
+
+    public get scrollContainer(): ElementRef&lt;any&gt; {
+        return this._scrollContainer || this.popup?.popupAreaContainer;
+    }
+
+    constructor(private live: LiveAnnouncer) {}
+
+    public initKeyboardManager(): void {
+        this.keyboardEventsManager &#x3D; this.keyControlItemsSource
+            ? new ActiveDescendantKeyManager(
+                  this.menuPopup.menuItems
+              ).withVerticalOrientation()
+            : new ActiveDescendantKeyManager(
+                  this.menuItems
+              ).withVerticalOrientation();
+        if (this.keyboardEventsSubscription) {
+            this.keyboardEventsSubscription.unsubscribe();
+        }
+        this.initKeyManagerHandlers();
+
+        // when opening menu key &#x27;focus&#x27; should disappear from items
+        if (this.menuOpenListener) {
+            this.menuOpenListenerSubscription &#x3D; this.menuOpenListener.subscribe(
+                () &#x3D;&gt; {
+                    // Uncomment in the scope of NUI-6104
+                    // this.keyboardEventsManager.setFirstItemActive();
+
+                    // Remove this in the scope of NUI-6104 in favor of the line above
+                    this.keyboardEventsManager.setActiveItem(-1);
+                    this.live.announce(&#x60;
+                    ${
+                        this.keyControlItemsSource
+                            ? this.menuPopup.menuItems.length
+                            : this.menuItems.length
+                    } menu items available.&#x60;);
+
+                    // Uncomment in the scope of NUI-6104 and adjust this to be the part of the announcer&#x27;s string above
+                    // Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;);
+                }
+            );
+        }
+    }
+
+    public handleKeydown(event: KeyboardEvent): void {
+        this.popup.isOpen
+            ? this.handleOpenKeyDown(event)
+            : this.handleClosedKeyDown(event);
+    }
+
+    public setActiveItem(index: number): void {
+        this.keyboardEventsManager.setActiveItem(index);
+    }
+
+    public getActiveItemIndex(): number | null {
+        return this.keyboardEventsManager.activeItemIndex;
+    }
+
+    private initKeyManagerHandlers(): void {
+        this.keyboardEventsSubscription &#x3D;
+            this.keyboardEventsManager.change.subscribe((activeIndex) &#x3D;&gt; {
+                // when the navigation item changes, we get new activeIndex
+                if (this.popup.isOpen &amp;&amp; this.hasActiveItem()) {
+                    this.scrollActiveOptionIntoView({
+                        scrollContainer:
+                            this.scrollContainer ||
+                            this.popup.popupAreaContainer,
+                        menuItemHeight:
+                            this.keyboardEventsManager.activeItem?.menuItem
+                                .nativeElement.offsetHeight,
+                        activeOptionIndex: activeIndex,
+                        menuGroups: this.menuGroups,
+                        menuItems: this.menuItems,
+                    });
+                }
+            });
+    }
+
+    private shouldCloseOnEnter(): boolean {
+        return (
+            this.keyboardEventsManager.activeItem instanceof
+            (MenuActionComponent || MenuItemComponent)
+        );
+    }
+
+    private hasActiveItem(): boolean {
+        if (
+            isNull(this.keyboardEventsManager.activeItem) ||
+            isNull(this.keyboardEventsManager.activeItemIndex)
+        ) {
+            return false;
+        }
+        return (
+            this.keyboardEventsManager.activeItem &amp;&amp;
+            this.keyboardEventsManager.activeItemIndex &gt;&#x3D; 0
+        );
+    }
+
+    private handleOpenKeyDown(event: KeyboardEvent): void {
+        if (
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP
+        ) {
+            // passing the event to key manager so we get a change fired
+            this.keyboardEventsManager.onKeydown(event);
+            this.announceCurrentItem();
+        }
+        if (
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.PAGE_UP ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.HOME ||
+            (event.metaKey &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP)
+        ) {
+            event.preventDefault();
+            this.keyboardEventsManager.onKeydown(event);
+            this.keyboardEventsManager.setFirstItemActive();
+            this.announceCurrentItem();
+        }
+        if (
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.PAGE_DOWN ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.END ||
+            (event.metaKey &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN)
+        ) {
+            event.preventDefault();
+            this.keyboardEventsManager.onKeydown(event);
+            this.keyboardEventsManager.setLastItemActive();
+            this.announceCurrentItem();
+        }
+
+        // This keeps the active item visible within the visible area of the menu popup. In case there are disabled items in the list,
+        // this scrolls down to the nearest enabled item. Otherwise, the active item will &quot;jump over&quot; the disabled items and remain
+        // outside of the visible edge of the list.
+        this.keyboardEventsManager.activeItem?.menuItem?.nativeElement?.scrollIntoView(
+            { block: &quot;nearest&quot; }
+        );
+
+        // prevent closing on enter
+        if (!this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+            event.preventDefault();
+        }
+
+        if (this.hasActiveItem() &amp;&amp; event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER) {
+            // perform action in menu item(select, switch, check etc).
+            this.keyboardEventsManager.activeItem?.doAction(event);
+            // closing items only if they are MenuAction or MenuItem, others should not close popup
+            if (!this.shouldCloseOnEnter()) {
+                event.preventDefault();
+                return;
+            }
+            this.popup.toggleOpened(event);
+        }
+        if (
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.TAB ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ESCAPE
+        ) {
+            this.popup.toggleOpened(event);
+        }
+    }
+
+    private handleClosedKeyDown(event: KeyboardEvent): void {
+        // prevent opening on enter and prevent scrolling page on key down/key up when focused
+        if (this.shouldBePrevented(event)) {
+            event.preventDefault();
+        }
+
+        if (event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN) {
+            this.popup.toggleOpened(event);
+        }
+    }
+
+    private shouldBePrevented(event: KeyboardEvent) {
+        return (
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_DOWN ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ARROW_UP ||
+            event.code &#x3D;&#x3D;&#x3D; KEYBOARD_CODE.ENTER
+        );
+    }
+
+    // functions to scroll items into view for ActiveDescendantKeyManager
+    private countGroupLabelsBeforeOption(
+        optionIndex: number,
+        options: QueryList&lt;MenuItemBaseComponent&gt;,
+        optionGroups: QueryList&lt;MenuGroupComponent&gt;
+    ): number {
+        if (optionGroups.length) {
+            const optionsArray &#x3D; options.toArray();
+            const groups &#x3D; optionGroups.toArray();
+            let groupCounter &#x3D; 0;
+
+            for (let i &#x3D; 0; i &lt; optionIndex + 1; i++) {
+                if (
+                    optionsArray[i].group &amp;&amp;
+                    optionsArray[i].group &#x3D;&#x3D;&#x3D; groups[groupCounter]
+                ) {
+                    groupCounter++;
+                }
+            }
+
+            return groupCounter;
+        }
+        return 0;
+    }
+
+    private getOptionScrollPosition(
+        optionIndex: number,
+        optionHeight: number,
+        currentScrollPosition: number,
+        panelHeight: number
+    ): number {
+        const optionOffset &#x3D; optionIndex * optionHeight;
+
+        if (optionOffset &lt; currentScrollPosition) {
+            return optionOffset;
+        }
+
+        if (optionOffset + optionHeight &gt; currentScrollPosition + panelHeight) {
+            return Math.max(0, optionOffset - panelHeight + optionHeight);
+        }
+
+        return currentScrollPosition;
+    }
+
+    private scrollActiveOptionIntoView(options: IPopupActiveOptions): void {
+        const activeOptionIndex &#x3D; options.activeOptionIndex || 0;
+        const labelCount &#x3D; this.countGroupLabelsBeforeOption(
+            activeOptionIndex,
+            options.menuItems,
+            options.menuGroups
+        );
+
+        options.scrollContainer.nativeElement.scrollTop &#x3D;
+            this.getOptionScrollPosition(
+                activeOptionIndex + labelCount,
+                options.menuItemHeight + 4,
+                options.scrollContainer.nativeElement.scrollTop,
+                300
+            );
+    }
+
+    private announceCurrentItem() {
+        this.live.announce(
+            &#x60;Active item ${this.keyboardEventsManager?.activeItem?.menuItem.nativeElement.innerText}.&#x60;
+        );
+    }
+
+    public ngOnDestroy(): void {
+        if (this.keyboardEventsSubscription) {
+            this.keyboardEventsSubscription.unsubscribe();
+        }
+
+        if (this.menuOpenListenerSubscription) {
+            this.menuOpenListenerSubscription.unsubscribe();
+        }
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'MenuKeyControlService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
