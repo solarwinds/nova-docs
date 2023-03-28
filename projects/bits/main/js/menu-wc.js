@@ -875,6 +875,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="pipes/LimitToPipe.html" data-type="entity-link" >LimitToPipe</a>
                                 </li>
                                 <li class="link">
+                                    <a href="pipes/MapKeyValuePipe.html" data-type="entity-link" >MapKeyValuePipe</a>
+                                </li>
+                                <li class="link">
                                     <a href="pipes/SliceRangePipe.html" data-type="entity-link" >SliceRangePipe</a>
                                 </li>
                                 <li class="link">

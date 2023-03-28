@@ -69,6 +69,7 @@
             <p class="comment">
                             <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
                             <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                            <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
             </p>
 
 
@@ -78,6 +79,21 @@
     <table class="table table-sm table-bordered index-table">
         <tbody>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateYAxisDomain" >updateYAxisDomain</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -142,7 +158,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:54</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -168,7 +184,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:52</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -177,7 +193,51 @@
 
 
 
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateYAxisDomain"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>updateYAxisDomain</b></span>
+                        <a href="#updateYAxisDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateYAxisDomain()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:213</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
             <section>
     <h3 id="accessors">
@@ -199,7 +259,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:63</a></div>
                                 </td>
                             </tr>
 
@@ -216,6 +276,7 @@
     Input,
     OnChanges,
     OnDestroy,
+    OnInit,
     SimpleChanges,
 } from &quot;@angular/core&quot;;
 import { Subject } from &quot;rxjs&quot;;
@@ -225,18 +286,21 @@ import { IDataSource } from &quot;@nova-ui/bits&quot;;
 import { IXYScales } from &quot;@nova-ui/charts&quot;;
 
 import { WellKnownDataSourceFeatures } from &quot;../../../types&quot;;
+import { metricsSeriesMeasurementsMinMax } from &quot;../timeseries-helpers&quot;;
 import { TimeseriesScalesService } from &quot;../timeseries-scales.service&quot;;
 import {
     ITimeseriesOutput,
     ITimeseriesScalesConfig,
     ITimeseriesWidgetConfig,
+    ITimeseriesWidgetData,
     ITimeseriesWidgetSeriesData,
+    TimeseriesChartPreset,
 } from &quot;../types&quot;;
 
 @Directive()
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
 export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeriesData&gt;
-    implements OnChanges, OnDestroy
+    implements OnChanges, OnDestroy, OnInit
 {
     @Input() public widgetData: ITimeseriesOutput&lt;T&gt; &#x3D;
         {} as ITimeseriesOutput&lt;T&gt;;
@@ -266,6 +330,19 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
         this.buildChart$.pipe(takeUntil(this.destroy$)).subscribe(() &#x3D;&gt; {
             this.chartBuilt &#x3D; true;
         });
+    }
+
+    public ngOnInit(): void {
+        // save original data
+        if (
+            this.configuration.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.Line &amp;&amp;
+            this.widgetData &amp;&amp;
+            this.widgetData.series
+        ) {
+            this.widgetData.series.forEach(
+                (serie) &#x3D;&gt; (serie.rawData &#x3D; serie.data)
+            );
+        }
     }
 
     public ngOnChanges(changes: SimpleChanges): void {
@@ -344,6 +421,7 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
                     this.resetChart &#x3D; false;
                     this.buildChart();
                 }
+                this.applyPreviousTransformer(changes.widgetData.previousValue);
 
                 shouldUpdateChart &#x3D; true;
             }
@@ -358,6 +436,53 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
         this.destroy$.next();
         this.destroy$.complete();
         this.buildChart$.complete();
+    }
+
+    protected applyPreviousTransformer(previousData: any): void {
+        // save original data and transform it
+        this.widgetData.series.forEach((serie) &#x3D;&gt; {
+            serie.rawData &#x3D; serie.data;
+            serie.transformer &#x3D; previousData?.series.find(
+                (prevSerie: ITimeseriesWidgetData) &#x3D;&gt; prevSerie.id &#x3D;&#x3D;&#x3D; serie.id
+            )?.transformer;
+            this.transformSeriesData(serie);
+        });
+    }
+
+    protected transformSeriesData(serie: ITimeseriesWidgetData&lt;T&gt;): void {
+        if (serie.transformer &amp;&amp; serie.rawData &amp;&amp; serie.rawData.length &gt; 0) {
+            try {
+                const hasPercentile &#x3D; serie.metricUnits &#x3D;&#x3D;&#x3D; &quot;percent&quot;;
+                serie.data &#x3D; serie.transformer(serie.rawData, hasPercentile);
+                this.updateYAxisDomain();
+            } catch (e) {
+                serie.transformer &#x3D; undefined;
+                serie.data &#x3D; serie.rawData;
+                console.error(e.message);
+            }
+        }
+    }
+
+    public updateYAxisDomain(): void {
+        const scaleKeys &#x3D; [&quot;y&quot;, &quot;yRight&quot;] as Array&lt;
+            keyof ITimeseriesScalesConfig
+        &gt;;
+        for (const scaleKey of scaleKeys) {
+            const scaleConfig &#x3D; this.configuration.scales?.[scaleKey];
+            if (scaleConfig?.properties) {
+                scaleConfig.properties.domain &#x3D; {
+                    ...metricsSeriesMeasurementsMinMax(
+                        this.widgetData.series,
+                        scaleConfig?.properties?.axisUnits
+                    ),
+                };
+                this.timeseriesScalesService.updateConfiguration(
+                    this.scales[scaleKey],
+                    scaleConfig,
+                    this.configuration
+                );
+            }
+        }
     }
 
     /** Updates chart data. */

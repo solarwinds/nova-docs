@@ -101,7 +101,19 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#transformers" >transformers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#valueAccessorKey" >valueAccessorKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#zoomPlugin" >zoomPlugin</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#zoomPluginsSyncService" >zoomPluginsSyncService</a>
                             </li>
                         </ul>
                     </td>
@@ -117,6 +129,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#displayLegendMenu" >displayLegendMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#hasLegend" >hasLegend</a>
                             </li>
                             <li>
@@ -130,6 +146,14 @@
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#onPrimaryDescClick" >onPrimaryDescClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeMetric" >removeMetric</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#transformData" >transformData</a>
                             </li>
                         </ul>
                     </td>
@@ -149,12 +173,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(eventBus: EventBus<IEvent>, dataSource: IDataSource, timeseriesScalesService: <a href="../injectables/TimeseriesScalesService.html" target="_self">TimeseriesScalesService</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+<code>constructor(eventBus: EventBus<IEvent>, dataSource: IDataSource, timeseriesScalesService: <a href="../injectables/TimeseriesScalesService.html" target="_self">TimeseriesScalesService</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, zoomPluginsSyncService: TimeseriesZoomPluginsSyncService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="181" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:181</a></div>
                             </td>
                         </tr>
 
@@ -219,6 +243,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>zoomPluginsSyncService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TimeseriesZoomPluginsSyncService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -233,6 +269,45 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayLegendMenu"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>displayLegendMenu</b></span>
+                        <a href="#displayLegendMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>displayLegendMenu()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="398"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:398</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -255,8 +330,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:231</a></div>
                 </td>
             </tr>
 
@@ -296,8 +371,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="137"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:137</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="239"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:239</a></div>
                 </td>
             </tr>
 
@@ -337,8 +412,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:97</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="199"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:199</a></div>
                 </td>
             </tr>
 
@@ -420,8 +495,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="141"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:141</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="243"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:243</a></div>
                 </td>
             </tr>
 
@@ -481,6 +556,160 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMetric"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>removeMetric</b></span>
+                        <a href="#removeMetric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeMetric(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="407"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:407</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metricId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformData"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>transformData</b></span>
+                        <a href="#transformData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>transformData(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, trId: <a href="../undefineds/TimeseriesTransformer.html" target="_self">TimeseriesTransformer</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="416"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:416</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metricId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>trId</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#TimeseriesTransformer" target="_self" >TimeseriesTransformer</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
             <section>
     
@@ -507,7 +736,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:86</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:187</a></div>
                         </td>
                     </tr>
 
@@ -534,7 +763,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:75</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:105</a></div>
                         </td>
                     </tr>
 
@@ -566,7 +795,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:77</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:107</a></div>
                         </td>
                     </tr>
 
@@ -593,7 +822,101 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:85</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="186" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:186</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>transformers</b></span>
+                        <a href="#transformers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;
+        TimeseriesTransformer,
+        ITransformerDescription
+    &gt;([
+        [
+            TimeseriesTransformer.None,
+            { displayName: $localize&#x60;None&#x60;, transformer: undefined },
+        ],
+        [
+            TimeseriesTransformer.ChangePoint,
+            {
+                displayName: $localize&#x60;Change Point&#x60;,
+                transformer: transformChangePoint,
+            },
+        ],
+        [
+            TimeseriesTransformer.Difference,
+            {
+                displayName: $localize&#x60;Difference&#x60;,
+                transformer: transformDifference,
+            },
+        ],
+        [
+            TimeseriesTransformer.FloatingAverage,
+            {
+                displayName: $localize&#x60;Floating Average&#x60;,
+                transformer: transformFloatingAverage,
+            },
+        ],
+        [
+            TimeseriesTransformer.Linear,
+            { displayName: $localize&#x60;Linear&#x60;, transformer: transformLinReg },
+        ],
+        [
+            TimeseriesTransformer.Normalize,
+            {
+                displayName: $localize&#x60;Normalize&#x60;,
+                transformer: transformNormalize,
+            },
+        ],
+        [
+            TimeseriesTransformer.PercentileStd,
+            {
+                displayName: $localize&#x60;Percentile Standardized&#x60;,
+                transformer: transformPercentileStd,
+            },
+        ],
+        [
+            TimeseriesTransformer.Smoothing,
+            {
+                displayName: $localize&#x60;Smoothing&#x60;,
+                transformer: transformLoessSmoothing,
+            },
+        ],
+        [
+            TimeseriesTransformer.LoessStandardize,
+            {
+                displayName: $localize&#x60;Smoothing Standardized&#x60;,
+                transformer: transformLoessStandardize,
+            },
+        ],
+        [
+            TimeseriesTransformer.Standardize,
+            {
+                displayName: $localize&#x60;Standardize&#x60;,
+                transformer: transformStandardize,
+            },
+        ],
+    ])</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:113</a></div>
                         </td>
                     </tr>
 
@@ -625,7 +948,61 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoomPlugin"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>zoomPlugin</b></span>
+                        <a href="#zoomPlugin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TimeseriesZoomPlugin</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoomPluginsSyncService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>zoomPluginsSyncService</b></span>
+                        <a href="#zoomPluginsSyncService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TimeseriesZoomPluginsSyncService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="188" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:188</a></div>
                         </td>
                     </tr>
 
@@ -661,22 +1038,27 @@ import {
     IDataPointsPayload,
     IInteractionDataPointsEvent,
     IInteractionValuesPayload,
-    InteractionType,
     INTERACTION_DATA_POINTS_EVENT,
     INTERACTION_VALUES_EVENT,
+    InteractionType,
     IScale,
     ISetDomainEventPayload,
     IValueProvider,
+    IXYGridConfig,
     IXYScales,
     Renderer,
     SequentialColorProvider,
     SET_DOMAIN_EVENT,
-    ZoomPlugin,
-    IXYGridConfig,
+    TimeseriesZoomPlugin,
+    TimeseriesZoomPluginsSyncService,
     XYGrid,
 } from &quot;@nova-ui/charts&quot;;
 
-import { INTERACTION, SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
+import {
+    CHART_METRIC_REMOVE,
+    INTERACTION,
+    SET_TIMEFRAME,
+} from &quot;../../../../services/types&quot;;
 import {
     DATA_SOURCE,
     IHasChangeDetector,
@@ -684,8 +1066,33 @@ import {
 } from &quot;../../../../types&quot;;
 import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
-import { TimeseriesInteractionType } from &quot;../../types&quot;;
+import {
+    transformChangePoint,
+    transformDifference,
+    transformFloatingAverage,
+    transformLinReg,
+    transformLoessSmoothing,
+    transformLoessStandardize,
+    transformNormalize,
+    transformPercentileStd,
+    transformStandardize,
+} from &quot;../../transformer/public-api&quot;;
+import {
+    ITimeseriesWidgetSeriesData,
+    TimeseriesChartPreset,
+    TimeseriesInteractionType,
+    TimeseriesTransformer,
+    TimeseriesWidgetProjectType,
+} from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+
+interface ITransformerDescription {
+    displayName: string;
+    transformer?: (
+        data: ITimeseriesWidgetSeriesData[],
+        hasPercentile?: boolean
+    ) &#x3D;&gt; ITimeseriesWidgetSeriesData[];
+}
 
 @Injectable()
 export abstract class XYChartComponent
@@ -695,15 +1102,87 @@ export abstract class XYChartComponent
     public chartAssist: ChartAssist;
     public valueAccessorKey: string &#x3D; &quot;y&quot;;
     public collectionId: string &#x3D; &quot;&quot;;
+    public zoomPlugin: TimeseriesZoomPlugin;
 
     protected renderer: Renderer&lt;IAccessors&gt;;
     protected accessors: IAccessors;
+
+    public transformers &#x3D; new Map&lt;
+        TimeseriesTransformer,
+        ITransformerDescription
+    &gt;([
+        [
+            TimeseriesTransformer.None,
+            { displayName: $localize&#x60;None&#x60;, transformer: undefined },
+        ],
+        [
+            TimeseriesTransformer.ChangePoint,
+            {
+                displayName: $localize&#x60;Change Point&#x60;,
+                transformer: transformChangePoint,
+            },
+        ],
+        [
+            TimeseriesTransformer.Difference,
+            {
+                displayName: $localize&#x60;Difference&#x60;,
+                transformer: transformDifference,
+            },
+        ],
+        [
+            TimeseriesTransformer.FloatingAverage,
+            {
+                displayName: $localize&#x60;Floating Average&#x60;,
+                transformer: transformFloatingAverage,
+            },
+        ],
+        [
+            TimeseriesTransformer.Linear,
+            { displayName: $localize&#x60;Linear&#x60;, transformer: transformLinReg },
+        ],
+        [
+            TimeseriesTransformer.Normalize,
+            {
+                displayName: $localize&#x60;Normalize&#x60;,
+                transformer: transformNormalize,
+            },
+        ],
+        [
+            TimeseriesTransformer.PercentileStd,
+            {
+                displayName: $localize&#x60;Percentile Standardized&#x60;,
+                transformer: transformPercentileStd,
+            },
+        ],
+        [
+            TimeseriesTransformer.Smoothing,
+            {
+                displayName: $localize&#x60;Smoothing&#x60;,
+                transformer: transformLoessSmoothing,
+            },
+        ],
+        [
+            TimeseriesTransformer.LoessStandardize,
+            {
+                displayName: $localize&#x60;Smoothing Standardized&#x60;,
+                transformer: transformLoessStandardize,
+            },
+        ],
+        [
+            TimeseriesTransformer.Standardize,
+            {
+                displayName: $localize&#x60;Standardize&#x60;,
+                transformer: transformStandardize,
+            },
+        ],
+    ]);
 
     constructor(
         @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
-        public changeDetector: ChangeDetectorRef
+        public changeDetector: ChangeDetectorRef,
+        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
     ) {
         super(timeseriesScalesService, dataSource);
     }
@@ -848,7 +1327,7 @@ export abstract class XYChartComponent
         }
 
         if (this.configuration.enableZoom) {
-            chart.addPlugin(new ZoomPlugin());
+            chart.addPlugin(this.zoomPlugin);
         }
 
         chart
@@ -911,6 +1390,43 @@ export abstract class XYChartComponent
                     });
                 }
             });
+    }
+
+    public displayLegendMenu(): boolean {
+        return (
+            this.configuration.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.Line &amp;&amp;
+            !!this.configuration.allowLegendMenu &amp;&amp;
+            this.configuration.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+        );
+    }
+
+    public removeMetric(metricId: string): void {
+        this.eventBus.next(CHART_METRIC_REMOVE, {
+            payload: {
+                metricId: metricId,
+                groupUniqueId: this.configuration.groupUniqueId,
+            },
+        });
+    }
+
+    public transformData(metricId: string, trId: TimeseriesTransformer): void {
+        const serie &#x3D; this.widgetData.series.find((s) &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; metricId);
+        if (!serie) {
+            return;
+        }
+        serie.transformer &#x3D; this.transformers.get(trId)?.transformer;
+
+        if (serie.rawData) {
+            if (serie.transformer &#x3D;&#x3D;&#x3D; undefined) {
+                // revert transformed data
+                serie.data &#x3D; serie.rawData;
+                this.updateYAxisDomain();
+            } else {
+                this.transformSeriesData(serie);
+            }
+        }
+        this.updateChartData();
     }
 }
 </code></pre>

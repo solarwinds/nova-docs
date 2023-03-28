@@ -347,6 +347,8 @@ import {
     StatusAccessors,
     statusAccessors,
     TimeIntervalScale,
+    TimeseriesZoomPlugin,
+    TimeseriesZoomPluginsSyncService,
     XYGridConfig,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
@@ -357,6 +359,7 @@ import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&qu
 import {
     ITimeseriesWidgetData,
     ITimeseriesWidgetStatusData,
+    TimeseriesWidgetProjectType,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
 
@@ -382,7 +385,8 @@ export class StatusBarChartComponent
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
         public changeDetector: ChangeDetectorRef,
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
+        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
     ) {
         super(timeseriesScalesService, dataSource);
     }
@@ -483,10 +487,28 @@ export class StatusBarChartComponent
 
         if (this.configuration.enableZoom) {
             this.chartAssist.sparks.forEach((spark) &#x3D;&gt; {
-                if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
-                    spark?.chart?.addPlugin(
-                        new ZoomPlugin({ enableExternalEvents: true })
-                    );
+                if (
+                    this.configuration?.projectType &#x3D;&#x3D;&#x3D;
+                    TimeseriesWidgetProjectType.PerfstackApp
+                ) {
+                    if (
+                        !(spark?.chart as Chart)?.hasPlugin(
+                            TimeseriesZoomPlugin
+                        )
+                    ) {
+                        spark?.chart?.addPlugin(
+                            new TimeseriesZoomPlugin(
+                                { collectionId: this.collectionId },
+                                this.zoomPluginsSyncService
+                            )
+                        );
+                    }
+                } else {
+                    if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
+                        spark?.chart?.addPlugin(
+                            new ZoomPlugin({ enableExternalEvents: true })
+                        );
+                    }
                 }
             });
 

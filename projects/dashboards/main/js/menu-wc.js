@@ -390,13 +390,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardsModule.html" data-type="entity-link" >NuiDashboardsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                            'data-target="#components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
-                                            'id="xs-components-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
+                                            'id="xs-components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                             <li class="link">
                                                 <a href="components/DashboardComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardComponent</a>
                                             </li>
@@ -449,6 +449,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/TimeframeSelectionComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeframeSelectionComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/TimeseriesInspectionMenuComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TimeseriesInspectionMenuComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/WidgetBodyComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >WidgetBodyComponent</a>
                                             </li>
                                             <li class="link">
@@ -467,13 +470,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                        'data-target="#directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
-                                        'id="xs-directives-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
+                                        'id="xs-directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                         <li class="link">
                                             <a href="directives/DelayedMousePresenceDetectionDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DelayedMousePresenceDetectionDirective</a>
                                         </li>
@@ -487,13 +490,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' :
-                                        'id="xs-injectables-links-module-NuiDashboardsModule-0c2beec8e15a8188f39a9e161fb163bd8e7f52dfd4c5ffd59e561bd21392b75fbe6ed8c1359bf7d14a842a2830b4af0df6360e51f342b0efe629e0dbd3cc8979"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
+                                        'id="xs-injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
                                         <li class="link">
                                             <a href="injectables/RefresherSettingsService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefresherSettingsService</a>
                                         </li>
@@ -1200,6 +1203,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/IRegistryAddOptions.html" data-type="entity-link" >IRegistryAddOptions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/IRemoveMetricPayload.html" data-type="entity-link" >IRemoveMetricPayload</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link" >ISearchOnKeyUp</a>
                             </li>
                             <li class="link">
@@ -1266,7 +1272,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ITimeseriesWidgetStatusData.html" data-type="entity-link" >ITimeseriesWidgetStatusData</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ITimeseriesZoomPluginExploreData.html" data-type="entity-link" >ITimeseriesZoomPluginExploreData</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ITimeSpanOption.html" data-type="entity-link" >ITimeSpanOption</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITransformerDescription.html" data-type="entity-link" >ITransformerDescription</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IUrlInteractionHandlerProperties.html" data-type="entity-link" >IUrlInteractionHandlerProperties</a>
@@ -1288,6 +1300,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWidgetMetadata.html" data-type="entity-link" >IWidgetMetadata</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IWidgetPayload.html" data-type="entity-link" >IWidgetPayload</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IWidgetResizePayload.html" data-type="entity-link" >IWidgetResizePayload</a>
