@@ -130,6 +130,15 @@
                             <a href="#imagesPresetToken" title="src/constants/images.constants.ts"><b>imagesPresetToken</b>&nbsp;&nbsp;&nbsp;(src/.../images.constants.ts)</a>
                         </li>
                         <li>
+                            <a href="#isTargetAnAnchor" title="src/common/directives/click-filter/public-api.ts"><b>isTargetAnAnchor</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isTargetNotAnAnchor" title="src/common/directives/click-filter/public-api.ts"><b>isTargetNotAnAnchor</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#makePredicate" title="src/common/directives/click-filter/public-api.ts"><b>makePredicate</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
                             <a href="#NUI_SELECT_V2_OPTION_PARENT_COMPONENT" title="src/lib/select-v2/constants.ts"><b>NUI_SELECT_V2_OPTION_PARENT_COMPONENT</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
                         </li>
                         <li>
@@ -2117,6 +2126,75 @@
                             <i>Default value : </i><code>new InjectionToken&lt;Array&lt;IImagesPresetItem&gt;&gt;(
     &quot;IMAGES_PRESET&quot;
 )</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/common/directives/click-filter/public-api.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isTargetAnAnchor"></a>
+                        <span class="name">
+                            <b>
+                            isTargetAnAnchor</b>
+                            <a href="#isTargetAnAnchor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(event: Event): boolean &#x3D;&gt;
+    event.target instanceof HTMLAnchorElement</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isTargetNotAnAnchor"></a>
+                        <span class="name">
+                            <b>
+                            isTargetNotAnAnchor</b>
+                            <a href="#isTargetNotAnAnchor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(event: Event): boolean &#x3D;&gt;
+    !isTargetAnAnchor(event)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="makePredicate"></a>
+                        <span class="name">
+                            <b>
+                            makePredicate</b>
+                            <a href="#makePredicate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>(value: IEventFilter | boolean): IEventFilter &#x3D;&gt;
+    typeof value &#x3D;&#x3D;&#x3D; &quot;boolean&quot; ? () &#x3D;&gt; value : value</code>
                         </td>
                     </tr>
 
