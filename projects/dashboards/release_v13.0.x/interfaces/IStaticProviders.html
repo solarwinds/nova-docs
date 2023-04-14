@@ -85,7 +85,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/lib/services/types.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/services/types.ts:32</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -97,7 +97,6 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { StaticProvider } from &quot;@angular/core&quot;;
-import { GridsterItem } from &quot;angular-gridster2&quot;;
 import { BehaviorSubject, ReplaySubject } from &quot;rxjs&quot;;
 
 import { EventDefinition, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
@@ -128,22 +127,30 @@ export interface IRegistryAddOptions {
 export interface IAddFormattersOptions
     extends Pick&lt;IRegistryAddOptions, &quot;overrideExisting&quot;&gt; {}
 
-export interface IWidgetResizePayload {
-    widgetId: number;
-    height: number;
-    width: number;
+export interface IRemoveMetricPayload {
+    metricId: string;
+    groupUniqueId: string;
 }
 
-export const REFRESH &#x3D; new EventDefinition&lt;void&gt;(&quot;REFRESH&quot;);
-export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition&lt;void&gt;(&quot;SCROLL_NEXT_PAGE&quot;);
-export const WIDGET_REMOVE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_REMOVE&quot;);
-export const WIDGET_EDIT &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_EDIT&quot;);
-export const WIDGET_CREATE &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_CREATE&quot;);
-export const WIDGET_READY &#x3D; new EventDefinition&lt;void&gt;(&quot;WIDGET_READY&quot;);
+export interface IWidgetPayload {
+    widgetId: string;
+}
+
+export interface IWidgetResizePayload extends IWidgetPayload {
+    height?: number;
+    width?: number;
+}
+
+export const REFRESH &#x3D; new EventDefinition(&quot;REFRESH&quot;);
+export const SCROLL_NEXT_PAGE &#x3D; new EventDefinition(&quot;SCROLL_NEXT_PAGE&quot;);
+export const WIDGET_REMOVE &#x3D; new EventDefinition(&quot;WIDGET_REMOVE&quot;);
+export const WIDGET_EDIT &#x3D; new EventDefinition(&quot;WIDGET_EDIT&quot;);
+export const WIDGET_CREATE &#x3D; new EventDefinition(&quot;WIDGET_CREATE&quot;);
+export const WIDGET_READY &#x3D; new EventDefinition(&quot;WIDGET_READY&quot;);
 export const WIDGET_RESIZE &#x3D; new EventDefinition&lt;IWidgetResizePayload&gt;(
     &quot;WIDGET_RESIZE&quot;
 );
-export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition&lt;GridsterItem&gt;(
+export const WIDGET_POSITION_CHANGE &#x3D; new EventDefinition(
     &quot;WIDGET_POSITION_CHANGE&quot;
 );
 export const WIDGET_SEARCH &#x3D; new EventDefinition&lt;string&gt;(
@@ -218,6 +225,12 @@ export const NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY &#x3D;
 export const NOVA_TEST_REGISTRY &#x3D; &quot;NOVA_TEST_REGISTRY&quot;;
 export const NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER &#x3D;
     &quot;NOVA_CONFIGURATOR_DATA_SOURCE_MANAGER&quot;;
+
+export const CHART_METRIC_REMOVE: IEventDefinition&lt;
+    IEvent&lt;IRemoveMetricPayload&gt;
+&gt; &#x3D; {
+    id: &quot;CHART_METRIC_REMOVE&quot;,
+};
 </code></pre>
     </div>
 </div>

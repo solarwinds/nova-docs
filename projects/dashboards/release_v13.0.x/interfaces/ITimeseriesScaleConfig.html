@@ -219,6 +219,18 @@ export interface ITimeseriesWidgetConfig {
     scales: ITimeseriesScalesConfig;
     units: UnitOption;
     collectionId?: string;
+    leftYAxisUnits?: UnitOption;
+    rightYAxisUnits?: UnitOption;
+    gridConfig?: {
+        [key: string]: any;
+    };
+    hasAdjacentChart?: boolean;
+    groupUniqueId?: string;
+    allowLegendMenu?: boolean;
+    metricIds?: string;
+    realTimeIds?: string[];
+    type?: number;
+    projectType?: TimeseriesWidgetProjectType;
 }
 
 export interface ITimeseriesWidgetSeries {
@@ -232,8 +244,11 @@ export interface ITimeseriesWidgetData&lt;T &#x3D; ITimeseriesWidgetSeriesData&g
     name: string;
     description: string;
     data: T[];
+    rawData?: T[];
+    transformer?: (data: T[], hasPercentile?: boolean) &#x3D;&gt; T[];
     link?: string;
     secondaryLink?: string;
+    metricUnits?: UnitOption;
 }
 
 export interface ITimeseriesWidgetSeriesData {
@@ -270,6 +285,7 @@ export interface IChartPreset {
 export interface ITimeseriesScalesConfig {
     x: ITimeseriesScaleConfig;
     y: ITimeseriesScaleConfig;
+    yRight?: ITimeseriesScaleConfig;
 }
 
 /**
@@ -299,9 +315,37 @@ export enum TimeseriesChartPreset {
     Line &#x3D; &quot;line&quot;,
     StackedArea &#x3D; &quot;stackedArea&quot;,
     StackedPercentageArea &#x3D; &quot;stackedPercentageArea&quot;,
-
     StackedBar &#x3D; &quot;stackedBar&quot;,
     StatusBar &#x3D; &quot;statusBar&quot;,
+}
+
+/** Enumeration of timeseries chart types recieved from the backend */
+export enum TimeseriesChartTypes {
+    gauge &#x3D; 1, // Line
+    counter &#x3D; 2, // StackedBar
+    event &#x3D; 3, // StackedBar
+    alert &#x3D; 4, // StackedArea
+    state &#x3D; 5, // StackedArea
+    multi &#x3D; 6, // StatusBar
+    dpaWaitTime &#x3D; 7, // StatusBar
+}
+
+export enum TimeseriesTransformer {
+    None &#x3D; &quot;none&quot;,
+    Normalize &#x3D; &quot;normalize&quot;,
+    ChangePoint &#x3D; &quot;changePoint&quot;,
+    Difference &#x3D; &quot;difference&quot;,
+    Linear &#x3D; &quot;linear&quot;,
+    PercentileStd &#x3D; &quot;percentileStd&quot;,
+    Smoothing &#x3D; &quot;smoothing&quot;,
+    LoessStandardize &#x3D; &quot;loessStandardize&quot;,
+    Standardize &#x3D; &quot;standardize&quot;,
+    FloatingAverage &#x3D; &quot;floatingAverage&quot;,
+}
+
+export enum TimeseriesWidgetProjectType {
+    ModernDashboard,
+    PerfstackApp,
 }
 </code></pre>
     </div>

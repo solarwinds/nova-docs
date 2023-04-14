@@ -148,6 +148,15 @@
                             <a href="#isMouseEvent" title="src/lib/overlay/overlay-component/overlay.component.ts" ><b>isMouseEvent</b>&nbsp;&nbsp;&nbsp;(src/.../overlay.component.ts)</a>
                         </li>
                         <li>
+                            <a href="#isTargetAnAnchor" title="src/common/directives/click-filter/public-api.ts" ><b>isTargetAnAnchor</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isTargetNotAnAnchor" title="src/common/directives/click-filter/public-api.ts" ><b>isTargetNotAnAnchor</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#makePredicate" title="src/common/directives/click-filter/public-api.ts" ><b>makePredicate</b>&nbsp;&nbsp;&nbsp;(src/.../public-api.ts)</a>
+                        </li>
+                        <li>
                             <a href="#NUI_SELECT_V2_OPTION_PARENT_COMPONENT" title="src/lib/select-v2/constants.ts" ><b>NUI_SELECT_V2_OPTION_PARENT_COMPONENT</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
                         </li>
                         <li>
@@ -2301,6 +2310,72 @@
         </tbody>
     </table>
 </section>
+    <h3>src/common/directives/click-filter/public-api.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTargetAnAnchor"></a>
+                    <span class="name">
+                        <span ><b>isTargetAnAnchor</b></span>
+                        <a href="#isTargetAnAnchor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(event: Event): boolean &#x3D;&gt;
+    event.target instanceof HTMLAnchorElement</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isTargetNotAnAnchor"></a>
+                    <span class="name">
+                        <span ><b>isTargetNotAnAnchor</b></span>
+                        <a href="#isTargetNotAnAnchor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(event: Event): boolean &#x3D;&gt;
+    !isTargetAnAnchor(event)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="makePredicate"></a>
+                    <span class="name">
+                        <span ><b>makePredicate</b></span>
+                        <a href="#makePredicate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(value: IEventFilter | boolean): IEventFilter &#x3D;&gt;
+    typeof value &#x3D;&#x3D;&#x3D; &quot;boolean&quot; ? () &#x3D;&gt; value : value</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <h3>src/lib/overlay/constants.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -2814,6 +2889,7 @@
         &quot;Ybps&quot;,
     ],
     hertz: [&quot;Hz&quot;, &quot;kHz&quot;, &quot;MHz&quot;, &quot;GHz&quot;, &quot;THz&quot;, &quot;PHz&quot;, &quot;EHz&quot;, &quot;ZHz&quot;, &quot;YHz&quot;],
+    percent: [&quot;%&quot;],
 }</code>
                     </td>
                 </tr>

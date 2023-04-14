@@ -367,6 +367,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="directives/BaseSelectV2.html" data-type="entity-link" >BaseSelectV2</a>
                                 </li>
                                 <li class="link">
+                                    <a href="directives/ClickFilterDirective.html" data-type="entity-link" >ClickFilterDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="directives/ClickInterceptorDirective.html" data-type="entity-link" >ClickInterceptorDirective</a>
                                 </li>
                                 <li class="link">
@@ -873,6 +876,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="pipes/LimitToPipe.html" data-type="entity-link" >LimitToPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="pipes/MapKeyValuePipe.html" data-type="entity-link" >MapKeyValuePipe</a>
                                 </li>
                                 <li class="link">
                                     <a href="pipes/SliceRangePipe.html" data-type="entity-link" >SliceRangePipe</a>

@@ -116,7 +116,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -174,15 +174,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getScale(scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html" target="_self">ITimeseriesScaleConfig</a>, units: UnitOption)</code>
+                    <code>getScale(scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html" target="_self">ITimeseriesScaleConfig</a>, units: UnitOption, widgetConfig?: <a href="../interfaces/ITimeseriesWidgetConfig.html" target="_self">ITimeseriesWidgetConfig</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -228,6 +228,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>widgetConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/ITimeseriesWidgetConfig.html" target="_self" >ITimeseriesWidgetConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -259,15 +271,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateConfiguration(scale: IScale<any>, scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html" target="_self">ITimeseriesScaleConfig</a>)</code>
+                    <code>updateConfiguration(scale: IScale<any>, scaleConfig: <a href="../interfaces/ITimeseriesScaleConfig.html" target="_self">ITimeseriesScaleConfig</a>, widgetConfig?: <a href="../interfaces/ITimeseriesWidgetConfig.html" target="_self">ITimeseriesWidgetConfig</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:106</a></div>
                 </td>
             </tr>
 
@@ -313,6 +325,18 @@
 
 
                                 </tr>
+                                <tr>
+                                    <td>widgetConfig</td>
+                                    <td>
+                                                <code><a href="../interfaces/ITimeseriesWidgetConfig.html" target="_self" >ITimeseriesWidgetConfig</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -346,8 +370,16 @@ import {
     TimeScale,
 } from &quot;@nova-ui/charts&quot;;
 
-import { DashboardUnitConversionPipe } from &quot;../../common/pipes/dashboard-unit-conversion-pipe&quot;;
-import { ITimeseriesScaleConfig, TimeseriesScaleType } from &quot;./types&quot;;
+import { DashboardUnitConversionPipe } from &quot;../../common/pipes/public-api&quot;;
+import { roundToOptimalDecimals } from &quot;../../functions/round-array-values&quot;;
+import {
+    ITimeseriesScaleConfig,
+    ITimeseriesWidgetConfig,
+    TimeseriesScaleType,
+    TimeseriesChartPreset,
+} from &quot;./types&quot;;
+
+import { timeSeriesDatetimeFormatter } from &quot;../../functions/timeseries-datetime-formatter&quot;;
 
 /**
  * This service handles scale creation and configuration for the timeseries widget
@@ -369,21 +401,28 @@ export class TimeseriesScalesService {
      */
     public getScale(
         scaleConfig: ITimeseriesScaleConfig,
-        units: UnitOption
+        units: UnitOption,
+        widgetConfig?: ITimeseriesWidgetConfig
     ): IScale&lt;any&gt; {
         let scale: IScale&lt;any&gt;;
 
         switch (scaleConfig.type) {
             case TimeseriesScaleType.Time: {
                 scale &#x3D; new TimeScale();
+                scale.isTimeseriesScale &#x3D; true;
+                scale.formatters.title &#x3D; timeSeriesDatetimeFormatter;
                 break;
             }
             case TimeseriesScaleType.Linear: {
                 scale &#x3D; new LinearScale();
-                scale.formatters.tick &#x3D; (value: string | number | undefined) &#x3D;&gt;
+                scale.isTimeseriesScale &#x3D; true;
+                scale.formatters.tick &#x3D; (
+                    value: string | number | undefined,
+                    isLabelFormatter?: boolean
+                ) &#x3D;&gt;
                     this.unitConversionPipe.transform(
                         value,
-                        units,
+                        scaleConfig.properties?.axisUnits ?? units,
                         UnitBase.Standard
                     );
                 break;
@@ -394,7 +433,7 @@ export class TimeseriesScalesService {
             }
         }
 
-        this.updateConfiguration(scale, scaleConfig);
+        this.updateConfiguration(scale, scaleConfig, widgetConfig);
 
         return scale;
     }
@@ -407,22 +446,133 @@ export class TimeseriesScalesService {
      */
     public updateConfiguration(
         scale: IScale&lt;any&gt;,
-        scaleConfig: ITimeseriesScaleConfig
+        scaleConfig: ITimeseriesScaleConfig,
+        widgetConfig?: ITimeseriesWidgetConfig
     ): void {
-        if (
-            scaleConfig.type &#x3D;&#x3D;&#x3D; TimeseriesScaleType.TimeInterval &amp;&amp;
-            scale instanceof TimeIntervalScale
-        ) {
-            const interval &#x3D; scaleConfig.properties?.interval;
-            if (typeof interval &#x3D;&#x3D;&#x3D; &quot;number&quot;) {
-                if (interval &lt;&#x3D; 0) {
-                    throw new Error(
-                        &quot;Interval value must be greater than zero.&quot;
-                    );
+        switch (scaleConfig.type) {
+            case TimeseriesScaleType.Time: {
+                const interval &#x3D; scaleConfig.properties?.timeInterval;
+                if (interval?.startDatetime &amp;&amp; interval?.endDatetime) {
+                    scale.fixDomain([
+                        interval.startDatetime,
+                        interval.endDatetime,
+                    ]);
                 }
-                scale.interval(duration(interval, &quot;seconds&quot;));
+                break;
+            }
+            case TimeseriesScaleType.TimeInterval: {
+                const interval &#x3D; scaleConfig.properties?.interval;
+                if (typeof interval &#x3D;&#x3D;&#x3D; &quot;number&quot;) {
+                    if (interval &lt;&#x3D; 0) {
+                        throw new Error(
+                            &quot;Interval value must be greater than zero.&quot;
+                        );
+                    }
+                    if (scale instanceof TimeIntervalScale) {
+                        scale.interval(duration(interval, &quot;seconds&quot;));
+                    }
+                }
+                break;
+            }
+            case TimeseriesScaleType.Linear: {
+                if (scaleConfig.properties?.axisUnits) {
+                    scale.scaleUnits &#x3D; scaleConfig.properties.axisUnits;
+                }
+
+                if (
+                    widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StatusBar ||
+                    widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StackedArea
+                ) {
+                    return;
+                }
+
+                if (
+                    scaleConfig.properties?.axisUnits &#x3D;&#x3D;&#x3D; &quot;percent&quot; &amp;&amp;
+                    scale.setFixDomainValues
+                ) {
+                    scale.setFixDomainValues([0, 25, 50, 75, 100]);
+                }
+                if (
+                    scaleConfig.properties?.axisUnits !&#x3D;&#x3D; &quot;percent&quot; &amp;&amp;
+                    scaleConfig.properties?.domain &amp;&amp;
+                    scale.setFixDomainValues
+                ) {
+                    const domainAdjusted &#x3D;
+                        widgetConfig?.preset &#x3D;&#x3D;&#x3D;
+                        TimeseriesChartPreset.StackedBar
+                            ? this.getStackedBarScaleDomain(
+                                  scaleConfig.properties.domain
+                              )
+                            : this.getLineScaleDomain(
+                                  scaleConfig.properties.domain
+                              );
+                    scale.setFixDomainValues(domainAdjusted);
+                }
+                break;
             }
         }
+    }
+
+    private getStackedBarScaleDomain({
+        min,
+        max,
+    }: {
+        min: number;
+        max: number;
+    }): number[] {
+        if (max &#x3D;&#x3D;&#x3D; 0 || max % 4 &gt; 0) {
+            max &#x3D; max + 4 - (max % 4);
+        }
+        const increment &#x3D; Math.floor((max - min) / 4);
+        return [
+            min,
+            min + increment,
+            min + 2 * increment,
+            max - increment,
+            max,
+        ];
+    }
+
+    private getLineScaleDomain({
+        min,
+        max,
+    }: {
+        min: number;
+        max: number;
+    }): number[] {
+        if (min &gt; max) {
+            const tmp &#x3D; min;
+            min &#x3D; max;
+            max &#x3D; tmp;
+        }
+
+        const extentRange &#x3D; Math.abs((max - min) / ((max + min) / 2));
+
+        // for small domain ranges increase domain so that spikes are not exaggerated
+        if (extentRange &lt; 0.5) {
+            min &#x3D; min - Math.abs(min) * 0.5;
+            max &#x3D; max + Math.abs(max) * 0.5;
+        }
+
+        // handles zero case
+        if (min &#x3D;&#x3D;&#x3D; 0 &amp;&amp; max &#x3D;&#x3D;&#x3D; 0) {
+            min &#x3D; -1;
+            max &#x3D; 1;
+        }
+
+        // special case for real small number since not using si prefix anymore
+        if (Math.abs(max - min) &lt; 0.04) {
+            max +&#x3D; 0.04;
+        }
+
+        const point &#x3D; (max - min) / 4;
+        return roundToOptimalDecimals([
+            min,
+            min + point,
+            min + 2 * point,
+            max - point,
+            max,
+        ]);
     }
 }
 </code></pre>

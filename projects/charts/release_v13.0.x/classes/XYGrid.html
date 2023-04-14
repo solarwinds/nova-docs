@@ -1076,7 +1076,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-                        <div class="io-line">Defined in         <code><a href="../classes/Grid.html#source" target="_self" >Grid:423</a></code>
+                        <div class="io-line">Defined in         <code><a href="../classes/Grid.html#source" target="_self" >Grid:436</a></code>
 </div>
                 </td>
             </tr>
@@ -1924,12 +1924,16 @@ export class XYGrid extends Grid implements IGrid {
         axisGenerator: any
     ): void {
         if (config.visible) {
-            const bottomLabelAxis &#x3D; axisGenerator(scale.d3Scale)
+            const labelAxis &#x3D; axisGenerator(scale.d3Scale)
                 .ticks(config.approximateTicks)
-                .tickSize(0)
-                .tickFormat(scale.formatters[&quot;tick&quot;]);
+                .tickSize(0);
 
-            axis.labelGroup.call(bottomLabelAxis);
+            if (scale.fixDomainValues?.length) {
+                labelAxis.tickValues(scale.fixDomainValues);
+            }
+            labelAxis.tickFormat(scale.formatters[&quot;tick&quot;]);
+            axis.labelGroup.call(labelAxis);
+
             let tickAxis;
             if (scale instanceof BandScale) {
                 tickAxis &#x3D; axisGenerator(scale.copyToLinear().d3Scale)
@@ -1937,9 +1941,15 @@ export class XYGrid extends Grid implements IGrid {
                     .tickValues(scale.bandTicks())
                     .tickFormat(() &#x3D;&gt; &quot;&quot;);
             } else {
-                tickAxis &#x3D; axisGenerator(scale.d3Scale)
-                    .tickSize(config.tickSize)
-                    .tickFormat(() &#x3D;&gt; &quot;&quot;);
+                tickAxis &#x3D; axisGenerator(scale.d3Scale).tickSize(
+                    config.tickSize
+                );
+
+                if (scale.fixDomainValues?.length) {
+                    tickAxis.tickValues(scale.fixDomainValues);
+                }
+
+                tickAxis.tickFormat(() &#x3D;&gt; &quot;&quot;);
                 tickAxis.ticks(config.approximateTicks);
             }
             axis.tickGroup.call(tickAxis);
@@ -1964,10 +1974,13 @@ export class XYGrid extends Grid implements IGrid {
                 .selectAll(&quot;.tick line&quot;)
                 .classed(&quot;nui-zero-line&quot;, (d: any) &#x3D;&gt; d &#x3D;&#x3D;&#x3D; 0);
 
-        const leftGridLines &#x3D; axisGenerator(scale.d3Scale)
-            .tickSize(size)
-            .tickFormat(() &#x3D;&gt; &quot;&quot;)
-            .ticks(config.approximateTicks);
+        const leftGridLines &#x3D; axisGenerator(scale.d3Scale).tickSize(size);
+
+        if (scale.fixDomainValues?.length) {
+            leftGridLines.tickValues(scale.fixDomainValues);
+        }
+
+        leftGridLines.tickFormat(() &#x3D;&gt; &quot;&quot;).ticks(config.approximateTicks);
 
         if (config.gridTicks) {
             const gridSelection &#x3D; axis.tickGroup.call(leftGridLines);
