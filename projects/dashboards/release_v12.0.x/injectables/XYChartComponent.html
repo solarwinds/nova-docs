@@ -146,10 +146,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#removeMetric">removeMetric</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#transformData">transformData</a>
                             </li>
                         </ul>
@@ -565,78 +561,6 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="removeMetric"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            removeMetric
-                        </b>
-                        <a href="#removeMetric"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>removeMetric(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="403"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:403</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>metricId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
                     <a name="transformData"></a>
                     <span class="name">
                         <b>
@@ -657,8 +581,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="412"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:412</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="403"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:403</a></div>
                 </td>
             </tr>
 
@@ -1198,7 +1122,7 @@ export abstract class XYChartComponent
         public changeDetector: ChangeDetectorRef,
         public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
     ) {
-        super(timeseriesScalesService, dataSource);
+        super(eventBus, timeseriesScalesService, dataSource);
     }
 
     protected abstract createAccessors(
@@ -1410,15 +1334,6 @@ export abstract class XYChartComponent
             this.configuration.projectType &#x3D;&#x3D;&#x3D;
                 TimeseriesWidgetProjectType.PerfstackApp
         );
-    }
-
-    public removeMetric(metricId: string): void {
-        this.eventBus.next(CHART_METRIC_REMOVE, {
-            payload: {
-                metricId: metricId,
-                groupUniqueId: this.configuration.groupUniqueId,
-            },
-        });
     }
 
     public transformData(metricId: string, trId: TimeseriesTransformer): void {

@@ -113,7 +113,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:47</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -180,8 +180,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -278,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="105"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:105</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:106</a></div>
                 </td>
             </tr>
 
@@ -370,6 +370,7 @@ import {
 } from &quot;@nova-ui/charts&quot;;
 
 import { DashboardUnitConversionPipe } from &quot;../../common/pipes/public-api&quot;;
+import { roundToOptimalDecimals } from &quot;../../functions/round-array-values&quot;;
 import {
     ITimeseriesScaleConfig,
     ITimeseriesWidgetConfig,
@@ -564,7 +565,13 @@ export class TimeseriesScalesService {
         }
 
         const point &#x3D; (max - min) / 4;
-        return [min, min + point, min + 2 * point, max - point, max];
+        return roundToOptimalDecimals([
+            min,
+            min + point,
+            min + 2 * point,
+            max - point,
+            max,
+        ]);
     }
 }
 </code></pre>
