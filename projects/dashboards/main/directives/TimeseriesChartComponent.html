@@ -89,6 +89,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#removeMetric" >removeMetric</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#updateYAxisDomain" >updateYAxisDomain</a>
                             </li>
                         </ul>
@@ -158,7 +162,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:59</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -184,7 +188,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:52</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:57</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -198,6 +202,77 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMetric"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>removeMetric</b></span>
+                        <a href="#removeMetric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeMetric(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="241"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:241</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>metricId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -220,8 +295,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="213"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:213</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="219"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:219</a></div>
                 </td>
             </tr>
 
@@ -259,7 +334,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:63</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/timeseries-chart.component.ts:68</a></div>
                                 </td>
                             </tr>
 
@@ -273,6 +348,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     Directive,
+    Inject,
     Input,
     OnChanges,
     OnDestroy,
@@ -282,10 +358,13 @@
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
-import { IDataSource } from &quot;@nova-ui/bits&quot;;
+import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
 import { IXYScales } from &quot;@nova-ui/charts&quot;;
 
-import { WellKnownDataSourceFeatures } from &quot;../../../types&quot;;
+import {
+    PIZZAGNA_EVENT_BUS,
+    WellKnownDataSourceFeatures,
+} from &quot;../../../types&quot;;
 import { metricsSeriesMeasurementsMinMax } from &quot;../timeseries-helpers&quot;;
 import { TimeseriesScalesService } from &quot;../timeseries-scales.service&quot;;
 import {
@@ -296,6 +375,7 @@ import {
     ITimeseriesWidgetSeriesData,
     TimeseriesChartPreset,
 } from &quot;../types&quot;;
+import { CHART_METRIC_REMOVE } from &quot;../../../services/types&quot;;
 
 @Directive()
 // eslint-disable-next-line @angular-eslint/directive-class-suffix
@@ -324,6 +404,7 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
     }
 
     protected constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
         public timeseriesScalesService: TimeseriesScalesService,
         public dataSource: IDataSource
     ) {
@@ -483,6 +564,15 @@ export abstract class TimeseriesChartComponent&lt;T &#x3D; ITimeseriesWidgetSeri
                 );
             }
         }
+    }
+
+    public removeMetric(metricId: string): void {
+        this.eventBus.next(CHART_METRIC_REMOVE, {
+            payload: {
+                metricId: metricId,
+                groupUniqueId: this.configuration.groupUniqueId,
+            },
+        });
     }
 
     /** Updates chart data. */

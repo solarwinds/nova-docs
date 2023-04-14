@@ -304,6 +304,7 @@
     OnInit,
     SimpleChanges,
 } from &quot;@angular/core&quot;;
+import moment from &quot;moment/moment&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
@@ -313,8 +314,8 @@ import {
     TimeseriesZoomPluginsSyncService,
     ITimeseriesZoomPluginInspectionFrame,
 } from &quot;@nova-ui/charts&quot;;
+
 import { PIZZAGNA_EVENT_BUS } from &quot;../../../types&quot;;
-import moment from &quot;moment/moment&quot;;
 
 export const TIMESERIES_INSPECTION_MENU_ZOOM_IN: IEventDefinition&lt;
     IEvent&lt;ITimeseriesZoomPluginInspectionFrame&gt;
@@ -375,7 +376,7 @@ export class TimeseriesInspectionMenuComponent
         @Inject(PIZZAGNA_EVENT_BUS) private eventBus: EventBus&lt;IEvent&gt;,
         private syncService: TimeseriesZoomPluginsSyncService
     ) {}
-    public ngOnInit() {
+    public ngOnInit(): void {
         this.plugin.zoomCreated$.subscribe(() &#x3D;&gt; this.explore(false));
 
         this.eventBus
