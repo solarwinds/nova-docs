@@ -305,6 +305,11 @@ export const TIMESERIES_INSPECTION_MENU_SYNCHRONIZE: IEventDefinition&lt;
     id: &quot;TIMESERIES_INSPECTION_MENU_SYNCHRONIZE&quot;,
 };
 
+export const TIMESERIES_INSPECTION_MENU_CLEAR: IEventDefinition&lt;IEvent&lt;void&gt;&gt; &#x3D;
+    {
+        id: &quot;TIMESERIES_INSPECTION_MENU_CLEAR&quot;,
+    };
+
 export interface ITimeseriesZoomPluginExploreData {
     ids: string;
     startDate: moment.Moment;
@@ -350,6 +355,10 @@ export class TimeseriesInspectionMenuComponent
                     );
                 }
             });
+
+        this.eventBus
+            .getStream(TIMESERIES_INSPECTION_MENU_CLEAR)
+            .subscribe(() &#x3D;&gt; this.clearZoom());
 
         this.plugin?.openPopover$
             .pipe(takeUntil(this.destroy$))

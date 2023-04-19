@@ -189,6 +189,7 @@ import { Subject } from &quot;rxjs&quot;;
 import { Renderer } from &quot;../core/common/renderer&quot;;
 import { Scales } from &quot;../core/common/scales/types&quot;;
 import {
+    D3Selection,
     IAccessors,
     IDataSeries,
     IRenderContainers,
@@ -288,6 +289,7 @@ export interface IRenderSeries&lt;TA extends IAccessors&gt; {
     dataSeries: IDataSeries&lt;TA&gt;;
     containers: IRenderContainers;
     scales: Scales;
+    parentContainer?: D3Selection&lt;SVGElement&gt;;
 }
 
 export interface IHighlightStrategy&lt;TA, T &#x3D; Renderer&lt;TA&gt;&gt; {

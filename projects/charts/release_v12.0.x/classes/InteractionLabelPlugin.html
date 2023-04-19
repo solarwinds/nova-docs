@@ -168,7 +168,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="207"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:207</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="211"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:211</a></div>
                 </td>
             </tr>
 
@@ -378,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/core/plugins/interaction/interaction-label-plugin.ts:68</a></div>
                 </td>
             </tr>
 
@@ -634,6 +634,7 @@ export class InteractionLabelPlugin extends ChartPlugin {
     private lastInteractionValuesPayload: IInteractionValuesPayload;
     private interactionLabelLayer: D3Selection&lt;SVGElement&gt;;
     private destroy$ &#x3D; new Subject();
+    private elBBox: DOMRect;
 
     constructor(private formatterName &#x3D; &quot;title&quot;) {
         super();
@@ -745,21 +746,24 @@ export class InteractionLabelPlugin extends ChartPlugin {
         const textSelection &#x3D; interactionLabel
             .select(&quot;text&quot;)
             .text(labelContent);
-        const bbox &#x3D; (textSelection.node() as any).getBBox();
+
+        if (!this.elBBox) {
+            this.elBBox &#x3D; (textSelection.node() as SVGSVGElement).getBBox();
+        }
         const gridDimension &#x3D; this.chart.getGrid().config().dimension;
 
         // subtract the relative vertical text offset inside the bbox from
         // the grid height to determine the label&#x27;s vertical placement
-        const heightOffset &#x3D; gridDimension.height() - bbox.y;
+        const heightOffset &#x3D; gridDimension.height() - this.elBBox.y;
 
         textSelection
             .attr(&quot;transform&quot;, &#x60;translate(0, ${heightOffset})&#x60;)
             .style(&quot;text-anchor&quot;, &quot;middle&quot;);
 
         // match the horizontal padding to the built-in bbox vertical padding
-        const horizontalPadding &#x3D; (bbox.height + bbox.y) * 2;
+        const horizontalPadding &#x3D; (this.elBBox.height + this.elBBox.y) * 2;
 
-        const labelWidth &#x3D; bbox.width + horizontalPadding;
+        const labelWidth &#x3D; this.elBBox.width + horizontalPadding;
         const allowedRange: [number, number] &#x3D; [
             labelWidth / 2,
             gridDimension.width() - labelWidth / 2,
@@ -773,9 +777,9 @@ export class InteractionLabelPlugin extends ChartPlugin {
             .attrs({
                 transform: &#x60;translate(0,${heightOffset})&#x60;,
                 x: -(labelWidth / 2),
-                y: bbox.y,
+                y: this.elBBox.y,
                 width: labelWidth,
-                height: bbox.height,
+                height: this.elBBox.height,
             });
     }
 

@@ -144,11 +144,23 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#summaryLegendBcgColor">summaryLegendBcgColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#summaryLegendColor">summaryLegendColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#timeseriesChartTypes">timeseriesChartTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#timeseriesScalesService">timeseriesScalesService</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#zoomPluginsSyncService">zoomPluginsSyncService</a>
+                                <a href="#zoomPlugins">zoomPlugins</a>
                             </li>
                         </ul>
                     </td>
@@ -170,6 +182,14 @@
                                     <span class="modifier">Public</span>
                                 <a href="#getDataPointData">getDataPointData</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getDescriptionSecondary">getDescriptionSecondary</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isStatusChart">isStatusChart</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -188,12 +208,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(iconService: IconService, dataSource: IDataSource, timeseriesScalesService: <a href="../injectables/TimeseriesScalesService.html">TimeseriesScalesService</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, eventBus: EventBus<IEvent>, zoomPluginsSyncService: TimeseriesZoomPluginsSyncService)</code>
+<code>constructor(iconService: IconService, dataSource: IDataSource, timeseriesScalesService: <a href="../injectables/TimeseriesScalesService.html">TimeseriesScalesService</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, eventBus: EventBus<IEvent>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:86</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:98</a></div>
                             </td>
                         </tr>
 
@@ -270,18 +290,6 @@
                                                     </td>
                                                     
                                                 </tr>
-                                                <tr>
-                                                        <td>zoomPluginsSyncService</td>
-                                                  
-                                                        <td>
-                                                                    <code>TimeseriesZoomPluginsSyncService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -324,8 +332,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="301"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:301</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="326"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:326</a></div>
                 </td>
             </tr>
 
@@ -365,8 +373,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="101"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:101</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:112</a></div>
                 </td>
             </tr>
 
@@ -425,6 +433,131 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDescriptionSecondary"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            getDescriptionSecondary
+                        </b>
+                        <a href="#getDescriptionSecondary"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDescriptionSecondary(series: IChartAssistSeries<IAccessors>, index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="338"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:338</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>series</td>
+                                    <td>
+                                            <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isStatusChart"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isStatusChart
+                        </b>
+                        <a href="#isStatusChart"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isStatusChart()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="334"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:334</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
     <section>
     
@@ -452,7 +585,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:92</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:104</a></div>
                             </td>
                         </tr>
 
@@ -480,7 +613,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:82</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:89</a></div>
                             </td>
                         </tr>
 
@@ -513,7 +646,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:90</a></div>
                             </td>
                         </tr>
 
@@ -546,7 +679,88 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:87</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="summaryLegendBcgColor"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            summaryLegendBcgColor</b>
+                            <a href="#summaryLegendBcgColor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>SUMMARY_LEGEND_BCG_COLOR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:97</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="summaryLegendColor"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            summaryLegendColor</b>
+                            <a href="#summaryLegendColor"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>SUMMARY_LEGEND_COLOR</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:98</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="timeseriesChartTypes"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            timeseriesChartTypes</b>
+                            <a href="#timeseriesChartTypes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>TimeseriesChartTypes</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:96</a></div>
                             </td>
                         </tr>
 
@@ -574,7 +788,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:91</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:103</a></div>
                             </td>
                         </tr>
 
@@ -585,24 +799,24 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="zoomPluginsSyncService"></a>
+                        <a name="zoomPlugins"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            zoomPluginsSyncService</b>
-                            <a href="#zoomPluginsSyncService"><span class="icon ion-ios-link"></span></a>
+                            zoomPlugins</b>
+                            <a href="#zoomPlugins"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>TimeseriesZoomPluginsSyncService</code>
+                            <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TimeseriesWidgetZoomPlugin" target="_self" >TimeseriesWidgetZoomPlugin[]</a></code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:94</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts:95</a></div>
                             </td>
                         </tr>
 
@@ -635,6 +849,7 @@ import {
 import {
     BandScale,
     BarHighlightStrategy,
+    BarHighlightStrategyOutline,
     BarRenderer,
     Chart,
     DESTROY_EVENT,
@@ -650,7 +865,6 @@ import {
     statusAccessors,
     TimeIntervalScale,
     TimeseriesZoomPlugin,
-    TimeseriesZoomPluginsSyncService,
     XYGridConfig,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
@@ -661,9 +875,16 @@ import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&qu
 import {
     ITimeseriesWidgetData,
     ITimeseriesWidgetStatusData,
+    TimeseriesChartPreset,
+    TimeseriesChartTypes,
     TimeseriesWidgetProjectType,
+    TimeseriesWidgetZoomPlugin,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
 
 @Component({
     selector: &quot;nui-status-bar-chart&quot;,
@@ -682,13 +903,17 @@ export class StatusBarChartComponent
     protected renderer: Renderer&lt;IAccessors&gt;;
     private chartUpdate$ &#x3D; new Subject&lt;void&gt;();
 
+    public zoomPlugins: TimeseriesWidgetZoomPlugin[];
+    public timeseriesChartTypes &#x3D; TimeseriesChartTypes;
+    public summaryLegendBcgColor &#x3D; SUMMARY_LEGEND_BCG_COLOR;
+    public summaryLegendColor &#x3D; SUMMARY_LEGEND_COLOR;
+
     constructor(
         private iconService: IconService,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
         public changeDetector: ChangeDetectorRef,
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
-        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
     ) {
         super(eventBus, timeseriesScalesService, dataSource);
     }
@@ -734,9 +959,15 @@ export class StatusBarChartComponent
                   )
                 : undefined;
 
+        this.accessors.data.y &#x3D; (d) &#x3D;&gt; d.value;
+
         // disable pointer events on bars to ensure the zoom drag target is the mouse interactive area rather than the bars
         this.renderer &#x3D; new BarRenderer({
-            highlightStrategy: new BarHighlightStrategy(&quot;x&quot;),
+            highlightStrategy:
+                this.configuration?.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+                    ? new BarHighlightStrategyOutline(&quot;x&quot;)
+                    : new BarHighlightStrategy(&quot;x&quot;),
             pointerEvents: false,
         });
 
@@ -770,25 +1001,37 @@ export class StatusBarChartComponent
         this.chartUpdate$.next();
 
         // Assemble the series set
-        const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D;
-            this.widgetData.series.map(
-                (d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
-                    ...d,
-                    data: this.transformData(
-                        d.data,
-                        this.scales.x instanceof TimeIntervalScale
-                    ),
-                    accessors: this.accessors,
-                    renderer: this.renderer,
-                    scales: this.scales,
-                })
-            );
+        let series &#x3D; this.widgetData.series;
+        const summarySerie &#x3D; this.widgetData.summarySerie
+            ? [this.widgetData.summarySerie]
+            : [];
+        if (
+            series.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+            series[0].id &#x3D;&#x3D;&#x3D; this.widgetData.summarySerie?.id
+        ) {
+            // if the series contains only one item and its the same as the summary serie,
+            // there is no submetric and only the summary serie should be displayed
+            series &#x3D; [];
+        }
+        const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D; [
+            ...summarySerie,
+            ...series,
+        ].map((d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
+            ...d,
+            data: this.transformData(
+                d.data,
+                this.scales.x instanceof TimeIntervalScale
+            ),
+            accessors: this.accessors,
+            renderer: this.renderer,
+            scales: this.scales,
+        }));
 
         // Update the chart
         this.chartAssist.update(seriesSet);
 
         if (this.configuration.enableZoom) {
-            this.chartAssist.sparks.forEach((spark) &#x3D;&gt; {
+            this.chartAssist.sparks.forEach((spark, i) &#x3D;&gt; {
                 if (
                     this.configuration?.projectType &#x3D;&#x3D;&#x3D;
                     TimeseriesWidgetProjectType.PerfstackApp
@@ -798,12 +1041,7 @@ export class StatusBarChartComponent
                             TimeseriesZoomPlugin
                         )
                     ) {
-                        spark?.chart?.addPlugin(
-                            new TimeseriesZoomPlugin(
-                                { collectionId: this.collectionId },
-                                this.zoomPluginsSyncService
-                            )
-                        );
+                        spark?.chart?.addPlugin(this.zoomPlugins[i]);
                     }
                 } else {
                     if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
@@ -865,6 +1103,7 @@ export class StatusBarChartComponent
                     color: d.color,
                     thick: d.thick,
                     icon: d.icon,
+                    value: d.y,
                 });
             }
         });
@@ -902,6 +1141,21 @@ export class StatusBarChartComponent
                 TimeseriesWidgetProjectType.PerfstackApp
         );
     }
+
+    public isStatusChart(): boolean {
+        return this.configuration?.type !&#x3D;&#x3D; TimeseriesChartTypes.alert;
+    }
+
+    public getDescriptionSecondary(
+        series: IChartAssistSeries&lt;IAccessors&gt;,
+        index: number
+    ): string {
+        if (this.isStatusChart()) {
+            return series.legendDescriptionSecondary;
+        }
+
+        return index &#x3D;&#x3D;&#x3D; 0 ? series.legendDescriptionSecondary : &quot;&quot;;
+    }
 }
 
 interface IStatusData {
@@ -924,7 +1178,7 @@ interface IStatusData {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div    *ngIf="chartAssist"    class="status-bar-chart"    [class.layout-fixed]="configuration.gridConfig?.fixedLayout">    <div        class="d-flex"        *ngFor="let spark of chartAssist.sparks; trackBy: chartAssist.trackByFn"    >        <nui-chart            class="d-flex flex-grow-1"            [chart]="spark.chart"            [nuiChartCollectionId]="collectionId"        ></nui-chart>        <div            class="d-flex flex-column pl-2"            [class.layout-fixed-legend]="configuration.gridConfig?.fixedLayout"            *ngIf="                spark.chartSeriesSet?.length > 0 && spark.chartSeriesSet[0];                let series            "        >            <nui-legend                class="status-bar-chart__legend"                [active]="chartAssist.isLegendActive"            >                <nui-legend-series                    [descriptionPrimary]="series.legendDescriptionPrimary"                    [descriptionSecondary]="series.legendDescriptionSecondary"                >                    <div                        class="status-bar-chart__legend__tile d-flex justify-content-center align-items-center"                    >                        <div                            class="w-100 h-100 status-bar-chart__legend__tile__background"                            [style.background-color]="                                getDataPointData(series, \'color\')                            "                        ></div>                        <nui-icon                            *ngIf="getDataPointData(series, \'icon\'); let icon"                            class="status-bar-chart__legend__tile__icon"                            [icon]="icon"                        ></nui-icon>                    </div>                    <button                        nui-button                        legendMenu                        *ngIf="displayDeleteButton()"                        (click)="removeMetric(series.id)"                        icon="remove"                        type="button"                        displayStyle="action"                    ></button>                </nui-legend-series>            </nui-legend>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div    *ngIf="chartAssist"    class="status-bar-chart"    [class.layout-fixed]="configuration.gridConfig?.fixedLayout">    <div        class="d-flex"        *ngFor="            let spark of chartAssist.sparks;            let i = index;            trackBy: chartAssist.trackByFn        "    >        <nui-chart            class="d-flex flex-grow-1"            [chart]="spark.chart"            [nuiChartCollectionId]="collectionId"        ></nui-chart>        <div            class="d-flex flex-column pl-2"            [class.justify-content-center]="                configuration.type === timeseriesChartTypes.alert &&                chartAssist.sparks.length > 1            "            [class.last-legend-margin]="                configuration.type === timeseriesChartTypes.alert &&                i > 0 &&                i === chartAssist.sparks.length - 1            "            [class.layout-fixed-legend]="configuration.gridConfig?.fixedLayout"            *ngIf="                spark.chartSeriesSet?.length > 0 && spark.chartSeriesSet[0];                let series            "        >            <nui-legend                class="status-bar-chart__legend"                [active]="chartAssist.isLegendActive"            >                <nui-legend-series                    [descriptionPrimary]="series.legendDescriptionPrimary"                    [descriptionSecondary]="getDescriptionSecondary(series, i)"                >                    <nui-rich-legend-tile                        *ngIf="                            configuration.type === timeseriesChartTypes.alert                        "                        [value]="                            chartAssist.getHighlightedValue(                                series,                                \'y\',                                \'value\'                            )                        "                        [backgroundColor]="                            i === 0                                ? summaryLegendBcgColor                                : chartAssist.palette.standardColors.get(                                      series.id                                  )                        "                        [color]="                            i === 0                                ? summaryLegendColor                                : chartAssist.palette.textColors.get(series.id)                        "                    >                    </nui-rich-legend-tile>                    <div                        *ngIf="isStatusChart()"                        class="status-bar-chart__legend__tile d-flex justify-content-center align-items-center"                    >                        <div                            class="w-100 h-100 status-bar-chart__legend__tile__background"                            [style.background-color]="                                getDataPointData(series, \'color\')                            "                        ></div>                        <nui-icon                            *ngIf="getDataPointData(series, \'icon\'); let icon"                            class="status-bar-chart__legend__tile__icon"                            [icon]="icon"                        ></nui-icon>                    </div>                    <button                        nui-button                        legendMenu                        *ngIf="displayDeleteButton()"                        (click)="removeMetric(series.id)"                        icon="remove"                        type="button"                        displayStyle="action"                    ></button>                </nui-legend-series>            </nui-legend>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': ''},{'name': 'DonutContentSumFormatterComponent', 'selector': ''},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': ''},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': ''},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': ''},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'SiUnitsFormatterComponent', 'selector': ''},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': ''},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesInspectionMenuComponent', 'selector': 'nui-timeseries-inspection-menu'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
     var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
     var ACTUAL_COMPONENT = {'name': 'StatusBarChartComponent'};

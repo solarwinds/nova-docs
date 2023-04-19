@@ -480,7 +480,9 @@ export class TimeseriesScalesService {
 
                 if (
                     widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StatusBar ||
-                    widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StackedArea
+                    (widgetConfig?.preset &#x3D;&#x3D;&#x3D;
+                        TimeseriesChartPreset.StackedArea &amp;&amp;
+                        scaleConfig.properties?.axisUnits &#x3D;&#x3D;&#x3D; &quot;percent&quot;)
                 ) {
                     return;
                 }

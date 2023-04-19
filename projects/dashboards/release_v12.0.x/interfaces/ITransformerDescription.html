@@ -197,9 +197,9 @@ import {
     Renderer,
     SequentialColorProvider,
     SET_DOMAIN_EVENT,
-    TimeseriesZoomPlugin,
-    TimeseriesZoomPluginsSyncService,
     XYGrid,
+    XYRenderer,
+    XYAccessors,
 } from &quot;@nova-ui/charts&quot;;
 
 import {
@@ -228,11 +228,17 @@ import {
 import {
     ITimeseriesWidgetSeriesData,
     TimeseriesChartPreset,
+    TimeseriesChartTypes,
     TimeseriesInteractionType,
     TimeseriesTransformer,
+    TimeseriesWidgetZoomPlugin,
     TimeseriesWidgetProjectType,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
 
 interface ITransformerDescription {
     displayName: string;
@@ -250,10 +256,15 @@ export abstract class XYChartComponent
     public chartAssist: ChartAssist;
     public valueAccessorKey: string &#x3D; &quot;y&quot;;
     public collectionId: string &#x3D; &quot;&quot;;
-    public zoomPlugin: TimeseriesZoomPlugin;
+    public zoomPlugins: TimeseriesWidgetZoomPlugin[];
 
     protected renderer: Renderer&lt;IAccessors&gt;;
     protected accessors: IAccessors;
+
+    public timeseriesChartTypes &#x3D; TimeseriesChartTypes;
+    public summarySerie: IChartAssistSeries&lt;IAccessors&gt;;
+    public summaryLegendBcgColor &#x3D; SUMMARY_LEGEND_BCG_COLOR;
+    public summaryLegendColor &#x3D; SUMMARY_LEGEND_COLOR;
 
     public transformers &#x3D; new Map&lt;
         TimeseriesTransformer,
@@ -329,8 +340,7 @@ export abstract class XYChartComponent
         @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
-        public changeDetector: ChangeDetectorRef,
-        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
+        public changeDetector: ChangeDetectorRef
     ) {
         super(eventBus, timeseriesScalesService, dataSource);
     }
@@ -349,27 +359,49 @@ export abstract class XYChartComponent
         if (scales.yRight) {
             yScales.push(scales.yRight);
         }
-        return data.map((series: any, i: number) &#x3D;&gt; {
-            // matches scale units to the metric unit for either left y-axis scale or right y-axis scale
-            let yScale &#x3D; yScales.find(
-                (yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; series.metricUnits
-            );
-            if (!yScale) {
-                yScale &#x3D;
-                    yScales.find((yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; &quot;generic&quot;) ??
-                    scales.y;
-            }
+        const dataMapped: IChartAssistSeries&lt;IAccessors&gt;[] &#x3D; data.map(
+            (series: any) &#x3D;&gt; {
+                // matches scale units to the metric unit for either left y-axis scale or right y-axis scale
+                let yScale &#x3D; yScales.find(
+                    (yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; series.metricUnits
+                );
+                if (!yScale) {
+                    yScale &#x3D;
+                        yScales.find(
+                            (yScale) &#x3D;&gt; yScale.scaleUnits &#x3D;&#x3D;&#x3D; &quot;generic&quot;
+                        ) ?? scales.y;
+                }
 
-            return {
-                ...series,
+                return {
+                    ...series,
+                    scales: {
+                        x: scales.x,
+                        y: yScale,
+                    },
+                    renderer: this.renderer,
+                    accessors: this.accessors,
+                };
+            }
+        );
+
+        if (this.widgetData.summarySerie) {
+            this.summarySerie &#x3D; {
+                ...this.widgetData.summarySerie,
+                accessors: new XYAccessors(),
+                renderer: new XYRenderer({
+                    ignoreForDomainCalculation: true,
+                }),
                 scales: {
                     x: scales.x,
-                    y: yScale,
+                    y: scales.y,
                 },
-                renderer: this.renderer,
-                accessors: this.accessors,
+                showInLegend: false,
+                preprocess: false,
             };
-        });
+            dataMapped.push(this.summarySerie);
+        }
+
+        return dataMapped;
     }
 
     /** Checks if legend should be shown. */
@@ -474,8 +506,8 @@ export abstract class XYChartComponent
                 this.configuration.gridConfig.sideMargin;
         }
 
-        if (this.configuration.enableZoom) {
-            chart.addPlugin(this.zoomPlugin);
+        if (this.configuration.enableZoom &amp;&amp; this.zoomPlugins.length) {
+            chart.addPlugin(this.zoomPlugins[0]);
         }
 
         chart

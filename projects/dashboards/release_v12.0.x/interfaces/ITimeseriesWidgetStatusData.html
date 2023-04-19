@@ -215,6 +215,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ITimeFramePresetDictionary, UnitOption } from &quot;@nova-ui/bits&quot;;
+import { TimeseriesZoomPlugin, ZoomPlugin } from &quot;@nova-ui/charts&quot;;
 
 import { IProperties } from &quot;../../types&quot;;
 import { LegendPlacement } from &quot;../../widget-types/common/widget/legend&quot;;
@@ -278,6 +279,7 @@ export interface ITimeseriesWidgetStatusData
 
 export interface ITimeseriesOutput&lt;T &#x3D; ITimeseriesWidgetSeriesData&gt; {
     series: ITimeseriesWidgetData&lt;T&gt;[];
+    summarySerie?: ITimeseriesWidgetData&lt;T&gt;;
 }
 
 export enum TimeseriesInteractionType {
@@ -333,11 +335,11 @@ export enum TimeseriesChartPreset {
 
 /** Enumeration of timeseries chart types recieved from the backend */
 export enum TimeseriesChartTypes {
-    gauge &#x3D; 1, // Line
+    line &#x3D; 1, // Line
     counter &#x3D; 2, // StackedBar
     event &#x3D; 3, // StackedBar
     alert &#x3D; 4, // StackedArea
-    state &#x3D; 5, // StackedArea
+    status &#x3D; 5, // StackedArea
     multi &#x3D; 6, // StatusBar
     dpaWaitTime &#x3D; 7, // StatusBar
 }
@@ -359,6 +361,8 @@ export enum TimeseriesWidgetProjectType {
     ModernDashboard,
     PerfstackApp,
 }
+
+export type TimeseriesWidgetZoomPlugin &#x3D; TimeseriesZoomPlugin | ZoomPlugin;
 </code></pre>
     </div>
 </div>

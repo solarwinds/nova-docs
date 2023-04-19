@@ -121,8 +121,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="143"
-                            class="link-to-prism">src/renderers/types.ts:143</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="145"
+                            class="link-to-prism">src/renderers/types.ts:145</a></div>
                 </td>
             </tr>
 
@@ -215,8 +215,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="129"
-                            class="link-to-prism">src/renderers/types.ts:129</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/renderers/types.ts:131</a></div>
                 </td>
             </tr>
 
@@ -321,8 +321,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="136"
-                            class="link-to-prism">src/renderers/types.ts:136</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/renderers/types.ts:138</a></div>
                 </td>
             </tr>
 
@@ -417,6 +417,7 @@ import { Subject } from &quot;rxjs&quot;;
 import { Renderer } from &quot;../core/common/renderer&quot;;
 import { Scales } from &quot;../core/common/scales/types&quot;;
 import {
+    D3Selection,
     IAccessors,
     IDataSeries,
     IRenderContainers,
@@ -516,6 +517,7 @@ export interface IRenderSeries&lt;TA extends IAccessors&gt; {
     dataSeries: IDataSeries&lt;TA&gt;;
     containers: IRenderContainers;
     scales: Scales;
+    parentContainer?: D3Selection&lt;SVGElement&gt;;
 }
 
 export interface IHighlightStrategy&lt;TA, T &#x3D; Renderer&lt;TA&gt;&gt; {
