@@ -288,6 +288,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/BarHighlightStrategy.html" data-type="entity-link" >BarHighlightStrategy</a>
                             </li>
                             <li class="link">
+                                <a href="classes/BarHighlightStrategyOutline.html" data-type="entity-link" >BarHighlightStrategyOutline</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/BarHorizontalGridConfig.html" data-type="entity-link" >BarHorizontalGridConfig</a>
                             </li>
                             <li class="link">

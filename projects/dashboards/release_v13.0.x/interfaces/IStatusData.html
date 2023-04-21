@@ -333,6 +333,7 @@ import {
 import {
     BandScale,
     BarHighlightStrategy,
+    BarHighlightStrategyOutline,
     BarRenderer,
     Chart,
     DESTROY_EVENT,
@@ -348,18 +349,23 @@ import {
     statusAccessors,
     TimeIntervalScale,
     TimeseriesZoomPlugin,
-    TimeseriesZoomPluginsSyncService,
     XYGridConfig,
     ZoomPlugin,
 } from &quot;@nova-ui/charts&quot;;
 
 import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
 import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
 import {
     ITimeseriesWidgetData,
     ITimeseriesWidgetStatusData,
+    TimeseriesChartTypes,
     TimeseriesWidgetProjectType,
+    TimeseriesWidgetZoomPlugin,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
 
@@ -380,13 +386,17 @@ export class StatusBarChartComponent
     protected renderer: Renderer&lt;IAccessors&gt;;
     private chartUpdate$ &#x3D; new Subject&lt;void&gt;();
 
+    public zoomPlugins: TimeseriesWidgetZoomPlugin[];
+    public timeseriesChartTypes &#x3D; TimeseriesChartTypes;
+    public summaryLegendBcgColor &#x3D; SUMMARY_LEGEND_BCG_COLOR;
+    public summaryLegendColor &#x3D; SUMMARY_LEGEND_COLOR;
+
     constructor(
         private iconService: IconService,
         @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
         public timeseriesScalesService: TimeseriesScalesService,
         public changeDetector: ChangeDetectorRef,
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;,
-        public zoomPluginsSyncService: TimeseriesZoomPluginsSyncService
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
     ) {
         super(eventBus, timeseriesScalesService, dataSource);
     }
@@ -432,9 +442,15 @@ export class StatusBarChartComponent
                   )
                 : undefined;
 
+        this.accessors.data.y &#x3D; (d) &#x3D;&gt; d.value;
+
         // disable pointer events on bars to ensure the zoom drag target is the mouse interactive area rather than the bars
         this.renderer &#x3D; new BarRenderer({
-            highlightStrategy: new BarHighlightStrategy(&quot;x&quot;),
+            highlightStrategy:
+                this.configuration?.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+                    ? new BarHighlightStrategyOutline(&quot;x&quot;)
+                    : new BarHighlightStrategy(&quot;x&quot;),
             pointerEvents: false,
         });
 
@@ -468,25 +484,37 @@ export class StatusBarChartComponent
         this.chartUpdate$.next();
 
         // Assemble the series set
-        const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D;
-            this.widgetData.series.map(
-                (d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
-                    ...d,
-                    data: this.transformData(
-                        d.data,
-                        this.scales.x instanceof TimeIntervalScale
-                    ),
-                    accessors: this.accessors,
-                    renderer: this.renderer,
-                    scales: this.scales,
-                })
-            );
+        let series &#x3D; this.widgetData.series;
+        const summarySerie &#x3D; this.widgetData.summarySerie
+            ? [this.widgetData.summarySerie]
+            : [];
+        if (
+            series.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+            series[0].id &#x3D;&#x3D;&#x3D; this.widgetData.summarySerie?.id
+        ) {
+            // if the series contains only one item and its the same as the summary serie,
+            // there is no submetric and only the summary serie should be displayed
+            series &#x3D; [];
+        }
+        const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D; [
+            ...summarySerie,
+            ...series,
+        ].map((d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
+            ...d,
+            data: this.transformData(
+                d.data,
+                this.scales.x instanceof TimeIntervalScale
+            ),
+            accessors: this.accessors,
+            renderer: this.renderer,
+            scales: this.scales,
+        }));
 
         // Update the chart
         this.chartAssist.update(seriesSet);
 
         if (this.configuration.enableZoom) {
-            this.chartAssist.sparks.forEach((spark) &#x3D;&gt; {
+            this.chartAssist.sparks.forEach((spark, i) &#x3D;&gt; {
                 if (
                     this.configuration?.projectType &#x3D;&#x3D;&#x3D;
                     TimeseriesWidgetProjectType.PerfstackApp
@@ -496,12 +524,7 @@ export class StatusBarChartComponent
                             TimeseriesZoomPlugin
                         )
                     ) {
-                        spark?.chart?.addPlugin(
-                            new TimeseriesZoomPlugin(
-                                { collectionId: this.collectionId },
-                                this.zoomPluginsSyncService
-                            )
-                        );
+                        spark?.chart?.addPlugin(this.zoomPlugins[i]);
                     }
                 } else {
                     if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
@@ -564,6 +587,7 @@ export class StatusBarChartComponent
                     color: d.color,
                     thick: d.thick,
                     icon: d.icon,
+                    value: d.y,
                 });
             }
         });
@@ -600,6 +624,21 @@ export class StatusBarChartComponent
             this.configuration.projectType &#x3D;&#x3D;&#x3D;
                 TimeseriesWidgetProjectType.PerfstackApp
         );
+    }
+
+    public isStatusChart(): boolean {
+        return this.configuration?.type !&#x3D;&#x3D; TimeseriesChartTypes.alert;
+    }
+
+    public getDescriptionSecondary(
+        series: IChartAssistSeries&lt;IAccessors&gt;,
+        index: number
+    ): string {
+        if (this.isStatusChart()) {
+            return series.legendDescriptionSecondary;
+        }
+
+        return index &#x3D;&#x3D;&#x3D; 0 ? series.legendDescriptionSecondary : &quot;&quot;;
     }
 }
 
