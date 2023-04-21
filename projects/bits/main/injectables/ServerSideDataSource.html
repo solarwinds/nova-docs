@@ -1204,7 +1204,7 @@ import { IFilteringOutputs, IFilters } from &quot;./public-api&quot;;
 export abstract class ServerSideDataSource&lt;
         T,
         F extends IFilters &#x3D; IFilters,
-        D &#x3D; any
+        D extends IFilters &#x3D; IFilters
     &gt;
     extends DataSourceService&lt;T&gt;
     implements OnDestroy

@@ -217,7 +217,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, OnDestroy, Optional } from &quot;@angular/core&quot;;
 import keyBy from &quot;lodash/keyBy&quot;;
 import uniq from &quot;lodash/uniq&quot;;
-import { Subject, Subscription } from &quot;rxjs&quot;;
+import { Subject } from &quot;rxjs&quot;;
 import { takeUntil } from &quot;rxjs/operators&quot;;
 
 import { EventBus, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
@@ -259,8 +259,8 @@ export interface IWidgetToDashboardEventProxyConfiguration extends IProperties {
 export class WidgetToDashboardEventProxyService
     implements IConfigurable, OnDestroy
 {
-    private upstreamSubscriptions: Record&lt;string, Subscription&gt; &#x3D; {};
-    private downstreamSubscriptions: Record&lt;string, Subscription&gt; &#x3D; {};
+    private upstreamSubscriptions: Record&lt;string, any&gt; &#x3D; {};
+    private downstreamSubscriptions: Record&lt;string, any&gt; &#x3D; {};
     private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private component: { componentId: string };
 
@@ -379,7 +379,7 @@ export class WidgetToDashboardEventProxyService
 
     private registerSubscriptions(
         streams: string[] &#x3D; [],
-        subscriptions: Record&lt;string, Subscription&gt;,
+        subscriptions: Record&lt;string, any&gt;,
         sourceBus: EventBus&lt;IEvent&gt;,
         handleEvent: (stream: IEventDefinition, event: IEvent) &#x3D;&gt; void
     ) {
@@ -400,8 +400,11 @@ export class WidgetToDashboardEventProxyService
             (s) &#x3D;&gt; !subscriptions[s]
         )) {
             const eventDefinition &#x3D; this.eventRegistry.getEvent(streamId);
-            subscriptions[streamId] &#x3D; sourceBus
-                .getStream(eventDefinition)
+            subscriptions[streamId] &#x3D; (
+                sourceBus.getStream(
+                    eventDefinition
+                ) as object as Subject&lt;IEvent&gt;
+            )
                 .pipe(takeUntil(this.destroy$))
                 .subscribe((event: IEvent) &#x3D;&gt; {
                     handleEvent(eventDefinition, event);

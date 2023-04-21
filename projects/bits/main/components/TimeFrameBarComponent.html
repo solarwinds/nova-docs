@@ -594,8 +594,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="201"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:201</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="203"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:203</a></div>
                 </td>
             </tr>
 
@@ -665,8 +665,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="191"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:191</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="193"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:193</a></div>
                 </td>
             </tr>
 
@@ -736,8 +736,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="178"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:178</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:180</a></div>
                 </td>
             </tr>
 
@@ -775,8 +775,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="164"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:164</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="166"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:166</a></div>
                 </td>
             </tr>
 
@@ -814,8 +814,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="174"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:174</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:176</a></div>
                 </td>
             </tr>
 
@@ -853,8 +853,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="211"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:211</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="213"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:213</a></div>
                 </td>
             </tr>
 
@@ -924,8 +924,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="182"
-                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:182</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:184</a></div>
                 </td>
             </tr>
 
@@ -1182,11 +1182,6 @@
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>this.timeframeService.getDefaultPresets()</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/lib/convenience/time-frame-bar/time-frame-bar.component.ts:93</a></div>
@@ -1371,7 +1366,7 @@ export class TimeFrameBarComponent
     timeFramePicker: TimeFramePickerComponent;
     @ContentChild(QuickPickerComponent) quickPicker: QuickPickerComponent;
 
-    public presets &#x3D; this.timeframeService.getDefaultPresets();
+    public presets;
     public pickerTimeframe: ITimeframe;
     public closePopoverSubject &#x3D; new Subject&lt;void&gt;();
     public changed: boolean &#x3D; false;
@@ -1386,7 +1381,9 @@ export class TimeFrameBarComponent
         public timeframeService: TimeframeService,
         private logger: LoggerService,
         private changeDetectorRef: ChangeDetectorRef
-    ) {}
+    ) {
+        this.presets &#x3D; this.timeframeService.getDefaultPresets();
+    }
 
     public ngAfterContentInit(): void {
         if (!this.timeFramePicker) {

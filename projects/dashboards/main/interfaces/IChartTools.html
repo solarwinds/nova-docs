@@ -374,12 +374,12 @@ import {
 
 import { ProportionalWidgetChartTypes } from &quot;../components/proportional-widget/types&quot;;
 
-type PreprocessorType&lt;T&gt; &#x3D; (
+type PreprocessorType&lt;T extends IAccessors&gt; &#x3D; (
     this: ChartAssist,
     series: IChartAssistSeries&lt;T&gt;[]
 ) &#x3D;&gt; IChartAssistSeries&lt;T&gt;[];
 
-export interface IChartAttributes&lt;T &#x3D; IAccessors&gt; {
+export interface IChartAttributes&lt;T extends IAccessors &#x3D; IAccessors&gt; {
     grid: IGrid;
     accessors: IAccessors;
     renderer: Renderer&lt;IAccessors&gt;;
@@ -387,7 +387,7 @@ export interface IChartAttributes&lt;T &#x3D; IAccessors&gt; {
     preprocessor?: PreprocessorType&lt;T&gt;;
 }
 
-interface IChartTools&lt;T &#x3D; IAccessors&gt; {
+interface IChartTools&lt;T extends IAccessors &#x3D; IAccessors&gt; {
     config?: IBarChartConfig;
     preprocessor?: PreprocessorType&lt;T&gt;;
     gridFunction: () &#x3D;&gt; IGrid;
@@ -452,7 +452,7 @@ export class CategoryChartUtilService {
     ): IChartTools | IChartTools&lt;IRadialAccessors&gt; {
         const radialChartAccessors &#x3D; (colors: IValueProvider&lt;string&gt;) &#x3D;&gt; {
             const accessors &#x3D; new RadialAccessors(colors);
-            accessors.series.color &#x3D; (seriesId, series) &#x3D;&gt;
+            accessors.series.color &#x3D; (seriesId: any, series: any) &#x3D;&gt;
                 series.color ?? colors.get(seriesId);
             return accessors;
         };
@@ -465,8 +465,10 @@ export class CategoryChartUtilService {
             // @ts-ignore: TS2683: &#x27;this&#x27; implicitly has type &#x27;any&#x27; because it does not have a type annotation.;
             // An outer value of &#x27;this&#x27; is shadowed by this container.
             const accessors &#x3D; barAccessors(this.config, colors, markers);
-            accessors.series.color &#x3D; (seriesId, series) &#x3D;&gt;
-                series.color ?? colors?.get(seriesId);
+            accessors.series.color &#x3D; (
+                seriesId: string,
+                series: IDataSeries&lt;IAccessors&gt;
+            ) &#x3D;&gt; series.color ?? colors?.get(seriesId);
             // TODO: Remove custom accessor after fixing NUI-3688 in charts
             accessors.data.value &#x3D; (d: any) &#x3D;&gt;
                 Number.isFinite(d) ? d : d.value;

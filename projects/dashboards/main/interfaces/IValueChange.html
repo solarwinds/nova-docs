@@ -230,7 +230,7 @@ export function mergeChanges&lt;T&gt;(result: T, ...changes: IValueChange[]): T 
 
     const accTemplate &#x3D; valueType &#x3D;&#x3D;&#x3D; &quot;object[]&quot; ? [] : {};
 
-    return keys.reduce((acc: Record&lt;string, any&gt;, key) &#x3D;&gt; {
+    const ret &#x3D; keys.reduce((acc: Record&lt;string, any&gt;, key) &#x3D;&gt; {
         const checkedResult &#x3D;
             typeof result &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
             result &#x3D;&#x3D;&#x3D; null ||
@@ -250,9 +250,14 @@ export function mergeChanges&lt;T&gt;(result: T, ...changes: IValueChange[]): T 
         }));
 
         // recursively execute this method for given property
-        acc[key] &#x3D; mergeChanges(checkedResult, ...nestedChanges);
+        acc[key] &#x3D; mergeChanges(
+            checkedResult as Record&lt;string, any&gt;,
+            ...nestedChanges
+        );
         return acc;
-    }, accTemplate as T) as T;
+    }, accTemplate);
+
+    return ret as T;
 }
 
 /**

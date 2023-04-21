@@ -118,9 +118,11 @@
                                 <a href="#_animationDone" >_animationDone</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#_stepHeader" >_stepHeader</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#_steps" >_steps</a>
                             </li>
                             <li>
@@ -408,6 +410,7 @@
                 <td class="col-md-4">
                     <a name="_stepHeader"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>_stepHeader</b></span>
                         <a href="#_stepHeader"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -449,6 +452,7 @@
                 <td class="col-md-4">
                     <a name="_steps"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>_steps</b></span>
                         <a href="#_steps"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -930,14 +934,14 @@ export class WizardDirective
 
     /** The list of step headers of the steps in the stepper. */
     @ViewChildren(WizardStepHeaderComponent)
-    _stepHeader: QueryList&lt;WizardStepHeaderComponent&gt;;
+    declare _stepHeader: QueryList&lt;WizardStepHeaderComponent&gt;;
 
     /** Stream of animation &#x60;done&#x60; events when the body expands/collapses. */
     _animationDone &#x3D; new Subject&lt;AnimationEvent&gt;();
 
     /** Steps that the stepper holds. */
     @ContentChildren(WizardStepV2Component, { descendants: true })
-    _steps: QueryList&lt;WizardStepV2Component&gt;;
+    declare _steps: QueryList&lt;WizardStepV2Component&gt;;
 
     /** The step that is selected. */
     @Input()

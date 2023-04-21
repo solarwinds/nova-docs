@@ -856,9 +856,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/TableCellEdgeHighlight.html" data-type="entity-link" >TableCellEdgeHighlight</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/TableRowData.html" data-type="entity-link" >TableRowData</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/TypedAnimationEvent.html" data-type="entity-link" >TypedAnimationEvent</a>
                             </li>
                         </ul>
