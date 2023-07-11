@@ -1,0 +1,916 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/charts documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@nova-ui/charts documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>MarkerUtils</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/renderers/marker-utils.ts</code>
+        </p>
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#DEFAULT_MARKER_CONTAINER_CLASS">DEFAULT_MARKER_CONTAINER_CLASS</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#MARKER_PATH_CLASS">MARKER_PATH_CLASS</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#drawMarker">drawMarker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#manageMarker">manageMarker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#removeMarker">removeMarker</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="DEFAULT_MARKER_CONTAINER_CLASS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                                <span class="modifier">Readonly</span>
+                            DEFAULT_MARKER_CONTAINER_CLASS</b>
+                            <a href="#DEFAULT_MARKER_CONTAINER_CLASS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;marker&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/renderers/marker-utils.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The default class for the marker&#39;s container </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MARKER_PATH_CLASS"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                                <span class="modifier">Readonly</span>
+                            MARKER_PATH_CLASS</b>
+                            <a href="#MARKER_PATH_CLASS"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&quot;marker-path&quot;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/renderers/marker-utils.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The class used for the marker&#39;s svg path </p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drawMarker"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            drawMarker
+                        </b>
+                        <a href="#drawMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>drawMarker(dataPoint: <a href="../interfaces/IDataPoint.html">IDataPoint</a>, marker: <a href="../interfaces/IChartMarker.html">IChartMarker</a>, color: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, target: <a href="../undefineds/D3Selection.html">D3Selection<SVGGElement></a>, dataPointSubject: <a href="../classes/Renderer.html">Subject<IRendererEventPayload<IInteractionDataPointEvent>></a>, className: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, markerInteractionConfig)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="138"
+                            class="link-to-prism">src/renderers/marker-utils.ts:138</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataPoint</td>
+                                    <td>
+                                                <code><a href="../interfaces/IDataPoint.html" target="_self" >IDataPoint</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>marker</td>
+                                    <td>
+                                                <code><a href="../interfaces/IChartMarker.html" target="_self" >IChartMarker</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>color</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGGElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>dataPointSubject</td>
+                                    <td>
+                                                <code><a href="../classes/Renderer.html" target="_self" >Subject&lt;IRendererEventPayload&lt;IInteractionDataPointEvent&gt;&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>className</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>markerInteractionConfig</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>DEFAULT_MARKER_INTERACTION_CONFIG</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="manageMarker"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            manageMarker
+                        </b>
+                        <a href="#manageMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>manageMarker(dataSeries: <a href="../classes/DataSeries.html">IDataSeries<IAccessors></a>, scales: <a href="../interfaces/IXYScales.html">IXYScales</a>, dataPointIndex: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, container: <a href="../undefineds/D3Selection.html">D3Selection<SVGGElement></a>, rendererSubject: <a href="../interfaces/IRendererEventPayload.html">Subject<IRendererEventPayload></a>, markerInteractionConfig)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/renderers/marker-utils.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This method impersonates marker related logic used in various renderers</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataSeries</td>
+                                    <td>
+                                                <code><a href="../classes/DataSeries.html" target="_self" >IDataSeries&lt;IAccessors&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>scales</td>
+                                    <td>
+                                                <code><a href="../interfaces/IXYScales.html" target="_self" >IXYScales</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>dataPointIndex</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>container</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGGElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>rendererSubject</td>
+                                    <td>
+                                                <code><a href="../interfaces/IRendererEventPayload.html" target="_self" >Subject&lt;IRendererEventPayload&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>markerInteractionConfig</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>DEFAULT_MARKER_INTERACTION_CONFIG</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMarker"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Static</span>
+                            removeMarker
+                        </b>
+                        <a href="#removeMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeMarker(target: <a href="../undefineds/D3Selection.html">D3Selection<SVGGElement></a>, className: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="242"
+                            class="link-to-prism">src/renderers/marker-utils.ts:242</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>target</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#D3Selection" target="_self" >D3Selection&lt;SVGGElement&gt;</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>className</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Subject } from &quot;rxjs&quot;;
+
+import { UtilService } from &quot;@nova-ui/bits&quot;;
+
+import {
+    DATA_POINT_INTERACTION_RESET,
+    INTERACTION_DATA_POINT_EVENT,
+} from &quot;../constants&quot;;
+import { isInRange } from &quot;../core/common/scales/helpers/is-in-range&quot;;
+import { IXYScales } from &quot;../core/common/scales/types&quot;;
+import {
+    D3Selection,
+    IAccessors,
+    IChartMarker,
+    IDataPoint,
+    IDataSeries,
+    IInteractionDataPointEvent,
+    InteractionType,
+    IRendererEventPayload,
+} from &quot;../core/common/types&quot;;
+import { DEFAULT_MARKER_INTERACTION_CONFIG } from &quot;./constants&quot;;
+
+export class MarkerUtils {
+    /** The default class for the marker&#x27;s container */
+    public static readonly DEFAULT_MARKER_CONTAINER_CLASS &#x3D; &quot;marker&quot;;
+
+    /** The class used for the marker&#x27;s svg path */
+    public static readonly MARKER_PATH_CLASS &#x3D; &quot;marker-path&quot;;
+
+    /**
+     * This method impersonates marker related logic used in various renderers
+     *
+     * @param dataSeries
+     * @param scales
+     * @param dataPointIndex
+     * @param container
+     * @param rendererSubject
+     */
+    public static manageMarker(
+        dataSeries: IDataSeries&lt;IAccessors&gt;,
+        scales: IXYScales,
+        dataPointIndex: number,
+        container: D3Selection&lt;SVGGElement&gt;,
+        rendererSubject: Subject&lt;IRendererEventPayload&gt;,
+        markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG
+    ): void {
+        if (!container) {
+            throw new Error(&quot;Container doesn&#x27;t exist!&quot;);
+        }
+
+        if (dataSeries.data.length &#x3D;&#x3D;&#x3D; 0) {
+            MarkerUtils.removeMarker(container);
+            return;
+        }
+
+        const accessors &#x3D; dataSeries.accessors;
+
+        if (dataPointIndex &lt; 0) {
+            dataPointIndex &#x3D; dataSeries.data.length - 1;
+        }
+
+        const dataPoint &#x3D; dataSeries.data[dataPointIndex];
+
+        if (!accessors.data?.x || !accessors.data.y) {
+            throw new Error(&quot;Color or marker are undefined&quot;);
+        }
+
+        const x &#x3D; scales.x.convert(
+            accessors.data.x(
+                dataPoint,
+                dataPointIndex,
+                dataSeries.data,
+                dataSeries
+            )
+        );
+        const y &#x3D; scales.y.convert(
+            accessors.data.y(
+                dataPoint,
+                dataPointIndex,
+                dataSeries.data,
+                dataSeries
+            )
+        );
+
+        if (
+            typeof x !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            typeof y !&#x3D;&#x3D; &quot;undefined&quot; &amp;&amp;
+            isInRange(scales.x, x) &amp;&amp;
+            isInRange(scales.y, y)
+        ) {
+            const seriesId &#x3D; dataSeries.id;
+            const dataPointInfo: IDataPoint &#x3D; {
+                index: dataPointIndex,
+                data: dataPoint,
+                seriesId: seriesId,
+                position: { x, y },
+                dataSeries,
+            };
+
+            if (!accessors.series?.marker || !accessors.series?.color) {
+                throw new Error(&quot;Color or marker are undefined&quot;);
+            }
+
+            MarkerUtils.drawMarker(
+                dataPointInfo,
+                accessors.series.marker(seriesId, dataSeries),
+                accessors.series.color(seriesId, dataSeries),
+                container,
+                rendererSubject,
+                MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS,
+                markerInteractionConfig
+            );
+        } else {
+            MarkerUtils.removeMarker(container);
+        }
+    }
+
+    public static drawMarker(
+        dataPoint: IDataPoint,
+        marker: IChartMarker,
+        color: string,
+        target: D3Selection&lt;SVGGElement&gt;,
+        dataPointSubject: Subject&lt;
+            IRendererEventPayload&lt;IInteractionDataPointEvent&gt;
+        &gt;,
+        className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS,
+        markerInteractionConfig &#x3D; DEFAULT_MARKER_INTERACTION_CONFIG
+    ) {
+        let markerTarget: D3Selection | D3Selection&lt;SVGGElement&gt; &#x3D;
+            target.select(&#x60;g.${className}&#x60;);
+        const xCoord &#x3D; dataPoint?.position?.x;
+        const yCoord &#x3D; dataPoint?.position?.y;
+        const attrs &#x3D; {
+            transform: &#x60;translate(${xCoord}, ${yCoord})&#x60;,
+            cursor: &quot;crosshair&quot;,
+        };
+
+        const getPointerEventsClass &#x3D; () &#x3D;&gt;
+            &#x60;${markerInteractionConfig.enabled ? &quot; pointer-events&quot; : &quot;&quot;}&#x60;;
+        const getPointerEventsClickClass &#x3D; () &#x3D;&gt;
+            &#x60;${
+                markerInteractionConfig.enabled &amp;&amp;
+                markerInteractionConfig.clickable
+                    ? &quot; pointer-events-click&quot;
+                    : &quot;&quot;
+            }&#x60;;
+
+        if (markerTarget.empty()) {
+            markerTarget &#x3D; target
+                .append(&quot;g&quot;)
+                .classed(
+                    &#x60;${className}${getPointerEventsClass()}${getPointerEventsClickClass()}&#x60;,
+                    true
+                );
+        }
+
+        marker.setColor(color);
+        markerTarget.attrs(attrs);
+
+        markerTarget.on(&quot;mouseenter&quot;, () &#x3D;&gt; {
+            dataPointSubject.next({
+                eventName: INTERACTION_DATA_POINT_EVENT,
+                data: { interactionType: InteractionType.Hover, dataPoint },
+            });
+        });
+        markerTarget.on(&quot;mouseleave&quot;, () &#x3D;&gt; {
+            dataPointSubject.next({
+                eventName: INTERACTION_DATA_POINT_EVENT,
+                data: {
+                    interactionType: InteractionType.Hover,
+                    dataPoint: {
+                        ...dataPoint,
+                        index: DATA_POINT_INTERACTION_RESET,
+                    },
+                },
+            });
+        });
+        markerTarget.on(&quot;click&quot;, () &#x3D;&gt; {
+            dataPointSubject.next({
+                eventName: INTERACTION_DATA_POINT_EVENT,
+                data: { interactionType: InteractionType.Click, dataPoint },
+            });
+        });
+
+        if (
+            !(&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+                .selectAll(&quot;g &gt; *&quot;)
+                .size() &amp;&amp;
+            markerTarget.node()
+        ) {
+            markerTarget
+                .node()
+                ?.appendChild(UtilService.getSvgFromString(marker.getSvg()));
+            (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+                .select(&quot;path&quot;)
+                .classed(MarkerUtils.MARKER_PATH_CLASS, true);
+        }
+
+        const path &#x3D; (&lt;D3Selection&lt;SVGGElement&gt;&gt;markerTarget)
+            .select(&quot;path&quot;)
+            .node() as HTMLElement;
+        if (path &amp;&amp; markerInteractionConfig.enabled) {
+            // Hack to accommodate existing Firefox hack in MouseInteractiveArea
+            const pathRect &#x3D; path.getBoundingClientRect();
+            // &#x27;x&#x27; in this case represents the absolute position of the left side of the marker
+            path.setAttribute(
+                &quot;x&quot;,
+                Math.ceil(
+                    (dataPoint?.position?.x as number) - pathRect.width / 2
+                ).toString()
+            );
+            // &#x27;y&#x27; in this case represents the absolute position of the top side of the marker
+            path.setAttribute(
+                &quot;y&quot;,
+                Math.ceil(
+                    (dataPoint?.position?.y as number) - pathRect.height / 2
+                ).toString()
+            );
+        }
+    }
+
+    public static removeMarker(
+        target: D3Selection&lt;SVGGElement&gt;,
+        className: string &#x3D; MarkerUtils.DEFAULT_MARKER_CONTAINER_CLASS
+    ) {
+        target.select(&#x60;g.${className}&#x60;).remove();
+    }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'MarkerUtils.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
