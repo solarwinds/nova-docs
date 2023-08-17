@@ -258,6 +258,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/FormFieldComponent.html" data-type="entity-link" >FormFieldComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/FreetypeQueryBuilderComponent.html" data-type="entity-link" >FreetypeQueryBuilderComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/IconComponent.html" data-type="entity-link" >IconComponent</a>
                             </li>
                             <li class="link">
@@ -325,6 +328,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/TextboxNumberComponent.html" data-type="entity-link" >TextboxNumberComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/TextHighlightOverlayComponent.html" data-type="entity-link" >TextHighlightOverlayComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/TimeFrameBarComponent.html" data-type="entity-link" >TimeFrameBarComponent</a>
@@ -462,6 +468,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/ErrorStateMatcher.html" data-type="entity-link" >ErrorStateMatcher</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/FreeTypeQueryUtilsService.html" data-type="entity-link" >FreeTypeQueryUtilsService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/HistoryStorage.html" data-type="entity-link" >HistoryStorage</a>
                                 </li>
                                 <li class="link">
@@ -538,10 +547,19 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
+                                <a href="interfaces/BaseCoordinates.html" data-type="entity-link" >BaseCoordinates</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/BreadcrumbItem.html" data-type="entity-link" >BreadcrumbItem</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/CaretCoordinates.html" data-type="entity-link" >CaretCoordinates</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ClickableRowOptions.html" data-type="entity-link" >ClickableRowOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ColorsConf.html" data-type="entity-link" >ColorsConf</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ColumnType.html" data-type="entity-link" >ColumnType</a>
@@ -554,6 +572,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/DraggedOverCell.html" data-type="entity-link" >DraggedOverCell</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ElementPadding.html" data-type="entity-link" >ElementPadding</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/HelpEntryCategory.html" data-type="entity-link" >HelpEntryCategory</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/HintEntry.html" data-type="entity-link" >HintEntry</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/IActiveToast.html" data-type="entity-link" >IActiveToast</a>
@@ -847,6 +874,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Paginator.html" data-type="entity-link" >Paginator</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/QueryToken.html" data-type="entity-link" >QueryToken</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/RenderConfigurator.html" data-type="entity-link" >RenderConfigurator</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Repeat.html" data-type="entity-link" >Repeat</a>
                             </li>
                             <li class="link">
@@ -854,6 +887,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/TableCellEdgeHighlight.html" data-type="entity-link" >TableCellEdgeHighlight</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Tokenizer.html" data-type="entity-link" >Tokenizer</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/TypedAnimationEvent.html" data-type="entity-link" >TypedAnimationEvent</a>
