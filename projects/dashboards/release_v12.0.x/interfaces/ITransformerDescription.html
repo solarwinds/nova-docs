@@ -601,6 +601,32 @@ export abstract class XYChartComponent
         }
         this.updateChartData();
     }
+
+    public getLegendValue(
+        legendSeries: IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;,
+        valueAccessorKey: string
+    ): string | number | undefined {
+        const val &#x3D; this.chartAssist.getHighlightedValue(
+            legendSeries,
+            &quot;y&quot;,
+            &quot;tick&quot;,
+            valueAccessorKey
+        );
+
+        if (
+            this.configuration.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp &amp;&amp;
+            this.configuration.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StackedArea &amp;&amp;
+            this.configuration.units &#x3D;&#x3D;&#x3D; &quot;percent&quot;
+        ) {
+            const submetricsCount &#x3D; this.chartAssist.legendSeriesSet.length;
+            const strVal &#x3D; &#x60;${val ?? 0}&#x60;;
+
+            return &#x60;${parseFloat(strVal ?? &quot;0&quot;) * submetricsCount} %&#x60;;
+        }
+
+        return val;
+    }
 }
 </code></pre>
     </div>
