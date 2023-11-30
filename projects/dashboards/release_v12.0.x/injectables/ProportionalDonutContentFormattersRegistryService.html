@@ -127,7 +127,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/lib/services/table-formatter-registry.service.ts:73</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/lib/services/table-formatter-registry.service.ts:80</a></div>
                             </td>
                         </tr>
 
@@ -413,6 +413,13 @@ export class TableFormatterRegistryService extends FormatterRegistryService&lt;I
 export class KpiFormattersRegistryService extends FormatterRegistryService&lt;IFormatterDefinition&gt; {
     constructor(logger: LoggerService) {
         super(logger, &quot;KpiFormattersRegistryService&quot;);
+    }
+}
+
+@Injectable({ providedIn: &quot;root&quot; })
+export class RiskScoreFormattersRegistryService extends FormatterRegistryService&lt;IFormatterDefinition&gt; {
+    constructor(logger: LoggerService) {
+        super(logger, &quot;RiskScoreFormattersRegistryService&quot;);
     }
 }
 

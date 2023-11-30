@@ -155,6 +155,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="additional-documentation/widget-types/kpi/syncing-the-scale-values-of-kpi-tiles.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Syncing the Scale Values of KPI Tiles</a>
                                             </li>
                                             <li class="link for-chapter2">
+                                                <a href="additional-documentation/widget-types/risk-score.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Risk Score</a>
+                                            </li>
+                                            <li class="link for-chapter2">
                                                 <a href="additional-documentation/widget-types/proportional.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Proportional</a>
                                             </li>
                                             <li class="link for-chapter3">
@@ -193,13 +196,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardConfiguratorModule.html" data-type="entity-link">NuiDashboardConfiguratorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' :
+                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                             <li class="link">
                                                 <a href="components/ColorPickerComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ColorPickerComponent</a>
@@ -228,13 +231,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' :
+                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                         <li class="link">
                                             <a href="injectables/ConfiguratorHeadingService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>ConfiguratorHeadingService</a>
@@ -271,13 +274,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' :
-                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-4786c6a95e41f72935413794af2469c1"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' :
+                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-4d8f26a4e0334f0acb20a1c3f31f405f"' }>
                                             <li class="link">
                                                 <a href="pipes/AddDataPipe.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">AddDataPipe</a>
@@ -342,13 +345,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardsModule.html" data-type="entity-link">NuiDashboardsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                            'data-target="#components-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' :
-                                            'id="xs-components-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' :
+                                            'id="xs-components-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                             <li class="link">
                                                 <a href="components/DashboardComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">DashboardComponent</a>
@@ -388,6 +391,10 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/ProportionalDonutContentComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ProportionalDonutContentComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/RiskScoreTileComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">RiskScoreTileComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/StackComponent.html"
@@ -445,13 +452,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                        'data-target="#directives-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' :
-                                        'id="xs-directives-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' :
+                                        'id="xs-directives-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                         <li class="link">
                                             <a href="directives/DelayedMousePresenceDetectionDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">DelayedMousePresenceDetectionDirective</a>
@@ -468,13 +475,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' :
-                                        'id="xs-injectables-links-module-NuiDashboardsModule-0792993df6ad2e9a6c1df689c0c41a32"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' :
+                                        'id="xs-injectables-links-module-NuiDashboardsModule-f4a747f5c37fa0f9287db256e82c9e51"' }>
                                         <li class="link">
                                             <a href="injectables/RefresherSettingsService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>RefresherSettingsService</a>
@@ -624,6 +631,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/RefresherConfigurationComponent.html" data-type="entity-link">RefresherConfigurationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/RiskScoreTileDescriptionConfigurationComponent.html" data-type="entity-link">RiskScoreTileDescriptionConfigurationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/RiskScoreTilesConfigurationComponent.html" data-type="entity-link">RiskScoreTilesConfigurationComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/SiUnitsFormatterComponent.html" data-type="entity-link">SiUnitsFormatterComponent</a>
@@ -815,6 +828,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/Refresher.html" data-type="entity-link">Refresher</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/RiskScoreFormattersRegistryService.html" data-type="entity-link">RiskScoreFormattersRegistryService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/SearchFeatureAddonService.html" data-type="entity-link">SearchFeatureAddonService</a>
@@ -1170,6 +1186,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IRemoveMetricPayload.html" data-type="entity-link">IRemoveMetricPayload</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreConfiguration.html" data-type="entity-link">IRiskScoreConfiguration</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreData.html" data-type="entity-link">IRiskScoreData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreFormatterProperties.html" data-type="entity-link">IRiskScoreFormatterProperties</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreFormattersConfiguration.html" data-type="entity-link">IRiskScoreFormattersConfiguration</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreItemConfiguration.html" data-type="entity-link">IRiskScoreItemConfiguration</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link">ISearchOnKeyUp</a>

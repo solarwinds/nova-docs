@@ -298,6 +298,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/RepeatComponent.html" data-type="entity-link">RepeatComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/RiskScoreComponent.html" data-type="entity-link">RiskScoreComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/SearchComponent.html" data-type="entity-link">SearchComponent</a>
                             </li>
                             <li class="link">

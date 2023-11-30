@@ -14,13 +14,13 @@
 <title>cluster_NuiDashboardConfiguratorModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 4447,-230.8 4447,-32.8 8,-32.8"/>
 </g>
-<g id="clust17" class="cluster">
-<title>cluster_NuiDashboardConfiguratorModule_providers</title>
-<polygon fill="none" stroke="black" points="2431,-40.8 2431,-92.8 4439,-92.8 4439,-40.8 2431,-40.8"/>
-</g>
 <g id="clust15" class="cluster">
 <title>cluster_NuiDashboardConfiguratorModule_exports</title>
 <polygon fill="none" stroke="black" points="878,-170.8 878,-222.8 2951,-222.8 2951,-170.8 878,-170.8"/>
+</g>
+<g id="clust17" class="cluster">
+<title>cluster_NuiDashboardConfiguratorModule_providers</title>
+<polygon fill="none" stroke="black" points="2431,-40.8 2431,-92.8 4439,-92.8 4439,-40.8 2431,-40.8"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_NuiDashboardConfiguratorModule_declarations</title>
