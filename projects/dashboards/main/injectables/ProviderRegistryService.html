@@ -128,7 +128,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/lib/services/provider-registry.service.ts:122</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/lib/services/provider-registry.service.ts:124</a></div>
                             </td>
                         </tr>
 
@@ -193,8 +193,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="322"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:322</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="329"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:329</a></div>
                 </td>
             </tr>
 
@@ -264,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="334"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:334</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="341"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:341</a></div>
                 </td>
             </tr>
 
@@ -347,8 +347,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="314"
-                            class="link-to-prism">src/lib/services/provider-registry.service.ts:314</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="321"
+                            class="link-to-prism">src/lib/services/provider-registry.service.ts:321</a></div>
                 </td>
             </tr>
 
@@ -427,7 +427,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/lib/services/provider-registry.service.ts:122</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/lib/services/provider-registry.service.ts:124</a></div>
                         </td>
                     </tr>
 
@@ -499,6 +499,7 @@ import { KpiColorComparatorsRegistryService } from &quot;./kpi-color-comparators
 import {
     KpiFormattersRegistryService,
     ProportionalDonutContentFormattersRegistryService,
+    RiskScoreFormattersRegistryService,
     TableFormatterRegistryService,
 } from &quot;./table-formatter-registry.service&quot;;
 import {
@@ -534,6 +535,7 @@ import {
     NOVA_TITLE_AND_DESCRIPTION_CONVERTER,
     NOVA_URL_INTERACTION_HANDLER,
     NOVA_VIRTUAL_VIEWPORT_MANAGER,
+    NOVA_RISK_SCORE_FORMATTERS_REGISTRY,
 } from &quot;./types&quot;;
 import { UrlInteractionService } from &quot;./url-interaction.service&quot;;
 import { WidgetConfigurationService } from &quot;./widget-configuration.service&quot;;
@@ -719,6 +721,11 @@ export class ProviderRegistryService {
             [NOVA_KPI_FORMATTERS_REGISTRY]: {
                 provide: FORMATTERS_REGISTRY,
                 useExisting: KpiFormattersRegistryService,
+                deps: [PizzagnaService],
+            },
+            [NOVA_RISK_SCORE_FORMATTERS_REGISTRY]: {
+                provide: FORMATTERS_REGISTRY,
+                useExisting: RiskScoreFormattersRegistryService,
                 deps: [PizzagnaService],
             },
             [NOVA_PROPORTIONAL_CONTENT_FORMATTERS_REGISTRY]: {

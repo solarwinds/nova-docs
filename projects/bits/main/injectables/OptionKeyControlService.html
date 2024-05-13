@@ -736,12 +736,12 @@
 import { Injectable, QueryList } from &quot;@angular/core&quot;;
 import isNil from &quot;lodash/isNil&quot;;
 
-import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
-import { IOption, IOverlayComponent } from &quot;../overlay/types&quot;;
 import {
     ANNOUNCER_CLOSE_MESSAGE,
     ANNOUNCER_OPEN_MESSAGE_SUFFIX,
 } from &quot;./constants&quot;;
+import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
+import { IOption, IOverlayComponent } from &quot;../overlay/types&quot;;
 
 @Injectable()
 export class OptionKeyControlService&lt;T extends IOption&gt; {

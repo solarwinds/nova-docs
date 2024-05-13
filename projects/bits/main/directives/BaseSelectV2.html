@@ -2376,6 +2376,13 @@ import pull from &quot;lodash/pull&quot;;
 import { Observable, Subject } from &quot;rxjs&quot;;
 import { delay, takeUntil, tap } from &quot;rxjs/operators&quot;;
 
+import {
+    ANNOUNCER_CLOSE_MESSAGE,
+    ANNOUNCER_OPEN_MESSAGE_SUFFIX,
+} from &quot;./constants&quot;;
+import { SelectV2OptionComponent } from &quot;./option/select-v2-option.component&quot;;
+import { OptionKeyControlService } from &quot;./option-key-control.service&quot;;
+import { InputValueTypes, IOptionedComponent } from &quot;./types&quot;;
 import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
 import {
     OVERLAY_ITEM,
@@ -2388,13 +2395,6 @@ import {
     OptionValueType,
     OverlayContainerType,
 } from &quot;../overlay/types&quot;;
-import {
-    ANNOUNCER_CLOSE_MESSAGE,
-    ANNOUNCER_OPEN_MESSAGE_SUFFIX,
-} from &quot;./constants&quot;;
-import { OptionKeyControlService } from &quot;./option-key-control.service&quot;;
-import { SelectV2OptionComponent } from &quot;./option/select-v2-option.component&quot;;
-import { InputValueTypes, IOptionedComponent } from &quot;./types&quot;;
 
 const DEFAULT_SELECT_OVERLAY_CONFIG: OverlayConfig &#x3D; {
     panelClass: OVERLAY_WITH_POPUP_STYLES_CLASS,

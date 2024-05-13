@@ -872,13 +872,13 @@ the &quot;generic&quot; unit, e.g. &quot;1.1K&quot; for 1100, as the &quot;gener
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 
+import { LoggerService } from &quot;./log-service&quot;;
+import { IUnitConversionResult } from &quot;./public-api&quot;;
 import {
     UnitBase,
     unitConversionConstants,
     UnitOption,
 } from &quot;../constants/unit-conversion.constants&quot;;
-import { LoggerService } from &quot;./log-service&quot;;
-import { IUnitConversionResult } from &quot;./public-api&quot;;
 
 /**
  * &lt;example-url&gt;./../examples/index.html#/common/unit-conversion-service&lt;/example-url&gt;

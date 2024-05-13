@@ -823,14 +823,14 @@ import { ElementRef, Injectable, OnDestroy, QueryList } from &quot;@angular/core
 import isNull from &quot;lodash/isNull&quot;;
 import { Subject, Subscription } from &quot;rxjs&quot;;
 
+import { MenuGroupComponent } from &quot;./menu-item/menu-group/menu-group.component&quot;;
+import { MenuItemComponent } from &quot;./menu-item/menu-item/menu-item.component&quot;;
+import { MenuPopupComponent } from &quot;./menu-popup/menu-popup.component&quot;;
 import { KEYBOARD_CODE } from &quot;../../constants/keycode.constants&quot;;
 import { MenuActionComponent } from &quot;../menu/menu-item/menu-action/menu-action.component&quot;;
 import { MenuItemBaseComponent } from &quot;../menu/menu-item/menu-item/menu-item-base&quot;;
 import { PopupComponent } from &quot;../popup-adapter/popup-adapter.component&quot;;
 import { IPopupActiveOptions } from &quot;../public-api&quot;;
-import { MenuGroupComponent } from &quot;./menu-item/menu-group/menu-group.component&quot;;
-import { MenuItemComponent } from &quot;./menu-item/menu-item/menu-item.component&quot;;
-import { MenuPopupComponent } from &quot;./menu-popup/menu-popup.component&quot;;
 
 @Injectable()
 export class MenuKeyControlService implements OnDestroy {
