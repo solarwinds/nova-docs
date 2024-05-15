@@ -141,7 +141,15 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                <a href="#displayDeleteButton" >displayDeleteButton</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#displayLegendMenu" >displayLegendMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getLegendValue" >getLegendValue</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
@@ -269,6 +277,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="displayDeleteButton"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>displayDeleteButton</b></span>
+                        <a href="#displayDeleteButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>displayDeleteButton()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="435"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:435</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="displayLegendMenu"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
@@ -299,6 +346,89 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLegendValue"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getLegendValue</b></span>
+                        <a href="#getLegendValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLegendValue(legendSeries: IChartAssistSeries<IAccessors<any>>, valueAccessorKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="463"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:463</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>legendSeries</td>
+                                    <td>
+                                            <code>IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>valueAccessorKey</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string | number | undefined</code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -574,8 +704,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="435"
-                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:435</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="444"
+                            class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/xy-chart.component.ts:444</a></div>
                 </td>
             </tr>
 
@@ -1064,10 +1194,6 @@ import {
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../../../types&quot;;
 import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;;
-import {
-    SUMMARY_LEGEND_BCG_COLOR,
-    SUMMARY_LEGEND_COLOR,
-} from &quot;../../timeseries-helpers&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
 import {
     transformChangePoint,
@@ -1090,6 +1216,10 @@ import {
     TimeseriesWidgetProjectType,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
 
 interface ITransformerDescription {
     displayName: string;
@@ -1432,6 +1562,15 @@ export abstract class XYChartComponent
         );
     }
 
+    public displayDeleteButton(): boolean {
+        return (
+            this.configuration.preset !&#x3D;&#x3D; TimeseriesChartPreset.Line &amp;&amp;
+            !!this.configuration.allowLegendMenu &amp;&amp;
+            this.configuration.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+        );
+    }
+
     public transformData(metricId: string, trId: TimeseriesTransformer): void {
         const serie &#x3D; this.widgetData.series.find((s) &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; metricId);
         if (!serie) {
@@ -1449,6 +1588,32 @@ export abstract class XYChartComponent
             }
         }
         this.updateChartData();
+    }
+
+    public getLegendValue(
+        legendSeries: IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;,
+        valueAccessorKey: string
+    ): string | number | undefined {
+        const val &#x3D; this.chartAssist.getHighlightedValue(
+            legendSeries,
+            &quot;y&quot;,
+            &quot;tick&quot;,
+            valueAccessorKey
+        );
+
+        if (
+            this.configuration.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp &amp;&amp;
+            this.configuration.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StackedArea &amp;&amp;
+            this.configuration.units &#x3D;&#x3D;&#x3D; &quot;percent&quot;
+        ) {
+            const submetricsCount &#x3D; this.chartAssist.legendSeriesSet.length;
+            const strVal &#x3D; &#x60;${val ?? 0}&#x60;;
+
+            return &#x60;${parseFloat(strVal ?? &quot;0&quot;) * submetricsCount} %&#x60;;
+        }
+
+        return val;
     }
 }
 </code></pre>

@@ -159,6 +159,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="additional-documentation/widget-types/kpi/syncing-the-scale-values-of-kpi-tiles.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Syncing the Scale Values of KPI Tiles</a>
                                             </li>
                                             <li class="link for-chapter2">
+                                                <a href="additional-documentation/widget-types/risk-score.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Risk Score</a>
+                                            </li>
+                                            <li class="link for-chapter2">
                                                 <a href="additional-documentation/widget-types/proportional.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Proportional</a>
                                             </li>
                                             <li class="link for-chapter3">
@@ -197,13 +200,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardConfiguratorModule.html" data-type="entity-link" >NuiDashboardConfiguratorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                            'data-target="#components-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' : 'data-target="#xs-components-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
-                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' :
+                                            'id="xs-components-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                             <li class="link">
                                                 <a href="components/ColorPickerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ColorPickerComponent</a>
                                             </li>
@@ -250,6 +253,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                 <a href="components/RefreshRateConfiguratorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefreshRateConfiguratorComponent</a>
                                             </li>
                                             <li class="link">
+                                                <a href="components/RiskScoreTileComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RiskScoreTileComponent</a>
+                                            </li>
+                                            <li class="link">
                                                 <a href="components/StackComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackComponent</a>
                                             </li>
                                             <li class="link">
@@ -292,13 +298,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' : 'data-target="#xs-injectables-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
-                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' :
+                                        'id="xs-injectables-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                         <li class="link">
                                             <a href="injectables/ConfiguratorHeadingService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ConfiguratorHeadingService</a>
                                         </li>
@@ -327,13 +333,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                            'data-target="#pipes-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' : 'data-target="#xs-pipes-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' :
-                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-ead4d39b9f66f079012a1516d25b9248c8c6d137fa46efd63302a6d475d4689cdebbac756e68287a58df46d2383d39f8f738eeb71fbaf3cad745237f85663863"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' :
+                                            'id="xs-pipes-links-module-NuiDashboardConfiguratorModule-77b98686e3adc67951b539189e7e5a4e4bde902c50895681664856eb493b71443e77a6298b8bdd659e14e9095a1bf2b8c056eb04ba105558984b50241d863a84"' }>
                                             <li class="link">
                                                 <a href="pipes/AddDataPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AddDataPipe</a>
                                             </li>
@@ -390,13 +396,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/NuiDashboardsModule.html" data-type="entity-link" >NuiDashboardsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                            'data-target="#components-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' : 'data-target="#xs-components-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
-                                            'id="xs-components-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' :
+                                            'id="xs-components-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                             <li class="link">
                                                 <a href="components/DashboardComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DashboardComponent</a>
                                             </li>
@@ -426,6 +432,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/ProportionalDonutContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ProportionalDonutContentComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/RiskScoreTileComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RiskScoreTileComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/StackComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StackComponent</a>
@@ -470,13 +479,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                        'data-target="#directives-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' : 'data-target="#xs-directives-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
-                                        'id="xs-directives-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' :
+                                        'id="xs-directives-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                         <li class="link">
                                             <a href="directives/DelayedMousePresenceDetectionDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DelayedMousePresenceDetectionDirective</a>
                                         </li>
@@ -490,13 +499,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                        'data-target="#injectables-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' : 'data-target="#xs-injectables-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' :
-                                        'id="xs-injectables-links-module-NuiDashboardsModule-d86bca42f82dcb8c7372a5f26ab5d52d2e4dc36e6cee7082d9a805b4c0d6012d1bb1b37c88ff5c75517214e1512ca13794665b9a917a4a0c164162b91e85f386"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' :
+                                        'id="xs-injectables-links-module-NuiDashboardsModule-bb8c0c6cdf490eec2634c72053e0da9e4ec6568220afab7f8b810a133bc05545b50a703190fd7453aaf6a5b9e04e7a3ad1c9b7d1c3c8c60ba77f99a0e19cd68b"' }>
                                         <li class="link">
                                             <a href="injectables/RefresherSettingsService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RefresherSettingsService</a>
                                         </li>
@@ -642,6 +651,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="components/RefresherConfigurationComponent.html" data-type="entity-link" >RefresherConfigurationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/RiskScoreTileDescriptionConfigurationComponent.html" data-type="entity-link" >RiskScoreTileDescriptionConfigurationComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/RiskScoreTilesConfigurationComponent.html" data-type="entity-link" >RiskScoreTilesConfigurationComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/SiUnitsFormatterComponent.html" data-type="entity-link" >SiUnitsFormatterComponent</a>
@@ -849,6 +864,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                 <li class="link">
                                     <a href="injectables/Refresher.html" data-type="entity-link" >Refresher</a>
+                                </li>
+                                <li class="link">
+                                    <a href="injectables/RiskScoreFormattersRegistryService.html" data-type="entity-link" >RiskScoreFormattersRegistryService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/SearchFeatureAddonService.html" data-type="entity-link" >SearchFeatureAddonService</a>
@@ -1204,6 +1222,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/IRemoveMetricPayload.html" data-type="entity-link" >IRemoveMetricPayload</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreConfiguration.html" data-type="entity-link" >IRiskScoreConfiguration</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreData.html" data-type="entity-link" >IRiskScoreData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreFormatterProperties.html" data-type="entity-link" >IRiskScoreFormatterProperties</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreFormattersConfiguration.html" data-type="entity-link" >IRiskScoreFormattersConfiguration</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/IRiskScoreItemConfiguration.html" data-type="entity-link" >IRiskScoreItemConfiguration</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ISearchOnKeyUp.html" data-type="entity-link" >ISearchOnKeyUp</a>

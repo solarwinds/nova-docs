@@ -116,7 +116,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:48</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -181,8 +181,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -278,8 +278,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="106"
-                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:106</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/lib/components/timeseries-widget/timeseries-scales.service.ts:105</a></div>
                 </td>
             </tr>
 
@@ -372,14 +372,13 @@ import {
 
 import { DashboardUnitConversionPipe } from &quot;../../common/pipes/public-api&quot;;
 import { roundToOptimalDecimals } from &quot;../../functions/round-array-values&quot;;
+import { timeSeriesDatetimeFormatter } from &quot;../../functions/timeseries-datetime-formatter&quot;;
 import {
     ITimeseriesScaleConfig,
     ITimeseriesWidgetConfig,
     TimeseriesScaleType,
     TimeseriesChartPreset,
 } from &quot;./types&quot;;
-
-import { timeSeriesDatetimeFormatter } from &quot;../../functions/timeseries-datetime-formatter&quot;;
 
 /**
  * This service handles scale creation and configuration for the timeseries widget
@@ -479,12 +478,7 @@ export class TimeseriesScalesService {
                     scale.scaleUnits &#x3D; scaleConfig.properties.axisUnits;
                 }
 
-                if (
-                    widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StatusBar ||
-                    (widgetConfig?.preset &#x3D;&#x3D;&#x3D;
-                        TimeseriesChartPreset.StackedArea &amp;&amp;
-                        scaleConfig.properties?.axisUnits &#x3D;&#x3D;&#x3D; &quot;percent&quot;)
-                ) {
+                if (widgetConfig?.preset &#x3D;&#x3D;&#x3D; TimeseriesChartPreset.StatusBar) {
                     return;
                 }
 
@@ -499,15 +493,24 @@ export class TimeseriesScalesService {
                     scaleConfig.properties?.domain &amp;&amp;
                     scale.setFixDomainValues
                 ) {
-                    const domainAdjusted &#x3D;
-                        widgetConfig?.preset &#x3D;&#x3D;&#x3D;
-                        TimeseriesChartPreset.StackedBar
-                            ? this.getStackedBarScaleDomain(
-                                  scaleConfig.properties.domain
-                              )
-                            : this.getLineScaleDomain(
-                                  scaleConfig.properties.domain
-                              );
+                    let domainAdjusted;
+                    switch (widgetConfig?.preset) {
+                        case TimeseriesChartPreset.StackedBar:
+                            domainAdjusted &#x3D; this.getStackedBarScaleDomain(
+                                scaleConfig.properties.domain
+                            );
+                            break;
+                        case TimeseriesChartPreset.StackedArea:
+                            domainAdjusted &#x3D; this.getStackedAreaScaleDomain(
+                                scaleConfig.properties.domain.max
+                            );
+                            break;
+                        default:
+                            domainAdjusted &#x3D; this.getLineScaleDomain(
+                                scaleConfig.properties.domain
+                            );
+                    }
+
                     scale.setFixDomainValues(domainAdjusted);
                 }
                 break;
@@ -575,6 +578,11 @@ export class TimeseriesScalesService {
             max - point,
             max,
         ]);
+    }
+
+    private getStackedAreaScaleDomain(max: number): number[] {
+        const point &#x3D; max / 4;
+        return [0, point, point * 2, max - point, max];
     }
 }
 </code></pre>

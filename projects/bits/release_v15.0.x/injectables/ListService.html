@@ -452,11 +452,11 @@ mode.</p>
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
 
+import { INovaFilteringOutputs } from &quot;./data-source/public-api&quot;;
+import { SelectionModel } from &quot;./public-api&quot;;
 import { RepeatSelectionMode } from &quot;../lib/repeat/types&quot;;
 import { SelectionType } from &quot;../lib/selector/public-api&quot;;
 import { SelectorService } from &quot;../lib/selector/selector.service&quot;;
-import { INovaFilteringOutputs } from &quot;./data-source/public-api&quot;;
-import { SelectionModel } from &quot;./public-api&quot;;
 
 @Injectable({ providedIn: &quot;root&quot; })
 export class ListService {

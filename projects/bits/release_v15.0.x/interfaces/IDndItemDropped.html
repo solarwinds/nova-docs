@@ -407,6 +407,13 @@ import _isEqual from &quot;lodash/isEqual&quot;;
 import { Subject } from &quot;rxjs&quot;;
 import { takeUntil, tap } from &quot;rxjs/operators&quot;;
 
+import {
+    IItemsReorderedEvent,
+    IRepeatItem,
+    IRepeatItemConfig,
+    PaddingOptions,
+    RepeatSelectionMode,
+} from &quot;./types&quot;;
 import { nameof } from &quot;../../functions/nameof&quot;;
 import {
     IFilter,
@@ -415,13 +422,6 @@ import {
     IRepeatFilter,
 } from &quot;../../services/data-source/public-api&quot;;
 import { LoggerService } from &quot;../../services/log-service&quot;;
-import {
-    IItemsReorderedEvent,
-    IRepeatItem,
-    IRepeatItemConfig,
-    PaddingOptions,
-    RepeatSelectionMode,
-} from &quot;./types&quot;;
 
 interface IDndItemDropped&lt;T &#x3D; unknown&gt; {
     item: DragRef&lt;CdkDrag&lt;T&gt;&gt;;
