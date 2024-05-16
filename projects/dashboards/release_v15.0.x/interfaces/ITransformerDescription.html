@@ -229,6 +229,10 @@ import {
     PIZZAGNA_EVENT_BUS,
 } from &quot;../../../../types&quot;;
 import { LegendPlacement } from &quot;../../../../widget-types/common/widget/legend&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
 import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
 import {
     transformChangePoint,
@@ -251,10 +255,6 @@ import {
     TimeseriesWidgetProjectType,
 } from &quot;../../types&quot;;
 import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
-import {
-    SUMMARY_LEGEND_BCG_COLOR,
-    SUMMARY_LEGEND_COLOR,
-} from &quot;../../timeseries-helpers&quot;;
 
 interface ITransformerDescription {
     displayName: string;
