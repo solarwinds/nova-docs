@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -51,19 +109,19 @@
 
 
 
-<h1 id="tips-and-tricks">Tips and Tricks</h1>
-<h2 id="pizzagna-snapshot">Pizzagna Snapshot</h2>
+<h1>Tips and Tricks</h1>
+<h2>Pizzagna Snapshot</h2>
 <p>To quickly see the state of any component&#39;s pizzagna within a dashboard, open the console output in the
 browser&#39;s dev tools. Then, hold CTRL + SHIFT while clicking the component you want to
 examine the pizzagna for. A snapshot of the pizzagna state will appear in the console showing the state
 of the clicked component as well as the states of all its ascendants.</p>
 <p>Contained in each component state are the component&#39;s ID, type, instance, providers, and properties.</p>
 <p><strong>Note:</strong> This feature is currently only supported on Windows environments.</p>
-<h2 id="event-logging">Event Logging</h2>
+<h2>Event Logging</h2>
 <p>While developing a dashboard, if you want to see a trace of all events going across a widget&#39;s event bus,
 add the <code>NOVA_EVENT_BUS_DEBUGGER</code> to the provider index on the widget&#39;s pizzagna root. This provider will
 output all events on the event bus&#39;s stream to the browser&#39;s dev tools console.</p>
-<div><pre class="line-numbers"><code class="language-json">{
+<b>Example :</b><div><pre class="line-numbers"><code class="language-json">{
     id: &quot;widgetId&quot;,
     type: &quot;kpi&quot;,
     pizzagna: {

@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../../" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -51,7 +109,7 @@
 
 
 
-<h1 id="data-sources">Data Sources</h1>
+<h1>Data Sources</h1>
 <p>A data source is a specific type of provider that retrieves data from an arbitrary source. It is, by
 design, a passive class that has to be invoked by an adapter. A data source is a special
 entity that plays a specific role in the dashboard ecosystem. As a result, we need to use an
@@ -64,13 +122,13 @@ with no data source at all.</p>
 a data source retrieves and manipulates its data is left entirely to author of the data source (i.e. the product/feature developer).</p>
 <p>It is highly recommended to implement the data source on top of the <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/injectables/DataSourceService.html#source">DataSourceService</a> so that you extend the service,
 that will allow Nova to introduce new functionality to the data source so that you won&#39;t need to add that.</p>
-<h2 id="data-source-features">Data Source Features</h2>
+<h2>Data Source Features</h2>
 <p>Data Source Features is way to describe the capabilities of a data source. For example, you can set up the data source
 so that it can sort the data and reflect this set up in the configuration. That will allow some parts of the application working
 with the Features.</p>
 <p>Data Source Features are implemented using <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/interfaces/IDataSourceFeaturesConfiguration.html">IDataSourceFeaturesConfiguration</a> which is used in <a href="https://ux.solarwinds.io/nova/docs/bits/latest/sdk/api-docs-ng2/interfaces/IDataSource.html">IDataSource</a>.</p>
 <p>The example of the features configuration:</p>
-<div><pre class="line-numbers"><code class="language-none">const supportedFeatures: IDataSourceFeatures = {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">const supportedFeatures: IDataSourceFeatures = {
     search: { enabled: true },
     pagination: { enabled: true },
 };</code></pre></div><p>It is highly recommended to use <a href="https://ux.solarwinds.io/nova/docs/nova-bits/latest/sdk/api-docs-ng2/classes/DataSourceFeatures.html">DataSourceFeatures</a> for the actual implementation of the Features.</p>
@@ -83,7 +141,7 @@ with the Features.</p>
 <ul>
 <li>TBD</li>
 </ul>
-<h2 id="datafields-config">DataFields Config</h2>
+<h2>DataFields Config</h2>
 <p>DataFields Config is used for declaring the structure of the data that DataSource operates with.
 For some widgets like Table and Drilldown Data Fields Config is required for correct work of the widget,
 so it&#39;s important to define it. In the case of reusing DataSource for other widgets, we recommend configuring
@@ -92,7 +150,7 @@ Data Fields Config.</p>
 interface that data sources usually implement. You can add it this way:</p>
 <!--- TODO: Remove Partial in the vNext - NUI-5838 -->
 
-<div><pre class="line-numbers"><code class="language-none">&#64;Injectable()
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">&#64;Injectable()
 export class MyDataSource&lt;T = any&gt; extends ServerSideDataSource&lt;T&gt; implements IDataSource {
     ...
     public dataFields: Partial&lt;IDataField&gt;[] = [
@@ -105,7 +163,7 @@ export class MyDataSource&lt;T = any&gt; extends ServerSideDataSource&lt;T&gt; i
         (this.dataFieldsConfig.dataFields$ as BehaviorSubject&lt;Partial&lt;IDataField&gt;[]&gt;).next(this.dataFields);
     }
     ...
-}</code></pre></div><h2 id="adapters">Adapters</h2>
+}</code></pre></div><h2>Adapters</h2>
 <p>An adapter is another specialized type of a provider, whose purpose is to invoke a data source, wait for
 the result, and assign it to the right component. This provider type was introduced for the following
 reasons:</p>
@@ -119,7 +177,7 @@ bridge between them.</li>
 <a href="../../miscellaneous/variables.html#NOVA_DATASOURCE_ADAPTER"><code>NOVA_DATASOURCE_ADAPTER</code></a>, and it invokes a
 data source whenever the <a href="../../miscellaneous/variables.html#REFRESH"><code>REFRESH</code></a> event is received on the
 pizzagna event bus and passes the result to a component property path specified in the adapter&#39;s properties.</p>
-<div><pre class="line-numbers"><code class="language-none">...
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">...
 &quot;providers&quot;: {
     &quot;adapter&quot;: {
         &quot;providerId&quot;: NOVA_DATASOURCE_ADAPTER,
@@ -129,10 +187,10 @@ pizzagna event bus and passes the result to a component property path specified 
         },
     },
 },
-...</code></pre></div><h2 id="below-fold-lazy-loading">Below-fold lazy loading</h2>
+...</code></pre></div><h2>Below-fold lazy loading</h2>
 <p>If You want for your widgets to load the data only after they are visible you have to configure the dashboard
 via <code>belowFoldLazyLoadingConfig</code> input. For example:</p>
-<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
     enabled: true,
 };
 &lt;!-- html --&gt;
@@ -142,7 +200,7 @@ via <code>belowFoldLazyLoadingConfig</code> input. For example:</p>
     [belowFoldLazyLoadingConfig]=&quot;belowFoldLazyLoadingConfig&quot;
 &gt;&lt;/nui-dashboard&gt;</code></pre></div><p>Also, if you want to load data only widgets that are in the viewport, and remove the widgets from the viewport
 if they were already loaded, put <code>reloadWidgetsOnScroll</code> of <code>configuration</code> part to <code>true</code>.</p>
-<div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">public belowFoldLazyLoadingConfig: IDashboardBelowFoldLazyLoadingConfig = {
     enabled: true,
     configuration: {
         reloadWidgetsOnScroll: true,

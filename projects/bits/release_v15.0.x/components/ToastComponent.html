@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,26 +93,29 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   ToastComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        <li class="nav-item">
+            <a href="#example" class="nav-link active"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Overview</a>
         </li>
-        <li >
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">API</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <div class="tab-pane fade " id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -80,11 +141,11 @@ This component is created dynamically in ToastContainerService</p>
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                <code>OnDestroy</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
@@ -94,6 +155,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-3">encapsulation</td>
                 <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
             </tr>
+
 
 
 
@@ -111,6 +173,8 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>nui-toast-component</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -135,7 +199,7 @@ This component is created dynamically in ToastContainerService</p>
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -158,9 +222,11 @@ This component is created dynamically in ToastContainerService</p>
                                 <a href="#closeButton" >closeButton</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#display" >display</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#fadeOut" >fadeOut</a>
                             </li>
                             <li>
@@ -173,6 +239,7 @@ This component is created dynamically in ToastContainerService</p>
                                 <a href="#title" >title</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#toastClasses" >toastClasses</a>
                             </li>
                             <li>
@@ -200,10 +267,12 @@ This component is created dynamically in ToastContainerService</p>
                                 <a href="#activateToast" >activateToast</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#clickToast" >clickToast</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#delayedHideToast" >delayedHideToast</a>
                             </li>
@@ -212,6 +281,7 @@ This component is created dynamically in ToastContainerService</p>
                                 <a href="#remove" >remove</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#stickAround" >stickAround</a>
                             </li>
@@ -281,13 +351,13 @@ This component is created dynamically in ToastContainerService</p>
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(toastService: ToastServiceBase, toastPackage: ToastPackage, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>)</code>
+<code>constructor(toastService: ToastServiceBase, toastPackage: ToastPackage, ngZone: NgZone)</code>
                     </td>
                 </tr>
                         <tr>
@@ -337,7 +407,7 @@ This component is created dynamically in ToastContainerService</p>
                                                         <td>ngZone</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                                    <code>NgZone</code>
                                                         </td>
                                                   
                                                     <td>
@@ -356,7 +426,7 @@ This component is created dynamically in ToastContainerService</p>
 
 
 
-    <section>
+    <section data-compodoc="block-properties">
     <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -458,7 +528,7 @@ This component is created dynamically in ToastContainerService</p>
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-methods">
     <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -477,17 +547,17 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:167</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:167</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>handles click on toast itself</p>
+                        <div class="io-description"><p>handles click on toast itself</p>
 </div>
 
                 </td>
@@ -512,17 +582,17 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="183"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:183</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:183</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>disables progressBar and prevents toast from closing</p>
+                        <div class="io-description"><p>disables progressBar and prevents toast from closing</p>
 </div>
 
                 </td>
@@ -547,17 +617,17 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:200</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:200</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
+                        <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
 </div>
 
                 </td>
@@ -565,7 +635,7 @@ This component is created dynamically in ToastContainerService</p>
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -576,7 +646,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="activateToast"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>activateToast</b></span>
                         <a href="#activateToast"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -584,29 +654,29 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>activateToast()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="126"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:126</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="126"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:126</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>triggers fade in animation and sets timeout till the toast will be dismissed</p>
+                        <div class="io-description"><p>triggers fade in animation and sets timeout till the toast will be dismissed</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -617,7 +687,8 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="clickToast"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
                         <span ><b>clickToast</b></span>
                         <a href="#clickToast"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -625,7 +696,7 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>clickToast()</code>
                 </td>
             </tr>
@@ -638,23 +709,23 @@ This component is created dynamically in ToastContainerService</p>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="167"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:167</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:167</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>handles click on toast itself</p>
+                        <div class="io-description"><p>handles click on toast itself</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -665,7 +736,8 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="delayedHideToast"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
                         <span ><b>delayedHideToast</b></span>
                         <a href="#delayedHideToast"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -673,7 +745,7 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>delayedHideToast()</code>
                 </td>
             </tr>
@@ -686,23 +758,23 @@ This component is created dynamically in ToastContainerService</p>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="200"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:200</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="200"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:200</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
+                        <div class="io-description"><p> using extendedTimeOut value to delay toast&#39;s closure</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -713,7 +785,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="remove"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>remove</b></span>
                         <a href="#remove"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -721,29 +793,29 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>remove()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="149"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:149</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:149</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>tells toastService to remove this toast after animation time</p>
+                        <div class="io-description"><p>tells toastService to remove this toast after animation time</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -754,7 +826,8 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="stickAround"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
                         <span ><b>stickAround</b></span>
                         <a href="#stickAround"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -762,7 +835,7 @@ This component is created dynamically in ToastContainerService</p>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>stickAround()</code>
                 </td>
             </tr>
@@ -775,29 +848,29 @@ This component is created dynamically in ToastContainerService</p>
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="183"
-                            class="link-to-prism">src/lib/toast/toast.component.ts:183</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="183"
+                                    class="link-to-prism">src/lib/toast/toast.component.ts:183</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>disables progressBar and prevents toast from closing</p>
+                        <div class="io-description"><p>disables progressBar and prevents toast from closing</p>
 </div>
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -864,6 +937,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="display"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>display</b></span>
                         <a href="#display"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -904,6 +978,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="fadeOut"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>fadeOut</b></span>
                         <a href="#fadeOut"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -993,6 +1068,7 @@ This component is created dynamically in ToastContainerService</p>
                 <td class="col-md-4">
                     <a name="toastClasses"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>toastClasses</b></span>
                         <a href="#toastClasses"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -1094,7 +1170,7 @@ This component is created dynamically in ToastContainerService</p>
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -1124,7 +1200,7 @@ This component is created dynamically in ToastContainerService</p>
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     Component,
     HostBinding,
@@ -1383,7 +1459,7 @@ export class ToastComponent implements OnDestroy {
 
 
 
-    <div class="tab-pane fade active in" id="c-example">
+    <div class="tab-pane fade active in" id="example">
             <iframe class="exampleContainer" src="./../examples/index.html#/toast">
                 <p>no-iframes</p>
             </iframe>

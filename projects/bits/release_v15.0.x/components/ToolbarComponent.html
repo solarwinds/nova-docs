@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,26 +93,29 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   ToolbarComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#example" role="tab" id="example-tab" data-toggle="tab" data-link="example">Overview</a>
+        <li class="nav-item">
+            <a href="#example" class="nav-link active"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Overview</a>
         </li>
-        <li >
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">API</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">API</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade " id="c-info"><p class="comment">
+    <div class="tab-pane fade " id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -79,12 +140,12 @@ Use nui-toolbar-divider to display a vertical line between items.
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
-                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+                <code>AfterViewInit</code>
+                <code>OnDestroy</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
@@ -94,6 +155,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-3">encapsulation</td>
                 <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
             </tr>
+
 
 
 
@@ -118,6 +180,8 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-9"><code>nui-toolbar</code></td>
             </tr>
 
+
+
             <tr>
                 <td class="col-md-3">styleUrls</td>
                 <td class="col-md-9"><code>./toolbar.component.less</code></td>
@@ -141,7 +205,7 @@ Use nui-toolbar-divider to display a vertical line between items.
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -170,14 +234,17 @@ Use nui-toolbar-divider to display a vertical line between items.
                                 <a href="#element" >element</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#groups" >groups</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#items" >items</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#menu" >menu</a>
                             </li>
@@ -194,10 +261,12 @@ Use nui-toolbar-divider to display a vertical line between items.
                                 <a href="#showMenu" >showMenu</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#toolbarButtons" >toolbarButtons</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#toolbarContainer" >toolbarContainer</a>
                             </li>
@@ -230,6 +299,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                                 <a href="#onClickToolbarBtn" >onClickToolbarBtn</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#onKeyDown" >onKeyDown</a>
                             </li>
                             <li>
@@ -302,13 +372,13 @@ Use nui-toolbar-divider to display a vertical line between items.
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(element: <a href="../undefineds/Element.html" target="_self">ElementRef</a>, changeDetector: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, logger: LoggerService, ngZone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, keyboardService: <a href="../injectables/ToolbarKeyboardService.html" target="_self">ToolbarKeyboardService</a>)</code>
+<code>constructor(element: <a href="../undefineds/Element.html" target="_self">ElementRef</a>, changeDetector: ChangeDetectorRef, logger: LoggerService, ngZone: NgZone, keyboardService: <a href="../injectables/ToolbarKeyboardService.html" target="_self">ToolbarKeyboardService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -346,7 +416,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                                                         <td>changeDetector</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                                    <code>ChangeDetectorRef</code>
                                                         </td>
                                                   
                                                     <td>
@@ -370,7 +440,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                                                         <td>ngZone</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/core/NgZone" target="_blank" >NgZone</a></code>
+                                                                    <code>NgZone</code>
                                                         </td>
                                                   
                                                     <td>
@@ -399,7 +469,7 @@ Use nui-toolbar-divider to display a vertical line between items.
         </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-inputs">
     <h3 id="inputs">Inputs</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -504,7 +574,7 @@ Use nui-toolbar-divider to display a vertical line between items.
 </section>
 
 
-    <section>
+    <section data-compodoc="block-methods">
     <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -528,18 +598,18 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="128"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:128</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:128</a></div>
+                        </td>
+                    </tr>
 
 
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -550,7 +620,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="handleSelectionState"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>handleSelectionState</b></span>
                         <a href="#handleSelectionState"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -558,27 +628,27 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>handleSelectionState()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="269"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:269</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="269"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:269</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -589,7 +659,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="makeAllItemsVisible"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>makeAllItemsVisible</b></span>
                         <a href="#makeAllItemsVisible"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -597,27 +667,27 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>makeAllItemsVisible()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="258"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:258</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="258"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:258</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -628,7 +698,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="moveToolbarItems"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>moveToolbarItems</b></span>
                         <a href="#moveToolbarItems"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -636,27 +706,27 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>moveToolbarItems()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="188"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:188</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="188"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:188</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
@@ -667,7 +737,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="onClickToolbarBtn"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>onClickToolbarBtn</b></span>
                         <a href="#onClickToolbarBtn"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -675,71 +745,69 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>onClickToolbarBtn(event: MouseEvent, commandItem: ToolbarItemComponent)</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="179"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:179</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="179"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:179</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-                                    <td>
-                                            <code>MouseEvent</code>
-                                    </td>
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>MouseEvent</code>
+                                            </td>
 
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>commandItem</td>
-                                    <td>
-                                            <code>ToolbarItemComponent</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
+                                            <td>
+                                                    No
+                                            </td>
 
 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                        </tr>
+                                        <tr>
+                                                <td>commandItem</td>
+                                            <td>
+                                                        <code>ToolbarItemComponent</code>
+                                            </td>
 
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -750,6 +818,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="onKeyDown"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>onKeyDown</b></span>
                         <a href="#onKeyDown"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -757,7 +826,8 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onKeyDown(event: KeyboardEvent)</code>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onKeyDown(event: KeyboardEvent)</code>
                 </td>
             </tr>
 
@@ -769,53 +839,51 @@ Use nui-toolbar-divider to display a vertical line between items.
                 </td>
             </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="128"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:128</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:128</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-                                    <td>
-                                            <code>KeyboardEvent</code>
-                                    </td>
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>KeyboardEvent</code>
+                                            </td>
 
-                                    <td>
-                                        No
-                                    </td>
+                                            <td>
+                                                    No
+                                            </td>
 
 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -826,7 +894,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="splitToolbarItems"></a>
                     <span class="name">
-                        <span class="modifier">Public</span>
+                            <span class="modifier">Public</span>
                         <span ><b>splitToolbarItems</b></span>
                         <a href="#splitToolbarItems"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -834,33 +902,33 @@ Use nui-toolbar-divider to display a vertical line between items.
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
+                        <span class="modifier-icon icon ion-ios-reset"></span>
                     <code>splitToolbarItems()</code>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="232"
-                            class="link-to-prism">src/lib/toolbar/toolbar.component.ts:232</a></div>
-                </td>
-            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="232"
+                                    class="link-to-prism">src/lib/toolbar/toolbar.component.ts:232</a></div>
+                        </td>
+                    </tr>
 
 
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
+                        </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -982,6 +1050,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="groups"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>groups</b></span>
                         <a href="#groups"><span class="icon ion-ios-link"></span></a>
@@ -1018,6 +1087,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="items"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>items</b></span>
                         <a href="#items"><span class="icon ion-ios-link"></span></a>
@@ -1054,6 +1124,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="menu"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>menu</b></span>
                         <a href="#menu"><span class="icon ion-ios-link"></span></a>
@@ -1174,6 +1245,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="toolbarButtons"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>toolbarButtons</b></span>
                         <a href="#toolbarButtons"><span class="icon ion-ios-link"></span></a>
@@ -1210,6 +1282,7 @@ Use nui-toolbar-divider to display a vertical line between items.
                 <td class="col-md-4">
                     <a name="toolbarContainer"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                             <span class="modifier">Public</span>
                         <span ><b>toolbarContainer</b></span>
                         <a href="#toolbarContainer"><span class="icon ion-ios-link"></span></a>
@@ -1242,7 +1315,7 @@ Use nui-toolbar-divider to display a vertical line between items.
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -1294,7 +1367,7 @@ Use nui-toolbar-divider to display a vertical line between items.
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     AfterViewInit,
     ChangeDetectorRef,
@@ -1607,7 +1680,7 @@ export class ToolbarComponent implements AfterViewInit, OnDestroy {
 
 
 
-    <div class="tab-pane fade active in" id="c-example">
+    <div class="tab-pane fade active in" id="example">
             <iframe class="exampleContainer" src="./../examples/index.html#/toolbar">
                 <p>no-iframes</p>
             </iframe>

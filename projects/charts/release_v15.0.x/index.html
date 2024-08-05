@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="./" class="navbar-brand">@nova-ui/charts documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -31,19 +89,19 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="charts-overview">Charts Overview</h1>
+<h1>Charts Overview</h1>
 <p>Nova Charts is a library created to provide potential consumers with solutions for various data visualizations that conform with the Nova Design Language. It&#39;s designed to solve common patterns identified by UX designers, but also be very flexible so that pieces of visualizations can be overridden or entirely new visualizations can be customized quickly. As with anything, the more customizations you wish to have, the more work and maintenance you will absorb within your own app&#39;s code.</p>
-<h2 id="getting-started">Getting Started</h2>
+<h2>Getting Started</h2>
 <p>Getting started with charts is quite simple:</p>
 <ol>
 <li><p>Include charts in your package.json file</p>
-<div><pre class="line-numbers"><code class="language-none">&quot;devDependencies&quot;: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">&quot;devDependencies&quot;: {
     ...
     &quot;&#64;nova-ui/charts&quot;: &gt;&gt;last release version&lt;&lt;,
     ...
 }</code></pre></div></li>
 <li><p>Add a reference to charts styles in your angular.json file. Without this step, the charts will render, but will look and act in unpredictable ways.</p>
-<div><pre class="line-numbers"><code class="language-none">&quot;projects&quot;: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">&quot;projects&quot;: {
     &quot;your-project&quot;: {
         ...
         &quot;architect&quot;: {
@@ -54,7 +112,7 @@
                 &quot;./node_modules/&#64;nova-ui/charts/bundles/css/styles.css&quot;
              ],</code></pre></div></li>
 <li><p>Import NuiChartsModule</p>
-<div><pre class="line-numbers"><code class="language-none">import { NuiChartsModule } from &quot;&#64;nova-ui/charts&quot;;
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">import { NuiChartsModule } from &quot;&#64;nova-ui/charts&quot;;
 
 &#64;NgModule({
     declarations: [ ... ],
@@ -65,7 +123,7 @@
 <li><p>Copy/Paste any of our examples (see TOC below) to create your own component, add it to your view and then play around with the options.</p>
 </li>
 </ol>
-<h2 id="toc">TOC</h2>
+<h2>TOC</h2>
 <ul>
 <li><a href="./additional-documentation/layout.html">Layout</a></li>
 <li><a href="./additional-documentation/chart-types.html">Chart Types</a><ul>

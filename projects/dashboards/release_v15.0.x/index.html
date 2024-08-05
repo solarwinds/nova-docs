@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="./" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -31,7 +89,7 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="dashboards-overview">Dashboards Overview</h1>
+<h1>Dashboards Overview</h1>
 <p>Nova Dashboards is a framework designed to provide feature developers with a common solution for
 presenting data coming from various sources within a single view, as well as a set of predefined widget
 visualizations that are 100% configuration-driven and designed specifically to conform to the Nova Design
@@ -41,41 +99,41 @@ are made to be flexible! Individual parts of it can be overridden, and custom wi
 without an inordinate amount of effort. However, as with any flexible framework, it&#39;s important to
 remember that the more customizations you create, the more initial work and maintenance effort you&#39;ll
 absorb into your product&#39;s code base.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<h2>Prerequisites</h2>
 <ul>
 <li>The consumer app must be Angular-based</li>
 <li>Your development environment includes Node.js®, a package manager such as npm, and the Angular CLI</li>
 <li>Your package manager registries are set</li>
 <li>Nova Bits has been installed using the following command:</li>
 </ul>
-<div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/bits</code></pre></div><p>If needed, further instructions for Bits installation can be found <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/">here</a>.</p>
-<h3 id="installing-nodejs-and-npm">Installing NodeJS and npm</h3>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/bits</code></pre></div><p>If needed, further instructions for Bits installation can be found <a href="https://nova-ui.solarwinds.io/#/bits/release_v13.0.x/">here</a>.</p>
+<h3>Installing NodeJS and npm</h3>
 <p>To check your version of NodeJS, run node -v in a terminal/console window.
 To get NodeJS which comes prepackaged with npm, go to <a href="https://nodejs.org/en/">nodejs.org</a>.</p>
-<h3 id="installing-angular-cli">Installing Angular CLI</h3>
+<h3>Installing Angular CLI</h3>
 <p>The Angular CLI is a command-line interface tool that you can use to initialize, develop, scaffold and
 maintain Angular applications.</p>
 <p>You may want to check first whether it&#39;s already installed by running the following command:</p>
-<div><pre class="line-numbers"><code class="language-sh">ng --version</code></pre></div><p>If you want to install it globally, run the following command:</p>
-<div><pre class="line-numbers"><code class="language-sh">npm install -g &#64;angular/cli</code></pre></div><h2 id="setup-options">Setup Options</h2>
-<h3 id="automated-installation-and-setup-using-the-angular-cli">Automated Installation and Setup Using the Angular CLI</h3>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">ng --version</code></pre></div><p>If you want to install it globally, run the following command:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">npm install -g &#64;angular/cli</code></pre></div><h2>Setup Options</h2>
+<h3>Automated Installation and Setup Using the Angular CLI</h3>
 <p>The following schematics command will get dashboards ready for consumption in your project:</p>
-<div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/dashboards</code></pre></div><p>Tasks performed by this command:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">ng add &#64;nova-ui/dashboards</code></pre></div><p>Tasks performed by this command:</p>
 <ul>
 <li>Adds the <code>@nova-ui/dashboards</code> package and its associated dependencies to your package.json</li>
 <li>Performs an <code>npm install</code></li>
 <li>Adds the necessary imports to your app&#39;s main module</li>
 <li>Adds the necessary style definitions to your app&#39;s angular.json file.</li>
 </ul>
-<h3 id="manual-installation-and-setup">Manual Installation and Setup</h3>
+<h3>Manual Installation and Setup</h3>
 <p>Install with npm:</p>
-<div><pre class="line-numbers"><code class="language-sh">npm install angular-gridster2
+<b>Example :</b><div><pre class="line-numbers"><code class="language-sh">npm install angular-gridster2
 npm install d3
 npm install d3-selection-multi
 npm install &#64;nova-ui/charts
 npm install &#64;nova-ui/dashboards</code></pre></div><p>Once all dependencies and project files are downloaded, add NuiDashboardsModule and
 BrowserAnimationsModule to your main Angular module&#39;s imports:</p>
-<div><pre class="line-numbers"><code class="language-js">import { BrowserAnimationsModule } from &#39;&#64;angular/platform-browser/animations&#39;;
+<b>Example :</b><div><pre class="line-numbers"><code class="language-js">import { BrowserAnimationsModule } from &#39;&#64;angular/platform-browser/animations&#39;;
 import { NuiDashboardsModule } from &quot;&#64;nova-ui/dashboards&quot;;
 
 &#64;NgModule({
@@ -86,7 +144,7 @@ import { NuiDashboardsModule } from &quot;&#64;nova-ui/dashboards&quot;;
 })</code></pre></div><p>Finally, since some of the predefined widget types provided by Nova Dashboards have charts, your app must
 include the Nova Charts style definitions. To add them, modify your app&#39;s angular.json with the following
 addition to the styles source paths:</p>
-<div><pre class="line-numbers"><code class="language-json">&quot;architect&quot;: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-json">&quot;architect&quot;: {
    &quot;build&quot;: {
       &quot;options&quot;: {
           &quot;styles&quot;: [
@@ -96,7 +154,7 @@ addition to the styles source paths:</p>
           ...
        }
    }
-}</code></pre></div><h2 id="start-implementing-your-dashboards">Start Implementing Your Dashboards</h2>
+}</code></pre></div><h2>Start Implementing Your Dashboards</h2>
 <p>There is an <a href="https://nova-ui.solarwinds.io/#/dashboards/release_v13.0.x/additional-documentation/overview.html">online overview</a> of Nova Dashboards, but if you&#39;d prefer to dive right in, you can start with our <a href="https://nova-ui.solarwinds.io/#/dashboards/release_v13.0.x/additional-documentation/tutorials/hello-dashboards.html">Hello, Dashboards! tutorial</a>.</p>
 
 

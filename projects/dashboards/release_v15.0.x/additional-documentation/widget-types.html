@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -51,7 +109,7 @@
 
 
 
-<h1 id="available-widget-types">Available Widget Types</h1>
+<h1>Available Widget Types</h1>
 <ul>
 <li><a href="./widget-types/kpi.html">KPI</a></li>
 <li><a href="./widget-types/risk-score.html">Risk Score</a></li>
@@ -60,16 +118,16 @@
 <li><a href="./widget-types/timeseries.html">Timeseries</a></li>
 <li><a href="./widget-types/embedded-content.html">Embedded Content</a></li>
 </ul>
-<h2 id="widget-structure-overview">Widget Structure Overview</h2>
+<h2>Widget Structure Overview</h2>
 <p>Every widget contains its own specifics, but there are parts and architectural ideas that are shared
 among all widgets. This section will describe these shared concepts in greater detail.</p>
-<h3 id="layouts">Layouts</h3>
+<h3>Layouts</h3>
 <p>The widgets consist of components that are assembled in a dynamic way. Some components are feature rich
 while others, such as
 <a href="../components/StackComponent.html" target="_blank"><code>StackComponent</code></a> and
 <a href="../components/TilesComponent.html" target="_blank"><code>TilesComponent</code></a> just help organize the
 layout of components contained inside them.</p>
-<div><pre class="line-numbers"><code class="language-none">[DEFAULT_PIZZAGNA_ROOT]: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">[DEFAULT_PIZZAGNA_ROOT]: {
     id: DEFAULT_PIZZAGNA_ROOT,
     // base layout of the widget - all components referenced herein will be stacked in a column
     componentType: StackComponent.lateLoadKey,
@@ -87,11 +145,11 @@ header: { // &lt;--
 },
 table: { // &lt;--
 }
-...</code></pre></div><h3 id="header">Header</h3>
+...</code></pre></div><h3>Header</h3>
 <p>The <a href="../components/WidgetHeaderComponent.html" target="_blank">widget header</a> is a component
 included at the top of every widget that displays the widget title, subtitle and widget-related
 controls such as edit and removal.</p>
-<h3 id="event-proxy">Event Proxy</h3>
+<h3>Event Proxy</h3>
 <p>Every dashboard instance has an event bus that serves as a central communication channel for all
 dashboard sub-components. The same is true for every widget as well since each is composed of individual
 components that need to communicate via a broadcast model. Having two types of independent event buses
@@ -108,18 +166,18 @@ down to the widget by adding the event to the
 array property. On the other hand, sending a widget event to the dashboard can be configured using the
 <a href="../interfaces/IWidgetToDashboardEventProxyConfiguration.html#upstreams" target="_blank"><code>upstreams</code></a>
 property.</p>
-<div><pre class="line-numbers"><code class="language-none">[WellKnownProviders.EventProxy]: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">[WellKnownProviders.EventProxy]: {
     providerId: NOVA_DASHBOARD_EVENT_PROXY,
     properties: {
         downstreams: [REFRESH],
     },
-},</code></pre></div><h3 id="data-source">Data Source</h3>
+},</code></pre></div><h3>Data Source</h3>
 <p>A data source is a provider, whose primary purpose is to retrieve data from a remote locations. It&#39;s a
 passive entity that must be invoked by the <code>adapter</code>, see below.<br>In the provider/injector environment, it&#39;s represented by the
 <a href="../miscellaneous/variables.html#DATA_SOURCE" target="_blank"><code>DATA_SOURCE</code></a> injection token.
 To provide your own data source, register it under this token using the
 <a href="../injectables/ProviderRegistryService.html" target="_blank"><code>ProviderRegistryService</code></a>.</p>
-<h3 id="adapter">Adapter</h3>
+<h3>Adapter</h3>
 <p>An adapter or, more specifically, a data source adapter is a provider that responds to the
 <a href="../miscellaneous/variables.html#REFRESH" target="_blank"><code>REFRESH</code></a> event with the following
 actions:</p>
@@ -132,7 +190,7 @@ actions:</p>
 adapters might even include some post-processing logic that transforms data retrieved from the data
 source before it gets assigned to the widget. For examples of adapter configuration check the widget
 schemas of the individual widgets linked at the top of the page.</p>
-<h3 id="refresher">Refresher</h3>
+<h3>Refresher</h3>
 <p>The <a href="../miscellaneous/variables.html#REFRESH" target="_blank"><code>REFRESH</code></a> event might come from
 any source. Whoever feels like it can initialize a data source reload. It can come from an external
 source, e.g. some entity outside of the dashboard might decide that it&#39;s time to refresh all the widgets.
@@ -141,7 +199,7 @@ entity that comes built-in is a
 <a href="../classes/Refresher.html" target="_blank"><code>refresher</code></a> that emits the
 <a href="../miscellaneous/variables.html#REFRESH" target="_blank"><code>REFRESH</code></a> event once every
 configured number of seconds, which causes the widget to be refreshed at that interval.</p>
-<div><pre class="line-numbers"><code class="language-none">[WellKnownProviders.Refresher]: {
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">[WellKnownProviders.Refresher]: {
     providerId: NOVA_DATASOURCE_INTERVAL_REFRESHER,
     properties: {
         // enable the refresher

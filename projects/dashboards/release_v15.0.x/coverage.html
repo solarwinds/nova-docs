@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="./" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -50,7 +108,7 @@
 
 
 <ol class="breadcrumb">
-    <li>Documentation coverage</li>
+    <li class="breadcrumb-item">Documentation coverage</li>
 </ol>
 
 <div>
@@ -268,7 +326,7 @@
             <td>BaseLayout</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/10)</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -568,7 +626,7 @@
             <td>DataSourceAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -580,7 +638,7 @@
             <td>DrilldownDataSourceAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="medium">
@@ -590,9 +648,9 @@
             </td>
             <td>injectable</td>
             <td>EventBusDebugger</td>
-            <td align="right" data-sort="33">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(1/3)</span>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
             </td>
         </tr>
         <tr class="low">
@@ -676,7 +734,7 @@
             <td>KpiColorPrioritizer</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -688,7 +746,7 @@
             <td>KpiDataSourceAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -734,9 +792,9 @@
             </td>
             <td>injectable</td>
             <td>KpiStatusContentFallbackAdapter</td>
-            <td align="right" data-sort="16">
-                <span class="coverage-percent">16 %</span>
-                <span class="coverage-count">(1/6)</span>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -760,7 +818,7 @@
             <td>LoadingAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -772,7 +830,7 @@
             <td>PizzagnaBroadcasterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/5)</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="medium">
@@ -794,9 +852,9 @@
             </td>
             <td>injectable</td>
             <td>Refresher</td>
-            <td align="right" data-sort="20">
-                <span class="coverage-percent">20 %</span>
-                <span class="coverage-count">(1/5)</span>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -820,7 +878,7 @@
             <td>StatusContentFallbackAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -832,7 +890,7 @@
             <td>TableDataSourceAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -844,7 +902,7 @@
             <td>TimeseriesDataSourceAdapter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1078,6 +1136,18 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
+                <a href="./injectables/PaginatorFeatureAddonService.html">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>PaginatorFeatureAddonService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
                 <a href="./injectables/SearchFeatureAddonService.html">src/lib/components/table-widget/addons/search-feature-addon.service.ts</a>
             </td>
             <td>injectable</td>
@@ -1111,6 +1181,18 @@
                 <span class="coverage-count">(0/10)</span>
             </td>
         </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IPaginatorState.html">src/lib/components/table-widget/types.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IPaginatorState</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
         <tr class="good">
             <td>
                 <!-- miscellaneous -->
@@ -1130,9 +1212,21 @@
             </td>
             <td>interface</td>
             <td>ITableWidgetConfig</td>
-            <td align="right" data-sort="9">
-                <span class="coverage-percent">9 %</span>
-                <span class="coverage-count">(1/11)</span>
+            <td align="right" data-sort="7">
+                <span class="coverage-percent">7 %</span>
+                <span class="coverage-count">(1/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ITableWidgetPaginatorConfig.html">src/lib/components/table-widget/types.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ITableWidgetPaginatorConfig</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2296,7 +2390,7 @@
             <td>DonutChartFormatterConfiguratorComponent</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/8)</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2966,9 +3060,9 @@
             </td>
             <td>injectable</td>
             <td>FormatterConfiguratorComponent</td>
-            <td align="right" data-sort="10">
-                <span class="coverage-percent">10 %</span>
-                <span class="coverage-count">(1/10)</span>
+            <td align="right" data-sort="11">
+                <span class="coverage-percent">11 %</span>
+                <span class="coverage-count">(1/9)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3017,6 +3111,42 @@
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/TableScrollTypeEditorComponent.html">src/lib/configurator/components/widgets/table/scrollType-editor/scroll-type-editor.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>TableScrollTypeEditorComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/23)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IPageSizeSetMenuOption.html">src/lib/configurator/components/widgets/table/scrollType-editor/scroll-type-editor.component.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IPageSizeSetMenuOption</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ScrollTypeEditorService.html">src/lib/configurator/components/widgets/table/scrollType-editor/scroll-type-editor.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ScrollTypeEditorService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3280,7 +3410,7 @@
             <td>ConfiguratorDataSourceManagerService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/8)</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3316,7 +3446,7 @@
             <td>BaseConverter</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3328,7 +3458,7 @@
             <td>KpiSectionConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/12)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3340,7 +3470,7 @@
             <td>KpiTilesConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3352,7 +3482,7 @@
             <td>ProportionalWidgetChartOptionsConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3364,7 +3494,7 @@
             <td>GenericArrayConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/12)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3376,7 +3506,7 @@
             <td>GenericConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/12)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3388,7 +3518,7 @@
             <td>TitleAndDescriptionConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/12)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3424,7 +3554,7 @@
             <td>TableColumnsConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3436,7 +3566,19 @@
             <td>TableFiltersConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/TableScrollTypeConverterService.html">src/lib/configurator/services/converters/table/table-scroll-type-converter.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>TableScrollTypeConverterService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3448,7 +3590,7 @@
             <td>TimeseriesMetadataConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3460,7 +3602,7 @@
             <td>TimeseriesSeriesConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -3472,7 +3614,7 @@
             <td>TimeseriesTileIndicatorDataConverterService</td>
             <td align="right" data-sort="0">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/13)</span>
+                <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
         <tr class="low">
@@ -4966,6 +5108,18 @@
         <tr class="low">
             <td>
                 <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#NOVA_TABLE_SCROLL_TYPE_CONVERTER">src/lib/services/types.ts</a>
+            </td>
+            <td>variable</td>
+            <td>NOVA_TABLE_SCROLL_TYPE_CONVERTER</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
                 <a href="./miscellaneous/variables.html#NOVA_TEST_REGISTRY">src/lib/services/types.ts</a>
             </td>
             <td>variable</td>
@@ -5258,9 +5412,9 @@
             </td>
             <td>injectable</td>
             <td>WidgetToDashboardEventProxyService</td>
-            <td align="right" data-sort="12">
-                <span class="coverage-percent">12 %</span>
-                <span class="coverage-count">(1/8)</span>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(1/7)</span>
             </td>
         </tr>
         <tr class="low">

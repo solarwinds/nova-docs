@@ -51,8 +51,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     </ul>
                 </li>
                     <li class="chapter additional">
-                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ? 'data-target="#additional-pages"'
-                            : 'data-target="#xs-additional-pages"' }>
+                        <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ? 'data-bs-target="#additional-pages"'
+                            : 'data-bs-target="#xs-additional-pages"' }>
                             <span class="icon ion-ios-book"></span>
                             <span>Examples</span>
                             <span class="icon ion-ios-arrow-down"></span>
@@ -63,8 +63,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/chart-types.html" data-context-id="additional">
-                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-997e8a4cb29b1bd43f881354886817982da7339a853ce11ea5bf8df4d9b851b826f517cca74d09d84e8dd85e4078e62c86ef016ac9336edd3ba99bf3bde5fbe7"' : 'data-target="#xs-additional-page-997e8a4cb29b1bd43f881354886817982da7339a853ce11ea5bf8df4d9b851b826f517cca74d09d84e8dd85e4078e62c86ef016ac9336edd3ba99bf3bde5fbe7"' }>
+                                            <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#additional-page-997e8a4cb29b1bd43f881354886817982da7339a853ce11ea5bf8df4d9b851b826f517cca74d09d84e8dd85e4078e62c86ef016ac9336edd3ba99bf3bde5fbe7"' : 'data-bs-target="#xs-additional-page-997e8a4cb29b1bd43f881354886817982da7339a853ce11ea5bf8df4d9b851b826f517cca74d09d84e8dd85e4078e62c86ef016ac9336edd3ba99bf3bde5fbe7"' }>
                                                 <span class="link-name">Chart Types</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
@@ -101,8 +101,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/plugins.html" data-context-id="additional">
-                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-1ab497327c7d0f1306f59de239bb1509f0609283a3ea671475e71891fd404414008bd2501c8dd05638b1ca35cb26d04de018a874af60655bfdf066af28101e7b"' : 'data-target="#xs-additional-page-1ab497327c7d0f1306f59de239bb1509f0609283a3ea671475e71891fd404414008bd2501c8dd05638b1ca35cb26d04de018a874af60655bfdf066af28101e7b"' }>
+                                            <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#additional-page-1ab497327c7d0f1306f59de239bb1509f0609283a3ea671475e71891fd404414008bd2501c8dd05638b1ca35cb26d04de018a874af60655bfdf066af28101e7b"' : 'data-bs-target="#xs-additional-page-1ab497327c7d0f1306f59de239bb1509f0609283a3ea671475e71891fd404414008bd2501c8dd05638b1ca35cb26d04de018a874af60655bfdf066af28101e7b"' }>
                                                 <span class="link-name">Plugins</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>
@@ -124,8 +124,8 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                     <li class="chapter inner">
                                         <a data-type="chapter-link" href="additional-documentation/advanced-usage.html" data-context-id="additional">
-                                            <div class="menu-toggler linked" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#additional-page-b8bdd0125e2a65fbe74af4611d0531989c28115ea1c2f07a7b7ded21452610d3b3c6256edad0171d505fbab4979572d855ad3e7c9b63ff574f10c2ed5402197f"' : 'data-target="#xs-additional-page-b8bdd0125e2a65fbe74af4611d0531989c28115ea1c2f07a7b7ded21452610d3b3c6256edad0171d505fbab4979572d855ad3e7c9b63ff574f10c2ed5402197f"' }>
+                                            <div class="menu-toggler linked" data-bs-toggle="collapse" ${ isNormalMode ?
+                                            'data-bs-target="#additional-page-b8bdd0125e2a65fbe74af4611d0531989c28115ea1c2f07a7b7ded21452610d3b3c6256edad0171d505fbab4979572d855ad3e7c9b63ff574f10c2ed5402197f"' : 'data-bs-target="#xs-additional-page-b8bdd0125e2a65fbe74af4611d0531989c28115ea1c2f07a7b7ded21452610d3b3c6256edad0171d505fbab4979572d855ad3e7c9b63ff574f10c2ed5402197f"' }>
                                                 <span class="link-name">Advanced Usage</span>
                                                 <span class="icon ion-ios-arrow-down"></span>
                                             </div>

@@ -12,8 +12,66 @@
         <link rel="stylesheet" href="../../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../../" class="navbar-brand">@nova-ui/dashboards documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -51,7 +109,7 @@
 
 
 
-<h1 id="configurator">Configurator</h1>
+<h1>Configurator</h1>
 <p>The Configurator refers to the form that pops up in the sidebar as you try to edit / create a widget.
 It&#39;s built around the very same concept as the widgets (i.e. Pizzagna) and is integrally linked to two things:</p>
 <ul>
@@ -64,21 +122,21 @@ However, different <strong><em>sources</em></strong> of data require that the Co
 product may want to expose a SWIS-based data source that allows the end-user to type in a SWQL query. On the other hand,
 a standalone or AppMan product may wish to expose a list of RESTful endpoints from which the end-user can choose. Consequently,
 the Configurator is both pluggable and overrideable.</p>
-<h2 id="form-parts">Form Parts</h2>
+<h2>Form Parts</h2>
 <p>The form consists of independent parts that are visualized as accordions with expandable items containing
 specific form input fields. This structure is common to all the forms, but it&#39;s by no means enforced.
 Pizzagna is used to define the tree hierarchy of all these pieces, so any customization can be performed
 including extending or replacing the form parts provided by the standard widget type definitions.</p>
-<h2 id="configurator-layout">Configurator Layout</h2>
+<h2>Configurator Layout</h2>
 <p><img src="https://cp.solarwinds.com/rest/gliffy/1.0/embeddedDiagrams/02455210-f953-4622-98dd-7c4be3ff1330.png" alt="Configurator Layout" class="img-responsive"></p>
-<h2 id="converters">Converters</h2>
+<h2>Converters</h2>
 <p>To transform data between the widget and the form, we leverage the concept of providers. Since the job
 of our providers is more focused than the standard Angular providers, we refer to them as &quot;converters&quot;.
 With every form, we register a converter that hooks up to the form of the related component.
 The converter then propagates the form changes to the widget. On initial form load, a converter also
 collects information from the widget itself to populate the form.</p>
 <p>An example of converter configuration might look something like this:</p>
-<div><pre class="line-numbers"><code class="language-none">// this demonstrates a theoretical form piece configuration
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">// this demonstrates a theoretical form piece configuration
 &quot;someNodeId&quot;: {
     &quot;id&quot;: &quot;someNodeId&quot;,
     componentType: ,
@@ -90,7 +148,7 @@ collects information from the widget itself to populate the form.</p>
     },
 },</code></pre></div><p>As you can see it&#39;s just another provider. It can be a generic configured to transfer properties to
 specific paths or a specialized implementation. Check out the widget types specifications for examples.</p>
-<h2 id="nuiwidgeteditor-directive">nuiWidgetEditor Directive</h2>
+<h2>nuiWidgetEditor Directive</h2>
 <p>The configurator is an independent entity that can be invoked on its own without any dashboard
 dependency. However, there is a clear relationship between them, so that&#39;s where the
 <a href="../../directives/WidgetEditorDirective.html"><code>nuiWidgetEditor</code></a> directive enters.</p>
