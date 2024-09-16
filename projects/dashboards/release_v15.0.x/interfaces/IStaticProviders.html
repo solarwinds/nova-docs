@@ -149,7 +149,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/services/types.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/lib/services/types.ts:37</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -163,7 +163,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { StaticProvider } from &quot;@angular/core&quot;;
 import { BehaviorSubject, ReplaySubject } from &quot;rxjs&quot;;
 
-import { EventDefinition, IEvent, IEventDefinition } from &quot;@nova-ui/bits&quot;;
+import {
+    EventDefinition,
+    IEvent,
+    IEventDefinition,
+    ISelection,
+} from &quot;@nova-ui/bits&quot;;
 
 import { IInteractionPayload } from &quot;../components/providers/interaction/interaction-handler&quot;;
 import { IDataSourceBusyPayload } from &quot;../components/providers/types&quot;;
@@ -240,6 +245,7 @@ export const DASHBOARD_EDIT_MODE &#x3D; new EventDefinition&lt;boolean&gt;(
 export const INTERACTION &#x3D; new EventDefinition&lt;IInteractionPayload&lt;any&gt;&gt;(
     &quot;INTERACTION&quot;
 );
+export const SELECTION &#x3D; new EventDefinition&lt;ISelection&gt;(&quot;SELECTION&quot;);
 export const DATA_SOURCE_INVOKED &#x3D; new EventDefinition&lt;void&gt;(
     &quot;DATA_SOURCE_INVOKED&quot;
 );

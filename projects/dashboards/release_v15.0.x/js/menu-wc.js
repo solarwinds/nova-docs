@@ -176,6 +176,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link for-chapter3">
                                                 <a href="additional-documentation/widget-types/table/table-with-paginator.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Table with Paginator</a>
                                             </li>
+                                            <li class="link for-chapter3">
+                                                <a href="additional-documentation/widget-types/table/table-with-select.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Table with Select</a>
+                                            </li>
                                             <li class="link for-chapter2">
                                                 <a href="additional-documentation/widget-types/timeseries.html" data-type="entity-link" data-context="sub-entity" data-context-id="additional">Timeseries</a>
                                             </li>
@@ -1291,6 +1294,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITableWidgetPaginatorConfig.html" data-type="entity-link" >ITableWidgetPaginatorConfig</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITableWidgetSelectionConfigDisabled.html" data-type="entity-link" >ITableWidgetSelectionConfigDisabled</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITableWidgetSelectionConfigEnabled.html" data-type="entity-link" >ITableWidgetSelectionConfigEnabled</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITableWidgetSorterConfig.html" data-type="entity-link" >ITableWidgetSorterConfig</a>

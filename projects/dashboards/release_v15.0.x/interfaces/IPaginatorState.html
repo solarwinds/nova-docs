@@ -320,6 +320,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IFormatter } from &quot;../types&quot;;
+import {
+    ITableSelectionConfigDisabled,
+    ITableSelectionConfigEnabled,
+    TableSelectionConfig,
+    TableSelectionMode,
+} from &quot;@nova-ui/bits&quot;;
 
 export interface ITableWidgetColumnConfig {
     id: string;
@@ -348,10 +354,19 @@ export interface ITableWidgetConfig {
     sortable?: boolean;
     sorterConfiguration: ITableWidgetSorterConfig;
     /**
+     * Allows to choose row selection behavior of a table.
+     * Can be None | Multi | Single | Radio.
+     */
+    selectionConfiguration?: TableWidgetSelectionConfig;
+    /**
      * @deprecated Use scrollType and set it to &quot;infinite&quot; instead
      */
     hasVirtualScroll?: boolean;
     scrollType?: ScrollType;
+    /**
+     * Makes table rows interactive.
+     * Disabled if &#x27;selectable&#x27; is set to true.
+     */
     interactive?: boolean;
     headerTooltipsEnabled?: boolean;
     scrollActivationDelayMs?: number;
@@ -393,6 +408,33 @@ export enum ScrollType {
     paginator &#x3D; &quot;paginator&quot;,
     default &#x3D; &quot;default&quot;,
 }
+
+interface ITableWidgetSelectionConfigEnabled
+    extends ITableSelectionConfigEnabled {
+    /**
+     * Property name that is unique.
+     * Needs to be set in order for selection to work in combination with filtering.
+     *
+     * Using property that is not unique across table data will result in a selection
+     * of all rows with the same column value at once.
+
+     @default &quot;id&quot;
+     */
+    trackByProperty?: string;
+    /**
+     * If clicking on row should select it.
+     * True if selectionMode is set to &quot;single&quot;.
+     * @default false
+     */
+    clickableRow?: boolean;
+}
+
+interface ITableWidgetSelectionConfigDisabled
+    extends ITableSelectionConfigDisabled {}
+
+export type TableWidgetSelectionConfig &#x3D;
+    | ITableWidgetSelectionConfigEnabled
+    | ITableSelectionConfigDisabled;
 </code></pre>
     </div>
 </div>

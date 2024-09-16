@@ -249,6 +249,28 @@ export interface ClickableRowOptions {
     clickableSelectors: string[];
     ignoredSelectors: string[];
 }
+export enum TableSelectionMode {
+    None &#x3D; &quot;none&quot;,
+    Single &#x3D; &quot;single&quot;,
+    Radio &#x3D; &quot;radio&quot;,
+    Multi &#x3D; &quot;multi&quot;,
+}
+
+export interface ITableSelectionConfigEnabled {
+    enabled: true;
+    selectionMode: Exclude&lt;TableSelectionMode, TableSelectionMode.None&gt;;
+}
+
+export interface ITableSelectionConfigDisabled {
+    enabled: false;
+    selectionMode: TableSelectionMode.None;
+}
+
+// we want to prevent the following combination:
+// enabled: true and selectionMode: &quot;none&quot;
+export type TableSelectionConfig &#x3D;
+    | ITableSelectionConfigEnabled
+    | ITableSelectionConfigDisabled;
 </code></pre>
     </div>
 </div>

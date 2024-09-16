@@ -420,6 +420,7 @@ import { ISelection, ISelectorState } from &quot;../../services/public-api&quot;
 import { SelectionType } from &quot;../selector/public-api&quot;;
 import { SelectorService } from &quot;../selector/selector.service&quot;;
 import { ISortedItem, SorterDirection } from &quot;../sorter/public-api&quot;;
+import { TableSelectionMode } from &quot;./types&quot;;
 
 export const enum AlignmentClasses {
     RIGHT &#x3D; &quot;align-right&quot;,
@@ -489,6 +490,7 @@ export class TableStateHandlerService {
     public dataSourceChanged &#x3D; new Subject&lt;Array&lt;any&gt;&gt;();
     public selectionChanged &#x3D; new Subject&lt;ISelection&gt;();
     public selectableChanged &#x3D; new Subject&lt;boolean&gt;();
+    public selectionModeChanged &#x3D; new Subject&lt;TableSelectionMode&gt;();
     public columnWidthSubject &#x3D; new Subject&lt;void&gt;();
     public stickyHeaderChangedSubject &#x3D; new Subject&lt;void&gt;();
 
@@ -502,6 +504,7 @@ export class TableStateHandlerService {
     private _dropCellWidth: number;
     private _dragOverDirection: string;
     private _selectable: boolean;
+    private _selectionMode: TableSelectionMode;
     // Note: Used to tell to the SelectorService to skip pagination logic
     private _hasVirtualScroll: boolean;
     private _totalItems: number;
@@ -639,6 +642,17 @@ export class TableStateHandlerService {
         return this._selectable;
     }
 
+    set selectionMode(mode: TableSelectionMode) {
+        if (mode !&#x3D;&#x3D; this._selectionMode) {
+            this.selectionModeChanged.next(mode);
+        }
+        this._selectionMode &#x3D; mode;
+    }
+
+    get selectionMode(): TableSelectionMode {
+        return this._selectionMode;
+    }
+
     get hasVirtualScroll(): boolean {
         return this._hasVirtualScroll;
     }
@@ -677,6 +691,14 @@ export class TableStateHandlerService {
 
     set trackBy(value: TrackByFunction&lt;any&gt;) {
         this._trackBy &#x3D; value;
+    }
+
+    get selectionEnabled(): boolean {
+        return (
+            this.selectable ||
+            (this.selectionMode &amp;&amp;
+                this.selectionMode !&#x3D;&#x3D; TableSelectionMode.None)
+        );
     }
 
     /**
@@ -1030,11 +1052,39 @@ export class TableStateHandlerService {
     /**
      * Updates the selection object to either include or exclude the row based on the current selection
      *  type and the row&#x27;s current selection state
-     * Then the selection object is broadcasted to all listeners of selectionChanged
+     * Then the selection object is broadcast to all listeners of selectionChanged
      *
      * @param rowObject
      */
-    public handleRowCheckbox(rowObject: Object): void {
+    public handleRowSelect(rowObject: Object): void {
+        switch (this._selectionMode) {
+            case TableSelectionMode.Single:
+            case TableSelectionMode.Radio:
+                this.handleRowSelectSingle(rowObject);
+                break;
+            case TableSelectionMode.Multi:
+                this.handleRowSelectMulti(rowObject);
+                break;
+            default:
+                console.error(&quot;Unknown table selection mode.&quot;);
+        }
+    }
+
+    private handleRowSelectSingle(rowObject: Object): void {
+        const rowObjectTrackBy &#x3D; this.trackBy(
+            (&lt;{ id: number }&gt;rowObject)?.id,
+            rowObject
+        );
+        this.selection &#x3D; {
+            isAllPages: false,
+            exclude: [],
+            include: [rowObjectTrackBy],
+        };
+
+        this.selectionChanged.next(this.selection);
+    }
+
+    private handleRowSelectMulti(rowObject: Object): void {
         const excludedRows &#x3D; this.selection.exclude;
         const includedRows &#x3D; this.selection.include;
 

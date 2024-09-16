@@ -808,6 +808,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/ISorterFilter.html" data-type="entity-link" >ISorterFilter</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ITableSelectionConfigDisabled.html" data-type="entity-link" >ITableSelectionConfigDisabled</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITableSelectionConfigEnabled.html" data-type="entity-link" >ITableSelectionConfigEnabled</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/ITableSortingState.html" data-type="entity-link" >ITableSortingState</a>
                             </li>
                             <li class="link">
