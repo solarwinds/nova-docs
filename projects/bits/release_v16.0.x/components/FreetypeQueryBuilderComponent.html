@@ -1,0 +1,1941 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/bits documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@nova-ui/bits documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FreetypeQueryBuilderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#example" class="nav-link active"
+                role="tab" id="example-tab" data-bs-toggle="tab" data-link="example">Overview</a>
+        </li>
+        <li class="nav-item">
+            <a href="#info" class="nav-link"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">API</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade " id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/freetype-query-builder/freetype-query-builder.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnChanges</code>
+                <code>OnDestroy</code>
+                <code>AfterViewInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>}</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../components/FreetypeQueryBuilderComponent.html" target="_self" >{
+    provide: NG_VALUE_ACCESSOR, multi: true, useExisting: forwardRef(() &#x3D;&gt; FreetypeQueryBuilderComponent),
+}</a></code>
+                                <code><a href="../classes/NuiFormFieldControl.html" target="_self" >{
+    provide: NuiFormFieldControl, useExisting: forwardRef(() &#x3D;&gt; FreetypeQueryBuilderComponent), multi: true,
+}</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-freetype-query-builder</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./freetype-query-builder.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./freetype-query-builder.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#focusedTokenValue" >focusedTokenValue</a>
+                            </li>
+                            <li>
+                                <a href="#formGroup" >formGroup</a>
+                            </li>
+                            <li>
+                                <a href="#highlightModel" >highlightModel</a>
+                            </li>
+                            <li>
+                                <a href="#inputHeight" >inputHeight</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#messageTextarea" >messageTextarea</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#messageTextareaHolder" >messageTextareaHolder</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#querySelect" >querySelect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectControl" >selectControl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#textHighlightOverlay" >textHighlightOverlay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#textHighlightOverlayHolder" >textHighlightOverlayHolder</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#itemSelected" >itemSelected</a>
+                            </li>
+                            <li>
+                                <a href="#onClick" >onClick</a>
+                            </li>
+                            <li>
+                                <a href="#onDrop" >onDrop</a>
+                            </li>
+                            <li>
+                                <a href="#onKeyDown" >onKeyDown</a>
+                            </li>
+                            <li>
+                                <a href="#onKeyUp" >onKeyUp</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentHelp" >currentHelp</a>
+                            </li>
+                            <li>
+                                <a href="#cursorSetter$" >cursorSetter$</a>
+                            </li>
+                            <li>
+                                <a href="#maxLength" >maxLength</a>
+                            </li>
+                            <li>
+                                <a href="#placeholder" >placeholder</a>
+                            </li>
+                            <li>
+                                <a href="#readonly" >readonly</a>
+                            </li>
+                            <li>
+                                <a href="#renderer" >renderer</a>
+                            </li>
+                            <li>
+                                <a href="#tokenizer" >tokenizer</a>
+                            </li>
+                            <li>
+                                <a href="#value" >value</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#currentValue" >currentValue</a>
+                            </li>
+                            <li>
+                                <a href="#cursorCoords" >cursorCoords</a>
+                            </li>
+                            <li>
+                                <a href="#cursorPos" >cursorPos</a>
+                            </li>
+                            <li>
+                                <a href="#helpItemSelected" >helpItemSelected</a>
+                            </li>
+                            <li>
+                                <a href="#submitQuery" >submitQuery</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(renderer2: Renderer2, formBuilder: FormBuilder, cd: ChangeDetectorRef, toastService: ToastService, utils: <a href="../injectables/FreeTypeQueryUtilsService.html" target="_self">FreeTypeQueryUtilsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:147</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>renderer2</td>
+                                                  
+                                                        <td>
+                                                                    <code>Renderer2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cd</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>utils</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/FreeTypeQueryUtilsService.html" target="_self" >FreeTypeQueryUtilsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentHelp"></a>
+                        <b>currentHelp</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#HelpEntry" target="_self" >HelpEntry[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:108</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cursorSetter$"></a>
+                        <b>cursorSetter$</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:110</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="maxLength"></a>
+                        <b>maxLength</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>10_000</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:96</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="placeholder"></a>
+                        <b>placeholder</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:100</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="readonly"></a>
+                        <b>readonly</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:98</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="renderer"></a>
+                        <b>renderer</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/RenderConfigurator.html" target="_self" >RenderConfigurator&lt;T&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:104</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tokenizer"></a>
+                        <b>tokenizer</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Tokenizer.html" target="_self" >Tokenizer&lt;T&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:106</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="value"></a>
+                        <b>value</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:102</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section data-compodoc="block-outputs">
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentValue"></a>
+                        <b>currentValue</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:114</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cursorCoords"></a>
+                        <b>cursorCoords</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="118" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:118</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cursorPos"></a>
+                        <b>cursorPos</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:116</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="helpItemSelected"></a>
+                        <b>helpItemSelected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:112</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="submitQuery"></a>
+                        <b>submitQuery</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:120</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="itemSelected"></a>
+                    <span class="name">
+                        <span ><b>itemSelected</b></span>
+                        <a href="#itemSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>itemSelected($event: literal type)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="277"
+                                    class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:277</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>literal type</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <span ><b>onClick</b></span>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClick($event: MouseEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="270"
+                                    class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:270</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>MouseEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDrop"></a>
+                    <span class="name">
+                        <span ><b>onDrop</b></span>
+                        <a href="#onDrop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDrop($event: DragEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="242"
+                                    class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:242</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>DragEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onKeyDown"></a>
+                    <span class="name">
+                        <span ><b>onKeyDown</b></span>
+                        <a href="#onKeyDown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onKeyDown($event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="233"
+                                    class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:233</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>KeyboardEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onKeyUp"></a>
+                    <span class="name">
+                        <span ><b>onKeyUp</b></span>
+                        <a href="#onKeyUp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onKeyUp($event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="255"
+                                    class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:255</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                        <code>KeyboardEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="focusedTokenValue"></a>
+                    <span class="name">
+                        <span ><b>focusedTokenValue</b></span>
+                        <a href="#focusedTokenValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="144" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:144</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formGroup"></a>
+                    <span class="name">
+                        <span ><b>formGroup</b></span>
+                        <a href="#formGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="143" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="highlightModel"></a>
+                    <span class="name">
+                        <span ><b>highlightModel</b></span>
+                        <a href="#highlightModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ value: &quot;&quot;, tokens: [] }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputHeight"></a>
+                    <span class="name">
+                        <span ><b>inputHeight</b></span>
+                        <a href="#inputHeight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.BASE_LINE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="146" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:146</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messageTextarea"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>messageTextarea</b></span>
+                        <a href="#messageTextarea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;messageTextarea&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="messageTextareaHolder"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>messageTextareaHolder</b></span>
+                        <a href="#messageTextareaHolder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;messageTextareaHolder&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="querySelect"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>querySelect</b></span>
+                        <a href="#querySelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/SelectV2Component.html" target="_self" >SelectV2Component</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;queryselect&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectControl"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectControl</b></span>
+                        <a href="#selectControl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormControl</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormControl()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:147</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textHighlightOverlay"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>textHighlightOverlay</b></span>
+                        <a href="#textHighlightOverlay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(TextHighlightOverlayComponent, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textHighlightOverlayHolder"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>textHighlightOverlayHolder</b></span>
+                        <a href="#textHighlightOverlayHolder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Element" target="_self" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;textHighlightOverlayHolder&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/lib/freetype-query-builder/freetype-query-builder.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ElementRef,
+    EventEmitter,
+    forwardRef,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Output,
+    Renderer2,
+    SimpleChanges,
+    ViewChild,
+    ViewEncapsulation,
+} from &quot;@angular/core&quot;;
+import {
+    FormBuilder,
+    FormControl,
+    FormGroup,
+    NG_VALUE_ACCESSOR,
+} from &quot;@angular/forms&quot;;
+import { Observable, Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import { FreeTypeQueryUtilsService } from &quot;./helpers/freetype-query-utils.service&quot;;
+import {
+    CaretCoordinates,
+    HelpEntry,
+    HintEntry,
+    QueryToken,
+    RenderConfigurator,
+    Tokenizer,
+} from &quot;./models&quot;;
+import { TextHighlightOverlayComponent } from &quot;./text-highlight-overlay/text-highlight-overlay-component&quot;;
+import { NuiFormFieldControl } from &quot;../form-field/public-api&quot;;
+import { OptionValueType } from &quot;../overlay/types&quot;;
+import { SelectV2Component } from &quot;../select-v2/select/select-v2.component&quot;;
+import { ToastService } from &quot;../toast/toast.service&quot;;
+
+// &lt;example-url&gt;./../examples/index.html#/freetype-query&lt;/example-url&gt;
+@Component({
+    selector: &quot;nui-freetype-query-builder&quot;,
+    templateUrl: &quot;./freetype-query-builder.component.html&quot;,
+    styleUrls: [&quot;./freetype-query-builder.component.less&quot;],
+    encapsulation: ViewEncapsulation.None,
+    host: {
+        class: &quot;nui-freetype-query-builder&quot;,
+    },
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            multi: true,
+            useExisting: forwardRef(() &#x3D;&gt; FreetypeQueryBuilderComponent),
+        },
+        {
+            provide: NuiFormFieldControl,
+            useExisting: forwardRef(() &#x3D;&gt; FreetypeQueryBuilderComponent),
+            multi: true,
+        },
+    ],
+})
+export class FreetypeQueryBuilderComponent&lt;T extends QueryToken&gt;
+    implements OnChanges, OnDestroy, AfterViewInit
+{
+    private static pasteTextCommon(text: string): boolean {
+        text &#x3D; text.replace(/(\r\n|\n|\r)/gm, &quot; &quot;);
+
+        return document.execCommand(&quot;insertText&quot;, false, text);
+    }
+
+    private readonly KEY_ENTER_CODE &#x3D; &quot;Enter&quot;;
+    private readonly KEY_ESC_CODE &#x3D; &quot;Escape&quot;;
+
+    @Input()
+    maxLength: number &#x3D; 10_000;
+    @Input()
+    readonly: boolean &#x3D; false;
+    @Input()
+    placeholder: string;
+    @Input()
+    value: string;
+    @Input()
+    renderer: RenderConfigurator&lt;T&gt;;
+    @Input()
+    tokenizer: Tokenizer&lt;T&gt;;
+    @Input()
+    currentHelp: HelpEntry[] &#x3D; [];
+    @Input()
+    cursorSetter$: Observable&lt;any&gt;;
+    @Output()
+    helpItemSelected &#x3D; new EventEmitter&lt;{ value: string }&gt;();
+    @Output()
+    currentValue &#x3D; new EventEmitter&lt;{ value: string; tokens: T[] }&gt;();
+    @Output()
+    cursorPos &#x3D; new EventEmitter&lt;number&gt;();
+    @Output()
+    cursorCoords &#x3D; new EventEmitter&lt;CaretCoordinates&gt;();
+    @Output()
+    submitQuery &#x3D; new EventEmitter();
+
+    @ViewChild(&quot;queryselect&quot;, { static: true })
+    querySelect: SelectV2Component;
+    @ViewChild(&quot;messageTextarea&quot;, { static: false })
+    messageTextarea: ElementRef;
+    @ViewChild(&quot;messageTextareaHolder&quot;, { static: false })
+    messageTextareaHolder: ElementRef;
+    @ViewChild(&quot;textHighlightOverlayHolder&quot;, { static: false })
+    textHighlightOverlayHolder: ElementRef;
+    @ViewChild(TextHighlightOverlayComponent, { static: false })
+    textHighlightOverlay: ElementRef;
+
+    private readonly ON_SCROLL_CALLBACK &#x3D; this.onTextAreaScroll.bind(this);
+    private readonly BASE_LINE &#x3D; 34;
+    private destroy$$ &#x3D; new Subject&lt;void&gt;();
+    private tokens: T[] &#x3D; [];
+    private scrollValue: number &#x3D; 0;
+    private cursorPosition &#x3D; 0;
+    private bodyControl: FormControl;
+    private focusedToken: T;
+    private lastHeight: number &#x3D; 0;
+
+    formGroup: FormGroup;
+    focusedTokenValue &#x3D; &quot;&quot;;
+    highlightModel: { value: string; tokens: T[] } &#x3D; { value: &quot;&quot;, tokens: [] };
+    inputHeight &#x3D; this.BASE_LINE;
+    public selectControl: FormControl &#x3D; new FormControl();
+
+    constructor(
+        private renderer2: Renderer2,
+        private formBuilder: FormBuilder,
+        private cd: ChangeDetectorRef,
+        private toastService: ToastService,
+        private utils: FreeTypeQueryUtilsService
+    ) {
+        this.formGroup &#x3D; this.formBuilder.group({
+            body: [&quot;&quot;],
+        });
+        this.bodyControl &#x3D; this.formGroup.get(&quot;body&quot;) as FormControl;
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes.value) {
+            this.bodyControl.patchValue(changes.value.currentValue);
+        }
+    }
+
+    ngAfterViewInit(): void {
+        this.renderer2.listen(
+            this.querySelect.inputElement.nativeElement,
+            &quot;focusin&quot;,
+            () &#x3D;&gt; {
+                this.openOptions();
+            }
+        );
+        this.querySelect.valueSelected
+            .pipe(takeUntil(this.destroy$$))
+            .subscribe((value: OptionValueType) &#x3D;&gt; {
+                this.itemSelected({
+                    newValue: value as HintEntry,
+                    oldValue: undefined,
+                });
+                setTimeout(() &#x3D;&gt; {
+                    this.openOptions();
+                });
+            });
+
+        this.bodyControl.valueChanges
+            .pipe(takeUntil(this.destroy$$))
+            .subscribe((value) &#x3D;&gt; this.onValueChange(value));
+        this.registerListeners();
+        this.cursorSetter$
+            .pipe(takeUntil(this.destroy$$))
+            .subscribe((pos) &#x3D;&gt; setTimeout(() &#x3D;&gt; this.setCursorToPos(pos)));
+        if (this.value) {
+            this.onValueChange(this.value);
+            setTimeout(() &#x3D;&gt; {
+                this.rerender();
+            });
+        }
+        this.querySelect.clickOutsideDropdown.subscribe(() &#x3D;&gt; {
+            this.querySelect.hideDropdown();
+        });
+
+        this.renderer2.listen(
+            this.querySelect.inputElement.nativeElement,
+            &quot;focusout&quot;,
+            ($event) &#x3D;&gt; {
+                const selectedOption &#x3D;
+                    this.querySelect.inputElement.nativeElement.parentElement.contains(
+                        $event.currentTarget.parentElement
+                    );
+                if (!selectedOption) {
+                    setTimeout(() &#x3D;&gt; this.querySelect.hideDropdown());
+                }
+            }
+        );
+    }
+
+    private openOptions() {
+        if (!this.querySelect.isDropdownOpen) {
+            this.selectControl.setValue(undefined);
+            this.querySelect.showDropdown();
+        }
+    }
+
+    ngOnDestroy(): void {
+        this.clearListeners();
+        this.destroy$$.next();
+        this.destroy$$.complete();
+    }
+
+    onKeyDown($event: KeyboardEvent): void {
+        if ($event.key &#x3D;&#x3D;&#x3D; this.KEY_ENTER_CODE) {
+            $event.preventDefault();
+            if (!this.querySelect.isDropdownOpen) {
+                this.submitQuery.emit();
+            }
+        }
+    }
+
+    onDrop($event: DragEvent): void {
+        const data &#x3D; $event.dataTransfer?.getData(&quot;text&quot;);
+        if (data &amp;&amp; data.length + this.value.length &gt; this.maxLength) {
+            $event.preventDefault();
+            this.toastService.error({
+                message:
+                    &quot;Query cannot exceed maximum length of &quot; +
+                    this.maxLength +
+                    &quot; characters.&quot;,
+            });
+        }
+    }
+
+    onKeyUp($event: KeyboardEvent): void {
+        if ($event.key !&#x3D;&#x3D; this.KEY_ENTER_CODE) {
+            this.updateCursor(
+                ($event.target as HTMLTextAreaElement)[&quot;selectionStart&quot;]
+            );
+        }
+        if ($event.key !&#x3D;&#x3D; this.KEY_ESC_CODE) {
+            this.openOptions();
+        }
+
+        if ($event.key &#x3D;&#x3D;&#x3D; this.KEY_ESC_CODE) {
+            this.querySelect.hideDropdown();
+        }
+    }
+
+    onClick($event: MouseEvent): void {
+        this.updateCursor(
+            ($event.target as HTMLTextAreaElement)[&quot;selectionStart&quot;]
+        );
+        this.openOptions();
+    }
+
+    itemSelected($event: {
+        newValue: HintEntry;
+        oldValue: HintEntry | undefined;
+    }): void {
+        this.helpItemSelected.emit({ value: $event.newValue.value });
+    }
+
+    private get textarea(): HTMLTextAreaElement {
+        return this.messageTextarea.nativeElement;
+    }
+
+    private get textareaHolder(): HTMLElement {
+        return this.messageTextareaHolder.nativeElement;
+    }
+
+    private clearNewLinesOnPaste &#x3D; (event: ClipboardEvent): void &#x3D;&gt; {
+        event.preventDefault();
+        if (event.clipboardData &amp;&amp; event.clipboardData.getData) {
+            const text &#x3D; event.clipboardData.getData(&quot;text/plain&quot;);
+            if (!FreetypeQueryBuilderComponent.pasteTextCommon(text)) {
+                this.pasteTextFirefox(this.textarea, text);
+            }
+            this.scrollToCursor();
+        }
+    };
+
+    private scrollToCursor(): void {
+        setTimeout(() &#x3D;&gt; {
+            this.textarea.blur();
+            this.textarea.focus();
+        });
+    }
+
+    private pasteTextFirefox(
+        textarea: HTMLTextAreaElement,
+        text: string
+    ): void {
+        textarea.setRangeText(
+            text,
+            textarea.selectionStart || 0,
+            textarea.selectionEnd || 0,
+            &quot;end&quot;
+        );
+        if (textarea.value.length &gt; this.maxLength) {
+            textarea.value &#x3D; textarea.value.substr(0, this.maxLength);
+        }
+        // @ts-ignore
+        textarea.dispatchEvent(
+            new InputEvent(&quot;input&quot;, {
+                data: text,
+                inputType: &quot;insertText&quot;,
+                isComposing: false,
+            })
+        );
+    }
+
+    private onTextAreaScroll(event: Event): void {
+        this.scrollValue &#x3D; (event.target as HTMLElement)[&quot;scrollTop&quot;];
+        this.textHighlightOverlayHolder.nativeElement.scrollTop &#x3D;
+            this.scrollValue;
+        this.cd.markForCheck();
+    }
+
+    private onValueChange(value: string): void {
+        this.value &#x3D; value;
+        this.tokens &#x3D; this.tokenizer.tokenizeText(this.bodyControl.value);
+        this.focusedToken &#x3D; this.tokens[this.getFocusedTokenIndex()];
+        this.focusedTokenValue &#x3D; this.focusedToken
+            ? this.focusedToken.value
+            : &quot;&quot;;
+        this.openOptions();
+        this.rerender();
+        this.currentValue.emit({ value: this.value, tokens: this.tokens });
+    }
+
+    private setCursorToPos(pos: number): void {
+        this.textarea.focus();
+        this.textarea.setSelectionRange(pos, pos);
+    }
+
+    private rerender(): void {
+        this.textarea.style.height &#x3D;
+            this.textHighlightOverlay[&quot;container&quot; as keyof ElementRef]
+                .scrollHeight + &quot;px&quot;;
+        this.highlightModel &#x3D; { value: this.value, tokens: this.tokens };
+        setTimeout(() &#x3D;&gt; {
+            const overlayScrollHeight &#x3D;
+                this.textHighlightOverlay[&quot;container&quot; as keyof ElementRef]
+                    .scrollHeight;
+            this.highlightModel &#x3D; { value: this.value, tokens: this.tokens };
+            this.textarea.style.height &#x3D; overlayScrollHeight + &quot;px&quot;;
+
+            if (this.textAreaHeightChanged()) {
+                this.lastHeight &#x3D; overlayScrollHeight;
+                if (document.activeElement &#x3D;&#x3D;&#x3D; this.textarea) {
+                    this.openOptions();
+                }
+            }
+            this.cd.detectChanges();
+        });
+    }
+
+    private getFocusedTokenIndex(): number {
+        for (let i &#x3D; 0; i &lt; this.tokens.length; i++) {
+            if (
+                this.tokens[i].start &lt;&#x3D; this.cursorPosition &amp;&amp;
+                this.tokens[i].end &gt;&#x3D; this.cursorPosition
+            ) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    private updateCursor(selectionStart: number): void {
+        this.cursorPos.emit(selectionStart);
+        this.cursorPosition &#x3D; selectionStart;
+        const focusedTokenIndex &#x3D; this.getFocusedTokenIndex();
+        this.focusedToken &#x3D;
+            this.tokens[
+                focusedTokenIndex &lt; 0
+                    ? this.tokens.length - 1
+                    : focusedTokenIndex
+            ];
+        this.focusedTokenValue &#x3D; this.focusedToken
+            ? this.focusedToken.value
+            : &quot;&quot;;
+        this.tokens.forEach((token) &#x3D;&gt; {
+            token.focused &#x3D;
+                token.start &lt;&#x3D; this.cursorPosition &amp;&amp;
+                token.end &gt;&#x3D; this.cursorPosition;
+        });
+        this.rerender();
+        this.cursorCoords.emit(
+            this.utils.getTextareaCaretCoordinates(
+                this.textarea,
+                this.textarea.selectionEnd
+            )
+        );
+    }
+
+    private textAreaHeightChanged(): boolean {
+        return (
+            Number(this.textarea.style.height.split(&quot;px&quot;)[0]) !&#x3D;&#x3D;
+            this.lastHeight
+        );
+    }
+
+    private registerListeners(): void {
+        const textAreaEl &#x3D; this.textareaHolder;
+        if (textAreaEl) {
+            textAreaEl.addEventListener(&quot;scroll&quot;, this.ON_SCROLL_CALLBACK);
+            textAreaEl.addEventListener(&quot;paste&quot;, this.clearNewLinesOnPaste);
+        }
+    }
+
+    private clearListeners(): void {
+        const textAreaEl &#x3D; this.textareaHolder;
+        if (textAreaEl) {
+            textAreaEl.removeEventListener(&quot;scroll&quot;, this.ON_SCROLL_CALLBACK);
+            textAreaEl.removeEventListener(&quot;paste&quot;, this.clearNewLinesOnPaste);
+        }
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    <div class="tab-pane fade active in" id="example">
+            <iframe class="exampleContainer" src="./../examples/index.html#/freetype-query">
+                <p>no-iframes</p>
+            </iframe>
+    </div>
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nui-select-v2    #queryselect    placeholder="Select Item"    class="action"    style="z-index: 1"    [formControl]="selectControl"    [manualDropdownControl]="true"    [displayValueTemplate]="customTemplate">    <ng-container        *ngFor="            let item of readonly ? [] : currentHelp;            let idx = index;            let last = last;            let first = first        "    >        <nui-select-v2-option            tabindex="-1"            *ngIf="!item.items"            [displayValueContext]="item"            [value]="item"        >            <div class="d-inline-flex align-items-center">                <nui-icon                    class="mr-2"                    *ngIf="item.icon"                    [icon]="item.icon"                ></nui-icon>                <span                    tabindex="-1"                    [innerHTML]="                        item.displayValue | nuiHighlight : focusedTokenValue                    "                ></span>            </div>        </nui-select-v2-option>        <nui-select-v2-option-group            tabindex="-1"            *ngIf="item.items && item.items !== []"        >            <nui-divider                *ngIf="last && idx > 1"                size="extra-small"            ></nui-divider>            <span                *ngIf="item.header"                class="nui-select-v2-option-group--header"                >{{ item.header }}</span            >            <ng-container *ngIf="!item.notice">                <nui-select-v2-option                    *ngFor="let groupedItem of item.items"                    tabindex="-1"                    [displayValueContext]="groupedItem"                    [value]="groupedItem"                >                    <span                        tabindex="-1"                        *ngIf="!customTemplate"                        [innerHTML]="                            groupedItem.displayValue                                | nuiHighlight : focusedTokenValue                        "                    ></span>                </nui-select-v2-option>            </ng-container>            <ng-container *ngIf="item.notice">                <ng-container *ngFor="let groupedItem of item.items">                    <div class="options-group">                        <nui-icon                            iconSize="small"                            icon="{{                                \'severity_\' +                                    (groupedItem[\'severity\']                                        ? groupedItem[\'severity\']                                        : \'info\')                            }}"                        ></nui-icon>                        <span class="options-group__item" tabindex="-1">{{                            groupedItem.message.displayValue                        }}</span>                    </div>                </ng-container>            </ng-container>            <nui-divider *ngIf="!last" size="extra-small"></nui-divider>        </nui-select-v2-option-group>    </ng-container></nui-select-v2><ng-template #customTemplate let-context>    <div class="freetype-query__content custom-input-template">        <div>            <form class="freetype-query__form" [formGroup]="formGroup">                <div #messageTextareaHolder class="message-textarea__holder">                    <textarea                        #messageTextarea                        spellcheck="false"                        type="text"                        (drop)="onDrop($event)"                        [attr.disabled]="readonly ? \'disabled\' : null"                        (keydown)="onKeyDown($event)"                        (keyup)="onKeyUp($event)"                        (click)="onClick($event)"                        [style.height.px]="inputHeight"                        class="message-textarea form-control input-control"                        formControlName="body"                        [placeholder]="placeholder"                        [maxLength]="maxLength"                    >                    </textarea>                    <div class="overlay-holder" #textHighlightOverlayHolder>                        <nui-text-highlight-overlay                            [model]="highlightModel"                            [renderConfigurator]="renderer"                        ></nui-text-highlight-overlay>                    </div>                </div>            </form>        </div>    </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'BreadcrumbComponent', 'selector': 'nui-breadcrumb'},{'name': 'BusyComponent', 'selector': '[nui-busy]'},{'name': 'ButtonComponent', 'selector': '[nui-button]'},{'name': 'CardComponent', 'selector': 'nui-card'},{'name': 'CardGroupComponent', 'selector': 'nui-card-group'},{'name': 'CheckboxComponent', 'selector': 'nui-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 'nui-checkbox-group'},{'name': 'ChipsComponent', 'selector': 'nui-chips'},{'name': 'ChipsOverflowComponent', 'selector': 'nui-chips-overflow'},{'name': 'ComboboxComponent', 'selector': 'nui-combobox'},{'name': 'ComboboxV2Component', 'selector': 'nui-combobox-v2'},{'name': 'CustomValidationMessageComponent', 'selector': 'nui-custom-validation-message'},{'name': 'DatePickerComponent', 'selector': 'nui-date-picker'},{'name': 'DateTimePickerComponent', 'selector': 'nui-date-time-picker'},{'name': 'DialogComponent', 'selector': 'nui-dialog-window'},{'name': 'ExpanderComponent', 'selector': 'nui-expander'},{'name': 'FormFieldComponent', 'selector': 'nui-form-field'},{'name': 'FreetypeQueryBuilderComponent', 'selector': 'nui-freetype-query-builder'},{'name': 'IconComponent', 'selector': 'nui-icon'},{'name': 'ImageComponent', 'selector': 'nui-image'},{'name': 'MenuComponent', 'selector': 'nui-menu'},{'name': 'MessageComponent', 'selector': 'nui-message'},{'name': 'OverlayComponent', 'selector': 'nui-overlay'},{'name': 'PaginatorComponent', 'selector': 'nui-paginator'},{'name': 'PanelComponent', 'selector': 'nui-panel'},{'name': 'PopoverComponent', 'selector': 'nui-popover'},{'name': 'PopupComponent', 'selector': 'nui-popup'},{'name': 'PopupDeprecatedComponent', 'selector': 'nui-popup-deprecated'},{'name': 'ProgressComponent', 'selector': 'nui-progress'},{'name': 'QuickPickerComponent', 'selector': 'nui-quick-picker'},{'name': 'RadioGroupComponent', 'selector': 'nui-radio-group'},{'name': 'RepeatComponent', 'selector': 'nui-repeat'},{'name': 'RiskScoreComponent', 'selector': 'nui-risk-score'},{'name': 'SearchComponent', 'selector': 'nui-search'},{'name': 'SelectComponent', 'selector': 'nui-select'},{'name': 'SelectV2Component', 'selector': 'nui-select-v2'},{'name': 'SheetComponent', 'selector': 'nui-sheet'},{'name': 'SheetGroupComponent', 'selector': 'nui-sheet-group'},{'name': 'SorterComponent', 'selector': 'nui-sorter'},{'name': 'SpinnerComponent', 'selector': 'nui-spinner'},{'name': 'SwitchComponent', 'selector': 'nui-switch'},{'name': 'TabHeadingGroupComponent', 'selector': 'nui-tab-heading-group'},{'name': 'TableComponent', 'selector': 'nui-table, table[nui-table]'},{'name': 'TextboxComponent', 'selector': 'nui-textbox'},{'name': 'TextboxNumberComponent', 'selector': 'nui-textbox-number'},{'name': 'TextHighlightOverlayComponent', 'selector': 'nui-text-highlight-overlay'},{'name': 'TimeFrameBarComponent', 'selector': 'nui-time-frame-bar'},{'name': 'TimeFramePickerComponent', 'selector': 'nui-time-frame-picker'},{'name': 'TimePickerComponent', 'selector': 'nui-time-picker'},{'name': 'ToastComponent', 'selector': 'nui-toast-component'},{'name': 'ToolbarComponent', 'selector': 'nui-toolbar'},{'name': 'WizardComponent', 'selector': 'nui-wizard'},{'name': 'WizardHorizontalComponent', 'selector': 'nui-wizard-horizontal'},{'name': 'WizardStepComponent', 'selector': 'nui-wizard-step'}];
+    var DIRECTIVES = [{'name': 'BaseSelect', 'selector': ''},{'name': 'BaseSelectV2', 'selector': ''},{'name': 'ClickFilterDirective', 'selector': '[nuiClickFilter]'},{'name': 'ClickInterceptorDirective', 'selector': '[nuiClickInterceptor]'},{'name': 'DndDropTargetDirective', 'selector': '[cdkDropList][nuiDndDropTarget]'},{'name': 'MarkAsSelectedItemDirective', 'selector': '[nuiMarkAsSelectedItem]'},{'name': 'TableStickyHeaderDirective', 'selector': 'cdk-virtual-scroll-viewport[tableStickyHeader]'},{'name': 'TableVirtualScrollDirective', 'selector': '[tableVirtualScroll]:not([rowCount])'},{'name': 'TableVirtualScrollLinearDirective', 'selector': '[tableVirtualScroll]:not([offset])'},{'name': 'TooltipDirective', 'selector': '[nuiTooltip]'},{'name': 'WizardDirective', 'selector': '[nuiWizard]'},{'name': 'WizardStepFooterDirective', 'selector': '[nuiWizardStepFooter]'},{'name': 'WizardStepLabelDirective', 'selector': '[nuiWizardStepLabel]'}];
+    var ACTUAL_COMPONENT = {'name': 'FreetypeQueryBuilderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FreetypeQueryBuilderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

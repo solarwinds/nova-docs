@@ -1,0 +1,785 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  IStatusData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">API</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/lib/components/timeseries-widget/chart-presets/status-bar-chart/status-bar-chart.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#color" 
+>
+                                            color
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#end" 
+>
+                                            end
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#icon" 
+>
+                                            icon
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#start" 
+>
+                                            start
+                                        </a>
+                                </li>
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#thick" 
+>
+                                            thick
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="color"></a>
+                                        <span class="name "><b>color</b>
+                                            <a href="#color">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>color:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="end"></a>
+                                        <span class="name "><b>end</b>
+                                            <a href="#end">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>end:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="icon"></a>
+                                        <span class="name "><b>icon</b>
+                                            <a href="#icon">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>icon:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="start"></a>
+                                        <span class="name "><b>start</b>
+                                            <a href="#start">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>start:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="thick"></a>
+                                        <span class="name "><b>thick</b>
+                                            <a href="#thick">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>thick:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectorRef,
+    Component,
+    Inject,
+    OnInit,
+    Optional,
+} from &quot;@angular/core&quot;;
+// eslint-disable-next-line import/no-deprecated
+import { merge, Subject } from &quot;rxjs&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+
+import {
+    EventBus,
+    IconService,
+    IDataSource,
+    IEvent,
+    uuid,
+} from &quot;@nova-ui/bits&quot;;
+import {
+    BandScale,
+    BarHighlightStrategy,
+    BarHighlightStrategyOutline,
+    BarRenderer,
+    Chart,
+    DESTROY_EVENT,
+    IAccessors,
+    IChartAssistSeries,
+    IChartEvent,
+    ISetDomainEventPayload,
+    IStatusAccessors,
+    Renderer,
+    SET_DOMAIN_EVENT,
+    SparkChartAssist,
+    StatusAccessors,
+    statusAccessors,
+    TimeIntervalScale,
+    TimeseriesZoomPlugin,
+    XYGridConfig,
+    ZoomPlugin,
+} from &quot;@nova-ui/charts&quot;;
+
+import { SET_TIMEFRAME } from &quot;../../../../services/types&quot;;
+import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../types&quot;;
+import {
+    SUMMARY_LEGEND_BCG_COLOR,
+    SUMMARY_LEGEND_COLOR,
+} from &quot;../../timeseries-helpers&quot;;
+import { TimeseriesScalesService } from &quot;../../timeseries-scales.service&quot;;
+import {
+    ITimeseriesWidgetData,
+    ITimeseriesWidgetStatusData,
+    TimeseriesChartTypes,
+    TimeseriesWidgetProjectType,
+    TimeseriesWidgetZoomPlugin,
+} from &quot;../../types&quot;;
+import { TimeseriesChartComponent } from &quot;../timeseries-chart.component&quot;;
+
+@Component({
+    selector: &quot;nui-status-bar-chart&quot;,
+    templateUrl: &quot;./status-bar-chart.component.html&quot;,
+    styleUrls: [&quot;./status-bar-chart.component.less&quot;],
+})
+export class StatusBarChartComponent
+    extends TimeseriesChartComponent&lt;ITimeseriesWidgetStatusData&gt;
+    implements OnInit
+{
+    public static lateLoadKey &#x3D; &quot;StatusChartComponent&quot;;
+
+    public chartAssist: SparkChartAssist;
+    public collectionId: string &#x3D; uuid(&quot;timeseries-status-charts&quot;);
+    protected accessors: StatusAccessors;
+    protected renderer: Renderer&lt;IAccessors&gt;;
+    private chartUpdate$ &#x3D; new Subject&lt;void&gt;();
+
+    public zoomPlugins: TimeseriesWidgetZoomPlugin[];
+    public timeseriesChartTypes &#x3D; TimeseriesChartTypes;
+    public summaryLegendBcgColor &#x3D; SUMMARY_LEGEND_BCG_COLOR;
+    public summaryLegendColor &#x3D; SUMMARY_LEGEND_COLOR;
+
+    constructor(
+        private iconService: IconService,
+        @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
+        public timeseriesScalesService: TimeseriesScalesService,
+        public changeDetector: ChangeDetectorRef,
+        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IEvent&gt;
+    ) {
+        super(eventBus, timeseriesScalesService, dataSource);
+    }
+
+    public ngOnInit(): void {}
+
+    public getDataPointData(
+        series: IChartAssistSeries&lt;IAccessors&gt;,
+        key: string
+    ): any {
+        const data &#x3D; this.chartAssist.highlightedDataPoints[series.id]?.data;
+        if (data) {
+            return data[key];
+        }
+        return series.data.length &gt; 0
+            ? series.data[series.data.length - 1][key]
+            : undefined;
+    }
+
+    protected buildChart(): void {
+        this.buildChart$.next();
+        this.chartAssist &#x3D; new SparkChartAssist();
+
+        this.accessors &#x3D; statusAccessors(
+            this.chartAssist.palette.standardColors
+        );
+        this.accessors.data.color &#x3D; (d, i, series, dataSeries) &#x3D;&gt;
+            typeof d.color &#x3D;&#x3D;&#x3D; &quot;undefined&quot;
+                ? &quot;var(--nui-color-semantic-unknown)&quot;
+                : d.color;
+
+        this.accessors.data.thickness &#x3D; (data: any) &#x3D;&gt;
+            typeof data.thick &#x3D;&#x3D;&#x3D; &quot;undefined&quot; || data.thick
+                ? BarRenderer.THICK
+                : BarRenderer.THIN;
+
+        const iconSize: number &#x3D; 8;
+        this.accessors.data.marker &#x3D; (data: any) &#x3D;&gt;
+            data.icon
+                ? this.iconService.getIconResized(
+                      this.iconService.getIconData(data.icon).code,
+                      iconSize
+                  )
+                : undefined;
+
+        this.accessors.data.y &#x3D; (d) &#x3D;&gt; d.value;
+
+        // disable pointer events on bars to ensure the zoom drag target is the mouse interactive area rather than the bars
+        this.renderer &#x3D; new BarRenderer({
+            highlightStrategy:
+                this.configuration?.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+                    ? new BarHighlightStrategyOutline(&quot;x&quot;)
+                    : new BarHighlightStrategy(&quot;x&quot;),
+            pointerEvents: false,
+        });
+
+        this.setGridConfigFromConfiguration(this.chartAssist.gridConfig);
+        this.setGridConfigFromConfiguration(this.chartAssist.lastGridConfig);
+
+        this.scales.y &#x3D; new BandScale();
+        this.scales.y.fixDomain(StatusAccessors.STATUS_DOMAIN);
+        this.scales.y.isTimeseriesScale &#x3D; true;
+
+        if (this.scales.yRight) {
+            this.scales.yRight &#x3D; this.scales.y;
+        }
+    }
+
+    protected updateChartData(): void {
+        const { gridConfig, lastGridConfig } &#x3D; this.chartAssist;
+        // hides botom axis if it&#x27;s not last chart in the group
+        gridConfig.axis.bottom.visible &#x3D; !this.configuration?.hasAdjacentChart;
+        lastGridConfig.axis.bottom.visible &#x3D;
+            !this.configuration?.hasAdjacentChart;
+        gridConfig.borders.bottom.className &#x3D; this.configuration
+            ?.hasAdjacentChart
+            ? &quot;nui-chart-border&quot;
+            : &quot;nui-chart-border nui-chart-border--thick&quot;;
+        lastGridConfig.borders.bottom.className &#x3D; this.configuration
+            ?.hasAdjacentChart
+            ? &quot;nui-chart-border&quot;
+            : &quot;nui-chart-border nui-chart-border--thick&quot;;
+
+        this.chartUpdate$.next();
+
+        // Assemble the series set
+        let series &#x3D; this.widgetData.series;
+        const summarySerie &#x3D; this.widgetData.summarySerie
+            ? [this.widgetData.summarySerie]
+            : [];
+        if (
+            series.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp;
+            series[0].id &#x3D;&#x3D;&#x3D; this.widgetData.summarySerie?.id
+        ) {
+            // if the series contains only one item and its the same as the summary serie,
+            // there is no submetric and only the summary serie should be displayed
+            series &#x3D; [];
+        }
+        const seriesSet: IChartAssistSeries&lt;IStatusAccessors&gt;[] &#x3D; [
+            ...summarySerie,
+            ...series,
+        ].map((d: ITimeseriesWidgetData&lt;ITimeseriesWidgetStatusData&gt;) &#x3D;&gt; ({
+            ...d,
+            data: this.transformData(
+                d.data,
+                this.scales.x instanceof TimeIntervalScale
+            ),
+            accessors: this.accessors,
+            renderer: this.renderer,
+            scales: this.scales,
+        }));
+
+        // Update the chart
+        this.chartAssist.update(seriesSet);
+
+        if (this.configuration.enableZoom) {
+            this.chartAssist.sparks.forEach((spark, i) &#x3D;&gt; {
+                if (
+                    this.configuration?.projectType &#x3D;&#x3D;&#x3D;
+                    TimeseriesWidgetProjectType.PerfstackApp
+                ) {
+                    if (
+                        !(spark?.chart as Chart)?.hasPlugin(
+                            TimeseriesZoomPlugin
+                        )
+                    ) {
+                        spark?.chart?.addPlugin(this.zoomPlugins[i]);
+                    }
+                } else {
+                    if (!(spark?.chart as Chart)?.hasPlugin(ZoomPlugin)) {
+                        spark?.chart?.addPlugin(
+                            new ZoomPlugin({ enableExternalEvents: true })
+                        );
+                    }
+                }
+            });
+
+            // only need to subscribe to one chart&#x27;s SET_DOMAIN_EVENT
+            this.chartAssist.sparks[0].chart
+                ?.getEventBus()
+                .getStream(SET_DOMAIN_EVENT)
+                .pipe(
+                    takeUntil(
+                        // eslint-disable-next-line import/no-deprecated
+                        merge(
+                            this.chartUpdate$,
+                            (
+                                this.chartAssist.sparks[0].chart as Chart
+                            )?.eventBus.getStream(DESTROY_EVENT),
+                            this.buildChart$
+                        )
+                    )
+                )
+                .subscribe((event: IChartEvent) &#x3D;&gt; {
+                    const payload &#x3D; &lt;ISetDomainEventPayload&gt;event.data;
+                    const newDomain &#x3D; payload[Object.keys(payload)[0]];
+                    this.eventBus.getStream(SET_TIMEFRAME).next({
+                        payload: {
+                            startDatetime: newDomain[0],
+                            endDatetime: newDomain[1],
+                            selectedPresetId: undefined,
+                        },
+                    });
+                });
+        }
+    }
+
+    /**
+     * Transforms standard timeseries x/y data so that it can be understood by a status chart
+     *
+     * @param data The data to transform
+     * @param isIntervalProgression Whether the data should be treated as continuous or occurring at a regular interval
+     *
+     * @returns The transformed data
+     */
+    protected transformData(
+        data: ITimeseriesWidgetStatusData[],
+        isIntervalProgression: boolean
+    ): IStatusData[] {
+        const statusDataArray: any[] &#x3D; [];
+        data.forEach((d, i) &#x3D;&gt; {
+            if (isIntervalProgression || data.length - 1 !&#x3D;&#x3D; i) {
+                statusDataArray.push({
+                    start: d.x,
+                    end: isIntervalProgression ? d.x : data[i + 1].x,
+                    status: d.y,
+                    color: d.color,
+                    thick: d.thick,
+                    icon: d.icon,
+                    value: d.y,
+                });
+            }
+        });
+        return statusDataArray;
+    }
+
+    private setGridConfigFromConfiguration(gridConfig: XYGridConfig): void {
+        const configuration &#x3D; this.configuration;
+
+        if (configuration.gridConfig?.xAxisTicksCount) {
+            gridConfig.axis.bottom.approximateTicks &#x3D;
+                configuration.gridConfig.xAxisTicksCount;
+        }
+
+        if (
+            gridConfig.dimension.marginLocked &amp;&amp;
+            configuration.gridConfig?.sideMarginLocked
+        ) {
+            gridConfig.dimension.marginLocked.left &#x3D; true;
+            gridConfig.dimension.marginLocked.right &#x3D; true;
+        }
+
+        if (configuration.gridConfig?.sideMargin) {
+            gridConfig.dimension.margin.left &#x3D;
+                configuration.gridConfig.sideMargin;
+            gridConfig.dimension.margin.right &#x3D;
+                configuration.gridConfig.sideMargin;
+        }
+    }
+
+    public displayDeleteButton(): boolean {
+        return (
+            !!this.configuration.allowLegendMenu &amp;&amp;
+            this.configuration.projectType &#x3D;&#x3D;&#x3D;
+                TimeseriesWidgetProjectType.PerfstackApp
+        );
+    }
+
+    public isStatusChart(): boolean {
+        return this.configuration?.type !&#x3D;&#x3D; TimeseriesChartTypes.alert;
+    }
+
+    public getDescriptionSecondary(
+        series: IChartAssistSeries&lt;IAccessors&gt;,
+        index: number
+    ): string {
+        if (this.isStatusChart()) {
+            return series.legendDescriptionSecondary;
+        }
+
+        return index &#x3D;&#x3D;&#x3D; 0 ? series.legendDescriptionSecondary : &quot;&quot;;
+    }
+}
+
+interface IStatusData {
+    start: Date;
+    end: Date;
+    thick?: boolean;
+    color?: string;
+    icon?: string;
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'IStatusData.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
