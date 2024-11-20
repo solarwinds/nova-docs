@@ -254,7 +254,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:70</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:71</a></div>
                             </td>
                         </tr>
 
@@ -501,8 +501,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="137"
-                                    class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:137</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="139"
+                                    class="link-to-prism">src/lib/pizzagna/directives/component-portal/component-portal.directive.ts:139</a></div>
                         </td>
                     </tr>
 
@@ -638,6 +638,7 @@ export class ComponentPortalDirective
     private providerInstances: Record&lt;string, any&gt; &#x3D; {};
     private readonly destroy$ &#x3D; new Subject&lt;void&gt;();
     private changesSubscription?: Subscription;
+    private listenerUnsubscriber?: () &#x3D;&gt; void;
 
     constructor(
         private injector: Injector,
@@ -699,6 +700,7 @@ export class ComponentPortalDirective
         this.logger.debug(&quot;Portal destroyed:&quot;, this.componentId);
 
         this.destroyProviders();
+        this.listenerUnsubscriber?.();
 
         this.destroy$.next();
         this.destroy$.complete();
@@ -709,7 +711,7 @@ export class ComponentPortalDirective
 
         // ctrl+shift+click on a pizzagna to get a dump of its properties
         // this will propagate through the parent components, so it should dump the parent pizzagnas as well
-        this.renderer.listen(
+        this.listenerUnsubscriber &#x3D; this.renderer.listen(
             componentRef.location.nativeElement,
             &quot;click&quot;,
             (event: MouseEvent) &#x3D;&gt; {

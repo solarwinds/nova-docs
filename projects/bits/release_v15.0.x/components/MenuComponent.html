@@ -1379,7 +1379,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
         // It&#x27;s more powerful than just listening for focus or blur events because it tells you how the element was focused
         // (via mouse, keyboard, touch, or programmatically).
         this.focusMonitorSubscription &#x3D; this.focusMonitor
-            .monitor(this.menuToggle.nativeElement)
+            .monitor(this.menuToggle)
             .subscribe((origin: FocusOrigin) &#x3D;&gt; {
                 if (origin &#x3D;&#x3D;&#x3D; &quot;keyboard&quot;) {
                     if (!this.popup.popupToggle.disabled) {
@@ -1422,6 +1422,7 @@ export class MenuComponent implements AfterViewInit, OnChanges, OnDestroy {
     public ngOnDestroy(): void {
         this.menuKeyControlListeners.forEach((listener) &#x3D;&gt; listener());
         this.focusMonitorSubscription.unsubscribe();
+        this.focusMonitor.stopMonitoring(this.menuToggle);
     }
 }
 </code></pre>
