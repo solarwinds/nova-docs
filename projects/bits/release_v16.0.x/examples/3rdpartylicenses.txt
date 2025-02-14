@@ -84,6 +84,8 @@ SOFTWARE.
 
 @apollo/client/link/utils
 
+@apollo/client/masking
+
 @apollo/client/utilities
 
 @apollo/client/utilities/globals
