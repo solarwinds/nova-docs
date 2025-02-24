@@ -209,8 +209,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="42"
-                                    class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:42</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:45</a></div>
                         </td>
                     </tr>
 
@@ -248,8 +248,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="37"
-                                    class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:37</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -331,7 +331,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -363,7 +363,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/components/table-widget/addons/paginator-feature-addon.service.ts:36</a></div>
                         </td>
                     </tr>
 
@@ -377,13 +377,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
-import { INovaFilteringOutputs, ISelectChangedEvent } from &quot;@nova-ui/bits&quot;;
 import { IPaginatorState, TableWidgetComponent } from &quot;../public-api&quot;;
+import { SET_NEXT_PAGE } from &quot;../../../services/types&quot;;
+import { IEvent, INovaFilteringOutputs } from &quot;@nova-ui/bits&quot;;
+import { takeUntil } from &quot;rxjs/operators&quot;;
+import isEqual from &quot;lodash/isEqual&quot;;
 
 @Injectable()
 export class PaginatorFeatureAddonService {
-    private widget: TableWidgetComponent; // TODO: generic widget
-
     public defaultPaginatorState: IPaginatorState &#x3D; {
         page: 1,
         pageSize: 10,
@@ -391,10 +392,12 @@ export class PaginatorFeatureAddonService {
         total: 0,
     };
     public paginatorState: IPaginatorState &#x3D; this.defaultPaginatorState;
+    private widget: TableWidgetComponent; // TODO: generic widget
 
     public initPaginator(widget: TableWidgetComponent): void {
         this.widget &#x3D; widget;
         this.setPaginatorState();
+        this.listenPaginatorChanges();
     }
 
     public applyFilters(): void {
@@ -421,34 +424,61 @@ export class PaginatorFeatureAddonService {
         const paginatorConfiguration &#x3D;
             this.widget.configuration?.paginatorConfiguration;
 
-        if (this.widget.hasPaginator) {
-            this.paginatorState.pageSize &#x3D;
-                paginatorConfiguration?.pageSize ??
-                this.defaultPaginatorState.pageSize;
+        if (this.widget.hasPaginator &amp;&amp; this.widget.paginator) {
+            this.registerPaginator();
+            // pageSize, pageSizeSet comes from static config
+            const modifiedConfiguration &#x3D; {
+                pageSize:
+                    paginatorConfiguration?.pageSize ??
+                    this.defaultPaginatorState.pageSize,
+                pageSizeSet:
+                    paginatorConfiguration?.pageSizeSet ??
+                    this.defaultPaginatorState.pageSizeSet,
+            };
 
-            this.paginatorState.pageSizeSet &#x3D;
-                paginatorConfiguration?.pageSizeSet ??
-                this.defaultPaginatorState.pageSizeSet;
-
-            this.widget.dataSource.outputsSubject.subscribe(
-                (data: INovaFilteringOutputs) &#x3D;&gt; {
-                    this.paginatorState.total &#x3D; data.paginator?.total ?? 0;
-                }
-            );
-
-            // When changing page size from configurator, this will force preview update
-            if (this.widget.paginator) {
-                const pageSize: ISelectChangedEvent&lt;number&gt; &#x3D; {
-                    oldValue: 0,
-                    newValue: this.paginatorState.pageSize,
-                };
-                this.widget.paginator.setItemsPerPage(pageSize);
+            // update only if needed to avoid additional calls to ds
+            if (!isEqual(modifiedConfiguration, {
+                pageSize: this.paginatorState.pageSize,
+                pageSizeSet: this.paginatorState.pageSizeSet,
+            } )) {
+                this.updatePaginatorState(modifiedConfiguration);
+                this.widget.eventBus.getStream(SET_NEXT_PAGE).next({});
+                this.widget.changeDetector.detectChanges();
             }
 
-            this.registerPaginator();
+            // page and total are dynamically set
+            this.widget.dataSource.outputsSubject
+                .pipe(takeUntil(this.widget.onDestroy$))
+                .subscribe((data: INovaFilteringOutputs) &#x3D;&gt; {
+                    this.updatePaginatorState({
+                        total: data.paginator?.total ?? 0,
+                    });
+                });
         } else {
             this.deregisterPaginator();
         }
+    }
+
+    private updatePaginatorState(param: Partial&lt;IPaginatorState&gt;) {
+        this.paginatorState &#x3D; {
+            ...this.paginatorState,
+            ...param,
+        };
+    }
+
+    private listenPaginatorChanges() {
+        this.widget.eventBus
+            .getStream(SET_NEXT_PAGE)
+            .pipe(takeUntil(this.widget.onDestroy$))
+            .subscribe(({ payload }: IEvent&lt;any&gt;) &#x3D;&gt; {
+                if (!payload) {
+                    return;
+                }
+                this.updatePaginatorState({
+                    page: payload.page ?? 1,
+                });
+                this.applyFilters();
+            });
     }
 }
 </code></pre>

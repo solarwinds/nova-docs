@@ -202,7 +202,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:57</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/components/providers/table-data-source-adapter.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -484,7 +484,12 @@ import {
 } from &quot;@nova-ui/bits&quot;;
 
 import { PizzagnaService } from &quot;../../pizzagna/services/pizzagna.service&quot;;
-import { REFRESH, SCROLL_NEXT_PAGE, WIDGET_READY } from &quot;../../services/types&quot;;
+import {
+    REFRESH,
+    SCROLL_NEXT_PAGE,
+    SET_NEXT_PAGE,
+    WIDGET_READY,
+} from &quot;../../services/types&quot;;
 import {
     DATA_SOURCE,
     IProperties,
@@ -528,7 +533,7 @@ export class TableDataSourceAdapter&lt;
         );
 
         // eslint-disable-next-line import/no-deprecated
-        merge(refresh$, this.eventBus.getStream(SCROLL_NEXT_PAGE))
+        merge(refresh$, this.eventBus.getStream(SCROLL_NEXT_PAGE), this.eventBus.getStream(SET_NEXT_PAGE))
             .pipe(
                 // Note: While SCROLL_NEXT_PAGE is triggered on TableWidget initialization aka WIDGET_READY
                 // we might encounter REFRESH and SCROLL_NEXT_PAGE triggered at the same time.
