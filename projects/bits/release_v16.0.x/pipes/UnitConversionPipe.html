@@ -184,8 +184,8 @@ displaying larger values in a limited amount of space.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/pipes/unit-conversion.pipe.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="52"
+                                    class="link-to-prism">src/pipes/unit-conversion.pipe.ts:52</a></div>
                         </td>
                     </tr>
 
@@ -308,7 +308,10 @@ For example, a quantity of 1024 in bytes is output as &quot;1 KB&quot;.</p>
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 
-import { UnitBase, UnitOption } from &quot;../constants/unit-conversion.constants&quot;;
+import {
+    unitConversionBases,
+    UnitOption,
+} from &quot;../constants/unit-conversion.constants&quot;;
 import { UnitConversionService } from &quot;../services/unit-conversion.service&quot;;
 
 /**
@@ -340,7 +343,7 @@ export class UnitConversionPipe implements PipeTransform {
         plusSign: boolean &#x3D; false,
         unit: UnitOption &#x3D; &quot;bytes&quot;
     ): string {
-        const base &#x3D; unit &#x3D;&#x3D;&#x3D; &quot;bytes&quot; ? UnitBase.Bytes : UnitBase.Standard;
+        const base &#x3D; unitConversionBases[unit];
         const result &#x3D; this.unitConversionService.convert(
             value as number,
             base,

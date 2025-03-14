@@ -258,7 +258,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:104</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:105</a></div>
                             </td>
                         </tr>
 
@@ -326,7 +326,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:69</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -362,8 +362,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="128"
-                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:128</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:129</a></div>
                         </td>
                     </tr>
 
@@ -401,8 +401,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="152"
-                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:152</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="153"
+                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:153</a></div>
                         </td>
                     </tr>
 
@@ -440,8 +440,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="196"
-                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:196</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="197"
+                                    class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:197</a></div>
                         </td>
                     </tr>
 
@@ -488,7 +488,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="219" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:219</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="220" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:220</a></div>
                         </td>
                     </tr>
 
@@ -525,7 +525,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:64</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:65</a></div>
                         </td>
                     </tr>
 
@@ -551,7 +551,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:177</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:178</a></div>
                         </td>
                     </tr>
 
@@ -588,7 +588,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:65</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:66</a></div>
                         </td>
                     </tr>
 
@@ -618,7 +618,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/lib/table/table-virtual-scroll/table-sticky-header.directive.ts:69</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -694,6 +694,7 @@ import {
 } from &quot;rxjs/operators&quot;;
 
 import { FIXED_WIDTH_CLASS } from &quot;../constants&quot;;
+import { TableStateHandlerService } from &quot;../table-state-handler.service&quot;;
 import { TableComponent } from &quot;../table.component&quot;;
 
 export enum TableVirtualScrollHeaderPosition {
@@ -866,6 +867,10 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
 
     public handleColumnsUpdate$: () &#x3D;&gt; Observable&lt;unknown&gt; &#x3D;
         (): Observable&lt;unknown&gt; &#x3D;&gt; {
+            if (this.table.resizable) {
+                return EMPTY;
+            }
+
             // TODO: Perform a dirty check before starting assigning new values
             // Note: Setting the width of stickyHeadContainer container to be able to simulate horizontal scroll of the sticky header
             this.renderer.setStyle(
@@ -915,9 +920,12 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         this.headRef &#x3D;
             this.viewportEl.getElementsByTagName(&quot;thead&quot;).item(0) || undefined;
         this.userProvidedHeight &#x3D; this.viewportEl.style.height;
-        Array.from(this.headRef?.getElementsByTagName(&quot;th&quot;) || []).forEach(
-            (th) &#x3D;&gt; th.classList.add(&quot;virtual-sticky&quot;)
-        );
+        // Disable animation for resizable sticky header cells to prevent a lagging effect during width changes.
+        if (!this.table.resizable) {
+            Array.from(this.headRef?.getElementsByTagName(&quot;th&quot;) || []).forEach(
+                (th) &#x3D;&gt; th.classList.add(&quot;virtual-sticky&quot;)
+            );
+        }
         this.bodyRef &#x3D;
             this.viewportEl.getElementsByTagName(&quot;tbody&quot;).item(0) || undefined;
     }
@@ -948,6 +956,7 @@ export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
         );
         const tableColumnsUpdate$ &#x3D; merge(
             this.table.columnsOrderChange,
+            this.table.columnsWidthChange,
             this.table._contentColumnDefs.changes
         ).pipe(
             // Note: Using delay(0) to grant some time to the table
