@@ -169,7 +169,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/lib/configurator/services/widget-cloner.service.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/configurator/services/widget-cloner.service.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -246,8 +246,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="36"
-                                    class="link-to-prism">src/lib/configurator/services/widget-cloner.service.ts:36</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="39"
+                                    class="link-to-prism">src/lib/configurator/services/widget-cloner.service.ts:39</a></div>
                         </td>
                     </tr>
 
@@ -302,13 +302,16 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ComponentRef, Injectable } from &quot;@angular/core&quot;;
 import { Observable } from &quot;rxjs&quot;;
 
-import { ComponentPortalService } from &quot;../../pizzagna/services/component-portal.service&quot;;
-import { WidgetClonerComponent } from &quot;../components/widget-cloner/widget-cloner.component&quot;;
 import { ConfiguratorService } from &quot;./configurator.service&quot;;
 import { IComponentPortalBundle, IWidgetSelector } from &quot;./types&quot;;
+import { ComponentPortalService } from &quot;../../pizzagna/services/component-portal.service&quot;;
+import { WidgetClonerComponent } from &quot;../components/widget-cloner/widget-cloner.component&quot;;
 
 @Injectable()
 export class WidgetClonerService {
+
+    private ref: ComponentRef&lt;WidgetClonerComponent&gt;;
+
     constructor(
         private configuratorService: ConfiguratorService,
         private componentPortalService: ComponentPortalService
@@ -326,11 +329,17 @@ export class WidgetClonerService {
                 ) &#x3D;&gt; {
                     componentRef.instance.cloneSelectionComponentType &#x3D;
                         cloner.widgetSelectionComponentType;
+                    setTimeout(() &#x3D;&gt; {
+                        this.ref &#x3D; componentRef;
+                    });
                 },
             };
 
             cloner.portalBundle &#x3D; formPortal;
         }
+
+        cloner.previewPizzagnaComponent &#x3D; () &#x3D;&gt; this.ref.instance.configurator.getPreview();
+
 
         return this.configuratorService.open(cloner);
     }

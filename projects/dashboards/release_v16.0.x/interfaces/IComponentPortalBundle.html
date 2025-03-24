@@ -253,6 +253,9 @@ import { Observable } from &quot;rxjs&quot;;
 
 import { DashboardComponent } from &quot;../../components/dashboard/dashboard.component&quot;;
 import { IWidget } from &quot;../../components/widget/types&quot;;
+import {
+    PizzagnaComponent,
+} from &quot;../../pizzagna/components/pizzagna/pizzagna.component&quot;;
 import { IPizzagna } from &quot;../../types&quot;;
 
 export interface IComponentPortalBundle&lt;T&gt; {
@@ -263,6 +266,7 @@ export interface IComponentPortalBundle&lt;T&gt; {
 export interface IConfiguratorSource {
     dashboardComponent: DashboardComponent;
     widget?: IWidget;
+    previewPizzagnaComponent?: () &#x3D;&gt; PizzagnaComponent;
 }
 
 export interface IConfigurator&lt;T &#x3D; any&gt; extends IConfiguratorSource {

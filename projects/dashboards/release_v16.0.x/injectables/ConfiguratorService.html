@@ -325,8 +325,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="98"
-                                    class="link-to-prism">src/lib/configurator/services/configurator.service.ts:98</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/lib/configurator/services/configurator.service.ts:99</a></div>
                         </td>
                     </tr>
 
@@ -436,7 +436,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:115</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/lib/configurator/services/configurator.service.ts:116</a></div>
                         </td>
                     </tr>
 
@@ -497,6 +497,7 @@ export class ConfiguratorService {
     public open(configurator: IConfigurator): Observable&lt;void&gt; {
         const source: IConfiguratorSource &#x3D; {
             dashboardComponent: configurator.dashboardComponent,
+            previewPizzagnaComponent: configurator.previewPizzagnaComponent,
             widget: cloneDeep(configurator.widget),
         };
 
