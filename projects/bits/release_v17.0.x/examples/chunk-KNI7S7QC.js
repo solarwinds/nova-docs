@@ -1,0 +1,1 @@
+var A=function(P){return P.ARROW_DOWN="ArrowDown",P.ARROW_LEFT="ArrowLeft",P.ARROW_RIGHT="ArrowRight",P.ARROW_UP="ArrowUp",P.BACKSPACE="Backspace",P.ENTER="Enter",P.END="End",P.ESCAPE="Escape",P.HOME="Home",P.PAGE_DOWN="PageDown",P.PAGE_UP="PageUp",P.SHIFT_LEFT="ShiftLeft",P.SHIFT_RIGHT="ShiftRight",P.SPACE="Space",P.TAB="Tab",P.DELETE="Delete",P}(A||{});export{A as a};

@@ -1,0 +1,1 @@
+var O=function(r){return r.SELECT_KEYWORD="SELECT_KEYWORD",r.FROM_KEYWORD="FROM_KEYWORD",r.STRING="STRING",r.UNDEFINED="UNDEFINED",r}(O||{}),n=function(r){return r.COL_1="#a6dbf8",r.COL_2="rgba(0, 196, 210, 0.5)",r.COL_3="#ffa6df",r.COL_4="#e3e3e3",r}(n||{}),E=function(r){return r.error="red",r.info="lightblue",r.warning="#ffe11d",r}(E||{});export{O as a,n as b,E as c};

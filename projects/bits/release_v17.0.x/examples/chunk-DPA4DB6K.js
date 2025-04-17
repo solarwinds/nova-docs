@@ -1,0 +1,1 @@
+import{b as o}from"./chunk-D4P6DHOT.js";import{Aa as i,Qb as n}from"./chunk-7UJBXEVU.js";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=i({type:e,selectors:[["nui-date-picker-basic-example"]],decls:1,vars:0,template:function(t,c){t&1&&n(0,"nui-date-picker")},dependencies:[o],encapsulation:2})}}return e})();export{m as a};
