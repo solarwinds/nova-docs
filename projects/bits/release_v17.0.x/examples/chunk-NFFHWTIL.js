@@ -1,1 +1,0 @@
-import{Aa as n,Ob as a,Pb as i,qc as o}from"./chunk-7UJBXEVU.js";var p=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["nui-tag-basic-example"]],decls:2,vars:0,consts:[[1,"nui-tag"]],template:function(t,c){t&1&&(a(0,"div",0),o(1,"Tag label"),i())},encapsulation:2})}}return e})();export{p as a};

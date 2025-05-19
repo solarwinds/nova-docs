@@ -1,1 +1,0 @@
-import{f as a}from"./chunk-XR34LRGE.js";var b=a((m,e)=>{var f="\\ud800-\\udfff",s="\\u0300-\\u036f",o="\\ufe20-\\ufe2f",u="\\u20d0-\\u20ff",n=s+o+u,g="\\ufe0e\\ufe0f",R="\\u200d",d=RegExp("["+R+f+n+g+"]");function t(r){return d.test(r)}e.exports=t});export{b as a};

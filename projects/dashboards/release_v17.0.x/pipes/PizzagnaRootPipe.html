@@ -168,8 +168,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="33"
-                                    class="link-to-prism">src/lib/configurator/pipe/pizzagna-root.pipe.ts:33</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/lib/configurator/pipe/pizzagna-root.pipe.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -247,6 +247,7 @@ import { WidgetTypesService } from &quot;../../services/widget-types.service&quo
 @Pipe({
     name: &quot;nuiPizzagnaRoot&quot;,
     pure: true,
+    standalone: false,
 })
 export class PizzagnaRootPipe implements PipeTransform {
     constructor(private widgetTypesService: WidgetTypesService) {}

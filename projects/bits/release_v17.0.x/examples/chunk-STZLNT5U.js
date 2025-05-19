@@ -1,1 +1,0 @@
-import{i as q,j as u}from"./chunk-P53HI2D5.js";import{f as l}from"./chunk-XR34LRGE.js";var O=l((e,g)=>{var x=u(),A=q();function N(a,d,i,f){var s=!i;i||(i={});for(var v=-1,h=d.length;++v<h;){var n=d[v],r=f?f(i[n],a[n],n,i,a):void 0;r===void 0&&(r=a[n]),s?A(i,n,r):x(i,n,r)}return i}g.exports=N});export{O as a};

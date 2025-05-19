@@ -229,7 +229,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:85</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:84</a></div>
                             </td>
                         </tr>
 
@@ -309,7 +309,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:61</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -344,7 +344,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:65</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:64</a></div>
                         </td>
                     </tr>
 
@@ -380,7 +380,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:60</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:59</a></div>
                         </td>
                     </tr>
 
@@ -407,7 +407,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:64</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:63</a></div>
                         </td>
                     </tr>
 
@@ -436,7 +436,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:70</a></div>
                                 </td>
                             </tr>
 
@@ -458,7 +458,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/lib/dnd/dnd-drop-target.directive.ts:82</a></div>
                                 </td>
                             </tr>
 
@@ -501,11 +501,10 @@ import {
         // to let the user customize drop zone only via css
         &quot;[class.nui-dnd-dropzone]&quot;: &quot;true&quot;,
         &quot;[class.nui-dnd-dropzone--active]&quot;: &quot;isDropZoneActive&quot;,
-        &quot;[class.nui-dnd-dropzone--drop-allowed]&quot;:
-            &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped&quot;,
-        &quot;[class.nui-dnd-dropzone--drop-not-allowed]&quot;:
-            &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped &#x3D;&#x3D;&#x3D; false&quot;,
+        &quot;[class.nui-dnd-dropzone--drop-allowed]&quot;: &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped&quot;,
+        &quot;[class.nui-dnd-dropzone--drop-not-allowed]&quot;: &quot;isDropZoneActive &amp;&amp; canLastDragItemBeDropped &#x3D;&#x3D;&#x3D; false&quot;,
     },
+    standalone: false,
 })
 export class DndDropTargetDirective implements AfterContentInit, OnDestroy {
     @ContentChildren(CdkDrag, { descendants: true })

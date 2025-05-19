@@ -305,6 +305,7 @@ export interface IBrokerValue {
  */
 @Directive({
     selector: &quot;[nuiZoomContent]&quot;,
+    standalone: false,
 })
 export class ZoomContentDirective
     implements OnDestroy, AfterViewInit, OnChanges

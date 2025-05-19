@@ -1,1 +1,0 @@
-import{a}from"./chunk-ZSP4VKRT.js";import"./chunk-TC54CSUG.js";import"./chunk-GDOOYE5G.js";import"./chunk-LVGKZ3JP.js";import"./chunk-CHJVZ6O7.js";import"./chunk-N5FUFMYY.js";import"./chunk-7UJBXEVU.js";import"./chunk-XR34LRGE.js";export{a as DragdropExampleComponent};

@@ -1,1 +1,0 @@
-import{a}from"./chunk-XCC5MM4Q.js";import"./chunk-AKYKJT5U.js";import"./chunk-GDOOYE5G.js";import"./chunk-LVGKZ3JP.js";import"./chunk-CHJVZ6O7.js";import"./chunk-N5FUFMYY.js";import"./chunk-7UJBXEVU.js";import"./chunk-XR34LRGE.js";export{a as DndDropzoneVisualExampleComponent};

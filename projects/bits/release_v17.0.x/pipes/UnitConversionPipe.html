@@ -177,8 +177,8 @@ displaying larger values in a limited amount of space.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="52"
-                                    class="link-to-prism">src/pipes/unit-conversion.pipe.ts:52</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/pipes/unit-conversion.pipe.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -315,6 +315,7 @@ import { UnitConversionService } from &quot;../services/unit-conversion.service&
  */
 @Pipe({
     name: &quot;unitConversion&quot;,
+    standalone: false,
 })
 export class UnitConversionPipe implements PipeTransform {
     constructor(private unitConversionService: UnitConversionService) {}

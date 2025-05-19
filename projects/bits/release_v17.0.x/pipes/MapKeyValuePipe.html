@@ -177,8 +177,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/pipes/map-key-value.pipe.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="43"
+                                    class="link-to-prism">src/pipes/map-key-value.pipe.ts:43</a></div>
                         </td>
                     </tr>
 
@@ -256,7 +256,10 @@ import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
  *   &quot;let items of itemsMap | nuiMapKeyValue&quot;
  *
  */
-@Pipe({ name: &quot;nuiMapKeyValue&quot; })
+@Pipe({
+    name: &quot;nuiMapKeyValue&quot;,
+    standalone: false,
+})
 export class MapKeyValuePipe implements PipeTransform {
     public transform&lt;K, V&gt;(input: ReadonlyMap&lt;K, V&gt;): Array&lt;KeyValue&lt;K, V&gt;&gt; {
         return Array.from(input.entries(), ([key, value]) &#x3D;&gt; ({ key, value }));
