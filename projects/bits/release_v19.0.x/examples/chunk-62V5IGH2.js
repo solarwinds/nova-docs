@@ -1,0 +1,2 @@
+import{zb as o}from"./chunk-MC3BMXIX.js";var r=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["nui-overlay-test"]],standalone:!1,decls:0,vars:0,template:function(t,a){},styles:[`.nui-demo-custom-class{background-color:#9acd32!important;font-family:Courier New,Courier,monospace;font-weight:700;text-decoration:underline overline black dotted;padding:20px}
+`],encapsulation:2})}}return e})();export{r as a};

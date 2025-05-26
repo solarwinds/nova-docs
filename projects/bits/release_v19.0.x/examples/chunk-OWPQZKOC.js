@@ -1,0 +1,1 @@
+import{e as t,f as i}from"./chunk-Y7C4AM3Q.js";import{f as b}from"./chunk-VBFW7A5V.js";var s=b((a,r)=>{var u=t(),n=i(),m="[object Number]";function o(e){return typeof e=="number"||n(e)&&u(e)==m}r.exports=o});export{s as a};

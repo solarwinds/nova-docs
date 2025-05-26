@@ -1,0 +1,680 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#BroadcasterTrackOnType" title="src/lib/components/providers/types.ts" ><b>BroadcasterTrackOnType</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ChartTypeNamesMap" title="src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts" ><b>ChartTypeNamesMap</b>&nbsp;&nbsp;&nbsp;(src/.../proportional-chart-options-editor.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ComparatorFn" title="src/lib/types.ts" ><b>ComparatorFn</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ComparatorTypes" title="src/lib/types.ts" ><b>ComparatorTypes</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DeepPartial" title="src/lib/types.ts" ><b>DeepPartial</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IAddFormattersOptions" title="src/lib/services/types.ts" ><b>IAddFormattersOptions</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IComparatorsDict" title="src/lib/types.ts" ><b>IComparatorsDict</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IKpiFormatterProperties" title="src/lib/components/kpi-widget/types.ts" ><b>IKpiFormatterProperties</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IKpiFormattersConfiguration" title="src/lib/components/kpi-widget/types.ts" ><b>IKpiFormattersConfiguration</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IPizza" title="src/lib/types.ts" ><b>IPizza</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IPizzagna" title="src/lib/types.ts" ><b>IPizzagna</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IPizzagnaLayer" title="src/lib/types.ts" ><b>IPizzagnaLayer</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IProperties" title="src/lib/types.ts" ><b>IProperties</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IProportionalAggregatorFn" title="src/lib/functions/proportional-aggregators/types.ts" ><b>IProportionalAggregatorFn</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IProportionalAggregatorOrigin" title="src/lib/functions/proportional-aggregators/types.ts" ><b>IProportionalAggregatorOrigin</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IRegistryMap" title="src/lib/services/registry-service.ts" ><b>IRegistryMap</b>&nbsp;&nbsp;&nbsp;(src/.../registry-service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IRiskScoreFormatterProperties" title="src/lib/components/risk-score-tile/types.ts" ><b>IRiskScoreFormatterProperties</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#IRiskScoreFormattersConfiguration" title="src/lib/components/risk-score-tile/types.ts" ><b>IRiskScoreFormattersConfiguration</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ITableWidgetSelectionConfigDisabled" title="src/lib/components/table-widget/types.ts" ><b>ITableWidgetSelectionConfigDisabled</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PreprocessorType" title="src/lib/services/category-chart-util.service.ts" ><b>PreprocessorType</b>&nbsp;&nbsp;&nbsp;(src/.../category-chart-util.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TableWidgetSelectionConfig" title="src/lib/components/table-widget/types.ts" ><b>TableWidgetSelectionConfig</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TimeseriesWidgetZoomPlugin" title="src/lib/components/timeseries-widget/types.ts" ><b>TimeseriesWidgetZoomPlugin</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WidgetRemovalOperation" title="src/lib/configurator/services/types.ts" ><b>WidgetRemovalOperation</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#WidgetUpdateOperation" title="src/lib/configurator/services/types.ts" ><b>WidgetUpdateOperation</b>&nbsp;&nbsp;&nbsp;(src/.../types.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/lib/components/providers/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BroadcasterTrackOnType"></a>
+                    <span class="name "><b>BroadcasterTrackOnType</b><a href="#BroadcasterTrackOnType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;component&quot; | &quot;pizzagna&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/configurator/components/widgets/proportional/chart-options-editor/proportional-chart-options-editor.component.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ChartTypeNamesMap"></a>
+                    <span class="name "><b>ChartTypeNamesMap</b><a href="#ChartTypeNamesMap"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ComparatorFn"></a>
+                    <span class="name "><b>ComparatorFn</b><a href="#ComparatorFn"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ComparatorTypes"></a>
+                    <span class="name "><b>ComparatorTypes</b><a href="#ComparatorTypes"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;&gt;&quot; | &quot;&gt;&#x3D;&quot; | &quot;&#x3D;&#x3D;&quot; | &quot;&lt;&quot; | &quot;&lt;&#x3D;&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DeepPartial"></a>
+                    <span class="name "><b>DeepPartial</b><a href="#DeepPartial"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Same as Partial<T> but goes deeper and makes all of its properties and sub-properties Parti al<T>.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IComparatorsDict"></a>
+                    <span class="name "><b>IComparatorsDict</b><a href="#IComparatorsDict"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/IBackgroundColorComparator.html" target="_self" >Partial&lt;Record&lt;ComparatorTypes | string, IBackgroundColorComparator&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IPizza"></a>
+                    <span class="name "><b>IPizza</b><a href="#IPizza"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/IComponentConfiguration.html" target="_self" >Record&lt;string | IComponentConfiguration&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IPizzagna"></a>
+                    <span class="name "><b>IPizzagna</b><a href="#IPizzagna"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#PizzagnaLayer" target="_self" >Record&lt;string | IPizzagnaLayer&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IPizzagnaLayer"></a>
+                    <span class="name "><b>IPizzagnaLayer</b><a href="#IPizzagnaLayer"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/IComponentConfiguration.html" target="_self" >Record&lt;string | DeepPartial&lt;IComponentConfiguration&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IProperties"></a>
+                    <span class="name "><b>IProperties</b><a href="#IProperties"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Record&lt;string | any&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/services/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IAddFormattersOptions"></a>
+                    <span class="name "><b>IAddFormattersOptions</b><a href="#IAddFormattersOptions"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/IRegistryAddOptions.html" target="_self" >Pick&lt;IRegistryAddOptions | overrideExisting&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/components/kpi-widget/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IKpiFormatterProperties"></a>
+                    <span class="name "><b>IKpiFormatterProperties</b><a href="#IKpiFormatterProperties"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#KpiFormatterTypes" target="_self" >Partial&lt;Record&lt;KpiFormatterTypes | string, any&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IKpiFormattersConfiguration"></a>
+                    <span class="name "><b>IKpiFormattersConfiguration</b><a href="#IKpiFormattersConfiguration"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#KpiFormatterTypes" target="_self" >Partial&lt;Record&lt;KpiFormatterTypes | string, literal type&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/functions/proportional-aggregators/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IProportionalAggregatorFn"></a>
+                    <span class="name "><b>IProportionalAggregatorFn</b><a href="#IProportionalAggregatorFn"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IProportionalAggregatorOrigin"></a>
+                    <span class="name "><b>IProportionalAggregatorOrigin</b><a href="#IProportionalAggregatorOrigin"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/IAggregatorChartData.html" target="_self" >Array&lt;IAggregatorChartData&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/services/registry-service.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IRegistryMap"></a>
+                    <span class="name "><b>IRegistryMap</b><a href="#IRegistryMap"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>Record&lt;string | T&gt;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/components/risk-score-tile/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IRiskScoreFormatterProperties"></a>
+                    <span class="name "><b>IRiskScoreFormatterProperties</b><a href="#IRiskScoreFormatterProperties"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#RiskScoreFormatterTypes" target="_self" >Partial&lt;Record&lt;RiskScoreFormatterTypes | string, any&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="IRiskScoreFormattersConfiguration"></a>
+                    <span class="name "><b>IRiskScoreFormattersConfiguration</b><a href="#IRiskScoreFormattersConfiguration"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../miscellaneous/enumerations.html#RiskScoreFormatterTypes" target="_self" >Partial&lt;Record&lt;RiskScoreFormatterTypes | string, literal type&gt;&gt;</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/components/table-widget/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ITableWidgetSelectionConfigDisabled"></a>
+                    <span class="name "><b>ITableWidgetSelectionConfigDisabled</b><a href="#ITableWidgetSelectionConfigDisabled"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>ITableSelectionConfigDisabled</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TableWidgetSelectionConfig"></a>
+                    <span class="name "><b>TableWidgetSelectionConfig</b><a href="#TableWidgetSelectionConfig"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="../interfaces/ITableWidgetSelectionConfigEnabled.html" target="_self" >ITableWidgetSelectionConfigEnabled | ITableSelectionConfigDisabled</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/services/category-chart-util.service.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PreprocessorType"></a>
+                    <span class="name "><b>PreprocessorType</b><a href="#PreprocessorType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/components/timeseries-widget/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TimeseriesWidgetZoomPlugin"></a>
+                    <span class="name "><b>TimeseriesWidgetZoomPlugin</b><a href="#TimeseriesWidgetZoomPlugin"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>TimeseriesZoomPlugin | ZoomPlugin</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>src/lib/configurator/services/types.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WidgetRemovalOperation"></a>
+                    <span class="name "><b>WidgetRemovalOperation</b><a href="#WidgetRemovalOperation"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="WidgetUpdateOperation"></a>
+                    <span class="name "><b>WidgetUpdateOperation</b><a href="#WidgetUpdateOperation"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

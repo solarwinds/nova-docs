@@ -1,0 +1,1 @@
+var o="https://cors-anywhere.herokuapp.com/",e="https://randomuser.me/",r="https://api.punkapi.com/v2/beers",s="https://www.googleapis.com/books/v1/volumes",t="api/1.3",p=`Error responding from server. Please visit ${e} and ${o} to see if they're available`;export{o as a,e as b,r as c,s as d,t as e,p as f};

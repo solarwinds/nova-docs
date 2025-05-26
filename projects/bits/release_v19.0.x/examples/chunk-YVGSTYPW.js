@@ -1,0 +1,1 @@
+import{a as o,b as e,c as r}from"./chunk-ZQDSMXFE.js";var i=class{getHighlightColor(t){switch(t.type){case o.NUMBER:return e.COL_3;case o.STRING:return e.COL_1;default:return e.COL_2}}getNotifColor(t){return r[t.issue]}enhanceTokens(t){return t}};export{i as a};

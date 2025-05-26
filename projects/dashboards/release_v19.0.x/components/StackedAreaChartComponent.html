@@ -1,0 +1,1787 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@nova-ui/dashboards documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">@nova-ui/dashboards documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  StackedAreaChartComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">API</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-area-chart.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+    </p>
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>nui-stacked-area-chart</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>../xy-chart.component.less</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>../xy-chart.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#lateLoadKey" >lateLoadKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeDetector" >changeDetector</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#chartAssist" >chartAssist</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#collectionId" >collectionId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#summaryLegendBcgColor" >summaryLegendBcgColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#summaryLegendColor" >summaryLegendColor</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#summarySerie" >summarySerie</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#timeseriesChartTypes" >timeseriesChartTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#timeseriesScalesService" >timeseriesScalesService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#transformers" >transformers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#valueAccessorKey" >valueAccessorKey</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#zoomPlugins" >zoomPlugins</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayDeleteButton" >displayDeleteButton</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayLegendMenu" >displayLegendMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getLegendValue" >getLegendValue</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hasLegend" >hasLegend</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#legendShouldBeAlignedRight" >legendShouldBeAlignedRight</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#mapSeriesSet" >mapSeriesSet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onPrimaryDescClick" >onPrimaryDescClick</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#transformData" >transformData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeMetric" >removeMetric</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#updateYAxisDomain" >updateYAxisDomain</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#configuration" >configuration</a>
+                            </li>
+                            <li>
+                                <a href="#widgetData" >widgetData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(eventBus: EventBus<IEvent>, dataSource: IDataSource, timeseriesScalesService: <a href="../injectables/TimeseriesScalesService.html" target="_self">TimeseriesScalesService</a>, changeDetector: ChangeDetectorRef)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-area-chart.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>eventBus</td>
+                                                  
+                                                        <td>
+                                                                    <code>EventBus&lt;IEvent&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dataSource</td>
+                                                  
+                                                        <td>
+                                                                    <code>IDataSource</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>timeseriesScalesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TimeseriesScalesService.html" target="_self" >TimeseriesScalesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeDetector</td>
+                                                  
+                                                        <td>
+                                                                    <code>ChangeDetectorRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="configuration"></a>
+                        <b>configuration</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ITimeseriesWidgetConfig.html" target="_self" >ITimeseriesWidgetConfig</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{} as ITimeseriesWidgetConfig</code>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../directives/TimeseriesChartComponent.html" target="_self" >TimeseriesChartComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../directives/TimeseriesChartComponent.html#source" target="_self" >TimeseriesChartComponent:59</a></code>
+</div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="widgetData"></a>
+                        <b>widgetData</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ITimeseriesOutput.html" target="_self" >ITimeseriesOutput&lt;T&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{} as ITimeseriesOutput&lt;T&gt;</code>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../directives/TimeseriesChartComponent.html" target="_self" >TimeseriesChartComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../directives/TimeseriesChartComponent.html#source" target="_self" >TimeseriesChartComponent:57</a></code>
+</div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayDeleteButton"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>displayDeleteButton</b></span>
+                        <a href="#displayDeleteButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>displayDeleteButton()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:435</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayLegendMenu"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>displayLegendMenu</b></span>
+                        <a href="#displayLegendMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>displayLegendMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:426</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLegendValue"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getLegendValue</b></span>
+                        <a href="#getLegendValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLegendValue(legendSeries: IChartAssistSeries<IAccessors<any>>, valueAccessorKey: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:463</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>legendSeries</td>
+                                            <td>
+                                                        <code>IChartAssistSeries&lt;IAccessors&lt;any&gt;&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>valueAccessorKey</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>string | number | undefined</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasLegend"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hasLegend</b></span>
+                        <a href="#hasLegend"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hasLegend()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:259</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if legend should be shown.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="legendShouldBeAlignedRight"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>legendShouldBeAlignedRight</b></span>
+                        <a href="#legendShouldBeAlignedRight"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>legendShouldBeAlignedRight()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:267</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Checks if legend should be aligned to right.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapSeriesSet"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>mapSeriesSet</b></span>
+                        <a href="#mapSeriesSet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>mapSeriesSet(data: any[], scales: IXYScales)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:205</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>scales</td>
+                                            <td>
+                                                        <code>IXYScales</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>IChartAssistSeries[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPrimaryDescClick"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onPrimaryDescClick</b></span>
+                        <a href="#onPrimaryDescClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPrimaryDescClick(event: MouseEvent, legendSeries: IChartAssistSeries<IAccessors>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:271</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>MouseEvent</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>legendSeries</td>
+                                            <td>
+                                                        <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformData"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>transformData</b></span>
+                        <a href="#transformData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>transformData(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, trId: <a href="../undefineds/TimeseriesTransformer.html" target="_self">TimeseriesTransformer</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:444</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>metricId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>trId</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#TimeseriesTransformer" target="_self" >TimeseriesTransformer</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeMetric"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>removeMetric</b></span>
+                        <a href="#removeMetric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeMetric(metricId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../directives/TimeseriesChartComponent.html" target="_self" >TimeseriesChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../directives/TimeseriesChartComponent.html#source" target="_self" >TimeseriesChartComponent:241</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>metricId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateYAxisDomain"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>updateYAxisDomain</b></span>
+                        <a href="#updateYAxisDomain"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateYAxisDomain()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Inherited from         <code><a href="../directives/TimeseriesChartComponent.html" target="_self" >TimeseriesChartComponent</a></code>
+</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../directives/TimeseriesChartComponent.html#source" target="_self" >TimeseriesChartComponent:219</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lateLoadKey"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>lateLoadKey</b></span>
+                        <a href="#lateLoadKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;StackedAreaChartComponent&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/lib/components/timeseries-widget/chart-presets/xy-chart/chart-types/stacked-area-chart.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeDetector"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>changeDetector</b></span>
+                        <a href="#changeDetector"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ChangeDetectorRef</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:194</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="chartAssist"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>chartAssist</b></span>
+                        <a href="#chartAssist"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ChartAssist</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:107</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="collectionId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>collectionId</b></span>
+                        <a href="#collectionId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:109</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="summaryLegendBcgColor"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>summaryLegendBcgColor</b></span>
+                        <a href="#summaryLegendBcgColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SUMMARY_LEGEND_BCG_COLOR</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:117</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="summaryLegendColor"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>summaryLegendColor</b></span>
+                        <a href="#summaryLegendColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>SUMMARY_LEGEND_COLOR</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:118</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="summarySerie"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>summarySerie</b></span>
+                        <a href="#summarySerie"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IChartAssistSeries&lt;IAccessors&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:116</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeseriesChartTypes"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>timeseriesChartTypes</b></span>
+                        <a href="#timeseriesChartTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>TimeseriesChartTypes</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:115</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timeseriesScalesService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>timeseriesScalesService</b></span>
+                        <a href="#timeseriesScalesService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/TimeseriesScalesService.html" target="_self" >TimeseriesScalesService</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:193</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="transformers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>transformers</b></span>
+                        <a href="#transformers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Map&lt;
+        TimeseriesTransformer,
+        ITransformerDescription
+    &gt;([
+        [
+            TimeseriesTransformer.None,
+            { displayName: $localize&#x60;None&#x60;, transformer: undefined },
+        ],
+        [
+            TimeseriesTransformer.ChangePoint,
+            {
+                displayName: $localize&#x60;Change Point&#x60;,
+                transformer: transformChangePoint,
+            },
+        ],
+        [
+            TimeseriesTransformer.Difference,
+            {
+                displayName: $localize&#x60;Difference&#x60;,
+                transformer: transformDifference,
+            },
+        ],
+        [
+            TimeseriesTransformer.FloatingAverage,
+            {
+                displayName: $localize&#x60;Floating Average&#x60;,
+                transformer: transformFloatingAverage,
+            },
+        ],
+        [
+            TimeseriesTransformer.Linear,
+            { displayName: $localize&#x60;Linear&#x60;, transformer: transformLinReg },
+        ],
+        [
+            TimeseriesTransformer.Normalize,
+            {
+                displayName: $localize&#x60;Normalize&#x60;,
+                transformer: transformNormalize,
+            },
+        ],
+        [
+            TimeseriesTransformer.PercentileStd,
+            {
+                displayName: $localize&#x60;Percentile Standardized&#x60;,
+                transformer: transformPercentileStd,
+            },
+        ],
+        [
+            TimeseriesTransformer.Smoothing,
+            {
+                displayName: $localize&#x60;Smoothing&#x60;,
+                transformer: transformLoessSmoothing,
+            },
+        ],
+        [
+            TimeseriesTransformer.LoessStandardize,
+            {
+                displayName: $localize&#x60;Smoothing Standardized&#x60;,
+                transformer: transformLoessStandardize,
+            },
+        ],
+        [
+            TimeseriesTransformer.Standardize,
+            {
+                displayName: $localize&#x60;Standardize&#x60;,
+                transformer: transformStandardize,
+            },
+        ],
+    ])</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:120</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="valueAccessorKey"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>valueAccessorKey</b></span>
+                        <a href="#valueAccessorKey"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;y&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:108</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoomPlugins"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>zoomPlugins</b></span>
+                        <a href="#zoomPlugins"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#TimeseriesWidgetZoomPlugin" target="_self" >TimeseriesWidgetZoomPlugin[]</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Inherited from         <code><a href="../injectables/XYChartComponent.html" target="_self" >XYChartComponent</a></code>
+</div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in         <code><a href="../injectables/XYChartComponent.html#source" target="_self" >XYChartComponent:110</a></code>
+</div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component, Inject, Optional } from &quot;@angular/core&quot;;
+
+import { EventBus, IDataSource, IEvent } from &quot;@nova-ui/bits&quot;;
+import {
+    areaGrid,
+    AreaRenderer,
+    Chart,
+    ChartAssist,
+    ChartPalette,
+    IAccessors,
+    IValueProvider,
+    stackedArea,
+    stackedAreaAccessors,
+} from &quot;@nova-ui/charts&quot;;
+
+import { DATA_SOURCE, PIZZAGNA_EVENT_BUS } from &quot;../../../../../types&quot;;
+import { TimeseriesScalesService } from &quot;../../../timeseries-scales.service&quot;;
+import { XYChartComponent } from &quot;../xy-chart.component&quot;;
+
+@Component({
+    selector: &quot;nui-stacked-area-chart&quot;,
+    templateUrl: &quot;../xy-chart.component.html&quot;,
+    styleUrls: [&quot;../xy-chart.component.less&quot;],
+    standalone: false,
+})
+export class StackedAreaChartComponent extends XYChartComponent {
+    public static lateLoadKey &#x3D; &quot;StackedAreaChartComponent&quot;;
+
+    constructor(
+        @Inject(PIZZAGNA_EVENT_BUS) eventBus: EventBus&lt;IEvent&gt;,
+        @Optional() @Inject(DATA_SOURCE) dataSource: IDataSource,
+        timeseriesScalesService: TimeseriesScalesService,
+        changeDetector: ChangeDetectorRef
+    ) {
+        super(eventBus, dataSource, timeseriesScalesService, changeDetector);
+
+        this.renderer &#x3D; new AreaRenderer();
+        this.valueAccessorKey &#x3D; &quot;y1&quot;;
+    }
+
+    protected createAccessors(
+        colorProvider: IValueProvider&lt;string&gt;
+    ): IAccessors {
+        return stackedAreaAccessors(colorProvider);
+    }
+
+    protected createChartAssist(palette: ChartPalette): ChartAssist {
+        const grid &#x3D; areaGrid();
+        const gridConfig &#x3D; grid.config();
+        gridConfig.axis.left.fit &#x3D; true;
+        const chart &#x3D; new Chart(grid);
+
+        if (
+            this.configuration.gridConfig?.hideYAxisTicksLabels &amp;&amp;
+            this.configuration.units &#x3D;&#x3D;&#x3D; &quot;percent&quot;
+        ) {
+            gridConfig.axis.left.visible &#x3D; false;
+            gridConfig.axis.right.visible &#x3D; false;
+        }
+
+        return new ChartAssist(chart, stackedArea, palette);
+    }
+}
+</code></pre>
+    </div>
+
+
+
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div    class="nui-chart-layout h-100"    [class.layout-fixed]="configuration.gridConfig?.fixedLayout">    <div        *ngIf="!configuration.gridConfig?.hideYAxisLabel"        class="axis-label-left nui-text-small"    >        <strong>{{ configuration.leftAxisLabel }}</strong>    </div>    <div class="chart">        <nui-chart            [nuiChartCollectionId]="collectionId"            class="w-100"            [chart]="chartAssist.chart"        ></nui-chart>    </div>    <div        class="d-flex"        *ngIf="hasLegend()"        [ngClass]="[            legendShouldBeAlignedRight() ? \'legend scrollable\' : \'legend-bottom\'        ]"    >        <nui-legend            class="m-auto"            [active]="chartAssist.isLegendActive"            [interactive]="true"            [orientation]="                legendShouldBeAlignedRight() ? \'vertical\' : \'horizontal\'            "        >            <nui-legend-series                *ngIf="widgetData.summarySerie && summarySerie"                class="summary-serie"                [interactive]="false"                (mouseenter)="chartAssist.resetVisibleSeries()"            >                <nui-rich-legend-tile                    [value]="                        chartAssist.getHighlightedValue(                            summarySerie,                            \'y\',                            \'tick\'                        )                    "                    [backgroundColor]="summaryLegendBcgColor"                    [color]="summaryLegendColor"                >                </nui-rich-legend-tile>                <div description class="description-container">                    <div class="description-text nui-text-small">                        <div                            class="description description-primary"                            [ngClass]="{                                \'nui-text-link-small link\': seriesInteractive                            }"                            [title]="summarySerie.legendDescriptionPrimary"                        >                            {{ summarySerie.legendDescriptionPrimary }}                        </div>                        <div                            class="description description-secondary"                            [title]="summarySerie.legendDescriptionSecondary"                        >                            {{ summarySerie.legendDescriptionSecondary }}                        </div>                    </div>                </div>                <button                    nui-button                    legendMenu                    icon="remove"                    type="button"                    displayStyle="action"                    *ngIf="displayDeleteButton()"                    (click)="removeMetric(summarySerie.id)"                    displayStyle="action"                ></button>            </nui-legend-series>            <nui-legend-series                class="xy-chart__legend-series"                [ngClass]="                    \'xy-chart__legend-series--state-\' +                    chartAssist.renderStatesIndex[legendSeries.id]?.state                "                *ngFor="                    let legendSeries of chartAssist.legendSeriesSet;                    trackBy: chartAssist.seriesTrackByFn                "                [isSelected]="!chartAssist.isSeriesHidden(legendSeries.id)"                (isSelectedChange)="                    chartAssist.toggleSeries(legendSeries.id, $event)                "                (mouseenter)="chartAssist.emphasizeSeries(legendSeries.id)"                (mouseleave)="chartAssist.resetVisibleSeries()"                [seriesRenderState]="                    chartAssist.renderStatesIndex[legendSeries.id]?.state                "            >                <nui-rich-legend-tile                    [value]="getLegendValue(legendSeries, valueAccessorKey)"                    [backgroundColor]="                        chartAssist.palette.standardColors.get(legendSeries.id)                    "                    [color]="                        chartAssist.palette.textColors.get(legendSeries.id)                    "                >                    <nui-chart-marker                        rightEdge                        [marker]="chartAssist.markers.get(legendSeries.id)"                        [color]="                            chartAssist.palette.standardColors.get(                                legendSeries.id                            )                        "                    >                    </nui-chart-marker>                </nui-rich-legend-tile>                <div                    description                    class="description-container d-flex nui-text-small justify-content-center"                >                    <div class="descriptions">                        <div                            *ngIf="!legendSeries.link"                            class="description description-primary"                            [ngClass]="{                                \'nui-text-link-small link\': seriesInteractive                            }"                            (click)="onPrimaryDescClick($event, legendSeries)"                            [title]="legendSeries.legendDescriptionPrimary"                        >                            {{ legendSeries.legendDescriptionPrimary }}                        </div>                        <a                            class="description description-primary nui-text-link-small link"                            (click)="$event.stopPropagation()"                            *ngIf="legendSeries.link"                            [href]="legendSeries.link"                            rel="noopener noreferrer"                            [title]="legendSeries.legendDescriptionPrimary"                        >                            {{ legendSeries.legendDescriptionPrimary }}                        </a>                        <div                            class="description description-secondary"                            *ngIf="                                !legendSeries.secondaryLink &&                                !widgetData.summarySerie                            "                            [title]="legendSeries.legendDescriptionSecondary"                        >                            {{ legendSeries.legendDescriptionSecondary }}                        </div>                        <a                            class="description description-secondary nui-text-link-small link"                            (click)="$event.stopPropagation()"                            *ngIf="                                legendSeries.secondaryLink &&                                !widgetData.summarySerie                            "                            [href]="legendSeries.secondaryLink"                            rel="noopener noreferrer"                            [title]="legendSeries.legendDescriptionSecondary"                        >                            {{ legendSeries.legendDescriptionSecondary }}                        </a>                    </div>                    <nui-icon                        *ngIf="legendSeries.realtime"                        icon="fast-poll"                        iconColor="primary-blue"                    ></nui-icon>                    <nui-icon                        *ngIf="legendSeries.transformer"                        icon="performance"                        iconColor="primary-blue"                    ></nui-icon>                </div>                <nui-menu                    legendMenu                    *ngIf="displayLegendMenu()"                    icon="menu"                    displayStyle="action"                    [appendToBody]="true"                >                    <nui-menu-group>                        <nui-menu-action                            i18n                            (actionDone)="removeMetric(legendSeries.id)"                            >Remove</nui-menu-action                        >                    </nui-menu-group>                    <nui-menu-group header="Display Transforms" i18n-header>                        <nui-menu-action                            *ngFor="let tr of transformers | nuiMapKeyValue"                            [class.selected]="                                legendSeries.transformer?.name ===                                tr.value.transformer?.name                            "                            (actionDone)="                                transformData(legendSeries.id, tr.key)                            "                        >                            {{ tr.value.displayName }}                        </nui-menu-action>                    </nui-menu-group>                </nui-menu>            </nui-legend-series>        </nui-legend>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AggregatorMetricSelectorConfigurationComponent', 'selector': 'nui-aggregator-configurator'},{'name': 'BackgroundColorRulesConfigurationComponent', 'selector': 'nui-background-color-rules-configuration'},{'name': 'ColorPickerComponent', 'selector': 'nui-color-picker'},{'name': 'ConfiguratorHeadingComponent', 'selector': 'nui-configurator-heading'},{'name': 'DashboardComponent', 'selector': 'nui-dashboard'},{'name': 'DashwizButtonsComponent', 'selector': 'nui-dashwiz-buttons'},{'name': 'DashwizComponent', 'selector': 'nui-dashwiz'},{'name': 'DashwizStepComponent', 'selector': 'nui-dashwiz-step'},{'name': 'DataSourceConfigurationComponent', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceConfigurationV2Component', 'selector': 'nui-data-source-configuration'},{'name': 'DataSourceErrorComponent', 'selector': 'nui-data-source-error'},{'name': 'DescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'DescriptionConfigurationV2Component', 'selector': 'nui-description-configuration-v2'},{'name': 'DonutContentConfigurationComponent', 'selector': 'nui-donut-content-configuration'},{'name': 'DonutContentPercentageConfigurationComponent', 'selector': 'nui-donut-content-configurator'},{'name': 'DonutContentPercentageFormatterComponent', 'selector': ''},{'name': 'DonutContentRawFormatterComponent', 'selector': 'nui-donut-content-raw-formatter'},{'name': 'DonutContentSumFormatterComponent', 'selector': 'nui-dashboards-donut-content-sum-formatter'},{'name': 'DropAreaComponent', 'selector': 'nui-drop-area'},{'name': 'EmbeddedContentComponent', 'selector': 'nui-embedded-content'},{'name': 'EmbeddedContentConfigurationComponent', 'selector': 'nui-embedded-content-configuration'},{'name': 'EntityFormattingConfigurationComponent', 'selector': 'nui-entity-formatting-configuration'},{'name': 'FieldMapperAggregatorConfiguratorComponent', 'selector': 'nui-field-mapper-aggregator-configurator'},{'name': 'FormStackComponent', 'selector': 'nui-form-stack'},{'name': 'GroupingConfigurationComponent', 'selector': 'nui-grouping-configuration'},{'name': 'IconFormatterComponent', 'selector': 'nui-dashboards-icon-formatter'},{'name': 'InfoMessageConfigurationComponent', 'selector': 'nui-info-message-configuration'},{'name': 'KpiComponent', 'selector': 'nui-kpi'},{'name': 'KpiDescriptionConfigurationComponent', 'selector': 'nui-kpi-description-configuration'},{'name': 'KpiTilesConfigurationComponent', 'selector': 'nui-kpi-tiles-configuration-component'},{'name': 'LineChartComponent', 'selector': 'nui-line-chart'},{'name': 'LinkConfiguratorComponent', 'selector': 'nui-link-configurator'},{'name': 'LinkFormatterComponent', 'selector': ''},{'name': 'ListGroupItemComponent', 'selector': 'nui-list-group-item'},{'name': 'ListLeafItemComponent', 'selector': 'nui-list-leaf-item'},{'name': 'ListNavigationBarComponent', 'selector': 'nui-navigation-bar'},{'name': 'ListWidgetComponent', 'selector': 'nui-list-widget'},{'name': 'LoadingComponent', 'selector': 'nui-loading'},{'name': 'PercentageFormatterComponent', 'selector': 'nui-dashboards-percentage-formatter'},{'name': 'PizzagnaComponent', 'selector': 'nui-pizzagna'},{'name': 'PresentationConfigurationComponent', 'selector': 'nui-table-column-presentation-configuration'},{'name': 'PresentationConfigurationV2Component', 'selector': 'nui-presentation-configuration-v2'},{'name': 'PreviewOverlayComponent', 'selector': 'nui-preview-overlay'},{'name': 'PreviewPlaceholderComponent', 'selector': 'nui-preview-placeholder'},{'name': 'ProportionalChartOptionsEditorComponent', 'selector': 'nui-proportional-chart-options-editor-component'},{'name': 'ProportionalChartOptionsEditorV2Component', 'selector': 'nui-proportional-chart-options-editor-v2-component'},{'name': 'ProportionalDonutContentComponent', 'selector': 'nui-proportional-donut-content'},{'name': 'RawFormatterComponent', 'selector': 'nui-dashboards-raw-formatter'},{'name': 'RefresherConfigurationComponent', 'selector': 'nui-refresher-configuration'},{'name': 'RefreshRateConfiguratorComponent', 'selector': 'nui-refresh-rate-configurator'},{'name': 'RiskScoreTileComponent', 'selector': 'nui-risk-score-tile'},{'name': 'RiskScoreTileDescriptionConfigurationComponent', 'selector': 'nui-risk-score-tile-description-configuration'},{'name': 'RiskScoreTilesConfigurationComponent', 'selector': 'nui-risk-score-tiles-configuration-component'},{'name': 'SiUnitsFormatterComponent', 'selector': 'nui-dashboards-si-units-formatter'},{'name': 'StackComponent', 'selector': 'nui-stack'},{'name': 'StackedAreaChartComponent', 'selector': 'nui-stacked-area-chart'},{'name': 'StackedBarChartComponent', 'selector': 'nui-stacked-bar-chart'},{'name': 'StackedPercentageAreaChartComponent', 'selector': 'nui-stacked-percentage-area-chart'},{'name': 'StatusBarChartComponent', 'selector': 'nui-status-bar-chart'},{'name': 'StatusWithIconFormatterComponent', 'selector': 'nui-dashboards-status-icon-formatter'},{'name': 'TableColumnConfigurationComponent', 'selector': 'nui-table-column-configuration'},{'name': 'TableColumnsConfigurationComponent', 'selector': 'nui-table-columns-configuration'},{'name': 'TableColumnsConfigurationV2Component', 'selector': 'nui-table-columns-configuration'},{'name': 'TableDataSourceErrorComponent', 'selector': 'nui-table-data-source-error'},{'name': 'TableFiltersEditorComponent', 'selector': 'nui-table-filters-editor-component'},{'name': 'TableScrollTypeEditorComponent', 'selector': 'nui-scroll-type-editor-component'},{'name': 'ThresholdsConfigurationComponent', 'selector': 'nui-thresholds-configuration'},{'name': 'TilesComponent', 'selector': 'nui-tiles'},{'name': 'TimeframeSelectionComponent', 'selector': 'nui-timeframe-selection'},{'name': 'TimeseriesInspectionMenuComponent', 'selector': 'nui-timeseries-inspection-menu'},{'name': 'TimeseriesMetadataConfigurationComponent', 'selector': 'nui-timeseries-metadata-configuration'},{'name': 'TimeseriesSeriesCollectionConfigurationComponent', 'selector': 'nui-timeseries-series-collection-configuration'},{'name': 'TimeseriesTileDescriptionConfigurationComponent', 'selector': 'nui-table-column-description-configuration'},{'name': 'TimeseriesTileIndicatorDataConfigurationComponent', 'selector': 'nui-timeseries-tile-indicator-data-configuration'},{'name': 'TitleAndDescriptionConfigurationComponent', 'selector': 'nui-title-and-description-configuration'},{'name': 'WidgetBodyComponent', 'selector': 'nui-widget-body'},{'name': 'WidgetBodyContentComponent', 'selector': 'nui-widget-body-content'},{'name': 'WidgetClonerComponent', 'selector': 'nui-widget-cloner'},{'name': 'WidgetComponent', 'selector': 'nui-widget'},{'name': 'WidgetConfiguratorSectionComponent', 'selector': 'nui-widget-configurator-section'},{'name': 'WidgetEditorAccordionHeaderComponent', 'selector': 'nui-widget-editor-accordion-header'},{'name': 'WidgetEditorComponent', 'selector': 'nui-widget-editor'},{'name': 'WidgetErrorComponent', 'selector': 'nui-widget-error'},{'name': 'WidgetHeaderComponent', 'selector': 'nui-widget-header'},{'name': 'WidgetSearchComponent', 'selector': 'nui-widget-search'}];
+    var DIRECTIVES = [{'name': 'ComponentPortalDirective', 'selector': '[nuiComponentPortal]'},{'name': 'DelayedMousePresenceDetectionDirective', 'selector': '[nuiDelayedMousePresenceDetection]'},{'name': 'GridsterItemWidgetIdDirective', 'selector': '[nuiGridsterItemWidgetId]'},{'name': 'RegistryService', 'selector': ''},{'name': 'TimeseriesChartComponent', 'selector': ''},{'name': 'WidgetEditorDirective', 'selector': '[nuiWidgetEditor]'}];
+    var ACTUAL_COMPONENT = {'name': 'StackedAreaChartComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StackedAreaChartComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

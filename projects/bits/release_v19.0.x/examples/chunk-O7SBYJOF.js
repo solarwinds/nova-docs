@@ -1,0 +1,1 @@
+import{Wb as a,Xb as i,yc as o,zb as n}from"./chunk-MC3BMXIX.js";var m=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["nui-tag-basic-example"]],standalone:!1,decls:2,vars:0,consts:[[1,"nui-tag"]],template:function(t,c){t&1&&(a(0,"div",0),o(1,"Tag label"),i())},encapsulation:2})}}return e})();export{m as a};
