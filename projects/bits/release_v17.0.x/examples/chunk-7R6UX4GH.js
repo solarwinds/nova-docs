@@ -1,1 +1,0 @@
-import{a}from"./chunk-VNYXVNDF.js";import"./chunk-CMYLIXH3.js";import"./chunk-WVEUHUF3.js";import"./chunk-TI6FRSJ2.js";import"./chunk-MC3BMXIX.js";import"./chunk-VBFW7A5V.js";export{a as LayoutBasicExampleComponent};

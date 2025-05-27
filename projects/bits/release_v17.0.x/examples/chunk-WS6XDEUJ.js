@@ -1,0 +1,1 @@
+import{a}from"./chunk-KB5YCUBC.js";import"./chunk-7DFPWBV2.js";import"./chunk-7KV4WPOL.js";import"./chunk-RQPIMWM4.js";import"./chunk-ITZTVHDY.js";import"./chunk-SPXQGSTF.js";import"./chunk-FSE63SP3.js";import"./chunk-NYJJF7B3.js";import"./chunk-N5FUFMYY.js";import"./chunk-7UJBXEVU.js";import"./chunk-XR34LRGE.js";export{a as TabHeadingGroupHorizontalWithIconsExampleComponent};

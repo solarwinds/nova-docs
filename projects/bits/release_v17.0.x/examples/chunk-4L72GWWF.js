@@ -1,0 +1,1 @@
+import{a as i}from"./chunk-BDWHD4BJ.js";import{Aa as n,Qb as o}from"./chunk-7UJBXEVU.js";var s=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["nui-search-basic-example"]],decls:1,vars:0,template:function(t,c){t&1&&o(0,"nui-search")},dependencies:[i],encapsulation:2})}}return e})();export{s as a};

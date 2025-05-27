@@ -1,1 +1,0 @@
-import{a}from"./chunk-BAVR6N6M.js";import"./chunk-OX7W4O7J.js";import"./chunk-BW7FXYCB.js";import"./chunk-BEIUR5OZ.js";import"./chunk-EHNCPSLF.js";import"./chunk-MC3BMXIX.js";import"./chunk-VBFW7A5V.js";export{a as DndAxisConstraintsExampleComponent};

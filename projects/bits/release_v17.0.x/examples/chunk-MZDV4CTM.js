@@ -1,4 +1,0 @@
-import{d as l}from"./chunk-OP3E7ERD.js";import{Wb as i,Xb as e,Yb as t,yc as o,zb as c}from"./chunk-MC3BMXIX.js";var u=(()=>{class n{static{this.\u0275fac=function(a){return new(a||n)}}static{this.\u0275cmp=c({type:n,selectors:[["nui-tag-with-icon-example"]],standalone:!1,decls:9,vars:0,consts:[[1,"nui-tag","nui-tag-with-icon","nui-tag-with-border-critical","mr-1"],["icon","severity_critical","iconSize","small"],[1,"nui-tag","nui-tag-with-icon","nui-tag-warning","mr-1"],["icon","customize","iconColor","black","iconSize","small"],[1,"nui-tag","nui-tag-with-icon","mr-1"],["icon","key","iconColor","black","iconSize","small"]],template:function(a,r){a&1&&(i(0,"div",0),t(1,"nui-icon",1),o(2,` Tag critical
-`),e(),i(3,"div",2),t(4,"nui-icon",3),o(5,` Tag warning
-`),e(),i(6,"div",4),t(7,"nui-icon",5),o(8,` Tag label
-`),e())},dependencies:[l],styles:[".nui-tag-warning[_ngcontent-%COMP%]{border:none}"]})}}return n})();export{u as a};

@@ -162,8 +162,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="33"
-                                    class="link-to-prism">src/lib/table/table-virtual-scroll/slice-range.pipe.ts:33</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="30"
+                                    class="link-to-prism">src/lib/table/table-virtual-scroll/slice-range.pipe.ts:30</a></div>
                         </td>
                     </tr>
 
@@ -251,7 +251,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/lib/table/table-virtual-scroll/slice-range.pipe.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/lib/table/table-virtual-scroll/slice-range.pipe.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -270,10 +270,7 @@ import { Pipe, PipeTransform } from &quot;@angular/core&quot;;
 
 import { nameof } from &quot;../../../functions/nameof&quot;;
 
-@Pipe({
-    name: &quot;sliceRange&quot;, pure: false,
-    standalone: false,
-})
+@Pipe({ name: &quot;sliceRange&quot;, pure: false })
 export class SliceRangePipe implements PipeTransform {
     slicePipe: SlicePipe &#x3D; new SlicePipe();
     transform(value: unknown[], range: ListRange): unknown[] {

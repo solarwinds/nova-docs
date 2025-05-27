@@ -804,12 +804,12 @@ import { ConfiguratorHeadingService } from &quot;../../../../services/configurat
 
 @Component({
     selector: &quot;nui-timeseries-tile-indicator-data-configuration&quot;,
-    templateUrl: &quot;./timeseries-tile-indicator-data-configuration.component.html&quot;,
+    templateUrl:
+        &quot;./timeseries-tile-indicator-data-configuration.component.html&quot;,
     styleUrls: [
         &quot;./timeseries-tile-indicator-data-configuration.component.less&quot;,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false,
 })
 export class TimeseriesTileIndicatorDataConfigurationComponent
     implements IHasChangeDetector, IHasForm, OnInit, OnDestroy, OnChanges

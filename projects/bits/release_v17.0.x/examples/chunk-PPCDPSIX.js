@@ -1,1 +1,0 @@
-import{Wb as n,Xb as i,yc as a,zb as o}from"./chunk-MC3BMXIX.js";var p=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=o({type:e,selectors:[["nui-demo-welcome-page"]],standalone:!1,decls:2,vars:0,template:function(t,c){t&1&&(n(0,"div"),a(1,"Welcome to Nui Demo Page!"),i())},encapsulation:2})}}return e})();export{p as a};

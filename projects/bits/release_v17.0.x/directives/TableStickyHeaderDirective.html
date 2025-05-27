@@ -687,6 +687,7 @@ import {
 } from &quot;rxjs/operators&quot;;
 
 import { FIXED_WIDTH_CLASS } from &quot;../constants&quot;;
+import { TableStateHandlerService } from &quot;../table-state-handler.service&quot;;
 import { TableComponent } from &quot;../table.component&quot;;
 
 export enum TableVirtualScrollHeaderPosition {
@@ -700,7 +701,6 @@ export enum TableVirtualScrollHeaderPosition {
         &quot;[class.sticky-table-header]&quot;: &quot;true&quot;,
         style: &quot;overflow-y:overlay&quot;,
     },
-    standalone: false,
 })
 export class TableStickyHeaderDirective implements AfterViewInit, OnDestroy {
     @ContentChild(TableComponent) public table: TableComponent&lt;unknown&gt;;

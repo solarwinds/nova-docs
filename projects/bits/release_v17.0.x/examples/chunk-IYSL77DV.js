@@ -1,0 +1,1 @@
+import{d as i}from"./chunk-7KV4WPOL.js";import{Aa as o,Qb as t}from"./chunk-7UJBXEVU.js";var m=(()=>{class e{static{this.\u0275fac=function(n){return new(n||e)}}static{this.\u0275cmp=o({type:e,selectors:[["nui-icon-basic-example"]],decls:1,vars:0,consts:[["icon","add"]],template:function(n,a){n&1&&t(0,"nui-icon",0)},dependencies:[i],encapsulation:2})}}return e})();export{m as a};
