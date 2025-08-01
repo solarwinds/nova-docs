@@ -143,6 +143,12 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#disabled$" >disabled$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
                                 <a href="#refreshRateSeconds$" >refreshRateSeconds$</a>
                             </li>
                         </ul>
@@ -183,9 +189,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="disabled$"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>disabled$</b></span>
+                        <a href="#disabled$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject(false)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>This is a system wide definition for disabling all refreshers.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="refreshRateSeconds$"></a>
                     <span class="name">
                             <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
                         <span ><b>refreshRateSeconds$</b></span>
                         <a href="#refreshRateSeconds$"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -193,12 +233,12 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject(this.refreshRateSeconds)</code>
+                        <i>Default value : </i><code>new BehaviorSubject(DEFAULT_REFRESH_INTERVAL)</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:38</a></div>
                         </td>
                     </tr>
 
@@ -227,7 +267,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:44</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -250,7 +290,7 @@ the system settings to leverage this value.</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/lib/components/providers/refresher-settings.service.ts:48</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -309,20 +349,23 @@ import { DEFAULT_REFRESH_INTERVAL } from &quot;./types&quot;;
     providedIn: &quot;root&quot;,
 })
 export class RefresherSettingsService {
-    private _refreshRateSeconds: number &#x3D; DEFAULT_REFRESH_INTERVAL;
-    public refreshRateSeconds$ &#x3D; new BehaviorSubject(this.refreshRateSeconds);
+    /**
+     * This is a system wide definition for disabling all refreshers.
+     */
+    public readonly disabled$ &#x3D; new BehaviorSubject(false);
+
+    public readonly refreshRateSeconds$ &#x3D; new BehaviorSubject(DEFAULT_REFRESH_INTERVAL);
 
     /**
      * This is a system wide definition of refresh rate. Widgets have to be configured to use
      * the system settings to leverage this value.
      */
     public get refreshRateSeconds(): number {
-        return this._refreshRateSeconds;
+        return this.refreshRateSeconds$.value;
     }
 
     public set refreshRateSeconds(value: number) {
-        this._refreshRateSeconds &#x3D; value;
-        this.refreshRateSeconds$.next(this._refreshRateSeconds);
+        this.refreshRateSeconds$.next(value);
     }
 }
 </code></pre>

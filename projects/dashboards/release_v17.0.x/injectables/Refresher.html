@@ -133,22 +133,6 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#destroy$" >destroy$</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -185,7 +169,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/components/providers/refresher.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/lib/components/providers/refresher.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -274,8 +258,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="69"
-                                    class="link-to-prism">src/lib/components/providers/refresher.ts:69</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/lib/components/providers/refresher.ts:72</a></div>
                         </td>
                     </tr>
 
@@ -322,47 +306,13 @@
         </tbody>
     </table>
 </section>
-            <section data-compodoc="block-properties">
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="destroy$"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>destroy$</b></span>
-                        <a href="#destroy$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/lib/components/providers/refresher.ts:53</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable, NgZone, OnDestroy } from &quot;@angular/core&quot;;
-import { Subject } from &quot;rxjs&quot;;
-import { takeUntil } from &quot;rxjs/operators&quot;;
+import { takeUntilDestroyed } from &quot;@angular/core/rxjs-interop&quot;;
 
 import { EventBus, EventDefinition } from &quot;@nova-ui/bits&quot;;
 
@@ -392,19 +342,23 @@ export class Refresher implements OnDestroy, IConfigurable {
     protected interval &#x3D; DEFAULT_REFRESH_INTERVAL;
     protected eventDef &#x3D; REFRESH;
 
-    public readonly destroy$ &#x3D; new Subject&lt;void&gt;();
-
     constructor(
-        @Inject(PIZZAGNA_EVENT_BUS) protected eventBus: EventBus&lt;IWidgetEvent&gt;,
-        protected ngZone: NgZone,
-        protected refresherSettings: RefresherSettingsService
+        @Inject(PIZZAGNA_EVENT_BUS) protected readonly eventBus: EventBus&lt;IWidgetEvent&gt;,
+        protected readonly ngZone: NgZone,
+        protected readonly refresherSettings: RefresherSettingsService
     ) {
         this.refresherSettings.refreshRateSeconds$
-            .pipe(takeUntil(this.destroy$))
-            .subscribe((systemRefreshRate) &#x3D;&gt; {
+            .pipe(takeUntilDestroyed())
+            .subscribe(() &#x3D;&gt; {
                 if (!this.overrideDefaultSettings) {
                     this.initializeInterval();
                 }
+            });
+
+        this.refresherSettings.disabled$
+            .pipe(takeUntilDestroyed())
+            .subscribe(() &#x3D;&gt; {
+                this.initializeInterval();
             });
     }
 
@@ -420,8 +374,6 @@ export class Refresher implements OnDestroy, IConfigurable {
 
     public ngOnDestroy(): void {
         this.clearInterval();
-        this.destroy$.next();
-        this.destroy$.complete();
     }
 
     private initializeInterval() {
@@ -430,7 +382,8 @@ export class Refresher implements OnDestroy, IConfigurable {
         if (
             typeof this.interval &#x3D;&#x3D;&#x3D; &quot;undefined&quot; ||
             this.getInterval() &lt;&#x3D; 0 ||
-            this.enabled &#x3D;&#x3D;&#x3D; false
+            this.enabled &#x3D;&#x3D;&#x3D; false ||
+            this.refresherSettings.disabled$.value &#x3D;&#x3D;&#x3D; true
         ) {
             return;
         }
