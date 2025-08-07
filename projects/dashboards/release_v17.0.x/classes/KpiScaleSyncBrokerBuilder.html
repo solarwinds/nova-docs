@@ -160,6 +160,10 @@
                                     <span class="modifier">Public</span>
                                 <a href="#addBroker" >addBroker</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeBroker" >removeBroker</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -183,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:161</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:171</a></div>
                             </td>
                         </tr>
 
@@ -252,7 +256,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="160" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:160</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="170" class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:170</a></div>
                         </td>
                     </tr>
 
@@ -288,8 +292,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="165"
-                                    class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:165</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="175"
+                                    class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:175</a></div>
                         </td>
                     </tr>
 
@@ -335,6 +339,75 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeBroker"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>removeBroker</b></span>
+                        <a href="#removeBroker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeBroker(brokerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="198"
+                                    class="link-to-prism">src/lib/components/providers/kpi-scale-sync-broker.ts:198</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>brokerId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
 
 
@@ -347,7 +420,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &quot;@angular/core&quot;;
 import isArray from &quot;lodash/isArray&quot;;
-import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
+import { BehaviorSubject, Observable, Subject } from &quot;rxjs&quot;;
 import { distinctUntilChanged, filter, takeUntil, tap } from &quot;rxjs/operators&quot;;
 
 import { EventBus, IEvent } from &quot;@nova-ui/bits&quot;;
@@ -393,7 +466,7 @@ export class KpiScaleSyncBroker implements IConfigurable {
     }
 
     public getBrokers(): readonly IBroker[] {
-        return this.brokers;
+        return [...this.brokers];
     }
 
     public subscribeToBrokers(): void {
@@ -460,23 +533,33 @@ export class KpiScaleSyncBroker implements IConfigurable {
         ).properties?.nodes;
         const { scaleSyncConfig } &#x3D; this.properties;
 
-        if (this.tileNodes?.length) {
-            this.tileNodes.forEach((node, i) &#x3D;&gt; {
-                const property: IPizzagnaProperty &#x3D; {
-                    componentId: node,
-                    pizzagnaKey: PizzagnaLayer.Data,
-                    propertyPath: [&#x60;syncValuesBroker&#x60;],
-                };
-                this.pizzagnaService.setProperty(property, this.getBrokers());
-            });
-
-            if (scaleSyncConfig &amp;&amp; isArray(scaleSyncConfig)) {
-                scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt;
-                    this.configure().addBroker({ id: s.id, type: s?.type })
-                );
-                this.subscribeToBrokers();
-            }
+        if (!this.tileNodes?.length) {
+            return;
         }
+
+        if (scaleSyncConfig &amp;&amp; isArray(scaleSyncConfig)) {
+            // remove brokers that are not in the scaleSyncConfig
+            this.brokers
+                .filter(
+                    (broker) &#x3D;&gt; !scaleSyncConfig.find((s) &#x3D;&gt; s.id &#x3D;&#x3D;&#x3D; broker.id)
+                )
+                .forEach(({ id }) &#x3D;&gt; this.builder.removeBroker(id));
+
+            // add new brokers from scaleSyncConfig
+            scaleSyncConfig.forEach((s: IBrokerUserConfig) &#x3D;&gt;
+                this.configure().addBroker({ id: s.id, type: s?.type })
+            );
+            this.subscribeToBrokers();
+        }
+
+        this.tileNodes.forEach((node, i) &#x3D;&gt; {
+            const property: IPizzagnaProperty &#x3D; {
+                componentId: node,
+                pizzagnaKey: PizzagnaLayer.Data,
+                propertyPath: [&#x60;syncValuesBroker&#x60;],
+            };
+            this.pizzagnaService.setProperty(property, this.getBrokers());
+        });
     }
 
     private getMin &#x3D; (n: number[]) &#x3D;&gt; Math.min(...n);
@@ -490,6 +573,15 @@ class KpiScaleSyncBrokerBuilder {
     constructor(private brokers: IBroker[]) {}
 
     public addBroker(broker: IBrokerUserConfig): KpiScaleSyncBrokerBuilder {
+        if (
+            this.brokers.find(
+                (existingBroker) &#x3D;&gt; existingBroker.id &#x3D;&#x3D;&#x3D; broker.id
+            )
+        ) {
+            // Prevent adding the same broker multiple times
+            return this;
+        }
+
         const newBrokerSetting: IBrokerValue &#x3D; {
             id: broker.id,
             targetID: &quot;&quot;,
@@ -501,6 +593,14 @@ class KpiScaleSyncBrokerBuilder {
             ...this.getDefaultBrokerObject(newBrokerSetting, newBrokerSetting),
         });
         return this;
+    }
+
+    public removeBroker(brokerId: string): void {
+        const brokerIndex &#x3D; this.brokers.findIndex((b) &#x3D;&gt; b.id &#x3D;&#x3D;&#x3D; brokerId);
+        if (brokerIndex !&#x3D;&#x3D; -1) {
+            this.brokers.splice(brokerIndex, 1);
+            delete this.valuesObject[brokerId];
+        }
     }
 
     private getDefaultBrokerObject(input: IBrokerValue, output: IBrokerValue) {
